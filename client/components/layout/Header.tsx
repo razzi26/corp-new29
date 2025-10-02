@@ -60,7 +60,7 @@ export default function Header() {
       className={cn(
         "sticky top-0 z-50 transition-colors duration-300",
         scrolled || open
-          ? "bg-white/95 border-b border-white/60 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/85"
+          ? "bg-white border-b border-white/60 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white"
           : "bg-transparent border-b border-transparent text-white",
       )}
     >
