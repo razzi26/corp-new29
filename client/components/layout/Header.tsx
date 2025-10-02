@@ -176,14 +176,14 @@ export default function Header() {
         <div className="md:hidden w-full">
           <div
             className={cn(
-              "fixed inset-0 z-40 border-t bg-white text-slate-900 transition-all duration-300 ease-out md:hidden",
+              "fixed inset-x-0 top-16 bottom-0 z-40 border-t bg-white text-slate-900 transition-all duration-300 ease-out md:hidden",
               open
                 ? "translate-y-0 opacity-100"
                 : "pointer-events-none -translate-y-2 opacity-0",
             )}
             aria-hidden={!open}
           >
-            <div className="h-full overflow-y-auto pt-16">
+            <div className="h-full overflow-y-auto">
               <div className="container mx-auto px-4 pt-4 pb-6">
                 <div className="flex flex-col gap-1.5 text-base">
                   {nav.map((item) =>
