@@ -41,9 +41,9 @@ export default function Faq() {
                     Q&A • Esco Biosafety Institute
                   </span>
                 </div>
-                <span className="relative mt-1 flex h-10 w-10 items-center justify-center">
-                  <span className="h-8 w-px bg-[hsl(var(--brand-end))] transition-opacity duration-200 group-open:opacity-0" />
-                  <span className="absolute h-px w-8 bg-[hsl(var(--brand-end))]" />
+                <span className="relative mt-1 flex h-8 w-8 items-center justify-center">
+                  <span className="h-6 w-0.5 rounded-full bg-[hsl(var(--brand-end))] transition-opacity duration-200 group-open:opacity-0" />
+                  <span className="absolute h-0.5 w-6 rounded-full bg-[hsl(var(--brand-end))]" />
                 </span>
               </summary>
               <div className="grid grid-rows-[0fr] overflow-hidden transition-all duration-300 ease-out group-open:grid-rows-[1fr]">
