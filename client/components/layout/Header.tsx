@@ -36,19 +36,19 @@ export default function Header() {
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-6 text-base">
             {nav.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
-                className="text-slate-700 hover:text-slate-900 transition-colors text-sm"
+                className="text-slate-700 hover:text-slate-900 transition-colors"
               >
                 {item.label}
               </Link>
             ))}
             <Link
               to="/contact"
-              className="ml-2 inline-flex items-center rounded-full bg-[hsl(var(--brand-end))] text-white px-4 py-2 text-sm font-semibold shadow hover:shadow-md transition"
+              className="ml-2 inline-flex items-center rounded-full bg-[hsl(var(--brand-end))] text-white px-5 py-2.5 text-base font-semibold shadow hover:shadow-md transition"
             >
               Get a quote
             </Link>
@@ -65,12 +65,12 @@ export default function Header() {
 
         {open && (
           <div className="md:hidden mt-2 rounded-xl bg-white border border-slate-200 p-3 shadow-sm">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 text-base">
               {nav.map((item) => (
                 <Link
                   key={item.to}
                   to={item.to}
-                  className="text-slate-700 hover:text-slate-900 transition-colors text-sm py-2"
+                  className="text-slate-700 hover:text-slate-900 transition-colors py-2"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
@@ -78,7 +78,7 @@ export default function Header() {
               ))}
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-4 py-2 text-sm font-semibold shadow hover:shadow-md transition"
+                className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-4 py-2.5 text-base font-semibold shadow hover:shadow-md transition"
                 onClick={() => setOpen(false)}
               >
                 Get a quote
