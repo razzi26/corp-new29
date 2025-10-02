@@ -13,7 +13,7 @@ export default function Index() {
     <div id="top" className="text-slate-900 bg-white">
       {/* Hero with accent background */}
       <section className="bg-[hsl(var(--brand-end))] text-white">
-        <div className="container mx-auto px-4 pt-12 pb-16 md:pt-16 md:pb-20">
+        <div className="container mx-auto px-4 pt-10 pb-16 md:pt-14 md:pb-20">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs md:text-sm border border-white/25 text-white">
