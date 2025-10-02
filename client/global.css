@@ -134,7 +134,7 @@
 }
 
 /* Custom mobile scrollbar (overlay, non-reserving) - CSS-only, rely on native overlay behavior */
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   /* Use thin overlay scrollbars for webkit and firefox. These won't reserve layout width. */
   * {
     scrollbar-width: thin; /* Firefox: 'thin' typically shows overlay */
