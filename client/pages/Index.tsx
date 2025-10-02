@@ -44,10 +44,10 @@ export default function Index() {
 
             <ul className="mt-6 grid grid-cols-2 gap-3 text-sm text-white/90 max-w-md">
               {[
-                "Delivery and installation",
-                "Staff training",
-                "Service and warranty",
-                "Custom configurations",
+                "Training & seminars",
+                "Regulatory guidance",
+                "Practical resources",
+                "Certification support",
               ].map((f) => (
                 <li key={f} className="flex items-center gap-2">
                   <Check className="h-4 w-4 text-white" /> {f}
@@ -99,7 +99,7 @@ export default function Index() {
       {/* Products preview */}
       <section className="container mx-auto px-4 mt-20">
         <div className="flex items-end justify-between gap-4">
-          <h2 className="text-2xl md:text-3xl font-bold">Popular categories</h2>
+          <h2 className="text-2xl md:text-3xl font-bold">Featured Products</h2>
           <Link
             to="/contact"
             className="hidden md:inline-flex text-sm hover:underline"
@@ -108,12 +108,12 @@ export default function Index() {
           </Link>
         </div>
         <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <ProductCard title="Ultrasound scanners" tag="In stock" />
-          <ProductCard title="Laboratory analyzers" tag="Preorder" />
-          <ProductCard title="Patient monitors" tag="Bestseller" />
-          <ProductCard title="X-ray & CT" tag="Special offer" />
-          <ProductCard title="Endoscopy equipment" tag="New" />
-          <ProductCard title="Sterilization systems" tag="In stock" />
+          <ProductCard title="Biosafety Cabinets" tag="Core" />
+          <ProductCard title="CO₂ Incubators" tag="Core" />
+          <ProductCard title="PCR Cabinets" tag="Popular" />
+          <ProductCard title="Cleanroom Solutions" tag="Advanced" />
+          <ProductCard title="Isolators" tag="Specialized" />
+          <ProductCard title="Fume Hoods" tag="Popular" />
         </div>
         <div className="mt-6">
           <Link
@@ -122,6 +122,19 @@ export default function Index() {
           >
             View full catalog
           </Link>
+        </div>
+      </section>
+
+      {/* Highlighted Resources */}
+      <section className="container mx-auto px-4 mt-20">
+        <div className="flex items-end justify-between gap-4">
+          <h2 className="text-2xl md:text-3xl font-bold">Highlighted Resources</h2>
+          <Link to="/blog" className="hidden md:inline-flex text-sm hover:underline">View all</Link>
+        </div>
+        <div className="mt-6 grid md:grid-cols-3 gap-6">
+          <ResourceCard title="Biosafety Cabinet Certification Guide"/>
+          <ResourceCard title="Top 10 BSC Best Practices"/>
+          <ResourceCard title="Understanding ISO/EN Standards"/>
         </div>
       </section>
 

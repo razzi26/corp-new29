@@ -9,7 +9,7 @@ export default function Footer() {
             <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))] text-white font-bold">
               M
             </span>
-            <span className="text-white font-semibold">MediTech Pro</span>
+            <span className="text-white font-semibold">Esco Biosafety Institute</span>
           </div>
           <p className="text-sm leading-relaxed">
             Modern solutions for clinics, laboratories and private practices.
@@ -57,7 +57,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="text-sm md:text-right flex md:block flex-col justify-between">
-          <p>© {new Date().getFullYear()} MediTech Pro</p>
+          <p>© {new Date().getFullYear()} Esco Biosafety Institute</p>
           <p className="text-white/60">All rights reserved</p>
         </div>
       </div>
