@@ -46,7 +46,7 @@ export default function Faq() {
                   <span className="absolute h-0.5 w-6 rounded-full bg-[hsl(var(--brand-end))]" />
                 </span>
               </summary>
-              <div className="grid grid-rows-[0fr] overflow-hidden transition-all duration-300 ease-out group-open:grid-rows-[1fr]">
+              <div className="grid grid-rows-[0fr] overflow-hidden transition-[grid-template-rows] duration-400 ease-out group-open:grid-rows-[1fr]">
                 <div className="mt-4 overflow-hidden text-slate-700">
                   {it.a}
                 </div>
