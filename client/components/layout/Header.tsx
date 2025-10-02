@@ -196,12 +196,12 @@ export default function Header() {
 
       {open &&
         createPortal(
-          <div className="fixed inset-0 z-[60] md:hidden">
+          <div className="fixed left-0 right-0 top-16 bottom-0 z-[60] md:hidden">
             <div
               className="absolute inset-0 bg-black/30"
               onClick={() => setOpen(false)}
             />
-            <div className="absolute left-0 right-0 top-16 bg-white border-t shadow-lg">
+            <div className="absolute inset-0 overflow-auto bg-white border-t shadow-lg">
               <nav className="py-2">
                 {nav.map((item) =>
                   item.children ? (
