@@ -85,7 +85,7 @@ export default function Header() {
     <>
       <header
         className={cn(
-          "sticky top-0 z-50 transition-colors duration-300",
+          "sticky top-0 z-[9999] transition-colors duration-300",
           scrolled || open
             ? "bg-white border-b border-white/60 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white"
             : "bg-transparent border-b border-transparent text-white",
