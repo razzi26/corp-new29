@@ -139,7 +139,7 @@
   * {
     scrollbar-width: thin; /* Firefox */
     scrollbar-color: transparent transparent; /* hidden by default */
-    scrollbar-gutter: stable;
+
   }
 
   *::-webkit-scrollbar {
