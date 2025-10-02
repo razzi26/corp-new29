@@ -19,25 +19,24 @@ export default function Index() {
               <ShieldCheck className="h-4 w-4" /> Biosafety training • Guidance • Resources
             </span>
             <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight">
-              Medical equipment for clinics and businesses
+              Welcome to Esco Biosafety Institute
             </h1>
             <p className="mt-4 text-white/85 text-base md:text-lg max-w-xl">
-              Turnkey supply, implementation and service support. From patient
-              monitors to laboratory diagnostics — on time and within budget.
+              Biosafety in any laboratory is crucial. The Esco Biosafety Institute was established to be your partner in achieving it. Our institute provides comprehensive biosafety training and seminars, updated regulatory guidance, and practical resources created for professionals at every level. Whether you’re looking to get certified, get information on biosafety products, need to be updated on industry trends, or want to test your knowledge, our institute is your central hub for building expertise and confidence in biosafety protocols.
             </p>
 
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
               <Link
-                to="/catalog"
+                to="/contact"
                 className="inline-flex items-center justify-center rounded-lg bg-white text-[hsl(var(--brand-end))] px-5 py-3 font-semibold shadow hover:shadow-md transition"
               >
-                Explore catalog
+                Get certified
               </Link>
               <Link
-                to="/contact"
+                to="/blog"
                 className="inline-flex items-center justify-center rounded-lg border border-white/30 px-5 py-3 font-semibold hover:bg-white/10 transition"
               >
-                Get consultation
+                Explore resources
               </Link>
             </div>
 
