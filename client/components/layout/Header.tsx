@@ -69,14 +69,14 @@ export default function Header() {
 
   useEffect(() => {
     if (!open) {
-      setOpenSeminars(false);
+      setOpenSubmenuKey(null);
     }
   }, [open]);
 
   useEffect(() => {
     setOpen(false);
-    setOpenSeminars(false);
-    setDesktopSeminarsOpen(false);
+    setOpenSubmenuKey(null);
+    setDesktopOpenKey(null);
   }, [location.pathname]);
 
   useEffect(() => {
