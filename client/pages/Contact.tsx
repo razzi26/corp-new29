@@ -1,7 +1,7 @@
 export default function Contact() {
   return (
     <div className="container mx-auto px-4 py-16 text-white">
-      <h1 className="text-3xl md:text-4xl font-extrabold">Contact Us</h1>
+      <h1 className="text-3xl md:text-4xl font-semibold">Contact Us</h1>
       <p className="mt-3 text-white/85 max-w-prose">Leave your details and our team will prepare a tailored quote for your facility.</p>
       <div className="mt-8 grid lg:grid-cols-2 gap-8">
         <div>
