@@ -24,11 +24,11 @@ interface PageBannerProps {
 export function PageBanner({ title, description, breadcrumbs }: PageBannerProps) {
   return (
     <section
-      className="relative overflow-hidden bg-[hsl(var(--brand-end))] text-white"
+      className="relative -mt-16 overflow-hidden bg-[hsl(var(--brand-end))] text-white"
       data-header-anchor
     >
       <div className="absolute inset-0 bg-brand-gradient opacity-95" aria-hidden="true" />
-      <div className="relative container mx-auto px-4 py-12">
+      <div className="relative container mx-auto px-4 pt-24 pb-12 md:pt-32 md:pb-16">
         <Breadcrumb>
           <BreadcrumbList className="text-white/80">
             {breadcrumbs.map((crumb, index) => (
