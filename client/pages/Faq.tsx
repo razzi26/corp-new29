@@ -1,3 +1,5 @@
+import { PageBanner } from "@/components/layout/PageBanner";
+
 export default function Faq() {
   const items = [
     {
@@ -14,23 +16,32 @@ export default function Faq() {
     },
   ];
   return (
-    <div className="container mx-auto px-4 py-16 text-slate-900">
-      <h1 className="text-3xl md:text-4xl font-semibold">FAQ</h1>
-      <div className="mt-6 space-y-3">
-        {items.map((it) => (
-          <details
-            key={it.q}
-            className="group rounded-xl border border-slate-200 bg-white p-4 shadow-sm open:shadow-md transition-shadow"
-          >
-            <summary className="cursor-pointer list-none font-semibold flex items-center justify-between">
-              <span>{it.q}</span>
-              <span className="ml-4 text-xs rounded-full px-2 py-0.5 bg-[hsl(var(--brand-end))]/10 text-[hsl(var(--brand-end))] border border-[hsl(var(--brand-end))]/20">
-                Q&A
-              </span>
-            </summary>
-            <p className="mt-2 text-slate-700">{it.a}</p>
-          </details>
-        ))}
+    <div className="bg-white text-slate-900">
+      <PageBanner
+        title="FAQ"
+        description="Answers to the most common questions about delivery, installation and certifications."
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "FAQ" },
+        ]}
+      />
+      <div className="container mx-auto px-4 py-12">
+        <div className="space-y-3">
+          {items.map((it) => (
+            <details
+              key={it.q}
+              className="group rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-shadow open:shadow-md"
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between font-semibold">
+                <span>{it.q}</span>
+                <span className="ml-4 rounded-full border border-[hsl(var(--brand-end))]/20 bg-[hsl(var(--brand-end))]/10 px-2 py-0.5 text-xs text-[hsl(var(--brand-end))]">
+                  Q&A
+                </span>
+              </summary>
+              <p className="mt-2 text-slate-700">{it.a}</p>
+            </details>
+          ))}
+        </div>
       </div>
     </div>
   );
