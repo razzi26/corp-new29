@@ -29,10 +29,7 @@ export default function Faq() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "FAQ" }]}
       />
       <div className="container mx-auto px-4 py-12">
-        <Accordion
-          type="multiple"
-          className="mx-auto max-w-3xl space-y-4"
-        >
+        <Accordion type="multiple" className="mx-auto max-w-3xl space-y-4">
           {items.map((it) => (
             <AccordionItem
               key={it.q}

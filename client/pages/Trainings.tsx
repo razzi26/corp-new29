@@ -19,10 +19,17 @@ export default function Trainings() {
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold">Trainings</h2>
             <p className="mt-4 text-base md:text-lg text-slate-700 leading-relaxed">
-              Esco delivers expert-led training programs from our dedicated learning centers in Singapore and Indonesia. These state-of-the-art facilities are equipped with the necessary tools for comprehensive product demonstrations and in-depth service training. We also periodically offer both in-person and virtual courses through our global network of offices.
+              Esco delivers expert-led training programs from our dedicated
+              learning centers in Singapore and Indonesia. These
+              state-of-the-art facilities are equipped with the necessary tools
+              for comprehensive product demonstrations and in-depth service
+              training. We also periodically offer both in-person and virtual
+              courses through our global network of offices.
             </p>
             <p className="mt-4 text-base md:text-lg text-slate-700 leading-relaxed">
-              Our instruction is led by NSF 49-certified engineer-trainers who bring years of invaluable real-world experience in biosafety cabinet design, manufacturing, testing, and troubleshooting.
+              Our instruction is led by NSF 49-certified engineer-trainers who
+              bring years of invaluable real-world experience in biosafety
+              cabinet design, manufacturing, testing, and troubleshooting.
             </p>
           </div>
 

@@ -6,10 +6,7 @@ export default function SeminarsPage() {
       <PageBanner
         title="Seminars"
         description="Live and virtual seminars on biosafety standards, risk assessment, cabinet certification, and facility workflows."
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Seminars" },
-        ]}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Seminars" }]}
       />
       <div className="container mx-auto px-4 py-12">
         <p className="text-base text-slate-700 max-w-prose">

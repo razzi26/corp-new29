@@ -4,9 +4,11 @@ import { Link, useLocation } from "react-router-dom";
 
 import { cn } from "@/lib/utils";
 
-const nav: Array<
-  { label: string; to?: string; children?: { to: string; label: string }[] }
-> = [
+const nav: Array<{
+  label: string;
+  to?: string;
+  children?: { to: string; label: string }[];
+}> = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   {
@@ -99,12 +101,19 @@ export default function Header() {
                     aria-expanded={desktopSeminarsOpen}
                   >
                     {item.label}
-                    <ChevronDown className={cn("h-4 w-4 transition-transform", desktopSeminarsOpen && "rotate-180")} />
+                    <ChevronDown
+                      className={cn(
+                        "h-4 w-4 transition-transform",
+                        desktopSeminarsOpen && "rotate-180",
+                      )}
+                    />
                   </button>
                   <div
                     className={cn(
                       "absolute left-0 top-full min-w-[14rem] rounded-md border bg-white text-slate-900 shadow-md py-1 transition-opacity",
-                      desktopSeminarsOpen ? "visible opacity-100" : "invisible opacity-0",
+                      desktopSeminarsOpen
+                        ? "visible opacity-100"
+                        : "invisible opacity-0",
                     )}
                   >
                     {item.children.map((c) => (
@@ -144,7 +153,11 @@ export default function Header() {
           <button
             className={cn(
               "md:hidden transition-colors",
-              open ? "text-slate-900" : scrolled ? "text-slate-700" : "text-white",
+              open
+                ? "text-slate-900"
+                : scrolled
+                  ? "text-slate-700"
+                  : "text-white",
             )}
             aria-label="Открыть меню"
             aria-expanded={open}
@@ -158,7 +171,9 @@ export default function Header() {
           <div
             className={cn(
               "absolute left-0 right-0 top-full z-50 w-full border-t bg-white text-slate-900 overflow-hidden transition-all duration-300 ease-out",
-              open ? "max-h-[80vh] opacity-100 translate-y-0" : "pointer-events-none max-h-0 opacity-0 -translate-y-2",
+              open
+                ? "max-h-[80vh] opacity-100 translate-y-0"
+                : "pointer-events-none max-h-0 opacity-0 -translate-y-2",
             )}
             aria-hidden={!open}
           >
