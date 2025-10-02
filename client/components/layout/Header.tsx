@@ -173,7 +173,6 @@ export default function Header() {
             {open ? <X /> : <Menu />}
           </button>
         </div>
-
       </div>
     </header>
   );
