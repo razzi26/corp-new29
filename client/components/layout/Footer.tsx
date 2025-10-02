@@ -62,7 +62,33 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div />
+        <div>
+          <h4 className="font-semibold mb-3">Subscribe</h4>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              const fd = new FormData(e.currentTarget as HTMLFormElement);
+              const email = fd.get("email");
+              console.log({ email });
+              alert("Thanks for subscribing!");
+            }}
+            className="flex flex-col sm:flex-row gap-3"
+          >
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="Your email"
+              className="h-11 flex-1 rounded-lg bg-white text-slate-900 px-3 outline-none focus:ring-2 focus:ring-white"
+            />
+            <button
+              className="h-11 inline-flex items-center justify-center rounded-lg bg-white text-[hsl(var(--brand-end))] px-5 font-semibold shadow hover:shadow-md transition"
+            >
+              Subscribe
+            </button>
+          </form>
+          <p className="mt-2 text-xs text-white/80">No spam. Unsubscribe anytime.</p>
+        </div>
       </div>
       <div className="border-t border-white/20">
         <div className="container mx-auto px-4 py-4 flex items-center justify-start text-sm text-white/90 text-left">
