@@ -11,62 +11,67 @@ import { Link } from "react-router-dom";
 export default function Index() {
   return (
     <div id="top" className="text-slate-900 bg-white">
-      {/* Hero */}
+      {/* Hero with accent background */}
       <section className="container mx-auto px-4 pt-20 md:pt-28">
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs md:text-sm border border-slate-200 text-slate-700">
-              <ShieldCheck className="h-4 w-4 text-[hsl(var(--brand-end))]" /> Biosafety training • Guidance • Resources
-            </span>
-            <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight">
-              Welcome to Esco Biosafety Institute!
-            </h1>
-            <p className="mt-4 text-slate-700 text-base md:text-lg max-w-xl">
-              Biosafety in any laboratory is crucial. The Esco Biosafety Institute was established to be your partner in achieving it. Our institute provides comprehensive biosafety training and seminars, updated regulatory guidance, and practical resources created for professionals at every level.
-            </p>
+        <div className="rounded-3xl bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))] text-white p-6 md:p-10 shadow-lg">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs md:text-sm border border-white/25 text-white">
+                <ShieldCheck className="h-4 w-4" /> Biosafety training • Guidance • Resources
+              </span>
+              <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight">
+                Welcome to Esco Biosafety Institute
+              </h1>
+              <p className="mt-4 text-white/90 text-base md:text-lg max-w-xl">
+                Biosafety in any laboratory is crucial. The Esco Biosafety Institute was established to be your partner in achieving it. Our institute provides comprehensive biosafety training and seminars, updated regulatory guidance, and practical resources created for professionals at every level.
+              </p>
+              <p className="mt-3 text-white/85 text-base md:text-lg max-w-2xl">
+                Whether you’re looking to get certified, get information on biosafety products, need to be updated on industry trends, or want to test your knowledge, our institute is your central hub for building expertise and confidence in biosafety protocols.
+              </p>
 
-            <div className="mt-6 flex flex-col sm:flex-row gap-3">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-5 py-3 font-semibold shadow hover:shadow-md transition"
-              >
-                Get certified
-              </Link>
-              <Link
-                to="/blog"
-                className="inline-flex items-center justify-center rounded-lg border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-50 transition"
-              >
-                Explore resources
-              </Link>
+              <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center rounded-lg bg-white text-[hsl(var(--brand-end))] px-5 py-3 font-semibold shadow hover:shadow-md transition"
+                >
+                  Get certified
+                </Link>
+                <Link
+                  to="/blog"
+                  className="inline-flex items-center justify-center rounded-lg border border-white/60 text-white px-5 py-3 font-semibold hover:bg-white/10 transition"
+                >
+                  Explore resources
+                </Link>
+              </div>
+
+              <ul className="mt-6 grid grid-cols-2 gap-3 text-sm text-white/90 max-w-md">
+                {[
+                  "Training & seminars",
+                  "Regulatory guidance",
+                  "Practical resources",
+                  "Certification support",
+                ].map((f) => (
+                  <li key={f} className="flex items-center gap-2">
+                    <Check className="h-4 w-4" /> {f}
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <ul className="mt-6 grid grid-cols-2 gap-3 text-sm text-slate-700 max-w-md">
-              {[
-                "Training & seminars",
-                "Regulatory guidance",
-                "Practical resources",
-                "Certification support",
-              ].map((f) => (
-                <li key={f} className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-[hsl(var(--brand-end))]" /> {f}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="relative">
-            <div className="relative rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-lg">
-              <div className="grid grid-cols-3 gap-4">
-                <FeatureCard icon={HeartPulse} title="Monitors" />
-                <FeatureCard icon={Microscope} title="Laboratory" />
-                <FeatureCard icon={Scan} title="Imaging" />
-                <FeatureCard icon={Stethoscope} title="Diagnostics" />
-                <FeatureCard icon={ShieldCheck} title="Sterilization" />
-                <FeatureCard icon={HeartPulse} title="Cardiology" />
+            <div className="relative">
+              <div className="relative rounded-3xl border border-white/15 bg-white p-6 md:p-8 shadow-lg">
+                <div className="grid grid-cols-3 gap-4 text-slate-900">
+                  <FeatureCard icon={HeartPulse} title="Monitors" />
+                  <FeatureCard icon={Microscope} title="Laboratory" />
+                  <FeatureCard icon={Scan} title="Imaging" />
+                  <FeatureCard icon={Stethoscope} title="Diagnostics" />
+                  <FeatureCard icon={ShieldCheck} title="Sterilization" />
+                  <FeatureCard icon={HeartPulse} title="Cardiology" />
+                </div>
+                <p className="mt-4 text-sm text-slate-600">
+                  We tailor configurations to your needs and budget
+                </p>
               </div>
-              <p className="mt-4 text-sm text-slate-600">
-                We tailor configurations to your needs and budget
-              </p>
             </div>
           </div>
         </div>
