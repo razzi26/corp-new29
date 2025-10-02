@@ -136,15 +136,18 @@
 /* Custom mobile scrollbar (overlay, non-reserving) */
 @media (max-width: 767px) {
   /* Apply overlay-style scrollbars to all elements on mobile so they don't reserve layout width */
+  /* Hide native scrollbars by default on mobile */
   * {
-    scrollbar-width: thin; /* Firefox */
-    scrollbar-color: transparent transparent; /* hidden by default */
-
+    /* Firefox */
+    scrollbar-width: none;
+    /* fallback color values */
+    scrollbar-color: transparent transparent;
   }
 
+  /* WebKit: hide by setting zero width/height */
   *::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 0;
+    height: 0;
   }
 
   *::-webkit-scrollbar-track {
@@ -152,21 +155,26 @@
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: rgba(0,0,0,0);
+    background-color: transparent;
     border-radius: 9999px;
     border: 2px solid transparent;
     background-clip: padding-box;
-    transition: background-color 200ms ease, opacity 200ms ease;
+    transition: background-color 150ms ease, opacity 150ms ease;
   }
 
-  /* Show thumb while interacting (global) */
-  body.scrolling-mobile *::-webkit-scrollbar-thumb,
-  .scrolling-mobile *::-webkit-scrollbar-thumb {
-    background-color: rgba(0,0,0,0.35);
-  }
-
+  /* When user interacts (body.scrolling-mobile) show thin overlay scrollbars */
   body.scrolling-mobile * {
+    scrollbar-width: thin; /* Firefox */
     scrollbar-color: rgba(0,0,0,0.35) transparent;
+  }
+
+  body.scrolling-mobile *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  body.scrolling-mobile *::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.35);
   }
 
   body.scrolling-mobile *::-webkit-scrollbar-thumb:hover {
