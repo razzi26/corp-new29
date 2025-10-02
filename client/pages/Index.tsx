@@ -60,6 +60,7 @@ export default function Index() {
       </section>
 
       {/* About / Benefits */}
+      <div id="about" className="sr-only" aria-hidden></div>
       <section id="benefits" className="container mx-auto px-4 mt-20">
         <div className="grid md:grid-cols-3 gap-6">
           <BenefitCard
