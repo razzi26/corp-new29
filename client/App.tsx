@@ -19,6 +19,11 @@ import Trainings from "./pages/Trainings";
 import SeminarsPage from "./pages/Seminars";
 import Services from "./pages/Services";
 import Brochures from "./pages/Brochures";
+import Resources from "./pages/Resources";
+import Videos from "./pages/ResourcesVideos";
+import KnowledgeHub from "./pages/ResourcesKnowledgeHub";
+import Podcasts from "./pages/ResourcesPodcasts";
+import CaseStudies from "./pages/ResourcesCaseStudies";
 
 const queryClient = new QueryClient();
 
