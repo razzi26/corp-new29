@@ -18,21 +18,19 @@ export default function Seminars() {
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold">About our Seminars</h2>
             <p className="mt-4 text-base md:text-lg text-slate-700 leading-relaxed">
-              Esco champions biosafety in laboratory environments. We understand that
-              constant exposure to biological hazards poses a serious threat to
-              personnel, potentially leading to illness. Additionally, biosafety
-              protocols are most often neglected, and a lack of correct knowledge,
-              even in a controlled laboratory, cannot ensure that it is safe for people
-              and the environment.
+              Esco champions biosafety in laboratory environments. We understand that constant
+              exposure to biological hazards poses a serious threat to personnel, potentially
+              leading to illness. Additionally, biosafety protocols are most often neglected, and
+              a lack of correct knowledge, even in a controlled laboratory, cannot ensure that it
+              is safe for people and the environment.
             </p>
 
             <p className="mt-4 text-base md:text-lg text-slate-700 leading-relaxed">
-              To answer this crucial need, Esco Biosafety Institute delivers
-              non-commercial, safety-focused seminars worldwide. These sessions can be
-              conveniently hosted on-site at your facility, based on scheduling
-              availability. With our massive distribution network spanning over 100
-              countries, an Esco biosafety specialist is always within reach to provide
-              expert guidance.
+              To answer this crucial need, Esco Biosafety Institute delivers non-commercial,
+              safety-focused seminars worldwide. These sessions can be conveniently hosted on-site
+              at your facility, based on scheduling availability. With our massive distribution
+              network spanning over 100 countries, an Esco biosafety specialist is always within
+              reach to provide expert guidance.
             </p>
 
             <h3 className="mt-6 text-lg font-semibold">Laboratory / Life Science Topics</h3>
@@ -84,4 +82,28 @@ export default function Seminars() {
             </AspectRatio>
 
             <p className="mt-3 text-sm text-slate-500">
-              Video introduction for seminars.{
+              Video introduction for seminars.{' '}
+              <a
+                href="https://www.youtube.com/watch?v=xR3D6CRra2k"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="underline hover:text-slate-700"
+              >
+                Watch on YouTube
+              </a>
+            </p>
+
+            <div className="mt-6 rounded-lg border border-slate-100 bg-slate-50 p-4">
+              <h4 className="font-semibold">Delivery & Scheduling</h4>
+              <p className="mt-2 text-sm text-slate-700">
+                Seminars are non-commercial and safety-focused. We offer on-site seminars
+                subject to scheduling availability. For bookings, please contact your local
+                Esco representative or use the Request a Seminar button.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
