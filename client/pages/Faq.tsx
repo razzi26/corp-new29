@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import { PageBanner } from "@/components/layout/PageBanner";
+import { cn } from "@/lib/utils";
 
 export default function Faq() {
   const items = [
@@ -88,7 +89,10 @@ function FaqItem({ question, answer }: FaqItemProps) {
         </div>
         <span className="relative mt-1 flex h-6 w-6 items-center justify-center">
           <span
-            className={`h-5 w-0.5 rounded-full bg-[hsl(var(--brand-end))] transition-opacity duration-200 ${open ? "opacity-0" : "opacity-100"}`}
+            className={cn(
+              "h-5 w-0.5 rounded-full bg-[hsl(var(--brand-end))] transition-opacity duration-200",
+              open ? "opacity-0" : "opacity-100",
+            )}
           />
           <span className="absolute h-0.5 w-5 rounded-full bg-[hsl(var(--brand-end))]" />
         </span>
@@ -99,7 +103,10 @@ function FaqItem({ question, answer }: FaqItemProps) {
       >
         <div
           ref={contentRef}
-          className={`mt-4 text-slate-700 transition-all duration-500 ease-in-out ${open ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"}`}
+          className={cn(
+            "mt-4 text-slate-700 transition-transform transition-opacity duration-500 ease-in-out",
+            open ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
+          )}
         >
           {answer}
         </div>
