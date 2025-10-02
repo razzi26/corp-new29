@@ -16,8 +16,7 @@ export default function Index() {
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs md:text-sm backdrop-blur border border-white/20">
-              <ShieldCheck className="h-4 w-4" /> Certified equipment with
-              official warranty
+              <ShieldCheck className="h-4 w-4" /> Biosafety training • Guidance • Resources
             </span>
             <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight">
               Medical equipment for clinics and businesses
