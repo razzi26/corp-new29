@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Facebook, Instagram, Linkedin, Youtube, Twitter } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -16,6 +17,26 @@ export default function Footer() {
             practical resources. Build expertise and confidence in laboratory
             safety.
           </p>
+          <div className="mt-4">
+            <div className="text-sm font-semibold mb-2">Follow us</div>
+            <div className="flex gap-3">
+              <button aria-label="Facebook" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition">
+                <Facebook className="h-5 w-5" />
+              </button>
+              <button aria-label="Instagram" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition">
+                <Instagram className="h-5 w-5" />
+              </button>
+              <button aria-label="Twitter" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition">
+                <Twitter className="h-5 w-5" />
+              </button>
+              <button aria-label="LinkedIn" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition">
+                <Linkedin className="h-5 w-5" />
+              </button>
+              <button aria-label="YouTube" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition">
+                <Youtube className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
         </div>
         <div className="grid grid-cols-2 gap-6 md:gap-10">
           <div>
