@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <header
       className={`sticky top-0 z-50 transition-all ${
-        scrolled ? "backdrop-blur-md/80" : ""
+        scrolled ? "backdrop-blur-md" : ""
       }`}
     >
       <div className="container mx-auto px-4">
