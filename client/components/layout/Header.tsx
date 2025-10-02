@@ -178,7 +178,7 @@ export default function Header() {
             className={cn(
               "fixed inset-x-0 top-16 bottom-0 z-40 border-t bg-white text-slate-900 transition-all duration-300 ease-out md:hidden",
               open
-                ? "translate-y-0 opacity-100"
+                ? "pointer-events-auto translate-y-0 opacity-100"
                 : "pointer-events-none -translate-y-2 opacity-0",
             )}
             aria-hidden={!open}
