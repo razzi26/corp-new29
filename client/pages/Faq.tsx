@@ -6,7 +6,7 @@ export default function Faq() {
   ];
   return (
     <div className="container mx-auto px-4 py-16 text-white">
-      <h1 className="text-3xl md:text-4xl font-extrabold">FAQ</h1>
+      <h1 className="text-3xl md:text-4xl font-semibold">FAQ</h1>
       <div className="mt-6 space-y-3">
         {items.map((it) => (
           <details key={it.q} className="rounded-xl border border-white/20 bg-white/5 p-4 backdrop-blur">
