@@ -39,8 +39,8 @@ const nav: Array<{
 export default function Header() {
   const location = useLocation();
   const [open, setOpen] = useState(false);
-  const [openSeminars, setOpenSeminars] = useState(false);
-  const [desktopSeminarsOpen, setDesktopSeminarsOpen] = useState(false);
+  const [openSubmenuKey, setOpenSubmenuKey] = useState<string | null>(null);
+  const [desktopOpenKey, setDesktopOpenKey] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
