@@ -81,36 +81,6 @@ export default function Header() {
     };
   }, [open]);
 
-  // Show scrollbar only while user is interacting/scrolling the mobile menu
-  useEffect(() => {
-    if (!open) return;
-    const el = document.querySelector<HTMLElement>(".mobile-menu-scroll");
-    if (!el) return;
-
-    let timer: number | undefined;
-    const show = () => {
-      el.classList.add("scrolling");
-      if (timer) window.clearTimeout(timer);
-      // hide after 800ms of inactivity
-      timer = window.setTimeout(() => el.classList.remove("scrolling"), 800);
-    };
-
-    // Show on various interactions
-    el.addEventListener("scroll", show, { passive: true });
-    el.addEventListener("touchstart", show, { passive: true });
-    el.addEventListener("pointerdown", show, { passive: true });
-
-    // Also show briefly on open
-    show();
-
-    return () => {
-      el.removeEventListener("scroll", show);
-      el.removeEventListener("touchstart", show);
-      el.removeEventListener("pointerdown", show);
-      if (timer) window.clearTimeout(timer);
-      el.classList.remove("scrolling");
-    };
-  }, [open]);
 
   return (
     <>
