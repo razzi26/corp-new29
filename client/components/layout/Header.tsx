@@ -57,6 +57,12 @@ export default function Header() {
     };
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (!open) {
+      setOpenSeminars(false);
+    }
+  }, [open]);
+
   return (
     <header
       className={cn(
