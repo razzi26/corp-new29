@@ -184,7 +184,7 @@ export default function Header() {
             aria-hidden={!open}
           >
             <div className="h-full overflow-y-auto pt-16">
-              <div className="container mx-auto px-4 pb-6">
+              <div className="container mx-auto px-4 pt-4 pb-6">
                 <div className="flex flex-col gap-1.5 text-base">
                   {nav.map((item) =>
                     item.children ? (
