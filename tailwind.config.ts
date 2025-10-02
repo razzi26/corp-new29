@@ -57,6 +57,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        brand: {
+          start: "hsl(var(--brand-start))",
+          end: "hsl(var(--brand-end))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -84,6 +88,9 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      backgroundImage: {
+        "brand-gradient": "linear-gradient(90deg, hsl(var(--brand-start)), hsl(var(--brand-end)))",
       },
     },
   },

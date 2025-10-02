@@ -57,6 +57,10 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Brand gradient stops in HSL */
+    --brand-start: 205 71% 45%; /* #217ec2 */
+    --brand-end: 207 100% 25%; /* #00467f */
   }
 
   .dark {
@@ -95,6 +99,9 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --brand-start: 205 71% 45%;
+    --brand-end: 207 100% 25%;
   }
 }
 
@@ -104,6 +111,11 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    /* Keep base color for components that rely on bg-background, but overlay brand gradient */
+    background-color: hsl(var(--background));
+    background-image: linear-gradient(90deg, hsl(var(--brand-start)), hsl(var(--brand-end)));
+    background-attachment: fixed;
+    background-size: 100% 100%;
   }
 }
