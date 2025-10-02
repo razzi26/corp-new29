@@ -14,16 +14,31 @@ export default function About() {
               Esco Biosafety Institute
             </h1>
             <p className="mt-4 text-slate-700 text-base md:text-lg max-w-prose">
-              Esco is a global life sciences company that started in 1978 as a cleanroom technology specialist. It has since progressed into a key player that leverages its Singapore headquarters as a strategic hub to connect Eastern and Western markets. The company is a market leader in biological safety cabinets and maintains a significant worldwide presence.
+              Esco is a global life sciences company that started in 1978 as a
+              cleanroom technology specialist. It has since progressed into a
+              key player that leverages its Singapore headquarters as a
+              strategic hub to connect Eastern and Western markets. The company
+              is a market leader in biological safety cabinets and maintains a
+              significant worldwide presence.
             </p>
             <p className="mt-3 text-slate-700 text-base md:text-lg max-w-prose">
-              A key initiative in fulfilling its vision was the creation of the Esco Biosafety Institute. The Institute was created to push forward Esco’s core mission of building a global life sciences ecosystem. Beyond being a manufacturing hardware, it purposes to be a foundational pillar for education and standards.
+              A key initiative in fulfilling its vision was the creation of the
+              Esco Biosafety Institute. The Institute was created to push
+              forward Esco’s core mission of building a global life sciences
+              ecosystem. Beyond being a manufacturing hardware, it purposes to
+              be a foundational pillar for education and standards.
             </p>
             <div className="mt-6 flex gap-3">
-              <Link to="/contact" className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-5 py-3 font-semibold shadow hover:shadow-md transition">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-5 py-3 font-semibold shadow hover:shadow-md transition"
+              >
                 Contact us
               </Link>
-              <Link to="/blog" className="inline-flex items-center justify-center rounded-lg border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-50 transition">
+              <Link
+                to="/blog"
+                className="inline-flex items-center justify-center rounded-lg border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-50 transition"
+              >
                 Explore resources
               </Link>
             </div>
@@ -32,10 +47,26 @@ export default function About() {
             <div className="relative rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-lg">
               <h3 className="text-xl font-semibold">Our Journey</h3>
               <ul className="mt-4 space-y-3 text-slate-700 text-sm leading-relaxed">
-                <li><span className="font-semibold">1978:</span> Founded as a cleanroom technology specialist.</li>
-                <li><span className="font-semibold">1980s–2000s:</span> Expanded globally; became a market leader in biological safety cabinets.</li>
-                <li><span className="font-semibold">Today:</span> A global company connecting East and West from Singapore HQ.</li>
-                <li><span className="font-semibold">Esco Biosafety Institute:</span> Established to advance education, standards, and certification.</li>
+                <li>
+                  <span className="font-semibold">1978:</span> Founded as a
+                  cleanroom technology specialist.
+                </li>
+                <li>
+                  <span className="font-semibold">1980s–2000s:</span> Expanded
+                  globally; became a market leader in biological safety
+                  cabinets.
+                </li>
+                <li>
+                  <span className="font-semibold">Today:</span> A global company
+                  connecting East and West from Singapore HQ.
+                </li>
+                <li>
+                  <span className="font-semibold">
+                    Esco Biosafety Institute:
+                  </span>{" "}
+                  Established to advance education, standards, and
+                  certification.
+                </li>
               </ul>
             </div>
           </div>
@@ -66,14 +97,22 @@ export default function About() {
           <div>
             <h3 className="text-2xl md:text-3xl font-bold">Partner with us</h3>
             <p className="mt-2 text-slate-700 max-w-prose">
-              Looking to upskill your team, certify your lab, or align with global standards? Our experts can help tailor training and resources to your needs.
+              Looking to upskill your team, certify your lab, or align with
+              global standards? Our experts can help tailor training and
+              resources to your needs.
             </p>
           </div>
           <div className="flex gap-3">
-            <Link to="/contact" className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-5 py-3 font-semibold shadow hover:shadow-md transition">
+            <Link
+              to="/contact"
+              className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-5 py-3 font-semibold shadow hover:shadow-md transition"
+            >
               Get in touch
             </Link>
-            <Link to="/catalog" className="inline-flex items-center rounded-lg border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-50 transition">
+            <Link
+              to="/catalog"
+              className="inline-flex items-center rounded-lg border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-50 transition"
+            >
               Browse products
             </Link>
           </div>

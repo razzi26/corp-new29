@@ -20,19 +20,34 @@ export default function Footer() {
           <div className="mt-4">
             <div className="text-sm font-semibold mb-2">Follow us</div>
             <div className="flex gap-3">
-              <button aria-label="Facebook" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition">
+              <button
+                aria-label="Facebook"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition"
+              >
                 <Facebook className="h-5 w-5" />
               </button>
-              <button aria-label="Instagram" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition">
+              <button
+                aria-label="Instagram"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition"
+              >
                 <Instagram className="h-5 w-5" />
               </button>
-              <button aria-label="Twitter" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition">
+              <button
+                aria-label="Twitter"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition"
+              >
                 <Twitter className="h-5 w-5" />
               </button>
-              <button aria-label="LinkedIn" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition">
+              <button
+                aria-label="LinkedIn"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition"
+              >
                 <Linkedin className="h-5 w-5" />
               </button>
-              <button aria-label="YouTube" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition">
+              <button
+                aria-label="YouTube"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition"
+              >
                 <Youtube className="h-5 w-5" />
               </button>
             </div>
@@ -102,13 +117,13 @@ export default function Footer() {
               placeholder="Your email"
               className="h-11 flex-1 rounded-lg bg-white text-slate-900 px-3 outline-none focus:ring-2 focus:ring-white"
             />
-            <button
-              className="h-11 inline-flex items-center justify-center rounded-lg bg-white text-[hsl(var(--brand-end))] px-5 font-semibold shadow hover:shadow-md transition"
-            >
+            <button className="h-11 inline-flex items-center justify-center rounded-lg bg-white text-[hsl(var(--brand-end))] px-5 font-semibold shadow hover:shadow-md transition">
               Subscribe
             </button>
           </form>
-          <p className="mt-2 text-xs text-white/80">No spam. Unsubscribe anytime.</p>
+          <p className="mt-2 text-xs text-white/80">
+            No spam. Unsubscribe anytime.
+          </p>
         </div>
       </div>
       <div className="border-t border-white/20">

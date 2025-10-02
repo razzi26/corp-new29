@@ -17,16 +17,24 @@ export default function Index() {
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs md:text-sm border border-white/25 text-white">
-                <ShieldCheck className="h-4 w-4" /> Biosafety training • Guidance • Resources
+                <ShieldCheck className="h-4 w-4" /> Biosafety training •
+                Guidance • Resources
               </span>
               <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight">
                 Welcome to Esco Biosafety Institute
               </h1>
               <p className="mt-4 text-white/90 text-base md:text-lg max-w-xl">
-                Biosafety in any laboratory is crucial. The Esco Biosafety Institute was established to be your partner in achieving it. Our institute provides comprehensive biosafety training and seminars, updated regulatory guidance, and practical resources created for professionals at every level.
+                Biosafety in any laboratory is crucial. The Esco Biosafety
+                Institute was established to be your partner in achieving it.
+                Our institute provides comprehensive biosafety training and
+                seminars, updated regulatory guidance, and practical resources
+                created for professionals at every level.
               </p>
               <p className="mt-3 text-white/85 text-base md:text-lg max-w-2xl">
-                Whether you’re looking to get certified, get information on biosafety products, need to be updated on industry trends, or want to test your knowledge, our institute is your central hub for building expertise and confidence in biosafety protocols.
+                Whether you’re looking to get certified, get information on
+                biosafety products, need to be updated on industry trends, or
+                want to test your knowledge, our institute is your central hub
+                for building expertise and confidence in biosafety protocols.
               </p>
 
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
@@ -150,7 +158,8 @@ export default function Index() {
           <div>
             <h3 className="text-2xl md:text-3xl font-bold">Contact us</h3>
             <p className="mt-3 text-slate-700 max-w-prose">
-              Leave your details — we will prepare a commercial offer that fits your needs, timelines and budget.
+              Leave your details — we will prepare a commercial offer that fits
+              your needs, timelines and budget.
             </p>
             <ul className="mt-6 space-y-2 text-slate-700 text-sm">
               <li>Phone: +7 (495) 000-00-00</li>
