@@ -12,8 +12,8 @@ export default function Index() {
   return (
     <div id="top" className="text-slate-900 bg-white">
       {/* Hero with accent background */}
-      <section className="container mx-auto px-4 pt-20 md:pt-28">
-        <div className="rounded-3xl bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))] text-white p-6 md:p-10 shadow-lg">
+      <section className="bg-[hsl(var(--brand-end))] text-white">
+        <div className="container mx-auto px-4 pt-12 pb-16 md:pt-16 md:pb-20">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs md:text-sm border border-white/25 text-white">
@@ -67,8 +67,8 @@ export default function Index() {
             </div>
 
             <div className="relative">
-              <div className="relative rounded-3xl border border-white/15 bg-white p-6 md:p-8 shadow-lg">
-                <div className="grid grid-cols-3 gap-4 text-slate-900">
+              <div className="relative rounded-3xl bg-white text-slate-900 p-6 md:p-8 shadow-lg">
+                <div className="grid grid-cols-3 gap-4">
                   <FeatureCard icon={HeartPulse} title="Monitors" />
                   <FeatureCard icon={Microscope} title="Laboratory" />
                   <FeatureCard icon={Scan} title="Imaging" />
