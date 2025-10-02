@@ -65,9 +65,8 @@ export default function Footer() {
         <div />
       </div>
       <div className="border-t border-white/20">
-        <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between text-sm text-white/90">
-          <p>© 2025 Esco Biosafety Institute</p>
-          <p>All rights reserved</p>
+        <div className="container mx-auto px-4 py-4 flex items-center justify-center text-sm text-white/90 text-center">
+          <p>© 2025 Esco Biosafety Institute. All rights reserved</p>
         </div>
       </div>
     </footer>
