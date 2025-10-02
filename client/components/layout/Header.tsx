@@ -153,27 +153,37 @@ export default function Header() {
           </button>
         </div>
 
-        {open && (
-          <div className="mt-2 rounded-xl border border-slate-200 bg-white p-3 shadow-sm md:hidden">
-            <div className="flex flex-col gap-2 text-base">
-              {nav.map((item) =>
-                item.children ? (
-                  <div key={item.label} className="">
-                    <button
-                      className="flex w-full items-center justify-between py-2 text-slate-700 hover:text-slate-900"
-                      onClick={() => setOpenSeminars((v) => !v)}
-                      aria-expanded={openSeminars}
-                    >
-                      <span>{item.label}</span>
-                      <ChevronDown
+        <div className="md:hidden w-full">
+          <div
+            className={cn(
+              "w-full border-t bg-white text-slate-900 transition-all duration-200 ease-out",
+              open ? "opacity-100 translate-y-0" : "pointer-events-none opacity-0 -translate-y-2",
+            )}
+          >
+            <div className="container mx-auto px-4 py-3">
+              <div className="flex flex-col gap-1.5 text-base">
+                {nav.map((item) =>
+                  item.children ? (
+                    <div key={item.label}>
+                      <button
+                        className="flex w-full items-center justify-between py-2"
+                        onClick={() => setOpenSeminars((v) => !v)}
+                        aria-expanded={openSeminars}
+                      >
+                        <span className="font-medium">{item.label}</span>
+                        <ChevronDown
+                          className={cn(
+                            "h-4 w-4 transition-transform",
+                            openSeminars ? "rotate-180" : "rotate-0",
+                          )}
+                        />
+                      </button>
+                      <div
                         className={cn(
-                          "h-4 w-4 transition-transform",
-                          openSeminars ? "rotate-180" : "rotate-0",
+                          "overflow-hidden pl-3 border-l border-slate-200 transition-all",
+                          openSeminars ? "max-h-96 py-1" : "max-h-0",
                         )}
-                      />
-                    </button>
-                    {openSeminars && (
-                      <div className="ml-3 border-l border-slate-200 pl-3">
+                      >
                         {item.children.map((c) => (
                           <Link
                             key={c.to}
@@ -185,29 +195,29 @@ export default function Header() {
                           </Link>
                         ))}
                       </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    key={item.to}
-                    to={item.to!}
-                    className="text-slate-700 hover:text-slate-900 transition-colors py-2"
-                    onClick={() => setOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ),
-              )}
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-4 py-2.5 text-base font-semibold shadow hover:shadow-md transition"
-                onClick={() => setOpen(false)}
-              >
-                Get a quote
-              </Link>
+                    </div>
+                  ) : (
+                    <Link
+                      key={item.to}
+                      to={item.to!}
+                      className="py-2"
+                      onClick={() => setOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ),
+                )}
+                <Link
+                  to="/contact"
+                  className="mt-1 inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-4 py-2.5 text-base font-semibold shadow hover:shadow-md transition"
+                  onClick={() => setOpen(false)}
+                >
+                  Get a quote
+                </Link>
+              </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </header>
   );
