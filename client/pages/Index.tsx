@@ -19,7 +19,7 @@ export default function Index() {
               <ShieldCheck className="h-4 w-4 text-[hsl(var(--brand-end))]" /> Biosafety training • Guidance • Resources
             </span>
             <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight">
-              Welcome to Esco Biosafety Institute
+              Welcome to Esco Biosafety Institute!
             </h1>
             <p className="mt-4 text-slate-700 text-base md:text-lg max-w-xl">
               Biosafety in any laboratory is crucial. The Esco Biosafety Institute was established to be your partner in achieving it. Our institute provides comprehensive biosafety training and seminars, updated regulatory guidance, and practical resources created for professionals at every level.
