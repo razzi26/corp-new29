@@ -1,3 +1,11 @@
+import { PageBanner } from "@/components/layout/PageBanner";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
 export default function Faq() {
   const items = [
     {
@@ -14,23 +22,44 @@ export default function Faq() {
     },
   ];
   return (
-    <div className="container mx-auto px-4 py-16 text-slate-900">
-      <h1 className="text-3xl md:text-4xl font-semibold">FAQ</h1>
-      <div className="mt-6 space-y-3">
-        {items.map((it) => (
-          <details
-            key={it.q}
-            className="group rounded-xl border border-slate-200 bg-white p-4 shadow-sm open:shadow-md transition-shadow"
-          >
-            <summary className="cursor-pointer list-none font-semibold flex items-center justify-between">
-              <span>{it.q}</span>
-              <span className="ml-4 text-xs rounded-full px-2 py-0.5 bg-[hsl(var(--brand-end))]/10 text-[hsl(var(--brand-end))] border border-[hsl(var(--brand-end))]/20">
-                Q&A
-              </span>
-            </summary>
-            <p className="mt-2 text-slate-700">{it.a}</p>
-          </details>
-        ))}
+    <div className="bg-white text-slate-900">
+      <PageBanner
+        title="FAQ"
+        description="Answers to the most common questions about delivery, installation and certifications."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "FAQ" }]}
+      />
+      <div className="container mx-auto px-4 py-12">
+        <Accordion
+          type="multiple"
+          className="mx-auto max-w-3xl space-y-4"
+          collapsible
+        >
+          {items.map((it) => (
+            <AccordionItem
+              key={it.q}
+              value={it.q}
+              className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md"
+            >
+              <AccordionTrigger className="group flex w-full items-start justify-between gap-6 px-6 py-6 text-left font-semibold text-slate-900 hover:no-underline [&>svg]:hidden">
+                <div>
+                  <span className="text-lg font-semibold text-slate-900">
+                    {it.q}
+                  </span>
+                  <span className="mt-1 block text-sm font-normal text-slate-600">
+                    Q&A • Esco Biosafety Institute
+                  </span>
+                </div>
+                <span className="relative mt-1 flex h-6 w-6 items-center justify-center">
+                  <span className="h-5 w-0.5 rounded-full bg-[hsl(var(--brand-end))] transition-opacity duration-200 group-data-[state=open]:opacity-0" />
+                  <span className="absolute h-0.5 w-5 rounded-full bg-[hsl(var(--brand-end))]" />
+                </span>
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-6 text-slate-700">
+                {it.a}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </div>
     </div>
   );

@@ -93,6 +93,10 @@ export default {
         "brand-gradient":
           "linear-gradient(90deg, hsl(var(--brand-start)), hsl(var(--brand-end)))",
       },
+      fontSize: {
+        xs: ["0.9375rem", { lineHeight: "1.4rem" }],
+        sm: ["1rem", { lineHeight: "1.5rem" }],
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
