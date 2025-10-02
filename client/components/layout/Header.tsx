@@ -123,8 +123,8 @@ export default function Header() {
                   <div
                     key={item.label}
                     className="relative"
-                    onMouseEnter={() => setDesktopSeminarsOpen(true)}
-                    onMouseLeave={() => setDesktopSeminarsOpen(false)}
+                    onMouseEnter={() => setDesktopOpenKey(item.label)}
+                    onMouseLeave={() => setDesktopOpenKey(null)}
                   >
                     <button
                       className={cn(
@@ -133,20 +133,20 @@ export default function Header() {
                           ? "text-slate-700 hover:text-slate-900"
                           : "text-white/85 hover:text-white",
                       )}
-                      aria-expanded={desktopSeminarsOpen}
+                      aria-expanded={desktopOpenKey === item.label}
                     >
                       {item.label}
                       <ChevronDown
                         className={cn(
                           "h-4 w-4 transition-transform",
-                          desktopSeminarsOpen && "rotate-180",
+                          desktopOpenKey === item.label && "rotate-180",
                         )}
                       />
                     </button>
                     <div
                       className={cn(
                         "absolute left-0 top-full min-w-[14rem] rounded-md border bg-white text-slate-900 shadow-md py-1 transition-opacity",
-                        desktopSeminarsOpen
+                        desktopOpenKey === item.label
                           ? "visible opacity-100"
                           : "invisible opacity-0",
                       )}
