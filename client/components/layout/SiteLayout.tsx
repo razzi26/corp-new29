@@ -4,6 +4,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useEffect } from "react";
 
 export default function SiteLayout() {
   const location = useLocation();
