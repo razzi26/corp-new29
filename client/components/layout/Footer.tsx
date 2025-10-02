@@ -27,6 +27,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link className="hover:text-white" to="/about">
+                  About
+                </Link>
+              </li>
+              <li>
                 <Link className="hover:text-white" to="/catalog">
                   Catalog
                 </Link>
@@ -57,8 +62,11 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="text-sm md:text-right flex md:block flex-col justify-between text-white/90">
-          <p>© {new Date().getFullYear()} Esco Biosafety Institute</p>
+        <div />
+      </div>
+      <div className="border-t border-white/20">
+        <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between text-sm text-white/90">
+          <p>© 2025 Esco Biosafety Institute</p>
           <p>All rights reserved</p>
         </div>
       </div>
