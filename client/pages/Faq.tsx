@@ -32,7 +32,6 @@ export default function Faq() {
         <Accordion
           type="multiple"
           className="mx-auto max-w-3xl space-y-4"
-          collapsible
         >
           {items.map((it) => (
             <AccordionItem
