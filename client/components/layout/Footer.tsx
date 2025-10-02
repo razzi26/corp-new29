@@ -12,8 +12,8 @@ export default function Footer() {
             <span className="text-white font-semibold">Esco Biosafety Institute</span>
           </div>
           <p className="text-sm leading-relaxed">
-            Modern solutions for clinics, laboratories and private practices.
-            Certified equipment with warranty and nationwide service.
+            Your trusted hub for biosafety training, regulatory guidance and practical resources.
+            Build expertise and confidence in laboratory safety.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-6 md:gap-10">
