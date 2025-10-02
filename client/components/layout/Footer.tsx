@@ -9,11 +9,14 @@ export default function Footer() {
             <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))] text-white font-bold">
               E
             </span>
-            <span className="text-white font-semibold">Esco Biosafety Institute</span>
+            <span className="text-white font-semibold">
+              Esco Biosafety Institute
+            </span>
           </div>
           <p className="text-sm leading-relaxed">
-            Your trusted hub for biosafety training, regulatory guidance and practical resources.
-            Build expertise and confidence in laboratory safety.
+            Your trusted hub for biosafety training, regulatory guidance and
+            practical resources. Build expertise and confidence in laboratory
+            safety.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-6 md:gap-10">

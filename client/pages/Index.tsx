@@ -16,13 +16,22 @@ export default function Index() {
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs md:text-sm backdrop-blur border border-white/20">
-              <ShieldCheck className="h-4 w-4" /> Biosafety training • Guidance • Resources
+              <ShieldCheck className="h-4 w-4" /> Biosafety training • Guidance
+              • Resources
             </span>
             <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight">
               Welcome to Esco Biosafety Institute
             </h1>
             <p className="mt-4 text-white/85 text-base md:text-lg max-w-xl">
-              Biosafety in any laboratory is crucial. The Esco Biosafety Institute was established to be your partner in achieving it. Our institute provides comprehensive biosafety training and seminars, updated regulatory guidance, and practical resources created for professionals at every level. Whether you’re looking to get certified, get information on biosafety products, need to be updated on industry trends, or want to test your knowledge, our institute is your central hub for building expertise and confidence in biosafety protocols.
+              Biosafety in any laboratory is crucial. The Esco Biosafety
+              Institute was established to be your partner in achieving it. Our
+              institute provides comprehensive biosafety training and seminars,
+              updated regulatory guidance, and practical resources created for
+              professionals at every level. Whether you’re looking to get
+              certified, get information on biosafety products, need to be
+              updated on industry trends, or want to test your knowledge, our
+              institute is your central hub for building expertise and
+              confidence in biosafety protocols.
             </p>
 
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
@@ -126,13 +135,20 @@ export default function Index() {
       {/* Highlighted Resources */}
       <section className="container mx-auto px-4 mt-20">
         <div className="flex items-end justify-between gap-4">
-          <h2 className="text-2xl md:text-3xl font-bold">Highlighted Resources</h2>
-          <Link to="/blog" className="hidden md:inline-flex text-sm hover:underline">View all</Link>
+          <h2 className="text-2xl md:text-3xl font-bold">
+            Highlighted Resources
+          </h2>
+          <Link
+            to="/blog"
+            className="hidden md:inline-flex text-sm hover:underline"
+          >
+            View all
+          </Link>
         </div>
         <div className="mt-6 grid md:grid-cols-3 gap-6">
-          <ResourceCard title="Biosafety Cabinet Certification Guide"/>
-          <ResourceCard title="Top 10 BSC Best Practices"/>
-          <ResourceCard title="Understanding ISO/EN Standards"/>
+          <ResourceCard title="Biosafety Cabinet Certification Guide" />
+          <ResourceCard title="Top 10 BSC Best Practices" />
+          <ResourceCard title="Understanding ISO/EN Standards" />
         </div>
       </section>
 
@@ -253,10 +269,16 @@ function ProductCard({ title, tag }: { title: string; tag: string }) {
 
 function ResourceCard({ title }: { title: string }) {
   return (
-    <Link to="/blog" className="rounded-2xl border border-white/20 bg-white/5 p-6 backdrop-blur block">
+    <Link
+      to="/blog"
+      className="rounded-2xl border border-white/20 bg-white/5 p-6 backdrop-blur block"
+    >
       <div className="text-xs text-white/70">Featured</div>
       <h3 className="mt-2 font-semibold text-lg">{title}</h3>
-      <p className="mt-2 text-sm text-white/80">Explore best practices, standards and industry insights curated by our experts.</p>
+      <p className="mt-2 text-sm text-white/80">
+        Explore best practices, standards and industry insights curated by our
+        experts.
+      </p>
       <span className="mt-4 inline-flex text-sm underline">Read more</span>
     </Link>
   );
