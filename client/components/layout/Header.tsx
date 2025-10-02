@@ -23,7 +23,16 @@ const nav: Array<{
   },
   { to: "/catalog", label: "Catalog" },
   { to: "/blog", label: "Blog" },
-  { to: "/faq", label: "FAQ" },
+  {
+    label: "Resources",
+    children: [
+      { to: "/resources/videos", label: "Videos" },
+      { to: "/resources/knowledge-hub", label: "Knowledge Hub" },
+      { to: "/resources/podcasts", label: "Podcasts" },
+      { to: "/resources/case-studies", label: "Case Studies" },
+      { to: "/resources/faq", label: "FAQ" },
+    ],
+  },
   { to: "/contact", label: "Contact" },
 ];
 
