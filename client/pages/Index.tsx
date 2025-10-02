@@ -220,7 +220,7 @@ function FeatureCard({ icon: Icon, title }: { icon: any; title: string }) {
   return (
     <div className="aspect-square rounded-2xl border border-slate-200 bg-white flex flex-col items-center justify-center text-center p-4">
       <Icon className="h-8 w-8 text-[hsl(var(--brand-end))]" />
-      <span className="mt-2 text-sm">{title}</span>
+      <span className="mt-2 text-base">{title}</span>
     </div>
   );
 }
@@ -228,8 +228,8 @@ function FeatureCard({ icon: Icon, title }: { icon: any; title: string }) {
 function BenefitCard({ title, descr }: { title: string; descr: string }) {
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-6">
-      <h3 className="font-semibold text-lg">{title}</h3>
-      <p className="mt-2 text-slate-700 text-sm leading-relaxed">{descr}</p>
+      <h3 className="font-semibold text-xl">{title}</h3>
+      <p className="mt-2 text-slate-700 text-base leading-relaxed">{descr}</p>
     </div>
   );
 }
@@ -239,25 +239,25 @@ function ProductCard({ title, tag }: { title: string; tag: string }) {
     <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white">
       <div className="relative h-40 bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]">
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_20%,white,transparent_35%),radial-gradient(circle_at_70%_80%,white,transparent_25%)]" />
-        <span className="absolute top-3 left-3 text-xs rounded-full bg-white text-[hsl(var(--brand-end))] px-2 py-1 font-semibold">
+        <span className="absolute top-3 left-3 text-sm rounded-full bg-white text-[hsl(var(--brand-end))] px-3 py-1 font-semibold">
           {tag}
         </span>
       </div>
       <div className="p-5">
-        <h4 className="font-semibold">{title}</h4>
-        <p className="mt-1 text-sm text-slate-600">
+        <h4 className="font-semibold text-lg">{title}</h4>
+        <p className="mt-1 text-base text-slate-600">
           Check availability and pricing with our manager
         </p>
         <div className="mt-4 flex gap-2">
           <Link
             to="/contact"
-            className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-3 py-2 text-sm font-semibold shadow"
+            className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-3.5 py-2.5 text-base font-semibold shadow"
           >
             Request quote
           </Link>
           <Link
             to="/contact"
-            className="inline-flex items-center rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold hover:bg-slate-50"
+            className="inline-flex items-center rounded-lg border border-slate-300 px-3.5 py-2.5 text-base font-semibold hover:bg-slate-50"
           >
             Consultation
           </Link>
@@ -273,13 +273,13 @@ function ResourceCard({ title }: { title: string }) {
       to="/blog"
       className="rounded-2xl border border-slate-200 bg-white p-6 block hover:shadow-sm transition-shadow"
     >
-      <div className="text-xs text-slate-500">Featured</div>
-      <h3 className="mt-2 font-semibold text-lg">{title}</h3>
-      <p className="mt-2 text-sm text-slate-600">
+      <div className="text-sm text-slate-500">Featured</div>
+      <h3 className="mt-2 font-semibold text-xl">{title}</h3>
+      <p className="mt-2 text-base text-slate-600">
         Explore best practices, standards and industry insights curated by our
         experts.
       </p>
-      <span className="mt-4 inline-flex text-sm underline">Read more</span>
+      <span className="mt-4 inline-flex text-base underline">Read more</span>
     </Link>
   );
 }
