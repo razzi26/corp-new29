@@ -28,6 +28,7 @@ export default function Header() {
   const location = useLocation();
   const [open, setOpen] = useState(false);
   const [openSeminars, setOpenSeminars] = useState(false);
+  const [desktopSeminarsOpen, setDesktopSeminarsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -82,7 +83,12 @@ export default function Header() {
           <nav className="hidden items-center gap-6 text-base md:flex">
             {nav.map((item) =>
               item.children ? (
-                <div key={item.label} className="relative group">
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => setDesktopSeminarsOpen(true)}
+                  onMouseLeave={() => setDesktopSeminarsOpen(false)}
+                >
                   <button
                     className={cn(
                       "inline-flex items-center gap-1 transition-colors",
@@ -90,11 +96,17 @@ export default function Header() {
                         ? "text-slate-700 hover:text-slate-900"
                         : "text-white/85 hover:text-white",
                     )}
+                    aria-expanded={desktopSeminarsOpen}
                   >
                     {item.label}
-                    <ChevronDown className="h-4 w-4" />
+                    <ChevronDown className={cn("h-4 w-4 transition-transform", desktopSeminarsOpen && "rotate-180")} />
                   </button>
-                  <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute left-0 top-full mt-2 min-w-[14rem] rounded-md border bg-white text-slate-900 shadow-md py-1">
+                  <div
+                    className={cn(
+                      "absolute left-0 top-full min-w-[14rem] rounded-md border bg-white text-slate-900 shadow-md py-1 transition-opacity",
+                      desktopSeminarsOpen ? "visible opacity-100" : "invisible opacity-0",
+                    )}
+                  >
                     {item.children.map((c) => (
                       <Link
                         key={c.to}
