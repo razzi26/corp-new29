@@ -64,6 +64,23 @@ export default function Header() {
     }
   }, [open]);
 
+  useEffect(() => {
+    setOpen(false);
+    setOpenSeminars(false);
+    setDesktopSeminarsOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <>
       <header
