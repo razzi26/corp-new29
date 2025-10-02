@@ -25,9 +25,9 @@ export default function Header() {
     const update = () => {
       if (anchor) {
         const rect = anchor.getBoundingClientRect();
-        setScrolled(rect.bottom <= headerHeight);
+        setScrolled(window.scrollY > 4 || rect.bottom <= headerHeight);
       } else {
-        setScrolled(window.scrollY > headerHeight);
+        setScrolled(window.scrollY > 4);
       }
     };
 
