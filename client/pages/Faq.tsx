@@ -26,10 +26,7 @@ export default function Faq() {
       <PageBanner
         title="FAQ"
         description="Answers to the most common questions about delivery, installation and certifications."
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "FAQ" },
-        ]}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "FAQ" }]}
       />
       <div className="container mx-auto px-4 py-12">
         <Accordion

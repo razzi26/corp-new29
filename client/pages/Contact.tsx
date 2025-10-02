@@ -6,10 +6,7 @@ export default function Contact() {
       <PageBanner
         title="Contact Us"
         description="Leave your details and our team will prepare a tailored quote for your facility."
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Contact" },
-        ]}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-2">

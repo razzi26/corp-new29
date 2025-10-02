@@ -11,10 +11,7 @@ export default function Blog() {
       <PageBanner
         title="Blog"
         description="Insights on medical technology, procurement and implementation to help your clinic operate at its best."
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Blog" },
-        ]}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Blog" }]}
       />
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-6 md:grid-cols-3">
