@@ -10,7 +10,7 @@ export default function Catalog() {
   return (
     <div className="container mx-auto px-4 py-16 text-white">
       <div className="flex items-end justify-between gap-4">
-        <h1 className="text-3xl md:text-4xl font-extrabold">Product Catalog</h1>
+        <h1 className="text-3xl md:text-4xl font-semibold">Product Catalog</h1>
         <a href="/contact" className="hidden md:inline-flex text-sm hover:underline">Need help choosing?</a>
       </div>
       <p className="mt-3 text-white/85 max-w-2xl">Certified medical equipment for clinics, labs and private practices. Explore categories below or contact us for a tailored quote.</p>
