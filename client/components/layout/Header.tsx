@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { createPortal } from "react-dom";
 
 import { cn } from "@/lib/utils";
 
@@ -56,6 +57,12 @@ export default function Header() {
       window.removeEventListener("resize", update);
     };
   }, [location.pathname]);
+
+  useEffect(() => {
+    if (!open) {
+      setOpenSeminars(false);
+    }
+  }, [open]);
 
   return (
     <header
@@ -165,78 +172,6 @@ export default function Header() {
           >
             {open ? <X /> : <Menu />}
           </button>
-        </div>
-
-        <div className="md:hidden w-full">
-          <div
-            className={cn(
-              "absolute left-0 right-0 top-full z-50 w-full border-t bg-white text-slate-900 overflow-hidden transition-all duration-300 ease-out",
-              open
-                ? "max-h-[80vh] opacity-100 translate-y-0"
-                : "pointer-events-none max-h-0 opacity-0 -translate-y-2",
-            )}
-            aria-hidden={!open}
-          >
-            <div className="container mx-auto px-4 py-3">
-              <div className="flex flex-col gap-1.5 text-base">
-                {nav.map((item) =>
-                  item.children ? (
-                    <div key={item.label}>
-                      <button
-                        className="flex w-full items-center justify-between py-2"
-                        onClick={() => setOpenSeminars((v) => !v)}
-                        aria-expanded={openSeminars}
-                      >
-                        <span className="font-medium">{item.label}</span>
-                        <ChevronDown
-                          className={cn(
-                            "h-4 w-4 transition-transform",
-                            openSeminars ? "rotate-180" : "rotate-0",
-                          )}
-                        />
-                      </button>
-                      <div
-                        className={cn(
-                          "overflow-hidden pl-3 border-l border-slate-200 transition-all",
-                          openSeminars ? "max-h-96 py-1" : "max-h-0",
-                        )}
-                      >
-                        {item.children.map((c) => (
-                          <Link
-                            key={c.to}
-                            to={c.to}
-                            className="block py-2 text-slate-700 hover:text-slate-900"
-                            onClick={() => {
-                              setOpen(false);
-                              setOpenSeminars(false);
-                            }}
-                          >
-                            {c.label}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  ) : (
-                    <Link
-                      key={item.to}
-                      to={item.to!}
-                      className="py-2"
-                      onClick={() => setOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ),
-                )}
-                <Link
-                  to="/contact"
-                  className="mt-1 inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-4 py-2.5 text-base font-semibold shadow hover:shadow-md transition"
-                  onClick={() => setOpen(false)}
-                >
-                  Get a quote
-                </Link>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </header>
