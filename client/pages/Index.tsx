@@ -12,7 +12,10 @@ export default function Index() {
   return (
     <div id="top" className="text-slate-900 bg-white">
       {/* Hero with accent background */}
-      <section className="bg-[hsl(var(--brand-end))] text-white">
+      <section
+        className="bg-[hsl(var(--brand-end))] text-white"
+        data-header-anchor
+      >
         <div className="container mx-auto px-4 pt-10 pb-16 md:pt-14 md:pb-20">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
