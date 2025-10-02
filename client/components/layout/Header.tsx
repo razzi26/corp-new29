@@ -194,7 +194,7 @@ export default function Header() {
                     ? "text-slate-700"
                     : "text-white",
               )}
-              aria-label="Открыть меню"
+              aria-label="Открыт�� меню"
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
             >
@@ -218,21 +218,21 @@ export default function Header() {
                     <div key={item.label}>
                       <button
                         className="flex w-full items-center justify-between px-4 py-3 text-left text-slate-800"
-                        aria-expanded={openSeminars}
-                        onClick={() => setOpenSeminars((v) => !v)}
+                        aria-expanded={openSubmenuKey === item.label}
+                        onClick={() => setOpenSubmenuKey(openSubmenuKey === item.label ? null : item.label)}
                       >
                         <span>{item.label}</span>
                         <ChevronDown
                           className={cn(
                             "h-4 w-4 transition-transform",
-                            openSeminars && "rotate-180",
+                            openSubmenuKey === item.label && "rotate-180",
                           )}
                         />
                       </button>
                       <div
                         className={cn(
                           "overflow-hidden transition-all",
-                          openSeminars ? "max-h-96" : "max-h-0",
+                          openSubmenuKey === item.label ? "max-h-96" : "max-h-0",
                         )}
                       >
                         {item.children.map((c) => (
