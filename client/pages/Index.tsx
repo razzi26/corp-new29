@@ -250,3 +250,14 @@ function ProductCard({ title, tag }: { title: string; tag: string }) {
     </div>
   );
 }
+
+function ResourceCard({ title }: { title: string }) {
+  return (
+    <Link to="/blog" className="rounded-2xl border border-white/20 bg-white/5 p-6 backdrop-blur block">
+      <div className="text-xs text-white/70">Featured</div>
+      <h3 className="mt-2 font-semibold text-lg">{title}</h3>
+      <p className="mt-2 text-sm text-white/80">Explore best practices, standards and industry insights curated by our experts.</p>
+      <span className="mt-4 inline-flex text-sm underline">Read more</span>
+    </Link>
+  );
+}
