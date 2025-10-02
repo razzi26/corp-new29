@@ -64,8 +64,8 @@ export default function Header() {
           : "bg-transparent border-b border-transparent text-white",
       )}
     >
-      <div className="container mx-auto px-0">
-        <div className="flex h-16 items-center justify-between px-0">
+      <div className="container mx-auto">
+        <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex select-none items-center gap-2">
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))] font-bold text-white">
               E
