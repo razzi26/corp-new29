@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="mt-20 bg-brand-gradient text-white">
+    <footer className="mt-20 bg-[hsl(var(--brand-end))] text-white">
       <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-2 mb-4">
