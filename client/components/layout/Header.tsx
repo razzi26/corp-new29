@@ -3,12 +3,6 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 import { cn } from "@/lib/utils";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const nav: Array<
   { label: string; to?: string; children?: { to: string; label: string }[] }
@@ -88,30 +82,30 @@ export default function Header() {
           <nav className="hidden items-center gap-6 text-base md:flex">
             {nav.map((item) =>
               item.children ? (
-                <DropdownMenu key={item.label}>
-                  <DropdownMenuTrigger asChild>
-                    <button
-                      className={cn(
-                        "inline-flex items-center gap-1 transition-colors",
-                        scrolled
-                          ? "text-slate-700 hover:text-slate-900"
-                          : "text-white/85 hover:text-white",
-                      )}
-                    >
-                      {item.label}
-                      <ChevronDown className="h-4 w-4" />
-                    </button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="start">
+                <div key={item.label} className="relative group">
+                  <button
+                    className={cn(
+                      "inline-flex items-center gap-1 transition-colors",
+                      scrolled
+                        ? "text-slate-700 hover:text-slate-900"
+                        : "text-white/85 hover:text-white",
+                    )}
+                  >
+                    {item.label}
+                    <ChevronDown className="h-4 w-4" />
+                  </button>
+                  <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute left-0 top-full mt-2 min-w-[14rem] rounded-md border bg-white text-slate-900 shadow-md py-1">
                     {item.children.map((c) => (
-                      <DropdownMenuItem key={c.to} asChild>
-                        <Link to={c.to} className="w-full">
-                          {c.label}
-                        </Link>
-                      </DropdownMenuItem>
+                      <Link
+                        key={c.to}
+                        to={c.to}
+                        className="block px-3 py-2 hover:bg-slate-50"
+                      >
+                        {c.label}
+                      </Link>
                     ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
+                  </div>
+                </div>
               ) : (
                 <Link
                   key={item.to}
