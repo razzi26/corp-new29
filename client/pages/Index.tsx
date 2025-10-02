@@ -118,7 +118,7 @@ export default function Index() {
             to="/catalog"
             className="inline-flex items-center rounded-lg bg-white text-[hsl(var(--brand-end))] px-5 py-3 font-semibold shadow hover:shadow-md transition"
           >
-            View full catalog
+            Browse all products
           </Link>
         </div>
       </section>
