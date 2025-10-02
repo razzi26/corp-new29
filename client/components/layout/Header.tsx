@@ -10,7 +10,7 @@ const nav: Array<
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   {
-    label: "Seminars",
+    label: "Services",
     children: [
       { to: "/seminars/trainings", label: "Trainings" },
       { to: "/seminars/seminars", label: "Seminars" },
