@@ -1,5 +1,5 @@
 /** @import must precede all other statements */
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -112,7 +112,7 @@
 
   html {
     font-family:
-      "Titillium Web",
+      "Source Sans 3",
       ui-sans-serif,
       system-ui,
       -apple-system,
