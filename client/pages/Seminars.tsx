@@ -61,7 +61,7 @@ export default function Seminars() {
               </a>
 
               <a
-                href="/seminars/trainings"
+                href="/services/trainings"
                 className="inline-flex items-center justify-center rounded-md border border-slate-200 px-6 py-3 text-base font-medium text-slate-700 bg-white hover:bg-slate-50"
               >
                 See Trainings
