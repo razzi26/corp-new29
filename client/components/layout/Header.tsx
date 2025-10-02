@@ -201,7 +201,7 @@ export default function Header() {
               className="absolute inset-0 bg-black/30"
               onClick={() => setOpen(false)}
             />
-            <div className="absolute inset-0 overflow-auto bg-white border-t shadow-lg">
+            <div className="absolute inset-0 overflow-auto bg-white border-t shadow-lg mobile-menu-scroll">
               <nav className="py-2">
                 {nav.map((item) =>
                   item.children ? (
