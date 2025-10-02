@@ -11,7 +11,7 @@ export default function Index() {
             <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs md:text-sm backdrop-blur border border-white/20">
               <ShieldCheck className="h-4 w-4" /> Certified equipment with official warranty
             </span>
-            <h1 className="mt-5 text-3xl md:text-5xl font-extrabold leading-tight">
+            <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight">
               Medical equipment for clinics and businesses
             </h1>
             <p className="mt-4 text-white/85 text-base md:text-lg max-w-xl">
