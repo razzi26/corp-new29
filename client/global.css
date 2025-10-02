@@ -130,14 +130,6 @@
 
   body {
     @apply text-foreground;
-    /* Keep base color for components that rely on bg-background, but overlay brand gradient */
     background-color: hsl(var(--background));
-    background-image: linear-gradient(
-      90deg,
-      hsl(var(--brand-start)),
-      hsl(var(--brand-end))
-    );
-    background-attachment: fixed;
-    background-size: 100% 100%;
   }
 }
