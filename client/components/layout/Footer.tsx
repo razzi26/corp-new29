@@ -78,7 +78,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white" to="/faq">
+                <Link className="hover:text-white" to="/resources/faq">
                   FAQ
                 </Link>
               </li>
