@@ -90,7 +90,8 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        "brand-gradient": "linear-gradient(90deg, hsl(var(--brand-start)), hsl(var(--brand-end)))",
+        "brand-gradient":
+          "linear-gradient(90deg, hsl(var(--brand-start)), hsl(var(--brand-end)))",
       },
     },
   },

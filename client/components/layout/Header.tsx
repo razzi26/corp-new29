@@ -29,8 +29,12 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="h-16 flex items-center justify-between rounded-b-xl bg-white/5 backdrop-blur-md border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.12)] px-4">
           <Link to="/" className="flex items-center gap-2 select-none">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))] text-white font-bold">M</span>
-            <span className="text-white font-semibold tracking-wide">MediTech Pro</span>
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))] text-white font-bold">
+              M
+            </span>
+            <span className="text-white font-semibold tracking-wide">
+              MediTech Pro
+            </span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">
