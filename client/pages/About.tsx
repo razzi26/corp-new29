@@ -1,10 +1,20 @@
 import { Link } from "react-router-dom";
 
+import { PageBanner } from "@/components/layout/PageBanner";
+
 export default function About() {
   return (
     <div className="bg-white text-slate-900">
+      <PageBanner
+        title="About"
+        description="Discover Esco Biosafety Institute and our mission to advance biosafety education and standards."
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "About" },
+        ]}
+      />
       {/* Hero */}
-      <section className="container mx-auto px-4 pt-20 md:pt-28">
+      <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs md:text-sm border border-slate-200 text-slate-700">
