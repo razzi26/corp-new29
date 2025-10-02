@@ -23,17 +23,15 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all ${
-        scrolled ? "backdrop-blur-md" : ""
-      }`}
+      className={`sticky top-0 z-50 transition-all bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/80 border-b border-slate-200 ${scrolled ? "shadow-sm" : ""}`}
     >
       <div className="container mx-auto px-4">
-        <div className="h-16 flex items-center justify-between rounded-b-xl bg-white/5 backdrop-blur-md border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.12)] px-4">
+        <div className="h-16 flex items-center justify-between px-4">
           <Link to="/" className="flex items-center gap-2 select-none">
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))] text-white font-bold">
               E
             </span>
-            <span className="text-white font-semibold tracking-wide">
+            <span className="text-slate-900 font-semibold tracking-wide">
               Esco Biosafety Institute
             </span>
           </Link>
@@ -43,21 +41,21 @@ export default function Header() {
               <Link
                 key={item.to}
                 to={item.to}
-                className="text-white/80 hover:text-white transition-colors text-sm"
+                className="text-slate-700 hover:text-slate-900 transition-colors text-sm"
               >
                 {item.label}
               </Link>
             ))}
             <Link
               to="/contact"
-              className="ml-2 inline-flex items-center rounded-full bg-white text-[hsl(var(--brand-end))] px-4 py-2 text-sm font-semibold shadow hover:shadow-md transition"
+              className="ml-2 inline-flex items-center rounded-full bg-[hsl(var(--brand-end))] text-white px-4 py-2 text-sm font-semibold shadow hover:shadow-md transition"
             >
               Get a quote
             </Link>
           </nav>
 
           <button
-            className="md:hidden text-white/90"
+            className="md:hidden text-slate-700"
             aria-label="Открыть меню"
             onClick={() => setOpen((v) => !v)}
           >
@@ -66,13 +64,13 @@ export default function Header() {
         </div>
 
         {open && (
-          <div className="md:hidden mt-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 p-3">
+          <div className="md:hidden mt-2 rounded-xl bg-white border border-slate-200 p-3 shadow-sm">
             <div className="flex flex-col gap-2">
               {nav.map((item) => (
                 <Link
                   key={item.to}
                   to={item.to}
-                  className="text-white/90 hover:text-white transition-colors text-sm py-2"
+                  className="text-slate-700 hover:text-slate-900 transition-colors text-sm py-2"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
@@ -80,7 +78,7 @@ export default function Header() {
               ))}
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-white text-[hsl(var(--brand-end))] px-4 py-2 text-sm font-semibold shadow hover:shadow-md transition"
+                className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-4 py-2 text-sm font-semibold shadow hover:shadow-md transition"
                 onClick={() => setOpen(false)}
               >
                 Get a quote

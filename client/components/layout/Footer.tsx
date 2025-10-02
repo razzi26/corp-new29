@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="mt-20 border-t border-white/15 bg-black/10">
-      <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3 text-white/80">
+    <footer className="mt-20 border-t border-slate-200 bg-white">
+      <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3 text-slate-600">
         <div>
           <div className="flex items-center gap-2 mb-4">
             <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))] text-white font-bold">
               E
             </span>
-            <span className="text-white font-semibold">
+            <span className="text-slate-900 font-semibold">
               Esco Biosafety Institute
             </span>
           </div>
@@ -21,37 +21,37 @@ export default function Footer() {
         </div>
         <div className="grid grid-cols-2 gap-6 md:gap-10">
           <div>
-            <h4 className="text-white font-semibold mb-3">Navigation</h4>
+            <h4 className="text-slate-900 font-semibold mb-3">Navigation</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link className="hover:text-white" to="/">
+                <Link className="hover:text-slate-900" to="/">
                   Home
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white" to="/catalog">
+                <Link className="hover:text-slate-900" to="/catalog">
                   Catalog
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white" to="/blog">
+                <Link className="hover:text-slate-900" to="/blog">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white" to="/faq">
+                <Link className="hover:text-slate-900" to="/faq">
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white" to="/contact">
+                <Link className="hover:text-slate-900" to="/contact">
                   Contact
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-3">Contacts</h4>
+            <h4 className="text-slate-900 font-semibold mb-3">Contacts</h4>
             <ul className="space-y-2 text-sm">
               <li>+7 (495) 000-00-00</li>
               <li>info@meditech.pro</li>
@@ -61,7 +61,7 @@ export default function Footer() {
         </div>
         <div className="text-sm md:text-right flex md:block flex-col justify-between">
           <p>© {new Date().getFullYear()} Esco Biosafety Institute</p>
-          <p className="text-white/60">All rights reserved</p>
+          <p className="text-slate-500">All rights reserved</p>
         </div>
       </div>
     </footer>

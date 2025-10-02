@@ -5,9 +5,9 @@ export default function Blog() {
     { title: "Patient monitoring best practices", date: "2025-01-12" },
   ];
   return (
-    <div className="container mx-auto px-4 py-16 text-white">
+    <div className="container mx-auto px-4 py-16 text-slate-900">
       <h1 className="text-3xl md:text-4xl font-semibold">Blog</h1>
-      <p className="mt-3 text-white/85 max-w-prose">
+      <p className="mt-3 text-slate-700 max-w-prose">
         Insights on medical technology, procurement and implementation to help
         your clinic operate at its best.
       </p>
@@ -15,13 +15,13 @@ export default function Blog() {
         {posts.map((p) => (
           <article
             key={p.title}
-            className="rounded-2xl border border-white/20 bg-white/5 p-6 backdrop-blur"
+            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
           >
-            <div className="text-xs text-white/70">
+            <div className="text-xs text-slate-500">
               {new Date(p.date).toLocaleDateString()}
             </div>
             <h2 className="mt-2 font-semibold text-lg">{p.title}</h2>
-            <p className="mt-2 text-sm text-white/80">
+            <p className="mt-2 text-sm text-slate-600">
               Read our expert guidance on selection, setup and maintenance.
             </p>
             <a
