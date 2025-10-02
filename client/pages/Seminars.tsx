@@ -9,6 +9,7 @@ export default function Seminars() {
         description="Non-commercial, safety-focused seminars delivered worldwide by Esco biosafety specialists."
         breadcrumbs={[
           { label: "Home", href: "/" },
+          { label: "Services", href: "/services/services" },
           { label: "Seminars" },
         ]}
       />
