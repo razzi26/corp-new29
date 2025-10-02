@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+import { cn } from "@/lib/utils";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -12,50 +14,87 @@ const nav = [
 ];
 
 export default function Header() {
+  const location = useLocation();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    const anchor = document.querySelector<HTMLElement>("[data-header-anchor]");
+    const headerHeight = 72;
+
+    const update = () => {
+      if (anchor) {
+        const rect = anchor.getBoundingClientRect();
+        setScrolled(rect.bottom <= headerHeight);
+      } else {
+        setScrolled(window.scrollY > headerHeight);
+      }
+    };
+
+    update();
+
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, [location.pathname]);
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/80 border-b border-slate-200 ${scrolled ? "shadow-sm" : ""}`}
+      className={cn(
+        "sticky top-0 z-50 transition-colors duration-300",
+        scrolled
+          ? "bg-white/95 border-b border-white/60 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/85"
+          : "bg-transparent border-b border-transparent text-white",
+      )}
     >
       <div className="container mx-auto px-4">
-        <div className="h-16 flex items-center justify-between px-4">
-          <Link to="/" className="flex items-center gap-2 select-none">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))] text-white font-bold">
+        <div className="flex h-16 items-center justify-between px-4">
+          <Link to="/" className="flex select-none items-center gap-2">
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))] font-bold text-white">
               E
             </span>
-            <span className="text-slate-900 font-semibold tracking-wide">
+            <span
+              className={cn(
+                "font-semibold tracking-wide transition-colors",
+                scrolled ? "text-slate-900" : "text-white",
+              )}
+            >
               Esco Biosafety Institute
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6 text-base">
+          <nav className="hidden items-center gap-6 text-base md:flex">
             {nav.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
-                className="text-slate-700 hover:text-slate-900 transition-colors"
+                className={cn(
+                  "transition-colors",
+                  scrolled
+                    ? "text-slate-700 hover:text-slate-900"
+                    : "text-white/85 hover:text-white",
+                )}
               >
                 {item.label}
               </Link>
             ))}
             <Link
               to="/contact"
-              className="ml-2 inline-flex items-center rounded-full bg-[hsl(var(--brand-end))] text-white px-5 py-2.5 text-base font-semibold shadow hover:shadow-md transition"
+              className="ml-2 inline-flex items-center rounded-full bg-[hsl(var(--brand-end))] px-5 py-2.5 text-base font-semibold text-white shadow transition hover:shadow-md"
             >
               Get a quote
             </Link>
           </nav>
 
           <button
-            className="md:hidden text-slate-700"
+            className={cn(
+              "md:hidden transition-colors",
+              scrolled ? "text-slate-700" : "text-white",
+            )}
             aria-label="Открыть меню"
             onClick={() => setOpen((v) => !v)}
           >
@@ -64,7 +103,7 @@ export default function Header() {
         </div>
 
         {open && (
-          <div className="md:hidden mt-2 rounded-xl bg-white border border-slate-200 p-3 shadow-sm">
+          <div className="mt-2 rounded-xl border border-slate-200 bg-white p-3 shadow-sm md:hidden">
             <div className="flex flex-col gap-2 text-base">
               {nav.map((item) => (
                 <Link
