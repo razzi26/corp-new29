@@ -147,7 +147,7 @@ export default function Index() {
             </p>
             <ul className="mt-6 space-y-2 text-white/85 text-sm">
               <li>Phone: +7 (495) 000-00-00</li>
-              <li>Email: sales@meditech.pro</li>
+              <li>Email: contact@escobiosafety.org</li>
               <li>Mon–Fri: 9:00–19:00</li>
             </ul>
           </div>
