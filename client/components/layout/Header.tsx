@@ -156,9 +156,10 @@ export default function Header() {
         <div className="md:hidden w-full">
           <div
             className={cn(
-              "w-full border-t bg-white text-slate-900 transition-all duration-200 ease-out",
-              open ? "opacity-100 translate-y-0" : "pointer-events-none opacity-0 -translate-y-2",
+              "w-full border-t bg-white text-slate-900 overflow-hidden transition-all duration-300 ease-out",
+              open ? "max-h-[80vh] opacity-100 translate-y-0" : "pointer-events-none max-h-0 opacity-0 -translate-y-2",
             )}
+            aria-hidden={!open}
           >
             <div className="container mx-auto px-4 py-3">
               <div className="flex flex-col gap-1.5 text-base">
@@ -189,7 +190,10 @@ export default function Header() {
                             key={c.to}
                             to={c.to}
                             className="block py-2 text-slate-700 hover:text-slate-900"
-                            onClick={() => setOpen(false)}
+                            onClick={() => {
+                              setOpen(false);
+                              setOpenSeminars(false);
+                            }}
                           >
                             {c.label}
                           </Link>
