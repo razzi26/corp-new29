@@ -6,7 +6,7 @@ export default function Blog() {
   ];
   return (
     <div className="container mx-auto px-4 py-16 text-white">
-      <h1 className="text-3xl md:text-4xl font-extrabold">Blog</h1>
+      <h1 className="text-3xl md:text-4xl font-semibold">Blog</h1>
       <p className="mt-3 text-white/85 max-w-prose">Insights on medical technology, procurement and implementation to help your clinic operate at its best.</p>
       <div className="mt-8 grid md:grid-cols-3 gap-6">
         {posts.map((p) => (
