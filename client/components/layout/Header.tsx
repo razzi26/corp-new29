@@ -59,12 +59,12 @@ export default function Header() {
     <header
       className={cn(
         "sticky top-0 z-50 transition-colors duration-300",
-        scrolled
+        scrolled || open
           ? "bg-white/95 border-b border-white/60 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/85"
           : "bg-transparent border-b border-transparent text-white",
       )}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative">
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex select-none items-center gap-2">
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))] font-bold text-white">
@@ -73,7 +73,7 @@ export default function Header() {
             <span
               className={cn(
                 "font-semibold tracking-wide transition-colors",
-                scrolled ? "text-slate-900" : "text-white",
+                scrolled || open ? "text-slate-900" : "text-white",
               )}
             >
               Esco Biosafety Institute
@@ -144,9 +144,10 @@ export default function Header() {
           <button
             className={cn(
               "md:hidden transition-colors",
-              scrolled ? "text-slate-700" : "text-white",
+              open ? "text-slate-900" : scrolled ? "text-slate-700" : "text-white",
             )}
             aria-label="Открыть меню"
+            aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
             {open ? <X /> : <Menu />}
@@ -156,7 +157,7 @@ export default function Header() {
         <div className="md:hidden w-full">
           <div
             className={cn(
-              "w-full border-t bg-white text-slate-900 overflow-hidden transition-all duration-300 ease-out",
+              "absolute left-0 right-0 top-full z-50 w-full border-t bg-white text-slate-900 overflow-hidden transition-all duration-300 ease-out",
               open ? "max-h-[80vh] opacity-100 translate-y-0" : "pointer-events-none max-h-0 opacity-0 -translate-y-2",
             )}
             aria-hidden={!open}
