@@ -49,6 +49,15 @@ export default function NewsArticle() {
     return items.find((a) => a.slug === path) ?? null;
   }, [items, slug]);
 
+  const currentPath = useMemo(() => "/news/" + (slug ?? ""), [slug]);
+  const recent = useMemo(() => {
+    const list = items ?? [];
+    return list
+      .filter((a) => a.slug !== currentPath)
+      .sort((a, b) => (a.date < b.date ? 1 : -1))
+      .slice(0, 5);
+  }, [items, currentPath]);
+
   if (error) {
     return (
       <div className="container mx-auto px-4 py-12">Failed to load article.</div>
@@ -60,13 +69,6 @@ export default function NewsArticle() {
 
   const { title, description, date, readMins, content } = article;
 
-  const recent = useMemo(() => {
-    if (!items) return [] as NewsItem[];
-    return items
-      .filter((a) => a.slug !== article.slug)
-      .sort((a, b) => (a.date < b.date ? 1 : -1))
-      .slice(0, 5);
-  }, [items, article.slug]);
 
   return (
     <div className="bg-white text-slate-900">
