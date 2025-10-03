@@ -80,14 +80,6 @@ export default function ProductPage() {
   if (loading) {
     return (
       <div className="bg-white text-slate-900">
-        <PageBanner
-          title="Loading..."
-          breadcrumbs={[
-            { label: "Home", href: "/" },
-            { label: "Products", href: "/products" },
-            { label: "Loading" },
-          ]}
-        />
         <div className="container mx-auto px-4 py-10">Loading product...</div>
       </div>
     );
