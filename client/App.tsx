@@ -19,6 +19,11 @@ import Trainings from "./pages/Trainings";
 import SeminarsPage from "./pages/Seminars";
 import Services from "./pages/Services";
 import Brochures from "./pages/Brochures";
+import Resources from "./pages/Resources";
+import Videos from "./pages/ResourcesVideos";
+import KnowledgeHub from "./pages/ResourcesKnowledgeHub";
+import Podcasts from "./pages/ResourcesPodcasts";
+import CaseStudies from "./pages/ResourcesCaseStudies";
 
 const queryClient = new QueryClient();
 
@@ -31,15 +36,20 @@ const App = () => (
         <Routes>
           <Route element={<SiteLayout />}>
             <Route path="/" element={<Index />} />
-            <Route path="/catalog" element={<Catalog />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/faq" element={<Faq />} />
+            <Route path="/products" element={<Catalog />} />
+            <Route path="/news" element={<Blog />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/seminars/trainings" element={<Trainings />} />
-            <Route path="/seminars/seminars" element={<SeminarsPage />} />
-            <Route path="/seminars/services" element={<Services />} />
-            <Route path="/seminars/brochures" element={<Brochures />} />
+            <Route path="/services/trainings" element={<Trainings />} />
+            <Route path="/services/seminars" element={<SeminarsPage />} />
+            <Route path="/services/services" element={<Services />} />
+            <Route path="/services/brochures" element={<Brochures />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/resources/videos" element={<Videos />} />
+            <Route path="/resources/knowledge-hub" element={<KnowledgeHub />} />
+            <Route path="/resources/podcasts" element={<Podcasts />} />
+            <Route path="/resources/case-studies" element={<CaseStudies />} />
+            <Route path="/resources/faq" element={<Faq />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Route>

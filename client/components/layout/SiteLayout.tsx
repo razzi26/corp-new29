@@ -3,9 +3,11 @@ import { Outlet, useLocation } from "react-router-dom";
 
 import Header from "./Header";
 import Footer from "./Footer";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function SiteLayout() {
   const location = useLocation();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     if ("scrollRestoration" in window.history) {
@@ -22,6 +24,7 @@ export default function SiteLayout() {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, [location.pathname]);
+
 
   return (
     <div className="min-h-screen flex flex-col">

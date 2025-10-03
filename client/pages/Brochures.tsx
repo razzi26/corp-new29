@@ -8,7 +8,7 @@ export default function Brochures() {
         description="Download product brochures, checklists, and quick-start guides for laboratory safety."
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Seminars", href: "/seminars/seminars" },
+          { label: "Services", href: "/services/seminars" },
           { label: "Brochures" },
         ]}
       />

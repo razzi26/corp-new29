@@ -20,7 +20,7 @@ export default function Services() {
         description="Global, certified field service and support for biosafety equipment."
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Seminars", href: "/seminars/seminars" },
+          { label: "Services", href: "/services/seminars" },
           { label: "Services" },
         ]}
       />

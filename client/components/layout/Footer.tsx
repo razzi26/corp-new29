@@ -68,17 +68,17 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white" to="/catalog">
-                  Catalog
+                <Link className="hover:text-white" to="/products">
+                  Products
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white" to="/blog">
-                  Blog
+                <Link className="hover:text-white" to="/news">
+                  News
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white" to="/faq">
+                <Link className="hover:text-white" to="/resources/faq">
                   FAQ
                 </Link>
               </li>
