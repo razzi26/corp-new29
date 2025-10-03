@@ -24,6 +24,7 @@ import Videos from "./pages/ResourcesVideos";
 import KnowledgeHub from "./pages/ResourcesKnowledgeHub";
 import Podcasts from "./pages/ResourcesPodcasts";
 import CaseStudies from "./pages/ResourcesCaseStudies";
+import KnowledgeArticleBiosafetyBasics from "./pages/KnowledgeArticleBiosafetyBasics";
 
 const queryClient = new QueryClient();
 
