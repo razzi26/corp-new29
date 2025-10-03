@@ -585,9 +585,6 @@ function ProductCard({ product }: { product: Product }) {
       <div
         ref={containerRef}
         className="relative w-full aspect-[1/1] overflow-hidden rounded-t-2xl bg-slate-50"
-        onPointerMove={count > 1 ? handlePointerMove : undefined}
-        onPointerEnter={() => count > 1 && setPreviewIndex(0)}
-        onPointerLeave={() => { setPreviewIndex(null); }}
         role="img"
         aria-label={product.title}
       >
@@ -596,10 +593,28 @@ function ProductCard({ product }: { product: Product }) {
           alt={product.title}
           className="absolute inset-0 h-full w-full object-cover"
           style={{ left: 0, top: 0 }}
-          onLoad={() => {
-            // no-op; keeps image loading behavior
-          }}
         />
+
+        {count > 1 && (
+          <>
+            <button
+              aria-label="Previous image"
+              onClick={() => setCurrentIndex((i) => Math.max(0, i - 1))}
+              disabled={currentIndex === 0}
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 h-8 w-8 rounded-full bg-white/80 text-slate-700 flex items-center justify-center disabled:opacity-40"
+            >
+              <ArrowLeft className="h-4 w-4" />
+            </button>
+            <button
+              aria-label="Next image"
+              onClick={() => setCurrentIndex((i) => Math.min(count - 1, i + 1))}
+              disabled={currentIndex === count - 1}
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 h-8 w-8 rounded-full bg-white/80 text-slate-700 flex items-center justify-center disabled:opacity-40"
+            >
+              <ArrowRight className="h-4 w-4" />
+            </button>
+          </>
+        )}
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_20%,white,transparent_35%),radial-gradient(circle_at_70%_80%,white,transparent_25%)]" />
         <div className="absolute top-3 left-3 flex flex-wrap gap-2">
           {product.tags.map((t) => (
