@@ -11,8 +11,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
-import { Clock, CalendarDays } from "lucide-react";
+import { LoadingIndicator } from "@/components/ui/loading-indicator";
+import { cn } from "@/lib/utils";
+import { CalendarDays, Clock, ArrowRight } from "lucide-react";
 
 interface ArticleMeta {
   slug: string;
@@ -52,9 +53,13 @@ function ArticleCard({ a }: { a: ArticleMeta }) {
         </div>
       </CardContent>
       <CardFooter className="mt-auto">
-        <Button asChild>
-          <Link to={`/resources/knowledge-hub/${slugParam}`}>Read article</Link>
-        </Button>
+        <Link
+          to={`/resources/knowledge-hub/${slugParam}`}
+          className="inline-flex items-center gap-2 rounded-full border border-[#00467f] px-4 py-2 text-[#00467f] transition-colors hover:bg-[#00467f] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00467f]/40"
+        >
+          Read article
+          <ArrowRight className="h-4 w-4" />
+        </Link>
       </CardFooter>
     </Card>
   );
@@ -120,6 +125,9 @@ export default function KnowledgeHub() {
       .sort((a, b) => (a.date < b.date ? 1 : -1));
   }, [q, active, items]);
 
+  const activeTagClasses =
+    "bg-[#00467f] text-white hover:bg-[#003a68] focus:ring-[#00467f]/40";
+
   return (
     <div className="bg-white text-slate-900">
       <PageBanner
@@ -155,7 +163,10 @@ export default function KnowledgeHub() {
             <div className="flex flex-wrap gap-2">
               <Badge
                 variant={active === null ? "default" : "secondary"}
-                className="cursor-pointer"
+                className={cn(
+                  "cursor-pointer",
+                  active === null && activeTagClasses,
+                )}
                 onClick={() => setActive(null)}
               >
                 All
@@ -164,7 +175,10 @@ export default function KnowledgeHub() {
                 <Badge
                   key={t}
                   variant={active === t ? "default" : "secondary"}
-                  className="cursor-pointer"
+                  className={cn(
+                    "cursor-pointer",
+                    active === t && activeTagClasses,
+                  )}
                   onClick={() => setActive((prev) => (prev === t ? null : t))}
                 >
                   {t}
@@ -180,7 +194,7 @@ export default function KnowledgeHub() {
           <p className="text-sm text-red-600">Failed to load articles.</p>
         )}
         {!items ? (
-          <p className="text-slate-700">Loading…</p>
+          <LoadingIndicator label="Loading articles" />
         ) : filtered.length === 0 ? (
           <p className="text-slate-700">
             No articles found. Try a different search or tag.

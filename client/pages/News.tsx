@@ -12,6 +12,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import { LoadingIndicator } from "@/components/ui/loading-indicator";
 import { CalendarDays, Clock, ArrowRight } from "lucide-react";
 
 interface NewsMeta {
@@ -86,6 +88,8 @@ function NewsCard({ a }: { a: NewsMeta }) {
 
 export default function News() {
   const [q, setQ] = useState("");
+  const activeTagClasses =
+    "bg-[#00467f] text-white hover:bg-[#003a68] focus:ring-[#00467f]/40";
   const [active, setActive] = useState<string | null>(null);
   const [items, setItems] = useState<NewsMeta[] | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -176,7 +180,10 @@ export default function News() {
             <div className="flex flex-wrap gap-2">
               <Badge
                 variant={active === null ? "default" : "secondary"}
-                className="cursor-pointer"
+                className={cn(
+                  "cursor-pointer",
+                  active === null && activeTagClasses,
+                )}
                 onClick={() => setActive(null)}
               >
                 All
@@ -185,7 +192,10 @@ export default function News() {
                 <Badge
                   key={t}
                   variant={active === t ? "default" : "secondary"}
-                  className="cursor-pointer"
+                  className={cn(
+                    "cursor-pointer",
+                    active === t && activeTagClasses,
+                  )}
                   onClick={() => setActive((prev) => (prev === t ? null : t))}
                 >
                   {t}
@@ -199,7 +209,7 @@ export default function News() {
 
         {error && <p className="text-sm text-red-600">Failed to load news.</p>}
         {!items ? (
-          <p className="text-slate-700">Loading…</p>
+          <LoadingIndicator label="Loading news" />
         ) : filtered.length === 0 ? (
           <p className="text-slate-700">
             No news found. Try a different search or tag.
