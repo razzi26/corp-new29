@@ -116,6 +116,20 @@ export default function ProductPage() {
   );
   const [mainAspect, setMainAspect] = useState<string | undefined>(undefined);
   const [thumbsOverflow, setThumbsOverflow] = useState(false);
+  const [thumbsCanScrollUp, setThumbsCanScrollUp] = useState(false);
+  const [thumbsCanScrollDown, setThumbsCanScrollDown] = useState(false);
+
+  const updateThumbsScrollState = (thumbsEl: HTMLDivElement | null) => {
+    if (!thumbsEl) {
+      setThumbsCanScrollUp(false);
+      setThumbsCanScrollDown(false);
+      return;
+    }
+    const { scrollTop, clientHeight, scrollHeight } = thumbsEl;
+    const eps = 1;
+    setThumbsCanScrollUp(scrollTop > eps);
+    setThumbsCanScrollDown(scrollTop + clientHeight < scrollHeight - eps);
+  };
 
   const updateSizes = () => {
     const el = mainImageRef.current;
@@ -127,10 +141,12 @@ export default function ProductPage() {
 
       const thumbsEl = thumbsRef.current;
       setThumbsOverflow(thumbsEl ? thumbsEl.scrollHeight > (thumbsEl.clientHeight + 1) : false);
+      updateThumbsScrollState(thumbsEl);
     } else {
       setThumbsMaxHeight(undefined);
       setMainAspect(undefined);
       setThumbsOverflow(false);
+      updateThumbsScrollState(null);
     }
   };
 
