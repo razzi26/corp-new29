@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { LoadingIndicator } from "@/components/ui/loading-indicator";
 import { cn } from "@/lib/utils";
 import { CalendarDays, Clock, ArrowRight } from "lucide-react";
 
@@ -186,7 +187,7 @@ export default function KnowledgeHub() {
           <p className="text-sm text-red-600">Failed to load articles.</p>
         )}
         {!items ? (
-          <p className="text-slate-700">Loading…</p>
+          <LoadingIndicator label="Loading articles" />
         ) : filtered.length === 0 ? (
           <p className="text-slate-700">
             No articles found. Try a different search or tag.
