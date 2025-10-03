@@ -695,24 +695,12 @@ function ProductCard({ product, onRequest }: { product: Product; onRequest?: () 
         role="img"
         aria-label={product.title}
         style={{ touchAction: "pan-y" }}
-        onPointerMove={(e) => { handlePointerMove(e); onPointerMove(e); }}
+        onPointerMove={(e) => { handlePointerMove(e); }}
         onPointerLeave={() => { if (!isTouch) setHoverIndex(null); }}
         onPointerCancel={() => { if (!isTouch) setHoverIndex(null); }}
-        onPointerDown={onPointerDown}
-        onPointerUp={onPointerUp}
-        onPointerCancel={onPointerCancel}
-        onTouchStart={(e) => {
-          if (!isTouch) return;
-          pointerRef.current = { startX: e.touches[0].clientX, lastX: e.touches[0].clientX, isDown: true };
-        }}
-        onTouchMove={(e) => {
-          if (!isTouch || !pointerRef.current?.isDown) return;
-          pointerRef.current.lastX = e.touches[0].clientX;
-        }}
-        onTouchEnd={(e) => {
-          if (!isTouch) return;
-          commitSwipe();
-        }}
+        onTouchStart={onTouchStartSimple}
+        onTouchMove={onTouchMoveSimple}
+        onTouchEnd={onTouchEndSimple}
         onClick={() => {
           /* keep click behavior if needed */
         }}
