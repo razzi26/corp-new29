@@ -29,7 +29,11 @@ export default function Blog() {
               </p>
               <a
                 className="mt-4 inline-flex text-sm underline hover:opacity-90"
-                href={p.title === "How to choose an ultrasound scanner" ? "/news/how-to-choose-ultrasound-scanner" : "/news"}
+                href={
+                  p.title === "How to choose an ultrasound scanner"
+                    ? "/news/how-to-choose-ultrasound-scanner"
+                    : "/news"
+                }
               >
                 Read more
               </a>

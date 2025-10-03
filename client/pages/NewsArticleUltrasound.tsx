@@ -5,14 +5,19 @@ import { ShareButtons } from "@/components/ShareButtons";
 
 export default function NewsArticleUltrasound() {
   const title = "How to choose an ultrasound scanner";
-  const description = "Key factors for selecting an ultrasound system: clinical needs, probes, image quality, workflow, and service.";
+  const description =
+    "Key factors for selecting an ultrasound system: clinical needs, probes, image quality, workflow, and service.";
 
   return (
     <div className="bg-white text-slate-900">
       <PageBanner
         title={title}
         description={description}
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "News", href: "/news" }, { label: title }]}
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "News", href: "/news" },
+          { label: title },
+        ]}
       />
 
       <Seo
@@ -30,12 +35,17 @@ export default function NewsArticleUltrasound() {
           <span>5 min read</span>
         </div>
 
-        <ShareButtons title={title} description={description} className="mb-6" />
+        <ShareButtons
+          title={title}
+          description={description}
+          className="mb-6"
+        />
 
         <p className="text-lg leading-8 text-slate-700">
-          Selecting an ultrasound scanner starts with your clinical scenarios: point-of-care, OB/GYN,
-          cardiology, MSK, or general imaging. Match transducers to use cases, ensure adequate Doppler and
-          image processing, and evaluate ergonomics and workflow.
+          Selecting an ultrasound scanner starts with your clinical scenarios:
+          point-of-care, OB/GYN, cardiology, MSK, or general imaging. Match
+          transducers to use cases, ensure adequate Doppler and image
+          processing, and evaluate ergonomics and workflow.
         </p>
 
         <Separator className="my-8" />

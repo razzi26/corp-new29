@@ -3,7 +3,13 @@ import { Link } from "react-router-dom";
 import { PageBanner } from "@/components/layout/PageBanner";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Clock, CalendarDays } from "lucide-react";
@@ -24,16 +30,24 @@ function ArticleCard({ a }: { a: ArticleMeta }) {
       <CardHeader>
         <CardTitle className="text-xl leading-7">{a.title}</CardTitle>
         <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-slate-600">
-          <span className="inline-flex items-center gap-1"><CalendarDays className="h-4 w-4" />{new Date(a.date).toLocaleDateString()}</span>
+          <span className="inline-flex items-center gap-1">
+            <CalendarDays className="h-4 w-4" />
+            {new Date(a.date).toLocaleDateString()}
+          </span>
           <span>•</span>
-          <span className="inline-flex items-center gap-1"><Clock className="h-4 w-4" />{a.readMins} min read</span>
+          <span className="inline-flex items-center gap-1">
+            <Clock className="h-4 w-4" />
+            {a.readMins} min read
+          </span>
         </div>
       </CardHeader>
       <CardContent className="text-slate-700">
         <p>{a.description}</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {a.tags.map((t) => (
-            <Badge key={t} variant="secondary">{t}</Badge>
+            <Badge key={t} variant="secondary">
+              {t}
+            </Badge>
           ))}
         </div>
       </CardContent>
@@ -83,10 +97,11 @@ export default function KnowledgeHub() {
     const query = q.trim().toLowerCase();
     return items
       .filter((a) => {
-        const matchQuery = !query
-          || a.title.toLowerCase().includes(query)
-          || a.description.toLowerCase().includes(query)
-          || a.tags.some((t) => t.toLowerCase().includes(query));
+        const matchQuery =
+          !query ||
+          a.title.toLowerCase().includes(query) ||
+          a.description.toLowerCase().includes(query) ||
+          a.tags.some((t) => t.toLowerCase().includes(query));
         const matchTag = !active || a.tags.includes(active);
         return matchQuery && matchTag;
       })
@@ -108,7 +123,10 @@ export default function KnowledgeHub() {
       <section className="container mx-auto px-4 py-10 md:py-14">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="md:w-1/2">
-            <label className="mb-2 block text-sm font-medium text-slate-700" htmlFor="kb-search">
+            <label
+              className="mb-2 block text-sm font-medium text-slate-700"
+              htmlFor="kb-search"
+            >
               Search articles
             </label>
             <Input
@@ -119,7 +137,9 @@ export default function KnowledgeHub() {
             />
           </div>
           <div className="md:w-1/2">
-            <div className="mb-2 text-sm font-medium text-slate-700">Filter by tag</div>
+            <div className="mb-2 text-sm font-medium text-slate-700">
+              Filter by tag
+            </div>
             <div className="flex flex-wrap gap-2">
               <Badge
                 variant={active === null ? "default" : "secondary"}
@@ -144,11 +164,15 @@ export default function KnowledgeHub() {
 
         <Separator className="my-8" />
 
-        {error && <p className="text-sm text-red-600">Failed to load articles.</p>}
+        {error && (
+          <p className="text-sm text-red-600">Failed to load articles.</p>
+        )}
         {!items ? (
           <p className="text-slate-700">Loading…</p>
         ) : filtered.length === 0 ? (
-          <p className="text-slate-700">No articles found. Try a different search or tag.</p>
+          <p className="text-slate-700">
+            No articles found. Try a different search or tag.
+          </p>
         ) : (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((a) => (
@@ -158,7 +182,21 @@ export default function KnowledgeHub() {
         )}
 
         <div className="mt-10 text-sm text-slate-600">
-          Looking for something else? Explore <Link to="/resources/videos" className="text-[hsl(var(--brand-end))] hover:underline">Videos</Link> or <Link to="/resources/podcasts" className="text-[hsl(var(--brand-end))] hover:underline">Podcasts</Link>.
+          Looking for something else? Explore{" "}
+          <Link
+            to="/resources/videos"
+            className="text-[hsl(var(--brand-end))] hover:underline"
+          >
+            Videos
+          </Link>{" "}
+          or{" "}
+          <Link
+            to="/resources/podcasts"
+            className="text-[hsl(var(--brand-end))] hover:underline"
+          >
+            Podcasts
+          </Link>
+          .
         </div>
       </section>
     </div>

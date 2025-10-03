@@ -32,7 +32,9 @@ function Toc({ sections }: { sections: ArticleSection[] }) {
       <ol className="list-decimal space-y-2 pl-5 text-slate-700">
         {sections.map((s) => (
           <li key={s.id}>
-            <a className="hover:underline" href={`#${s.id}`}>{s.title}</a>
+            <a className="hover:underline" href={`#${s.id}`}>
+              {s.title}
+            </a>
           </li>
         ))}
       </ol>
@@ -67,7 +69,11 @@ export default function KnowledgeArticle() {
   }, [articles, slug]);
 
   if (error) {
-    return <div className="container mx-auto px-4 py-12">Failed to load articles. Please try again later.</div>;
+    return (
+      <div className="container mx-auto px-4 py-12">
+        Failed to load articles. Please try again later.
+      </div>
+    );
   }
   if (!articles || !article) {
     return <div className="container mx-auto px-4 py-12">Loading…</div>;
@@ -103,7 +109,11 @@ export default function KnowledgeArticle() {
           <span>{readMins} min read</span>
         </div>
 
-        <ShareButtons title={title} description={description} className="mb-6" />
+        <ShareButtons
+          title={title}
+          description={description}
+          className="mb-6"
+        />
 
         {/* Mobile TOC */}
         <div className="mb-8 lg:hidden">
@@ -117,24 +127,54 @@ export default function KnowledgeArticle() {
               <section key={s.id} id={s.id} className="scroll-mt-24">
                 <h2 className="mb-3 text-xl font-semibold">{s.title}</h2>
                 {s.content.map((b, i) => {
-                  if (b.type === "p") return <p key={i} className="mt-2 text-slate-700">{b.text}</p>;
-                  if (b.type === "h3") return <h3 key={i} className="mt-3 font-semibold">{b.text}</h3>;
+                  if (b.type === "p")
+                    return (
+                      <p key={i} className="mt-2 text-slate-700">
+                        {b.text}
+                      </p>
+                    );
+                  if (b.type === "h3")
+                    return (
+                      <h3 key={i} className="mt-3 font-semibold">
+                        {b.text}
+                      </h3>
+                    );
                   if (b.type === "ul")
                     return (
-                      <ul key={i} className="mt-3 list-disc space-y-1 pl-6 text-slate-700">
-                        {Array.isArray(b.items) && b.items.map((it: string, idx: number) => <li key={idx}>{it}</li>)}
+                      <ul
+                        key={i}
+                        className="mt-3 list-disc space-y-1 pl-6 text-slate-700"
+                      >
+                        {Array.isArray(b.items) &&
+                          b.items.map((it: string, idx: number) => (
+                            <li key={idx}>{it}</li>
+                          ))}
                       </ul>
                     );
                   if (b.type === "links")
                     return (
-                      <ul key={i} className="mt-2 list-disc space-y-1 pl-6 text-slate-700">
-                        {Array.isArray(b.items) && b.items.map((it: { label: string; url: string }, idx: number) => (
-                          <li key={idx}>
-                            <a className="text-[hsl(var(--brand-end))] hover:underline" href={it.url} target="_blank" rel="noopener noreferrer">
-                              {it.label}
-                            </a>
-                          </li>
-                        ))}
+                      <ul
+                        key={i}
+                        className="mt-2 list-disc space-y-1 pl-6 text-slate-700"
+                      >
+                        {Array.isArray(b.items) &&
+                          b.items.map(
+                            (
+                              it: { label: string; url: string },
+                              idx: number,
+                            ) => (
+                              <li key={idx}>
+                                <a
+                                  className="text-[hsl(var(--brand-end))] hover:underline"
+                                  href={it.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  {it.label}
+                                </a>
+                              </li>
+                            ),
+                          )}
                       </ul>
                     );
                   return null;
@@ -144,8 +184,15 @@ export default function KnowledgeArticle() {
             ))}
 
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <Link to="/resources/knowledge-hub" className="text-[hsl(var(--brand-end))] hover:underline">← Back to Knowledge Hub</Link>
-              <div className="text-sm text-slate-600">Last updated: {new Date(date).toLocaleDateString()}</div>
+              <Link
+                to="/resources/knowledge-hub"
+                className="text-[hsl(var(--brand-end))] hover:underline"
+              >
+                ← Back to Knowledge Hub
+              </Link>
+              <div className="text-sm text-slate-600">
+                Last updated: {new Date(date).toLocaleDateString()}
+              </div>
             </div>
           </div>
 

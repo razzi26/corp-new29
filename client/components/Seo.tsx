@@ -8,13 +8,25 @@ export interface SeoProps {
   type?: string; // article, website
 }
 
-export function Seo({ title, description, url, image, type = "article" }: SeoProps) {
+export function Seo({
+  title,
+  description,
+  url,
+  image,
+  type = "article",
+}: SeoProps) {
   useEffect(() => {
     document.title = title;
 
-    function setMeta(property: string, content?: string, attr: "property" | "name" = "property") {
+    function setMeta(
+      property: string,
+      content?: string,
+      attr: "property" | "name" = "property",
+    ) {
       if (!content) return;
-      let el = document.querySelector<HTMLMetaElement>(`meta[${attr}='${property}']`);
+      let el = document.querySelector<HTMLMetaElement>(
+        `meta[${attr}='${property}']`,
+      );
       if (!el) {
         el = document.createElement("meta");
         el.setAttribute(attr, property);

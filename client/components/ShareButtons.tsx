@@ -7,8 +7,14 @@ export interface ShareButtonsProps {
   className?: string;
 }
 
-export function ShareButtons({ url, title, description, className }: ShareButtonsProps) {
-  const shareUrl = url ?? (typeof window !== "undefined" ? window.location.href : "");
+export function ShareButtons({
+  url,
+  title,
+  description,
+  className,
+}: ShareButtonsProps) {
+  const shareUrl =
+    url ?? (typeof window !== "undefined" ? window.location.href : "");
   const shareTitle = title ?? document.title;
   const shareDesc = description ?? "";
 
@@ -17,9 +23,13 @@ export function ShareButtons({ url, title, description, className }: ShareButton
   const encodedDesc = encodeURIComponent(shareDesc);
 
   return (
-    <div className={"flex items-center gap-2 " + (className ?? "")}
-      aria-label="Share this page">
-      <span className="mr-1 inline-flex items-center gap-1 text-sm text-slate-600"><Share2 className="h-4 w-4" /> Share:</span>
+    <div
+      className={"flex items-center gap-2 " + (className ?? "")}
+      aria-label="Share this page"
+    >
+      <span className="mr-1 inline-flex items-center gap-1 text-sm text-slate-600">
+        <Share2 className="h-4 w-4" /> Share:
+      </span>
       <a
         className="inline-flex h-9 w-9 items-center justify-center rounded-full border hover:bg-slate-50"
         aria-label="Share on Facebook"

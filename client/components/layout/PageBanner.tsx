@@ -21,18 +21,27 @@ interface PageBannerProps {
   breadcrumbs: BreadcrumbEntry[];
 }
 
-export function PageBanner({ title, description, breadcrumbs }: PageBannerProps) {
+export function PageBanner({
+  title,
+  description,
+  breadcrumbs,
+}: PageBannerProps) {
   return (
     <>
       <section
         className="relative -mt-16 overflow-hidden bg-[hsl(var(--brand-end))] text-white"
         data-header-anchor
       >
-        <div className="absolute inset-0 bg-brand-gradient opacity-95" aria-hidden="true" />
+        <div
+          className="absolute inset-0 bg-brand-gradient opacity-95"
+          aria-hidden="true"
+        />
         <div className="relative container mx-auto px-4 pt-24 pb-12 md:pt-32 md:pb-16">
           <h1 className="text-3xl font-semibold md:text-4xl">{title}</h1>
           {description && (
-            <p className="mt-3 max-w-2xl text-base text-white/85 md:text-lg">{description}</p>
+            <p className="mt-3 max-w-2xl text-base text-white/85 md:text-lg">
+              {description}
+            </p>
           )}
         </div>
       </section>
@@ -46,7 +55,10 @@ export function PageBanner({ title, description, breadcrumbs }: PageBannerProps)
                 <Fragment key={crumb.label}>
                   <BreadcrumbItem>
                     {crumb.href ? (
-                      <BreadcrumbLink asChild className="transition-colors hover:text-foreground">
+                      <BreadcrumbLink
+                        asChild
+                        className="transition-colors hover:text-foreground"
+                      >
                         <Link to={crumb.href}>{crumb.label}</Link>
                       </BreadcrumbLink>
                     ) : (
