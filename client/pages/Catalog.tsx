@@ -3,6 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { PageBanner } from "@/components/layout/PageBanner";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 
 type Product = {
   id: string;
@@ -29,6 +30,11 @@ export default function Catalog() {
   const [error, setError] = useState<string | null>(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const categoryParam = searchParams.get("category") || null;
+
+  // Mobile drawers state
+  const [openCatSheet, setOpenCatSheet] = useState(false);
+  const [openTagSheet, setOpenTagSheet] = useState(false);
+  const [draftTags, setDraftTags] = useState<Set<string>>(new Set());
 
   const productsTopRef = useRef<HTMLDivElement>(null);
   const scrollToProducts = () => {
@@ -145,9 +151,79 @@ export default function Catalog() {
       />
 
       <div className="container mx-auto px-4 py-10 lg:py-12">
+        {/* Mobile/Tablet Filters */}
+        <div className="lg:hidden mb-6">
+          <div className="sticky top-16 z-30 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-slate-200 -mx-4 px-4 py-3">
+            <div className="space-y-3">
+              <label className="block text-sm font-semibold text-slate-800">Search</label>
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search products..."
+                className="w-full h-10 rounded-lg bg-white text-slate-900 border border-slate-300 px-3 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
+              />
+              <div className="flex gap-3 pt-1">
+                <button
+                  onClick={() => setOpenCatSheet(true)}
+                  className="flex min-w-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-800 flex-1"
+                >
+                  {selectedCategory ? (
+                    <>
+                      <span className="truncate">{selectedCategory}</span>
+                      <span
+                        className="ml-auto inline-flex items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 w-5 h-5"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          const next = new URLSearchParams(searchParams);
+                          next.delete("category");
+                          setSearchParams(next, { replace: true });
+                          setSelectedCategory(null);
+                        }}
+                        aria-label="Clear category"
+                      >
+                        ×
+                      </span>
+                    </>
+                  ) : (
+                    <span>Categories</span>
+                  )}
+                </button>
+
+                <button
+                  onClick={() => {
+                    setDraftTags(new Set(selectedTags));
+                    setOpenTagSheet(true);
+                  }}
+                  className="flex min-w-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-800 flex-1"
+                >
+                  {selectedTags.size > 0 ? (
+                    <>
+                      <span className="truncate">{Array.from(selectedTags)[0]}</span>
+                      {selectedTags.size > 1 && (
+                        <span className="text-slate-500">+{selectedTags.size - 1}</span>
+                      )}
+                      <span
+                        className="ml-auto inline-flex items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 w-5 h-5"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedTags(new Set());
+                        }}
+                        aria-label="Clear tags"
+                      >
+                        ×
+                      </span>
+                    </>
+                  ) : (
+                    <span>Tags</span>
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="grid gap-8 lg:grid-cols-12">
           {/* Sidebar (desktop) */}
-          <aside className="lg:col-span-3 lg:sticky lg:top-20 lg:self-start">
+          <aside className="hidden lg:block lg:col-span-3 lg:sticky lg:top-20 lg:self-start">
             <div className="bg-white">
               <div className="space-y-3">
                 <label className="block text-sm font-semibold text-slate-800">
@@ -302,7 +378,160 @@ export default function Catalog() {
           </main>
         </div>
       </div>
+      {/* Categories Drawer */}
+      <CategoriesDrawer
+        open={openCatSheet}
+        onOpenChange={setOpenCatSheet}
+        categories={allCategories}
+        selectedCategory={selectedCategory}
+        onSelect={(cat) => {
+          const next = new URLSearchParams(searchParams);
+          if (cat) next.set("category", cat);
+          else next.delete("category");
+          setSearchParams(next, { replace: true });
+          setSelectedCategory(cat);
+          setOpenCatSheet(false);
+        }}
+      />
+
+      {/* Tags Drawer */}
+      <TagsDrawer
+        open={openTagSheet}
+        onOpenChange={setOpenTagSheet}
+        allTags={allTags}
+        draft={draftTags}
+        setDraft={setDraftTags}
+        onApply={() => {
+          setSelectedTags(new Set(draftTags));
+          setOpenTagSheet(false);
+        }}
+      />
     </div>
+  );
+}
+
+function CategoriesDrawer({
+  open,
+  onOpenChange,
+  categories,
+  selectedCategory,
+  onSelect,
+}: {
+  open: boolean;
+  onOpenChange: (v: boolean) => void;
+  categories: string[];
+  selectedCategory: string | null;
+  onSelect: (cat: string | null) => void;
+}) {
+  return (
+    <Sheet open={open} onOpenChange={onOpenChange}>
+      <SheetContent side="bottom" className="p-0">
+        <SheetHeader className="px-4 pt-4">
+          <SheetTitle>Categories</SheetTitle>
+        </SheetHeader>
+        <div className="max-h[65vh] overflow-auto px-4 py-2">
+          <button
+            className={cn(
+              "w-full text-left px-3 py-3 rounded-md border mb-2",
+              selectedCategory === null
+                ? "bg-[hsl(var(--brand-end))] text-white border-transparent"
+                : "bg-white text-slate-800 border-slate-300 hover:bg-slate-50",
+            )}
+            onClick={() => onSelect(null)}
+          >
+            All
+          </button>
+          {categories.map((c) => (
+            <button
+              key={c}
+              className={cn(
+                "w-full text-left px-3 py-3 rounded-md border mb-2",
+                selectedCategory === c
+                  ? "bg-[hsl(var(--brand-end))] text-white border-transparent"
+                  : "bg-white text-slate-800 border-slate-300 hover:bg-slate-50",
+              )}
+              onClick={() => onSelect(selectedCategory === c ? null : c)}
+            >
+              {c}
+            </button>
+          ))}
+        </div>
+      </SheetContent>
+    </Sheet>
+  );
+}
+
+function TagsDrawer({
+  open,
+  onOpenChange,
+  allTags,
+  draft,
+  setDraft,
+  onApply,
+}: {
+  open: boolean;
+  onOpenChange: (v: boolean) => void;
+  allTags: string[];
+  draft: Set<string>;
+  setDraft: (s: Set<string>) => void;
+  onApply: () => void;
+}) {
+  const toggle = (tag: string) => {
+    setDraft(((prev) => {
+      const next = new Set(prev);
+      if (next.has(tag)) next.delete(tag);
+      else next.add(tag);
+      return next;
+    }) as any);
+  };
+
+  return (
+    <Sheet open={open} onOpenChange={onOpenChange}>
+      <SheetContent side="bottom" className="p-0">
+        <SheetHeader className="px-4 pt-4">
+          <SheetTitle>Tags</SheetTitle>
+        </SheetHeader>
+        <div className="max-h-[55vh] overflow-auto px-4 py-2">
+          <div className="flex items-center justify-between mb-3">
+            <button
+              className="text-sm text-[hsl(var(--brand-end))] hover:underline"
+              onClick={() => setDraft(new Set())}
+            >
+              Clear all
+            </button>
+          </div>
+          <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+            {allTags.map((tag) => {
+              const active = draft.has(tag);
+              return (
+                <li key={tag}>
+                  <button
+                    onClick={() => toggle(tag)}
+                    aria-pressed={active}
+                    className={cn(
+                      "w-full px-3 py-2 rounded-lg border text-sm font-semibold transition",
+                      active
+                        ? "bg-[hsl(var(--brand-end))] text-white border-transparent"
+                        : "bg-white text-slate-800 border-slate-300 hover:bg-slate-50",
+                    )}
+                  >
+                    {tag}
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div className="sticky bottom-0 bg-white border-t p-4">
+          <button
+            onClick={onApply}
+            className="w-full inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-3.5 py-2.5 text-sm font-semibold shadow"
+          >
+            Show Results
+          </button>
+        </div>
+      </SheetContent>
+    </Sheet>
   );
 }
 
