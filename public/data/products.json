@@ -4,125 +4,322 @@
     "title": "Class II A2 Biosafety Cabinet",
     "category": "Biosafety Cabinets",
     "tags": ["Featured", "Popular"],
-    "description": "High-performance protection for personnel, product, and environment."
+    "description": "High-performance protection for personnel, product, and environment.",
+    "mainImage": "/placeholder.svg?main=p-bsc-a2",
+    "images": [
+      "/placeholder.svg?img=p-bsc-a2-1",
+      "/placeholder.svg?img=p-bsc-a2-2",
+      "/placeholder.svg?img=p-bsc-a2-3"
+    ],
+    "specs": [
+      { "name": "Class", "value": "II, Type A2" },
+      { "name": "Protection", "value": "Personnel, Product, Environment" },
+      { "name": "Airflow", "value": "70% recirculation / 30% exhaust" },
+      { "name": "Filter", "value": "Dual HEPA, 99.99% @ 0.3 μm" },
+      { "name": "Noise Level", "value": "≤ 60 dBA" },
+      { "name": "Workzone Width", "value": "1200 mm" }
+    ]
   },
   {
     "id": "p-bsc-b2",
     "title": "Class II B2 Biosafety Cabinet",
     "category": "Biosafety Cabinets",
     "tags": ["Advanced"],
-    "description": "Total exhaust design for specialized applications and safety."
+    "description": "Total exhaust design for specialized applications and safety.",
+    "mainImage": "/placeholder.svg?main=p-bsc-b2",
+    "images": [
+      "/placeholder.svg?img=p-bsc-b2-1",
+      "/placeholder.svg?img=p-bsc-b2-2"
+    ],
+    "specs": [
+      { "name": "Class", "value": "II, Type B2 (100% exhaust)" },
+      { "name": "Exhaust", "value": "Hard-ducted, external" },
+      { "name": "Filter", "value": "HEPA, 99.99% @ 0.3 μm" },
+      { "name": "Sash", "value": "Motorized, 8–10 in. working height" },
+      { "name": "Lighting", "value": "≥ 1000 lux" }
+    ]
   },
   {
     "id": "p-pcr",
     "title": "PCR Cabinet",
     "category": "PCR Cabinets",
     "tags": ["Popular"],
-    "description": "Contamination control for amplification workflows."
+    "description": "Contamination control for amplification workflows.",
+    "mainImage": "/placeholder.svg?main=p-pcr",
+    "images": [
+      "/placeholder.svg?img=p-pcr-1",
+      "/placeholder.svg?img=p-pcr-2"
+    ],
+    "specs": [
+      { "name": "UV Timer", "value": "1–30 min, programmable" },
+      { "name": "HEPA Filter", "value": "99.99% @ 0.3 μm" },
+      { "name": "Airflow", "value": "Positive pressure, laminar" },
+      { "name": "Lighting", "value": "LED, ≥ 800 lux" }
+    ]
   },
   {
     "id": "p-fh-ducted",
     "title": "Ducted Fume Hood",
     "category": "Fume Hoods",
     "tags": ["Featured"],
-    "description": "Reliable chemical handling with external exhaust."
+    "description": "Reliable chemical handling with external exhaust.",
+    "mainImage": "/placeholder.svg?main=p-fh-ducted",
+    "images": [
+      "/placeholder.svg?img=p-fh-ducted-1",
+      "/placeholder.svg?img=p-fh-ducted-2",
+      "/placeholder.svg?img=p-fh-ducted-3"
+    ],
+    "specs": [
+      { "name": "Type", "value": "Ducted, constant volume" },
+      { "name": "Face Velocity", "value": "0.5 m/s (100 fpm)" },
+      { "name": "Sash", "value": "Vertical, tempered glass" },
+      { "name": "Worktop", "value": "Epoxy resin" },
+      { "name": "Construction", "value": "Powder-coated steel" }
+    ]
   },
   {
     "id": "p-fh-ductless",
     "title": "Ductless Fume Hood",
     "category": "Fume Hoods",
     "tags": ["Sale"],
-    "description": "Flexible filtration-based protection without ducting."
+    "description": "Flexible filtration-based protection without ducting.",
+    "mainImage": "/placeholder.svg?main=p-fh-ductless",
+    "images": [
+      "/placeholder.svg?img=p-fh-ductless-1",
+      "/placeholder.svg?img=p-fh-ductless-2"
+    ],
+    "specs": [
+      { "name": "Type", "value": "Ductless, filtered recirculation" },
+      { "name": "Filter", "value": "Carbon/HEPA modular system" },
+      { "name": "Face Velocity", "value": "0.5 m/s (100 fpm)" },
+      { "name": "Noise Level", "value": "≤ 60 dBA" }
+    ]
   },
   {
     "id": "p-incu-co2",
     "title": "CO₂ Incubator",
     "category": "CO₂ Incubators",
     "tags": ["Featured", "Advanced"],
-    "description": "Accurate CO₂ and temperature control for sensitive cultures."
+    "description": "Accurate CO₂ and temperature control for sensitive cultures.",
+    "mainImage": "/placeholder.svg?main=p-incu-co2",
+    "images": [
+      "/placeholder.svg?img=p-incu-co2-1",
+      "/placeholder.svg?img=p-incu-co2-2",
+      "/placeholder.svg?img=p-incu-co2-3"
+    ],
+    "specs": [
+      { "name": "Volume", "value": "170 L" },
+      { "name": "CO₂ Range", "value": "0–20%" },
+      { "name": "Temp Range", "value": "+4°C above ambient to 50°C" },
+      { "name": "Humidity", "value": "> 90% RH (with pan)" }
+    ]
   },
   {
     "id": "p-incu-shaker",
     "title": "Shaking Incubator",
     "category": "CO₂ Incubators",
     "tags": ["New"],
-    "description": "Uniform mixing and growth for cell and microbial culture."
+    "description": "Uniform mixing and growth for cell and microbial culture.",
+    "mainImage": "/placeholder.svg?main=p-incu-shaker",
+    "images": [
+      "/placeholder.svg?img=p-incu-shaker-1",
+      "/placeholder.svg?img=p-incu-shaker-2"
+    ],
+    "specs": [
+      { "name": "Shaking Speed", "value": "30–300 rpm" },
+      { "name": "Orbit", "value": "25 mm" },
+      { "name": "Temp Range", "value": "Ambient +5°C to 60°C" }
+    ]
   },
   {
     "id": "p-cleanroom-panels",
     "title": "Cleanroom Wall Panels",
     "category": "Cleanroom Solutions",
     "tags": ["Advanced"],
-    "description": "Modular, seamless surfaces for controlled environments."
+    "description": "Modular, seamless surfaces for controlled environments.",
+    "mainImage": "/placeholder.svg?main=p-cleanroom-panels",
+    "images": [
+      "/placeholder.svg?img=p-cleanroom-panels-1",
+      "/placeholder.svg?img=p-cleanroom-panels-2"
+    ],
+    "specs": [
+      { "name": "Material", "value": "HPL / PUF / PIR" },
+      { "name": "Thickness", "value": "50 / 75 / 100 mm" },
+      { "name": "Surface", "value": "Antimicrobial, seamless" },
+      { "name": "Fire Rating", "value": "Up to EI60" }
+    ]
   },
   {
     "id": "p-cleanroom-pass",
     "title": "Pass-Through Chamber",
     "category": "Cleanroom Solutions",
     "tags": ["Popular"],
-    "description": "Efficient material transfer while maintaining cleanliness."
+    "description": "Efficient material transfer while maintaining cleanliness.",
+    "mainImage": "/placeholder.svg?main=p-cleanroom-pass",
+    "images": [
+      "/placeholder.svg?img=p-cleanroom-pass-1",
+      "/placeholder.svg?img=p-cleanroom-pass-2"
+    ],
+    "specs": [
+      { "name": "Interlock", "value": "Electromechanical" },
+      { "name": "Window", "value": "Tempered glass" },
+      { "name": "Construction", "value": "Powder-coated steel / SS304" }
+    ]
   },
   {
     "id": "p-isolator-pharma",
     "title": "Pharmaceutical Isolator",
     "category": "Isolators",
     "tags": ["Featured"],
-    "description": "Aseptic processing with robust containment."
+    "description": "Aseptic processing with robust containment.",
+    "mainImage": "/placeholder.svg?main=p-isolator-pharma",
+    "images": [
+      "/placeholder.svg?img=p-isolator-pharma-1",
+      "/placeholder.svg?img=p-isolator-pharma-2",
+      "/placeholder.svg?img=p-isolator-pharma-3"
+    ],
+    "specs": [
+      { "name": "Operation", "value": "Positive pressure (aseptic)" },
+      { "name": "Glove Ports", "value": "2–6" },
+      { "name": "Bio-decon", "value": "H2O2 vapor compatible" }
+    ]
   },
   {
     "id": "p-isolator-sterile",
     "title": "Sterility Testing Isolator",
     "category": "Isolators",
     "tags": ["Advanced"],
-    "description": "Secure sterility testing with operator protection."
+    "description": "Secure sterility testing with operator protection.",
+    "mainImage": "/placeholder.svg?main=p-isolator-sterile",
+    "images": [
+      "/placeholder.svg?img=p-isolator-sterile-1",
+      "/placeholder.svg?img=p-isolator-sterile-2"
+    ],
+    "specs": [
+      { "name": "Operation", "value": "Negative pressure (containment)" },
+      { "name": "Transfer", "value": "Rapid transfer port" },
+      { "name": "Lighting", "value": "LED, glare-free" }
+    ]
   },
   {
     "id": "p-bsc-c1",
     "title": "Class II C1 Biosafety Cabinet",
     "category": "Biosafety Cabinets",
     "tags": ["New"],
-    "description": "Hybrid flexibility for evolving lab workflows."
+    "description": "Hybrid flexibility for evolving lab workflows.",
+    "mainImage": "/placeholder.svg?main=p-bsc-c1",
+    "images": [
+      "/placeholder.svg?img=p-bsc-c1-1",
+      "/placeholder.svg?img=p-bsc-c1-2"
+    ],
+    "specs": [
+      { "name": "Mode", "value": "A-to-B exhaust convertible" },
+      { "name": "Filter", "value": "HEPA, 99.99% @ 0.3 μm" },
+      { "name": "Workzone Width", "value": "900 mm" }
+    ]
   },
   {
     "id": "p-pcr-uv",
     "title": "PCR Cabinet with UV",
     "category": "PCR Cabinets",
     "tags": ["Sale"],
-    "description": "Integrated UV decontamination to reduce carryover."
+    "description": "Integrated UV decontamination to reduce carryover.",
+    "mainImage": "/placeholder.svg?main=p-pcr-uv",
+    "images": [
+      "/placeholder.svg?img=p-pcr-uv-1",
+      "/placeholder.svg?img=p-pcr-uv-2",
+      "/placeholder.svg?img=p-pcr-uv-3"
+    ],
+    "specs": [
+      { "name": "UV Wavelength", "value": "254 nm" },
+      { "name": "UV Safety", "value": "Interlocked sash" },
+      { "name": "Timer", "value": "Auto-off, programmable" }
+    ]
   },
   {
     "id": "p-fh-vcv",
     "title": "Variable Air Volume Fume Hood",
     "category": "Fume Hoods",
     "tags": ["Advanced"],
-    "description": "Energy-efficient airflow control for safety and savings."
+    "description": "Energy-efficient airflow control for safety and savings.",
+    "mainImage": "/placeholder.svg?main=p-fh-vcv",
+    "images": [
+      "/placeholder.svg?img=p-fh-vcv-1",
+      "/placeholder.svg?img=p-fh-vcv-2"
+    ],
+    "specs": [
+      { "name": "Control", "value": "VAV, automatic" },
+      { "name": "Face Velocity", "value": "0.3–0.5 m/s" },
+      { "name": "Sash", "value": "Combination (vertical/horizontal)" }
+    ]
   },
   {
     "id": "p-cleanroom-doors",
     "title": "Hermetic Sliding Doors",
     "category": "Cleanroom Solutions",
     "tags": ["Featured"],
-    "description": "Airtight door systems to maintain pressure differentials."
+    "description": "Airtight door systems to maintain pressure differentials.",
+    "mainImage": "/placeholder.svg?main=p-cleanroom-doors",
+    "images": [
+      "/placeholder.svg?img=p-cleanroom-doors-1",
+      "/placeholder.svg?img=p-cleanroom-doors-2"
+    ],
+    "specs": [
+      { "name": "Seal", "value": "Perimeter hermetic" },
+      { "name": "Material", "value": "Aluminum / SS304" },
+      { "name": "Automation", "value": "Automatic / manual" }
+    ]
   },
   {
     "id": "p-incu-stack",
     "title": "Stackable CO₂ Incubator",
     "category": "CO₂ Incubators",
     "tags": ["Popular"],
-    "description": "Space-saving growth with independent chambers."
+    "description": "Space-saving growth with independent chambers.",
+    "mainImage": "/placeholder.svg?main=p-incu-stack",
+    "images": [
+      "/placeholder.svg?img=p-incu-stack-1",
+      "/placeholder.svg?img=p-incu-stack-2",
+      "/placeholder.svg?img=p-incu-stack-3"
+    ],
+    "specs": [
+      { "name": "Volume", "value": "2 × 100 L (stacked)" },
+      { "name": "CO₂ Range", "value": "0–20%" },
+      { "name": "Temp Stability", "value": "±0.1°C" }
+    ]
   },
   {
     "id": "p-bsc-class3",
     "title": "Class III Biosafety Cabinet",
     "category": "Biosafety Cabinets",
     "tags": ["Advanced"],
-    "description": "Maximum containment for high-risk agents."
+    "description": "Maximum containment for high-risk agents.",
+    "mainImage": "/placeholder.svg?main=p-bsc-class3",
+    "images": [
+      "/placeholder.svg?img=p-bsc-class3-1",
+      "/placeholder.svg?img=p-bsc-class3-2"
+    ],
+    "specs": [
+      { "name": "Containment", "value": "Gas-tight, negative pressure" },
+      { "name": "Glove Ports", "value": "Butyl / Hypalon" },
+      { "name": "Decon", "value": "VHP compatible" }
+    ]
   },
   {
     "id": "p-pcr-compact",
     "title": "Compact PCR Workstation",
     "category": "PCR Cabinets",
     "tags": ["Featured"],
-    "description": "Benchtop form for small labs and teaching."
+    "description": "Benchtop form for small labs and teaching.",
+    "mainImage": "/placeholder.svg?main=p-pcr-compact",
+    "images": [
+      "/placeholder.svg?img=p-pcr-compact-1",
+      "/placeholder.svg?img=p-pcr-compact-2"
+    ],
+    "specs": [
+      { "name": "Footprint", "value": "Compact bench-top" },
+      { "name": "Filter", "value": "HEPA, 99.99% @ 0.3 μm" },
+      { "name": "Lighting", "value": "LED, ≥ 700 lux" }
+    ]
   }
 ]
