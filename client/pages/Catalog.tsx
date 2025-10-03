@@ -12,11 +12,11 @@ export default function Catalog() {
   return (
     <div className="bg-white text-slate-900">
       <PageBanner
-        title="Product Catalog"
+        title="Products"
         description="Certified medical equipment for clinics, labs and private practices. Explore categories below or contact us for a tailored quote."
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Product Catalog" },
+          { label: "Products" },
         ]}
       />
       <div className="container mx-auto px-4 py-12">

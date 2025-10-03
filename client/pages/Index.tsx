@@ -34,7 +34,7 @@ export default function Index() {
                 created for professionals at every level.
               </p>
               <p className="mt-3 text-white/85 text-base md:text-lg max-w-2xl">
-                Whether you’re looking to get certified, get information on
+                Whether you���re looking to get certified, get information on
                 biosafety products, need to be updated on industry trends, or
                 want to test your knowledge, our institute is your central hub
                 for building expertise and confidence in biosafety protocols.
@@ -48,7 +48,7 @@ export default function Index() {
                   Get certified
                 </Link>
                 <Link
-                  to="/blog"
+                  to="/news"
                   className="inline-flex items-center justify-center rounded-lg border border-white/60 text-white px-5 py-3 font-semibold hover:bg-white/10 transition"
                 >
                   Explore resources
@@ -127,7 +127,7 @@ export default function Index() {
         </div>
         <div className="mt-6">
           <Link
-            to="/catalog"
+            to="/products"
             className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-5 py-3 font-semibold shadow hover:shadow-md transition"
           >
             Browse all products
@@ -142,7 +142,7 @@ export default function Index() {
             Highlighted Resources
           </h2>
           <Link
-            to="/blog"
+            to="/news"
             className="hidden md:inline-flex text-sm hover:underline"
           >
             View all
@@ -273,7 +273,7 @@ function ProductCard({ title, tag }: { title: string; tag: string }) {
 function ResourceCard({ title }: { title: string }) {
   return (
     <Link
-      to="/blog"
+      to="/news"
       className="rounded-2xl border border-slate-200 bg-white p-6 block hover:shadow-sm transition-shadow"
     >
       <div className="text-sm text-slate-500">Featured</div>

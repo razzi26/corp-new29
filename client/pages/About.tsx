@@ -43,7 +43,7 @@ export default function About() {
                 Contact us
               </Link>
               <Link
-                to="/blog"
+                to="/news"
                 className="inline-flex items-center justify-center rounded-lg border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-50 transition"
               >
                 Explore resources
@@ -117,7 +117,7 @@ export default function About() {
               Get in touch
             </Link>
             <Link
-              to="/catalog"
+              to="/products"
               className="inline-flex items-center rounded-lg border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-50 transition"
             >
               Browse products

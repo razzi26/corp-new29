@@ -21,8 +21,8 @@ const nav: Array<{
       { to: "/services/brochures", label: "Brochures" }
     ],
   },
-  { to: "/catalog", label: "Products" },
-  { to: "/blog", label: "News" },
+  { to: "/products", label: "Products" },
+  { to: "/news", label: "News" },
   {
     label: "Resources",
     children: [
