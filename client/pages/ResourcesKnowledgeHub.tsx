@@ -27,6 +27,15 @@ const ARTICLES: ArticleMeta[] = [
     readMins: 8,
     tags: ["Biosafety", "Lab Practices"],
   },
+  {
+    slug: "/resources/knowledge-hub/bsl-and-risk-assessment",
+    title: "Understanding Biosafety Levels (BSL): The Cornerstone of Effective Risk Assessment",
+    description:
+      "How BSL-1 to BSL-4 and dynamic risk assessment combine to select controls and keep labs and communities safe.",
+    date: "2025-03-18",
+    readMins: 9,
+    tags: ["BSL", "Risk Assessment"],
+  },
 ];
 
 const ALL_TAGS = Array.from(new Set(ARTICLES.flatMap((a) => a.tags))).sort();
