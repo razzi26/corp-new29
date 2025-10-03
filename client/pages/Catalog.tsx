@@ -570,15 +570,27 @@ function ProductCard({ product }: { product: Product }) {
   );
   const count = Math.max(1, imgs.length);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [previewIndex, setPreviewIndex] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   // reset index when product changes
-  useEffect(() => setCurrentIndex(0), [product.id]);
+  useEffect(() => { setCurrentIndex(0); setPreviewIndex(null); }, [product.id]);
 
-  const displayed = currentIndex;
+  const displayed = previewIndex ?? currentIndex;
 
-  const prev = () => setCurrentIndex((i) => Math.max(0, i - 1));
-  const next = () => setCurrentIndex((i) => Math.min(count - 1, i + 1));
+  function handlePointerMove(e: React.PointerEvent) {
+    const el = containerRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    let pos = e.clientY - rect.top;
+    if (pos < 0) pos = 0;
+    if (pos > rect.height) pos = rect.height;
+    const segment = rect.height / Math.max(1, count);
+    let idx = Math.floor(pos / (segment || 1));
+    if (idx < 0) idx = 0;
+    if (idx >= count) idx = count - 1;
+    if (idx !== previewIndex) setPreviewIndex(idx);
+  }
 
   return (
     <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white">
