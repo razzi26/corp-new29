@@ -28,6 +28,7 @@ export default function Catalog() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [searchParams, setSearchParams] = useSearchParams();
+  const categoryParam = searchParams.get("category") || null;
 
   const productsTopRef = useRef<HTMLDivElement>(null);
   const scrollToProducts = () => {
@@ -62,21 +63,20 @@ export default function Catalog() {
 
   useEffect(() => {
     if (!products.length) return;
-    const param = searchParams.get("category");
     const valid = new Set(products.map((p) => p.category));
-    if (!param) {
-      setSelectedCategory(null);
+    if (!categoryParam) {
+      if (selectedCategory !== null) setSelectedCategory(null);
       return;
     }
-    if (valid.has(param)) {
-      setSelectedCategory(param);
+    if (valid.has(categoryParam)) {
+      if (selectedCategory !== categoryParam) setSelectedCategory(categoryParam);
     } else {
       const next = new URLSearchParams(searchParams);
       next.delete("category");
       setSearchParams(next, { replace: true });
-      setSelectedCategory(null);
+      if (selectedCategory !== null) setSelectedCategory(null);
     }
-  }, [products, searchParams]);
+  }, [products, categoryParam, selectedCategory, setSearchParams]);
 
   const allCategories = useMemo(
     () => Array.from(new Set(products.map((p) => p.category))).sort(),
