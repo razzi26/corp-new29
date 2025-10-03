@@ -625,15 +625,26 @@ function ProductCard({ product, onRequest }: { product: Product; onRequest?: () 
   );
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isTouch, setIsTouch] = useState(false);
 
-  // reset preview when product changes
+  // detect touch devices (mobile/tablet)
+  useEffect(() => {
+    const touch = typeof window !== "undefined" && ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+    setIsTouch(Boolean(touch));
+  }, []);
+
+  // reset preview/active when product changes
   useEffect(() => {
     setHoverIndex(null);
+    setActiveIndex(0);
   }, [product.id]);
 
-  const displayed = hoverIndex ?? 0;
+  const displayed = isTouch ? activeIndex : hoverIndex ?? activeIndex;
 
+  // hover-based preview (desktop only)
   const handlePointerMove = (e: React.PointerEvent) => {
+    if (isTouch) return;
     if (imgs.length <= 1) return;
     const el = containerRef.current;
     if (!el) return;
@@ -646,6 +657,47 @@ function ProductCard({ product, onRequest }: { product: Product; onRequest?: () 
     setHoverIndex(idx);
   };
 
+  // swipe handling for touch devices
+  const pointerRef = useRef<{ startX?: number; lastX?: number; isDown?: boolean; pid?: number } | null>(null);
+
+  const onPointerDown = (e: React.PointerEvent) => {
+    if (!isTouch) return;
+    const el = e.currentTarget as HTMLDivElement;
+    try { el.setPointerCapture(e.pointerId); } catch {}
+    pointerRef.current = { startX: e.clientX, lastX: e.clientX, isDown: true, pid: e.pointerId };
+  };
+  const onPointerMove = (e: React.PointerEvent) => {
+    if (!isTouch) return;
+    if (!pointerRef.current?.isDown) return;
+    pointerRef.current.lastX = e.clientX;
+  };
+  const commitSwipe = () => {
+    if (!pointerRef.current) return;
+    const { startX, lastX } = pointerRef.current;
+    pointerRef.current.isDown = false;
+    if (startX === undefined || lastX === undefined) return;
+    const dx = lastX - startX;
+    const threshold = 30; // pixels
+    if (dx < -threshold) {
+      setActiveIndex((s) => (s + 1) % imgs.length);
+    } else if (dx > threshold) {
+      setActiveIndex((s) => (s - 1 + imgs.length) % imgs.length);
+    }
+  };
+
+  const onPointerUp = (e: React.PointerEvent) => {
+    if (!isTouch) return;
+    const el = e.currentTarget as HTMLDivElement;
+    try { if (pointerRef.current?.pid !== undefined) el.releasePointerCapture(pointerRef.current.pid); } catch {}
+    commitSwipe();
+  };
+  const onPointerCancel = (e: React.PointerEvent) => {
+    if (!isTouch) return;
+    const el = e.currentTarget as HTMLDivElement;
+    try { if (pointerRef.current?.pid !== undefined) el.releasePointerCapture(pointerRef.current.pid); } catch {}
+    pointerRef.current = null;
+  };
+
   return (
     <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white">
       <div
@@ -654,8 +706,12 @@ function ProductCard({ product, onRequest }: { product: Product; onRequest?: () 
         role="img"
         aria-label={product.title}
         onPointerMove={handlePointerMove}
-        onPointerLeave={() => setHoverIndex(null)}
-        onPointerCancel={() => setHoverIndex(null)}
+        onPointerLeave={() => { if (!isTouch) setHoverIndex(null); }}
+        onPointerCancel={() => { if (!isTouch) setHoverIndex(null); }}
+        onPointerDown={onPointerDown}
+        onPointerMoveCapture={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerCancel}
         onClick={() => {
           /* keep click behavior if needed */
         }}
