@@ -20,9 +20,9 @@ interface ArticleMeta {
 const ARTICLES: ArticleMeta[] = [
   {
     slug: "/resources/knowledge-hub/biosafety-basics",
-    title: "Biosafety Basics: How to Build a Safe Lab Culture",
+    title: "What is Biosafety?",
     description:
-      "A practical guide to biosafety levels, risk assessment, PPE, and routine controls for modern labs.",
+      "Policies, protocols, and practices to minimize exposure to harmful biological agents and protect people and the environment.",
     date: "2025-03-12",
     readMins: 8,
     tags: ["Biosafety", "Lab Practices"],
