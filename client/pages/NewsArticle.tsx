@@ -159,7 +159,7 @@ export default function NewsArticle() {
 
           <aside className="lg:col-span-4">
             <div className="sticky top-24">
-              <h3 className="mb-4 text-base md:text-lg font-semibold">Recent News</h3>
+              <h3 className="mb-4 text-lg md:text-xl font-semibold">Recent News</h3>
               <ul className="divide-y divide-slate-200">
                 {recent.map((a) => {
                   const slugParam = a.slug.replace("/news/", "");
@@ -169,7 +169,7 @@ export default function NewsArticle() {
                         <div className="min-w-0">
                           <Link
                             to={`/news/${slugParam}`}
-                            className="line-clamp-2 text-sm md:text-[0.95rem] font-semibold text-[#00467f] hover:underline"
+                            className="line-clamp-2 text-base md:text-lg font-semibold text-[#00467f] hover:underline"
                           >
                             {a.title}
                           </Link>
