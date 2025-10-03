@@ -113,51 +113,37 @@ export default function ProductPage() {
 
   return (
     <div className="bg-white text-slate-900">
-      <PageBanner
-        title={product.title}
-        description={product.description}
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Products", href: "/products" },
-          { label: product.title },
-        ]}
-        meta={
-          <div className="flex flex-wrap items-center gap-2">
-            <Badge variant="secondary" className="text-xs">
-              {product.category}
-            </Badge>
-            <div className="flex flex-wrap gap-2">
-              {product.tags.map((t) => (
-                <span
-                  key={t}
-                  className={cn(
-                    "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold",
-                    TAG_COLORS[t] ?? "bg-white text-[hsl(var(--brand-end))]",
-                  )}
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-        }
-      />
-
       <div className="container mx-auto px-4 py-10">
         <div className="grid gap-8 lg:grid-cols-12">
-          <div className="lg:col-span-8">
-            {/* Media Gallery */}
+          {/* Left: Gallery Slider */}
+          <div className="lg:col-span-7">
             {gallery.length > 0 ? (
-              <div className="rounded-2xl border border-slate-200 bg-white p-3">
-                <div className="aspect-[16/10] w-full overflow-hidden rounded-xl bg-slate-50">
-                  {/* main image */}
-                  <img
-                    src={gallery[Math.min(activeIndex, gallery.length - 1)]}
-                    alt={product.title}
-                    className="h-full w-full object-cover"
-                    loading="eager"
-                  />
-                </div>
+              <div className="relative rounded-2xl border border-slate-200 bg-white p-3">
+                <Carousel
+                  className="relative"
+                  opts={{ loop: true }}
+                >
+                  <CarouselContent>
+                    {gallery.map((src, i) => (
+                      <CarouselItem key={src + i}>
+                        <div className="aspect-[16/10] w-full overflow-hidden rounded-xl bg-slate-50">
+                          <img
+                            src={src}
+                            alt={`${product.title} image ${i + 1}`}
+                            className="h-full w-full object-cover"
+                            loading={i === 0 ? "eager" : "lazy"}
+                          />
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  {gallery.length > 1 && (
+                    <>
+                      <CarouselPrevious className="-left-4 bg-white/80 backdrop-blur border-slate-300" />
+                      <CarouselNext className="-right-4 bg-white/80 backdrop-blur border-slate-300" />
+                    </>
+                  )}
+                </Carousel>
                 {gallery.length > 1 && (
                   <div className="mt-3 flex gap-2 overflow-x-auto py-1">
                     {gallery.map((src, i) => (
@@ -169,8 +155,8 @@ export default function ProductPage() {
                             ? "border-[hsl(var(--brand-end))]"
                             : "border-slate-200 hover:border-slate-300",
                         )}
-                        aria-pressed={i === activeIndex}
                         onClick={() => setActiveIndex(i)}
+                        aria-label={`Go to image ${i + 1}`}
                       >
                         <img
                           src={src}
@@ -188,115 +174,109 @@ export default function ProductPage() {
                 <div className="aspect-[16/10] w-full overflow-hidden rounded-xl bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]" />
               </div>
             )}
-
-            <div className="prose max-w-none mt-8">
-              <h2 className="text-xl font-semibold">Overview</h2>
-              <p className="mt-3 text-slate-700">{product.description}</p>
-            </div>
-
-            {/* Specifications */}
-            {product.specs && product.specs.length > 0 && (
-              <div className="mt-8">
-                <h3 className="text-lg font-semibold text-slate-900">
-                  Specifications
-                </h3>
-                <div className="mt-3 overflow-hidden rounded-xl border border-slate-200">
-                  <table className="w-full text-sm">
-                    <tbody>
-                      {product.specs.map((row, idx) => (
-                        <tr
-                          key={row.name + idx}
-                          className={idx % 2 ? "bg-slate-50" : "bg-white"}
-                        >
-                          <td className="w-1/3 p-3 text-slate-600">
-                            {row.name}
-                          </td>
-                          <td className="p-3 text-slate-900">{row.value}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            )}
-
-            <div className="mt-8 flex gap-3">
-              <Link
-                to="/contact"
-                className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-4 py-2.5 text-sm font-semibold shadow"
-              >
-                Request quote
-              </Link>
-              <Link
-                to="/products"
-                className="inline-flex items-center rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-semibold hover:bg-slate-50"
-              >
-                Back to Products
-              </Link>
-            </div>
           </div>
-          <aside className="lg:col-span-4 lg:sticky lg:top-24 self-start">
-            <div className="rounded-2xl border border-slate-200 bg-white p-4">
-              <h3 className="text-sm font-semibold text-slate-800">Details</h3>
-              <dl className="mt-3 space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <dt className="text-slate-500">ID</dt>
-                  <dd className="text-slate-800">{product.id}</dd>
-                </div>
-                <div className="flex justify-between">
-                  <dt className="text-slate-500">Category</dt>
-                  <dd className="text-slate-800">{product.category}</dd>
-                </div>
-                <div>
-                  <dt className="text-slate-500">Tags</dt>
-                  <dd className="mt-1 flex flex-wrap gap-2">
-                    {product.tags.map((t) => (
-                      <span
-                        key={t}
-                        className={cn(
-                          "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold",
-                          TAG_COLORS[t] ??
-                            "bg-white text-[hsl(var(--brand-end))]",
-                        )}
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </dd>
-                </div>
-              </dl>
-            </div>
 
-            {/* Brochures */}
-            {product.brochures && product.brochures.length > 0 && (
-              <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-4">
-                <h3 className="text-sm font-semibold text-slate-800">
-                  Brochures
-                </h3>
-                <ul className="mt-2 space-y-2 text-sm">
-                  {product.brochures.map((b, i) => (
-                    <li
-                      key={(b.url || "") + i}
-                      className="flex items-center justify-between gap-3"
+          {/* Right: Title, description, tags, actions, details */}
+          <aside className="lg:col-span-5 self-start lg:sticky lg:top-24">
+            <div className="rounded-2xl border border-slate-200 bg-white p-6">
+              <h1 className="text-2xl font-bold text-slate-900">{product.title}</h1>
+              <div className="mt-3 flex flex-wrap items-center gap-2">
+                <Badge variant="secondary" className="text-xs">
+                  {product.category}
+                </Badge>
+                <div className="flex flex-wrap gap-2">
+                  {product.tags.map((t) => (
+                    <span
+                      key={t}
+                      className={cn(
+                        "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold",
+                        TAG_COLORS[t] ?? "bg-white text-[hsl(var(--brand-end))]",
+                      )}
                     >
-                      <span className="text-slate-700">
-                        {b.label ?? b.lang}
-                      </span>
-                      <a
-                        href={b.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center rounded-md border border-slate-300 px-2.5 py-1.5 text-xs font-semibold hover:bg-slate-50"
-                      >
-                        Download
-                      </a>
-                    </li>
+                      {t}
+                    </span>
                   ))}
-                </ul>
+                </div>
               </div>
-            )}
+              <p className="mt-4 text-slate-700">{product.description}</p>
+
+              <div className="mt-6 flex gap-3">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-4 py-2.5 text-sm font-semibold shadow"
+                >
+                  Request quote
+                </Link>
+                <Link
+                  to="/products"
+                  className="inline-flex items-center rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-semibold hover:bg-slate-50"
+                >
+                  Back to Products
+                </Link>
+              </div>
+
+              <div className="mt-6">
+                <h3 className="text-sm font-semibold text-slate-800">Details</h3>
+                <dl className="mt-3 space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <dt className="text-slate-500">ID</dt>
+                    <dd className="text-slate-800">{product.id}</dd>
+                  </div>
+                  <div className="flex justify-between">
+                    <dt className="text-slate-500">Category</dt>
+                    <dd className="text-slate-800">{product.category}</dd>
+                  </div>
+                </dl>
+              </div>
+
+              {product.brochures && product.brochures.length > 0 && (
+                <div className="mt-6">
+                  <h3 className="text-sm font-semibold text-slate-800">Brochures</h3>
+                  <ul className="mt-2 space-y-2 text-sm">
+                    {product.brochures.map((b, i) => (
+                      <li
+                        key={(b.url || "") + i}
+                        className="flex items-center justify-between gap-3"
+                      >
+                        <span className="text-slate-700">{b.label ?? b.lang}</span>
+                        <a
+                          href={b.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center rounded-md border border-slate-300 px-2.5 py-1.5 text-xs font-semibold hover:bg-slate-50"
+                        >
+                          Download
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
           </aside>
         </div>
+
+        {/* Specifications - bottom full width */}
+        {product.specs && product.specs.length > 0 && (
+          <div className="mt-10">
+            <h2 className="text-xl font-semibold text-slate-900">Specifications</h2>
+            <div className="mt-3 overflow-hidden rounded-xl border border-slate-200">
+              <table className="w-full text-sm">
+                <tbody>
+                  {product.specs.map((row, idx) => (
+                    <tr
+                      key={row.name + idx}
+                      className={idx % 2 ? "bg-slate-50" : "bg-white"}
+                    >
+                      <td className="w-1/3 p-3 text-slate-600">{row.name}</td>
+                      <td className="p-3 text-slate-900">{row.value}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
