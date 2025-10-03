@@ -1,4 +1,5 @@
-import { Facebook, Twitter, Linkedin, Send, Share2 } from "lucide-react";
+import { Facebook, Linkedin, Send, Share2 } from "lucide-react";
+import { XLogo } from "@/components/icons/XLogo";
 
 export interface ShareButtonsProps {
   url?: string;
@@ -42,13 +43,13 @@ export function ShareButtons({
       </a>
       <a
         className="inline-flex h-9 w-9 items-center justify-center rounded-full border hover:bg-slate-50"
-        aria-label="Share on X/Twitter"
+        aria-label="Share on X"
         target="_blank"
         rel="noopener noreferrer"
-        href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
-        title="X/Twitter"
+        href={`https://x.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
+        title="X"
       >
-        <Twitter className="h-4 w-4" />
+        <XLogo className="h-4 w-4" />
       </a>
       <a
         className="inline-flex h-9 w-9 items-center justify-center rounded-full border hover:bg-slate-50"
