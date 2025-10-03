@@ -600,10 +600,19 @@ function ProductCard({ product }: { product: Product }) {
         className="relative w-full aspect-[1/1] overflow-hidden rounded-t-2xl bg-slate-50"
         role="img"
         aria-label={product.title}
-        onPointerMove={count > 1 ? handlePointerMove : undefined}
-        onPointerEnter={() => count > 1 && setPreviewIndex(0)}
-        onPointerLeave={() => setPreviewIndex(null)}
-        onClick={() => { if (previewIndex != null) setCurrentIndex(previewIndex); }}
+        onPointerEnter={() => {
+          if (imgs.length > 1 && !hoverTimerRef.current) {
+            // start cycling every 700ms
+            hoverTimerRef.current = window.setInterval(handleImageHover, 700);
+          }
+        }}
+        onPointerLeave={() => {
+          if (hoverTimerRef.current) {
+            clearInterval(hoverTimerRef.current);
+            hoverTimerRef.current = null;
+          }
+        }}
+        onClick={() => { /* keep click behavior if needed */ }}
       >
         <img
           src={imgs[displayed]}
