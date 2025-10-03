@@ -604,6 +604,23 @@ function ProductCard({ product }: { product: Product }) {
             </span>
           ))}
         </div>
+
+        {imgs.length > 1 && (
+          <div className="absolute left-1/2 -translate-x-1/2 bottom-2 flex items-center gap-2">
+            {imgs.map((_, idx) => (
+              <span
+                key={idx}
+                aria-hidden
+                className={cn(
+                  "w-2 h-2 rounded-full transition-opacity",
+                  idx === displayed
+                    ? "bg-[hsl(var(--brand-end))] opacity-100"
+                    : "bg-white/60 opacity-70",
+                )}
+              />
+            ))}
+          </div>
+        )}
       </div>
       <div className="p-5">
         <h3 className="font-semibold text-lg">
