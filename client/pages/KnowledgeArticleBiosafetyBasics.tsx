@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { PageBanner } from "@/components/layout/PageBanner";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
+import { Seo } from "@/components/Seo";
+import { ShareButtons } from "@/components/ShareButtons";
 
 function Toc() {
   return (
@@ -31,16 +33,30 @@ export default function KnowledgeArticleBiosafetyBasics() {
         ]}
       />
 
+      <Seo
+        title="What is Biosafety?"
+        description="Policies, protocols, and practices to minimize exposure to harmful biological agents and protect people and the environment."
+        url={typeof window !== "undefined" ? window.location.href : undefined}
+        image="/placeholder.svg"
+        type="article"
+      />
+
       <article className="container mx-auto px-4 py-12 md:py-16">
-        <div className="mb-6 flex flex-wrap items-center gap-3 text-sm text-slate-600">
-          <time dateTime="2025-03-12">March 12, 2025</time>
-          <span>•</span>
-          <span>7 min read</span>
-          <span>•</span>
-          <div className="flex gap-2">
-            <Badge variant="secondary">Biosafety</Badge>
-            <Badge variant="secondary">Lab Practices</Badge>
+        <div className="mb-6 flex flex-col gap-3 text-sm text-slate-600 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-wrap items-center gap-3">
+            <time dateTime="2025-03-12">March 12, 2025</time>
+            <span>•</span>
+            <span>7 min read</span>
+            <span>•</span>
+            <div className="flex gap-2">
+              <Badge variant="secondary">Biosafety</Badge>
+              <Badge variant="secondary">Lab Practices</Badge>
+            </div>
           </div>
+          <ShareButtons
+            title="What is Biosafety?"
+            description="Policies, protocols, and practices to minimize exposure to harmful biological agents and protect people and the environment."
+          />
         </div>
 
         {/* Mobile TOC */}
