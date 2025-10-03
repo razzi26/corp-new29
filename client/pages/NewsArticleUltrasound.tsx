@@ -24,14 +24,13 @@ export default function NewsArticleUltrasound() {
       />
 
       <article className="container mx-auto px-4 py-12 md:py-16">
-        <div className="mb-6 flex flex-col gap-3 text-sm text-slate-600 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-wrap items-center gap-3">
-            <time dateTime="2025-02-10">February 10, 2025</time>
-            <span>•</span>
-            <span>5 min read</span>
-          </div>
-          <ShareButtons title={title} description={description} />
+        <div className="mb-2 flex flex-wrap items-center gap-3 text-sm text-slate-600">
+          <time dateTime="2025-02-10">February 10, 2025</time>
+          <span>•</span>
+          <span>5 min read</span>
         </div>
+
+        <ShareButtons title={title} description={description} className="mb-6" />
 
         <p className="text-lg leading-8 text-slate-700">
           Selecting an ultrasound scanner starts with your clinical scenarios: point-of-care, OB/GYN,
