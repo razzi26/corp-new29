@@ -303,14 +303,6 @@ export default function Catalog() {
                 </ul>
               </div>
 
-              <div className="mt-6">
-                <button
-                  onClick={clearFilters}
-                  className="w-full inline-flex items-center justify-center rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold hover:bg-slate-50"
-                >
-                  Reset filters
-                </button>
-              </div>
             </div>
           </aside>
 
