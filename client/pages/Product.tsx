@@ -214,8 +214,8 @@ export default function ProductPage() {
             {gallery.length > 0 ? (
               <div className="relative p-0">
                 <div className="grid grid-cols-12 gap-4 items-start">
-                  {/* Thumbnails left (vertical) */}
-                  <div className="col-span-2 relative">
+                  {/* Thumbnails left (vertical) - hidden on mobile */}
+                  <div className="col-span-2 relative hidden lg:block">
                     <div
                       className="overflow-y-auto pr-1 no-scrollbar"
                       ref={(el) => {
@@ -297,8 +297,45 @@ export default function ProductPage() {
                   </div>
 
                   {/* Main image right */}
-                  <div className="col-span-10">
-                    <div className="relative">
+                  <div className="col-span-12 lg:col-span-10">
+                    <div
+                      className="relative"
+                      ref={(el) => {
+                        /* slider ref used for touch */
+                      }}
+                      onPointerDown={(e) => {
+                        const el = e.currentTarget as HTMLDivElement;
+                        (el as any)._startX = e.clientX;
+                        (el as any)._isDown = true;
+                      }}
+                      onPointerMove={(e) => {
+                        const el = e.currentTarget as HTMLDivElement;
+                        if (!(el as any)._isDown) return;
+                        (el as any)._lastX = e.clientX;
+                      }}
+                      onPointerUp={(e) => {
+                        const el = e.currentTarget as HTMLDivElement;
+                        if (!(el as any)._isDown) return;
+                        const startX = (el as any)._startX as number | undefined;
+                        const lastX = (el as any)._lastX as number | undefined;
+                        (el as any)._isDown = false;
+                        if (startX === undefined || lastX === undefined) return;
+                        const dx = lastX - startX;
+                        const threshold = 40;
+                        if (dx < -threshold) {
+                          // swipe left => next
+                          setActiveIndex((s) => (s + 1) % gallery.length);
+                        } else if (dx > threshold) {
+                          // swipe right => prev
+                          setActiveIndex((s) => (s - 1 + gallery.length) % gallery.length);
+                        }
+                      }}
+                    >
+                      {/* Mobile counter */}
+                      <div className="absolute left-3 top-3 rounded-md bg-black/60 text-white text-xs px-2 py-1 lg:hidden">
+                        {displayedIndex + 1} / {gallery.length}
+                      </div>
+
                       {gallery.map((src, i) => (
                         <div
                           key={src + i}
