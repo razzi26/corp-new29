@@ -549,9 +549,47 @@ function TagsDrawer({
 }
 
 function ProductCard({ product }: { product: Product }) {
+  const imgs = (product.mainImage ? [product.mainImage] : []).concat(
+    product.images ?? [],
+  );
+  const count = Math.max(1, imgs.length);
+  const [previewIndex, setPreviewIndex] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  const displayed = previewIndex ?? 0;
+
+  function handleMove(e: React.MouseEvent) {
+    const el = containerRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const y = e.clientY - rect.top;
+    // divide vertically into `count` zones
+    let idx = Math.floor((y / rect.height) * count);
+    if (idx < 0) idx = 0;
+    if (idx >= count) idx = count - 1;
+    setPreviewIndex(idx);
+  }
+
   return (
     <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white">
-      <div className="relative h-40 bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]">
+      <div
+        ref={containerRef}
+        className="relative h-40 bg-slate-50 overflow-hidden"
+        onMouseMove={count > 1 ? handleMove : undefined}
+        onMouseEnter={() => count > 1 && setPreviewIndex(0)}
+        onMouseLeave={() => setPreviewIndex(null)}
+        role="img"
+        aria-label={product.title}
+      >
+        <img
+          src={imgs[displayed]}
+          alt={product.title}
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ left: 0, top: 0 }}
+          onLoad={() => {
+            // no-op; keeps image loading behavior
+          }}
+        />
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_20%,white,transparent_35%),radial-gradient(circle_at_70%_80%,white,transparent_25%)]" />
         <div className="absolute top-3 left-3 flex flex-wrap gap-2">
           {product.tags.map((t) => (
