@@ -151,7 +151,7 @@ const TAG_COLORS: Record<string, string> = {
 
 export default function Catalog() {
   const [query, setQuery] = useState("");
-  const [selectedCategories, setSelectedCategories] = useState<Set<string>>(new Set());
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set());
 
   const allCategories = useMemo(
@@ -169,7 +169,7 @@ export default function Catalog() {
       if (q && !(`${p.title} ${p.category} ${p.tags.join(" ")}`.toLowerCase().includes(q))) {
         return false;
       }
-      if (selectedCategories.size > 0 && !selectedCategories.has(p.category)) {
+      if (selectedCategory && p.category !== selectedCategory) {
         return false;
       }
       if (selectedTags.size > 0 && !p.tags.some((t) => selectedTags.has(t))) {
@@ -177,7 +177,7 @@ export default function Catalog() {
       }
       return true;
     });
-  }, [query, selectedCategories, selectedTags]);
+  }, [query, selectedCategory, selectedTags]);
 
   const grouped = useMemo(() => {
     const map = new Map<string, Product[]>();
@@ -198,7 +198,7 @@ export default function Catalog() {
   };
 
   const clearFilters = () => {
-    setSelectedCategories(new Set());
+    setSelectedCategory(null);
     setSelectedTags(new Set());
   };
 
@@ -227,40 +227,7 @@ export default function Catalog() {
                 />
               </div>
 
-              <div className="mt-6">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-semibold text-slate-800">Categories</h3>
-                  <button
-                    className="text-xs text-[hsl(var(--brand-end))] hover:underline"
-                    onClick={() => setSelectedCategories(new Set())}
-                    aria-label="Clear category filters"
-                  >
-                    Clear
-                  </button>
-                </div>
-                <ul className="mt-3 space-y-2">
-                  {allCategories.map((cat) => {
-                    const active = selectedCategories.has(cat);
-                    return (
-                      <li key={cat}>
-                        <button
-                          onClick={() => toggleSet(setSelectedCategories, cat)}
-                          aria-pressed={active}
-                          className={cn(
-                            "w-full text-left px-3 py-2 rounded-lg border transition",
-                            active
-                              ? "bg-[hsl(var(--brand-end))] text-white border-transparent"
-                              : "bg-white text-slate-800 border-slate-300 hover:bg-slate-50",
-                          )}
-                        >
-                          {cat}
-                        </button>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-
+              {/* Tags above Categories */}
               <div className="mt-6">
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-semibold text-slate-800">Tags</h3>
@@ -288,6 +255,42 @@ export default function Catalog() {
                           )}
                         >
                           {tag}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+
+              <div className="mt-6">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-sm font-semibold text-slate-800">Categories</h3>
+                  <button
+                    className="text-xs text-[hsl(var(--brand-end))] hover:underline"
+                    onClick={() => setSelectedCategory(null)}
+                    aria-label="Clear category filters"
+                  >
+                    Clear
+                  </button>
+                </div>
+                <ul className="mt-3 space-y-2">
+                  {allCategories.map((cat) => {
+                    const active = selectedCategory === cat;
+                    return (
+                      <li key={cat}>
+                        <button
+                          onClick={() =>
+                            setSelectedCategory((prev) => (prev === cat ? null : cat))
+                          }
+                          aria-pressed={active}
+                          className={cn(
+                            "w-full text-left px-3 py-2 rounded-lg border transition",
+                            active
+                              ? "bg-[hsl(var(--brand-end))] text-white border-transparent"
+                              : "bg-white text-slate-800 border-slate-300 hover:bg-slate-50",
+                          )}
+                        >
+                          {cat}
                         </button>
                       </li>
                     );
