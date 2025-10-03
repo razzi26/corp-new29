@@ -57,14 +57,29 @@ export default function Catalog() {
     (async () => {
       try {
         setLoading(true);
-        const res = await fetch("/data/products.json", {
-          headers: { "cache-control": "no-cache" },
-        });
-        if (!res.ok) throw new Error(`Failed to load products: ${res.status}`);
-        const data: Product[] = await res.json();
+        const tryFetch = async (url: string) => {
+          const res = await fetch(url, { headers: { "cache-control": "no-cache" }, credentials: "same-origin" });
+          if (!res.ok) throw new Error(`Failed to load products: ${res.status}`);
+          return (await res.json()) as Product[];
+        };
+
+        let data: Product[] | null = null;
+        try {
+          data = await tryFetch("/data/products.json");
+        } catch (err) {
+          // Attempt with absolute origin in case base path differs
+          try {
+            const origin = typeof window !== "undefined" ? window.location.origin : "";
+            if (origin) data = await tryFetch(origin + "/data/products.json");
+          } catch (err2) {
+            // no-op, will throw below
+          }
+        }
+
+        if (!data) throw new Error("Failed to load products.json from server");
         if (!cancelled) setProducts(data);
       } catch (e: any) {
-        if (!cancelled) setError(e?.message || "Failed to load products");
+        if (!cancelled) setError(String(e?.message || "Failed to load products"));
       } finally {
         if (!cancelled) setLoading(false);
       }
