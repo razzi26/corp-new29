@@ -214,9 +214,9 @@ export default function Catalog() {
         <div className="grid gap-8 lg:grid-cols-12">
           {/* Sidebar (desktop) */}
           <aside className="lg:col-span-3 lg:sticky lg:top-20 lg:self-start">
-            <div className="rounded-2xl border border-slate-200 bg-white p-4">
+            <div className="bg-white">
               <div className="space-y-3">
-                <label className="block text-sm font-medium text-slate-700">
+                <label className="block text-sm font-semibold text-slate-800">
                   Search
                 </label>
                 <input
