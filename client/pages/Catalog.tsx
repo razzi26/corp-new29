@@ -63,7 +63,8 @@ export default function Catalog() {
 
   useEffect(() => {
     if (!products.length) return;
-    const normalize = (s: string) => s.normalize("NFKC").replace(/\s+/g, " ").trim();
+    const normalize = (s: string) =>
+      s.normalize("NFKC").replace(/\s+/g, " ").trim();
     if (!categoryParam) {
       if (selectedCategory !== null) setSelectedCategory(null);
       return;
@@ -79,7 +80,6 @@ export default function Catalog() {
     }
   }, [products.length, categoryParam, categoryIndex, selectedCategory]);
 
-
   const allCategories = useMemo(
     () => Array.from(new Set(products.map((p) => p.category))).sort(),
     [products],
@@ -94,7 +94,9 @@ export default function Catalog() {
     return products.filter((p) => {
       if (
         q &&
-        !(`${p.title} ${p.category} ${p.tags.join(" ")}`.toLowerCase().includes(q))
+        !`${p.title} ${p.category} ${p.tags.join(" ")}`
+          .toLowerCase()
+          .includes(q)
       ) {
         return false;
       }
@@ -110,7 +112,8 @@ export default function Catalog() {
 
   const categoryIndex = useMemo(() => {
     const map = new Map<string, string>();
-    const normalize = (s: string) => s.normalize("NFKC").replace(/\s+/g, " ").trim();
+    const normalize = (s: string) =>
+      s.normalize("NFKC").replace(/\s+/g, " ").trim();
     for (const c of allCategories) map.set(normalize(c), c);
     return map;
   }, [allCategories]);
@@ -194,12 +197,15 @@ export default function Catalog() {
               </div>
 
               <div className="mt-6">
-                <h3 className="text-sm font-semibold text-slate-800">Categories</h3>
+                <h3 className="text-sm font-semibold text-slate-800">
+                  Categories
+                </h3>
                 <ul className="mt-3 rounded-lg border border-slate-300 overflow-hidden divide-y divide-slate-200">
                   <li>
                     <button
                       onClick={() => {
-                        if (selectedCategory !== null) setSelectedCategory(null);
+                        if (selectedCategory !== null)
+                          setSelectedCategory(null);
                         const next = new URLSearchParams(searchParams);
                         next.delete("category");
                         setSearchParams(next, { replace: true });
@@ -223,7 +229,8 @@ export default function Catalog() {
                         <button
                           onClick={() => {
                             const next = new URLSearchParams(searchParams);
-                            const nextCat = selectedCategory === cat ? null : cat;
+                            const nextCat =
+                              selectedCategory === cat ? null : cat;
                             if (nextCat) next.set("category", nextCat);
                             else next.delete("category");
                             setSearchParams(next, { replace: true });
@@ -319,13 +326,18 @@ function ProductCard({ product }: { product: Product }) {
       </div>
       <div className="p-5">
         <h3 className="font-semibold text-lg">
-          <Link to={`/products/${product.id}`} className="text-[hsl(var(--brand-end))] hover:underline">
+          <Link
+            to={`/products/${product.id}`}
+            className="text-[hsl(var(--brand-end))] hover:underline"
+          >
             {product.title}
           </Link>
         </h3>
         <p className="mt-1 text-sm text-slate-600">{product.description}</p>
         <div className="mt-3 flex items-center gap-2 text-xs text-slate-500">
-          <Badge variant="secondary" className="text-xs">{product.category}</Badge>
+          <Badge variant="secondary" className="text-xs">
+            {product.category}
+          </Badge>
         </div>
         <div className="mt-4 flex gap-2">
           <Link
