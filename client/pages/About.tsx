@@ -6,9 +6,9 @@ export default function About() {
   return (
     <div className="bg-white text-slate-900">
       <PageBanner
-        title="About"
+        title="About Us"
         description="Discover Esco Biosafety Institute and our mission to advance biosafety education and standards."
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "About Us" }]}
       />
       {/* Hero */}
       <section className="container mx-auto px-4 py-16 md:py-24">
