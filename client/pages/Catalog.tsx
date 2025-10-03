@@ -573,16 +573,15 @@ function ProductCard({ product }: { product: Product }) {
 
   const displayed = previewIndex ?? 0;
 
-  function handleMove(e: React.MouseEvent) {
+  function handlePointerMove(e: React.PointerEvent) {
     const el = containerRef.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
-    const y = e.clientY - rect.top;
-    // divide vertically into `count` zones
-    let idx = Math.floor((y / rect.height) * count);
-    if (idx < 0) idx = 0;
-    if (idx >= count) idx = count - 1;
-    setPreviewIndex(idx);
+    // use Y position relative to container for proportional slicing
+    const pos = e.clientY - rect.top;
+    const ratio = Math.min(Math.max(pos / (rect.height || 1), 0), 0.9999);
+    const idx = Math.floor(ratio * count);
+    if (idx !== previewIndex) setPreviewIndex(idx);
   }
 
   return (
@@ -590,9 +589,9 @@ function ProductCard({ product }: { product: Product }) {
       <div
         ref={containerRef}
         className="relative w-full aspect-[1/1] overflow-hidden rounded-t-2xl bg-slate-50"
-        onMouseMove={count > 1 ? handleMove : undefined}
-        onMouseEnter={() => count > 1 && setPreviewIndex(0)}
-        onMouseLeave={() => setPreviewIndex(null)}
+        onPointerMove={count > 1 ? handlePointerMove : undefined}
+        onPointerEnter={() => count > 1 && setPreviewIndex(0)}
+        onPointerLeave={() => setPreviewIndex(null)}
         role="img"
         aria-label={product.title}
       >
