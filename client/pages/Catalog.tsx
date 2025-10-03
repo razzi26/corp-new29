@@ -573,15 +573,28 @@ function ProductCard({ product }: { product: Product }) {
 
   const displayed = previewIndex ?? 0;
 
+  const lastIdxRef = useRef<number | null>(null);
+  const rafRef = useRef<number | null>(null);
+
   function handlePointerMove(e: React.PointerEvent) {
     const el = containerRef.current;
     if (!el) return;
-    const rect = el.getBoundingClientRect();
-    // use Y position relative to container for proportional slicing
-    const pos = e.clientY - rect.top;
-    const ratio = Math.min(Math.max(pos / (rect.height || 1), 0), 0.9999);
-    const idx = Math.floor(ratio * count);
-    if (idx !== previewIndex) setPreviewIndex(idx);
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    rafRef.current = requestAnimationFrame(() => {
+      const rect = el.getBoundingClientRect();
+      // use Y position relative to container for proportional slicing
+      let pos = e.clientY - rect.top;
+      if (pos < 0) pos = 0;
+      if (pos > rect.height) pos = rect.height;
+      const segment = rect.height / Math.max(1, count);
+      let idx = Math.floor(pos / (segment || 1));
+      if (idx < 0) idx = 0;
+      if (idx >= count) idx = count - 1;
+      if (lastIdxRef.current !== idx) {
+        lastIdxRef.current = idx;
+        setPreviewIndex(idx);
+      }
+    });
   }
 
   return (
