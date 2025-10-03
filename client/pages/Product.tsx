@@ -174,7 +174,9 @@ export default function ProductPage() {
                             key={src + i}
                             className={cn(
                               "relative h-14 w-full overflow-hidden rounded-md focus:outline-none focus:ring-0 focus-visible:ring-0 focus:border-[hsl(var(--brand-end))]",
-                              i === activeIndex ? "border-2 border-[hsl(var(--brand-end))]" : "border border-transparent",
+                              i === activeIndex
+                                ? "border-2 border-[hsl(var(--brand-end))]"
+                                : "border border-transparent",
                             )}
                             onMouseEnter={() => setActiveIndex(i)}
                             onFocus={() => setActiveIndex(i)}
@@ -257,7 +259,9 @@ export default function ProductPage() {
           {/* Right: Title, description, tags, actions, details */}
           <aside className="lg:col-span-5 self-start lg:sticky lg:top-24">
             <div className="p-0">
-              <h1 className="text-2xl font-bold text-slate-900">{product.title}</h1>
+              <h1 className="text-2xl font-bold text-slate-900">
+                {product.title}
+              </h1>
               <div className="mt-3 flex flex-wrap items-center gap-2">
                 <Badge variant="secondary" className="text-xs">
                   {product.category}
@@ -268,7 +272,8 @@ export default function ProductPage() {
                       key={t}
                       className={cn(
                         "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold",
-                        TAG_COLORS[t] ?? "bg-white text-[hsl(var(--brand-end))]",
+                        TAG_COLORS[t] ??
+                          "bg-white text-[hsl(var(--brand-end))]",
                       )}
                     >
                       {t}
@@ -294,7 +299,9 @@ export default function ProductPage() {
               </div>
 
               <div className="mt-6">
-                <h3 className="text-sm font-semibold text-slate-800">Details</h3>
+                <h3 className="text-sm font-semibold text-slate-800">
+                  Details
+                </h3>
                 <dl className="mt-3 space-y-2 text-sm">
                   <div className="flex justify-between">
                     <dt className="text-slate-500">ID</dt>
@@ -309,14 +316,18 @@ export default function ProductPage() {
 
               {product.brochures && product.brochures.length > 0 && (
                 <div className="mt-8">
-                  <h3 className="text-sm font-semibold text-slate-800">Brochures</h3>
+                  <h3 className="text-sm font-semibold text-slate-800">
+                    Brochures
+                  </h3>
                   <ul className="mt-3 space-y-2 text-sm">
                     {product.brochures.map((b, i) => (
                       <li
                         key={(b.url || "") + i}
                         className="flex items-center justify-between gap-3"
                       >
-                        <span className="text-slate-700">{b.label ?? b.lang}</span>
+                        <span className="text-slate-700">
+                          {b.label ?? b.lang}
+                        </span>
                         <a
                           href={b.url}
                           target="_blank"
@@ -337,13 +348,17 @@ export default function ProductPage() {
         {/* Specifications - bottom full width */}
         {product.specs && product.specs.length > 0 && (
           <div className="mt-16">
-            <h2 className="text-xl font-semibold text-slate-900">Specifications</h2>
+            <h2 className="text-xl font-semibold text-slate-900">
+              Specifications
+            </h2>
             <div className="mt-6">
               <table className="w-full text-sm">
                 <tbody>
                   {product.specs.map((row, idx) => (
                     <tr key={row.name + idx}>
-                      <td className="w-1/3 py-2 pr-6 text-slate-500 align-top">{row.name}</td>
+                      <td className="w-1/3 py-2 pr-6 text-slate-500 align-top">
+                        {row.name}
+                      </td>
                       <td className="py-2 text-slate-900">{row.value}</td>
                     </tr>
                   ))}
@@ -357,14 +372,14 @@ export default function ProductPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Product',
+            "@context": "https://schema.org",
+            "@type": "Product",
             name: product.title,
             description: product.description,
             sku: product.id,
             category: product.category,
             image: gallery,
-            brand: { '@type': 'Brand', name: 'Esco Biosafety Institute' },
+            brand: { "@type": "Brand", name: "Esco Biosafety Institute" },
           }),
         }}
       />
@@ -372,12 +387,22 @@ export default function ProductPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
-              { '@type': 'ListItem', position: 2, name: 'Products', item: '/products' },
-              { '@type': 'ListItem', position: 3, name: product.title, item: location.pathname },
+              { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Products",
+                item: "/products",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: product.title,
+                item: location.pathname,
+              },
             ],
           }),
         }}
