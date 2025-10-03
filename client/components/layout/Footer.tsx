@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Linkedin, Youtube, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { XLogo } from "@/components/icons/XLogo";
 
 export default function Footer() {
   return (
@@ -33,10 +34,10 @@ export default function Footer() {
                 <Instagram className="h-5 w-5" />
               </button>
               <button
-                aria-label="Twitter"
+                aria-label="X"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition"
               >
-                <Twitter className="h-5 w-5" />
+                <XLogo className="h-5 w-5" />
               </button>
               <button
                 aria-label="LinkedIn"
