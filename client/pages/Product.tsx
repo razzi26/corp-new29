@@ -363,12 +363,13 @@ export default function ProductPage() {
               <p className="mt-4 text-slate-700">{product.description}</p>
 
               <div className="mt-6 flex gap-6">
-                <Link
-                  to="/contact"
+                <button
+                  type="button"
+                  onClick={() => setContactModalOpen(true)}
                   className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-4 py-2.5 text-sm font-semibold shadow"
                 >
                   Request quote
-                </Link>
+                </button>
               </div>
 
               {product.brochures && product.brochures.length > 0 && (
