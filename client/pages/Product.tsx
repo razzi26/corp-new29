@@ -19,6 +19,7 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
+import { ArrowUp, ArrowDown } from "lucide-react";
 
 type Product = {
   id: string;
@@ -183,57 +184,103 @@ export default function ProductPage() {
           <div className="lg:col-span-7">
             {gallery.length > 0 ? (
               <div className="relative p-0">
-                <Carousel
-                  className="relative"
-                  opts={{ loop: true }}
-                  setApi={setCarouselApi}
-                >
-                  <CarouselContent>
-                    {gallery.map((src, i) => (
-                      <CarouselItem key={src + i}>
-                        <div id={`slide-${i}`} className="aspect-[16/10] w-full overflow-hidden rounded-xl bg-slate-50">
-                          <img
-                            src={src}
-                            alt={`${product.title} image ${i + 1}`}
-                            className="h-full w-full object-cover"
-                            loading={i === 0 ? "eager" : "lazy"}
-                          />
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  {gallery.length > 1 && (
-                    <>
-                      <CarouselPrevious variant="ghost" className="-left-4 bg-white/80 backdrop-blur shadow-sm" />
-                      <CarouselNext variant="ghost" className="-right-4 bg-white/80 backdrop-blur shadow-sm" />
-                    </>
-                  )}
-                </Carousel>
-                {gallery.length > 1 && (
-                  <div className="mt-6 flex gap-3 overflow-x-auto py-1" role="tablist" aria-label="Product image thumbnails">
-                    {gallery.map((src, i) => (
-                      <button
-                        key={src + i}
-                        className={cn(
-                          "relative h-16 w-24 flex-shrink-0 overflow-hidden rounded-md focus:outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]",
-                          i === activeIndex ? "shadow-md opacity-100" : "opacity-70 hover:opacity-100",
-                        )}
-                        onClick={() => setActiveIndex(i)}
-                        role="tab"
-                        aria-selected={i === activeIndex}
-                        aria-controls={`slide-${i}`}
-                        title={`Show image ${i + 1}`}
-                      >
-                        <img
-                          src={src}
-                          alt={`${product.title} thumbnail ${i + 1}`}
-                          className="h-full w-full object-cover"
-                          loading="lazy"
-                        />
-                      </button>
-                    ))}
+                <div className="grid grid-cols-12 gap-4 items-start">
+                  {/* Thumbnails left (vertical) */}
+                  <div className="col-span-3 relative">
+                    <div
+                      className="max-h-[480px] overflow-y-auto pr-1"
+                      ref={(el) => {
+                        // no-op ref; buttons below scroll this element via document.getElementById
+                      }}
+                      id="thumbs-scroll"
+                      role="tablist"
+                      aria-label="Product image thumbnails"
+                    >
+                      <div className="flex flex-col gap-2">
+                        {gallery.map((src, i) => (
+                          <button
+                            key={src + i}
+                            className={cn(
+                              "relative aspect-[4/3] w-full overflow-hidden rounded-md focus:outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]",
+                              i === activeIndex ? "border-2 border-[hsl(var(--brand-end))]" : "border border-transparent",
+                            )}
+                            onMouseEnter={() => setActiveIndex(i)}
+                            onFocus={() => setActiveIndex(i)}
+                            onClick={() => setActiveIndex(i)}
+                            role="tab"
+                            aria-selected={i === activeIndex}
+                            aria-controls={`slide-${i}`}
+                            title={`Show image ${i + 1}`}
+                          >
+                            <img
+                              src={src}
+                              alt={`${product.title} thumbnail ${i + 1}`}
+                              className="h-full w-full object-cover"
+                              loading="lazy"
+                            />
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                    {/* Vertical scroll controls (up/down) */}
+                    {gallery.length > 5 && (
+                      <>
+                        <button
+                          type="button"
+                          className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 h-7 w-7 rounded-full bg-white/90 backdrop-blur text-slate-700 hover:bg-white"
+                          aria-label="Scroll thumbnails up"
+                          onClick={() => {
+                            const el = document.getElementById("thumbs-scroll");
+                            el?.scrollBy({ top: -160, behavior: "smooth" });
+                          }}
+                        >
+                          <ArrowUp className="h-4 w-4 mx-auto" />
+                        </button>
+                        <button
+                          type="button"
+                          className="absolute -bottom-3 left-1/2 -translate-x-1/2 z-10 h-7 w-7 rounded-full bg-white/90 backdrop-blur text-slate-700 hover:bg-white"
+                          aria-label="Scroll thumbnails down"
+                          onClick={() => {
+                            const el = document.getElementById("thumbs-scroll");
+                            el?.scrollBy({ top: 160, behavior: "smooth" });
+                          }}
+                        >
+                          <ArrowDown className="h-4 w-4 mx-auto" />
+                        </button>
+                      </>
+                    )}
                   </div>
-                )}
+
+                  {/* Main image right */}
+                  <div className="col-span-9">
+                    <Carousel
+                      className="relative"
+                      opts={{ loop: true }}
+                      setApi={setCarouselApi}
+                    >
+                      <CarouselContent>
+                        {gallery.map((src, i) => (
+                          <CarouselItem key={src + i}>
+                            <div id={`slide-${i}`} className="aspect-[16/10] w-full overflow-hidden rounded-xl bg-slate-50">
+                              <img
+                                src={src}
+                                alt={`${product.title} image ${i + 1}`}
+                                className="h-full w-full object-cover"
+                                loading={i === 0 ? "eager" : "lazy"}
+                              />
+                            </div>
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      {gallery.length > 1 && (
+                        <>
+                          <CarouselPrevious variant="ghost" className="-left-4 bg-white/80 backdrop-blur" />
+                          <CarouselNext variant="ghost" className="-right-4 bg-white/80 backdrop-blur" />
+                        </>
+                      )}
+                    </Carousel>
+                  </div>
+                </div>
               </div>
             ) : (
               <div className="p-0">
