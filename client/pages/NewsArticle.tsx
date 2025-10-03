@@ -159,34 +159,32 @@ export default function NewsArticle() {
 
           <aside className="lg:col-span-4">
             <div className="sticky top-24">
-              <h3 className="mb-3 text-sm font-semibold">Recent News</h3>
-              <ul className="space-y-3">
+              <h3 className="mb-4 text-base md:text-lg font-semibold">Recent News</h3>
+              <ul className="divide-y divide-slate-200">
                 {recent.map((a) => {
                   const slugParam = a.slug.replace("/news/", "");
                   return (
-                    <li key={a.slug}>
-                      <div className="rounded-lg border p-3 shadow-sm transition-shadow hover:shadow">
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="min-w-0">
-                            <Link
-                              to={`/news/${slugParam}`}
-                              className="line-clamp-2 text-sm font-medium text-[hsl(var(--brand-end))] hover:underline"
-                            >
-                              {a.title}
-                            </Link>
-                            <div className="mt-1 inline-flex items-center gap-1 text-xs text-slate-600">
-                              <Calendar className="h-3 w-3" />
-                              {new Date(a.date).toLocaleDateString()}
-                            </div>
-                          </div>
+                    <li key={a.slug} className="py-4">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0">
                           <Link
                             to={`/news/${slugParam}`}
-                            aria-label="Open"
-                            className="ml-2 inline-flex h-8 w-8 items-center justify-center rounded-md border text-[hsl(var(--brand-end))] hover:bg-[hsl(var(--brand-end))]/5"
+                            className="line-clamp-2 text-sm md:text-[0.95rem] font-semibold text-[#00467f] hover:underline"
                           >
-                            <ArrowRight className="h-4 w-4" />
+                            {a.title}
                           </Link>
+                          <div className="mt-1 inline-flex items-center gap-1 text-xs text-slate-600">
+                            <Calendar className="h-3 w-3" />
+                            {new Date(a.date).toLocaleDateString()}
+                          </div>
                         </div>
+                        <Link
+                          to={`/news/${slugParam}`}
+                          aria-label="Open"
+                          className="ml-2 inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#00467f] text-[#00467f] hover:bg-[#00467f]/5"
+                        >
+                          <ArrowRight className="h-5 w-5" />
+                        </Link>
                       </div>
                     </li>
                   );
