@@ -403,7 +403,10 @@ export default function Catalog() {
                     <h2 className="text-xl font-bold">{category}</h2>
                     <div className="mt-4 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
                       {items.map((p) => (
-                        <ProductCard key={p.id} product={p} />
+                        <ProductCard key={p.id} product={p} onRequest={() => {
+                          setContactProduct(p);
+                          setContactModalOpen(true);
+                        }} />
                       ))}
                     </div>
                   </section>
