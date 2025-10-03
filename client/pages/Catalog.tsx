@@ -569,37 +569,27 @@ function ProductCard({ product }: { product: Product }) {
     product.images ?? [],
   );
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const hoverTimerRef = useRef<number | null>(null);
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   // reset preview when product changes
   useEffect(() => {
     setHoverIndex(null);
-    if (hoverTimerRef.current) {
-      clearInterval(hoverTimerRef.current);
-      hoverTimerRef.current = null;
-    }
   }, [product.id]);
 
   const displayed = hoverIndex ?? 0;
 
-  const handleImageHover = () => {
-    if (imgs.length > 1) {
-      setHoverIndex((i) => {
-        if (i === null) return 1 % imgs.length;
-        return (i + 1) % imgs.length;
-      });
-    }
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (imgs.length <= 1) return;
+    const el = containerRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const ratio = Math.max(0, Math.min(1, rect.width > 0 ? x / rect.width : 0));
+    let idx = Math.floor(ratio * imgs.length);
+    if (idx >= imgs.length) idx = imgs.length - 1;
+    if (idx < 0) idx = 0;
+    setHoverIndex(idx);
   };
-
-  useEffect(() => {
-    return () => {
-      if (hoverTimerRef.current) {
-        clearInterval(hoverTimerRef.current);
-        hoverTimerRef.current = null;
-      }
-    };
-  }, []);
 
   return (
     <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white">
@@ -608,22 +598,9 @@ function ProductCard({ product }: { product: Product }) {
         className="relative w-full aspect-[1/1] overflow-hidden rounded-t-2xl bg-slate-50"
         role="img"
         aria-label={product.title}
-        onPointerEnter={() => {
-          if (imgs.length > 1 && !hoverTimerRef.current) {
-            // start cycling every 700ms
-            // initialize hoverIndex so the first frame after enter shows next image
-            setHoverIndex((prev) => (prev === null ? 1 % imgs.length : prev));
-            hoverTimerRef.current = window.setInterval(handleImageHover, 700);
-          }
-        }}
-        onPointerLeave={() => {
-          if (hoverTimerRef.current) {
-            clearInterval(hoverTimerRef.current);
-            hoverTimerRef.current = null;
-          }
-          // revert back to main image when pointer leaves
-          setHoverIndex(null);
-        }}
+        onPointerMove={handlePointerMove}
+        onPointerLeave={() => setHoverIndex(null)}
+        onPointerCancel={() => setHoverIndex(null)}
         onClick={() => { /* keep click behavior if needed */ }}
       >
         <img
