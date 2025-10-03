@@ -1,0 +1,219 @@
+[
+  {
+    "slug": "/resources/knowledge-hub/biosafety-basics",
+    "title": "What is Biosafety?",
+    "description": "Policies, protocols, and practices to minimize exposure to harmful biological agents and protect people and the environment.",
+    "date": "2025-03-12",
+    "readMins": 7,
+    "tags": ["Biosafety", "Lab Practices"],
+    "sections": [
+      {
+        "id": "history",
+        "title": "Historical Development of Biosafety",
+        "content": [
+          {
+            "type": "p",
+            "text": "Biosafety is shaped by scientific progress and emerging risks. The scientific breakthroughs of Louis Pasteur and Robert Koch in the 1890s revealed the dangers of biological hazards, laying the foundation for biosafety."
+          },
+          {
+            "type": "p",
+            "text": "The increasing number of laboratory-acquired infections (LAIs) in the mid-20th century emphasized the need for stricter laboratory safety protocols. The 1970s marked a turning point when biosafety emerged as a distinct discipline, spurred by international classification systems and pivotal discussions."
+          },
+          {
+            "type": "p",
+            "text": "From the 1980s onward, global conventions and standards were established to regulate biological research and laboratory safety. The scope of biosafety expanded in the 1990s, moving beyond laboratories to address risks in agriculture, environmental protection, and food safety. In 2020, the WHO updated its Laboratory Biosafety Manual to cover all \"biological agents,\" not just pathogens and toxins."
+          }
+        ]
+      },
+      {
+        "id": "bsc",
+        "title": "Biosafety Equipment and Containment Practices",
+        "content": [
+          { "type": "h3", "text": "Biosafety Cabinets (BSCs)" },
+          {
+            "type": "p",
+            "text": "Biosafety cabinets are essential for handling hazardous biological materials. They are classified into three main types:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Class I BSCs: protect the user and the environment but do not safeguard samples.",
+              "Class II BSCs: most common; provide personnel, product, and environmental protection (types A2, B1, and B2).",
+              "Class III BSCs: maximum containment; fully enclosed, gas-tight systems for high-risk pathogens such as Ebola and smallpox."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ppe",
+        "title": "Personal Protective Equipment",
+        "content": [
+          {
+            "type": "p",
+            "text": "Proper PPE—including gloves, lab coats, face shields, and respirators—acts as a critical barrier against exposure. The choice of PPE depends on the biosafety level (BSL) of the work being conducted."
+          }
+        ]
+      },
+      {
+        "id": "decon",
+        "title": "Decontamination and Waste Management",
+        "content": [
+          {
+            "type": "p",
+            "text": "Autoclaving is the gold standard for deactivating biohazardous waste. For surface decontamination, chemical disinfectants such as bleach and hydrogen peroxide vapor are used."
+          }
+        ]
+      }
+    ],
+    "resources": {
+      "whitepapers": [],
+      "videos": []
+    }
+  },
+  {
+    "slug": "/resources/knowledge-hub/bsl-and-risk-assessment",
+    "title": "Understanding Biosafety Levels (BSL): The Cornerstone of Effective Risk Assessment",
+    "description": "How BSL-1 to BSL-4 and dynamic risk assessment combine to select controls and keep labs and communities safe.",
+    "date": "2025-03-18",
+    "readMins": 9,
+    "tags": ["BSL", "Risk Assessment"],
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Introduction",
+        "content": [
+          {
+            "type": "p",
+            "text": "In the world of biological research and clinical diagnostics, safety is not a matter of chance—it is a matter of choice. This framework protects personnel, the environment, and the community from accidental exposure to infectious agents. At its heart: Biosafety Levels (BSL) and Risk Assessment."
+          }
+        ]
+      },
+      {
+        "id": "what-bsl",
+        "title": "What are Biosafety Levels (BSL)?",
+        "content": [
+          {
+            "type": "p",
+            "text": "BSL-1 through BSL-4 are tiers of biocontainment defined by practices, safety equipment, and facility design."
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Laboratory Practices and Techniques: SOPs for safe handling.",
+              "Safety Equipment: Primary barriers such as BSCs and PPE.",
+              "Facility Design and Construction: Ventilation, airlocks, waste treatment."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "levels",
+        "title": "BSL-1 to BSL-4 Overview",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "BSL-1: Non-pathogenic agents; standard microbiology practices.",
+              "BSL-2: Moderate-risk agents (e.g., S. aureus, HBV); enhanced PPE, signage, Class I/II BSCs.",
+              "BSL-3: Serious or lethal respiratory agents (e.g., M. tuberculosis, SARS-CoV-2); negative pressure, restricted access, non-recirculated exhaust.",
+              "BSL-4: High-risk, no treatment/vaccine (e.g., Ebola, Marburg); maximum containment, positive-pressure suits."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "risk",
+        "title": "The Role of Risk Assessment",
+        "content": [
+          {
+            "type": "p",
+            "text": "Selecting the appropriate BSL results from a dynamic risk assessment of agent hazards, procedures, personnel, and facility capabilities."
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Agent Hazards: Pathogenicity, infectious dose, treatment/vaccines.",
+              "Procedure Hazards: Aerosols, volumes, concentrations.",
+              "Personnel Competence: Training, proficiency, immunological status.",
+              "Facility & Equipment: Primary/secondary containment capacity."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "relationship",
+        "title": "How BSL and Risk Assessment Work Together",
+        "content": [
+          {
+            "type": "p",
+            "text": "BSL defines baseline controls; risk assessment decides the level and additional precautions for specific procedures (e.g., aerosol-generating work may require escalation)."
+          }
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "Conclusion",
+        "content": [
+          {
+            "type": "p",
+            "text": "A safe lab integrates prescribed BSL controls with continuous risk assessment. Re-evaluate risks with every new experiment, agent, or procedure change."
+          }
+        ]
+      },
+      {
+        "id": "resources",
+        "title": "Resources",
+        "content": [
+          { "type": "h3", "text": "Whitepapers" },
+          {
+            "type": "links",
+            "items": [
+              {
+                "label": "Guide to Biosafety and Biological Safety Cabinets",
+                "url": "https://www.escolifesciences.com/pdf/9010018%20A%20Guide%20to%20Biosafety%20%26%20Biological%20Safety%20Cabinets_vE_130824.pdf"
+              },
+              {
+                "label": "BSC Maintenance Tips and Procedure",
+                "url": "https://www.escolifesciences.com/pdf/BSC%20%26%20LFC%20Maintence%20Tips%20and%20Procedures-V.B.-Mar2021.pdf"
+              },
+              {
+                "label": "Safe Work Practices in a Biosafety Cabinet",
+                "url": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/streamline-e-series-g4-class-ii-biological-safety-cabinet"
+              },
+              {
+                "label": "Repair or Replace Your Old Biosafety Cabinet?",
+                "url": "https://www.escolifesciences.com/pdf/Repair%20or%20Replace%20Your%20Old%20Biosafety%20Cabinet-intheloop_LR.pdf"
+              }
+            ]
+          },
+          { "type": "h3", "text": "Videos" },
+          {
+            "type": "links",
+            "items": [
+              {
+                "label": "Inside the Sciences Podcast Episode 1: Biosafety Cabinets | Protecting Science, Protecting You",
+                "url": "https://www.youtube.com/watch?v=vss9HS5DQQ8&t=570s"
+              },
+              {
+                "label": "Biological Safety Cabinet | What You Need | Esco Scientific",
+                "url": "https://www.youtube.com/watch?v=uaydXcyUZhI&list=PLT9h-p38eRmubWGpKsNbKpJzBZXrbIvF8&index=21"
+              },
+              {
+                "label": "Working Safely in your Biological Safety Cabinets: Dealing with Spills | Esco Scientific",
+                "url": "https://www.youtube.com/watch?v=ZnUW1N-JJz8"
+              },
+              {
+                "label": "Biological Safety Cabinets | What to Keep in Mind for Stable Airflow",
+                "url": "https://www.youtube.com/watch?v=IkO3ABNT_M8"
+              },
+              {
+                "label": "Biosafety Cabinet | Tips to Maintain its Efficiency | Esco Scientific",
+                "url": "https://www.youtube.com/watch?v=voU9E2_vxQ0"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
