@@ -657,45 +657,34 @@ function ProductCard({ product, onRequest }: { product: Product; onRequest?: () 
     setHoverIndex(idx);
   };
 
-  // swipe handling for touch devices
-  const pointerRef = useRef<{ startX?: number; lastX?: number; isDown?: boolean; pid?: number } | null>(null);
+  // swipe handling for touch devices - simplified: use touch events only to change activeIndex sequentially
+  const touchStartX = useRef<number | null>(null);
+  const touchLastX = useRef<number | null>(null);
 
-  const onPointerDown = (e: React.PointerEvent) => {
+  const onTouchStartSimple = (e: React.TouchEvent) => {
     if (!isTouch) return;
-    const el = e.currentTarget as HTMLDivElement;
-    try { el.setPointerCapture(e.pointerId); } catch {}
-    pointerRef.current = { startX: e.clientX, lastX: e.clientX, isDown: true, pid: e.pointerId };
+    touchStartX.current = e.touches[0].clientX;
+    touchLastX.current = e.touches[0].clientX;
   };
-  const onPointerMove = (e: React.PointerEvent) => {
+  const onTouchMoveSimple = (e: React.TouchEvent) => {
     if (!isTouch) return;
-    if (!pointerRef.current?.isDown) return;
-    pointerRef.current.lastX = e.clientX;
+    if (touchStartX.current === null) return;
+    touchLastX.current = e.touches[0].clientX;
   };
-  const commitSwipe = () => {
-    if (!pointerRef.current) return;
-    const { startX, lastX } = pointerRef.current;
-    pointerRef.current.isDown = false;
-    if (startX === undefined || lastX === undefined) return;
+  const onTouchEndSimple = (e?: React.TouchEvent) => {
+    if (!isTouch) return;
+    const startX = touchStartX.current;
+    const lastX = touchLastX.current;
+    touchStartX.current = null;
+    touchLastX.current = null;
+    if (startX === null || lastX === null) return;
     const dx = lastX - startX;
-    const threshold = 30; // pixels
+    const threshold = 30;
     if (dx < -threshold) {
       setActiveIndex((s) => (s + 1) % imgs.length);
     } else if (dx > threshold) {
       setActiveIndex((s) => (s - 1 + imgs.length) % imgs.length);
     }
-  };
-
-  const onPointerUp = (e: React.PointerEvent) => {
-    if (!isTouch) return;
-    const el = e.currentTarget as HTMLDivElement;
-    try { if (pointerRef.current?.pid !== undefined) el.releasePointerCapture(pointerRef.current.pid); } catch {}
-    commitSwipe();
-  };
-  const onPointerCancel = (e: React.PointerEvent) => {
-    if (!isTouch) return;
-    const el = e.currentTarget as HTMLDivElement;
-    try { if (pointerRef.current?.pid !== undefined) el.releasePointerCapture(pointerRef.current.pid); } catch {}
-    pointerRef.current = null;
   };
 
   return (
