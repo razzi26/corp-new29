@@ -153,7 +153,7 @@ export default function Catalog() {
       <div className="container mx-auto px-4 py-10 lg:py-12">
         {/* Mobile/Tablet Filters */}
         <div className="lg:hidden mb-6">
-          <div className="sticky top-16 z-30 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-slate-200 -mx-4 px-4 py-3">
+          <div className="sticky top-[72px] z-30 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-slate-200 -mx-4 px-4 py-3">
             <div className="space-y-3">
               <label className="block text-sm font-semibold text-slate-800">Search</label>
               <input
