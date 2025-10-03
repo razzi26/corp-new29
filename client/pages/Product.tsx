@@ -225,32 +225,25 @@ export default function ProductPage() {
 
                   {/* Main image right */}
                   <div className="col-span-9">
-                    <Carousel
-                      className="relative"
-                      opts={{ loop: true }}
-                      setApi={setCarouselApi}
-                    >
-                      <CarouselContent>
-                        {gallery.map((src, i) => (
-                          <CarouselItem key={src + i}>
-                            <div id={`slide-${i}`} className="aspect-[16/10] w-full overflow-hidden rounded-xl bg-slate-50">
-                              <img
-                                src={src}
-                                alt={`${product.title} image ${i + 1}`}
-                                className="h-full w-full object-cover"
-                                loading={i === 0 ? "eager" : "lazy"}
-                              />
-                            </div>
-                          </CarouselItem>
-                        ))}
-                      </CarouselContent>
-                      {gallery.length > 1 && (
-                        <>
-                          <CarouselPrevious variant="ghost" className="-left-4 bg-white/80 backdrop-blur" />
-                          <CarouselNext variant="ghost" className="-right-4 bg-white/80 backdrop-blur" />
-                        </>
-                      )}
-                    </Carousel>
+                    <div className="relative">
+                      {gallery.map((src, i) => (
+                        <div
+                          key={src + i}
+                          id={`slide-${i}`}
+                          className={cn(
+                            "aspect-[16/10] w-full overflow-hidden rounded-xl bg-slate-50",
+                            i === activeIndex ? "block" : "hidden",
+                          )}
+                        >
+                          <img
+                            src={src}
+                            alt={`${product.title} image ${i + 1}`}
+                            className="h-full w-full object-cover"
+                            loading={i === 0 ? "eager" : "lazy"}
+                          />
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
