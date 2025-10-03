@@ -194,7 +194,7 @@ export default function ProductPage() {
                   {/* Thumbnails left (vertical) */}
                   <div className="col-span-2 relative">
                     <div
-                      className="overflow-y-auto pr-1"
+                      className="overflow-y-auto pr-1 no-scrollbar"
                       ref={(el) => {
                         thumbsRef.current = el;
                       }}
