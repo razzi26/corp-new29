@@ -90,32 +90,28 @@ export default function ProductPage() {
   const [mainAspect, setMainAspect] = useState<string | undefined>(undefined);
   const [thumbsOverflow, setThumbsOverflow] = useState(false);
 
-  useLayoutEffect(() => {
-    function update() {
-      const el = mainImageRef.current;
-      if (el) {
-        const mainH = el.clientHeight;
-        setThumbsMaxHeight(mainH);
-        const rect = el.getBoundingClientRect();
-        setMainAspect(`${Math.round(rect.width)} / ${Math.round(rect.height)}`);
+  const updateSizes = () => {
+    const el = mainImageRef.current;
+    if (el) {
+      const mainH = el.clientHeight;
+      setThumbsMaxHeight(mainH);
+      const rect = el.getBoundingClientRect();
+      setMainAspect(`${Math.round(rect.width)} / ${Math.round(rect.height)}`);
 
-        // measure thumbs overflow synchronously
-        const thumbsEl = thumbsRef.current;
-        if (thumbsEl) {
-          // If thumbnails total height exceeds main image height, enable arrows
-          setThumbsOverflow(thumbsEl.scrollHeight > mainH + 1);
-        } else {
-          setThumbsOverflow(false);
-        }
-      } else {
-        setThumbsMaxHeight(undefined);
-        setMainAspect(undefined);
-        setThumbsOverflow(false);
-      }
+      const thumbsEl = thumbsRef.current;
+      setThumbsOverflow(thumbsEl ? thumbsEl.scrollHeight > mainH + 1 : false);
+    } else {
+      setThumbsMaxHeight(undefined);
+      setMainAspect(undefined);
+      setThumbsOverflow(false);
     }
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
+  };
+
+  useLayoutEffect(() => {
+    // run once after DOM mutations; images may not be loaded yet
+    updateSizes();
+    window.addEventListener("resize", updateSizes);
+    return () => window.removeEventListener("resize", updateSizes);
   }, [activeIndex, product?.id, gallery.length]);
 
   useEffect(() => setActiveIndex(0), [product?.id]);
