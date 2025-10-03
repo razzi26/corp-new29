@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { PageBanner } from "@/components/layout/PageBanner";
 import { Input } from "@/components/ui/input";
@@ -12,35 +12,13 @@ interface ArticleMeta {
   slug: string;
   title: string;
   description: string;
-  date: string; // ISO string
+  date: string;
   readMins: number;
   tags: string[];
 }
 
-const ARTICLES: ArticleMeta[] = [
-  {
-    slug: "/resources/knowledge-hub/biosafety-basics",
-    title: "What is Biosafety?",
-    description:
-      "Policies, protocols, and practices to minimize exposure to harmful biological agents and protect people and the environment.",
-    date: "2025-03-12",
-    readMins: 8,
-    tags: ["Biosafety", "Lab Practices"],
-  },
-  {
-    slug: "/resources/knowledge-hub/bsl-and-risk-assessment",
-    title: "Understanding Biosafety Levels (BSL): The Cornerstone of Effective Risk Assessment",
-    description:
-      "How BSL-1 to BSL-4 and dynamic risk assessment combine to select controls and keep labs and communities safe.",
-    date: "2025-03-18",
-    readMins: 9,
-    tags: ["BSL", "Risk Assessment"],
-  },
-];
-
-const ALL_TAGS = Array.from(new Set(ARTICLES.flatMap((a) => a.tags))).sort();
-
 function ArticleCard({ a }: { a: ArticleMeta }) {
+  const slugParam = a.slug.replace("/resources/knowledge-hub/", "");
   return (
     <Card className="h-full flex flex-col">
       <CardHeader>
@@ -61,7 +39,7 @@ function ArticleCard({ a }: { a: ArticleMeta }) {
       </CardContent>
       <CardFooter className="mt-auto">
         <Button asChild>
-          <Link to={a.slug}>Read article</Link>
+          <Link to={`/resources/knowledge-hub/${slugParam}`}>Read article</Link>
         </Button>
       </CardFooter>
     </Card>
@@ -71,18 +49,49 @@ function ArticleCard({ a }: { a: ArticleMeta }) {
 export default function KnowledgeHub() {
   const [q, setQ] = useState("");
   const [active, setActive] = useState<string | null>(null);
+  const [items, setItems] = useState<ArticleMeta[] | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let mounted = true;
+    fetch("/data/knowledge-articles.json")
+      .then((r) => r.json())
+      .then((data) => {
+        if (!mounted) return;
+        const metas: ArticleMeta[] = data.map((d: any) => ({
+          slug: d.slug,
+          title: d.title,
+          description: d.description,
+          date: d.date,
+          readMins: d.readMins,
+          tags: d.tags,
+        }));
+        setItems(metas);
+      })
+      .catch((e) => setError(String(e)));
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const ALL_TAGS = useMemo(() => {
+    return Array.from(new Set((items ?? []).flatMap((a) => a.tags))).sort();
+  }, [items]);
 
   const filtered = useMemo(() => {
+    if (!items) return [] as ArticleMeta[];
     const query = q.trim().toLowerCase();
-    return ARTICLES.filter((a) => {
-      const matchQuery = !query
-        || a.title.toLowerCase().includes(query)
-        || a.description.toLowerCase().includes(query)
-        || a.tags.some((t) => t.toLowerCase().includes(query));
-      const matchTag = !active || a.tags.includes(active);
-      return matchQuery && matchTag;
-    }).sort((a, b) => (a.date < b.date ? 1 : -1));
-  }, [q, active]);
+    return items
+      .filter((a) => {
+        const matchQuery = !query
+          || a.title.toLowerCase().includes(query)
+          || a.description.toLowerCase().includes(query)
+          || a.tags.some((t) => t.toLowerCase().includes(query));
+        const matchTag = !active || a.tags.includes(active);
+        return matchQuery && matchTag;
+      })
+      .sort((a, b) => (a.date < b.date ? 1 : -1));
+  }, [q, active, items]);
 
   return (
     <div className="bg-white text-slate-900">
@@ -135,7 +144,10 @@ export default function KnowledgeHub() {
 
         <Separator className="my-8" />
 
-        {filtered.length === 0 ? (
+        {error && <p className="text-sm text-red-600">Failed to load articles.</p>}
+        {!items ? (
+          <p className="text-slate-700">Loading…</p>
+        ) : filtered.length === 0 ? (
           <p className="text-slate-700">No articles found. Try a different search or tag.</p>
         ) : (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

@@ -24,9 +24,8 @@ import Videos from "./pages/ResourcesVideos";
 import KnowledgeHub from "./pages/ResourcesKnowledgeHub";
 import Podcasts from "./pages/ResourcesPodcasts";
 import CaseStudies from "./pages/ResourcesCaseStudies";
-import KnowledgeArticleBiosafetyBasics from "./pages/KnowledgeArticleBiosafetyBasics";
+import KnowledgeArticle from "./pages/KnowledgeArticle";
 import NewsArticleUltrasound from "./pages/NewsArticleUltrasound";
-import KnowledgeArticleBSL from "./pages/KnowledgeArticleBSL";
 
 const queryClient = new QueryClient();
 
@@ -50,8 +49,7 @@ const App = () => (
             <Route path="/resources" element={<Resources />} />
             <Route path="/resources/videos" element={<Videos />} />
             <Route path="/resources/knowledge-hub" element={<KnowledgeHub />} />
-            <Route path="/resources/knowledge-hub/biosafety-basics" element={<KnowledgeArticleBiosafetyBasics />} />
-            <Route path="/resources/knowledge-hub/bsl-and-risk-assessment" element={<KnowledgeArticleBSL />} />
+            <Route path="/resources/knowledge-hub/:slug" element={<KnowledgeArticle />} />
             <Route path="/news/how-to-choose-ultrasound-scanner" element={<NewsArticleUltrasound />} />
             <Route path="/resources/podcasts" element={<Podcasts />} />
             <Route path="/resources/case-studies" element={<CaseStudies />} />
