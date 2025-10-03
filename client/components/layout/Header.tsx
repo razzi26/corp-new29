@@ -178,7 +178,12 @@ export default function Header() {
               )}
               <Link
                 to="/contact"
-                className="ml-2 inline-flex items-center rounded-full bg-[hsl(var(--brand-end))] px-5 py-2.5 text-base font-semibold text-white shadow transition hover:shadow-md"
+                className={cn(
+                  "ml-2 inline-flex items-center rounded-full px-5 py-2.5 text-base font-semibold shadow transition hover:shadow-md",
+                  scrolled || open
+                    ? "bg-[hsl(var(--brand-end))] text-white"
+                    : "bg-white text-slate-900",
+                )}
               >
                 Contact Us
               </Link>
@@ -193,7 +198,7 @@ export default function Header() {
                     ? "text-slate-700"
                     : "text-white",
               )}
-              aria-label="Открыт�� меню"
+              aria-label="О��крыт�� меню"
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
             >
@@ -260,7 +265,12 @@ export default function Header() {
                 <div className="px-4 py-3">
                   <Link
                     to="/contact"
-                    className="block w-full rounded-full bg-[hsl(var(--brand-end))] px-5 py-2.5 text-center text-base font-semibold text-white shadow transition hover:shadow-md"
+                    className={cn(
+                      "block w-full rounded-full px-5 py-2.5 text-center text-base font-semibold shadow transition hover:shadow-md",
+                      scrolled || open
+                        ? "bg-[hsl(var(--brand-end))] text-white"
+                        : "bg-white text-slate-900",
+                    )}
                     onClick={() => setOpen(false)}
                   >
                     Contact Us
