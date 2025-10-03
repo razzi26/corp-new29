@@ -277,7 +277,7 @@ export default function ProductPage() {
                             "w-full max-h-[480px] overflow-hidden rounded-xl bg-slate-50",
                             i === displayedIndex ? "block" : "hidden",
                           )}
-                          style={mainAspect ? { aspectRatio: mainAspect } : undefined}
+                          style={{ aspectRatio: '1 / 1' }}
                         >
                           <img
                             src={src}
