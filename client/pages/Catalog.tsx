@@ -171,6 +171,9 @@ export default function Catalog() {
     });
   };
 
+  const [contactModalOpen, setContactModalOpen] = useState(false);
+  const [contactProduct, setContactProduct] = useState<Product | null>(null);
+
   return (
     <div className="bg-white text-slate-900">
       <PageBanner
