@@ -18,6 +18,13 @@ export default function NewsArticleUltrasound() {
           { label: "News", href: "/news" },
           { label: title },
         ]}
+        meta={
+          <div className="flex flex-wrap items-center gap-3">
+            <time dateTime="2025-02-10">February 10, 2025</time>
+            <span>•</span>
+            <span>5 min read</span>
+          </div>
+        }
       />
 
       <Seo
