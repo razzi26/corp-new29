@@ -260,9 +260,10 @@ export default function ProductPage() {
                             if (i === activeIndex) mainImageRef.current = el;
                           }}
                           className={cn(
-                            "aspect-[3/4] w-full max-h-[480px] overflow-hidden rounded-xl bg-slate-50",
+                            "w-full max-h-[480px] overflow-hidden rounded-xl bg-slate-50",
                             i === activeIndex ? "block" : "hidden",
                           )}
+                          style={mainAspect ? { aspectRatio: mainAspect } : undefined}
                         >
                           <img
                             src={src}
