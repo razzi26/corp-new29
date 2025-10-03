@@ -37,9 +37,9 @@ export function PageBanner({
           aria-hidden="true"
         />
         <div className="relative container mx-auto px-4 pt-24 pb-12 md:pt-32 md:pb-16">
-          <h1 className="text-3xl font-semibold md:text-4xl">{title}</h1>
+          <h1 className="max-w-prose break-words text-3xl font-semibold md:text-4xl">{title}</h1>
           {description && (
-            <p className="mt-3 max-w-2xl text-base text-white/85 md:text-lg">
+            <p className="mt-3 max-w-prose break-words text-base text-white/85 md:text-lg">
               {description}
             </p>
           )}
