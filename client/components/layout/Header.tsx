@@ -41,6 +41,9 @@ export default function Header() {
   const [openSubmenuKey, setOpenSubmenuKey] = useState<string | null>(null);
   const [desktopOpenKey, setDesktopOpenKey] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const isProductDetail =
+    location.pathname.startsWith("/products/") &&
+    location.pathname !== "/products";
 
   useEffect(() => {
     const anchor = document.querySelector<HTMLElement>("[data-header-anchor]");
@@ -94,7 +97,7 @@ export default function Header() {
       <header
         className={cn(
           "sticky top-0 z-[9999] transition-colors duration-300",
-          scrolled || open
+          scrolled || open || isProductDetail
             ? "bg-white border-b border-white/60 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white"
             : "bg-transparent border-b border-transparent text-white",
         )}
@@ -108,7 +111,9 @@ export default function Header() {
               <span
                 className={cn(
                   "font-semibold tracking-wide transition-colors",
-                  scrolled || open ? "text-slate-900" : "text-white",
+                  scrolled || open || isProductDetail
+                    ? "text-slate-900"
+                    : "text-white",
                 )}
               >
                 Esco Biosafety Institute
@@ -127,7 +132,7 @@ export default function Header() {
                     <button
                       className={cn(
                         "inline-flex items-center gap-1 transition-colors",
-                        scrolled
+                        scrolled || isProductDetail
                           ? "text-slate-700 hover:text-slate-900"
                           : "text-white/85 hover:text-white",
                       )}
@@ -166,7 +171,7 @@ export default function Header() {
                     to={item.to!}
                     className={cn(
                       "transition-colors",
-                      scrolled
+                      scrolled || isProductDetail
                         ? "text-slate-700 hover:text-slate-900"
                         : "text-white/85 hover:text-white",
                     )}
@@ -179,7 +184,7 @@ export default function Header() {
                 to="/contact"
                 className={cn(
                   "ml-2 inline-flex items-center rounded-full px-5 py-2.5 text-base font-semibold shadow transition hover:shadow-md",
-                  scrolled || open
+                  scrolled || open || isProductDetail
                     ? "bg-[hsl(var(--brand-end))] text-white"
                     : "bg-white text-slate-900",
                 )}
@@ -193,7 +198,7 @@ export default function Header() {
                 "md:hidden transition-colors",
                 open
                   ? "text-slate-900"
-                  : scrolled
+                  : scrolled || isProductDetail
                     ? "text-slate-700"
                     : "text-white",
               )}
@@ -272,7 +277,7 @@ export default function Header() {
                     to="/contact"
                     className={cn(
                       "block w-full rounded-full px-5 py-2.5 text-center text-base font-semibold shadow transition hover:shadow-md",
-                      scrolled || open
+                      scrolled || open || isProductDetail
                         ? "bg-[hsl(var(--brand-end))] text-white"
                         : "bg-white text-slate-900",
                     )}

@@ -1,7 +1,9 @@
 import { useMemo, useState, useRef, useEffect } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 import { PageBanner } from "@/components/layout/PageBanner";
 import { Badge } from "@/components/ui/badge";
+import ContactModal from "@/components/ContactModal";
 import { cn } from "@/lib/utils";
 import {
   Sheet,
@@ -16,6 +18,8 @@ type Product = {
   category: string;
   tags: string[];
   description: string;
+  mainImage?: string;
+  images?: string[];
 };
 
 const TAG_COLORS: Record<string, string> = {
@@ -55,14 +59,35 @@ export default function Catalog() {
     (async () => {
       try {
         setLoading(true);
-        const res = await fetch("/data/products.json", {
-          headers: { "cache-control": "no-cache" },
-        });
-        if (!res.ok) throw new Error(`Failed to load products: ${res.status}`);
-        const data: Product[] = await res.json();
+        const tryFetch = async (url: string) => {
+          const res = await fetch(url, {
+            headers: { "cache-control": "no-cache" },
+            credentials: "same-origin",
+          });
+          if (!res.ok)
+            throw new Error(`Failed to load products: ${res.status}`);
+          return (await res.json()) as Product[];
+        };
+
+        let data: Product[] | null = null;
+        try {
+          data = await tryFetch("/data/products.json");
+        } catch (err) {
+          // Attempt with absolute origin in case base path differs
+          try {
+            const origin =
+              typeof window !== "undefined" ? window.location.origin : "";
+            if (origin) data = await tryFetch(origin + "/data/products.json");
+          } catch (err2) {
+            // no-op, will throw below
+          }
+        }
+
+        if (!data) throw new Error("Failed to load products.json from server");
         if (!cancelled) setProducts(data);
       } catch (e: any) {
-        if (!cancelled) setError(e?.message || "Failed to load products");
+        if (!cancelled)
+          setError(String(e?.message || "Failed to load products"));
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -147,6 +172,18 @@ export default function Catalog() {
     });
   };
 
+  const [contactModalOpen, setContactModalOpen] = useState(false);
+  const [contactProduct, setContactProduct] = useState<Product | null>(null);
+
+  const _filtersDidMount = useRef(true);
+  useEffect(() => {
+    if (_filtersDidMount.current) {
+      _filtersDidMount.current = false;
+      return;
+    }
+    scrollToProducts();
+  }, [selectedCategory, query, selectedTags]);
+
   return (
     <div className="bg-white text-slate-900">
       <PageBanner
@@ -163,12 +200,24 @@ export default function Catalog() {
               <label className="block text-sm font-semibold text-slate-800">
                 Search
               </label>
-              <input
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search products..."
-                className="w-full h-10 rounded-lg bg-white text-slate-900 border border-slate-300 px-3 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
-              />
+              <div className="relative">
+                <input
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search products..."
+                  className="w-full h-10 rounded-lg bg-white text-slate-900 border border-slate-300 px-3 pr-9 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
+                />
+                {query && (
+                  <button
+                    type="button"
+                    aria-label="Clear search"
+                    onClick={() => setQuery("")}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center"
+                  >
+                    ×
+                  </button>
+                )}
+              </div>
               <div className="flex gap-3 pt-1">
                 <button
                   onClick={() => setOpenCatSheet(true)}
@@ -240,12 +289,24 @@ export default function Catalog() {
                 <label className="block text-sm font-semibold text-slate-800">
                   Search
                 </label>
-                <input
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Search products..."
-                  className="w-full h-10 rounded-lg bg-white text-slate-900 border border-slate-300 px-3 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
-                />
+                <div className="relative">
+                  <input
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="Search products..."
+                    className="w-full h-10 rounded-lg bg-white text-slate-900 border border-slate-300 px-3 pr-9 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
+                  />
+                  {query && (
+                    <button
+                      type="button"
+                      aria-label="Clear search"
+                      onClick={() => setQuery("")}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center"
+                    >
+                      ×
+                    </button>
+                  )}
+                </div>
               </div>
 
               {/* Tags above Categories */}
@@ -379,7 +440,14 @@ export default function Catalog() {
                     <h2 className="text-xl font-bold">{category}</h2>
                     <div className="mt-4 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
                       {items.map((p) => (
-                        <ProductCard key={p.id} product={p} />
+                        <ProductCard
+                          key={p.id}
+                          product={p}
+                          onRequest={() => {
+                            setContactProduct(p);
+                            setContactModalOpen(true);
+                          }}
+                        />
                       ))}
                     </div>
                   </section>
@@ -406,6 +474,15 @@ export default function Catalog() {
       />
 
       {/* Tags Drawer */}
+
+      <ContactModal
+        open={contactModalOpen}
+        productName={contactProduct?.title ?? null}
+        onOpenChange={(v) => {
+          setContactModalOpen(v);
+          if (!v) setContactProduct(null);
+        }}
+      />
       <TagsDrawer
         open={openTagSheet}
         onOpenChange={setOpenTagSheet}
@@ -546,10 +623,112 @@ function TagsDrawer({
   );
 }
 
-function ProductCard({ product }: { product: Product }) {
+function ProductCard({
+  product,
+  onRequest,
+}: {
+  product: Product;
+  onRequest?: () => void;
+}) {
+  const imgs = (product.mainImage ? [product.mainImage] : []).concat(
+    product.images ?? [],
+  );
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isTouch, setIsTouch] = useState(false);
+
+  // detect touch devices (mobile/tablet)
+  useEffect(() => {
+    const touch =
+      typeof window !== "undefined" &&
+      ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+    setIsTouch(Boolean(touch));
+  }, []);
+
+  // reset preview/active when product changes
+  useEffect(() => {
+    setHoverIndex(null);
+    setActiveIndex(0);
+  }, [product.id]);
+
+  const displayed = isTouch ? activeIndex : (hoverIndex ?? activeIndex);
+
+  // hover-based preview (desktop only)
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (isTouch) return;
+    if (imgs.length <= 1) return;
+    const el = containerRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const ratio = Math.max(0, Math.min(1, rect.width > 0 ? x / rect.width : 0));
+    let idx = Math.floor(ratio * imgs.length);
+    if (idx >= imgs.length) idx = imgs.length - 1;
+    if (idx < 0) idx = 0;
+    setHoverIndex(idx);
+  };
+
+  // swipe handling for touch devices - simplified: use touch events only to change activeIndex sequentially
+  const touchStartX = useRef<number | null>(null);
+  const touchLastX = useRef<number | null>(null);
+
+  const onTouchStartSimple = (e: React.TouchEvent) => {
+    if (!isTouch) return;
+    touchStartX.current = e.touches[0].clientX;
+    touchLastX.current = e.touches[0].clientX;
+  };
+  const onTouchMoveSimple = (e: React.TouchEvent) => {
+    if (!isTouch) return;
+    if (touchStartX.current === null) return;
+    touchLastX.current = e.touches[0].clientX;
+  };
+  const onTouchEndSimple = (e?: React.TouchEvent) => {
+    if (!isTouch) return;
+    const startX = touchStartX.current;
+    const lastX = touchLastX.current;
+    touchStartX.current = null;
+    touchLastX.current = null;
+    if (startX === null || lastX === null) return;
+    const dx = lastX - startX;
+    const threshold = 30;
+    if (dx < -threshold) {
+      setActiveIndex((s) => (s + 1) % imgs.length);
+    } else if (dx > threshold) {
+      setActiveIndex((s) => (s - 1 + imgs.length) % imgs.length);
+    }
+  };
+
   return (
     <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white">
-      <div className="relative h-40 bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]">
+      <div
+        ref={containerRef}
+        className="relative w-full aspect-[1/1] overflow-hidden rounded-t-2xl bg-slate-50"
+        role="img"
+        aria-label={product.title}
+        style={{ touchAction: "pan-y" }}
+        onPointerMove={(e) => {
+          handlePointerMove(e);
+        }}
+        onPointerLeave={() => {
+          if (!isTouch) setHoverIndex(null);
+        }}
+        onPointerCancel={() => {
+          if (!isTouch) setHoverIndex(null);
+        }}
+        onTouchStart={onTouchStartSimple}
+        onTouchMove={onTouchMoveSimple}
+        onTouchEnd={onTouchEndSimple}
+        onClick={() => {
+          /* keep click behavior if needed */
+        }}
+      >
+        <img
+          src={imgs[displayed]}
+          alt={product.title}
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ left: 0, top: 0 }}
+        />
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_20%,white,transparent_35%),radial-gradient(circle_at_70%_80%,white,transparent_25%)]" />
         <div className="absolute top-3 left-3 flex flex-wrap gap-2">
           {product.tags.map((t) => (
@@ -564,6 +743,23 @@ function ProductCard({ product }: { product: Product }) {
             </span>
           ))}
         </div>
+
+        {imgs.length > 1 && (
+          <div className="absolute left-1/2 -translate-x-1/2 bottom-2 flex items-center gap-2">
+            {imgs.map((_, idx) => (
+              <span
+                key={idx}
+                aria-hidden
+                className={cn(
+                  "w-2 h-2 rounded-full transition-opacity",
+                  idx === displayed
+                    ? "bg-[hsl(var(--brand-end))] opacity-100"
+                    : "bg-white/60 opacity-70",
+                )}
+              />
+            ))}
+          </div>
+        )}
       </div>
       <div className="p-5">
         <h3 className="font-semibold text-lg">
@@ -581,12 +777,13 @@ function ProductCard({ product }: { product: Product }) {
           </Badge>
         </div>
         <div className="mt-4 flex gap-2">
-          <Link
-            to="/contact"
+          <button
+            type="button"
+            onClick={() => (onRequest ? onRequest() : undefined)}
             className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-3.5 py-2.5 text-sm font-semibold shadow"
           >
             Request quote
-          </Link>
+          </button>
           <Link
             to={`/products/${product.id}`}
             className="inline-flex items-center rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm font-semibold hover:bg-slate-50"

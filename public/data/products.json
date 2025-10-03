@@ -9,7 +9,18 @@
     "images": [
       "/placeholder.svg?img=p-bsc-a2-1",
       "/placeholder.svg?img=p-bsc-a2-2",
-      "/placeholder.svg?img=p-bsc-a2-3"
+      "/placeholder.svg?img=p-bsc-a2-3",
+      "/placeholder.svg?img=p-bsc-a2-4",
+      "/placeholder.svg?img=p-bsc-a2-5",
+      "/placeholder.svg?img=p-bsc-a2-6",
+      "/placeholder.svg?img=p-bsc-a2-7",
+      "/placeholder.svg?img=p-bsc-a2-8",
+      "/placeholder.svg?img=p-bsc-a2-9",
+      "/placeholder.svg?img=p-bsc-a2-10",
+      "/placeholder.svg?img=p-bsc-a2-11",
+      "/placeholder.svg?img=p-bsc-a2-12",
+      "/placeholder.svg?img=p-bsc-a2-13",
+      "/placeholder.svg?img=p-bsc-a2-14"
     ],
     "specs": [
       { "name": "Class", "value": "II, Type A2" },
@@ -471,7 +482,7 @@
     ],
     "specs": [
       { "name": "Volume", "value": "2 × 100 L (stacked)" },
-      { "name": "CO₂ Range", "value": "0–20%" },
+      { "name": "CO��� Range", "value": "0–20%" },
       { "name": "Temp Stability", "value": "±0.1°C" }
     ],
     "brochures": [
