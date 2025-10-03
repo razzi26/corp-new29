@@ -366,12 +366,6 @@ export default function ProductPage() {
                 >
                   Request quote
                 </Link>
-                <Link
-                  to="/products"
-                  className="text-[hsl(var(--brand-end))] underline underline-offset-4 hover:no-underline text-sm font-semibold"
-                >
-                  Back to Products
-                </Link>
               </div>
 
               {product.brochures && product.brochures.length > 0 && (
