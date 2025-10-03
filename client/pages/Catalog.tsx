@@ -282,7 +282,11 @@ function ProductCard({ product }: { product: Product }) {
         </div>
       </div>
       <div className="p-5">
-        <h3 className="font-semibold text-lg">{product.title}</h3>
+        <h3 className="font-semibold text-lg">
+          <Link to={`/products/${product.id}`} className="text-[hsl(var(--brand-end))] hover:underline">
+            {product.title}
+          </Link>
+        </h3>
         <p className="mt-1 text-sm text-slate-600">{product.description}</p>
         <div className="mt-3 flex items-center gap-2 text-xs text-slate-500">
           <Badge variant="secondary" className="text-xs">{product.category}</Badge>
@@ -295,10 +299,10 @@ function ProductCard({ product }: { product: Product }) {
             Request quote
           </Link>
           <Link
-            to="/contact"
+            to={`/products/${product.id}`}
             className="inline-flex items-center rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm font-semibold hover:bg-slate-50"
           >
-            Consultation
+            Learn more
           </Link>
         </div>
       </div>
