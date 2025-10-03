@@ -153,14 +153,14 @@ export default function ProductPage() {
       <div className="container mx-auto px-4 pb-10">
         <div className="grid gap-8 lg:grid-cols-12">
           {/* Left: Gallery Slider */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-6">
             {gallery.length > 0 ? (
               <div className="relative p-0">
                 <div className="grid grid-cols-12 gap-4 items-start">
                   {/* Thumbnails left (vertical) */}
                   <div className="col-span-2 relative">
                     <div
-                      className="max-h-[420px] overflow-y-auto pr-1"
+                      className="max-h-[300px] overflow-y-auto pr-1"
                       ref={(el) => {
                         // no-op ref; buttons below scroll this element via document.getElementById
                       }}
@@ -233,7 +233,7 @@ export default function ProductPage() {
                           key={src + i}
                           id={`slide-${i}`}
                           className={cn(
-                            "aspect-[3/4] w-full overflow-hidden rounded-xl bg-slate-50",
+                            "aspect-[3/4] w-full max-h-[480px] overflow-hidden rounded-xl bg-slate-50",
                             i === activeIndex ? "block" : "hidden",
                           )}
                         >
@@ -251,7 +251,7 @@ export default function ProductPage() {
               </div>
             ) : (
               <div className="p-0">
-                <div className="aspect-[3/4] w-full overflow-hidden rounded-xl bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]" />
+                <div className="aspect-[3/4] w-full max-h-[480px] overflow-hidden rounded-xl bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]" />
               </div>
             )}
           </div>
