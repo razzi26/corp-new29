@@ -50,18 +50,26 @@ export default function KnowledgeArticle() {
 
   useEffect(() => {
     let mounted = true;
+    const controller = new AbortController();
     (async () => {
       try {
-        const r = await fetch("/data/knowledge-articles.json", { cache: "no-store" });
+        const r = await fetch("/data/knowledge-articles.json", {
+          cache: "no-store",
+          credentials: "same-origin",
+          headers: { Accept: "application/json" },
+          signal: controller.signal,
+        });
         if (!r.ok) throw new Error(`Failed to load articles (${r.status})`);
         const data = await r.json();
         if (mounted) setArticles(data);
-      } catch (e) {
+      } catch (e: any) {
+        if (e?.name === "AbortError") return;
         if (mounted) setError(String(e));
       }
     })();
     return () => {
       mounted = false;
+      controller.abort();
     };
   }, []);
 
