@@ -161,18 +161,12 @@ export default function ProductPage() {
       <div className="bg-white text-slate-900">
         <div className="container mx-auto px-4 py-10">
           <p className="text-slate-700">We couldn't find this product.</p>
-          <div className="mt-4">
-            <Link
-              to="/products"
-              className="text-[hsl(var(--brand-end))] hover:underline"
-            >
-              Back to Products
-            </Link>
-          </div>
         </div>
       </div>
     );
   }
+
+  const categoryLink = `/products?category=${encodeURIComponent(product.category)}`;
 
   return (
     <div className="bg-white text-slate-900">
@@ -195,6 +189,12 @@ export default function ProductPage() {
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
                 <Link to="/products">Products</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to={categoryLink}>{product.category}</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
@@ -374,22 +374,6 @@ export default function ProductPage() {
                 </Link>
               </div>
 
-              <div className="mt-6">
-                <h3 className="text-sm font-semibold text-slate-800">
-                  Details
-                </h3>
-                <dl className="mt-3 space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <dt className="text-slate-500">ID</dt>
-                    <dd className="text-slate-800">{product.id}</dd>
-                  </div>
-                  <div className="flex justify-between">
-                    <dt className="text-slate-500">Category</dt>
-                    <dd className="text-slate-800">{product.category}</dd>
-                  </div>
-                </dl>
-              </div>
-
               {product.brochures && product.brochures.length > 0 && (
                 <div className="mt-8">
                   <h3 className="text-sm font-semibold text-slate-800">
@@ -467,18 +451,9 @@ export default function ProductPage() {
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-              {
-                "@type": "ListItem",
-                position: 2,
-                name: "Products",
-                item: "/products",
-              },
-              {
-                "@type": "ListItem",
-                position: 3,
-                name: product.title,
-                item: location.pathname,
-              },
+              { "@type": "ListItem", position: 2, name: "Products", item: "/products" },
+              { "@type": "ListItem", position: 3, name: product.category, item: categoryLink },
+              { "@type": "ListItem", position: 4, name: product.title, item: location.pathname },
             ],
           }),
         }}
