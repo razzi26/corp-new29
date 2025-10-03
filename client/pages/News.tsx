@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import {
   Card,
   CardContent,
@@ -21,12 +22,25 @@ interface NewsMeta {
   date: string;
   readMins: number;
   tags: string[];
+  image?: string;
 }
 
 function NewsCard({ a }: { a: NewsMeta }) {
   const slugParam = a.slug.replace("/news/", "");
   return (
-    <Card className="h-full flex flex-col">
+    <Card className="h-full flex flex-col overflow-hidden">
+      {(
+        <div className="bg-white">
+          <AspectRatio ratio={16 / 9}>
+            <img
+              src={a.image || "/placeholder.svg"}
+              alt={a.title}
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </AspectRatio>
+        </div>
+      )}
       <CardHeader>
         <CardTitle className="text-xl leading-7">{a.title}</CardTitle>
         <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-slate-600">
@@ -79,6 +93,7 @@ export default function News() {
           date: d.date,
           readMins: d.readMins,
           tags: d.tags,
+          image: d.image,
         }));
         setItems(metas);
       })
