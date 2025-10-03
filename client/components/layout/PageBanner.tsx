@@ -58,23 +58,26 @@ export function PageBanner({
         <div className="container mx-auto px-4 py-3 md:py-4">
           <Breadcrumb>
             <BreadcrumbList>
-              {breadcrumbs.map((crumb, index) => (
-                <Fragment key={crumb.label}>
-                  <BreadcrumbItem>
-                    {crumb.href ? (
-                      <BreadcrumbLink
-                        asChild
-                        className="transition-colors hover:text-foreground"
-                      >
-                        <Link to={crumb.href}>{crumb.label}</Link>
-                      </BreadcrumbLink>
-                    ) : (
-                      <BreadcrumbPage>{crumb.label}</BreadcrumbPage>
-                    )}
-                  </BreadcrumbItem>
-                  {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
-                </Fragment>
-              ))}
+              {breadcrumbs.map((crumb, index) => {
+                const key = `${index}-${crumb.href ?? crumb.label}`;
+                return (
+                  <Fragment key={key}>
+                    <BreadcrumbItem>
+                      {crumb.href ? (
+                        <BreadcrumbLink
+                          asChild
+                          className="transition-colors hover:text-foreground"
+                        >
+                          <Link to={crumb.href}>{crumb.label}</Link>
+                        </BreadcrumbLink>
+                      ) : (
+                        <BreadcrumbPage>{crumb.label}</BreadcrumbPage>
+                      )}
+                    </BreadcrumbItem>
+                    {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
+                  </Fragment>
+                );
+              })}
             </BreadcrumbList>
           </Breadcrumb>
         </div>
