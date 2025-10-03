@@ -50,14 +50,16 @@ export default function KnowledgeArticle() {
 
   useEffect(() => {
     let mounted = true;
-    fetch("/data/knowledge-articles.json")
-      .then((r) => r.json())
-      .then((data) => {
+    (async () => {
+      try {
+        const r = await fetch("/data/knowledge-articles.json", { cache: "no-store" });
+        if (!r.ok) throw new Error(`Failed to load articles (${r.status})`);
+        const data = await r.json();
         if (mounted) setArticles(data);
-      })
-      .catch((e) => {
+      } catch (e) {
         if (mounted) setError(String(e));
-      });
+      }
+    })();
     return () => {
       mounted = false;
     };
