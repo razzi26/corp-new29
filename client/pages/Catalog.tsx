@@ -175,6 +175,15 @@ export default function Catalog() {
   const [contactModalOpen, setContactModalOpen] = useState(false);
   const [contactProduct, setContactProduct] = useState<Product | null>(null);
 
+  const _filtersDidMount = useRef(true);
+  useEffect(() => {
+    if (_filtersDidMount.current) {
+      _filtersDidMount.current = false;
+      return;
+    }
+    scrollToProducts();
+  }, [selectedCategory, query, selectedTags]);
+
   return (
     <div className="bg-white text-slate-900">
       <PageBanner
