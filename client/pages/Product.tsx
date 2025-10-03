@@ -174,13 +174,14 @@ export default function ProductPage() {
                   {/* Thumbnails left (vertical) */}
                   <div className="col-span-2 relative">
                     <div
-                      className="max-h-[300px] overflow-y-auto pr-1"
+                      className="overflow-y-auto pr-1"
                       ref={(el) => {
-                        // no-op ref; buttons below scroll this element via document.getElementById
+                        thumbsRef.current = el;
                       }}
                       id="thumbs-scroll"
                       role="tablist"
                       aria-label="Product image thumbnails"
+                      style={thumbsMaxHeight ? { maxHeight: `${thumbsMaxHeight}px` } : undefined}
                     >
                       <div className="flex flex-col gap-1">
                         {gallery.map((src, i) => (
