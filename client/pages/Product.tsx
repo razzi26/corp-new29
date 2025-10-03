@@ -47,22 +47,37 @@ export default function ProductPage() {
       try {
         setLoading(true);
         const tryFetch = async (url: string) => {
-          const res = await fetch(url, {
-            headers: { "cache-control": "no-cache" },
-            credentials: "same-origin",
-          });
-          if (!res.ok)
-            throw new Error(`Failed to load products: ${res.status}`);
-          return (await res.json()) as Product[];
+          try {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 10000);
+            const res = await fetch(url, {
+              headers: { "cache-control": "no-cache" },
+              credentials: "same-origin",
+              signal: controller.signal,
+            });
+            clearTimeout(timeout);
+            if (!res.ok) {
+              console.warn("Failed to load products (status):", res.status, url);
+              return null;
+            }
+            try {
+              return (await res.json()) as Product[];
+            } catch (e) {
+              console.warn("Failed to parse products JSON from", url, e);
+              return null;
+            }
+          } catch (e: any) {
+            // fetch failed (network error, CORS, aborted, etc.)
+            console.warn("Fetch error for", url, e && e.message ? e.message : e);
+            return null;
+          }
         };
 
         let data: Product[] | null = null;
-        try {
-          data = await tryFetch("/data/products.json");
-        } catch (err) {
+        data = await tryFetch("/data/products.json");
+        if (!data) {
           try {
-            const origin =
-              typeof window !== "undefined" ? window.location.origin : "";
+            const origin = typeof window !== "undefined" ? window.location.origin : "";
             if (origin) data = await tryFetch(origin + "/data/products.json");
           } catch (err2) {
             // no-op
