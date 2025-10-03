@@ -42,6 +42,7 @@ const TAG_COLORS: Record<string, string> = {
 
 export default function ProductPage() {
   const { id } = useParams<{ id: string }>();
+  const location = useLocation();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
