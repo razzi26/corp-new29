@@ -57,7 +57,11 @@ export default function ProductPage() {
             });
             clearTimeout(timeout);
             if (!res.ok) {
-              console.warn("Failed to load products (status):", res.status, url);
+              console.warn(
+                "Failed to load products (status):",
+                res.status,
+                url,
+              );
               return null;
             }
             try {
@@ -68,7 +72,11 @@ export default function ProductPage() {
             }
           } catch (e: any) {
             // fetch failed (network error, CORS, aborted, etc.)
-            console.warn("Fetch error for", url, e && e.message ? e.message : e);
+            console.warn(
+              "Fetch error for",
+              url,
+              e && e.message ? e.message : e,
+            );
             return null;
           }
         };
@@ -77,7 +85,8 @@ export default function ProductPage() {
         data = await tryFetch("/data/products.json");
         if (!data) {
           try {
-            const origin = typeof window !== "undefined" ? window.location.origin : "";
+            const origin =
+              typeof window !== "undefined" ? window.location.origin : "";
             if (origin) data = await tryFetch(origin + "/data/products.json");
           } catch (err2) {
             // no-op
@@ -155,7 +164,9 @@ export default function ProductPage() {
       setMainAspect(`${Math.round(rect.width)} / ${Math.round(rect.height)}`);
 
       const thumbsEl = thumbsRef.current;
-      setThumbsOverflow(thumbsEl ? thumbsEl.scrollHeight > (thumbsEl.clientHeight + 1) : false);
+      setThumbsOverflow(
+        thumbsEl ? thumbsEl.scrollHeight > thumbsEl.clientHeight + 1 : false,
+      );
       updateThumbsScrollState(thumbsEl);
     } else {
       setThumbsMaxHeight(undefined);
@@ -172,11 +183,13 @@ export default function ProductPage() {
 
     const thumbsEl = thumbsRef.current;
     const onThumbsScroll = () => updateThumbsScrollState(thumbsEl);
-    if (thumbsEl) thumbsEl.addEventListener("scroll", onThumbsScroll, { passive: true });
+    if (thumbsEl)
+      thumbsEl.addEventListener("scroll", onThumbsScroll, { passive: true });
 
     return () => {
       window.removeEventListener("resize", updateSizes);
-      if (thumbsEl) thumbsEl.removeEventListener("scroll", onThumbsScroll as any);
+      if (thumbsEl)
+        thumbsEl.removeEventListener("scroll", onThumbsScroll as any);
     };
   }, [activeIndex, product?.id, gallery.length]);
 
@@ -350,7 +363,9 @@ export default function ProductPage() {
                       style={{ touchAction: "pan-y" }}
                       onPointerDown={(e) => {
                         const el = e.currentTarget as HTMLDivElement;
-                        try { el.setPointerCapture(e.pointerId); } catch {}
+                        try {
+                          el.setPointerCapture(e.pointerId);
+                        } catch {}
                         (el as any)._startX = e.clientX;
                         (el as any)._lastX = e.clientX;
                         (el as any)._isDown = true;
@@ -365,8 +380,13 @@ export default function ProductPage() {
                         const el = e.currentTarget as HTMLDivElement;
                         if (!(el as any)._isDown) return;
                         (el as any)._isDown = false;
-                        try { if ((el as any)._pointerId !== undefined) el.releasePointerCapture((el as any)._pointerId); } catch {}
-                        const startX = (el as any)._startX as number | undefined;
+                        try {
+                          if ((el as any)._pointerId !== undefined)
+                            el.releasePointerCapture((el as any)._pointerId);
+                        } catch {}
+                        const startX = (el as any)._startX as
+                          | number
+                          | undefined;
                         const lastX = (el as any)._lastX as number | undefined;
                         if (startX === undefined || lastX === undefined) return;
                         const dx = lastX - startX;
@@ -374,19 +394,27 @@ export default function ProductPage() {
                         if (dx < -threshold) {
                           setActiveIndex((s) => (s + 1) % gallery.length);
                         } else if (dx > threshold) {
-                          setActiveIndex((s) => (s - 1 + gallery.length) % gallery.length);
+                          setActiveIndex(
+                            (s) => (s - 1 + gallery.length) % gallery.length,
+                          );
                         }
                       }}
                       onPointerCancel={(e) => {
                         const el = e.currentTarget as HTMLDivElement;
                         (el as any)._isDown = false;
-                        try { if ((el as any)._pointerId !== undefined) el.releasePointerCapture((el as any)._pointerId); } catch {}
+                        try {
+                          if ((el as any)._pointerId !== undefined)
+                            el.releasePointerCapture((el as any)._pointerId);
+                        } catch {}
                       }}
                       onPointerLeave={(e) => {
                         const el = e.currentTarget as HTMLDivElement;
                         if (!(el as any)._isDown) return;
                         (el as any)._isDown = false;
-                        try { if ((el as any)._pointerId !== undefined) el.releasePointerCapture((el as any)._pointerId); } catch {}
+                        try {
+                          if ((el as any)._pointerId !== undefined)
+                            el.releasePointerCapture((el as any)._pointerId);
+                        } catch {}
                       }}
                     >
                       {/* Mobile counter */}
@@ -550,9 +578,24 @@ export default function ProductPage() {
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-              { "@type": "ListItem", position: 2, name: "Products", item: "/products" },
-              { "@type": "ListItem", position: 3, name: product.category, item: categoryLink },
-              { "@type": "ListItem", position: 4, name: product.title, item: location.pathname },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Products",
+                item: "/products",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: product.category,
+                item: categoryLink,
+              },
+              {
+                "@type": "ListItem",
+                position: 4,
+                name: product.title,
+                item: location.pathname,
+              },
             ],
           }),
         }}

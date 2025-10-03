@@ -1,5 +1,11 @@
 import React from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 export default function ContactModal({
   open,
@@ -16,7 +22,8 @@ export default function ContactModal({
         <DialogHeader>
           <DialogTitle>Contact Us</DialogTitle>
           <DialogDescription>
-            Leave your details and our team will prepare a tailored quote for your facility.
+            Leave your details and our team will prepare a tailored quote for
+            your facility.
           </DialogDescription>
         </DialogHeader>
         <form
@@ -70,7 +77,9 @@ export default function ContactModal({
           <button className="w-full inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] px-4 py-2.5 text-sm font-semibold text-white shadow transition hover:shadow-md">
             Send request
           </button>
-          <p className="mt-2 text-xs text-slate-500">By submitting, you agree to the processing of personal data.</p>
+          <p className="mt-2 text-xs text-slate-500">
+            By submitting, you agree to the processing of personal data.
+          </p>
         </form>
       </DialogContent>
     </Dialog>

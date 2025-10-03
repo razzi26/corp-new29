@@ -290,23 +290,23 @@ export default function Catalog() {
                   Search
                 </label>
                 <div className="relative">
-                <input
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Search products..."
-                  className="w-full h-10 rounded-lg bg-white text-slate-900 border border-slate-300 px-3 pr-9 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
-                />
-                {query && (
-                  <button
-                    type="button"
-                    aria-label="Clear search"
-                    onClick={() => setQuery("")}
-                    className="absolute right-2 top-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center"
-                  >
-                    ×
-                  </button>
-                )}
-              </div>
+                  <input
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="Search products..."
+                    className="w-full h-10 rounded-lg bg-white text-slate-900 border border-slate-300 px-3 pr-9 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
+                  />
+                  {query && (
+                    <button
+                      type="button"
+                      aria-label="Clear search"
+                      onClick={() => setQuery("")}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center"
+                    >
+                      ×
+                    </button>
+                  )}
+                </div>
               </div>
 
               {/* Tags above Categories */}
@@ -440,10 +440,14 @@ export default function Catalog() {
                     <h2 className="text-xl font-bold">{category}</h2>
                     <div className="mt-4 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
                       {items.map((p) => (
-                        <ProductCard key={p.id} product={p} onRequest={() => {
-                          setContactProduct(p);
-                          setContactModalOpen(true);
-                        }} />
+                        <ProductCard
+                          key={p.id}
+                          product={p}
+                          onRequest={() => {
+                            setContactProduct(p);
+                            setContactModalOpen(true);
+                          }}
+                        />
                       ))}
                     </div>
                   </section>
@@ -619,7 +623,13 @@ function TagsDrawer({
   );
 }
 
-function ProductCard({ product, onRequest }: { product: Product; onRequest?: () => void }) {
+function ProductCard({
+  product,
+  onRequest,
+}: {
+  product: Product;
+  onRequest?: () => void;
+}) {
   const imgs = (product.mainImage ? [product.mainImage] : []).concat(
     product.images ?? [],
   );
@@ -630,7 +640,9 @@ function ProductCard({ product, onRequest }: { product: Product; onRequest?: () 
 
   // detect touch devices (mobile/tablet)
   useEffect(() => {
-    const touch = typeof window !== "undefined" && ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+    const touch =
+      typeof window !== "undefined" &&
+      ("ontouchstart" in window || navigator.maxTouchPoints > 0);
     setIsTouch(Boolean(touch));
   }, []);
 
@@ -640,7 +652,7 @@ function ProductCard({ product, onRequest }: { product: Product; onRequest?: () 
     setActiveIndex(0);
   }, [product.id]);
 
-  const displayed = isTouch ? activeIndex : hoverIndex ?? activeIndex;
+  const displayed = isTouch ? activeIndex : (hoverIndex ?? activeIndex);
 
   // hover-based preview (desktop only)
   const handlePointerMove = (e: React.PointerEvent) => {
@@ -695,9 +707,15 @@ function ProductCard({ product, onRequest }: { product: Product; onRequest?: () 
         role="img"
         aria-label={product.title}
         style={{ touchAction: "pan-y" }}
-        onPointerMove={(e) => { handlePointerMove(e); }}
-        onPointerLeave={() => { if (!isTouch) setHoverIndex(null); }}
-        onPointerCancel={() => { if (!isTouch) setHoverIndex(null); }}
+        onPointerMove={(e) => {
+          handlePointerMove(e);
+        }}
+        onPointerLeave={() => {
+          if (!isTouch) setHoverIndex(null);
+        }}
+        onPointerCancel={() => {
+          if (!isTouch) setHoverIndex(null);
+        }}
         onTouchStart={onTouchStartSimple}
         onTouchMove={onTouchMoveSimple}
         onTouchEnd={onTouchEndSimple}
@@ -761,7 +779,7 @@ function ProductCard({ product, onRequest }: { product: Product; onRequest?: () 
         <div className="mt-4 flex gap-2">
           <button
             type="button"
-            onClick={() => onRequest ? onRequest() : undefined}
+            onClick={() => (onRequest ? onRequest() : undefined)}
             className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-3.5 py-2.5 text-sm font-semibold shadow"
           >
             Request quote

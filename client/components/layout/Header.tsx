@@ -41,7 +41,9 @@ export default function Header() {
   const [openSubmenuKey, setOpenSubmenuKey] = useState<string | null>(null);
   const [desktopOpenKey, setDesktopOpenKey] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
-  const isProductDetail = location.pathname.startsWith("/products/") && location.pathname !== "/products";
+  const isProductDetail =
+    location.pathname.startsWith("/products/") &&
+    location.pathname !== "/products";
 
   useEffect(() => {
     const anchor = document.querySelector<HTMLElement>("[data-header-anchor]");
@@ -109,7 +111,9 @@ export default function Header() {
               <span
                 className={cn(
                   "font-semibold tracking-wide transition-colors",
-                  scrolled || open || isProductDetail ? "text-slate-900" : "text-white",
+                  scrolled || open || isProductDetail
+                    ? "text-slate-900"
+                    : "text-white",
                 )}
               >
                 Esco Biosafety Institute
@@ -168,8 +172,8 @@ export default function Header() {
                     className={cn(
                       "transition-colors",
                       scrolled || isProductDetail
-                          ? "text-slate-700 hover:text-slate-900"
-                          : "text-white/85 hover:text-white",
+                        ? "text-slate-700 hover:text-slate-900"
+                        : "text-white/85 hover:text-white",
                     )}
                   >
                     {item.label}
@@ -274,8 +278,8 @@ export default function Header() {
                     className={cn(
                       "block w-full rounded-full px-5 py-2.5 text-center text-base font-semibold shadow transition hover:shadow-md",
                       scrolled || open || isProductDetail
-                    ? "bg-[hsl(var(--brand-end))] text-white"
-                    : "bg-white text-slate-900",
+                        ? "bg-[hsl(var(--brand-end))] text-white"
+                        : "bg-white text-slate-900",
                     )}
                     onClick={() => setOpen(false)}
                   >
