@@ -210,18 +210,21 @@ export default function ProductPage() {
                   )}
                 </Carousel>
                 {gallery.length > 1 && (
-                  <div className="mt-3 flex gap-2 overflow-x-auto py-1">
+                  <div className="mt-3 flex gap-2 overflow-x-auto py-1" role="tablist" aria-label="Product image thumbnails">
                     {gallery.map((src, i) => (
                       <button
                         key={src + i}
                         className={cn(
-                          "relative h-16 w-24 flex-shrink-0 overflow-hidden rounded-lg border",
+                          "relative h-16 w-24 flex-shrink-0 overflow-hidden rounded-lg border focus:outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]",
                           i === activeIndex
                             ? "border-[hsl(var(--brand-end))]"
                             : "border-slate-200 hover:border-slate-300",
                         )}
                         onClick={() => setActiveIndex(i)}
-                        aria-label={`Go to image ${i + 1}`}
+                        role="tab"
+                        aria-selected={i === activeIndex}
+                        aria-controls={`slide-${i}`}
+                        title={`Show image ${i + 1}`}
                       >
                         <img
                           src={src}
