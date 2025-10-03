@@ -441,6 +441,12 @@ export default function ProductPage() {
           }),
         }}
       />
+
+      <ContactModal
+        open={contactModalOpen}
+        productName={product.title}
+        onOpenChange={(v) => setContactModalOpen(v)}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
