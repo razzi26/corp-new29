@@ -706,11 +706,10 @@ function ProductCard({ product, onRequest }: { product: Product; onRequest?: () 
         role="img"
         aria-label={product.title}
         style={{ touchAction: "pan-y" }}
-        onPointerMove={handlePointerMove}
+        onPointerMove={(e) => { handlePointerMove(e); onPointerMove(e); }}
         onPointerLeave={() => { if (!isTouch) setHoverIndex(null); }}
         onPointerCancel={() => { if (!isTouch) setHoverIndex(null); }}
         onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerCancel}
         onTouchStart={(e) => {
