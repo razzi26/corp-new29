@@ -429,7 +429,7 @@ function CategoriesDrawer({
         <SheetHeader className="px-4 pt-4">
           <SheetTitle>Categories</SheetTitle>
         </SheetHeader>
-        <div className="max-h[65vh] overflow-auto px-4 py-2">
+        <div className="max-h-[65vh] overflow-auto px-4 py-2">
           <button
             className={cn(
               "w-full text-left px-3 py-3 rounded-md border mb-2",
