@@ -1,0 +1,128 @@
+[
+  {
+    "id": "p-bsc-a2",
+    "title": "Class II A2 Biosafety Cabinet",
+    "category": "Biosafety Cabinets",
+    "tags": ["Featured", "Popular"],
+    "description": "High-performance protection for personnel, product, and environment."
+  },
+  {
+    "id": "p-bsc-b2",
+    "title": "Class II B2 Biosafety Cabinet",
+    "category": "Biosafety Cabinets",
+    "tags": ["Advanced"],
+    "description": "Total exhaust design for specialized applications and safety."
+  },
+  {
+    "id": "p-pcr",
+    "title": "PCR Cabinet",
+    "category": "PCR Cabinets",
+    "tags": ["Popular"],
+    "description": "Contamination control for amplification workflows."
+  },
+  {
+    "id": "p-fh-ducted",
+    "title": "Ducted Fume Hood",
+    "category": "Fume Hoods",
+    "tags": ["Featured"],
+    "description": "Reliable chemical handling with external exhaust."
+  },
+  {
+    "id": "p-fh-ductless",
+    "title": "Ductless Fume Hood",
+    "category": "Fume Hoods",
+    "tags": ["Sale"],
+    "description": "Flexible filtration-based protection without ducting."
+  },
+  {
+    "id": "p-incu-co2",
+    "title": "CO₂ Incubator",
+    "category": "CO₂ Incubators",
+    "tags": ["Featured", "Advanced"],
+    "description": "Accurate CO₂ and temperature control for sensitive cultures."
+  },
+  {
+    "id": "p-incu-shaker",
+    "title": "Shaking Incubator",
+    "category": "CO₂ Incubators",
+    "tags": ["New"],
+    "description": "Uniform mixing and growth for cell and microbial culture."
+  },
+  {
+    "id": "p-cleanroom-panels",
+    "title": "Cleanroom Wall Panels",
+    "category": "Cleanroom Solutions",
+    "tags": ["Advanced"],
+    "description": "Modular, seamless surfaces for controlled environments."
+  },
+  {
+    "id": "p-cleanroom-pass",
+    "title": "Pass-Through Chamber",
+    "category": "Cleanroom Solutions",
+    "tags": ["Popular"],
+    "description": "Efficient material transfer while maintaining cleanliness."
+  },
+  {
+    "id": "p-isolator-pharma",
+    "title": "Pharmaceutical Isolator",
+    "category": "Isolators",
+    "tags": ["Featured"],
+    "description": "Aseptic processing with robust containment."
+  },
+  {
+    "id": "p-isolator-sterile",
+    "title": "Sterility Testing Isolator",
+    "category": "Isolators",
+    "tags": ["Advanced"],
+    "description": "Secure sterility testing with operator protection."
+  },
+  {
+    "id": "p-bsc-c1",
+    "title": "Class II C1 Biosafety Cabinet",
+    "category": "Biosafety Cabinets",
+    "tags": ["New"],
+    "description": "Hybrid flexibility for evolving lab workflows."
+  },
+  {
+    "id": "p-pcr-uv",
+    "title": "PCR Cabinet with UV",
+    "category": "PCR Cabinets",
+    "tags": ["Sale"],
+    "description": "Integrated UV decontamination to reduce carryover."
+  },
+  {
+    "id": "p-fh-vcv",
+    "title": "Variable Air Volume Fume Hood",
+    "category": "Fume Hoods",
+    "tags": ["Advanced"],
+    "description": "Energy-efficient airflow control for safety and savings."
+  },
+  {
+    "id": "p-cleanroom-doors",
+    "title": "Hermetic Sliding Doors",
+    "category": "Cleanroom Solutions",
+    "tags": ["Featured"],
+    "description": "Airtight door systems to maintain pressure differentials."
+  },
+  {
+    "id": "p-incu-stack",
+    "title": "Stackable CO₂ Incubator",
+    "category": "CO₂ Incubators",
+    "tags": ["Popular"],
+    "description": "Space-saving growth with independent chambers."
+  },
+  {
+    "id": "p-bsc-class3",
+    "title": "Class III Biosafety Cabinet",
+    "category": "Biosafety Cabinets",
+    "tags": ["Advanced"],
+    "description": "Maximum containment for high-risk agents."
+  },
+  {
+    "id": "p-pcr-compact",
+    "title": "Compact PCR Workstation",
+    "category": "PCR Cabinets",
+    "tags": ["Featured"],
+    "description": "Benchtop form for small labs and teaching."
+  }
+]
