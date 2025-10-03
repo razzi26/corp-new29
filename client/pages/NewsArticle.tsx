@@ -181,7 +181,7 @@ export default function NewsArticle() {
                         <Link
                           to={`/news/${slugParam}`}
                           aria-label="Open"
-                          className="ml-2 inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#00467f] text-[#00467f] hover:bg-[#00467f]/5"
+                          className="ml-2 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#00467f] text-[#00467f] transition-colors hover:bg-[#00467f] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00467f]/40"
                         >
                           <ArrowRight className="h-5 w-5" />
                         </Link>
