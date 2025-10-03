@@ -31,6 +31,7 @@ export default function Catalog() {
   const categoryParam = searchParams.get("category") || null;
 
   const productsTopRef = useRef<HTMLDivElement>(null);
+  const userScrollRef = useRef(false);
   const scrollToProducts = () => {
     const el = productsTopRef.current;
     if (!el) return;
@@ -96,6 +97,13 @@ export default function Catalog() {
       if (selectedCategory !== null) setSelectedCategory(null);
     }
   }, [products.length, categoryParam, categoryIndex, selectedCategory]);
+
+  useEffect(() => {
+    if (!products.length) return;
+    if (!userScrollRef.current) return;
+    userScrollRef.current = false;
+    scrollToProducts();
+  }, [selectedCategory, products.length]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -204,12 +212,13 @@ export default function Catalog() {
                   <li>
                     <button
                       onClick={() => {
-                        if (selectedCategory !== null)
+                        if (selectedCategory !== null) {
                           setSelectedCategory(null);
+                          userScrollRef.current = true;
+                        }
                         const next = new URLSearchParams(searchParams);
                         next.delete("category");
                         setSearchParams(next, { replace: true });
-                        scrollToProducts();
                       }}
                       aria-pressed={selectedCategory === null}
                       className={cn(
@@ -235,7 +244,7 @@ export default function Catalog() {
                             else next.delete("category");
                             setSearchParams(next, { replace: true });
                             setSelectedCategory(nextCat);
-                            scrollToProducts();
+                            userScrollRef.current = true;
                           }}
                           aria-pressed={active}
                           className={cn(
