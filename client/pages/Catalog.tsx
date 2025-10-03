@@ -29,7 +29,6 @@ export default function Catalog() {
   const [error, setError] = useState<string | null>(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const categoryParam = searchParams.get("category") || null;
-  const categoryParam = searchParams.get("category") || null;
 
   const productsTopRef = useRef<HTMLDivElement>(null);
   const scrollToProducts = () => {
