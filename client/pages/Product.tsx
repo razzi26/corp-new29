@@ -87,11 +87,19 @@ export default function ProductPage() {
   const mainImageRef = useRef<HTMLDivElement | null>(null);
   const thumbsRef = useRef<HTMLDivElement | null>(null);
   const [thumbsMaxHeight, setThumbsMaxHeight] = useState<number | undefined>(undefined);
+  const [mainAspect, setMainAspect] = useState<string | undefined>(undefined);
 
   useLayoutEffect(() => {
     function update() {
       const el = mainImageRef.current;
-      if (el) setThumbsMaxHeight(el.clientHeight);
+      if (el) {
+        setThumbsMaxHeight(el.clientHeight);
+        const rect = el.getBoundingClientRect();
+        setMainAspect(`${Math.round(rect.width)} / ${Math.round(rect.height)}`);
+      } else {
+        setThumbsMaxHeight(undefined);
+        setMainAspect(undefined);
+      }
     }
     update();
     window.addEventListener("resize", update);
