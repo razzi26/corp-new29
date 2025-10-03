@@ -67,12 +67,10 @@ export default function ContactModal({
             />
           </label>
 
-          <div className="flex items-center justify-between">
-            <p className="text-xs text-slate-500">By submitting, you agree to the processing of personal data.</p>
-            <button className="ml-4 inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] px-4 py-2.5 text-sm font-semibold text-white shadow transition hover:shadow-md">
-              Send request
-            </button>
-          </div>
+          <button className="w-full inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] px-4 py-2.5 text-sm font-semibold text-white shadow transition hover:shadow-md">
+            Send request
+          </button>
+          <p className="mt-2 text-xs text-slate-500">By submitting, you agree to the processing of personal data.</p>
         </form>
       </DialogContent>
     </Dialog>
