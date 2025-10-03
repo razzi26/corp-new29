@@ -107,6 +107,8 @@ export default function ProductPage() {
   const [previewIndex, setPreviewIndex] = useState<number | null>(null);
   const displayedIndex = previewIndex ?? activeIndex;
 
+  const [contactModalOpen, setContactModalOpen] = useState(false);
+
   const mainImageRef = useRef<HTMLDivElement | null>(null);
   const thumbsRef = useRef<HTMLDivElement | null>(null);
   const [thumbsMaxHeight, setThumbsMaxHeight] = useState<number | undefined>(
