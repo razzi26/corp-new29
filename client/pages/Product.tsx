@@ -96,14 +96,6 @@ export default function ProductPage() {
   if (!product) {
     return (
       <div className="bg-white text-slate-900">
-        <PageBanner
-          title="Product not found"
-          breadcrumbs={[
-            { label: "Home", href: "/" },
-            { label: "Products", href: "/products" },
-            { label: "Not found" },
-          ]}
-        />
         <div className="container mx-auto px-4 py-10">
           <p className="text-slate-700">We couldn't find this product.</p>
           <div className="mt-4">
