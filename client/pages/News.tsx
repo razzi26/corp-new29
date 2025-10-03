@@ -13,6 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { LoadingIndicator } from "@/components/ui/loading-indicator";
 import { CalendarDays, Clock, ArrowRight } from "lucide-react";
 
 interface NewsMeta {
