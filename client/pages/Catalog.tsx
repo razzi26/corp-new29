@@ -671,12 +671,13 @@ function ProductCard({ product, onRequest }: { product: Product; onRequest?: () 
           </Badge>
         </div>
         <div className="mt-4 flex gap-2">
-          <Link
-            to="/contact"
+          <button
+            type="button"
+            onClick={() => onRequest ? onRequest() : undefined}
             className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-3.5 py-2.5 text-sm font-semibold shadow"
           >
             Request quote
-          </Link>
+          </button>
           <Link
             to={`/products/${product.id}`}
             className="inline-flex items-center rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm font-semibold hover:bg-slate-50"
