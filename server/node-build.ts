@@ -1,15 +1,14 @@
-import path from "path";
 import { createServer } from "./index";
-import * as express from "express";
-import path from "path";
+import express from "express";
 import { fileURLToPath } from "url";
+import { dirname, join } from "path";
 
 const app = createServer();
 const port = process.env.PORT || 3000;
 
-// In production, serve the built SPA files
-const __dirname = fileURLToPath(new URL(".", import.meta.url));
-const distPath = path.join(__dirname, "../spa");
+// In production, serve the built SPA files from dist/spa relative to this file
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const distPath = join(__dirname, "../spa");
 
 // Serve static files
 app.use(express.static(distPath));
@@ -21,7 +20,7 @@ app.get("*", (req, res) => {
     return res.status(404).json({ error: "API endpoint not found" });
   }
 
-  res.sendFile(path.join(distPath, "index.html"));
+  res.sendFile(join(distPath, "index.html"));
 });
 
 app.listen(port, () => {
