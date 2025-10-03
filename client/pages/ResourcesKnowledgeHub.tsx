@@ -27,24 +27,6 @@ const ARTICLES: ArticleMeta[] = [
     readMins: 8,
     tags: ["Biosafety", "Lab Practices"],
   },
-  {
-    slug: "/resources/knowledge-hub/sample-decontamination",
-    title: "Surface Decontamination Methods Compared",
-    description:
-      "An evidence-based overview of chemical disinfectants and compatibility considerations.",
-    date: "2025-02-11",
-    readMins: 6,
-    tags: ["Decontamination", "SOP"],
-  },
-  {
-    slug: "/resources/knowledge-hub/bsc-airflow-fundamentals",
-    title: "BSC Airflow Fundamentals",
-    description:
-      "Understanding inflow, downflow, and exhaust to maintain containment.",
-    date: "2025-01-20",
-    readMins: 7,
-    tags: ["BSC", "Engineering Controls"],
-  },
 ];
 
 const ALL_TAGS = Array.from(new Set(ARTICLES.flatMap((a) => a.tags))).sort();
