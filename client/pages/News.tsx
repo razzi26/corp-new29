@@ -82,9 +82,11 @@ export default function News() {
 
   useEffect(() => {
     let mounted = true;
-    fetch("/data/news-articles.json")
-      .then((r) => r.json())
-      .then((data) => {
+    (async () => {
+      try {
+        const r = await fetch("/data/news-articles.json", { cache: "no-store" });
+        if (!r.ok) throw new Error(`Failed to load news (${r.status})`);
+        const data = await r.json();
         if (!mounted) return;
         const metas: NewsMeta[] = data.map((d: any) => ({
           slug: d.slug,
@@ -96,8 +98,10 @@ export default function News() {
           image: d.image,
         }));
         setItems(metas);
-      })
-      .catch((e) => setError(String(e)));
+      } catch (e) {
+        if (mounted) setError(String(e));
+      }
+    })();
     return () => {
       mounted = false;
     };
