@@ -16,6 +16,8 @@ type Product = {
   category: string;
   tags: string[];
   description: string;
+  mainImage?: string;
+  images?: string[];
 };
 
 const TAG_COLORS: Record<string, string> = {
