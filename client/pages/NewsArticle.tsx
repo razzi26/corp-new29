@@ -4,6 +4,7 @@ import { PageBanner } from "@/components/layout/PageBanner";
 import { Separator } from "@/components/ui/separator";
 import { Seo } from "@/components/Seo";
 import { ShareButtons } from "@/components/ShareButtons";
+import { Calendar, Clock } from "lucide-react";
 
 interface Block {
   type: "p" | "h3" | "ul";
