@@ -3,7 +3,12 @@ import { Link, useSearchParams } from "react-router-dom";
 import { PageBanner } from "@/components/layout/PageBanner";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
 
 type Product = {
   id: string;
@@ -155,7 +160,9 @@ export default function Catalog() {
         <div className="lg:hidden mb-6">
           <div className="sticky top-[72px] z-30 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-slate-200 -mx-4 px-4 py-3">
             <div className="space-y-3">
-              <label className="block text-sm font-semibold text-slate-800">Search</label>
+              <label className="block text-sm font-semibold text-slate-800">
+                Search
+              </label>
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
@@ -198,9 +205,13 @@ export default function Catalog() {
                 >
                   {selectedTags.size > 0 ? (
                     <>
-                      <span className="truncate">{Array.from(selectedTags)[0]}</span>
+                      <span className="truncate">
+                        {Array.from(selectedTags)[0]}
+                      </span>
                       {selectedTags.size > 1 && (
-                        <span className="text-slate-500">+{selectedTags.size - 1}</span>
+                        <span className="text-slate-500">
+                          +{selectedTags.size - 1}
+                        </span>
                       )}
                       <span
                         className="ml-auto inline-flex items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 w-5 h-5"

@@ -214,13 +214,20 @@ export default function ProductPage() {
             {/* Specifications */}
             {product.specs && product.specs.length > 0 && (
               <div className="mt-8">
-                <h3 className="text-lg font-semibold text-slate-900">Specifications</h3>
+                <h3 className="text-lg font-semibold text-slate-900">
+                  Specifications
+                </h3>
                 <div className="mt-3 overflow-hidden rounded-xl border border-slate-200">
                   <table className="w-full text-sm">
                     <tbody>
                       {product.specs.map((row, idx) => (
-                        <tr key={row.name + idx} className={idx % 2 ? "bg-slate-50" : "bg-white"}>
-                          <td className="w-1/3 p-3 text-slate-600">{row.name}</td>
+                        <tr
+                          key={row.name + idx}
+                          className={idx % 2 ? "bg-slate-50" : "bg-white"}
+                        >
+                          <td className="w-1/3 p-3 text-slate-600">
+                            {row.name}
+                          </td>
                           <td className="p-3 text-slate-900">{row.value}</td>
                         </tr>
                       ))}
@@ -280,11 +287,18 @@ export default function ProductPage() {
             {/* Brochures */}
             {product.brochures && product.brochures.length > 0 && (
               <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-4">
-                <h3 className="text-sm font-semibold text-slate-800">Brochures</h3>
+                <h3 className="text-sm font-semibold text-slate-800">
+                  Brochures
+                </h3>
                 <ul className="mt-2 space-y-2 text-sm">
                   {product.brochures.map((b, i) => (
-                    <li key={(b.url || "") + i} className="flex items-center justify-between gap-3">
-                      <span className="text-slate-700">{b.label ?? b.lang}</span>
+                    <li
+                      key={(b.url || "") + i}
+                      className="flex items-center justify-between gap-3"
+                    >
+                      <span className="text-slate-700">
+                        {b.label ?? b.lang}
+                      </span>
                       <a
                         href={b.url}
                         target="_blank"
