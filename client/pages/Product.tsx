@@ -346,6 +346,21 @@ export default function ProductPage() {
           </div>
         )}
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Product',
+            name: product.title,
+            description: product.description,
+            sku: product.id,
+            category: product.category,
+            image: gallery,
+            brand: { '@type': 'Brand', name: 'Esco Biosafety Institute' },
+          }),
+        }}
+      />
     </div>
   );
 }
