@@ -569,10 +569,13 @@ function ProductCard({ product }: { product: Product }) {
     product.images ?? [],
   );
   const count = Math.max(1, imgs.length);
-  const [previewIndex, setPreviewIndex] = useState<number | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const displayed = previewIndex ?? 0;
+  // reset index when product changes
+  useEffect(() => setCurrentIndex(0), [product.id]);
+
+  const displayed = currentIndex;
 
   function handlePointerMove(e: React.PointerEvent) {
     const el = containerRef.current;
