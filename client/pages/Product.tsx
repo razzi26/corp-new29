@@ -173,7 +173,7 @@ export default function ProductPage() {
                           <button
                             key={src + i}
                             className={cn(
-                              "relative h-14 w-full overflow-hidden rounded-md focus:outline-none focus:ring-0 focus-visible:ring-0 focus:border-[hsl(var(--brand-end))]",
+                              "relative aspect-[3/4] w-full overflow-hidden rounded-md focus:outline-none focus:ring-0 focus-visible:ring-0 focus:border-[hsl(var(--brand-end))]",
                               i === activeIndex
                                 ? "border-2 border-[hsl(var(--brand-end))]"
                                 : "border border-transparent",
@@ -233,7 +233,7 @@ export default function ProductPage() {
                           key={src + i}
                           id={`slide-${i}`}
                           className={cn(
-                            "aspect-[16/10] w-full overflow-hidden rounded-xl bg-slate-50",
+                            "aspect-[3/4] w-full overflow-hidden rounded-xl bg-slate-50",
                             i === activeIndex ? "block" : "hidden",
                           )}
                         >
@@ -251,7 +251,7 @@ export default function ProductPage() {
               </div>
             ) : (
               <div className="p-0">
-                <div className="aspect-[16/10] w-full overflow-hidden rounded-xl bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]" />
+                <div className="aspect-[3/4] w-full overflow-hidden rounded-xl bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]" />
               </div>
             )}
           </div>
