@@ -437,6 +437,15 @@ export default function Catalog() {
       />
 
       {/* Tags Drawer */}
+
+      <ContactModal
+        open={contactModalOpen}
+        productName={contactProduct?.title ?? null}
+        onOpenChange={(v) => {
+          setContactModalOpen(v);
+          if (!v) setContactProduct(null);
+        }}
+      />
       <TagsDrawer
         open={openTagSheet}
         onOpenChange={setOpenTagSheet}
