@@ -19,6 +19,7 @@ interface NewsItem {
   date: string;
   readMins: number;
   tags: string[];
+  image?: string;
   content: Block[];
 }
 
