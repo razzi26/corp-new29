@@ -66,6 +66,13 @@ export default function KnowledgeArticleBSL() {
           { label: "Knowledge Hub", href: "/resources/knowledge-hub" },
           { label: title },
         ]}
+        meta={
+          <div className="flex flex-wrap items-center gap-3">
+            <time dateTime="2025-03-18">March 18, 2025</time>
+            <span>•</span>
+            <span>9 min read</span>
+          </div>
+        }
       />
 
       <Seo
@@ -77,12 +84,6 @@ export default function KnowledgeArticleBSL() {
       />
 
       <article className="container mx-auto px-4 py-12 md:py-16">
-        <div className="mb-2 flex flex-wrap items-center gap-3 text-sm text-slate-600">
-          <time dateTime="2025-03-18">March 18, 2025</time>
-          <span>•</span>
-          <span>9 min read</span>
-        </div>
-
         <ShareButtons
           title={title}
           description={description}
