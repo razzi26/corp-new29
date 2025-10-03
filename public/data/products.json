@@ -18,6 +18,11 @@
       { "name": "Filter", "value": "Dual HEPA, 99.99% @ 0.3 μm" },
       { "name": "Noise Level", "value": "≤ 60 dBA" },
       { "name": "Workzone Width", "value": "1200 mm" }
+    ],
+    "brochures": [
+      { "lang": "EN", "label": "English", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-bsc-a2-en" },
+      { "lang": "RU", "label": "Русский", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-bsc-a2-ru" },
+      { "lang": "DE", "label": "Deutsch", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-bsc-a2-de" }
     ]
   },
   {
@@ -37,6 +42,10 @@
       { "name": "Filter", "value": "HEPA, 99.99% @ 0.3 μm" },
       { "name": "Sash", "value": "Motorized, 8–10 in. working height" },
       { "name": "Lighting", "value": "≥ 1000 lux" }
+    ],
+    "brochures": [
+      { "lang": "EN", "label": "English", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-bsc-b2-en" },
+      { "lang": "RU", "label": "Русский", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-bsc-b2-ru" }
     ]
   },
   {
@@ -55,6 +64,10 @@
       { "name": "HEPA Filter", "value": "99.99% @ 0.3 μm" },
       { "name": "Airflow", "value": "Positive pressure, laminar" },
       { "name": "Lighting", "value": "LED, ≥ 800 lux" }
+    ],
+    "brochures": [
+      { "lang": "EN", "label": "English", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-pcr-en" },
+      { "lang": "RU", "label": "Русский", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-pcr-ru" }
     ]
   },
   {
@@ -75,6 +88,11 @@
       { "name": "Sash", "value": "Vertical, tempered glass" },
       { "name": "Worktop", "value": "Epoxy resin" },
       { "name": "Construction", "value": "Powder-coated steel" }
+    ],
+    "brochures": [
+      { "lang": "EN", "label": "English", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-fh-ducted-en" },
+      { "lang": "RU", "label": "Русский", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-fh-ducted-ru" },
+      { "lang": "DE", "label": "Deutsch", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-fh-ducted-de" }
     ]
   },
   {
@@ -93,6 +111,10 @@
       { "name": "Filter", "value": "Carbon/HEPA modular system" },
       { "name": "Face Velocity", "value": "0.5 m/s (100 fpm)" },
       { "name": "Noise Level", "value": "≤ 60 dBA" }
+    ],
+    "brochures": [
+      { "lang": "EN", "label": "English", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-fh-ductless-en" },
+      { "lang": "RU", "label": "Русский", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-fh-ductless-ru" }
     ]
   },
   {
@@ -112,6 +134,10 @@
       { "name": "CO₂ Range", "value": "0–20%" },
       { "name": "Temp Range", "value": "+4°C above ambient to 50°C" },
       { "name": "Humidity", "value": "> 90% RH (with pan)" }
+    ],
+    "brochures": [
+      { "lang": "EN", "label": "English", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-incu-co2-en" },
+      { "lang": "RU", "label": "Русский", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-incu-co2-ru" }
     ]
   },
   {
@@ -129,6 +155,10 @@
       { "name": "Shaking Speed", "value": "30–300 rpm" },
       { "name": "Orbit", "value": "25 mm" },
       { "name": "Temp Range", "value": "Ambient +5°C to 60°C" }
+    ],
+    "brochures": [
+      { "lang": "EN", "label": "English", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-incu-shaker-en" },
+      { "lang": "RU", "label": "Русский", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-incu-shaker-ru" }
     ]
   },
   {
@@ -147,6 +177,10 @@
       { "name": "Thickness", "value": "50 / 75 / 100 mm" },
       { "name": "Surface", "value": "Antimicrobial, seamless" },
       { "name": "Fire Rating", "value": "Up to EI60" }
+    ],
+    "brochures": [
+      { "lang": "EN", "label": "English", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-cleanroom-panels-en" },
+      { "lang": "RU", "label": "Русский", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-cleanroom-panels-ru" }
     ]
   },
   {
@@ -164,6 +198,10 @@
       { "name": "Interlock", "value": "Electromechanical" },
       { "name": "Window", "value": "Tempered glass" },
       { "name": "Construction", "value": "Powder-coated steel / SS304" }
+    ],
+    "brochures": [
+      { "lang": "EN", "label": "English", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-cleanroom-pass-en" },
+      { "lang": "RU", "label": "Русский", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-cleanroom-pass-ru" }
     ]
   },
   {
@@ -182,6 +220,10 @@
       { "name": "Operation", "value": "Positive pressure (aseptic)" },
       { "name": "Glove Ports", "value": "2–6" },
       { "name": "Bio-decon", "value": "H2O2 vapor compatible" }
+    ],
+    "brochures": [
+      { "lang": "EN", "label": "English", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-isolator-pharma-en" },
+      { "lang": "RU", "label": "Русский", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-isolator-pharma-ru" }
     ]
   },
   {
@@ -199,6 +241,10 @@
       { "name": "Operation", "value": "Negative pressure (containment)" },
       { "name": "Transfer", "value": "Rapid transfer port" },
       { "name": "Lighting", "value": "LED, glare-free" }
+    ],
+    "brochures": [
+      { "lang": "EN", "label": "English", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-isolator-sterile-en" },
+      { "lang": "RU", "label": "Русский", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-isolator-sterile-ru" }
     ]
   },
   {
@@ -216,6 +262,10 @@
       { "name": "Mode", "value": "A-to-B exhaust convertible" },
       { "name": "Filter", "value": "HEPA, 99.99% @ 0.3 μm" },
       { "name": "Workzone Width", "value": "900 mm" }
+    ],
+    "brochures": [
+      { "lang": "EN", "label": "English", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-bsc-c1-en" },
+      { "lang": "RU", "label": "Русский", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-bsc-c1-ru" }
     ]
   },
   {
@@ -234,6 +284,10 @@
       { "name": "UV Wavelength", "value": "254 nm" },
       { "name": "UV Safety", "value": "Interlocked sash" },
       { "name": "Timer", "value": "Auto-off, programmable" }
+    ],
+    "brochures": [
+      { "lang": "EN", "label": "English", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-pcr-uv-en" },
+      { "lang": "RU", "label": "Русский", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-pcr-uv-ru" }
     ]
   },
   {
@@ -251,6 +305,10 @@
       { "name": "Control", "value": "VAV, automatic" },
       { "name": "Face Velocity", "value": "0.3–0.5 m/s" },
       { "name": "Sash", "value": "Combination (vertical/horizontal)" }
+    ],
+    "brochures": [
+      { "lang": "EN", "label": "English", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-fh-vcv-en" },
+      { "lang": "RU", "label": "Русский", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-fh-vcv-ru" }
     ]
   },
   {
@@ -268,6 +326,10 @@
       { "name": "Seal", "value": "Perimeter hermetic" },
       { "name": "Material", "value": "Aluminum / SS304" },
       { "name": "Automation", "value": "Automatic / manual" }
+    ],
+    "brochures": [
+      { "lang": "EN", "label": "English", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-cleanroom-doors-en" },
+      { "lang": "RU", "label": "Русский", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-cleanroom-doors-ru" }
     ]
   },
   {
@@ -286,6 +348,10 @@
       { "name": "Volume", "value": "2 × 100 L (stacked)" },
       { "name": "CO₂ Range", "value": "0–20%" },
       { "name": "Temp Stability", "value": "±0.1°C" }
+    ],
+    "brochures": [
+      { "lang": "EN", "label": "English", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-incu-stack-en" },
+      { "lang": "RU", "label": "Русский", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-incu-stack-ru" }
     ]
   },
   {
@@ -303,6 +369,10 @@
       { "name": "Containment", "value": "Gas-tight, negative pressure" },
       { "name": "Glove Ports", "value": "Butyl / Hypalon" },
       { "name": "Decon", "value": "VHP compatible" }
+    ],
+    "brochures": [
+      { "lang": "EN", "label": "English", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-bsc-class3-en" },
+      { "lang": "RU", "label": "Русский", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-bsc-class3-ru" }
     ]
   },
   {
@@ -320,6 +390,10 @@
       { "name": "Footprint", "value": "Compact bench-top" },
       { "name": "Filter", "value": "HEPA, 99.99% @ 0.3 μm" },
       { "name": "Lighting", "value": "LED, ≥ 700 lux" }
+    ],
+    "brochures": [
+      { "lang": "EN", "label": "English", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-pcr-compact-en" },
+      { "lang": "RU", "label": "Русский", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-pcr-compact-ru" }
     ]
   }
 ]
