@@ -202,7 +202,7 @@ export default function News() {
 
         {error && <p className="text-sm text-red-600">Failed to load news.</p>}
         {!items ? (
-          <p className="text-slate-700">Loading…</p>
+          <LoadingIndicator label="Loading news" />
         ) : filtered.length === 0 ? (
           <p className="text-slate-700">
             No news found. Try a different search or tag.
