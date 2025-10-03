@@ -1,4 +1,4 @@
-import { useMemo, useState, useRef } from "react";
+import { useMemo, useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { PageBanner } from "@/components/layout/PageBanner";
 import { Badge } from "@/components/ui/badge";
@@ -8,138 +8,9 @@ type Product = {
   id: string;
   title: string;
   category: string;
-  tags: string[]; // e.g. ["Featured", "Sale", "Popular"]
+  tags: string[];
   description: string;
 };
-
-const PRODUCTS: Product[] = [
-  {
-    id: "p-bsc-a2",
-    title: "Class II A2 Biosafety Cabinet",
-    category: "Biosafety Cabinets",
-    tags: ["Featured", "Popular"],
-    description: "High-performance protection for personnel, product, and environment.",
-  },
-  {
-    id: "p-bsc-b2",
-    title: "Class II B2 Biosafety Cabinet",
-    category: "Biosafety Cabinets",
-    tags: ["Advanced"],
-    description: "Total exhaust design for specialized applications and safety.",
-  },
-  {
-    id: "p-pcr",
-    title: "PCR Cabinet",
-    category: "PCR Cabinets",
-    tags: ["Popular"],
-    description: "Contamination control for amplification workflows.",
-  },
-  {
-    id: "p-fh-ducted",
-    title: "Ducted Fume Hood",
-    category: "Fume Hoods",
-    tags: ["Featured"],
-    description: "Reliable chemical handling with external exhaust.",
-  },
-  {
-    id: "p-fh-ductless",
-    title: "Ductless Fume Hood",
-    category: "Fume Hoods",
-    tags: ["Sale"],
-    description: "Flexible filtration-based protection without ducting.",
-  },
-  {
-    id: "p-incu-co2",
-    title: "CO�� Incubator",
-    category: "CO₂ Incubators",
-    tags: ["Featured", "Advanced"],
-    description: "Accurate CO₂ and temperature control for sensitive cultures.",
-  },
-  {
-    id: "p-incu-shaker",
-    title: "Shaking Incubator",
-    category: "CO₂ Incubators",
-    tags: ["New"],
-    description: "Uniform mixing and growth for cell and microbial culture.",
-  },
-  {
-    id: "p-cleanroom-panels",
-    title: "Cleanroom Wall Panels",
-    category: "Cleanroom Solutions",
-    tags: ["Advanced"],
-    description: "Modular, seamless surfaces for controlled environments.",
-  },
-  {
-    id: "p-cleanroom-pass",
-    title: "Pass-Through Chamber",
-    category: "Cleanroom Solutions",
-    tags: ["Popular"],
-    description: "Efficient material transfer while maintaining cleanliness.",
-  },
-  {
-    id: "p-isolator-pharma",
-    title: "Pharmaceutical Isolator",
-    category: "Isolators",
-    tags: ["Featured"],
-    description: "Aseptic processing with robust containment.",
-  },
-  {
-    id: "p-isolator-sterile",
-    title: "Sterility Testing Isolator",
-    category: "Isolators",
-    tags: ["Advanced"],
-    description: "Secure sterility testing with operator protection.",
-  },
-  {
-    id: "p-bsc-c1",
-    title: "Class II C1 Biosafety Cabinet",
-    category: "Biosafety Cabinets",
-    tags: ["New"],
-    description: "Hybrid flexibility for evolving lab workflows.",
-  },
-  {
-    id: "p-pcr-uv",
-    title: "PCR Cabinet with UV",
-    category: "PCR Cabinets",
-    tags: ["Sale"],
-    description: "Integrated UV decontamination to reduce carryover.",
-  },
-  {
-    id: "p-fh-vcv",
-    title: "Variable Air Volume Fume Hood",
-    category: "Fume Hoods",
-    tags: ["Advanced"],
-    description: "Energy-efficient airflow control for safety and savings.",
-  },
-  {
-    id: "p-cleanroom-doors",
-    title: "Hermetic Sliding Doors",
-    category: "Cleanroom Solutions",
-    tags: ["Featured"],
-    description: "Airtight door systems to maintain pressure differentials.",
-  },
-  {
-    id: "p-incu-stack",
-    title: "Stackable CO₂ Incubator",
-    category: "CO₂ Incubators",
-    tags: ["Popular"],
-    description: "Space-saving growth with independent chambers.",
-  },
-  {
-    id: "p-bsc-class3",
-    title: "Class III Biosafety Cabinet",
-    category: "Biosafety Cabinets",
-    tags: ["Advanced"],
-    description: "Maximum containment for high-risk agents.",
-  },
-  {
-    id: "p-pcr-compact",
-    title: "Compact PCR Workstation",
-    category: "PCR Cabinets",
-    tags: ["Featured"],
-    description: "Benchtop form for small labs and teaching.",
-  },
-];
 
 const TAG_COLORS: Record<string, string> = {
   Featured: "bg-[hsl(var(--brand-end))] text-white",
@@ -153,6 +24,10 @@ export default function Catalog() {
   const [query, setQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set());
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
   const productsTopRef = useRef<HTMLDivElement>(null);
   const scrollToProducts = () => {
     const el = productsTopRef.current;
@@ -162,19 +37,44 @@ export default function Catalog() {
     window.scrollTo({ top, behavior: "smooth" });
   };
 
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        setLoading(true);
+        const res = await fetch("/data/products.json", {
+          headers: { "cache-control": "no-cache" },
+        });
+        if (!res.ok) throw new Error(`Failed to load products: ${res.status}`);
+        const data: Product[] = await res.json();
+        if (!cancelled) setProducts(data);
+      } catch (e: any) {
+        if (!cancelled) setError(e?.message || "Failed to load products");
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   const allCategories = useMemo(
-    () => Array.from(new Set(PRODUCTS.map((p) => p.category))).sort(),
-    [],
+    () => Array.from(new Set(products.map((p) => p.category))).sort(),
+    [products],
   );
   const allTags = useMemo(
-    () => Array.from(new Set(PRODUCTS.flatMap((p) => p.tags))).sort(),
-    [],
+    () => Array.from(new Set(products.flatMap((p) => p.tags))).sort(),
+    [products],
   );
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return PRODUCTS.filter((p) => {
-      if (q && !(`${p.title} ${p.category} ${p.tags.join(" ")}`.toLowerCase().includes(q))) {
+    return products.filter((p) => {
+      if (
+        q &&
+        !(`${p.title} ${p.category} ${p.tags.join(" ")}`.toLowerCase().includes(q))
+      ) {
         return false;
       }
       if (selectedCategory && p.category !== selectedCategory) {
@@ -185,7 +85,7 @@ export default function Catalog() {
       }
       return true;
     });
-  }, [query, selectedCategory, selectedTags]);
+  }, [query, selectedCategory, selectedTags, products]);
 
   const grouped = useMemo(() => {
     const map = new Map<string, Product[]>();
@@ -203,11 +103,6 @@ export default function Catalog() {
       else next.add(value);
       return next;
     });
-  };
-
-  const clearFilters = () => {
-    setSelectedCategory(null);
-    setSelectedTags(new Set());
   };
 
   return (
@@ -314,7 +209,6 @@ export default function Catalog() {
                   })}
                 </ul>
               </div>
-
             </div>
           </aside>
 
@@ -323,7 +217,9 @@ export default function Catalog() {
             <div ref={productsTopRef} />
             <div className="flex items-center justify-between gap-4">
               <p className="text-sm text-slate-600">
-                Showing {filtered.length} of {PRODUCTS.length}
+                {loading
+                  ? "Loading products..."
+                  : `Showing ${filtered.length} of ${products.length}`}
               </p>
               <Link
                 to="/contact"
@@ -333,7 +229,15 @@ export default function Catalog() {
               </Link>
             </div>
 
-            {grouped.length === 0 ? (
+            {error ? (
+              <div className="mt-8 rounded-xl border border-slate-200 p-8 text-center text-red-700">
+                {error}
+              </div>
+            ) : loading ? (
+              <div className="mt-8 rounded-xl border border-slate-200 p-8 text-center text-slate-700">
+                Loading products...
+              </div>
+            ) : grouped.length === 0 ? (
               <div className="mt-8 rounded-xl border border-slate-200 p-8 text-center text-slate-700">
                 No products match your filters.
               </div>
