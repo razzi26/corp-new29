@@ -61,6 +61,23 @@ export default function Catalog() {
     };
   }, []);
 
+  const allCategories = useMemo(
+    () => Array.from(new Set(products.map((p) => p.category))).sort(),
+    [products],
+  );
+  const allTags = useMemo(
+    () => Array.from(new Set(products.flatMap((p) => p.tags))).sort(),
+    [products],
+  );
+
+  const categoryIndex = useMemo(() => {
+    const map = new Map<string, string>();
+    const normalize = (s: string) =>
+      s.normalize("NFKC").replace(/\s+/g, " ").trim();
+    for (const c of allCategories) map.set(normalize(c), c);
+    return map;
+  }, [allCategories]);
+
   useEffect(() => {
     if (!products.length) return;
     const normalize = (s: string) =>
@@ -79,15 +96,6 @@ export default function Catalog() {
       if (selectedCategory !== null) setSelectedCategory(null);
     }
   }, [products.length, categoryParam, categoryIndex, selectedCategory]);
-
-  const allCategories = useMemo(
-    () => Array.from(new Set(products.map((p) => p.category))).sort(),
-    [products],
-  );
-  const allTags = useMemo(
-    () => Array.from(new Set(products.flatMap((p) => p.tags))).sort(),
-    [products],
-  );
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -109,14 +117,6 @@ export default function Catalog() {
       return true;
     });
   }, [query, selectedCategory, selectedTags, products]);
-
-  const categoryIndex = useMemo(() => {
-    const map = new Map<string, string>();
-    const normalize = (s: string) =>
-      s.normalize("NFKC").replace(/\s+/g, " ").trim();
-    for (const c of allCategories) map.set(normalize(c), c);
-    return map;
-  }, [allCategories]);
 
   const grouped = useMemo(() => {
     const map = new Map<string, Product[]>();
