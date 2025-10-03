@@ -59,8 +59,12 @@ export default function Catalog() {
       try {
         setLoading(true);
         const tryFetch = async (url: string) => {
-          const res = await fetch(url, { headers: { "cache-control": "no-cache" }, credentials: "same-origin" });
-          if (!res.ok) throw new Error(`Failed to load products: ${res.status}`);
+          const res = await fetch(url, {
+            headers: { "cache-control": "no-cache" },
+            credentials: "same-origin",
+          });
+          if (!res.ok)
+            throw new Error(`Failed to load products: ${res.status}`);
           return (await res.json()) as Product[];
         };
 
@@ -70,7 +74,8 @@ export default function Catalog() {
         } catch (err) {
           // Attempt with absolute origin in case base path differs
           try {
-            const origin = typeof window !== "undefined" ? window.location.origin : "";
+            const origin =
+              typeof window !== "undefined" ? window.location.origin : "";
             if (origin) data = await tryFetch(origin + "/data/products.json");
           } catch (err2) {
             // no-op, will throw below
@@ -80,7 +85,8 @@ export default function Catalog() {
         if (!data) throw new Error("Failed to load products.json from server");
         if (!cancelled) setProducts(data);
       } catch (e: any) {
-        if (!cancelled) setError(String(e?.message || "Failed to load products"));
+        if (!cancelled)
+          setError(String(e?.message || "Failed to load products"));
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -601,7 +607,9 @@ function ProductCard({ product }: { product: Product }) {
         onPointerMove={handlePointerMove}
         onPointerLeave={() => setHoverIndex(null)}
         onPointerCancel={() => setHoverIndex(null)}
-        onClick={() => { /* keep click behavior if needed */ }}
+        onClick={() => {
+          /* keep click behavior if needed */
+        }}
       >
         <img
           src={imgs[displayed]}

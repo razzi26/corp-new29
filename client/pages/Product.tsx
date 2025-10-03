@@ -46,8 +46,12 @@ export default function ProductPage() {
       try {
         setLoading(true);
         const tryFetch = async (url: string) => {
-          const res = await fetch(url, { headers: { "cache-control": "no-cache" }, credentials: "same-origin" });
-          if (!res.ok) throw new Error(`Failed to load products: ${res.status}`);
+          const res = await fetch(url, {
+            headers: { "cache-control": "no-cache" },
+            credentials: "same-origin",
+          });
+          if (!res.ok)
+            throw new Error(`Failed to load products: ${res.status}`);
           return (await res.json()) as Product[];
         };
 
@@ -56,7 +60,8 @@ export default function ProductPage() {
           data = await tryFetch("/data/products.json");
         } catch (err) {
           try {
-            const origin = typeof window !== "undefined" ? window.location.origin : "";
+            const origin =
+              typeof window !== "undefined" ? window.location.origin : "";
             if (origin) data = await tryFetch(origin + "/data/products.json");
           } catch (err2) {
             // no-op
@@ -66,7 +71,8 @@ export default function ProductPage() {
         if (!data) throw new Error("Failed to load products.json from server");
         if (!cancelled) setProducts(data);
       } catch (e: any) {
-        if (!cancelled) setError(String(e?.message || "Failed to load product"));
+        if (!cancelled)
+          setError(String(e?.message || "Failed to load product"));
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -102,7 +108,9 @@ export default function ProductPage() {
 
   const mainImageRef = useRef<HTMLDivElement | null>(null);
   const thumbsRef = useRef<HTMLDivElement | null>(null);
-  const [thumbsMaxHeight, setThumbsMaxHeight] = useState<number | undefined>(undefined);
+  const [thumbsMaxHeight, setThumbsMaxHeight] = useState<number | undefined>(
+    undefined,
+  );
   const [mainAspect, setMainAspect] = useState<string | undefined>(undefined);
   const [thumbsOverflow, setThumbsOverflow] = useState(false);
 
@@ -213,7 +221,11 @@ export default function ProductPage() {
                       id="thumbs-scroll"
                       role="tablist"
                       aria-label="Product image thumbnails"
-                      style={thumbsMaxHeight ? { maxHeight: `${thumbsMaxHeight}px` } : undefined}
+                      style={
+                        thumbsMaxHeight
+                          ? { maxHeight: `${thumbsMaxHeight}px` }
+                          : undefined
+                      }
                     >
                       <div className="flex flex-col gap-1">
                         {gallery.map((src, i) => (
@@ -225,7 +237,7 @@ export default function ProductPage() {
                                 ? "border-2 border-[hsl(var(--brand-end))]"
                                 : "border border-transparent",
                             )}
-                            style={{ aspectRatio: '1 / 1' }}
+                            style={{ aspectRatio: "1 / 1" }}
                             onMouseEnter={() => setPreviewIndex(i)}
                             onMouseLeave={() => setPreviewIndex(null)}
                             onFocus={() => setPreviewIndex(i)}
@@ -255,7 +267,9 @@ export default function ProductPage() {
                           aria-label="Scroll thumbnails up"
                           onClick={() => {
                             const el = thumbsRef.current;
-                            const step = Math.round((thumbsMaxHeight || 120) * 0.5);
+                            const step = Math.round(
+                              (thumbsMaxHeight || 120) * 0.5,
+                            );
                             el?.scrollBy({ top: -step, behavior: "smooth" });
                           }}
                         >
@@ -267,7 +281,9 @@ export default function ProductPage() {
                           aria-label="Scroll thumbnails down"
                           onClick={() => {
                             const el = thumbsRef.current;
-                            const step = Math.round((thumbsMaxHeight || 120) * 0.5);
+                            const step = Math.round(
+                              (thumbsMaxHeight || 120) * 0.5,
+                            );
                             el?.scrollBy({ top: step, behavior: "smooth" });
                           }}
                         >
@@ -291,7 +307,7 @@ export default function ProductPage() {
                             "w-full max-h-[480px] overflow-hidden rounded-xl bg-slate-50",
                             i === displayedIndex ? "block" : "hidden",
                           )}
-                          style={{ aspectRatio: '1 / 1' }}
+                          style={{ aspectRatio: "1 / 1" }}
                         >
                           <img
                             src={src}
@@ -308,7 +324,10 @@ export default function ProductPage() {
               </div>
             ) : (
               <div className="p-0">
-                <div className="w-full max-h-[480px] overflow-hidden rounded-xl bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]" style={{ aspectRatio: '1 / 1' }} />
+                <div
+                  className="w-full max-h-[480px] overflow-hidden rounded-xl bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]"
+                  style={{ aspectRatio: "1 / 1" }}
+                />
               </div>
             )}
           </div>
