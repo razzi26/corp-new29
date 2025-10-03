@@ -294,7 +294,7 @@ export default function ProductPage() {
               </div>
             ) : (
               <div className="p-0">
-                <div className="w-full max-h-[480px] overflow-hidden rounded-xl bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]" style={mainAspect ? { aspectRatio: mainAspect } : undefined} />
+                <div className="w-full max-h-[480px] overflow-hidden rounded-xl bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]" style={{ aspectRatio: '1 / 1' }} />
               </div>
             )}
           </div>
