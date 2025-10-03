@@ -3,6 +3,7 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { Seo } from "@/components/Seo";
+import ContactModal from "@/components/ContactModal";
 import {
   Breadcrumb,
   BreadcrumbList,
