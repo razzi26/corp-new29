@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 import { PageBanner } from "@/components/layout/PageBanner";
 import { Badge } from "@/components/ui/badge";
+import ContactModal from "@/components/ContactModal";
 import { cn } from "@/lib/utils";
 import {
   Sheet,
