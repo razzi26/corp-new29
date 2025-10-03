@@ -37,7 +37,7 @@ export function PageBanner({
           aria-hidden="true"
         />
         <div className="relative container mx-auto px-4 pt-24 pb-12 md:pt-32 md:pb-16">
-          <div className="w-full md:w-3/5">
+          <div className="w-full md:w-[70%]">
             <h1 className="break-words text-3xl font-semibold md:text-4xl">{title}</h1>
             {description && (
               <p className="mt-3 break-words text-base text-white/85 md:text-lg">
