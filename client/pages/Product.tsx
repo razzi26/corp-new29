@@ -206,12 +206,12 @@ export default function ProductPage() {
                           <button
                             key={src + i}
                             className={cn(
-                              "relative w-full overflow-hidden rounded-md focus:outline-none focus:ring-0 focus-visible:ring-0 focus:border-[hsl(var(--brand-end))]",
+                              "relative aspect-[1/1] w-full overflow-hidden rounded-md focus:outline-none focus:ring-0 focus-visible:ring-0 focus:border-[hsl(var(--brand-end))]",
                               i === activeIndex
                                 ? "border-2 border-[hsl(var(--brand-end))]"
                                 : "border border-transparent",
                             )}
-                            style={mainAspect ? { aspectRatio: mainAspect } : undefined}
+                            style={{ aspectRatio: '1 / 1' }}
                             onMouseEnter={() => setPreviewIndex(i)}
                             onMouseLeave={() => setPreviewIndex(null)}
                             onFocus={() => setPreviewIndex(i)}
