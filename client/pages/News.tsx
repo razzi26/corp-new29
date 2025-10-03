@@ -55,10 +55,7 @@ function NewsCard({ a }: { a: NewsMeta }) {
             <CalendarDays className="h-4 w-4" />
             {new Date(a.date).toLocaleDateString()}
           </span>
-          <span
-            aria-hidden="true"
-            className="inline-block h-1.5 w-1.5 rounded-full bg-slate-400"
-          />
+          <span>•</span>
           <span className="inline-flex items-center gap-1">
             <Clock className="h-4 w-4" />
             {a.readMins} min read
