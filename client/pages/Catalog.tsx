@@ -29,6 +29,7 @@ export default function Catalog() {
   const [error, setError] = useState<string | null>(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const categoryParam = searchParams.get("category") || null;
+  const categoryParam = searchParams.get("category") || null;
 
   const productsTopRef = useRef<HTMLDivElement>(null);
   const scrollToProducts = () => {
@@ -64,19 +65,17 @@ export default function Catalog() {
   useEffect(() => {
     if (!products.length) return;
     const valid = new Set(products.map((p) => p.category));
-    if (!categoryParam) {
-      if (selectedCategory !== null) setSelectedCategory(null);
-      return;
-    }
-    if (valid.has(categoryParam)) {
-      if (selectedCategory !== categoryParam) setSelectedCategory(categoryParam);
-    } else {
+    if (categoryParam && !valid.has(categoryParam)) {
       const next = new URLSearchParams(searchParams);
       next.delete("category");
       setSearchParams(next, { replace: true });
       if (selectedCategory !== null) setSelectedCategory(null);
+      return;
     }
-  }, [products, categoryParam, selectedCategory, setSearchParams]);
+    if (categoryParam !== selectedCategory) {
+      setSelectedCategory(categoryParam);
+    }
+  }, [products.length, categoryParam, selectedCategory]);
 
   const allCategories = useMemo(
     () => Array.from(new Set(products.map((p) => p.category))).sort(),
@@ -190,7 +189,7 @@ export default function Catalog() {
                   <li>
                     <button
                       onClick={() => {
-                        setSelectedCategory(null);
+                        if (selectedCategory !== null) setSelectedCategory(null);
                         const next = new URLSearchParams(searchParams);
                         next.delete("category");
                         setSearchParams(next, { replace: true });
@@ -213,14 +212,12 @@ export default function Catalog() {
                       <li key={cat}>
                         <button
                           onClick={() => {
-                            setSelectedCategory((prev) => {
-                              const nextCat = prev === cat ? null : cat;
-                              const next = new URLSearchParams(searchParams);
-                              if (nextCat) next.set("category", nextCat);
-                              else next.delete("category");
-                              setSearchParams(next, { replace: true });
-                              return nextCat;
-                            });
+                            const next = new URLSearchParams(searchParams);
+                            const nextCat = selectedCategory === cat ? null : cat;
+                            if (nextCat) next.set("category", nextCat);
+                            else next.delete("category");
+                            setSearchParams(next, { replace: true });
+                            setSelectedCategory(nextCat);
                             scrollToProducts();
                           }}
                           aria-pressed={active}
