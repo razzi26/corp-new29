@@ -107,7 +107,7 @@ export default function KnowledgeArticleBiosafetyBasics() {
         <Separator className="my-10" />
 
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <Link to="/resources/knowledge-hub" className="text-[hsl(var(--brand-end))] hover:underline)">
+          <Link to="/resources/knowledge-hub" className="text-[hsl(var(--brand-end))] hover:underline">
             ← Back to Knowledge Hub
           </Link>
           <div className="text-sm text-slate-600">Last updated: March 2025</div>
