@@ -3,6 +3,7 @@ import { PageBanner } from "@/components/layout/PageBanner";
 import { Separator } from "@/components/ui/separator";
 import { Seo } from "@/components/Seo";
 import { ShareButtons } from "@/components/ShareButtons";
+import { Calendar, Clock } from "lucide-react";
 
 function Toc() {
   return (
@@ -67,10 +68,15 @@ export default function KnowledgeArticleBSL() {
           { label: title },
         ]}
         meta={
-          <div className="flex flex-wrap items-center gap-3">
-            <time dateTime="2025-03-18">March 18, 2025</time>
-            <span>•</span>
-            <span>9 min read</span>
+          <div className="flex flex-wrap items-center gap-4">
+            <span className="inline-flex items-center gap-1.5">
+              <Calendar className="h-4 w-4" aria-hidden="true" />
+              <time dateTime="2025-03-18">March 18, 2025</time>
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Clock className="h-4 w-4" aria-hidden="true" />
+              <span>9 min read</span>
+            </span>
           </div>
         }
       />

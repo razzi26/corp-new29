@@ -4,6 +4,7 @@ import { PageBanner } from "@/components/layout/PageBanner";
 import { Separator } from "@/components/ui/separator";
 import { Seo } from "@/components/Seo";
 import { ShareButtons } from "@/components/ShareButtons";
+import { Calendar, Clock } from "lucide-react";
 
 interface SectionBlock {
   type: "p" | "h3" | "ul" | "links";
@@ -93,10 +94,15 @@ export default function KnowledgeArticle() {
           { label: title },
         ]}
         meta={
-          <div className="flex flex-wrap items-center gap-3">
-            <time dateTime={date}>{new Date(date).toLocaleDateString()}</time>
-            <span>•</span>
-            <span>{readMins} min read</span>
+          <div className="flex flex-wrap items-center gap-4">
+            <span className="inline-flex items-center gap-1.5">
+              <Calendar className="h-4 w-4" aria-hidden="true" />
+              <time dateTime={date}>{new Date(date).toLocaleDateString()}</time>
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Clock className="h-4 w-4" aria-hidden="true" />
+              <span>{readMins} min read</span>
+            </span>
           </div>
         }
       />

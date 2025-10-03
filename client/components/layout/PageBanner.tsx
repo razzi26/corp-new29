@@ -38,7 +38,7 @@ export function PageBanner({
           className="absolute inset-0 bg-brand-gradient opacity-95"
           aria-hidden="true"
         />
-        <div className="relative container mx-auto px-4 pt-24 pb-12 md:pt-32 md:pb-16">
+        <div className="relative container mx-auto px-4 pt-24 pb-10 md:pt-32 md:pb-14">
           <div className="w-full md:w-[70%]">
             <h1 className="break-words text-3xl font-semibold md:text-4xl">{title}</h1>
             {description && (
