@@ -158,9 +158,9 @@ export default function ProductPage() {
               <div className="relative p-0">
                 <div className="grid grid-cols-12 gap-4 items-start">
                   {/* Thumbnails left (vertical) */}
-                  <div className="col-span-3 relative">
+                  <div className="col-span-2 relative">
                     <div
-                      className="max-h-[480px] overflow-y-auto pr-1"
+                      className="max-h-[420px] overflow-y-auto pr-1"
                       ref={(el) => {
                         // no-op ref; buttons below scroll this element via document.getElementById
                       }}
@@ -168,12 +168,12 @@ export default function ProductPage() {
                       role="tablist"
                       aria-label="Product image thumbnails"
                     >
-                      <div className="flex flex-col gap-2">
+                      <div className="flex flex-col gap-1">
                         {gallery.map((src, i) => (
                           <button
                             key={src + i}
                             className={cn(
-                              "relative aspect-[4/3] w-full overflow-hidden rounded-md focus:outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]",
+                              "relative h-14 w-full overflow-hidden rounded-md focus:outline-none focus:ring-0 focus-visible:ring-0 focus:border-[hsl(var(--brand-end))]",
                               i === activeIndex ? "border-2 border-[hsl(var(--brand-end))]" : "border border-transparent",
                             )}
                             onMouseEnter={() => setActiveIndex(i)}
@@ -203,7 +203,7 @@ export default function ProductPage() {
                           aria-label="Scroll thumbnails up"
                           onClick={() => {
                             const el = document.getElementById("thumbs-scroll");
-                            el?.scrollBy({ top: -160, behavior: "smooth" });
+                            el?.scrollBy({ top: -120, behavior: "smooth" });
                           }}
                         >
                           <ArrowUp className="h-4 w-4 mx-auto" />
@@ -214,7 +214,7 @@ export default function ProductPage() {
                           aria-label="Scroll thumbnails down"
                           onClick={() => {
                             const el = document.getElementById("thumbs-scroll");
-                            el?.scrollBy({ top: 160, behavior: "smooth" });
+                            el?.scrollBy({ top: 120, behavior: "smooth" });
                           }}
                         >
                           <ArrowDown className="h-4 w-4 mx-auto" />
@@ -224,7 +224,7 @@ export default function ProductPage() {
                   </div>
 
                   {/* Main image right */}
-                  <div className="col-span-9">
+                  <div className="col-span-10">
                     <div className="relative">
                       {gallery.map((src, i) => (
                         <div
