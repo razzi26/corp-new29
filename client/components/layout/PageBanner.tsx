@@ -40,15 +40,15 @@ export function PageBanner({
         />
         <div className="relative container mx-auto px-4 pt-24 pb-10 md:pt-32 md:pb-14">
           <div className="w-full md:w-[70%]">
-            <h1 className="break-words text-3xl font-semibold md:text-4xl">{title}</h1>
+            <h1 className="break-words text-3xl font-semibold md:text-4xl">
+              {title}
+            </h1>
             {description && (
               <p className="mt-3 break-words text-base text-white/85 md:text-lg">
                 {description}
               </p>
             )}
-            {meta && (
-              <div className="mt-3 text-sm text-white/85">{meta}</div>
-            )}
+            {meta && <div className="mt-3 text-sm text-white/85">{meta}</div>}
           </div>
         </div>
       </section>

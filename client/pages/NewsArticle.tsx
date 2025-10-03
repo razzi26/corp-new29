@@ -70,7 +70,9 @@ export default function NewsArticle() {
 
   if (error) {
     return (
-      <div className="container mx-auto px-4 py-12">Failed to load article.</div>
+      <div className="container mx-auto px-4 py-12">
+        Failed to load article.
+      </div>
     );
   }
   if (!items || !article) {
@@ -78,7 +80,6 @@ export default function NewsArticle() {
   }
 
   const { title, description, date, readMins, content } = article;
-
 
   return (
     <div className="bg-white text-slate-900">
@@ -128,7 +129,11 @@ export default function NewsArticle() {
               </div>
             )}
 
-            <ShareButtons title={title} description={description} className="mb-6" />
+            <ShareButtons
+              title={title}
+              description={description}
+              className="mb-6"
+            />
 
             {content.map((b, i) => {
               if (b.type === "p")
@@ -145,7 +150,10 @@ export default function NewsArticle() {
                 );
               if (b.type === "ul")
                 return (
-                  <ul key={i} className="mt-3 list-disc space-y-1 pl-6 text-slate-700">
+                  <ul
+                    key={i}
+                    className="mt-3 list-disc space-y-1 pl-6 text-slate-700"
+                  >
                     {(b.items ?? []).map((it, idx) => (
                       <li key={idx}>{it}</li>
                     ))}
@@ -156,7 +164,10 @@ export default function NewsArticle() {
 
             <Separator className="my-10" />
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <Link to="/news" className="text-[hsl(var(--brand-end))] hover:underline">
+              <Link
+                to="/news"
+                className="text-[hsl(var(--brand-end))] hover:underline"
+              >
                 ← Back to News
               </Link>
               <div className="text-sm text-slate-600">
@@ -167,7 +178,9 @@ export default function NewsArticle() {
 
           <aside className="lg:col-span-4">
             <div className="sticky top-24">
-              <h3 className="mb-4 text-lg md:text-xl font-semibold">Recent News</h3>
+              <h3 className="mb-4 text-lg md:text-xl font-semibold">
+                Recent News
+              </h3>
               <ul className="divide-y divide-slate-200">
                 {recent.map((a) => {
                   const slugParam = a.slug.replace("/news/", "");

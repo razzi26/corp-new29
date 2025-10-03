@@ -28,7 +28,7 @@ function NewsCard({ a }: { a: NewsMeta }) {
   const slugParam = a.slug.replace("/news/", "");
   return (
     <Card className="h-full flex flex-col overflow-hidden rounded-lg border border-slate-200/70 bg-white shadow-sm transition-shadow hover:shadow">
-      {(
+      {
         <div className="bg-white">
           <AspectRatio ratio={16 / 9}>
             <img
@@ -39,10 +39,13 @@ function NewsCard({ a }: { a: NewsMeta }) {
             />
           </AspectRatio>
         </div>
-      )}
+      }
       <CardHeader>
         <CardTitle className="text-xl leading-7">
-          <Link to={`/news/${slugParam}`} className="text-[#00467f] hover:underline">
+          <Link
+            to={`/news/${slugParam}`}
+            className="text-[#00467f] hover:underline"
+          >
             {a.title}
           </Link>
         </CardTitle>
@@ -153,7 +156,10 @@ export default function News() {
       <section className="container mx-auto px-4 py-10 md:py-14">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="md:w-1/2">
-            <label className="mb-2 block text-sm font-medium text-slate-700" htmlFor="news-search">
+            <label
+              className="mb-2 block text-sm font-medium text-slate-700"
+              htmlFor="news-search"
+            >
               Search news
             </label>
             <Input
@@ -164,7 +170,9 @@ export default function News() {
             />
           </div>
           <div className="md:w-1/2">
-            <div className="mb-2 text-sm font-medium text-slate-700">Filter by tag</div>
+            <div className="mb-2 text-sm font-medium text-slate-700">
+              Filter by tag
+            </div>
             <div className="flex flex-wrap gap-2">
               <Badge
                 variant={active === null ? "default" : "secondary"}
@@ -193,7 +201,9 @@ export default function News() {
         {!items ? (
           <p className="text-slate-700">Loading…</p>
         ) : filtered.length === 0 ? (
-          <p className="text-slate-700">No news found. Try a different search or tag.</p>
+          <p className="text-slate-700">
+            No news found. Try a different search or tag.
+          </p>
         ) : (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((a) => (
