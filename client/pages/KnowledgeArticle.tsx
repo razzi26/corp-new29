@@ -92,6 +92,13 @@ export default function KnowledgeArticle() {
           { label: "Knowledge Hub", href: "/resources/knowledge-hub" },
           { label: title },
         ]}
+        meta={
+          <div className="flex flex-wrap items-center gap-3">
+            <time dateTime={date}>{new Date(date).toLocaleDateString()}</time>
+            <span>•</span>
+            <span>{readMins} min read</span>
+          </div>
+        }
       />
 
       <Seo
@@ -103,12 +110,6 @@ export default function KnowledgeArticle() {
       />
 
       <article className="container mx-auto px-4 py-12 md:py-16">
-        <div className="mb-2 flex flex-wrap items-center gap-3 text-sm text-slate-600">
-          <time dateTime={date}>{new Date(date).toLocaleDateString()}</time>
-          <span>•</span>
-          <span>{readMins} min read</span>
-        </div>
-
         <ShareButtons
           title={title}
           description={description}
