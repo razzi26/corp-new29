@@ -1,4 +1,5 @@
 import { useMemo, useState, useRef, useEffect } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 import { PageBanner } from "@/components/layout/PageBanner";
 import { Badge } from "@/components/ui/badge";
