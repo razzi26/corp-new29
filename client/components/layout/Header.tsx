@@ -18,7 +18,7 @@ const nav: Array<{
       { to: "/services/trainings", label: "Trainings" },
       { to: "/services/seminars", label: "Seminars" },
       { to: "/services/services", label: "Services" },
-      { to: "/services/brochures", label: "Brochures" }
+      { to: "/services/brochures", label: "Brochures" },
     ],
   },
   { to: "/products", label: "Products" },
@@ -88,7 +88,6 @@ export default function Header() {
       document.body.style.overflow = "";
     };
   }, [open]);
-
 
   return (
     <>
@@ -223,7 +222,11 @@ export default function Header() {
                       <button
                         className="flex w-full items-center justify-between px-4 py-3 text-left text-slate-800"
                         aria-expanded={openSubmenuKey === item.label}
-                        onClick={() => setOpenSubmenuKey(openSubmenuKey === item.label ? null : item.label)}
+                        onClick={() =>
+                          setOpenSubmenuKey(
+                            openSubmenuKey === item.label ? null : item.label,
+                          )
+                        }
                       >
                         <span>{item.label}</span>
                         <ChevronDown
@@ -236,7 +239,9 @@ export default function Header() {
                       <div
                         className={cn(
                           "overflow-hidden transition-all",
-                          openSubmenuKey === item.label ? "max-h-96" : "max-h-0",
+                          openSubmenuKey === item.label
+                            ? "max-h-96"
+                            : "max-h-0",
                         )}
                       >
                         {item.children.map((c) => (
