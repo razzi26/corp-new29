@@ -149,7 +149,35 @@ export default function ProductPage() {
 
   return (
     <div className="bg-white text-slate-900">
-      <div className="container mx-auto px-4 py-10">
+      <Seo
+        title={`${product.title} | Products`}
+        description={product.description}
+        url={canonicalUrl}
+        image={gallery[0]}
+        type="product"
+      />
+      <div className="container mx-auto px-4 py-6">
+        <Breadcrumb aria-label="Breadcrumb">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to="/products">Products</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{product.title}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
+      <div className="container mx-auto px-4 pb-10">
         <div className="grid gap-8 lg:grid-cols-12">
           {/* Left: Gallery Slider */}
           <div className="lg:col-span-7">
