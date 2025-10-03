@@ -53,11 +53,13 @@ export default function KnowledgeArticleBiosafetyBasics() {
               <Badge variant="secondary">Lab Practices</Badge>
             </div>
           </div>
-          <ShareButtons
-            title="What is Biosafety?"
-            description="Policies, protocols, and practices to minimize exposure to harmful biological agents and protect people and the environment."
-          />
         </div>
+
+        <ShareButtons
+          title="What is Biosafety?"
+          description="Policies, protocols, and practices to minimize exposure to harmful biological agents and protect people and the environment."
+          className="mb-6"
+        />
 
         {/* Mobile TOC */}
         <div className="mb-8 lg:hidden">
