@@ -126,7 +126,7 @@ export default function ProductPage() {
       setMainAspect(`${Math.round(rect.width)} / ${Math.round(rect.height)}`);
 
       const thumbsEl = thumbsRef.current;
-      setThumbsOverflow(thumbsEl ? thumbsEl.scrollHeight > mainH + 1 : false);
+      setThumbsOverflow(thumbsEl ? thumbsEl.scrollHeight > (thumbsEl.clientHeight + 1) : false);
     } else {
       setThumbsMaxHeight(undefined);
       setMainAspect(undefined);
