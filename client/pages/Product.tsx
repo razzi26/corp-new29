@@ -88,14 +88,6 @@ export default function ProductPage() {
   if (error) {
     return (
       <div className="bg-white text-slate-900">
-        <PageBanner
-          title="Error"
-          breadcrumbs={[
-            { label: "Home", href: "/" },
-            { label: "Products", href: "/products" },
-            { label: "Error" },
-          ]}
-        />
         <div className="container mx-auto px-4 py-10 text-red-700">{error}</div>
       </div>
     );
