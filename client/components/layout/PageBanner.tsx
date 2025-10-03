@@ -21,53 +21,45 @@ interface PageBannerProps {
   breadcrumbs: BreadcrumbEntry[];
 }
 
-export function PageBanner({
-  title,
-  description,
-  breadcrumbs,
-}: PageBannerProps) {
+export function PageBanner({ title, description, breadcrumbs }: PageBannerProps) {
   return (
-    <section
-      className="relative -mt-16 overflow-hidden bg-[hsl(var(--brand-end))] text-white"
-      data-header-anchor
-    >
-      <div
-        className="absolute inset-0 bg-brand-gradient opacity-95"
-        aria-hidden="true"
-      />
-      <div className="relative container mx-auto px-4 pt-24 pb-12 md:pt-32 md:pb-16">
-        <Breadcrumb>
-          <BreadcrumbList className="text-white/80">
-            {breadcrumbs.map((crumb, index) => (
-              <Fragment key={crumb.label}>
-                <BreadcrumbItem>
-                  {crumb.href ? (
-                    <BreadcrumbLink
-                      asChild
-                      className="text-white/80 transition-colors hover:text-white"
-                    >
-                      <Link to={crumb.href}>{crumb.label}</Link>
-                    </BreadcrumbLink>
-                  ) : (
-                    <BreadcrumbPage className="text-white">
-                      {crumb.label}
-                    </BreadcrumbPage>
-                  )}
-                </BreadcrumbItem>
-                {index < breadcrumbs.length - 1 && (
-                  <BreadcrumbSeparator className="text-white/60" />
-                )}
-              </Fragment>
-            ))}
-          </BreadcrumbList>
-        </Breadcrumb>
-        <h1 className="mt-6 text-3xl font-semibold md:text-4xl">{title}</h1>
-        {description && (
-          <p className="mt-3 max-w-2xl text-base text-white/85 md:text-lg">
-            {description}
-          </p>
-        )}
+    <>
+      <section
+        className="relative -mt-16 overflow-hidden bg-[hsl(var(--brand-end))] text-white"
+        data-header-anchor
+      >
+        <div className="absolute inset-0 bg-brand-gradient opacity-95" aria-hidden="true" />
+        <div className="relative container mx-auto px-4 pt-24 pb-12 md:pt-32 md:pb-16">
+          <h1 className="text-3xl font-semibold md:text-4xl">{title}</h1>
+          {description && (
+            <p className="mt-3 max-w-2xl text-base text-white/85 md:text-lg">{description}</p>
+          )}
+        </div>
+      </section>
+
+      {/* Breadcrumbs just below the banner */}
+      <div className="bg-white">
+        <div className="container mx-auto px-4 py-3 md:py-4">
+          <Breadcrumb>
+            <BreadcrumbList>
+              {breadcrumbs.map((crumb, index) => (
+                <Fragment key={crumb.label}>
+                  <BreadcrumbItem>
+                    {crumb.href ? (
+                      <BreadcrumbLink asChild className="transition-colors hover:text-foreground">
+                        <Link to={crumb.href}>{crumb.label}</Link>
+                      </BreadcrumbLink>
+                    ) : (
+                      <BreadcrumbPage>{crumb.label}</BreadcrumbPage>
+                    )}
+                  </BreadcrumbItem>
+                  {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
+                </Fragment>
+              ))}
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
       </div>
-    </section>
+    </>
   );
 }
