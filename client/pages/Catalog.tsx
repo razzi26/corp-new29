@@ -576,7 +576,7 @@ function TagsDrawer({
   );
 }
 
-function ProductCard({ product }: { product: Product }) {
+function ProductCard({ product, onRequest }: { product: Product; onRequest?: () => void }) {
   const imgs = (product.mainImage ? [product.mainImage] : []).concat(
     product.images ?? [],
   );
