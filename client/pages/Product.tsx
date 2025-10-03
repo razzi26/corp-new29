@@ -83,6 +83,8 @@ export default function ProductPage() {
   }, [product]);
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [previewIndex, setPreviewIndex] = useState<number | null>(null);
+  const displayedIndex = previewIndex ?? activeIndex;
 
   const mainImageRef = useRef<HTMLDivElement | null>(null);
   const thumbsRef = useRef<HTMLDivElement | null>(null);
@@ -210,8 +212,10 @@ export default function ProductPage() {
                                 : "border border-transparent",
                             )}
                             style={mainAspect ? { aspectRatio: mainAspect } : undefined}
-                            onMouseEnter={() => setActiveIndex(i)}
-                            onFocus={() => setActiveIndex(i)}
+                            onMouseEnter={() => setPreviewIndex(i)}
+                            onMouseLeave={() => setPreviewIndex(null)}
+                            onFocus={() => setPreviewIndex(i)}
+                            onBlur={() => setPreviewIndex(null)}
                             onClick={() => setActiveIndex(i)}
                             role="tab"
                             aria-selected={i === activeIndex}
@@ -267,11 +271,11 @@ export default function ProductPage() {
                           key={src + i}
                           id={`slide-${i}`}
                           ref={(el) => {
-                            if (i === activeIndex) mainImageRef.current = el;
+                            if (i === displayedIndex) mainImageRef.current = el;
                           }}
                           className={cn(
                             "w-full max-h-[480px] overflow-hidden rounded-xl bg-slate-50",
-                            i === activeIndex ? "block" : "hidden",
+                            i === displayedIndex ? "block" : "hidden",
                           )}
                           style={mainAspect ? { aspectRatio: mainAspect } : undefined}
                         >
