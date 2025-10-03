@@ -191,7 +191,7 @@ export default function ProductPage() {
                   <CarouselContent>
                     {gallery.map((src, i) => (
                       <CarouselItem key={src + i}>
-                        <div className="aspect-[16/10] w-full overflow-hidden rounded-xl bg-slate-50">
+                        <div id={`slide-${i}`} className="aspect-[16/10] w-full overflow-hidden rounded-xl bg-slate-50">
                           <img
                             src={src}
                             alt={`${product.title} image ${i + 1}`}
