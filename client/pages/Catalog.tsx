@@ -63,32 +63,22 @@ export default function Catalog() {
 
   useEffect(() => {
     if (!products.length) return;
-    const valid = new Set(products.map((p) => p.category));
-    if (categoryParam && !valid.has(categoryParam)) {
+    const normalize = (s: string) => s.normalize("NFKC").replace(/\s+/g, " ").trim();
+    if (!categoryParam) {
+      if (selectedCategory !== null) setSelectedCategory(null);
+      return;
+    }
+    const original = categoryIndex.get(normalize(categoryParam));
+    if (original) {
+      if (selectedCategory !== original) setSelectedCategory(original);
+    } else {
       const next = new URLSearchParams(searchParams);
       next.delete("category");
       setSearchParams(next, { replace: true });
       if (selectedCategory !== null) setSelectedCategory(null);
-      return;
     }
-    if (categoryParam !== selectedCategory) {
-      setSelectedCategory(categoryParam);
-    }
-  }, [products.length, categoryParam, selectedCategory]);
+  }, [products.length, categoryParam, categoryIndex, selectedCategory]);
 
-  // Scroll to products after URL category param change (post-navigation)
-  useEffect(() => {
-    if (!products.length) return;
-    const valid = new Set(products.map((p) => p.category));
-    if (categoryParam && valid.has(categoryParam)) {
-      const t = setTimeout(() => {
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => scrollToProducts());
-        });
-      }, 0);
-      return () => clearTimeout(t);
-    }
-  }, [categoryParam, products.length]);
 
   const allCategories = useMemo(
     () => Array.from(new Set(products.map((p) => p.category))).sort(),
@@ -117,6 +107,13 @@ export default function Catalog() {
       return true;
     });
   }, [query, selectedCategory, selectedTags, products]);
+
+  const categoryIndex = useMemo(() => {
+    const map = new Map<string, string>();
+    const normalize = (s: string) => s.normalize("NFKC").replace(/\s+/g, " ").trim();
+    for (const c of allCategories) map.set(normalize(c), c);
+    return map;
+  }, [allCategories]);
 
   const grouped = useMemo(() => {
     const map = new Map<string, Product[]>();
@@ -206,6 +203,7 @@ export default function Catalog() {
                         const next = new URLSearchParams(searchParams);
                         next.delete("category");
                         setSearchParams(next, { replace: true });
+                        scrollToProducts();
                       }}
                       aria-pressed={selectedCategory === null}
                       className={cn(
@@ -230,6 +228,7 @@ export default function Catalog() {
                             else next.delete("category");
                             setSearchParams(next, { replace: true });
                             setSelectedCategory(nextCat);
+                            scrollToProducts();
                           }}
                           aria-pressed={active}
                           className={cn(
