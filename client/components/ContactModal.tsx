@@ -57,8 +57,15 @@ export default function ContactModal({
             />
           </label>
 
-          {/* hidden product field */}
-          <input type="hidden" name="product" value={productName ?? ""} />
+          <label className="grid gap-2 text-sm">
+            <span>Product of Interest</span>
+            <input
+              name="product"
+              readOnly
+              value={productName ?? ""}
+              className="h-11 rounded-lg border border-slate-300 bg-slate-100 px-3 text-slate-900 outline-none"
+            />
+          </label>
 
           <div className="flex items-center justify-between">
             <p className="text-xs text-slate-500">By submitting, you agree to the processing of personal data.</p>
