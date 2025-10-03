@@ -11,7 +11,7 @@ const nav: Array<{
   children?: { to: string; label: string }[];
 }> = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
+  { to: "/about", label: "About Us" },
   {
     label: "Services",
     children: [
