@@ -3,6 +3,7 @@ import { PageBanner } from "@/components/layout/PageBanner";
 import { Separator } from "@/components/ui/separator";
 import { Seo } from "@/components/Seo";
 import { ShareButtons } from "@/components/ShareButtons";
+import { Calendar, Clock } from "lucide-react";
 
 function Toc() {
   return (
@@ -66,6 +67,18 @@ export default function KnowledgeArticleBSL() {
           { label: "Knowledge Hub", href: "/resources/knowledge-hub" },
           { label: title },
         ]}
+        meta={
+          <div className="flex flex-wrap items-center gap-4">
+            <span className="inline-flex items-center gap-1.5">
+              <Calendar className="h-4 w-4" aria-hidden="true" />
+              <time dateTime="2025-03-18">March 18, 2025</time>
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Clock className="h-4 w-4" aria-hidden="true" />
+              <span>9 min read</span>
+            </span>
+          </div>
+        }
       />
 
       <Seo
@@ -77,12 +90,6 @@ export default function KnowledgeArticleBSL() {
       />
 
       <article className="container mx-auto px-4 py-12 md:py-16">
-        <div className="mb-2 flex flex-wrap items-center gap-3 text-sm text-slate-600">
-          <time dateTime="2025-03-18">March 18, 2025</time>
-          <span>•</span>
-          <span>9 min read</span>
-        </div>
-
         <ShareButtons
           title={title}
           description={description}

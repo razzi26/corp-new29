@@ -12,6 +12,8 @@ import NotFound from "./pages/NotFound";
 import SiteLayout from "./components/layout/SiteLayout";
 import Catalog from "./pages/Catalog";
 import Blog from "./pages/Blog";
+import News from "./pages/News";
+import NewsArticle from "./pages/NewsArticle";
 import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
@@ -25,7 +27,6 @@ import KnowledgeHub from "./pages/ResourcesKnowledgeHub";
 import Podcasts from "./pages/ResourcesPodcasts";
 import CaseStudies from "./pages/ResourcesCaseStudies";
 import KnowledgeArticle from "./pages/KnowledgeArticle";
-import NewsArticleUltrasound from "./pages/NewsArticleUltrasound";
 
 const queryClient = new QueryClient();
 
@@ -39,7 +40,7 @@ const App = () => (
           <Route element={<SiteLayout />}>
             <Route path="/" element={<Index />} />
             <Route path="/products" element={<Catalog />} />
-            <Route path="/news" element={<Blog />} />
+            <Route path="/news" element={<News />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/services/trainings" element={<Trainings />} />
@@ -53,10 +54,7 @@ const App = () => (
               path="/resources/knowledge-hub/:slug"
               element={<KnowledgeArticle />}
             />
-            <Route
-              path="/news/how-to-choose-ultrasound-scanner"
-              element={<NewsArticleUltrasound />}
-            />
+            <Route path="/news/:slug" element={<NewsArticle />} />
             <Route path="/resources/podcasts" element={<Podcasts />} />
             <Route path="/resources/case-studies" element={<CaseStudies />} />
             <Route path="/resources/faq" element={<Faq />} />

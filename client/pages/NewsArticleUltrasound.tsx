@@ -2,6 +2,7 @@ import { PageBanner } from "@/components/layout/PageBanner";
 import { Seo } from "@/components/Seo";
 import { Separator } from "@/components/ui/separator";
 import { ShareButtons } from "@/components/ShareButtons";
+import { Calendar, Clock } from "lucide-react";
 
 export default function NewsArticleUltrasound() {
   const title = "How to choose an ultrasound scanner";
@@ -18,6 +19,18 @@ export default function NewsArticleUltrasound() {
           { label: "News", href: "/news" },
           { label: title },
         ]}
+        meta={
+          <div className="flex flex-wrap items-center gap-4">
+            <span className="inline-flex items-center gap-1.5">
+              <Calendar className="h-4 w-4" aria-hidden="true" />
+              <time dateTime="2025-02-10">February 10, 2025</time>
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Clock className="h-4 w-4" aria-hidden="true" />
+              <span>5 min read</span>
+            </span>
+          </div>
+        }
       />
 
       <Seo
@@ -29,12 +42,6 @@ export default function NewsArticleUltrasound() {
       />
 
       <article className="container mx-auto px-4 py-12 md:py-16">
-        <div className="mb-2 flex flex-wrap items-center gap-3 text-sm text-slate-600">
-          <time dateTime="2025-02-10">February 10, 2025</time>
-          <span>•</span>
-          <span>5 min read</span>
-        </div>
-
         <ShareButtons
           title={title}
           description={description}

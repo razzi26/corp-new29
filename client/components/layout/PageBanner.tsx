@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 
 import {
@@ -19,12 +19,14 @@ interface PageBannerProps {
   title: string;
   description?: string;
   breadcrumbs: BreadcrumbEntry[];
+  meta?: ReactNode;
 }
 
 export function PageBanner({
   title,
   description,
   breadcrumbs,
+  meta,
 }: PageBannerProps) {
   return (
     <>
@@ -36,13 +38,18 @@ export function PageBanner({
           className="absolute inset-0 bg-brand-gradient opacity-95"
           aria-hidden="true"
         />
-        <div className="relative container mx-auto px-4 pt-24 pb-12 md:pt-32 md:pb-16">
-          <h1 className="text-3xl font-semibold md:text-4xl">{title}</h1>
-          {description && (
-            <p className="mt-3 max-w-2xl text-base text-white/85 md:text-lg">
-              {description}
-            </p>
-          )}
+        <div className="relative container mx-auto px-4 pt-24 pb-10 md:pt-32 md:pb-14">
+          <div className="w-full md:w-[70%]">
+            <h1 className="break-words text-3xl font-semibold md:text-4xl">
+              {title}
+            </h1>
+            {description && (
+              <p className="mt-3 break-words text-base text-white/85 md:text-lg">
+                {description}
+              </p>
+            )}
+            {meta && <div className="mt-3 text-sm text-white/85">{meta}</div>}
+          </div>
         </div>
       </section>
 

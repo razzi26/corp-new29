@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { PageBanner } from "@/components/layout/PageBanner";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import {
   Card,
   CardContent,
@@ -10,25 +12,43 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
-import { Clock, CalendarDays } from "lucide-react";
+import { CalendarDays, Clock, ArrowRight } from "lucide-react";
 
-interface ArticleMeta {
+interface NewsMeta {
   slug: string;
   title: string;
   description: string;
   date: string;
   readMins: number;
   tags: string[];
+  image?: string;
 }
 
-function ArticleCard({ a }: { a: ArticleMeta }) {
-  const slugParam = a.slug.replace("/resources/knowledge-hub/", "");
+function NewsCard({ a }: { a: NewsMeta }) {
+  const slugParam = a.slug.replace("/news/", "");
   return (
     <Card className="h-full flex flex-col overflow-hidden rounded-lg border border-slate-200/70 bg-white shadow-sm transition-shadow hover:shadow">
+      {
+        <div className="bg-white">
+          <AspectRatio ratio={16 / 9}>
+            <img
+              src={a.image || "/placeholder.svg"}
+              alt={a.title}
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </AspectRatio>
+        </div>
+      }
       <CardHeader>
-        <CardTitle className="text-xl leading-7">{a.title}</CardTitle>
+        <CardTitle className="text-xl leading-7">
+          <Link
+            to={`/news/${slugParam}`}
+            className="text-[#00467f] hover:underline"
+          >
+            {a.title}
+          </Link>
+        </CardTitle>
         <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-slate-600">
           <span className="inline-flex items-center gap-1">
             <CalendarDays className="h-4 w-4" />
@@ -52,18 +72,22 @@ function ArticleCard({ a }: { a: ArticleMeta }) {
         </div>
       </CardContent>
       <CardFooter className="mt-auto">
-        <Button asChild>
-          <Link to={`/resources/knowledge-hub/${slugParam}`}>Read article</Link>
-        </Button>
+        <Link
+          to={`/news/${slugParam}`}
+          className="inline-flex items-center gap-2 rounded-full border border-[#00467f] px-4 py-2 text-[#00467f] transition-colors hover:bg-[#00467f] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00467f]/40"
+        >
+          Read More
+          <ArrowRight className="h-4 w-4" />
+        </Link>
       </CardFooter>
     </Card>
   );
 }
 
-export default function KnowledgeHub() {
+export default function News() {
   const [q, setQ] = useState("");
   const [active, setActive] = useState<string | null>(null);
-  const [items, setItems] = useState<ArticleMeta[] | null>(null);
+  const [items, setItems] = useState<NewsMeta[] | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -71,22 +95,23 @@ export default function KnowledgeHub() {
     const controller = new AbortController();
     (async () => {
       try {
-        const r = await fetch("/data/knowledge-articles.json", {
+        const r = await fetch("/data/news-articles.json", {
           cache: "no-store",
           credentials: "same-origin",
           headers: { Accept: "application/json" },
           signal: controller.signal,
         });
-        if (!r.ok) throw new Error(`Failed to load articles (${r.status})`);
+        if (!r.ok) throw new Error(`Failed to load news (${r.status})`);
         const data = await r.json();
         if (!mounted) return;
-        const metas: ArticleMeta[] = data.map((d: any) => ({
+        const metas: NewsMeta[] = data.map((d: any) => ({
           slug: d.slug,
           title: d.title,
           description: d.description,
           date: d.date,
           readMins: d.readMins,
           tags: d.tags,
+          image: d.image,
         }));
         setItems(metas);
       } catch (e: any) {
@@ -105,7 +130,7 @@ export default function KnowledgeHub() {
   }, [items]);
 
   const filtered = useMemo(() => {
-    if (!items) return [] as ArticleMeta[];
+    if (!items) return [] as NewsMeta[];
     const query = q.trim().toLowerCase();
     return items
       .filter((a) => {
@@ -123,13 +148,9 @@ export default function KnowledgeHub() {
   return (
     <div className="bg-white text-slate-900">
       <PageBanner
-        title="Knowledge Hub"
-        description="Guides, articles and whitepapers on biosafety and lab practices."
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Resources", href: "/resources" },
-          { label: "Knowledge Hub" },
-        ]}
+        title="News"
+        description="Updates, product news, and practical insights from our team and partners."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "News" }]}
       />
 
       <section className="container mx-auto px-4 py-10 md:py-14">
@@ -137,12 +158,12 @@ export default function KnowledgeHub() {
           <div className="md:w-1/2">
             <label
               className="mb-2 block text-sm font-medium text-slate-700"
-              htmlFor="kb-search"
+              htmlFor="news-search"
             >
-              Search articles
+              Search news
             </label>
             <Input
-              id="kb-search"
+              id="news-search"
               placeholder="Search by title, tag, or keywords"
               value={q}
               onChange={(e) => setQ(e.target.value)}
@@ -176,40 +197,20 @@ export default function KnowledgeHub() {
 
         <Separator className="my-8" />
 
-        {error && (
-          <p className="text-sm text-red-600">Failed to load articles.</p>
-        )}
+        {error && <p className="text-sm text-red-600">Failed to load news.</p>}
         {!items ? (
           <p className="text-slate-700">Loading…</p>
         ) : filtered.length === 0 ? (
           <p className="text-slate-700">
-            No articles found. Try a different search or tag.
+            No news found. Try a different search or tag.
           </p>
         ) : (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((a) => (
-              <ArticleCard key={a.slug} a={a} />
+              <NewsCard key={a.slug} a={a} />
             ))}
           </div>
         )}
-
-        <div className="mt-10 text-sm text-slate-600">
-          Looking for something else? Explore{" "}
-          <Link
-            to="/resources/videos"
-            className="text-[hsl(var(--brand-end))] hover:underline"
-          >
-            Videos
-          </Link>{" "}
-          or{" "}
-          <Link
-            to="/resources/podcasts"
-            className="text-[hsl(var(--brand-end))] hover:underline"
-          >
-            Podcasts
-          </Link>
-          .
-        </div>
       </section>
     </div>
   );
