@@ -88,7 +88,8 @@ function NewsCard({ a }: { a: NewsMeta }) {
 
 export default function News() {
   const [q, setQ] = useState("");
-  const activeTagClasses = "bg-[#00467f] text-white hover:bg-[#003a68] focus:ring-[#00467f]/40";
+  const activeTagClasses =
+    "bg-[#00467f] text-white hover:bg-[#003a68] focus:ring-[#00467f]/40";
   const [active, setActive] = useState<string | null>(null);
   const [items, setItems] = useState<NewsMeta[] | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -179,7 +180,10 @@ export default function News() {
             <div className="flex flex-wrap gap-2">
               <Badge
                 variant={active === null ? "default" : "secondary"}
-                className={cn("cursor-pointer", active === null && activeTagClasses)}
+                className={cn(
+                  "cursor-pointer",
+                  active === null && activeTagClasses,
+                )}
                 onClick={() => setActive(null)}
               >
                 All
@@ -188,7 +192,10 @@ export default function News() {
                 <Badge
                   key={t}
                   variant={active === t ? "default" : "secondary"}
-                  className={cn("cursor-pointer", active === t && activeTagClasses)}
+                  className={cn(
+                    "cursor-pointer",
+                    active === t && activeTagClasses,
+                  )}
                   onClick={() => setActive((prev) => (prev === t ? null : t))}
                 >
                   {t}

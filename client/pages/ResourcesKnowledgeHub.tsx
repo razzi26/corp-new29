@@ -125,7 +125,8 @@ export default function KnowledgeHub() {
       .sort((a, b) => (a.date < b.date ? 1 : -1));
   }, [q, active, items]);
 
-  const activeTagClasses = "bg-[#00467f] text-white hover:bg-[#003a68] focus:ring-[#00467f]/40";
+  const activeTagClasses =
+    "bg-[#00467f] text-white hover:bg-[#003a68] focus:ring-[#00467f]/40";
 
   return (
     <div className="bg-white text-slate-900">
@@ -162,7 +163,10 @@ export default function KnowledgeHub() {
             <div className="flex flex-wrap gap-2">
               <Badge
                 variant={active === null ? "default" : "secondary"}
-                className={cn("cursor-pointer", active === null && activeTagClasses)}
+                className={cn(
+                  "cursor-pointer",
+                  active === null && activeTagClasses,
+                )}
                 onClick={() => setActive(null)}
               >
                 All
@@ -171,7 +175,10 @@ export default function KnowledgeHub() {
                 <Badge
                   key={t}
                   variant={active === t ? "default" : "secondary"}
-                  className={cn("cursor-pointer", active === t && activeTagClasses)}
+                  className={cn(
+                    "cursor-pointer",
+                    active === t && activeTagClasses,
+                  )}
                   onClick={() => setActive((prev) => (prev === t ? null : t))}
                 >
                   {t}
