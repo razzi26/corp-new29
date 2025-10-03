@@ -303,10 +303,14 @@ export default function ProductPage() {
                       ref={(el) => {
                         /* slider ref used for touch */
                       }}
+                      style={{ touchAction: "pan-y" }}
                       onPointerDown={(e) => {
                         const el = e.currentTarget as HTMLDivElement;
+                        try { el.setPointerCapture(e.pointerId); } catch {}
                         (el as any)._startX = e.clientX;
+                        (el as any)._lastX = e.clientX;
                         (el as any)._isDown = true;
+                        (el as any)._pointerId = e.pointerId;
                       }}
                       onPointerMove={(e) => {
                         const el = e.currentTarget as HTMLDivElement;
@@ -316,19 +320,29 @@ export default function ProductPage() {
                       onPointerUp={(e) => {
                         const el = e.currentTarget as HTMLDivElement;
                         if (!(el as any)._isDown) return;
+                        (el as any)._isDown = false;
+                        try { if ((el as any)._pointerId !== undefined) el.releasePointerCapture((el as any)._pointerId); } catch {}
                         const startX = (el as any)._startX as number | undefined;
                         const lastX = (el as any)._lastX as number | undefined;
-                        (el as any)._isDown = false;
                         if (startX === undefined || lastX === undefined) return;
                         const dx = lastX - startX;
                         const threshold = 40;
                         if (dx < -threshold) {
-                          // swipe left => next
                           setActiveIndex((s) => (s + 1) % gallery.length);
                         } else if (dx > threshold) {
-                          // swipe right => prev
                           setActiveIndex((s) => (s - 1 + gallery.length) % gallery.length);
                         }
+                      }}
+                      onPointerCancel={(e) => {
+                        const el = e.currentTarget as HTMLDivElement;
+                        (el as any)._isDown = false;
+                        try { if ((el as any)._pointerId !== undefined) el.releasePointerCapture((el as any)._pointerId); } catch {}
+                      }}
+                      onPointerLeave={(e) => {
+                        const el = e.currentTarget as HTMLDivElement;
+                        if (!(el as any)._isDown) return;
+                        (el as any)._isDown = false;
+                        try { if ((el as any)._pointerId !== undefined) el.releasePointerCapture((el as any)._pointerId); } catch {}
                       }}
                     >
                       {/* Mobile counter */}
