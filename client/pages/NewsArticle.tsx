@@ -93,6 +93,19 @@ export default function NewsArticle() {
       />
 
       <article className="container mx-auto px-4 py-12 md:py-16">
+        {article.image && (
+          <div className="mb-8 overflow-hidden rounded-lg border bg-white shadow-sm">
+            <AspectRatio ratio={16 / 9}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={article.image}
+                alt={title}
+                className="h-full w-full object-cover"
+                loading="eager"
+              />
+            </AspectRatio>
+          </div>
+        )}
         <ShareButtons title={title} description={description} className="mb-6" />
 
         {content.map((b, i) => {
