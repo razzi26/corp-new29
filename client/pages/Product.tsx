@@ -182,7 +182,7 @@ export default function ProductPage() {
           {/* Left: Gallery Slider */}
           <div className="lg:col-span-7">
             {gallery.length > 0 ? (
-              <div className="relative rounded-2xl border border-slate-200 bg-white p-3">
+              <div className="relative p-0">
                 <Carousel
                   className="relative"
                   opts={{ loop: true }}
@@ -204,21 +204,19 @@ export default function ProductPage() {
                   </CarouselContent>
                   {gallery.length > 1 && (
                     <>
-                      <CarouselPrevious className="-left-4 bg-white/80 backdrop-blur border-slate-300" />
-                      <CarouselNext className="-right-4 bg-white/80 backdrop-blur border-slate-300" />
+                      <CarouselPrevious variant="ghost" className="-left-4 bg-white/80 backdrop-blur shadow-sm" />
+                      <CarouselNext variant="ghost" className="-right-4 bg-white/80 backdrop-blur shadow-sm" />
                     </>
                   )}
                 </Carousel>
                 {gallery.length > 1 && (
-                  <div className="mt-3 flex gap-2 overflow-x-auto py-1" role="tablist" aria-label="Product image thumbnails">
+                  <div className="mt-6 flex gap-3 overflow-x-auto py-1" role="tablist" aria-label="Product image thumbnails">
                     {gallery.map((src, i) => (
                       <button
                         key={src + i}
                         className={cn(
-                          "relative h-16 w-24 flex-shrink-0 overflow-hidden rounded-lg border focus:outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]",
-                          i === activeIndex
-                            ? "border-[hsl(var(--brand-end))]"
-                            : "border-slate-200 hover:border-slate-300",
+                          "relative h-16 w-24 flex-shrink-0 overflow-hidden rounded-md focus:outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]",
+                          i === activeIndex ? "shadow-md opacity-100" : "opacity-70 hover:opacity-100",
                         )}
                         onClick={() => setActiveIndex(i)}
                         role="tab"
@@ -238,7 +236,7 @@ export default function ProductPage() {
                 )}
               </div>
             ) : (
-              <div className="rounded-2xl border border-slate-200 bg-white p-6">
+              <div className="p-0">
                 <div className="aspect-[16/10] w-full overflow-hidden rounded-xl bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]" />
               </div>
             )}
@@ -246,7 +244,7 @@ export default function ProductPage() {
 
           {/* Right: Title, description, tags, actions, details */}
           <aside className="lg:col-span-5 self-start lg:sticky lg:top-24">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6">
+            <div className="p-0">
               <h1 className="text-2xl font-bold text-slate-900">{product.title}</h1>
               <div className="mt-3 flex flex-wrap items-center gap-2">
                 <Badge variant="secondary" className="text-xs">
@@ -268,7 +266,7 @@ export default function ProductPage() {
               </div>
               <p className="mt-4 text-slate-700">{product.description}</p>
 
-              <div className="mt-6 flex gap-3">
+              <div className="mt-6 flex gap-6">
                 <Link
                   to="/contact"
                   className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-4 py-2.5 text-sm font-semibold shadow"
@@ -277,7 +275,7 @@ export default function ProductPage() {
                 </Link>
                 <Link
                   to="/products"
-                  className="inline-flex items-center rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-semibold hover:bg-slate-50"
+                  className="text-[hsl(var(--brand-end))] underline underline-offset-4 hover:no-underline text-sm font-semibold"
                 >
                   Back to Products
                 </Link>
@@ -298,9 +296,9 @@ export default function ProductPage() {
               </div>
 
               {product.brochures && product.brochures.length > 0 && (
-                <div className="mt-6">
+                <div className="mt-8">
                   <h3 className="text-sm font-semibold text-slate-800">Brochures</h3>
-                  <ul className="mt-2 space-y-2 text-sm">
+                  <ul className="mt-3 space-y-2 text-sm">
                     {product.brochures.map((b, i) => (
                       <li
                         key={(b.url || "") + i}
@@ -311,7 +309,7 @@ export default function ProductPage() {
                           href={b.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center rounded-md border border-slate-300 px-2.5 py-1.5 text-xs font-semibold hover:bg-slate-50"
+                          className="text-[hsl(var(--brand-end))] underline underline-offset-4 hover:no-underline"
                         >
                           Download
                         </a>
@@ -326,18 +324,15 @@ export default function ProductPage() {
 
         {/* Specifications - bottom full width */}
         {product.specs && product.specs.length > 0 && (
-          <div className="mt-10">
+          <div className="mt-16">
             <h2 className="text-xl font-semibold text-slate-900">Specifications</h2>
-            <div className="mt-3 overflow-hidden rounded-xl border border-slate-200">
+            <div className="mt-6">
               <table className="w-full text-sm">
                 <tbody>
                   {product.specs.map((row, idx) => (
-                    <tr
-                      key={row.name + idx}
-                      className={idx % 2 ? "bg-slate-50" : "bg-white"}
-                    >
-                      <td className="w-1/3 p-3 text-slate-600">{row.name}</td>
-                      <td className="p-3 text-slate-900">{row.value}</td>
+                    <tr key={row.name + idx}>
+                      <td className="w-1/3 py-2 pr-6 text-slate-500 align-top">{row.name}</td>
+                      <td className="py-2 text-slate-900">{row.value}</td>
                     </tr>
                   ))}
                 </tbody>
