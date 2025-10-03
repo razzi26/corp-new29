@@ -74,6 +74,11 @@ export default function ProductPage() {
     [products, id],
   );
 
+  const canonicalUrl = useMemo(() => {
+    const base = typeof window !== "undefined" ? window.location.origin : "";
+    return base + location.pathname;
+  }, [location.pathname]);
+
   const gallery = useMemo(() => {
     if (!product) return [] as string[];
     const arr: string[] = [];
