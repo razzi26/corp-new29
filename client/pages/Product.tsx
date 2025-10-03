@@ -154,7 +154,15 @@ export default function ProductPage() {
     // run once after DOM mutations; images may not be loaded yet
     updateSizes();
     window.addEventListener("resize", updateSizes);
-    return () => window.removeEventListener("resize", updateSizes);
+
+    const thumbsEl = thumbsRef.current;
+    const onThumbsScroll = () => updateThumbsScrollState(thumbsEl);
+    if (thumbsEl) thumbsEl.addEventListener("scroll", onThumbsScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("resize", updateSizes);
+      if (thumbsEl) thumbsEl.removeEventListener("scroll", onThumbsScroll as any);
+    };
   }, [activeIndex, product?.id, gallery.length]);
 
   useEffect(() => setActiveIndex(0), [product?.id]);
