@@ -263,17 +263,22 @@ export default function Catalog() {
               </div>
 
               <div className="mt-6">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-semibold text-slate-800">Categories</h3>
-                  <button
-                    className="text-xs text-[hsl(var(--brand-end))] hover:underline"
-                    onClick={() => setSelectedCategory(null)}
-                    aria-label="Clear category filters"
-                  >
-                    Clear
-                  </button>
-                </div>
-                <ul className="mt-3 space-y-2">
+                <h3 className="text-sm font-semibold text-slate-800">Categories</h3>
+                <ul className="mt-3 rounded-lg border border-slate-300 overflow-hidden divide-y divide-slate-200">
+                  <li>
+                    <button
+                      onClick={() => setSelectedCategory(null)}
+                      aria-pressed={selectedCategory === null}
+                      className={cn(
+                        "w-full text-left px-3 py-2 transition block",
+                        selectedCategory === null
+                          ? "bg-[hsl(var(--brand-end))] text-white"
+                          : "bg-white text-slate-800 hover:bg-slate-50",
+                      )}
+                    >
+                      All
+                    </button>
+                  </li>
                   {allCategories.map((cat) => {
                     const active = selectedCategory === cat;
                     return (
@@ -284,10 +289,10 @@ export default function Catalog() {
                           }
                           aria-pressed={active}
                           className={cn(
-                            "w-full text-left px-3 py-2 rounded-lg border transition",
+                            "w-full text-left px-3 py-2 transition block",
                             active
-                              ? "bg-[hsl(var(--brand-end))] text-white border-transparent"
-                              : "bg-white text-slate-800 border-slate-300 hover:bg-slate-50",
+                              ? "bg-[hsl(var(--brand-end))] text-white"
+                              : "bg-white text-slate-800 hover:bg-slate-50",
                           )}
                         >
                           {cat}
