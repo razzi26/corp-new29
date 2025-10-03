@@ -568,19 +568,27 @@ function ProductCard({ product }: { product: Product }) {
   const imgs = (product.mainImage ? [product.mainImage] : []).concat(
     product.images ?? [],
   );
-  const count = Math.max(1, imgs.length);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const hoverTimerRef = useRef<number | null>(null);
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
-  // reset index when product changes
-  useEffect(() => { setCurrentIndex(0); }, [product.id]);
+  // reset preview when product changes
+  useEffect(() => {
+    setHoverIndex(null);
+    if (hoverTimerRef.current) {
+      clearInterval(hoverTimerRef.current);
+      hoverTimerRef.current = null;
+    }
+  }, [product.id]);
 
-  const displayed = currentIndex;
+  const displayed = hoverIndex ?? 0;
 
   const handleImageHover = () => {
     if (imgs.length > 1) {
-      setCurrentIndex((i) => (i + 1) % imgs.length);
+      setHoverIndex((i) => {
+        if (i === null) return 1 % imgs.length;
+        return (i + 1) % imgs.length;
+      });
     }
   };
 
@@ -603,6 +611,8 @@ function ProductCard({ product }: { product: Product }) {
         onPointerEnter={() => {
           if (imgs.length > 1 && !hoverTimerRef.current) {
             // start cycling every 700ms
+            // initialize hoverIndex so the first frame after enter shows next image
+            setHoverIndex((prev) => (prev === null ? 1 % imgs.length : prev));
             hoverTimerRef.current = window.setInterval(handleImageHover, 700);
           }
         }}
@@ -611,6 +621,8 @@ function ProductCard({ product }: { product: Product }) {
             clearInterval(hoverTimerRef.current);
             hoverTimerRef.current = null;
           }
+          // revert back to main image when pointer leaves
+          setHoverIndex(null);
         }}
         onClick={() => { /* keep click behavior if needed */ }}
       >
