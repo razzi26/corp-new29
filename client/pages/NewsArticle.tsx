@@ -88,7 +88,7 @@ export default function NewsArticle() {
         title={title}
         description={description}
         url={typeof window !== "undefined" ? window.location.href : undefined}
-        image="/placeholder.svg"
+        image={article.image ?? "/placeholder.svg"}
         type="article"
       />
 
