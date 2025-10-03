@@ -288,34 +288,39 @@ export default function ProductPage() {
                     {/* Vertical scroll controls (up/down) */}
                     {thumbsOverflow && (
                       <>
-                        <button
-                          type="button"
-                          className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 h-7 w-7 rounded-full bg-white/90 backdrop-blur text-slate-700 hover:bg-white"
-                          aria-label="Scroll thumbnails up"
-                          onClick={() => {
-                            const el = thumbsRef.current;
-                            const step = Math.round(
-                              (thumbsMaxHeight || 120) * 0.5,
-                            );
-                            el?.scrollBy({ top: -step, behavior: "smooth" });
-                          }}
-                        >
-                          <ArrowUp className="h-4 w-4 mx-auto" />
-                        </button>
-                        <button
-                          type="button"
-                          className="absolute -bottom-3 left-1/2 -translate-x-1/2 z-10 h-7 w-7 rounded-full bg-white/90 backdrop-blur text-slate-700 hover:bg-white"
-                          aria-label="Scroll thumbnails down"
-                          onClick={() => {
-                            const el = thumbsRef.current;
-                            const step = Math.round(
-                              (thumbsMaxHeight || 120) * 0.5,
-                            );
-                            el?.scrollBy({ top: step, behavior: "smooth" });
-                          }}
-                        >
-                          <ArrowDown className="h-4 w-4 mx-auto" />
-                        </button>
+                        {thumbsCanScrollUp && (
+                          <button
+                            type="button"
+                            className="absolute -top-3 left-1/2 -translate-x-1/2 z-10 h-7 w-7 rounded-full bg-white/90 backdrop-blur text-slate-700 hover:bg-white"
+                            aria-label="Scroll thumbnails up"
+                            onClick={() => {
+                              const el = thumbsRef.current;
+                              const step = Math.round(
+                                (thumbsMaxHeight || 120) * 0.5,
+                              );
+                              el?.scrollBy({ top: -step, behavior: "smooth" });
+                            }}
+                          >
+                            <ArrowUp className="h-4 w-4 mx-auto" />
+                          </button>
+                        )}
+
+                        {thumbsCanScrollDown && (
+                          <button
+                            type="button"
+                            className="absolute -bottom-3 left-1/2 -translate-x-1/2 z-10 h-7 w-7 rounded-full bg-white/90 backdrop-blur text-slate-700 hover:bg-white"
+                            aria-label="Scroll thumbnails down"
+                            onClick={() => {
+                              const el = thumbsRef.current;
+                              const step = Math.round(
+                                (thumbsMaxHeight || 120) * 0.5,
+                              );
+                              el?.scrollBy({ top: step, behavior: "smooth" });
+                            }}
+                          >
+                            <ArrowDown className="h-4 w-4 mx-auto" />
+                          </button>
+                        )}
                       </>
                     )}
                   </div>
