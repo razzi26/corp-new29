@@ -280,6 +280,7 @@ export default function ProductPage() {
                             alt={`${product.title} image ${i + 1}`}
                             className="h-full w-full object-cover"
                             loading={i === 0 ? "eager" : "lazy"}
+                            onLoad={() => updateSizes()}
                           />
                         </div>
                       ))}
