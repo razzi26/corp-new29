@@ -6,6 +6,7 @@
     "date": "2025-02-10",
     "readMins": 5,
     "tags": ["Ultrasound", "Buying Guide", "Imaging"],
+    "image": "https://images.unsplash.com/photo-1580281657527-47b2b0b2da7f?auto=format&fit=crop&w=1600&q=80",
     "content": [
       { "type": "p", "text": "Selecting an ultrasound scanner starts with your clinical scenarios: point-of-care, OB/GYN, cardiology, MSK, or general imaging. Match transducers to use cases, ensure adequate Doppler and image processing, and evaluate ergonomics and workflow." },
       { "type": "h3", "text": "Checklist" },
@@ -25,6 +26,7 @@
     "date": "2025-03-05",
     "readMins": 4,
     "tags": ["Safety", "Regulations", "Training"],
+    "image": "https://images.unsplash.com/photo-1581093588401-16e0919d5c1b?auto=format&fit=crop&w=1600&q=80",
     "content": [
       { "type": "p", "text": "The 2025 updates emphasize practical, risk-based controls and ongoing competence verification. Facilities are encouraged to adopt tiered training modules and refreshers aligned with specific task hazards." },
       { "type": "p", "text": "Certification timelines have been clarified for biological safety cabinets and facility ventilation systems, with stronger guidance for documentation and corrective actions." }
@@ -37,6 +39,7 @@
     "date": "2025-03-20",
     "readMins": 6,
     "tags": ["Biosafety", "Equipment", "BSC"],
+    "image": "https://images.unsplash.com/photo-1582117850466-4bb658bba3fb?auto=format&fit=crop&w=1600&q=80",
     "content": [
       { "type": "p", "text": "New BSC models focus on quieter operation, stable inflow/downflow, and quicker certification steps. Several manufacturers now include native sensors for filter life and sash position analytics." },
       { "type": "ul", "items": [
