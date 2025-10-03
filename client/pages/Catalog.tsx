@@ -574,7 +574,7 @@ function ProductCard({ product }: { product: Product }) {
     <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white">
       <div
         ref={containerRef}
-        className="relative w-full aspect-[3/4] overflow-hidden rounded-xl bg-slate-50"
+        className="relative w-full aspect-[1/1] overflow-hidden rounded-xl bg-slate-50"
         onMouseMove={count > 1 ? handleMove : undefined}
         onMouseEnter={() => count > 1 && setPreviewIndex(0)}
         onMouseLeave={() => setPreviewIndex(null)}
