@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { PageBanner } from "@/components/layout/PageBanner";
 import { Separator } from "@/components/ui/separator";
 import { Seo } from "@/components/Seo";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ShareButtons } from "@/components/ShareButtons";
 import { Calendar, Clock } from "lucide-react";
 
