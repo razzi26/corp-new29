@@ -604,7 +604,7 @@ function ProductCard({ product }: { product: Product }) {
         className="relative w-full aspect-[1/1] overflow-hidden rounded-t-2xl bg-slate-50"
         onPointerMove={count > 1 ? handlePointerMove : undefined}
         onPointerEnter={() => count > 1 && setPreviewIndex(0)}
-        onPointerLeave={() => setPreviewIndex(null)}
+        onPointerLeave={() => { setPreviewIndex(null); if (rafRef.current) { cancelAnimationFrame(rafRef.current); rafRef.current = null; lastIdxRef.current = null; } }}
         role="img"
         aria-label={product.title}
       >
