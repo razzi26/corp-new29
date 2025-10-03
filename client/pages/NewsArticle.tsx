@@ -71,9 +71,11 @@ export default function NewsArticle() {
         meta={
           <div className="flex flex-wrap items-center gap-4">
             <span className="inline-flex items-center gap-1.5">
+              <Calendar className="h-4 w-4" aria-hidden="true" />
               <time dateTime={date}>{new Date(date).toLocaleDateString()}</time>
             </span>
             <span className="inline-flex items-center gap-1.5">
+              <Clock className="h-4 w-4" aria-hidden="true" />
               <span>{readMins} min read</span>
             </span>
           </div>
