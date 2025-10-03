@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { PageBanner } from "@/components/layout/PageBanner";
 import { Badge } from "@/components/ui/badge";
@@ -50,7 +50,7 @@ const PRODUCTS: Product[] = [
   },
   {
     id: "p-incu-co2",
-    title: "CO₂ Incubator",
+    title: "CO�� Incubator",
     category: "CO₂ Incubators",
     tags: ["Featured", "Advanced"],
     description: "Accurate CO₂ and temperature control for sensitive cultures.",
@@ -153,6 +153,14 @@ export default function Catalog() {
   const [query, setQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set());
+  const productsTopRef = useRef<HTMLDivElement>(null);
+  const scrollToProducts = () => {
+    const el = productsTopRef.current;
+    if (!el) return;
+    const headerOffset = 80;
+    const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
+    window.scrollTo({ top, behavior: "smooth" });
+  };
 
   const allCategories = useMemo(
     () => Array.from(new Set(PRODUCTS.map((p) => p.category))).sort(),
@@ -267,7 +275,10 @@ export default function Catalog() {
                 <ul className="mt-3 rounded-lg border border-slate-300 overflow-hidden divide-y divide-slate-200">
                   <li>
                     <button
-                      onClick={() => setSelectedCategory(null)}
+                      onClick={() => {
+                        setSelectedCategory(null);
+                        scrollToProducts();
+                      }}
                       aria-pressed={selectedCategory === null}
                       className={cn(
                         "w-full text-left px-3 py-2 transition block",
@@ -284,9 +295,10 @@ export default function Catalog() {
                     return (
                       <li key={cat}>
                         <button
-                          onClick={() =>
-                            setSelectedCategory((prev) => (prev === cat ? null : cat))
-                          }
+                          onClick={() => {
+                            setSelectedCategory((prev) => (prev === cat ? null : cat));
+                            scrollToProducts();
+                          }}
                           aria-pressed={active}
                           className={cn(
                             "w-full text-left px-3 py-2 transition block",
@@ -308,6 +320,7 @@ export default function Catalog() {
 
           {/* Results */}
           <main className="lg:col-span-9">
+            <div ref={productsTopRef} />
             <div className="flex items-center justify-between gap-4">
               <p className="text-sm text-slate-600">
                 Showing {filtered.length} of {PRODUCTS.length}
