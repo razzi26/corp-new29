@@ -27,7 +27,6 @@ import KnowledgeHub from "./pages/ResourcesKnowledgeHub";
 import Podcasts from "./pages/ResourcesPodcasts";
 import CaseStudies from "./pages/ResourcesCaseStudies";
 import KnowledgeArticle from "./pages/KnowledgeArticle";
-import NewsArticleUltrasound from "./pages/NewsArticleUltrasound";
 
 const queryClient = new QueryClient();
 
