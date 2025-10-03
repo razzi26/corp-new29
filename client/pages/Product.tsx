@@ -75,7 +75,28 @@ export default function ProductPage() {
   }, [product]);
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
+
   useEffect(() => setActiveIndex(0), [product?.id]);
+
+  useEffect(() => {
+    if (!carouselApi) return;
+    const onSelect = () => {
+      const idx = carouselApi.selectedScrollSnap();
+      setActiveIndex(idx);
+    };
+    onSelect();
+    carouselApi.on("select", onSelect);
+    carouselApi.on("reInit", onSelect);
+    return () => {
+      carouselApi.off("select", onSelect);
+    };
+  }, [carouselApi]);
+
+  useEffect(() => {
+    if (!carouselApi) return;
+    carouselApi.scrollTo(Math.min(activeIndex, Math.max(0, gallery.length - 1)));
+  }, [activeIndex, carouselApi, gallery.length]);
 
   if (loading) {
     return (
@@ -122,6 +143,7 @@ export default function ProductPage() {
                 <Carousel
                   className="relative"
                   opts={{ loop: true }}
+                  setApi={setCarouselApi}
                 >
                   <CarouselContent>
                     {gallery.map((src, i) => (
