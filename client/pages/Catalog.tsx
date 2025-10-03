@@ -577,20 +577,8 @@ function ProductCard({ product }: { product: Product }) {
 
   const displayed = currentIndex;
 
-  function handlePointerMove(e: React.PointerEvent) {
-    const el = containerRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    // use Y position relative to container for proportional slicing
-    let pos = e.clientY - rect.top;
-    if (pos < 0) pos = 0;
-    if (pos > rect.height) pos = rect.height;
-    const segment = rect.height / Math.max(1, count);
-    let idx = Math.floor(pos / (segment || 1));
-    if (idx < 0) idx = 0;
-    if (idx >= count) idx = count - 1;
-    if (idx !== previewIndex) setPreviewIndex(idx);
-  }
+  const prev = () => setCurrentIndex((i) => Math.max(0, i - 1));
+  const next = () => setCurrentIndex((i) => Math.min(count - 1, i + 1));
 
   return (
     <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white">
