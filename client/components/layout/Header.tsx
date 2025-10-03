@@ -21,8 +21,8 @@ const nav: Array<{
       { to: "/services/brochures", label: "Brochures" }
     ],
   },
-  { to: "/catalog", label: "Catalog" },
-  { to: "/blog", label: "Blog" },
+  { to: "/catalog", label: "Products" },
+  { to: "/blog", label: "News" },
   {
     label: "Resources",
     children: [
@@ -33,7 +33,6 @@ const nav: Array<{
       { to: "/resources/faq", label: "FAQ" },
     ],
   },
-  { to: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -181,7 +180,7 @@ export default function Header() {
                 to="/contact"
                 className="ml-2 inline-flex items-center rounded-full bg-[hsl(var(--brand-end))] px-5 py-2.5 text-base font-semibold text-white shadow transition hover:shadow-md"
               >
-                Get a quote
+                Contact Us
               </Link>
             </nav>
 
@@ -264,7 +263,7 @@ export default function Header() {
                     className="block w-full rounded-full bg-[hsl(var(--brand-end))] px-5 py-2.5 text-center text-base font-semibold text-white shadow transition hover:shadow-md"
                     onClick={() => setOpen(false)}
                   >
-                    Get a quote
+                    Contact Us
                   </Link>
                 </div>
               </nav>
