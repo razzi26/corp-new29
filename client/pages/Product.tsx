@@ -10,6 +10,10 @@ type Product = {
   category: string;
   tags: string[];
   description: string;
+  mainImage?: string;
+  images?: string[];
+  brochures?: { lang: string; url: string; label?: string }[];
+  specs?: { name: string; value: string }[];
 };
 
 const TAG_COLORS: Record<string, string> = {
