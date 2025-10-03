@@ -26,7 +26,7 @@ interface ArticleMeta {
 function ArticleCard({ a }: { a: ArticleMeta }) {
   const slugParam = a.slug.replace("/resources/knowledge-hub/", "");
   return (
-    <Card className="h-full flex flex-col">
+    <Card className="h-full flex flex-col overflow-hidden rounded-lg border border-slate-200/70 bg-white shadow-sm transition-shadow hover:shadow">
       <CardHeader>
         <CardTitle className="text-xl leading-7">{a.title}</CardTitle>
         <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-slate-600">
