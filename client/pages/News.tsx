@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { PageBanner } from "@/components/layout/PageBanner";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import {
@@ -13,7 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { CalendarDays, Clock } from "lucide-react";
+import { CalendarDays, Clock, ArrowRight } from "lucide-react";
 
 interface NewsMeta {
   slug: string;
@@ -28,7 +27,7 @@ interface NewsMeta {
 function NewsCard({ a }: { a: NewsMeta }) {
   const slugParam = a.slug.replace("/news/", "");
   return (
-    <Card className="h-full flex flex-col overflow-hidden">
+    <Card className="h-full flex flex-col overflow-hidden rounded-lg border border-slate-200/70 bg-white shadow-sm transition-shadow hover:shadow">
       {(
         <div className="bg-white">
           <AspectRatio ratio={16 / 9}>
@@ -42,7 +41,11 @@ function NewsCard({ a }: { a: NewsMeta }) {
         </div>
       )}
       <CardHeader>
-        <CardTitle className="text-xl leading-7">{a.title}</CardTitle>
+        <CardTitle className="text-xl leading-7">
+          <Link to={`/news/${slugParam}`} className="text-[#00467f] hover:underline">
+            {a.title}
+          </Link>
+        </CardTitle>
         <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-slate-600">
           <span className="inline-flex items-center gap-1">
             <CalendarDays className="h-4 w-4" />
@@ -66,9 +69,13 @@ function NewsCard({ a }: { a: NewsMeta }) {
         </div>
       </CardContent>
       <CardFooter className="mt-auto">
-        <Button asChild>
-          <Link to={`/news/${slugParam}`}>Read article</Link>
-        </Button>
+        <Link
+          to={`/news/${slugParam}`}
+          className="inline-flex items-center gap-2 rounded-full border border-[#00467f] px-4 py-2 text-[#00467f] transition-colors hover:bg-[#00467f] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00467f]/40"
+        >
+          Read More
+          <ArrowRight className="h-4 w-4" />
+        </Link>
       </CardFooter>
     </Card>
   );
