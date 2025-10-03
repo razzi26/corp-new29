@@ -88,17 +88,29 @@ export default function ProductPage() {
   const thumbsRef = useRef<HTMLDivElement | null>(null);
   const [thumbsMaxHeight, setThumbsMaxHeight] = useState<number | undefined>(undefined);
   const [mainAspect, setMainAspect] = useState<string | undefined>(undefined);
+  const [thumbsOverflow, setThumbsOverflow] = useState(false);
 
   useLayoutEffect(() => {
     function update() {
       const el = mainImageRef.current;
       if (el) {
-        setThumbsMaxHeight(el.clientHeight);
+        const mainH = el.clientHeight;
+        setThumbsMaxHeight(mainH);
         const rect = el.getBoundingClientRect();
         setMainAspect(`${Math.round(rect.width)} / ${Math.round(rect.height)}`);
+
+        // measure thumbs overflow synchronously
+        const thumbsEl = thumbsRef.current;
+        if (thumbsEl) {
+          // If thumbnails total height exceeds main image height, enable arrows
+          setThumbsOverflow(thumbsEl.scrollHeight > mainH + 1);
+        } else {
+          setThumbsOverflow(false);
+        }
       } else {
         setThumbsMaxHeight(undefined);
         setMainAspect(undefined);
+        setThumbsOverflow(false);
       }
     }
     update();
