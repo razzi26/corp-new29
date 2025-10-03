@@ -76,6 +76,20 @@ export default function Catalog() {
     }
   }, [products.length, categoryParam, selectedCategory]);
 
+  // Scroll to products after URL category param change (post-navigation)
+  useEffect(() => {
+    if (!products.length) return;
+    const valid = new Set(products.map((p) => p.category));
+    if (categoryParam && valid.has(categoryParam)) {
+      const t = setTimeout(() => {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => scrollToProducts());
+        });
+      }, 0);
+      return () => clearTimeout(t);
+    }
+  }, [categoryParam, products.length]);
+
   const allCategories = useMemo(
     () => Array.from(new Set(products.map((p) => p.category))).sort(),
     [products],
@@ -192,7 +206,6 @@ export default function Catalog() {
                         const next = new URLSearchParams(searchParams);
                         next.delete("category");
                         setSearchParams(next, { replace: true });
-                        scrollToProducts();
                       }}
                       aria-pressed={selectedCategory === null}
                       className={cn(
@@ -217,7 +230,6 @@ export default function Catalog() {
                             else next.delete("category");
                             setSearchParams(next, { replace: true });
                             setSelectedCategory(nextCat);
-                            scrollToProducts();
                           }}
                           aria-pressed={active}
                           className={cn(
