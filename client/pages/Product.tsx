@@ -433,7 +433,7 @@ export default function ProductPage() {
                             "w-full max-h-[560px] overflow-hidden rounded-xl bg-slate-50",
                             i === displayedIndex ? "block" : "hidden",
                           )}
-                          style={{ aspectRatio: "4 / 3" }}
+                          style={{ aspectRatio: "3 / 4" }}
                         >
                           <img
                             src={src}
@@ -452,7 +452,7 @@ export default function ProductPage() {
               <div className="p-0">
                 <div
                   className="w-full max-h-[560px] overflow-hidden rounded-xl bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]"
-                  style={{ aspectRatio: "4 / 3" }}
+                  style={{ aspectRatio: "3 / 4" }}
                 />
               </div>
             )}
