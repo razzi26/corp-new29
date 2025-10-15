@@ -1,5 +1,7 @@
 import { PageBanner } from "@/components/layout/PageBanner";
 
+import FAQWidget from "@/components/ui/FAQWidget";
+
 export default function Contact() {
   return (
     <div className="bg-white text-slate-900">
