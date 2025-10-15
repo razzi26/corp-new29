@@ -1,6 +1,6 @@
 import { PageBanner } from "@/components/layout/PageBanner";
 
-import FAQWidget from "@/components/ui/FAQWidget";
+import FAQWidget from "@/components/widgets/FAQWidget";
 
 export default function Contact() {
   return (
