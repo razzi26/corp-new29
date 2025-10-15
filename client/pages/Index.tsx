@@ -172,23 +172,8 @@ export default function Index() {
         <div className="grid lg:grid-cols-2 gap-8">
           <div>
             <h3 className="text-2xl md:text-3xl font-bold">Frequently asked questions</h3>
-            <div className="mt-6 space-y-4 text-slate-700">
-              <div>
-                <div className="font-semibold">How do I register for a training?</div>
-                <div className="mt-1 text-sm">Use the "Get certified" button or contact us via the form — we will guide you through available dates and formats.</div>
-              </div>
-              <div>
-                <div className="font-semibold">What formats do trainings take?</div>
-                <div className="mt-1 text-sm">We offer in-person, on-site and virtual instructor-led trainings depending on the course.</div>
-              </div>
-              <div>
-                <div className="font-semibold">How can I request a quotation?</div>
-                <div className="mt-1 text-sm">Provide your details and requirements in the form; our team will prepare a tailored commercial offer.</div>
-              </div>
-              <div>
-                <div className="font-semibold">Are your seminars commercial?</div>
-                <div className="mt-1 text-sm">Seminars are non-commercial and safety-focused; training programs may be charged depending on scope.</div>
-              </div>
+            <div className="mt-6">
+              <FAQWidget />
             </div>
           </div>
 
