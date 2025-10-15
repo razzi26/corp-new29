@@ -14,23 +14,8 @@ export default function Contact() {
         <div className="grid gap-8 lg:grid-cols-2">
           <div>
             <h3 className="text-2xl md:text-3xl font-bold">Frequently asked questions</h3>
-            <div className="mt-6 space-y-4 text-slate-700">
-              <div>
-                <div className="font-semibold">How do I request a quotation?</div>
-                <div className="mt-1 text-sm">Fill in the contact form with requirements and timelines; we'll prepare a tailored commercial offer.</div>
-              </div>
-              <div>
-                <div className="font-semibold">Do you provide on-site training?</div>
-                <div className="mt-1 text-sm">Yes — we offer on-site and classroom training delivered by certified specialists.</div>
-              </div>
-              <div>
-                <div className="font-semibold">How long does certification take?</div>
-                <div className="mt-1 text-sm">Certification timelines depend on course and availability; we'll advise after you contact us.</div>
-              </div>
-              <div>
-                <div className="font-semibold">Can I request consultations?</div>
-                <div className="mt-1 text-sm">Use the form to request a consultation and specify preferred dates.</div>
-              </div>
+            <div className="mt-6">
+              <FAQWidget />
             </div>
           </div>
           <form
