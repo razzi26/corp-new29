@@ -27,7 +27,7 @@ const nav: Array<{
     label: "Knowledge Hub",
     children: [
       { to: "/resources/videos", label: "Videos" },
-      { to: "/resources/knowledge-hub", label: "Articles" },
+      { to: "/resources/articles", label: "Articles" },
       { to: "/resources/podcasts", label: "Podcasts" },
       { to: "/resources/case-studies", label: "Case Studies" },
       { to: "/resources/faq", label: "FAQ" },
