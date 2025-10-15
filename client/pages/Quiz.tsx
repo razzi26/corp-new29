@@ -210,18 +210,25 @@ export default function Quiz() {
                 Total time: <span className="font-semibold text-slate-900">{formatDuration(secondsElapsed)}</span>
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button onClick={() => {
-                  setCurrentIndex(0);
-                  setSelectedOption(null);
-                  setHasAnswered(false);
-                  setIsCorrect(null);
-                  setScore(0);
-                  setSecondsElapsed(0);
-                  setIsFinished(false);
-                }}>
+                <Button
+                  onClick={() => {
+                    setCurrentIndex(0);
+                    setSelectedOption(null);
+                    setHasAnswered(false);
+                    setIsCorrect(null);
+                    setScore(0);
+                    setSecondsElapsed(0);
+                    setIsFinished(false);
+                  }}
+                  className="bg-[#003a68] hover:bg-[#003a68]/90 focus-visible:ring-[#003a68]/40"
+                >
                   Retake quiz
                 </Button>
-                <Button asChild variant="outline">
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-[#003a68] text-[#003a68] hover:bg-[#003a68]/10 hover:text-[#003a68] focus-visible:ring-[#003a68]/40"
+                >
                   <Link to="/resources/quizzes">Back to quizzes</Link>
                 </Button>
               </div>
@@ -249,7 +256,7 @@ export default function Quiz() {
         <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
           <Link
             to="/resources/quizzes"
-            className="text-sm font-medium text-[hsl(var(--brand-end))] hover:underline"
+            className="text-sm font-medium text-[#003a68] hover:underline"
           >
             ← Back to all quizzes
           </Link>
@@ -288,7 +295,7 @@ export default function Quiz() {
                       key={option.id}
                       className={cn(
                         "flex cursor-pointer items-start gap-3 rounded-lg border px-4 py-3 text-slate-700 transition-colors",
-                        isSelected && !hasAnswered && "border-primary bg-primary/5",
+                        isSelected && !hasAnswered && "border-[#003a68] bg-[#003a68]/10",
                         isCorrectOption && "border-green-500 bg-green-50",
                         isIncorrectSelection && "border-red-500 bg-red-50 text-red-700",
                       )}
@@ -299,7 +306,7 @@ export default function Quiz() {
                         value={option.id}
                         checked={isSelected}
                         onChange={() => setSelectedOption(option.id)}
-                        className="mt-1 h-4 w-4 border-slate-300 text-primary focus:ring-primary"
+                        className="mt-1 h-4 w-4 border-slate-300 text-[#003a68] focus:ring-[#003a68]"
                         required
                       />
                       <span className="text-base leading-6">{option.label}</span>
@@ -318,18 +325,18 @@ export default function Quiz() {
                 <Button
                   type="submit"
                   disabled={!selectedOption || hasAnswered}
-                  className="w-full md:w-auto"
+                  className="w-full md:w-auto bg-[#003a68] hover:bg-[#003a68]/90 focus-visible:ring-[#003a68]/40"
                 >
-                  Ответить
+                  Submit answer
                 </Button>
                 {hasAnswered && (
                   <Button
                     type="button"
                     variant="outline"
                     onClick={handleNext}
-                    className="w-full md:w-auto"
+                    className="w-full md:w-auto border-[#003a68] text-[#003a68] hover:bg-[#003a68]/10 hover:text-[#003a68] focus-visible:ring-[#003a68]/40"
                   >
-                    {isLastQuestion ? "Завершить" : "Дальше"}
+                    {isLastQuestion ? "Finish quiz" : "Next question"}
                   </Button>
                 )}
               </CardFooter>
