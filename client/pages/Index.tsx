@@ -600,11 +600,31 @@ function FeaturedKnowledgeHub() {
   }, []);
 
   const VIDEOS = [
-    { id: "vss9HS5DQQ8", title: "Inside the Sciences Podcast Episode 1: Biosafety Cabinets | Protecting Science, Protecting You", start: 570 },
-    { id: "uaydXcyUZhI", title: "Biological Safety Cabinet | What You Need | Esco Scientific" },
-    { id: "ZnUW1N-JJz8", title: "Working Safely in your Biological Safety Cabinets: Dealing with Spills | Esco Scientific" },
-    { id: "IkO3ABNT_M8", title: "Biological Safety Cabinets | What to Keep in Mind for Stable Airflow" },
-    { id: "voU9E2_vxQ0", title: "Biosafety Cabinet | Tips to Maintain its Efficiency | Esco Scientific" },
+    {
+      id: "vss9HS5DQQ8",
+      title:
+        "Inside the Sciences Podcast Episode 1: Biosafety Cabinets | Protecting Science, Protecting You",
+      start: 570,
+    },
+    {
+      id: "uaydXcyUZhI",
+      title: "Biological Safety Cabinet | What You Need | Esco Scientific",
+    },
+    {
+      id: "ZnUW1N-JJz8",
+      title:
+        "Working Safely in your Biological Safety Cabinets: Dealing with Spills | Esco Scientific",
+    },
+    {
+      id: "IkO3ABNT_M8",
+      title:
+        "Biological Safety Cabinets | What to Keep in Mind for Stable Airflow",
+    },
+    {
+      id: "voU9E2_vxQ0",
+      title:
+        "Biosafety Cabinet | Tips to Maintain its Efficiency | Esco Scientific",
+    },
   ];
 
   const viewAllHref =
@@ -618,12 +638,19 @@ function FeaturedKnowledgeHub() {
     <div>
       <div className="flex items-end justify-between gap-4">
         <h2 className="text-2xl md:text-3xl font-bold">Knowledge Hub</h2>
-        <Link to={viewAllHref} className="hidden md:inline-flex text-sm hover:underline">
+        <Link
+          to={viewAllHref}
+          className="hidden md:inline-flex text-sm hover:underline"
+        >
           View all
         </Link>
       </div>
 
-      <Tabs value={tab} onValueChange={(v) => setTab(v as any)} className="mt-4">
+      <Tabs
+        value={tab}
+        onValueChange={(v) => setTab(v as any)}
+        className="mt-4"
+      >
         <TabsList>
           <TabsTrigger value="videos">Videos</TabsTrigger>
           <TabsTrigger value="articles">Articles</TabsTrigger>
@@ -635,7 +662,10 @@ function FeaturedKnowledgeHub() {
             {VIDEOS.slice(0, 3).map((v) => {
               const params = v.start ? `?start=${v.start}` : "";
               return (
-                <div key={v.id} className="overflow-hidden rounded-lg border bg-white shadow-sm">
+                <div
+                  key={v.id}
+                  className="overflow-hidden rounded-lg border bg-white shadow-sm"
+                >
                   <AspectRatio ratio={16 / 9}>
                     <iframe
                       className="h-full w-full"
@@ -647,7 +677,9 @@ function FeaturedKnowledgeHub() {
                     />
                   </AspectRatio>
                   <div className="p-4">
-                    <h3 className="text-sm font-semibold text-slate-900">{v.title}</h3>
+                    <h3 className="text-sm font-semibold text-slate-900">
+                      {v.title}
+                    </h3>
                   </div>
                 </div>
               );
@@ -659,19 +691,28 @@ function FeaturedKnowledgeHub() {
           {!articles && !artErr ? (
             <LoadingIndicator label="Loading articles" />
           ) : artErr ? (
-            <div className="mt-6 text-sm text-red-600">Failed to load articles.</div>
+            <div className="mt-6 text-sm text-red-600">
+              Failed to load articles.
+            </div>
           ) : (
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {articles!.map((a) => {
-                const slugParam = String(a.slug || "").replace("/resources/articles/", "");
+                const slugParam = String(a.slug || "").replace(
+                  "/resources/articles/",
+                  "",
+                );
                 return (
                   <Link
                     key={a.slug}
                     to={`/resources/articles/${slugParam}`}
                     className="rounded-2xl border border-slate-200 bg-white p-6 block hover:shadow-sm transition-shadow"
                   >
-                    <h3 className="font-semibold text-lg text-slate-900">{a.title}</h3>
-                    <p className="mt-2 text-sm text-slate-600">{a.description}</p>
+                    <h3 className="font-semibold text-lg text-slate-900">
+                      {a.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-slate-600">
+                      {a.description}
+                    </p>
                   </Link>
                 );
               })}
@@ -683,22 +724,40 @@ function FeaturedKnowledgeHub() {
           {!quizzes && !quizErr ? (
             <LoadingIndicator label="Loading quizzes" />
           ) : quizErr ? (
-            <div className="mt-6 text-sm text-red-600">Failed to load quizzes.</div>
+            <div className="mt-6 text-sm text-red-600">
+              Failed to load quizzes.
+            </div>
           ) : (
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {quizzes!.map((q) => (
-                <div key={q.slug} className="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white">
+                <div
+                  key={q.slug}
+                  className="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white"
+                >
                   <div className="p-5 flex-1 flex flex-col">
-                    <h3 className="font-semibold text-lg text-slate-900">{q.title}</h3>
-                    <p className="mt-1 text-sm text-slate-600 flex-1">{q.subtitle}</p>
+                    <h3 className="font-semibold text-lg text-slate-900">
+                      {q.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-slate-600 flex-1">
+                      {q.subtitle}
+                    </p>
                     <div className="mt-3 flex flex-wrap gap-2 text-xs font-medium uppercase tracking-wide text-slate-500">
-                      <span className="rounded-full bg-[#003a68]/10 px-3 py-1 text-[#003a68]">{q.category}</span>
-                      <span className="rounded-full bg-[#003a68]/10 px-3 py-1 text-[#003a68]">{q.skillLevel}</span>
+                      <span className="rounded-full bg-[#003a68]/10 px-3 py-1 text-[#003a68]">
+                        {q.category}
+                      </span>
+                      <span className="rounded-full bg-[#003a68]/10 px-3 py-1 text-[#003a68]">
+                        {q.skillLevel}
+                      </span>
                     </div>
                   </div>
                   <div className="border-t border-slate-100 bg-slate-50 p-5">
-                    <Button asChild className="w-full bg-[#003a68] hover:bg-[#003a68]/90 focus-visible:ring-[#003a68]/40">
-                      <Link to={`/resources/quizzes/${q.slug}`}>Start quiz</Link>
+                    <Button
+                      asChild
+                      className="w-full bg-[#003a68] hover:bg-[#003a68]/90 focus-visible:ring-[#003a68]/40"
+                    >
+                      <Link to={`/resources/quizzes/${q.slug}`}>
+                        Start quiz
+                      </Link>
                     </Button>
                   </div>
                 </div>
