@@ -103,7 +103,7 @@ export default function Header() {
         )}
       >
         <div className="container mx-auto px-4 relative">
-          <div className="grid h-16 items-center grid-cols-[auto_1fr_auto]">
+          <div className="flex h-16 items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]">
             <Link to="/" className="flex select-none items-center gap-2">
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))] font-bold text-white">
                 E
@@ -120,7 +120,7 @@ export default function Header() {
               </span>
             </Link>
 
-            <nav className="hidden items-center gap-6 text-base md:flex">
+            <nav className="hidden items-center gap-6 text-base md:flex md:justify-self-center">
               {nav.map((item) =>
                 item.children ? (
                   <div
