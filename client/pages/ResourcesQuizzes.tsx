@@ -152,10 +152,10 @@ export default function ResourcesQuizzes() {
                   </CardHeader>
                   <CardContent className="flex flex-1 flex-col justify-between gap-4 text-sm text-slate-600">
                     <div className="flex flex-wrap gap-2 text-xs font-medium uppercase tracking-wide text-slate-500">
-                      <span className="rounded-full bg-slate-100 px-3 py-1 text-slate-700">
+                      <span className="rounded-full bg-[#003a68]/10 px-3 py-1 text-[#003a68]">
                         {quiz.category}
                       </span>
-                      <span className="rounded-full bg-slate-100 px-3 py-1 text-slate-700">
+                      <span className="rounded-full bg-[#003a68]/10 px-3 py-1 text-[#003a68]">
                         {quiz.skillLevel}
                       </span>
                     </div>
@@ -175,7 +175,10 @@ export default function ResourcesQuizzes() {
                     </dl>
                   </CardContent>
                   <CardFooter className="border-t border-slate-100 bg-slate-50">
-                    <Button asChild className="w-full">
+                    <Button
+                      asChild
+                      className="w-full bg-[#003a68] hover:bg-[#003a68]/90 focus-visible:ring-[#003a68]/40"
+                    >
                       <Link to={`/resources/quizzes/${quiz.slug}`}>
                         Start quiz
                       </Link>
