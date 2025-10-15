@@ -131,12 +131,12 @@ export default function KnowledgeHub() {
   return (
     <div className="bg-white text-slate-900">
       <PageBanner
-        title="Knowledge Hub"
+        title="Articles"
         description="Guides, articles and whitepapers on biosafety and lab practices."
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Resources", href: "/resources" },
-          { label: "Knowledge Hub" },
+          { label: "Knowledge Hub", href: "/resources" },
+          { label: "Articles" },
         ]}
       />
 
