@@ -51,7 +51,7 @@ export default function ResourcesQuizzes() {
             category: item.category,
             skillLevel: item.skillLevel,
             durationMinutes: item.durationMinutes,
-            questionCount: item.questionCount ?? (item.questions?.length ?? 0),
+            questionCount: item.questionCount ?? item.questions?.length ?? 0,
           }));
           setItems(metas);
         }
@@ -101,7 +101,8 @@ export default function ResourcesQuizzes() {
               variant="secondary"
               className={cn(
                 "cursor-pointer",
-                category === null && "bg-[#003a68] text-white hover:bg-[#003a68]",
+                category === null &&
+                  "bg-[#003a68] text-white hover:bg-[#003a68]",
               )}
               onClick={() => setCategory(null)}
             >
@@ -113,7 +114,8 @@ export default function ResourcesQuizzes() {
                 variant="secondary"
                 className={cn(
                   "cursor-pointer",
-                  category === cat && "bg-[#003a68] text-white hover:bg-[#003a68]",
+                  category === cat &&
+                    "bg-[#003a68] text-white hover:bg-[#003a68]",
                 )}
                 onClick={() =>
                   setCategory((prev) => (prev === cat ? null : cat))
@@ -161,7 +163,9 @@ export default function ResourcesQuizzes() {
                     </div>
                     <dl className="grid grid-cols-2 gap-4 text-sm text-slate-700">
                       <div>
-                        <dt className="font-medium text-slate-600">Questions</dt>
+                        <dt className="font-medium text-slate-600">
+                          Questions
+                        </dt>
                         <dd className="mt-1 text-lg font-semibold text-slate-900">
                           {quiz.questionCount}
                         </dd>

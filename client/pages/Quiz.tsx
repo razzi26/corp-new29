@@ -116,7 +116,7 @@ export default function Quiz() {
 
   const progressValue = useMemo(() => {
     if (!quiz) return 0;
-    return ((currentIndex) / quiz.questions.length) * 100;
+    return (currentIndex / quiz.questions.length) * 100;
   }, [quiz, currentIndex]);
 
   const totalQuestions = quiz?.questions.length ?? 0;
@@ -207,7 +207,10 @@ export default function Quiz() {
                 You answered {score} of {totalQuestions} correctly
               </h2>
               <p className="text-slate-600">
-                Total time: <span className="font-semibold text-slate-900">{formatDuration(secondsElapsed)}</span>
+                Total time:{" "}
+                <span className="font-semibold text-slate-900">
+                  {formatDuration(secondsElapsed)}
+                </span>
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button
@@ -261,7 +264,10 @@ export default function Quiz() {
             ← Back to all quizzes
           </Link>
           <div className="text-sm font-medium text-slate-600">
-            Time: <span className="font-semibold text-slate-900">{formatDuration(secondsElapsed)}</span>
+            Time:{" "}
+            <span className="font-semibold text-slate-900">
+              {formatDuration(secondsElapsed)}
+            </span>
           </div>
         </div>
 
@@ -286,18 +292,24 @@ export default function Quiz() {
                 </legend>
                 {currentQuestion.options.map((option) => {
                   const isSelected = selectedOption === option.id;
-                  const isCorrectOption = hasAnswered && option.id === currentQuestion.answerId;
+                  const isCorrectOption =
+                    hasAnswered && option.id === currentQuestion.answerId;
                   const isIncorrectSelection =
-                    hasAnswered && isSelected && option.id !== currentQuestion.answerId;
+                    hasAnswered &&
+                    isSelected &&
+                    option.id !== currentQuestion.answerId;
 
                   return (
                     <label
                       key={option.id}
                       className={cn(
                         "flex cursor-pointer items-start gap-3 rounded-lg border px-4 py-3 text-slate-700 transition-colors",
-                        isSelected && !hasAnswered && "border-[#003a68] bg-[#003a68]/10",
+                        isSelected &&
+                          !hasAnswered &&
+                          "border-[#003a68] bg-[#003a68]/10",
                         isCorrectOption && "border-green-500 bg-green-50",
-                        isIncorrectSelection && "border-red-500 bg-red-50 text-red-700",
+                        isIncorrectSelection &&
+                          "border-red-500 bg-red-50 text-red-700",
                       )}
                     >
                       <input
@@ -309,7 +321,9 @@ export default function Quiz() {
                         className="mt-1 h-4 w-4 border-slate-300 text-[#003a68] focus:ring-[#003a68]"
                         required
                       />
-                      <span className="text-base leading-6">{option.label}</span>
+                      <span className="text-base leading-6">
+                        {option.label}
+                      </span>
                     </label>
                   );
                 })}
@@ -317,7 +331,8 @@ export default function Quiz() {
 
               {hasAnswered && !isCorrect && currentQuestion.explanation && (
                 <div className="rounded-lg border border-amber-400 bg-amber-50 p-4 text-sm text-amber-900">
-                  <span className="font-semibold">Explanation:</span> {currentQuestion.explanation}
+                  <span className="font-semibold">Explanation:</span>{" "}
+                  {currentQuestion.explanation}
                 </div>
               )}
 

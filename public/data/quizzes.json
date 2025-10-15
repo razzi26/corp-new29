@@ -69,10 +69,16 @@
         "id": "q5",
         "prompt": "The following are the laboratory facility requirements of BSL-4, except which option?",
         "options": [
-          { "id": "A", "label": "Class III biosafety cabinet or positive pressure suits" },
+          {
+            "id": "A",
+            "label": "Class III biosafety cabinet or positive pressure suits"
+          },
           { "id": "B", "label": "Negative pressure and dedicated exhaust air" },
           { "id": "C", "label": "Double-door entry with airtight seals" },
-          { "id": "D", "label": "Open bench top and sink required in the lab room" }
+          {
+            "id": "D",
+            "label": "Open bench top and sink required in the lab room"
+          }
         ],
         "answerId": "D",
         "explanation": "BSL-4 facilities are fully sealed and do not permit open bench work; sinks are specialized and not open to the room."
@@ -81,8 +87,14 @@
         "id": "q6",
         "prompt": "Where should materials be placed inside a biosafety cabinet to maintain proper laminar airflow?",
         "options": [
-          { "id": "A", "label": "Crowded together in the center for efficiency" },
-          { "id": "B", "label": "At least 2-3 inches from the grill on the front and back" },
+          {
+            "id": "A",
+            "label": "Crowded together in the center for efficiency"
+          },
+          {
+            "id": "B",
+            "label": "At least 2-3 inches from the grill on the front and back"
+          },
           { "id": "C", "label": "Directly over the front grill" },
           { "id": "D", "label": "On the very edge of the work surface" }
         ],
@@ -93,8 +105,14 @@
         "id": "q7",
         "prompt": "Where should the autoclavable biohazard collection bag and pipette collection tray be placed?",
         "options": [
-          { "id": "A", "label": "Inside the biosafety cabinet for easy access" },
-          { "id": "B", "label": "On a separate cart or bench outside the cabinet" },
+          {
+            "id": "A",
+            "label": "Inside the biosafety cabinet for easy access"
+          },
+          {
+            "id": "B",
+            "label": "On a separate cart or bench outside the cabinet"
+          },
           { "id": "C", "label": "On the floor next to the user" },
           { "id": "D", "label": "Placement does not matter" }
         ],
@@ -123,7 +141,7 @@
           { "id": "D", "label": "Weekly" }
         ],
         "answerId": "D",
-        "explanation": "Dust accumulation degrades UV performance, so a weekly cleaning with 70% ethanol is standard practice." 
+        "explanation": "Dust accumulation degrades UV performance, so a weekly cleaning with 70% ethanol is standard practice."
       },
       {
         "id": "q10",
@@ -131,7 +149,10 @@
         "options": [
           { "id": "A", "label": "In a high-traffic area near a doorway" },
           { "id": "B", "label": "Under an HVAC supply vent" },
-          { "id": "C", "label": "In a low-traffic area away from air currents and doors" },
+          {
+            "id": "C",
+            "label": "In a low-traffic area away from air currents and doors"
+          },
           { "id": "D", "label": "Next to an open window for ventilation" }
         ],
         "answerId": "C",
@@ -155,7 +176,10 @@
         "options": [
           { "id": "A", "label": "To make the cabinet look balanced" },
           { "id": "B", "label": "To allow users to see inside easily" },
-          { "id": "C", "label": "To ensure proper airflow into the exhaust HEPA filter" },
+          {
+            "id": "C",
+            "label": "To ensure proper airflow into the exhaust HEPA filter"
+          },
           { "id": "D", "label": "To store supplies on top of the cabinet" }
         ],
         "answerId": "C",
