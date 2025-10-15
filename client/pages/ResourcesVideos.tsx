@@ -56,14 +56,6 @@ export default function Videos() {
 
                 <div className="p-4">
                   <h3 className="text-sm font-semibold text-slate-900">{v.title}</h3>
-                  <a
-                    href={`https://www.youtube.com/watch?v=${v.id}`}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="mt-2 inline-block text-sm text-[hsl(var(--brand-end))] hover:underline"
-                  >
-                    Watch on YouTube
-                  </a>
                 </div>
               </div>
             );
