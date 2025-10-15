@@ -44,7 +44,6 @@ export default function KnowledgeArticleBiosafetyBasics() {
         description="Policies, protocols, and practices to minimize exposure to harmful biological agents and protect people and the environment."
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Resources", href: "/resources" },
           { label: "Knowledge Hub", href: "/resources" },
           { label: "Articles", href: "/resources/articles" },
           { label: "What is Biosafety?" },
