@@ -306,7 +306,7 @@ export default function ProductPage() {
                             <img
                               src={src}
                               alt={`${product.title} thumbnail ${i + 1}`}
-                              className="h-full w-full object-cover"
+                              className="h-full w-full object-contain"
                               loading="lazy"
                             />
                           </button>
@@ -438,7 +438,7 @@ export default function ProductPage() {
                           <img
                             src={src}
                             alt={`${product.title} image ${i + 1}`}
-                            className="h-full w-full object-cover"
+                            className="h-full w-full object-contain"
                             loading={i === 0 ? "eager" : "lazy"}
                             onLoad={() => updateSizes()}
                           />
