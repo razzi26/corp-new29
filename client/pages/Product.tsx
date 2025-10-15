@@ -306,7 +306,7 @@ export default function ProductPage() {
                             <img
                               src={src}
                               alt={`${product.title} thumbnail ${i + 1}`}
-                              className="h-full w-full object-cover"
+                              className="h-full w-full object-contain"
                               loading="lazy"
                             />
                           </button>
@@ -430,15 +430,15 @@ export default function ProductPage() {
                             if (i === displayedIndex) mainImageRef.current = el;
                           }}
                           className={cn(
-                            "w-full max-h-[480px] overflow-hidden rounded-xl bg-slate-50",
+                            "w-full max-h-[560px] overflow-hidden rounded-xl bg-slate-50",
                             i === displayedIndex ? "block" : "hidden",
                           )}
-                          style={{ aspectRatio: "1 / 1" }}
+                          style={{ aspectRatio: "3 / 4" }}
                         >
                           <img
                             src={src}
                             alt={`${product.title} image ${i + 1}`}
-                            className="h-full w-full object-cover"
+                            className="h-full w-full object-contain"
                             loading={i === 0 ? "eager" : "lazy"}
                             onLoad={() => updateSizes()}
                           />
@@ -451,8 +451,8 @@ export default function ProductPage() {
             ) : (
               <div className="p-0">
                 <div
-                  className="w-full max-h-[480px] overflow-hidden rounded-xl bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]"
-                  style={{ aspectRatio: "1 / 1" }}
+                  className="w-full max-h-[560px] overflow-hidden rounded-xl bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]"
+                  style={{ aspectRatio: "3 / 4" }}
                 />
               </div>
             )}

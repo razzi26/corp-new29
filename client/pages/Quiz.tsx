@@ -349,9 +349,8 @@ export default function Quiz() {
                 {hasAnswered && (
                   <Button
                     type="button"
-                    variant="ghost"
                     onClick={handleNext}
-                    className="w-full md:w-auto text-[#003a68] hover:bg-[#003a68]/10 focus-visible:ring-[#003a68]/40"
+                    className="w-full md:w-auto bg-[#003a68] hover:bg-[#003a68]/90 focus-visible:ring-[#003a68]/40"
                   >
                     {isLastQuestion ? "Finish quiz" : "Next"}
                   </Button>

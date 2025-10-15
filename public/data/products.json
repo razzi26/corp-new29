@@ -1,559 +1,772 @@
 [
   {
-    "id": "p-bsc-a2",
-    "title": "Class II A2 Biosafety Cabinet",
-    "category": "Biosafety Cabinets",
-    "tags": ["Featured", "Popular"],
-    "description": "High-performance protection for personnel, product, and environment.",
-    "mainImage": "/placeholder.svg?main=p-bsc-a2",
+    "id": "p-bsc-class1-airstream",
+    "title": "Airstream® Class I Biological Safety Cabinet",
+    "category": "Class I Biosafety Cabinets",
+    "tags": [],
+    "description": "Basic and rudimentary design biological safety cabinet with inward air containment and HEPA filtration system",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/airstream-class-i-biological-safety-cabinet.png",
     "images": [
-      "/placeholder.svg?img=p-bsc-a2-1",
-      "/placeholder.svg?img=p-bsc-a2-2",
-      "/placeholder.svg?img=p-bsc-a2-3",
-      "/placeholder.svg?img=p-bsc-a2-4",
-      "/placeholder.svg?img=p-bsc-a2-5",
-      "/placeholder.svg?img=p-bsc-a2-6",
-      "/placeholder.svg?img=p-bsc-a2-7",
-      "/placeholder.svg?img=p-bsc-a2-8",
-      "/placeholder.svg?img=p-bsc-a2-9",
-      "/placeholder.svg?img=p-bsc-a2-10",
-      "/placeholder.svg?img=p-bsc-a2-11",
-      "/placeholder.svg?img=p-bsc-a2-12",
-      "/placeholder.svg?img=p-bsc-a2-13",
-      "/placeholder.svg?img=p-bsc-a2-14"
+      "https://www.escolifesciences.com/images/product-img/full/airstream-class-i-biological-safety-cabinet.png"
+    ],
+    "specs": [
+      { "name": "Class", "value": "I" },
+      { "name": "Protection", "value": "Personnel, Environment" },
+      { "name": "Filter", "value": "Pre-filter and HEPA" },
+      { "name": "Construction", "value": "Stainless Steel" },
+      { "name": "Window", "value": "8mm Polycarbonate" },
+      { "name": "Certification", "value": "EN 12469" }
+    ],
+    "brochures": [
+      {
+        "lang": "EN",
+        "label": "English",
+        "url": "https://www.escolifesciences.com/pdf/9010415_BSC_ClassI_Product_Tri-fold%20brochure_A4_vC_130824.pdf"
+      },
+      {
+        "lang": "EN",
+        "label": "English (Alternative)",
+        "url": "https://www.escolifesciences.com/pdf/9010184_Biological%20Safety%20Cabinet_AC1_brochure_A4_vF_130824.pdf"
+      },
+      {
+        "lang": "DE",
+        "label": "Deutsch",
+        "url": "https://www.escolifesciences.com/pdf/9010184_Biological%20Safety%20Cabinet_AC1_brochure_A4_vD_LR_062122_German.pdf"
+      }
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-i-biological-safety-cabinet/airstream-class-i-biological-safety-cabinet"
+  },
+  {
+    "id": "p-bsc-labculture-g4-a2",
+    "title": "Labculture® G4 Class II Type A2 Biological Safety Cabinet",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Featured", "Popular", "G4"],
+    "description": "Advanced G4 generation biosafety cabinet with Centurion touchscreen control, ULPA filtration, and Isocide antimicrobial coating",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/LA2-4S-G4.png",
+    "images": [
+      "https://www.escolifesciences.com/images/product-img/full/LA2-4S-G4.png"
     ],
     "specs": [
       { "name": "Class", "value": "II, Type A2" },
-      { "name": "Protection", "value": "Personnel, Product, Environment" },
-      { "name": "Airflow", "value": "70% recirculation / 30% exhaust" },
-      { "name": "Filter", "value": "Dual HEPA, 99.99% @ 0.3 μm" },
-      { "name": "Noise Level", "value": "≤ 60 dBA" },
-      { "name": "Workzone Width", "value": "1200 mm" }
+      { "name": "Generation", "value": "G4" },
+      { "name": "Filter", "value": "ULPA 99.999% @ 0.1-0.3 μm" },
+      { "name": "Controller", "value": "Centurion Touchscreen" },
+      { "name": "Lighting", "value": "Dimmable LED" },
+      { "name": "Coating", "value": "Isocide™ Antimicrobial" },
+      { "name": "Airflow", "value": "70% recirculation / 30% exhaust" }
     ],
     "brochures": [
       {
         "lang": "EN",
         "label": "English",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-bsc-a2-en"
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
       },
       {
-        "lang": "RU",
-        "label": "Русский",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-bsc-a2-ru"
+        "lang": "EN",
+        "label": "English (Product)",
+        "url": "https://www.escolifesciences.com/downloads/labculture-g4-brochure"
       },
       {
-        "lang": "DE",
-        "label": "Deutsch",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-bsc-a2-de"
+        "lang": "ES",
+        "label": "Español",
+        "url": "https://www.escolifesciences.com/pdf/9010598_Labculture%20Gen%204-BSC-Global-A4_vC_Spanish_102224.pdf"
       }
-    ]
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/labculture-g4-class-ii-type-a2-biological-safety-cabinet"
   },
   {
-    "id": "p-bsc-b2",
-    "title": "Class II B2 Biosafety Cabinet",
-    "category": "Biosafety Cabinets",
-    "tags": ["Advanced"],
-    "description": "Total exhaust design for specialized applications and safety.",
-    "mainImage": "/placeholder.svg?main=p-bsc-b2",
+    "id": "p-bsc-labculture-plus-s",
+    "title": "Labculture® Plus (S-Series) G4 Class II Biological Safety Cabinet",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Premium", "G4", "S-Series"],
+    "description": "Premium S-Series biosafety cabinet with stainless steel sidewalls and enhanced features",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/LA2-4S8-EU G4.webp",
     "images": [
-      "/placeholder.svg?img=p-bsc-b2-1",
-      "/placeholder.svg?img=p-bsc-b2-2"
+      "https://www.escolifesciences.com/images/product-img/full/LA2-4S8-EU G4.webp"
     ],
     "specs": [
-      { "name": "Class", "value": "II, Type B2 (100% exhaust)" },
-      { "name": "Exhaust", "value": "Hard-ducted, external" },
-      { "name": "Filter", "value": "HEPA, 99.99% @ 0.3 μm" },
-      { "name": "Sash", "value": "Motorized, 8–10 in. working height" },
-      { "name": "Lighting", "value": "≥ 1000 lux" }
+      { "name": "Class", "value": "II" },
+      { "name": "Series", "value": "S-Series" },
+      { "name": "Generation", "value": "G4" },
+      { "name": "Sidewalls", "value": "Stainless Steel" },
+      { "name": "Construction", "value": "304 Stainless Steel" }
     ],
     "brochures": [
       {
         "lang": "EN",
         "label": "English",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-bsc-b2-en"
-      },
-      {
-        "lang": "RU",
-        "label": "Русский",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-bsc-b2-ru"
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
       }
-    ]
-  },
-  {
-    "id": "p-pcr",
-    "title": "PCR Cabinet",
-    "category": "PCR Cabinets",
-    "tags": ["Popular"],
-    "description": "Contamination control for amplification workflows.",
-    "mainImage": "/placeholder.svg?main=p-pcr",
-    "images": ["/placeholder.svg?img=p-pcr-1", "/placeholder.svg?img=p-pcr-2"],
-    "specs": [
-      { "name": "UV Timer", "value": "1–30 min, programmable" },
-      { "name": "HEPA Filter", "value": "99.99% @ 0.3 μm" },
-      { "name": "Airflow", "value": "Positive pressure, laminar" },
-      { "name": "Lighting", "value": "LED, ≥ 800 lux" }
     ],
-    "brochures": [
-      {
-        "lang": "EN",
-        "label": "English",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-pcr-en"
-      },
-      {
-        "lang": "RU",
-        "label": "Русский",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-pcr-ru"
-      }
-    ]
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/labculture-plus-s-series-g4-class-ii-biological-safety-cabinet"
   },
   {
-    "id": "p-fh-ducted",
-    "title": "Ducted Fume Hood",
-    "category": "Fume Hoods",
-    "tags": ["Featured"],
-    "description": "Reliable chemical handling with external exhaust.",
-    "mainImage": "/placeholder.svg?main=p-fh-ducted",
+    "id": "p-bsc-labculture-plus-e",
+    "title": "Labculture® Plus (E-Series) G4 Class II Biological Safety Cabinet",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Premium", "G4", "E-Series", "Featured"],
+    "description": "Premium E-Series biosafety cabinet with tempered glass sidewalls and enhanced features",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/LA2-4E8-EU G4-min.png",
     "images": [
-      "/placeholder.svg?img=p-fh-ducted-1",
-      "/placeholder.svg?img=p-fh-ducted-2",
-      "/placeholder.svg?img=p-fh-ducted-3"
+      "https://www.escolifesciences.com/images/product-img/full/LA2-4E8-EU G4-min.png"
     ],
     "specs": [
-      { "name": "Type", "value": "Ducted, constant volume" },
-      { "name": "Face Velocity", "value": "0.5 m/s (100 fpm)" },
-      { "name": "Sash", "value": "Vertical, tempered glass" },
-      { "name": "Worktop", "value": "Epoxy resin" },
-      { "name": "Construction", "value": "Powder-coated steel" }
+      { "name": "Class", "value": "II" },
+      { "name": "Series", "value": "E-Series" },
+      { "name": "Generation", "value": "G4" },
+      { "name": "Sidewalls", "value": "Tempered Glass" },
+      { "name": "Construction", "value": "304 Stainless Steel" }
     ],
     "brochures": [
       {
         "lang": "EN",
         "label": "English",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-fh-ducted-en"
-      },
-      {
-        "lang": "RU",
-        "label": "Русский",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-fh-ducted-ru"
-      },
-      {
-        "lang": "DE",
-        "label": "Deutsch",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-fh-ducted-de"
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
       }
-    ]
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/labculture-plus-e-series-g4-class-ii-biological-safety-cabinet"
   },
   {
-    "id": "p-fh-ductless",
-    "title": "Ductless Fume Hood",
-    "category": "Fume Hoods",
-    "tags": ["Sale"],
-    "description": "Flexible filtration-based protection without ducting.",
-    "mainImage": "/placeholder.svg?main=p-fh-ductless",
+    "id": "p-bsc-labculture-g",
+    "title": "Labculture® (G-Series) G4 Class II Biological Safety Cabinet",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Standard", "G4"],
+    "description": "Standard G-Series biosafety cabinet with reliable performance",
+    "mainImage": "https://www.escolifesciences.com/images/upload/LA2-4S8-EU G4-full (1).webp",
     "images": [
-      "/placeholder.svg?img=p-fh-ductless-1",
-      "/placeholder.svg?img=p-fh-ductless-2"
+      "https://www.escolifesciences.com/images/upload/LA2-4S8-EU G4-full (1).webp"
     ],
     "specs": [
-      { "name": "Type", "value": "Ductless, filtered recirculation" },
-      { "name": "Filter", "value": "Carbon/HEPA modular system" },
-      { "name": "Face Velocity", "value": "0.5 m/s (100 fpm)" },
-      { "name": "Noise Level", "value": "≤ 60 dBA" }
+      { "name": "Class", "value": "II" },
+      { "name": "Series", "value": "G-Series" },
+      { "name": "Generation", "value": "G4" }
     ],
     "brochures": [
       {
         "lang": "EN",
         "label": "English",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-fh-ductless-en"
-      },
-      {
-        "lang": "RU",
-        "label": "Русский",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-fh-ductless-ru"
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
       }
-    ]
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/labculture-g-series-g4-class-ii-biological-safety-cabinet"
   },
   {
-    "id": "p-incu-co2",
-    "title": "CO₂ Incubator",
-    "category": "CO₂ Incubators",
-    "tags": ["Featured", "Advanced"],
-    "description": "Accurate CO₂ and temperature control for sensitive cultures.",
-    "mainImage": "/placeholder.svg?main=p-incu-co2",
+    "id": "p-bsc-labculture-g4-b2-bibo",
+    "title": "Labculture® G4 Class II Type B2 (Total Exhaust) Biological Safety Cabinet, with BIBO",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Advanced", "BIBO", "Type B2", "Featured"],
+    "description": "Total exhaust biosafety cabinet with Bag-In/Bag-Out filter change system for maximum safety",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/LB2-4S-G4-min.png",
     "images": [
-      "/placeholder.svg?img=p-incu-co2-1",
-      "/placeholder.svg?img=p-incu-co2-2",
-      "/placeholder.svg?img=p-incu-co2-3"
+      "https://www.escolifesciences.com/images/product-img/full/LB2-4S-G4-min.png"
     ],
     "specs": [
-      { "name": "Volume", "value": "170 L" },
-      { "name": "CO₂ Range", "value": "0–20%" },
-      { "name": "Temp Range", "value": "+4°C above ambient to 50°C" },
-      { "name": "Humidity", "value": "> 90% RH (with pan)" }
+      { "name": "Class", "value": "II, Type B2" },
+      { "name": "Exhaust", "value": "100% Total Exhaust" },
+      { "name": "BIBO", "value": "Bag-In/Bag-Out System" },
+      { "name": "Generation", "value": "G4" },
+      { "name": "Ducting", "value": "Hard-ducted, external" }
     ],
     "brochures": [
       {
         "lang": "EN",
         "label": "English",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-incu-co2-en"
-      },
-      {
-        "lang": "RU",
-        "label": "Русский",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-incu-co2-ru"
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
       }
-    ]
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/labculture-g4-class-ii-type-b2-total-exhaust-biological-safety-cabinet-with-bibo"
   },
   {
-    "id": "p-incu-shaker",
-    "title": "Shaking Incubator",
-    "category": "CO₂ Incubators",
-    "tags": ["New"],
-    "description": "Uniform mixing and growth for cell and microbial culture.",
-    "mainImage": "/placeholder.svg?main=p-incu-shaker",
+    "id": "p-bsc-labculture-g4-b2",
+    "title": "Labculture® G4 Class II Type B2 (Total Exhaust) Biological Safety Cabinet",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Advanced", "Type B2"],
+    "description": "Total exhaust biosafety cabinet for specialized chemical and volatile applications",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/LB2-4S-G4-min.png",
     "images": [
-      "/placeholder.svg?img=p-incu-shaker-1",
-      "/placeholder.svg?img=p-incu-shaker-2"
+      "https://www.escolifesciences.com/images/product-img/full/LB2-4S-G4-min.png"
     ],
     "specs": [
-      { "name": "Shaking Speed", "value": "30–300 rpm" },
-      { "name": "Orbit", "value": "25 mm" },
-      { "name": "Temp Range", "value": "Ambient +5°C to 60°C" }
+      { "name": "Class", "value": "II, Type B2" },
+      { "name": "Exhaust", "value": "100% Total Exhaust" },
+      { "name": "Generation", "value": "G4" },
+      { "name": "Ducting", "value": "Hard-ducted, external" }
     ],
     "brochures": [
       {
         "lang": "EN",
         "label": "English",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-incu-shaker-en"
-      },
-      {
-        "lang": "RU",
-        "label": "Русский",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-incu-shaker-ru"
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
       }
-    ]
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/labculture-g4-class-ii-type-b2-total-exhaust-biological-safety-cabinet"
   },
   {
-    "id": "p-cleanroom-panels",
-    "title": "Cleanroom Wall Panels",
-    "category": "Cleanroom Solutions",
-    "tags": ["Advanced"],
-    "description": "Modular, seamless surfaces for controlled environments.",
-    "mainImage": "/placeholder.svg?main=p-cleanroom-panels",
+    "id": "p-bsc-airstream-ns-s",
+    "title": "Airstream® NS (S-Series) G4 Class II Type A2 Biological Safety Cabinet",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Popular", "G4", "NSF-Certified"],
+    "description": "NS Series compact biosafety cabinet with Centurion touchscreen, stainless steel sidewalls, and energy-efficient operation",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/AC2-4S8 NS G4 (NSF)-min.png",
     "images": [
-      "/placeholder.svg?img=p-cleanroom-panels-1",
-      "/placeholder.svg?img=p-cleanroom-panels-2"
+      "https://www.escolifesciences.com/images/product-img/full/AC2-4S8 NS G4 (NSF)-min.png"
     ],
     "specs": [
-      { "name": "Material", "value": "HPL / PUF / PIR" },
-      { "name": "Thickness", "value": "50 / 75 / 100 mm" },
-      { "name": "Surface", "value": "Antimicrobial, seamless" },
-      { "name": "Fire Rating", "value": "Up to EI60" }
+      { "name": "Class", "value": "II, Type A2" },
+      { "name": "Series", "value": "NS S-Series" },
+      { "name": "Generation", "value": "G4" },
+      { "name": "Controller", "value": "Centurion Touchscreen" },
+      { "name": "Certification", "value": "NSF/ANSI 49" },
+      { "name": "Sidewalls", "value": "Stainless Steel" }
     ],
     "brochures": [
       {
         "lang": "EN",
         "label": "English",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-cleanroom-panels-en"
+        "url": "https://www.escolifesciences.com/downloads/airstream-ac2-ns-g4-brochure"
       },
       {
-        "lang": "RU",
-        "label": "Русский",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-cleanroom-panels-ru"
+        "lang": "ES",
+        "label": "Español",
+        "url": "https://www.escolifesciences.com/pdf/9010628_Airstream_AC2-NS_Gen%204-Global-A4_vB_LR_101323.pdf"
       }
-    ]
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/airstream-ns-s-series-g4-class-ii-type-a2-biological-safety-cabinet"
   },
   {
-    "id": "p-cleanroom-pass",
-    "title": "Pass-Through Chamber",
-    "category": "Cleanroom Solutions",
-    "tags": ["Popular"],
-    "description": "Efficient material transfer while maintaining cleanliness.",
-    "mainImage": "/placeholder.svg?main=p-cleanroom-pass",
+    "id": "p-bsc-airstream-ns-e",
+    "title": "Airstream® NS (E-Series) G4 Class II Biological Safety Cabinet",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Popular", "G4", "NSF-Certified", "Featured"],
+    "description": "NS E-Series compact biosafety cabinet with Centurion touchscreen, tempered glass sidewalls, and energy-efficient operation",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/AC2-E-NS G4.webp",
     "images": [
-      "/placeholder.svg?img=p-cleanroom-pass-1",
-      "/placeholder.svg?img=p-cleanroom-pass-2"
+      "https://www.escolifesciences.com/images/product-img/full/AC2-E-NS G4.webp"
     ],
     "specs": [
-      { "name": "Interlock", "value": "Electromechanical" },
-      { "name": "Window", "value": "Tempered glass" },
-      { "name": "Construction", "value": "Powder-coated steel / SS304" }
+      { "name": "Class", "value": "II, Type A2" },
+      { "name": "Series", "value": "NS E-Series" },
+      { "name": "Generation", "value": "G4" },
+      { "name": "Controller", "value": "Centurion Touchscreen" },
+      { "name": "Certification", "value": "NSF/ANSI 49" },
+      { "name": "Sidewalls", "value": "Tempered Glass" }
     ],
     "brochures": [
       {
         "lang": "EN",
         "label": "English",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-cleanroom-pass-en"
+        "url": "https://www.escolifesciences.com/downloads/airstream-ac2-ns-g4-brochure"
       },
       {
-        "lang": "RU",
-        "label": "Русский",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-cleanroom-pass-ru"
+        "lang": "ES",
+        "label": "Español",
+        "url": "https://www.escolifesciences.com/pdf/9010628_Airstream_AC2-NS_Gen%204-Global-A4_vB_LR_101323.pdf"
       }
-    ]
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/airstream-ns-e-series-g4-class-ii-type-a2-biological-safety-cabinet"
   },
   {
-    "id": "p-isolator-pharma",
-    "title": "Pharmaceutical Isolator",
-    "category": "Isolators",
-    "tags": ["Featured"],
-    "description": "Aseptic processing with robust containment.",
-    "mainImage": "/placeholder.svg?main=p-isolator-pharma",
+    "id": "p-bsc-airstream-reliant",
+    "title": "Airstream® Reliant G4 Class II Type A2 Biological Safety Cabinet",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Featured", "Cost-Effective"],
+    "description": "Reliable and cost-effective biosafety cabinet with essential features",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/AR2-G4.webp",
     "images": [
-      "/placeholder.svg?img=p-isolator-pharma-1",
-      "/placeholder.svg?img=p-isolator-pharma-2",
-      "/placeholder.svg?img=p-isolator-pharma-3"
+      "https://www.escolifesciences.com/images/product-img/full/AR2-G4.webp"
     ],
     "specs": [
-      { "name": "Operation", "value": "Positive pressure (aseptic)" },
-      { "name": "Glove Ports", "value": "2–6" },
-      { "name": "Bio-decon", "value": "H2O2 vapor compatible" }
+      { "name": "Class", "value": "II, Type A2" },
+      { "name": "Model", "value": "Reliant" },
+      { "name": "Generation", "value": "G4" }
     ],
     "brochures": [
       {
         "lang": "EN",
         "label": "English",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-isolator-pharma-en"
-      },
-      {
-        "lang": "RU",
-        "label": "Русский",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-isolator-pharma-ru"
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
       }
-    ]
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/airstream-reliant-g4-class-ii-type-a2-bsc"
   },
   {
-    "id": "p-isolator-sterile",
-    "title": "Sterility Testing Isolator",
-    "category": "Isolators",
-    "tags": ["Advanced"],
-    "description": "Secure sterility testing with operator protection.",
-    "mainImage": "/placeholder.svg?main=p-isolator-sterile",
+    "id": "p-bsc-airstream-e",
+    "title": "Airstream® (E-Series) G4 Class II Biological Safety Cabinet",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Standard", "G4", "EN12469"],
+    "description": "E-Series biosafety cabinet with tempered glass sidewalls and EN12469 certification",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/AC2-_E_ G4.webp",
     "images": [
-      "/placeholder.svg?img=p-isolator-sterile-1",
-      "/placeholder.svg?img=p-isolator-sterile-2"
+      "https://www.escolifesciences.com/images/product-img/full/AC2-_E_ G4.webp"
     ],
     "specs": [
-      { "name": "Operation", "value": "Negative pressure (containment)" },
-      { "name": "Transfer", "value": "Rapid transfer port" },
-      { "name": "Lighting", "value": "LED, glare-free" }
+      { "name": "Class", "value": "II" },
+      { "name": "Series", "value": "E-Series" },
+      { "name": "Generation", "value": "G4" },
+      { "name": "Certification", "value": "EN12469" },
+      { "name": "Sidewalls", "value": "Tempered Glass" }
     ],
     "brochures": [
       {
         "lang": "EN",
         "label": "English",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-isolator-sterile-en"
-      },
-      {
-        "lang": "RU",
-        "label": "Русский",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-isolator-sterile-ru"
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
       }
-    ]
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/airstream-e-series-g4-class-ii-biological-safety-cabinet"
   },
   {
-    "id": "p-bsc-c1",
-    "title": "Class II C1 Biosafety Cabinet",
-    "category": "Biosafety Cabinets",
-    "tags": ["New"],
-    "description": "Hybrid flexibility for evolving lab workflows.",
-    "mainImage": "/placeholder.svg?main=p-bsc-c1",
+    "id": "p-bsc-airstream-s",
+    "title": "Airstream® (S-Series) G4 Class II Biological Safety Cabinet",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Standard", "G4", "EN12469"],
+    "description": "S-Series biosafety cabinet with stainless steel sidewalls and EN12469 certification",
+    "mainImage": "https://www.escolifesciences.com/images/upload/AC2-_S_ G4.webp",
     "images": [
-      "/placeholder.svg?img=p-bsc-c1-1",
-      "/placeholder.svg?img=p-bsc-c1-2"
+      "https://www.escolifesciences.com/images/upload/AC2-_S_ G4.webp"
     ],
     "specs": [
-      { "name": "Mode", "value": "A-to-B exhaust convertible" },
-      { "name": "Filter", "value": "HEPA, 99.99% @ 0.3 μm" },
-      { "name": "Workzone Width", "value": "900 mm" }
+      { "name": "Class", "value": "II" },
+      { "name": "Series", "value": "S-Series" },
+      { "name": "Generation", "value": "G4" },
+      { "name": "Certification", "value": "EN12469" },
+      { "name": "Sidewalls", "value": "Stainless Steel" }
     ],
     "brochures": [
       {
         "lang": "EN",
         "label": "English",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-bsc-c1-en"
-      },
-      {
-        "lang": "RU",
-        "label": "Русский",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-bsc-c1-ru"
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
       }
-    ]
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/airstream-s-series-g4-class-ii-biological-safety-cabinet"
   },
   {
-    "id": "p-pcr-uv",
-    "title": "PCR Cabinet with UV",
-    "category": "PCR Cabinets",
-    "tags": ["Sale"],
-    "description": "Integrated UV decontamination to reduce carryover.",
-    "mainImage": "/placeholder.svg?main=p-pcr-uv",
+    "id": "p-bsc-streamline-e",
+    "title": "Streamline® (E-Series) G4 Class II Biological Safety Cabinet, EN12469-Certified",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["EN12469", "European", "G4", "Featured"],
+    "description": "EN12469-certified E-Series biosafety cabinet designed for European markets",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/SC2-G4-4E_.webp",
     "images": [
-      "/placeholder.svg?img=p-pcr-uv-1",
-      "/placeholder.svg?img=p-pcr-uv-2",
-      "/placeholder.svg?img=p-pcr-uv-3"
+      "https://www.escolifesciences.com/images/product-img/full/SC2-G4-4E_.webp"
     ],
     "specs": [
-      { "name": "UV Wavelength", "value": "254 nm" },
-      { "name": "UV Safety", "value": "Interlocked sash" },
-      { "name": "Timer", "value": "Auto-off, programmable" }
+      { "name": "Class", "value": "II" },
+      { "name": "Series", "value": "E-Series" },
+      { "name": "Certification", "value": "EN12469" },
+      { "name": "Generation", "value": "G4" },
+      { "name": "Market", "value": "European" }
     ],
     "brochures": [
       {
         "lang": "EN",
         "label": "English",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-pcr-uv-en"
-      },
-      {
-        "lang": "RU",
-        "label": "Русский",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-pcr-uv-ru"
+        "url": "https://www.escolifesciences.com/pdf/9010686_Streamline_SC2%20G4_Gen%204_A4_vA_101424.pdf"
       }
-    ]
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/streamline-e-series-g4-class-ii-biological-safety-cabinet"
   },
   {
-    "id": "p-fh-vcv",
-    "title": "Variable Air Volume Fume Hood",
-    "category": "Fume Hoods",
-    "tags": ["Advanced"],
-    "description": "Energy-efficient airflow control for safety and savings.",
-    "mainImage": "/placeholder.svg?main=p-fh-vcv",
+    "id": "p-bsc-streamline-s",
+    "title": "Streamline® (S-Series) Class II Biological Safety Cabinet, EN12469-Certified",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["EN12469", "European", "G4"],
+    "description": "EN12469-certified S-Series biosafety cabinet designed for European markets",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/SC2-G4-4S_.webp",
     "images": [
-      "/placeholder.svg?img=p-fh-vcv-1",
-      "/placeholder.svg?img=p-fh-vcv-2"
+      "https://www.escolifesciences.com/images/product-img/full/SC2-G4-4S_.webp"
     ],
     "specs": [
-      { "name": "Control", "value": "VAV, automatic" },
-      { "name": "Face Velocity", "value": "0.3–0.5 m/s" },
-      { "name": "Sash", "value": "Combination (vertical/horizontal)" }
+      { "name": "Class", "value": "II" },
+      { "name": "Series", "value": "S-Series" },
+      { "name": "Certification", "value": "EN12469" },
+      { "name": "Generation", "value": "G4" },
+      { "name": "Market", "value": "European" }
     ],
     "brochures": [
       {
         "lang": "EN",
         "label": "English",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-fh-vcv-en"
-      },
-      {
-        "lang": "RU",
-        "label": "Русский",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-fh-vcv-ru"
+        "url": "https://www.escolifesciences.com/pdf/9010686_Streamline_SC2%20G4_Gen%204_A4_vA_101424.pdf"
       }
-    ]
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/streamline-s-series-g4-class-ii-biological-safety-cabinet"
   },
   {
-    "id": "p-cleanroom-doors",
-    "title": "Hermetic Sliding Doors",
-    "category": "Cleanroom Solutions",
-    "tags": ["Featured"],
-    "description": "Airtight door systems to maintain pressure differentials.",
-    "mainImage": "/placeholder.svg?main=p-cleanroom-doors",
+    "id": "p-bsc-airstream-gen3-s",
+    "title": "Airstream® Gen 3 Class II Biological Safety Cabinet, S-Series",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Gen 3"],
+    "description": "Third generation S-Series biosafety cabinet with stable airflow and antimicrobial coating",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/airstream-class-ii-bsc-s-series.png",
     "images": [
-      "/placeholder.svg?img=p-cleanroom-doors-1",
-      "/placeholder.svg?img=p-cleanroom-doors-2"
+      "https://www.escolifesciences.com/images/product-img/full/airstream-class-ii-bsc-s-series.png"
     ],
     "specs": [
-      { "name": "Seal", "value": "Perimeter hermetic" },
-      { "name": "Material", "value": "Aluminum / SS304" },
-      { "name": "Automation", "value": "Automatic / manual" }
+      { "name": "Class", "value": "II" },
+      { "name": "Series", "value": "S-Series" },
+      { "name": "Generation", "value": "Gen 3" },
+      { "name": "Coating", "value": "Antimicrobial" }
     ],
     "brochures": [
       {
         "lang": "EN",
         "label": "English",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-cleanroom-doors-en"
-      },
-      {
-        "lang": "RU",
-        "label": "Русский",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-cleanroom-doors-ru"
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
       }
-    ]
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/airstream-gen-3-class-ii-bsc-s-series"
   },
   {
-    "id": "p-incu-stack",
-    "title": "Stackable CO₂ Incubator",
-    "category": "CO₂ Incubators",
-    "tags": ["Popular"],
-    "description": "Space-saving growth with independent chambers.",
-    "mainImage": "/placeholder.svg?main=p-incu-stack",
+    "id": "p-bsc-airstream-gen3-e",
+    "title": "Airstream® Gen 3 Class II Biological Safety Cabinet, E-Series",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Gen 3", "Featured"],
+    "description": "Third generation E-Series biosafety cabinet with tempered glass sidewalls and stable airflow",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/airstream-class-ii-bsc-e-series.png",
     "images": [
-      "/placeholder.svg?img=p-incu-stack-1",
-      "/placeholder.svg?img=p-incu-stack-2",
-      "/placeholder.svg?img=p-incu-stack-3"
+      "https://www.escolifesciences.com/images/product-img/full/airstream-class-ii-bsc-e-series.png"
     ],
     "specs": [
-      { "name": "Volume", "value": "2 × 100 L (stacked)" },
-      { "name": "CO��� Range", "value": "0–20%" },
-      { "name": "Temp Stability", "value": "±0.1°C" }
+      { "name": "Class", "value": "II" },
+      { "name": "Series", "value": "E-Series" },
+      { "name": "Generation", "value": "Gen 3" },
+      { "name": "Sidewalls", "value": "Tempered Glass" }
     ],
     "brochures": [
       {
         "lang": "EN",
         "label": "English",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-incu-stack-en"
-      },
-      {
-        "lang": "RU",
-        "label": "Русский",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-incu-stack-ru"
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
       }
-    ]
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/airstream-gen-3-class-ii-bsc-e-series"
   },
   {
-    "id": "p-bsc-class3",
-    "title": "Class III Biosafety Cabinet",
-    "category": "Biosafety Cabinets",
-    "tags": ["Advanced"],
-    "description": "Maximum containment for high-risk agents.",
-    "mainImage": "/placeholder.svg?main=p-bsc-class3",
+    "id": "p-bsc-airstream-plus-e",
+    "title": "Airstream® Plus Class II Biological Safety Cabinet, E-Series",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Plus"],
+    "description": "Enhanced E-Series biosafety cabinet with additional premium features",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/AC2 TUV-E-full.png",
     "images": [
-      "/placeholder.svg?img=p-bsc-class3-1",
-      "/placeholder.svg?img=p-bsc-class3-2"
+      "https://www.escolifesciences.com/images/product-img/full/AC2 TUV-E-full.png"
     ],
     "specs": [
-      { "name": "Containment", "value": "Gas-tight, negative pressure" },
-      { "name": "Glove Ports", "value": "Butyl / Hypalon" },
-      { "name": "Decon", "value": "VHP compatible" }
+      { "name": "Class", "value": "II" },
+      { "name": "Series", "value": "Plus E-Series" }
     ],
     "brochures": [
       {
         "lang": "EN",
         "label": "English",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-bsc-class3-en"
-      },
-      {
-        "lang": "RU",
-        "label": "Русский",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-bsc-class3-ru"
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
       }
-    ]
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/airstream-plus-class-ii-bsc-e-series"
   },
   {
-    "id": "p-pcr-compact",
-    "title": "Compact PCR Workstation",
-    "category": "PCR Cabinets",
-    "tags": ["Featured"],
-    "description": "Benchtop form for small labs and teaching.",
-    "mainImage": "/placeholder.svg?main=p-pcr-compact",
+    "id": "p-bsc-airstream-plus-s",
+    "title": "Airstream® Plus Class II Biological Safety Cabinet, S-Series",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Plus"],
+    "description": "Enhanced S-Series biosafety cabinet with additional premium features",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/airstream-plus-class-ii-bsc-s-series.png",
     "images": [
-      "/placeholder.svg?img=p-pcr-compact-1",
-      "/placeholder.svg?img=p-pcr-compact-2"
+      "https://www.escolifesciences.com/images/product-img/full/airstream-plus-class-ii-bsc-s-series.png"
     ],
     "specs": [
-      { "name": "Footprint", "value": "Compact bench-top" },
-      { "name": "Filter", "value": "HEPA, 99.99% @ 0.3 μm" },
-      { "name": "Lighting", "value": "LED, ≥ 700 lux" }
+      { "name": "Class", "value": "II" },
+      { "name": "Series", "value": "Plus S-Series" }
     ],
     "brochures": [
       {
         "lang": "EN",
         "label": "English",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-pcr-compact-en"
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
+      }
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/airstream-plus-class-ii-bsc-s-series"
+  },
+  {
+    "id": "p-bsc-airstream-gen3-g",
+    "title": "Airstream® Gen 3 Class II Biological Safety Cabinet, G-Series",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Gen 3", "Featured"],
+    "description": "Third generation G-Series biosafety cabinet with reliable performance",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/airstream-class-ii-bsc-e-series.png",
+    "images": [
+      "https://www.escolifesciences.com/images/product-img/full/airstream-class-ii-bsc-e-series.png"
+    ],
+    "specs": [
+      { "name": "Class", "value": "II" },
+      { "name": "Series", "value": "G-Series" },
+      { "name": "Generation", "value": "Gen 3" }
+    ],
+    "brochures": [
+      {
+        "lang": "EN",
+        "label": "English",
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
+      }
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/airstream-gen-3-class-ii-bsc-g-series"
+  },
+  {
+    "id": "p-bsc-airstream-gen3-d",
+    "title": "Airstream® Gen 3 Class II Biological Safety Cabinet, D-Series",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Gen 3"],
+    "description": "Third generation D-Series biosafety cabinet with specialized features",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/airstream-class-ii-bsc-s-series.png",
+    "images": [
+      "https://www.escolifesciences.com/images/product-img/full/airstream-class-ii-bsc-s-series.png"
+    ],
+    "specs": [
+      { "name": "Class", "value": "II" },
+      { "name": "Series", "value": "D-Series" },
+      { "name": "Generation", "value": "Gen 3" }
+    ],
+    "brochures": [
+      {
+        "lang": "EN",
+        "label": "English",
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
+      }
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/airstream-gen-3-class-ii-bsc-d-series"
+  },
+  {
+    "id": "p-bsc-airstream-a2-k",
+    "title": "Airstream® Class II Type A2 Biological Safety Cabinet",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Australia Only", "K-Series"],
+    "description": "K-Series biosafety cabinet with energy-efficient DC ECM motor - available only in Australia",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/airstream-class-ii-biological-safety-cabinets-ac2-4k8.png",
+    "images": [
+      "https://www.escolifesciences.com/images/product-img/full/airstream-class-ii-biological-safety-cabinets-ac2-4k8.png"
+    ],
+    "specs": [
+      { "name": "Class", "value": "II, Type A2" },
+      { "name": "Series", "value": "K-Series" },
+      { "name": "Motor", "value": "DC ECM (70% energy savings)" },
+      { "name": "Certification", "value": "AS 1807.22" },
+      { "name": "Availability", "value": "Australia Only" }
+    ],
+    "brochures": [
+      {
+        "lang": "EN",
+        "label": "English",
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
+      }
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/airstream-class-ii-type-a2-biological-safety-cabinet-k-series",
+    "regionNote": "This product is only available in Australia"
+  },
+  {
+    "id": "p-bsc-nordicsafe",
+    "title": "NordicSafe® Class II Biological Safety Cabinet",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["EU Only", "European", "Featured"],
+    "description": "European-market biosafety cabinet designed for EU compliance - available only in EU countries",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/nordicsafe-class-ii-msc-low-noise-full.png",
+    "images": [
+      "https://www.escolifesciences.com/images/product-img/full/nordicsafe-class-ii-msc-low-noise-full.png"
+    ],
+    "specs": [
+      { "name": "Class", "value": "II" },
+      { "name": "Market", "value": "European Union" },
+      { "name": "Availability", "value": "EU Countries Only" }
+    ],
+    "brochures": [
+      {
+        "lang": "EN",
+        "label": "English",
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
+      }
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/nordicsafe-class-ii-microbiological-safety-cabinet",
+    "regionNote": "This product is only available in EU countries"
+  },
+  {
+    "id": "p-bsc-labculture-lownoise",
+    "title": "Labculture® (Low Noise) Class II Biological Safety Cabinet",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Low Noise", "Type A2"],
+    "description": "Low noise biosafety cabinet for quiet laboratory environments with reduced sound levels",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/labculture-class-ii-type-a2-bsc.png",
+    "images": [
+      "https://www.escolifesciences.com/images/product-img/full/labculture-class-ii-type-a2-bsc.png"
+    ],
+    "specs": [
+      { "name": "Class", "value": "II, Type A2" },
+      { "name": "Feature", "value": "Low Noise Operation" },
+      { "name": "Noise Level", "value": "≤ 55 dBA" }
+    ],
+    "brochures": [
+      {
+        "lang": "EN",
+        "label": "English",
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
+      }
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/labculture-class-ii-type-a2-biological-safety-cabinet-low-noise"
+  },
+  {
+    "id": "p-bsc-streamline-e-legacy",
+    "title": "Streamline® Class II Biological Safety Cabinet, E-Series",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Legacy"],
+    "description": "Legacy E-Series Streamline biosafety cabinet with proven reliability",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/streamline-class-ii-bsc-e-series.png",
+    "images": [
+      "https://www.escolifesciences.com/images/product-img/full/streamline-class-ii-bsc-e-series.png"
+    ],
+    "specs": [
+      { "name": "Class", "value": "II" },
+      { "name": "Series", "value": "E-Series" }
+    ],
+    "brochures": [
+      {
+        "lang": "EN",
+        "label": "English",
+        "url": "https://www.escolifesciences.com/pdf/9010686_Streamline_SC2%20G4_Gen%204_A4_vA_101424.pdf"
+      }
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/streamline-class-ii-bsc-e-series"
+  },
+  {
+    "id": "p-bsc-streamline-s-legacy",
+    "title": "Streamline® Class II Biological Safety Cabinet, S-Series",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Legacy"],
+    "description": "Legacy S-Series Streamline biosafety cabinet with proven reliability",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/streamline-class-ii-bsc-s-series.png",
+    "images": [
+      "https://www.escolifesciences.com/images/product-img/full/streamline-class-ii-bsc-s-series.png"
+    ],
+    "specs": [
+      { "name": "Class", "value": "II" },
+      { "name": "Series", "value": "S-Series" }
+    ],
+    "brochures": [
+      {
+        "lang": "EN",
+        "label": "English",
+        "url": "https://www.escolifesciences.com/pdf/9010686_Streamline_SC2%20G4_Gen%204_A4_vA_101424.pdf"
+      }
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/streamline-class-ii-bsc-s-series"
+  },
+  {
+    "id": "p-bsc-labculture-b1",
+    "title": "Labculture® Class II B1 Biological Safety Cabinet",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Type B1", "Featured"],
+    "description": "Type B1 biosafety cabinet for working with trace amounts of volatile chemicals",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/labculture-class-ii-type-b1-biosafety-cabinet.png",
+    "images": [
+      "https://www.escolifesciences.com/images/product-img/full/labculture-class-ii-type-b1-biosafety-cabinet.png"
+    ],
+    "specs": [
+      { "name": "Class", "value": "II, Type B1" },
+      { "name": "Airflow", "value": "30% Recirculation, 70% Exhaust" },
+      { "name": "Application", "value": "Trace volatile chemicals" }
+    ],
+    "brochures": [
+      {
+        "lang": "EN",
+        "label": "English",
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
+      }
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/labculture-class-ii-type-b1-bsc"
+  },
+  {
+    "id": "p-bsc-airstream-b2",
+    "title": "Airstream® Class II Type B2 (Total Exhaust) Biological Safety Cabinet",
+    "category": "Class II Biosafety Cabinets",
+    "tags": ["Type B2", "Total Exhaust"],
+    "description": "Total exhaust Type B2 biosafety cabinet for volatile chemicals and radionuclides",
+    "mainImage": "https://www.escolifesciences.com/images/upload/AB2 G3_full.webp",
+    "images": [
+      "https://www.escolifesciences.com/images/upload/AB2 G3_full.webp"
+    ],
+    "specs": [
+      { "name": "Class", "value": "II, Type B2" },
+      { "name": "Exhaust", "value": "100% Total Exhaust" },
+      { "name": "Application", "value": "Volatile chemicals, radionuclides" }
+    ],
+    "brochures": [
+      {
+        "lang": "EN",
+        "label": "English",
+        "url": "https://www.escolifesciences.com/pdf/1738919034_9010416_BSC_ClassII_Product_Tri-fold%20brochure_A4_vE_020725.pdf"
+      }
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-ii-biological-safety-cabinet/airstream-class-ii-type-b2-total-exhaust-biosafety-cabinets"
+  },
+  {
+    "id": "p-bsc-class3-airstream-g4",
+    "title": "Airstream® G4 Class III Biological Safety Cabinet",
+    "category": "Class III Biosafety Cabinets",
+    "tags": ["Featured", "Maximum Protection", "BSL-4"],
+    "description": "Highest level of protection against Biosafety Hazard Levels 1-4 with ergonomic gauntlets and safety pass box",
+    "mainImage": "https://www.escolifesciences.com/images/upload/AC3 G4_STA_1-full.webp",
+    "images": [
+      "https://www.escolifesciences.com/images/upload/AC3 G4_STA_1-full.webp"
+    ],
+    "specs": [
+      { "name": "Class", "value": "III" },
+      { "name": "Generation", "value": "G4" },
+      { "name": "Protection Level", "value": "BSL 1-4" },
+      { "name": "Features", "value": "Ergonomic gauntlets" },
+      { "name": "Pass Box", "value": "Safety pass box included" },
+      { "name": "Application", "value": "Dangerous bacteria, viruses, microorganisms" }
+    ],
+    "brochures": [
+      {
+        "lang": "EN",
+        "label": "English",
+        "url": "https://www.escolifesciences.com/pdf/9010417_BSC_ClassIII_Product_Tri-fold%20brochure_A4_vB_LR.pdf"
       },
       {
-        "lang": "RU",
-        "label": "Русский",
-        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#p-pcr-compact-ru"
+        "lang": "EN",
+        "label": "English (Detailed)",
+        "url": "https://www.escolifesciences.com/pdf/9010016_Biological%20Safety%20Cabinet_AC3_Brochure_A4_vH_091124.pdf"
       }
-    ]
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-iii-biological-safety-cabinet/airstream-g4-class-iii-biological-safety-cabinet",
+    "launchDate": "2025-10-01"
+  },
+  {
+    "id": "p-bsc-class3-airstream",
+    "title": "Airstream® Class III Biological Safety Cabinet",
+    "category": "Class III Biosafety Cabinets",
+    "tags": ["Maximum Protection", "BSL-4"],
+    "description": "Maximum containment for handling deadliest biohazards with complete isolation",
+    "mainImage": "https://www.escolifesciences.com/images/product-img/full/airstream-class-iii-biological-safety-cabinet.png",
+    "images": [
+      "https://www.escolifesciences.com/images/product-img/full/airstream-class-iii-biological-safety-cabinet.png"
+    ],
+    "specs": [
+      { "name": "Class", "value": "III" },
+      { "name": "Protection Level", "value": "BSL 1-4" },
+      { "name": "Application", "value": "Deadliest biohazards" }
+    ],
+    "brochures": [
+      {
+        "lang": "EN",
+        "label": "English",
+        "url": "https://www.escolifesciences.com/pdf/9010417_BSC_ClassIII_Product_Tri-fold%20brochure_A4_vB_LR.pdf"
+      },
+      {
+        "lang": "EN",
+        "label": "English (Detailed)",
+        "url": "https://www.escolifesciences.com/pdf/9010016_Biological%20Safety%20Cabinet_AC3_Brochure_A4_vH_091124.pdf"
+      }
+    ],
+    "productUrl": "https://www.escolifesciences.com/products/class-iii-biological-safety-cabinet/airstream-class-iii-biological-safety-cabinet"
   }
 ]

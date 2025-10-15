@@ -25,6 +25,7 @@ const nav: Array<{
   { to: "/news", label: "News" },
   {
     label: "Knowledge Hub",
+    to: "/resources",
     children: [
       { to: "/resources/videos", label: "Videos" },
       { to: "/resources/articles", label: "Articles" },
@@ -130,7 +131,8 @@ export default function Header() {
                     onMouseEnter={() => setDesktopOpenKey(item.label)}
                     onMouseLeave={() => setDesktopOpenKey(null)}
                   >
-                    <button
+                    <Link
+                      to={item.to ?? "/resources"}
                       className={cn(
                         "inline-flex items-center gap-1 transition-colors",
                         scrolled || isProductDetail
@@ -146,7 +148,7 @@ export default function Header() {
                           desktopOpenKey === item.label && "rotate-180",
                         )}
                       />
-                    </button>
+                    </Link>
                     <div
                       className={cn(
                         "absolute left-0 top-full min-w-[14rem] rounded-md border bg-white text-slate-900 shadow-md py-1 transition-opacity",
@@ -228,23 +230,32 @@ export default function Header() {
                 {nav.map((item) =>
                   item.children ? (
                     <div key={item.label}>
-                      <button
-                        className="flex w-full items-center justify-between px-4 py-3 text-left text-slate-800"
-                        aria-expanded={openSubmenuKey === item.label}
-                        onClick={() =>
-                          setOpenSubmenuKey(
-                            openSubmenuKey === item.label ? null : item.label,
-                          )
-                        }
-                      >
-                        <span>{item.label}</span>
-                        <ChevronDown
-                          className={cn(
-                            "h-4 w-4 transition-transform",
-                            openSubmenuKey === item.label && "rotate-180",
-                          )}
-                        />
-                      </button>
+                      <div className="flex w-full items-center justify-between px-4 py-3 text-left text-slate-800">
+                        <Link
+                          to={item.to ?? "/resources"}
+                          className="flex-1"
+                          onClick={() => setOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                        <button
+                          aria-label="Toggle submenu"
+                          aria-expanded={openSubmenuKey === item.label}
+                          onClick={() =>
+                            setOpenSubmenuKey(
+                              openSubmenuKey === item.label ? null : item.label,
+                            )
+                          }
+                          className="px-2"
+                        >
+                          <ChevronDown
+                            className={cn(
+                              "h-4 w-4 transition-transform",
+                              openSubmenuKey === item.label && "rotate-180",
+                            )}
+                          />
+                        </button>
+                      </div>
                       <div
                         className={cn(
                           "overflow-hidden transition-all",
