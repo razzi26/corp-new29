@@ -430,10 +430,10 @@ export default function ProductPage() {
                             if (i === displayedIndex) mainImageRef.current = el;
                           }}
                           className={cn(
-                            "w-full max-h-[480px] overflow-hidden rounded-xl bg-slate-50",
+                            "w-full max-h-[560px] overflow-hidden rounded-xl bg-slate-50",
                             i === displayedIndex ? "block" : "hidden",
                           )}
-                          style={{ aspectRatio: "1 / 1" }}
+                          style={{ aspectRatio: "4 / 3" }}
                         >
                           <img
                             src={src}
@@ -451,8 +451,8 @@ export default function ProductPage() {
             ) : (
               <div className="p-0">
                 <div
-                  className="w-full max-h-[480px] overflow-hidden rounded-xl bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]"
-                  style={{ aspectRatio: "1 / 1" }}
+                  className="w-full max-h-[560px] overflow-hidden rounded-xl bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]"
+                  style={{ aspectRatio: "4 / 3" }}
                 />
               </div>
             )}
