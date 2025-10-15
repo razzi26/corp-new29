@@ -45,7 +45,8 @@ export default function KnowledgeArticleBiosafetyBasics() {
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Resources", href: "/resources" },
-          { label: "Knowledge Hub", href: "/resources/knowledge-hub" },
+          { label: "Knowledge Hub", href: "/resources" },
+          { label: "Articles", href: "/resources/articles" },
           { label: "What is Biosafety?" },
         ]}
         meta={
