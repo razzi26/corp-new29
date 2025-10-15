@@ -9,6 +9,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import FAQWidget from "@/components/widgets/FAQWidget";
+import { Badge } from "@/components/ui/badge";
 
 export default function Index() {
   return (
