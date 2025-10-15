@@ -123,20 +123,15 @@ export default function Index() {
         <div className="flex items-end justify-between gap-4">
           <h2 className="text-2xl md:text-3xl font-bold">Featured Products</h2>
           <Link
-            to="/contact"
+            to="/products"
             className="hidden md:inline-flex text-sm hover:underline"
           >
-            Need help choosing?
+            Browse all products
           </Link>
         </div>
-        <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <ProductCard title="Biosafety Cabinets" tag="Core" />
-          <ProductCard title="CO₂ Incubators" tag="Core" />
-          <ProductCard title="PCR Cabinets" tag="Popular" />
-          <ProductCard title="Cleanroom Solutions" tag="Advanced" />
-          <ProductCard title="Isolators" tag="Specialized" />
-          <ProductCard title="Fume Hoods" tag="Popular" />
-        </div>
+
+        <FeaturedProducts />
+
         <div className="mt-6">
           <Link
             to="/products"
