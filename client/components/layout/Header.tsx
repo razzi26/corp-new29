@@ -12,22 +12,14 @@ const nav: Array<{
 }> = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About Us" },
-  {
-    label: "Services",
-    children: [
-      { to: "/services/trainings", label: "Trainings" },
-      { to: "/services/seminars", label: "Seminars" },
-      { to: "/services/services", label: "Services" },
-      { to: "/services/brochures", label: "Brochures" },
-    ],
-  },
+  { to: "/trainings", label: "Trainings" },
   { to: "/products", label: "Products" },
   { to: "/news", label: "News" },
   {
-    label: "Resources",
+    label: "Knowledge Hub",
     children: [
       { to: "/resources/videos", label: "Videos" },
-      { to: "/resources/knowledge-hub", label: "Knowledge Hub" },
+      { to: "/resources/knowledge-hub", label: "Articles" },
       { to: "/resources/podcasts", label: "Podcasts" },
       { to: "/resources/case-studies", label: "Case Studies" },
       { to: "/resources/faq", label: "FAQ" },
