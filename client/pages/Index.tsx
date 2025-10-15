@@ -24,12 +24,12 @@ export default function Index() {
         <div className="container mx-auto px-4 pt-24 pb-16 md:pt-32 md:pb-20">
           <div className="hero-grid grid lg:grid-cols-2 gap-10 items-center">
             <div className="lg:flex lg:flex-col lg:items-center lg:text-center">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs md:text-sm border border-white/25 text-white">
+              {/*<span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs md:text-sm border border-white/25 text-white">
                 <ShieldCheck className="h-4 w-4" /> Biosafety training •
                 Guidance • Resources
-              </span>
+              </span>*/}
               <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight">
-                Welcome to Esco Biosafety Institute
+                Welcome to Esco Biosafety Institute!
               </h1>
               <p className="mt-4 text-white/90 text-base md:text-lg max-w-xl">
                 Biosafety in any laboratory is crucial. The Esco Biosafety
