@@ -18,7 +18,7 @@ export default function Index() {
       >
         <div className="container mx-auto px-4 pt-24 pb-16 md:pt-32 md:pb-20">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <div>
+            <div className="lg:flex lg:flex-col lg:items-center lg:text-center">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs md:text-sm border border-white/25 text-white">
                 <ShieldCheck className="h-4 w-4" /> Biosafety training •
                 Guidance • Resources
