@@ -67,7 +67,7 @@ export default function FAQWidget({ items }: { items?: FAQItem[] }) {
           <AccordionTrigger className="group flex w-full items-start justify-between gap-6 px-6 py-6 text-left font-semibold text-slate-900 hover:no-underline [&>svg]:hidden">
             <div>
               <span className="text-lg font-semibold text-slate-900">{it.q}</span>
-              // <span className="mt-1 block text-sm font-normal text-slate-600">Q&A • Esco Biosafety Institute</span>
+              {/* <span className="mt-1 block text-sm font-normal text-slate-600">Q&A • Esco Biosafety Institute</span>*/}
             </div>
             <span className="relative mt-1 flex h-6 w-6 items-center justify-center">
               <span className="h-5 w-0.5 rounded-full bg-[hsl(var(--brand-end))] transition-opacity duration-200 group-data-[state=open]:opacity-0" />
