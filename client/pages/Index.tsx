@@ -171,7 +171,7 @@ export default function Index() {
       <section className="container mx-auto px-4 mt-20 mb-24">
         <div className="grid lg:grid-cols-2 gap-8">
           <div>
-            <h3 className="text-2xl md:text-3xl font-bold">Frequently asked questions</h3>
+            <h3 className="text-2xl md:text-3xl font-bold">FAQs</h3>
             <div className="mt-6">
               <FAQWidget />
             </div>
