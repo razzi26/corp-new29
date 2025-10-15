@@ -69,21 +69,21 @@ export default function Index() {
               </ul>
             </div>
 
-            <div className="relative">
-              <div className="relative rounded-3xl bg-white text-slate-900 p-6 md:p-8 shadow-lg">
-                <div className="grid grid-cols-3 gap-4">
-                  <FeatureCard icon={HeartPulse} title="Monitors" />
-                  <FeatureCard icon={Microscope} title="Laboratory" />
-                  <FeatureCard icon={Scan} title="Imaging" />
-                  <FeatureCard icon={Stethoscope} title="Diagnostics" />
-                  <FeatureCard icon={ShieldCheck} title="Sterilization" />
-                  <FeatureCard icon={HeartPulse} title="Cardiology" />
-                </div>
-                <p className="mt-4 text-sm text-slate-600">
-                  We tailor configurations to your needs and budget
-                </p>
-              </div>
-            </div>
+            // <div className="relative">
+            //   <div className="relative rounded-3xl bg-white text-slate-900 p-6 md:p-8 shadow-lg">
+            //     <div className="grid grid-cols-3 gap-4">
+            //       <FeatureCard icon={HeartPulse} title="Monitors" />
+            //       <FeatureCard icon={Microscope} title="Laboratory" />
+            //       <FeatureCard icon={Scan} title="Imaging" />
+            //       <FeatureCard icon={Stethoscope} title="Diagnostics" />
+            //       <FeatureCard icon={ShieldCheck} title="Sterilization" />
+            //       <FeatureCard icon={HeartPulse} title="Cardiology" />
+            //     </div>
+            //     <p className="mt-4 text-sm text-slate-600">
+            //       We tailor configurations to your needs and budget
+            //     </p>
+            //   </div>
+            // </div>
           </div>
         </div>
       </section>
