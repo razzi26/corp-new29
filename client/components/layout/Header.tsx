@@ -12,7 +12,15 @@ const nav: Array<{
 }> = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About Us" },
-  { to: "/trainings", label: "Trainings" },
+  {
+    label: "Trainings",
+    children: [
+      { to: "/services/trainings", label: "Trainings" },
+      { to: "/services/seminars", label: "Seminars" },
+      { to: "/services/services", label: "Services" },
+      { to: "/services/brochures", label: "Brochures" },
+    ],
+  },
   { to: "/products", label: "Products" },
   { to: "/news", label: "News" },
   {
