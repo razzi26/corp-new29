@@ -471,7 +471,7 @@ function HomeProductCard({
     <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white">
       <div
         ref={containerRef}
-        className="relative w-full aspect-[4/3] overflow-hidden rounded-t-2xl bg-slate-50"
+        className="relative w-full aspect-[3/4] overflow-hidden rounded-t-2xl bg-slate-50"
         role="img"
         aria-label={product.title}
         style={{ touchAction: "pan-y" }}
