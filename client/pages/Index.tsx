@@ -7,6 +7,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import FAQWidget from "@/components/ui/FAQWidget";
 
 export default function Index() {
   return (
