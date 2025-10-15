@@ -97,8 +97,11 @@ export default function ResourcesQuizzes() {
           </h2>
           <div className="flex flex-wrap gap-2">
             <Badge
-              variant={category === null ? "default" : "secondary"}
-              className="cursor-pointer"
+              variant="secondary"
+              className={cn(
+                "cursor-pointer",
+                category === null && "bg-[#003a68] text-white hover:bg-[#003a68]",
+              )}
               onClick={() => setCategory(null)}
             >
               All categories
@@ -106,8 +109,11 @@ export default function ResourcesQuizzes() {
             {categories.map((cat) => (
               <Badge
                 key={cat}
-                variant={category === cat ? "default" : "secondary"}
-                className="cursor-pointer"
+                variant="secondary"
+                className={cn(
+                  "cursor-pointer",
+                  category === cat && "bg-[#003a68] text-white hover:bg-[#003a68]",
+                )}
                 onClick={() =>
                   setCategory((prev) => (prev === cat ? null : cat))
                 }
