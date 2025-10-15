@@ -26,6 +26,8 @@ import Videos from "./pages/ResourcesVideos";
 import KnowledgeHub from "./pages/ResourcesKnowledgeHub";
 import Podcasts from "./pages/ResourcesPodcasts";
 import CaseStudies from "./pages/ResourcesCaseStudies";
+import ResourcesQuizzes from "./pages/ResourcesQuizzes";
+import Quiz from "./pages/Quiz";
 import KnowledgeArticle from "./pages/KnowledgeArticle";
 import ProductPage from "./pages/Product";
 
@@ -56,6 +58,8 @@ const App = () => (
               path="/resources/articles/:slug"
               element={<KnowledgeArticle />}
             />
+            <Route path="/resources/quizzes" element={<ResourcesQuizzes />} />
+            <Route path="/resources/quizzes/:slug" element={<Quiz />} />
             <Route path="/news/:slug" element={<NewsArticle />} />
             <Route path="/resources/podcasts" element={<Podcasts />} />
             <Route path="/resources/case-studies" element={<CaseStudies />} />

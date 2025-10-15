@@ -24,6 +24,11 @@ export default function Resources() {
               descr: "Guides, articles and whitepapers.",
             },
             {
+              href: "/resources/quizzes",
+              title: "Quizzes",
+              descr: "Interactive assessments to test biosafety knowledge.",
+            },
+            {
               href: "/resources/podcasts",
               title: "Podcasts",
               descr: "Interviews and discussions.",

@@ -28,6 +28,7 @@ const nav: Array<{
     children: [
       { to: "/resources/videos", label: "Videos" },
       { to: "/resources/articles", label: "Articles" },
+      { to: "/resources/quizzes", label: "Quizzes" },
       { to: "/resources/podcasts", label: "Podcasts" },
       { to: "/resources/case-studies", label: "Case Studies" },
       { to: "/resources/faq", label: "FAQ" },
