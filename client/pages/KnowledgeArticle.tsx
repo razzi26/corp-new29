@@ -75,7 +75,7 @@ export default function KnowledgeArticle() {
 
   const article = useMemo(() => {
     if (!articles || !slug) return null;
-    const path = "/resources/knowledge-hub/" + slug;
+    const path = "/resources/articles/" + slug;
     return articles.find((a) => a.slug === path) ?? null;
   }, [articles, slug]);
 
