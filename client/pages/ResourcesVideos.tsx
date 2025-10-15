@@ -4,7 +4,8 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 const VIDEOS = [
   {
     id: "vss9HS5DQQ8",
-    title: "Inside the Sciences Podcast Episode 1: Biosafety Cabinets | Protecting Science, Protecting You",
+    title:
+      "Inside the Sciences Podcast Episode 1: Biosafety Cabinets | Protecting Science, Protecting You",
     start: 570,
   },
   {
@@ -13,15 +14,18 @@ const VIDEOS = [
   },
   {
     id: "ZnUW1N-JJz8",
-    title: "Working Safely in your Biological Safety Cabinets: Dealing with Spills | Esco Scientific",
+    title:
+      "Working Safely in your Biological Safety Cabinets: Dealing with Spills | Esco Scientific",
   },
   {
     id: "IkO3ABNT_M8",
-    title: "Biological Safety Cabinets | What to Keep in Mind for Stable Airflow",
+    title:
+      "Biological Safety Cabinets | What to Keep in Mind for Stable Airflow",
   },
   {
     id: "voU9E2_vxQ0",
-    title: "Biosafety Cabinet | Tips to Maintain its Efficiency | Esco Scientific",
+    title:
+      "Biosafety Cabinet | Tips to Maintain its Efficiency | Esco Scientific",
   },
 ];
 
@@ -31,18 +35,28 @@ export default function Videos() {
       <PageBanner
         title="Videos"
         description="Recorded seminars, introductions and short explainers."
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Videos" }]}
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Resources", href: "/resources" },
+          { label: "Videos" },
+        ]}
       />
 
       <section className="container mx-auto px-4 py-12 md:py-16">
         <h2 className="text-2xl md:text-3xl font-semibold">Video library</h2>
-        <p className="mt-3 text-slate-700">Curated videos about biosafety and proper use of biological safety cabinets.</p>
+        <p className="mt-3 text-slate-700">
+          Curated videos about biosafety and proper use of biological safety
+          cabinets.
+        </p>
 
         <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {VIDEOS.map((v) => {
             const params = v.start ? `?start=${v.start}` : "";
             return (
-              <div key={v.id} className="overflow-hidden rounded-lg border bg-white shadow-sm">
+              <div
+                key={v.id}
+                className="overflow-hidden rounded-lg border bg-white shadow-sm"
+              >
                 <AspectRatio ratio={16 / 9}>
                   <iframe
                     className="h-full w-full"
@@ -55,7 +69,9 @@ export default function Videos() {
                 </AspectRatio>
 
                 <div className="p-4">
-                  <h3 className="text-sm font-semibold text-slate-900">{v.title}</h3>
+                  <h3 className="text-sm font-semibold text-slate-900">
+                    {v.title}
+                  </h3>
                 </div>
               </div>
             );

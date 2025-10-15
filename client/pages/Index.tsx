@@ -52,7 +52,9 @@ export default function Index() {
                       <Icon className="h-6 w-6" />
                     </div>
                     <div className="flex flex-col">
-                      <span className="font-medium text-sm text-white/95 leading-none">{label}</span>
+                      <span className="font-medium text-sm text-white/95 leading-none">
+                        {label}
+                      </span>
                     </div>
                   </div>
                 ))}
@@ -79,7 +81,6 @@ export default function Index() {
                   Explore resources
                 </Link>
               </div>
-
             </div>
 
             {/*
@@ -99,7 +100,6 @@ export default function Index() {
               </div>
             </div>
             */}
-            
           </div>
         </div>
       </section>
@@ -298,7 +298,11 @@ function FeaturedProducts() {
       try {
         const controller = new AbortController();
         const timeout = setTimeout(() => controller.abort(), 10000);
-        const res = await fetch(url, { headers: { "cache-control": "no-cache" }, credentials: "same-origin", signal: controller.signal });
+        const res = await fetch(url, {
+          headers: { "cache-control": "no-cache" },
+          credentials: "same-origin",
+          signal: controller.signal,
+        });
         clearTimeout(timeout);
         if (!res.ok) return null;
         return await res.json();
@@ -311,12 +315,15 @@ function FeaturedProducts() {
       try {
         let data: any[] | null = await tryFetch("/data/products.json");
         if (!data) {
-          const origin = typeof window !== "undefined" ? window.location.origin : "";
+          const origin =
+            typeof window !== "undefined" ? window.location.origin : "";
           if (origin) data = await tryFetch(origin + "/data/products.json");
         }
         if (!mounted) return;
         if (!data) throw new Error("Failed to load products");
-        const featured = data.filter((p: any) => Array.isArray(p.tags) && p.tags.includes("Featured"));
+        const featured = data.filter(
+          (p: any) => Array.isArray(p.tags) && p.tags.includes("Featured"),
+        );
         setProducts(featured.slice(0, 8));
       } catch (e: any) {
         if (!mounted) return;
@@ -333,8 +340,18 @@ function FeaturedProducts() {
   }, []);
 
   if (loading) return <div className="mt-6">Loading products...</div>;
-  if (error) return <div className="mt-6 text-sm text-red-600">Error loading products: {error}</div>;
-  if (!products || products.length === 0) return <div className="mt-6 text-sm text-slate-600">No featured products available.</div>;
+  if (error)
+    return (
+      <div className="mt-6 text-sm text-red-600">
+        Error loading products: {error}
+      </div>
+    );
+  if (!products || products.length === 0)
+    return (
+      <div className="mt-6 text-sm text-slate-600">
+        No featured products available.
+      </div>
+    );
 
   return (
     <>
@@ -363,15 +380,25 @@ function FeaturedProducts() {
   );
 }
 
-function HomeProductCard({ product, onRequest }: { product: any; onRequest?: () => void }) {
-  const imgs = (product.mainImage ? [product.mainImage] : []).concat(product.images ?? []);
+function HomeProductCard({
+  product,
+  onRequest,
+}: {
+  product: any;
+  onRequest?: () => void;
+}) {
+  const imgs = (product.mainImage ? [product.mainImage] : []).concat(
+    product.images ?? [],
+  );
   const containerRef = React.useRef<HTMLDivElement | null>(null);
   const [hoverIndex, setHoverIndex] = React.useState<number | null>(null);
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [isTouch, setIsTouch] = React.useState(false);
 
   React.useEffect(() => {
-    const touch = typeof window !== "undefined" && ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+    const touch =
+      typeof window !== "undefined" &&
+      ("ontouchstart" in window || navigator.maxTouchPoints > 0);
     setIsTouch(Boolean(touch));
   }, []);
 
@@ -446,7 +473,12 @@ function HomeProductCard({ product, onRequest }: { product: any; onRequest?: () 
         onTouchMove={onTouchMoveSimple}
         onTouchEnd={onTouchEndSimple}
       >
-        <img src={imgs[displayed]} alt={product.title} className="absolute inset-0 h-full w-full object-cover" style={{ left: 0, top: 0 }} />
+        <img
+          src={imgs[displayed]}
+          alt={product.title}
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ left: 0, top: 0 }}
+        />
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_20%,white,transparent_35%),radial-gradient(circle_at_70%_80%,white,transparent_25%)]" />
 
         {imgs.length > 1 && (
@@ -457,7 +489,9 @@ function HomeProductCard({ product, onRequest }: { product: any; onRequest?: () 
                 aria-hidden
                 className={cn(
                   "w-2 h-2 rounded-full transition-opacity",
-                  idx === displayed ? "bg-[hsl(var(--brand-end))] opacity-100" : "bg-white/60 opacity-70",
+                  idx === displayed
+                    ? "bg-[hsl(var(--brand-end))] opacity-100"
+                    : "bg-white/60 opacity-70",
                 )}
               />
             ))}
@@ -467,7 +501,10 @@ function HomeProductCard({ product, onRequest }: { product: any; onRequest?: () 
 
       <div className="p-5">
         <h3 className="font-semibold text-lg">
-          <Link to={`/products/${product.id}`} className="text-[hsl(var(--brand-end))] hover:underline">
+          <Link
+            to={`/products/${product.id}`}
+            className="text-[hsl(var(--brand-end))] hover:underline"
+          >
             {product.title}
           </Link>
         </h3>
@@ -485,7 +522,10 @@ function HomeProductCard({ product, onRequest }: { product: any; onRequest?: () 
           >
             Request quote
           </button>
-          <Link to={`/products/${product.id}`} className="inline-flex items-center rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm font-semibold hover:bg-slate-50">
+          <Link
+            to={`/products/${product.id}`}
+            className="inline-flex items-center rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm font-semibold hover:bg-slate-50"
+          >
             Learn more
           </Link>
         </div>

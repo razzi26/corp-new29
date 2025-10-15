@@ -13,11 +13,31 @@ export default function Resources() {
       <section className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {[
-            { href: "/resources/videos", title: "Videos", descr: "Short introductions and recorded seminars." },
-            { href: "/resources/articles", title: "Articles", descr: "Guides, articles and whitepapers." },
-            { href: "/resources/podcasts", title: "Podcasts", descr: "Interviews and discussions." },
-            { href: "/resources/case-studies", title: "Case Studies", descr: "Real-world implementations and learnings." },
-            { href: "/resources/faq", title: "FAQ", descr: "Answers to common questions." },
+            {
+              href: "/resources/videos",
+              title: "Videos",
+              descr: "Short introductions and recorded seminars.",
+            },
+            {
+              href: "/resources/articles",
+              title: "Articles",
+              descr: "Guides, articles and whitepapers.",
+            },
+            {
+              href: "/resources/podcasts",
+              title: "Podcasts",
+              descr: "Interviews and discussions.",
+            },
+            {
+              href: "/resources/case-studies",
+              title: "Case Studies",
+              descr: "Real-world implementations and learnings.",
+            },
+            {
+              href: "/resources/faq",
+              title: "FAQ",
+              descr: "Answers to common questions.",
+            },
           ].map((item) => (
             <Link
               key={item.href}

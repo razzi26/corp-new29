@@ -30,7 +30,10 @@ function ArticleCard({ a }: { a: ArticleMeta }) {
     <Card className="h-full flex flex-col overflow-hidden rounded-lg border border-slate-200/70 bg-white shadow-sm transition-shadow hover:shadow">
       <CardHeader>
         <CardTitle className="text-xl leading-7">
-          <Link to={`/resources/articles/${slugParam}`} className="text-[#00467f] hover:underline">
+          <Link
+            to={`/resources/articles/${slugParam}`}
+            className="text-[#00467f] hover:underline"
+          >
             {a.title}
           </Link>
         </CardTitle>

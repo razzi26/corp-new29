@@ -60,7 +60,8 @@ export function PageBanner({
             <BreadcrumbList>
               {breadcrumbs.map((crumb, index) => {
                 const key = `${index}-${crumb.href ?? crumb.label}`;
-                const displayLabel = crumb.href === "/resources" ? "Knowledge Hub" : crumb.label;
+                const displayLabel =
+                  crumb.href === "/resources" ? "Knowledge Hub" : crumb.label;
                 return (
                   <Fragment key={key}>
                     <BreadcrumbItem>
