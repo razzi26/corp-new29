@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -11,23 +11,51 @@ export interface FAQItem {
   a: string;
 }
 
-const DEFAULT_ITEMS: FAQItem[] = [
-  {
-    q: "Do you provide installation and training?",
-    a: "Yes, we handle delivery, installation and staff training across the country.",
-  },
-  {
-    q: "Are devices certified?",
-    a: "We work only with certified manufacturers and provide official warranty.",
-  },
-  {
-    q: "What are lead times?",
-    a: "Popular models are in stock. Lead time for custom configurations varies from 2 to 6 weeks.",
-  },
-];
-
 export default function FAQWidget({ items }: { items?: FAQItem[] }) {
-  const list = items ?? DEFAULT_ITEMS;
+  const [data, setData] = useState<FAQItem[] | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (items) return;
+    let mounted = true;
+    setLoading(true);
+    fetch("/data/faqs.json")
+      .then(async (res) => {
+        if (!res.ok) throw new Error(`Failed to load FAQs (${res.status})`);
+        const json = await res.json();
+        return json;
+      })
+      .then((json) => {
+        if (!mounted) return;
+        if (Array.isArray(json)) setData(json);
+        else setError("Invalid FAQ data format");
+      })
+      .catch((err) => {
+        if (!mounted) return;
+        setError(err?.message ?? "Failed to load FAQs");
+      })
+      .finally(() => {
+        if (!mounted) return;
+        setLoading(false);
+      });
+    return () => {
+      mounted = false;
+    };
+  }, [items]);
+
+  const list = items ?? data ?? [];
+
+  if (!items && loading) {
+    return <div className="mx-auto max-w-3xl">Loading FAQs...</div>;
+  }
+
+  if (!items && error) {
+    return (
+      <div className="mx-auto max-w-3xl text-sm text-red-600">Error loading FAQs: {error}</div>
+    );
+  }
+
   return (
     <Accordion type="multiple" className="mx-auto max-w-3xl space-y-4">
       {list.map((it) => (
