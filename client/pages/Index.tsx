@@ -136,14 +136,14 @@ export default function Index() {
 
         <FeaturedProducts />
 
-        <div className="mt-6">
+        {/*<div className="mt-6">
           <Link
             to="/products"
             className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-5 py-3 font-semibold shadow hover:shadow-md transition"
           >
             Browse all products
           </Link>
-        </div>
+        </div>*/}
       </section>
 
       {/* Highlighted Resources */}
