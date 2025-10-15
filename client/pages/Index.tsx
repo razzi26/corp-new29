@@ -10,6 +10,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import FAQWidget from "@/components/widgets/FAQWidget";
 import { Badge } from "@/components/ui/badge";
+import ContactModal from "@/components/ContactModal";
+import { cn } from "@/lib/utils";
 
 export default function Index() {
   return (
