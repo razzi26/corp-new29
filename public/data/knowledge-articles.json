@@ -1,6 +1,6 @@
 [
   {
-    "slug": "/resources/knowledge-hub/biosafety-basics",
+    "slug": "/resources/articles/biosafety-basics",
     "title": "What is Biosafety?",
     "description": "Policies, protocols, and practices to minimize exposure to harmful biological agents and protect people and the environment.",
     "date": "2025-03-12",
@@ -71,7 +71,7 @@
     }
   },
   {
-    "slug": "/resources/knowledge-hub/bsl-and-risk-assessment",
+    "slug": "/resources/articles/bsl-and-risk-assessment",
     "title": "Understanding Biosafety Levels (BSL): The Cornerstone of Effective Risk Assessment",
     "description": "How BSL-1 to BSL-4 and dynamic risk assessment combine to select controls and keep labs and communities safe.",
     "date": "2025-03-18",
