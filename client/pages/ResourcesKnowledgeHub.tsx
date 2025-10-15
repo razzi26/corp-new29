@@ -54,7 +54,7 @@ function ArticleCard({ a }: { a: ArticleMeta }) {
       </CardContent>
       <CardFooter className="mt-auto">
         <Link
-          to={`/resources/knowledge-hub/${slugParam}`}
+          to={`/resources/articles/${slugParam}`}
           className="inline-flex items-center gap-2 rounded-full border border-[#00467f] px-4 py-2 text-[#00467f] transition-colors hover:bg-[#00467f] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00467f]/40"
         >
           Read article
