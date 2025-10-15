@@ -64,13 +64,13 @@ export default function Index() {
                 ].map(({ label, icon: Icon }) => (
                   <div
                     key={label}
-                    className="flex items-start gap-3 bg-white/10 text-white/95 rounded-lg p-3"
+                    className="flex items-center gap-3 bg-white/10 text-white/95 rounded-lg px-3 py-4"
                   >
-                    <div className="flex-shrink-0 inline-flex h-8 w-8 items-center justify-center rounded-md bg-white/12 text-white">
-                      <Icon className="h-4 w-4" />
+                    <div className="flex-shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/12 text-white">
+                      <Icon className="h-6 w-6" />
                     </div>
                     <div className="flex flex-col">
-                      <span className="font-medium text-sm text-white/95">{label}</span>
+                      <span className="font-medium text-sm text-white/95 leading-none">{label}</span>
                     </div>
                   </div>
                 ))}
