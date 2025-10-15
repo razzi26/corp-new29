@@ -1,0 +1,166 @@
+[
+  {
+    "slug": "biosafety-fundamentals",
+    "title": "Biosafety Fundamentals Quiz",
+    "subtitle": "Assess your understanding of biosafety levels, cabinet usage, and laboratory best practices.",
+    "category": "Biosafety",
+    "skillLevel": "Intermediate",
+    "durationMinutes": 12,
+    "questionCount": 11,
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "This biosafety level classification is appropriate for clinical, diagnostic, teaching, and other laboratories that deal with indigenous moderate-risk agents linked with human disease, and are present in a community.",
+        "options": [
+          { "id": "A", "label": "BSL-1" },
+          { "id": "B", "label": "BSL-2" },
+          { "id": "C", "label": "BSL-3" },
+          { "id": "D", "label": "BSL-4" }
+        ],
+        "answerId": "B",
+        "explanation": "BSL-2 laboratories handle indigenous agents that pose moderate hazards and are commonly encountered in clinical and diagnostic settings."
+      },
+      {
+        "id": "q2",
+        "prompt": "This biosafety level classification applies to facilities handling indigenous or exotic agents with a potential for respiratory transmission that may be a cause for lethal infection.",
+        "options": [
+          { "id": "A", "label": "BSL-1" },
+          { "id": "B", "label": "BSL-2" },
+          { "id": "C", "label": "BSL-3" },
+          { "id": "D", "label": "BSL-4" }
+        ],
+        "answerId": "C",
+        "explanation": "BSL-3 work focuses on agents transmissible through the respiratory route that can cause serious or lethal disease, requiring specialized containment and engineering controls."
+      },
+      {
+        "id": "q3",
+        "prompt": "At which biosafety level should cell lines that are of human or primate origin, derived from lymphoid or tumor tissue, clinical samples, or known to contain mycoplasma be handled?",
+        "options": [
+          { "id": "A", "label": "BSL-1" },
+          { "id": "B", "label": "BSL-2" },
+          { "id": "C", "label": "BSL-3" },
+          { "id": "D", "label": "BSL-4" }
+        ],
+        "answerId": "B",
+        "explanation": "Human and primate-derived cell lines can harbor blood-borne pathogens or adventitious agents, so they must be handled under BSL-2 containment."
+      },
+      {
+        "id": "q4",
+        "prompt": "What facilities are needed in a BSL-2 laboratory?",
+        "options": [
+          {
+            "id": "A",
+            "label": "Negative pressure, double-door entry, sealed penetrations"
+          },
+          {
+            "id": "B",
+            "label": "An autoclave, an eyewash station, a biosafety cabinet for procedures creating aerosols"
+          },
+          {
+            "id": "C",
+            "label": "Positive pressure suits, a Class III BSC, and a dedicated building"
+          },
+          { "id": "D", "label": "Sinks and windows can be open" }
+        ],
+        "answerId": "B",
+        "explanation": "BSL-2 laboratories require core secondary barriers such as an autoclave, eyewash station, and certified biosafety cabinets for aerosol-generating work."
+      },
+      {
+        "id": "q5",
+        "prompt": "The following are the laboratory facility requirements of BSL-4, except which option?",
+        "options": [
+          { "id": "A", "label": "Class III biosafety cabinet or positive pressure suits" },
+          { "id": "B", "label": "Negative pressure and dedicated exhaust air" },
+          { "id": "C", "label": "Double-door entry with airtight seals" },
+          { "id": "D", "label": "Open bench top and sink required in the lab room" }
+        ],
+        "answerId": "D",
+        "explanation": "BSL-4 facilities are fully sealed and do not permit open bench work; sinks are specialized and not open to the room."
+      },
+      {
+        "id": "q6",
+        "prompt": "Where should materials be placed inside a biosafety cabinet to maintain proper laminar airflow?",
+        "options": [
+          { "id": "A", "label": "Crowded together in the center for efficiency" },
+          { "id": "B", "label": "At least 2-3 inches from the grill on the front and back" },
+          { "id": "C", "label": "Directly over the front grill" },
+          { "id": "D", "label": "On the very edge of the work surface" }
+        ],
+        "answerId": "B",
+        "explanation": "Keeping materials a few inches from the intake and exhaust grills preserves the laminar airflow pattern that provides protection."
+      },
+      {
+        "id": "q7",
+        "prompt": "Where should the autoclavable biohazard collection bag and pipette collection tray be placed?",
+        "options": [
+          { "id": "A", "label": "Inside the biosafety cabinet for easy access" },
+          { "id": "B", "label": "On a separate cart or bench outside the cabinet" },
+          { "id": "C", "label": "On the floor next to the user" },
+          { "id": "D", "label": "Placement does not matter" }
+        ],
+        "answerId": "B",
+        "explanation": "Waste containers inside the cabinet disrupt airflow and increase contamination risk, so they must be placed just outside the BSC."
+      },
+      {
+        "id": "q8",
+        "prompt": "Which component of a biosafety cabinet is essential for providing clean air?",
+        "options": [
+          { "id": "A", "label": "UV lamp" },
+          { "id": "B", "label": "Fluorescent light" },
+          { "id": "C", "label": "HEPA filter" },
+          { "id": "D", "label": "Blower motor" }
+        ],
+        "answerId": "C",
+        "explanation": "The HEPA filter removes 99.97% of particulates and microorganisms, ensuring sterile airflow within the cabinet."
+      },
+      {
+        "id": "q9",
+        "prompt": "How often should the UV lamp in a biosafety cabinet be cleaned to maintain germicidal effectiveness?",
+        "options": [
+          { "id": "A", "label": "Never, it is sealed" },
+          { "id": "B", "label": "Once a year" },
+          { "id": "C", "label": "Every month" },
+          { "id": "D", "label": "Weekly" }
+        ],
+        "answerId": "D",
+        "explanation": "Dust accumulation degrades UV performance, so a weekly cleaning with 70% ethanol is standard practice." 
+      },
+      {
+        "id": "q10",
+        "prompt": "What is the ideal location for a biosafety cabinet within a laboratory?",
+        "options": [
+          { "id": "A", "label": "In a high-traffic area near a doorway" },
+          { "id": "B", "label": "Under an HVAC supply vent" },
+          { "id": "C", "label": "In a low-traffic area away from air currents and doors" },
+          { "id": "D", "label": "Next to an open window for ventilation" }
+        ],
+        "answerId": "C",
+        "explanation": "Air currents from doors, windows, or HVAC vents can disrupt the protective air curtain, so BSCs belong in calm, low-traffic areas."
+      },
+      {
+        "id": "q11",
+        "prompt": "Which type of biosafety cabinet has the most basic and now largely obsolete design, providing only personnel and environmental protection?",
+        "options": [
+          { "id": "A", "label": "Class II, Type A2" },
+          { "id": "B", "label": "Class II, Type B2" },
+          { "id": "C", "label": "Class I" },
+          { "id": "D", "label": "Class III" }
+        ],
+        "answerId": "C",
+        "explanation": "Class I cabinets protect personnel and the environment but not the product, making them unsuitable for many modern applications."
+      },
+      {
+        "id": "q12",
+        "prompt": "Why is the overhead clearance of a biosafety cabinet important?",
+        "options": [
+          { "id": "A", "label": "To make the cabinet look balanced" },
+          { "id": "B", "label": "To allow users to see inside easily" },
+          { "id": "C", "label": "To ensure proper airflow into the exhaust HEPA filter" },
+          { "id": "D", "label": "To store supplies on top of the cabinet" }
+        ],
+        "answerId": "C",
+        "explanation": "Adequate clearance prevents back pressure and allows the exhaust HEPA filter to function properly, maintaining containment."
+      }
+    ]
+  }
+]
