@@ -55,18 +55,24 @@ export default function Index() {
                 </Link>
               </div>
 
-              <ul className="mt-6 grid grid-cols-2 gap-3 text-sm text-white/90 max-w-md">
+              <div className="mt-6 flex flex-wrap justify-center gap-3">
                 {[
                   "Training & seminars",
                   "Regulatory guidance",
                   "Practical resources",
                   "Certification support",
                 ].map((f) => (
-                  <li key={f} className="flex items-center gap-2">
-                    <Check className="h-4 w-4" /> {f}
-                  </li>
+                  <div
+                    key={f}
+                    className="flex items-center gap-3 rounded-full px-4 py-2 bg-white/10 hover:bg-white/20 transition text-white/95"
+                  >
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
+                      <Check className="h-4 w-4" />
+                    </span>
+                    <span className="text-sm font-medium">{f}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
 
             {/*
