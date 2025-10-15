@@ -322,13 +322,15 @@ export default function Quiz() {
               )}
 
               <CardFooter className="flex flex-col gap-3 px-0">
-                <Button
-                  type="submit"
-                  disabled={!selectedOption || hasAnswered}
-                  className="w-full md:w-auto bg-[#003a68] hover:bg-[#003a68]/90 focus-visible:ring-[#003a68]/40"
-                >
-                  Submit answer
-                </Button>
+                {!hasAnswered && (
+                  <Button
+                    type="submit"
+                    disabled={!selectedOption}
+                    className="w-full md:w-auto bg-[#003a68] hover:bg-[#003a68]/90 focus-visible:ring-[#003a68]/40"
+                  >
+                    Submit
+                  </Button>
+                )}
                 {hasAnswered && (
                   <Button
                     type="button"
@@ -336,7 +338,7 @@ export default function Quiz() {
                     onClick={handleNext}
                     className="w-full md:w-auto border-[#003a68] text-[#003a68] hover:bg-[#003a68]/10 hover:text-[#003a68] focus-visible:ring-[#003a68]/40"
                   >
-                    {isLastQuestion ? "Finish quiz" : "Next question"}
+                    {isLastQuestion ? "Finish quiz" : "Next"}
                   </Button>
                 )}
               </CardFooter>
