@@ -342,26 +342,48 @@ function FeaturedProducts() {
 }
 
 function HomeProductCard({ product }: { product: any }) {
+  const imgs: string[] = product.images && product.images.length ? product.images : [product.mainImage || "/placeholder.svg"];
+
   return (
     <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white">
-      <div className="relative h-40 bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]">
+      <div
+        className="relative w-full aspect-[1/1] overflow-hidden rounded-t-2xl bg-slate-50"
+        role="img"
+        aria-label={product.title}
+      >
+        <img
+          src={imgs[0]}
+          alt={product.title}
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ left: 0, top: 0 }}
+        />
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_20%,white,transparent_35%),radial-gradient(circle_at_70%_80%,white,transparent_25%)]" />
       </div>
+
       <div className="p-5">
-        <h4 className="font-semibold text-lg">{product.title}</h4>
-        <p className="mt-1 text-base text-slate-600">{product.description}</p>
+        <h3 className="font-semibold text-lg">
+          <Link to={`/products/${product.id}`} className="text-[hsl(var(--brand-end))] hover:underline">
+            {product.title}
+          </Link>
+        </h3>
+        <p className="mt-1 text-sm text-slate-600">{product.description}</p>
+        <div className="mt-3 flex items-center gap-2 text-xs text-slate-500">
+          <Badge variant="secondary" className="text-xs">
+            {product.category}
+          </Badge>
+        </div>
         <div className="mt-4 flex gap-2">
           <Link
             to={`/products/${product.id}`}
-            className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-3.5 py-2.5 text-base font-semibold shadow"
+            className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-3.5 py-2.5 text-sm font-semibold shadow"
           >
             Request quote
           </Link>
           <Link
-            to="/contact"
-            className="inline-flex items-center rounded-lg border border-slate-300 px-3.5 py-2.5 text-base font-semibold hover:bg-slate-50"
+            to={`/products/${product.id}`}
+            className="inline-flex items-center rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm font-semibold hover:bg-slate-50"
           >
-            Consultation
+            Learn more
           </Link>
         </div>
       </div>
