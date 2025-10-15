@@ -99,7 +99,6 @@ export default function KnowledgeArticle() {
         description={description}
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Resources", href: "/resources" },
           { label: "Knowledge Hub", href: "/resources" },
           { label: "Articles", href: "/resources/articles" },
           { label: title },
