@@ -10,6 +10,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import FAQWidget from "@/components/widgets/FAQWidget";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import ContactModal from "@/components/ContactModal";
 import { cn } from "@/lib/utils";
 
@@ -164,6 +165,20 @@ export default function Index() {
           <ResourceCard title="Top 10 BSC Best Practices" />
           <ResourceCard title="Understanding ISO/EN Standards" />
         </div>
+      </section>
+
+      {/* Quizzes preview */}
+      <section className="container mx-auto px-4 mt-20">
+        <div className="flex items-end justify-between gap-4">
+          <h2 className="text-2xl md:text-3xl font-bold">Quizzes</h2>
+          <Link
+            to="/resources/quizzes"
+            className="hidden md:inline-flex text-sm hover:underline"
+          >
+            View all
+          </Link>
+        </div>
+        <FeaturedQuizzes />
       </section>
 
       {/* Contact teaser */}
@@ -548,5 +563,98 @@ function ResourceCard({ title }: { title: string }) {
       </p>
       <span className="mt-4 inline-flex text-base underline">Read more</span>
     </Link>
+  );
+}
+
+function FeaturedQuizzes() {
+  const [items, setItems] = useState<any[] | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let mounted = true;
+    setLoading(true);
+    const tryFetch = async (url: string) => {
+      try {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 10000);
+        const res = await fetch(url, {
+          headers: { "cache-control": "no-cache" },
+          credentials: "same-origin",
+          signal: controller.signal,
+        });
+        clearTimeout(timeout);
+        if (!res.ok) return null;
+        return await res.json();
+      } catch (e) {
+        return null;
+      }
+    };
+
+    (async () => {
+      try {
+        let data: any[] | null = await tryFetch("/data/quizzes.json");
+        if (!data) {
+          const origin =
+            typeof window !== "undefined" ? window.location.origin : "";
+          if (origin) data = await tryFetch(origin + "/data/quizzes.json");
+        }
+        if (!mounted) return;
+        if (!data) throw new Error("Failed to load quizzes");
+        setItems(data.slice(0, 4));
+      } catch (e: any) {
+        if (!mounted) return;
+        setError(e?.message ?? "Failed to load quizzes");
+      } finally {
+        if (!mounted) return;
+        setLoading(false);
+      }
+    })();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  if (loading) return <div className="mt-6">Loading quizzes...</div>;
+  if (error)
+    return (
+      <div className="mt-6 text-sm text-red-600">Error: {error}</div>
+    );
+  if (!items || items.length === 0)
+    return (
+      <div className="mt-6 text-sm text-slate-600">No quizzes found.</div>
+    );
+
+  return (
+    <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {items.map((q) => (
+        <div
+          key={q.slug}
+          className="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white"
+        >
+          <div className="p-5 flex-1 flex flex-col">
+            <h3 className="font-semibold text-lg text-slate-900">{q.title}</h3>
+            <p className="mt-1 text-sm text-slate-600 flex-1">{q.subtitle}</p>
+            <div className="mt-3 flex flex-wrap gap-2 text-xs font-medium uppercase tracking-wide text-slate-500">
+              <span className="rounded-full bg-[#003a68]/10 px-3 py-1 text-[#003a68]">
+                {q.category}
+              </span>
+              <span className="rounded-full bg-[#003a68]/10 px-3 py-1 text-[#003a68]">
+                {q.skillLevel}
+              </span>
+            </div>
+          </div>
+          <div className="border-t border-slate-100 bg-slate-50 p-5">
+            <Button
+              asChild
+              className="w-full bg-[#003a68] hover:bg-[#003a68]/90 focus-visible:ring-[#003a68]/40"
+            >
+              <Link to={`/resources/quizzes/${q.slug}`}>Start quiz</Link>
+            </Button>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }
