@@ -103,7 +103,7 @@ export default function Header() {
         )}
       >
         <div className="container mx-auto px-4 relative">
-          <div className="flex h-16 items-center justify-between">
+          <div className="grid h-16 items-center grid-cols-[auto_1fr_auto]">
             <Link to="/" className="flex select-none items-center gap-2">
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))] font-bold text-white">
                 E
@@ -180,10 +180,13 @@ export default function Header() {
                   </Link>
                 ),
               )}
+            </nav>
+
+            <div className="hidden md:flex justify-self-end">
               <Link
                 to="/contact"
                 className={cn(
-                  "ml-2 inline-flex items-center rounded-full px-5 py-2.5 text-base font-semibold shadow transition hover:shadow-md",
+                  "inline-flex items-center rounded-full px-5 py-2.5 text-base font-semibold shadow transition hover:shadow-md",
                   scrolled || open || isProductDetail
                     ? "bg-[hsl(var(--brand-end))] text-white"
                     : "bg-white text-slate-900",
@@ -191,7 +194,7 @@ export default function Header() {
               >
                 Contact Us
               </Link>
-            </nav>
+            </div>
 
             <button
               className={cn(
