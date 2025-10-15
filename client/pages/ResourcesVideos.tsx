@@ -1,4 +1,29 @@
 import { PageBanner } from "@/components/layout/PageBanner";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+
+const VIDEOS = [
+  {
+    id: "vss9HS5DQQ8",
+    title: "Inside the Sciences Podcast Episode 1: Biosafety Cabinets | Protecting Science, Protecting You",
+    start: 570,
+  },
+  {
+    id: "uaydXcyUZhI",
+    title: "Biological Safety Cabinet | What You Need | Esco Scientific",
+  },
+  {
+    id: "ZnUW1N-JJz8",
+    title: "Working Safely in your Biological Safety Cabinets: Dealing with Spills | Esco Scientific",
+  },
+  {
+    id: "IkO3ABNT_M8",
+    title: "Biological Safety Cabinets | What to Keep in Mind for Stable Airflow",
+  },
+  {
+    id: "voU9E2_vxQ0",
+    title: "Biosafety Cabinet | Tips to Maintain its Efficiency | Esco Scientific",
+  },
+];
 
 export default function Videos() {
   return (
@@ -10,7 +35,40 @@ export default function Videos() {
       />
 
       <section className="container mx-auto px-4 py-12 md:py-16">
-        <p className="text-slate-700">Video library coming soon. Meanwhile, watch our latest seminars on YouTube.</p>
+        <h2 className="text-2xl md:text-3xl font-semibold">Video library</h2>
+        <p className="mt-3 text-slate-700">Curated videos about biosafety and proper use of biological safety cabinets.</p>
+
+        <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {VIDEOS.map((v) => {
+            const params = v.start ? `?start=${v.start}` : "";
+            return (
+              <div key={v.id} className="overflow-hidden rounded-lg border bg-white shadow-sm">
+                <AspectRatio ratio={16 / 9}>
+                  <iframe
+                    className="h-full w-full"
+                    src={`https://www.youtube.com/embed/${v.id}${params}`}
+                    title={v.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </AspectRatio>
+
+                <div className="p-4">
+                  <h3 className="text-sm font-semibold text-slate-900">{v.title}</h3>
+                  <a
+                    href={`https://www.youtube.com/watch?v=${v.id}`}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="mt-2 inline-block text-sm text-[hsl(var(--brand-end))] hover:underline"
+                  >
+                    Watch on YouTube
+                  </a>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </section>
     </div>
   );
