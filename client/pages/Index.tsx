@@ -170,16 +170,25 @@ export default function Index() {
       <section className="container mx-auto px-4 mt-20 mb-24">
         <div className="grid lg:grid-cols-2 gap-8">
           <div>
-            <h3 className="text-2xl md:text-3xl font-bold">Contact us</h3>
-            <p className="mt-3 text-slate-700 max-w-prose">
-              Leave your details — we will prepare a commercial offer that fits
-              your needs, timelines and budget.
-            </p>
-            <ul className="mt-6 space-y-2 text-slate-700 text-sm">
-              <li>Phone: +7 (495) 000-00-00</li>
-              <li>Email: contact@escobiosafety.org</li>
-              <li>Mon–Fri: 9:00–19:00</li>
-            </ul>
+            <h3 className="text-2xl md:text-3xl font-bold">Frequently asked questions</h3>
+            <div className="mt-6 space-y-4 text-slate-700">
+              <div>
+                <div className="font-semibold">How do I register for a training?</div>
+                <div className="mt-1 text-sm">Use the "Get certified" button or contact us via the form — we will guide you through available dates and formats.</div>
+              </div>
+              <div>
+                <div className="font-semibold">What formats do trainings take?</div>
+                <div className="mt-1 text-sm">We offer in-person, on-site and virtual instructor-led trainings depending on the course.</div>
+              </div>
+              <div>
+                <div className="font-semibold">How can I request a quotation?</div>
+                <div className="mt-1 text-sm">Provide your details and requirements in the form; our team will prepare a tailored commercial offer.</div>
+              </div>
+              <div>
+                <div className="font-semibold">Are your seminars commercial?</div>
+                <div className="mt-1 text-sm">Seminars are non-commercial and safety-focused; training programs may be charged depending on scope.</div>
+              </div>
+            </div>
           </div>
 
           <form
@@ -192,6 +201,15 @@ export default function Index() {
             className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm"
           >
             <div className="grid gap-4">
+              <div className="rounded-md bg-slate-50 p-3 text-slate-700 text-sm">
+                <div className="font-semibold">Contact details</div>
+                <ul className="mt-2 space-y-1">
+                  <li>Phone: +7 (495) 000-00-00</li>
+                  <li>Email: contact@escobiosafety.org</li>
+                  <li>Mon–Fri: 9:00–19:00</li>
+                </ul>
+              </div>
+
               <label className="grid gap-2 text-sm">
                 <span>Name</span>
                 <input
