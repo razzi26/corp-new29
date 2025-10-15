@@ -54,7 +54,7 @@ export default function Index() {
               </div>
 
               <p className="mt-3 text-white/85 text-base md:text-lg max-w-2xl">
-                Whether you���re looking to get certified, get information on
+                Whether you're looking to get certified, get information on
                 biosafety products, need to be updated on industry trends, or
                 want to test your knowledge, our institute is your central hub
                 for building expertise and confidence in biosafety protocols.
