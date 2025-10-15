@@ -281,6 +281,93 @@ function ProductCard({ title, tag }: { title: string; tag: string }) {
   );
 }
 
+function FeaturedProducts() {
+  const [products, setProducts] = useState<any[] | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let mounted = true;
+    setLoading(true);
+    const tryFetch = async (url: string) => {
+      try {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 10000);
+        const res = await fetch(url, { headers: { "cache-control": "no-cache" }, credentials: "same-origin", signal: controller.signal });
+        clearTimeout(timeout);
+        if (!res.ok) return null;
+        return await res.json();
+      } catch (e) {
+        return null;
+      }
+    };
+
+    (async () => {
+      try {
+        let data: any[] | null = await tryFetch("/data/products.json");
+        if (!data) {
+          const origin = typeof window !== "undefined" ? window.location.origin : "";
+          if (origin) data = await tryFetch(origin + "/data/products.json");
+        }
+        if (!mounted) return;
+        if (!data) throw new Error("Failed to load products");
+        const featured = data.filter((p: any) => Array.isArray(p.tags) && p.tags.includes("Featured"));
+        setProducts(featured.slice(0, 6));
+      } catch (e: any) {
+        if (!mounted) return;
+        setError(e?.message ?? "Failed to load products");
+      } finally {
+        if (!mounted) return;
+        setLoading(false);
+      }
+    })();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  if (loading) return <div className="mt-6">Loading products...</div>;
+  if (error) return <div className="mt-6 text-sm text-red-600">Error loading products: {error}</div>;
+  if (!products || products.length === 0) return <div className="mt-6 text-sm text-slate-600">No featured products available.</div>;
+
+  return (
+    <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {products.map((p) => (
+        <HomeProductCard key={p.id} product={p} />
+      ))}
+    </div>
+  );
+}
+
+function HomeProductCard({ product }: { product: any }) {
+  return (
+    <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white">
+      <div className="relative h-40 bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]">
+        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_20%,white,transparent_35%),radial-gradient(circle_at_70%_80%,white,transparent_25%)]" />
+      </div>
+      <div className="p-5">
+        <h4 className="font-semibold text-lg">{product.title}</h4>
+        <p className="mt-1 text-base text-slate-600">{product.description}</p>
+        <div className="mt-4 flex gap-2">
+          <Link
+            to={`/products/${product.id}`}
+            className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-3.5 py-2.5 text-base font-semibold shadow"
+          >
+            Request quote
+          </Link>
+          <Link
+            to="/contact"
+            className="inline-flex items-center rounded-lg border border-slate-300 px-3.5 py-2.5 text-base font-semibold hover:bg-slate-50"
+          >
+            Consultation
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ResourceCard({ title }: { title: string }) {
   return (
     <Link
