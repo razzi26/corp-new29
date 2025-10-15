@@ -43,7 +43,16 @@ export default function ResourcesQuizzes() {
         }
         const data = await response.json();
         if (mounted) {
-          setItems(data);
+          const metas: QuizMeta[] = data.map((item: any) => ({
+            slug: item.slug,
+            title: item.title,
+            subtitle: item.subtitle,
+            category: item.category,
+            skillLevel: item.skillLevel,
+            durationMinutes: item.durationMinutes,
+            questionCount: item.questionCount ?? (item.questions?.length ?? 0),
+          }));
+          setItems(metas);
         }
       } catch (e: any) {
         if (e?.name === "AbortError") return;
