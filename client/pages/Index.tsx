@@ -29,9 +29,7 @@ export default function Index() {
               <p className="mt-4 text-white/90 text-base md:text-lg max-w-xl">
                 Biosafety in any laboratory is crucial. The Esco Biosafety
                 Institute was established to be your partner in achieving it.
-                Our institute provides comprehensive biosafety training and
-                seminars, updated regulatory guidance, and practical resources
-                created for professionals at every level.
+                Our institute provides:
               </p>
 
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
