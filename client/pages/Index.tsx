@@ -33,6 +33,28 @@ export default function Index() {
                 seminars, updated regulatory guidance, and practical resources
                 created for professionals at every level.
               </p>
+
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                {[
+                  { label: "Training & seminars", icon: HeartPulse },
+                  { label: "Regulatory guidance", icon: ShieldCheck },
+                  { label: "Practical resources", icon: Microscope },
+                  { label: "Certification support", icon: Check },
+                ].map(({ label, icon: Icon }) => (
+                  <div
+                    key={label}
+                    className="flex items-center gap-3 bg-white/10 text-white/95 rounded-lg px-3 py-4"
+                  >
+                    <div className="flex-shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/12 text-white">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="font-medium text-sm text-white/95 leading-none">{label}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
               <p className="mt-3 text-white/85 text-base md:text-lg max-w-2xl">
                 Whether you���re looking to get certified, get information on
                 biosafety products, need to be updated on industry trends, or
@@ -55,26 +77,6 @@ export default function Index() {
                 </Link>
               </div>
 
-              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-                {[
-                  { label: "Training & seminars", icon: HeartPulse },
-                  { label: "Regulatory guidance", icon: ShieldCheck },
-                  { label: "Practical resources", icon: Microscope },
-                  { label: "Certification support", icon: Check },
-                ].map(({ label, icon: Icon }) => (
-                  <div
-                    key={label}
-                    className="flex items-center gap-3 bg-white/10 text-white/95 rounded-lg px-3 py-4"
-                  >
-                    <div className="flex-shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/12 text-white">
-                      <Icon className="h-6 w-6" />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="font-medium text-sm text-white/95 leading-none">{label}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/*
