@@ -465,7 +465,7 @@ function HomeProductCard({
         <img
           src={imgs[displayed]}
           alt={product.title}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-contain"
           style={{ left: 0, top: 0 }}
         />
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_20%,white,transparent_35%),radial-gradient(circle_at_70%_80%,white,transparent_25%)]" />
