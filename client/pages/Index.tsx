@@ -55,21 +55,23 @@ export default function Index() {
                 </Link>
               </div>
 
-              <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 {[
-                  "Training & seminars",
-                  "Regulatory guidance",
-                  "Practical resources",
-                  "Certification support",
-                ].map((f) => (
+                  { label: "Training & seminars", icon: HeartPulse },
+                  { label: "Regulatory guidance", icon: ShieldCheck },
+                  { label: "Practical resources", icon: Microscope },
+                  { label: "Certification support", icon: Check },
+                ].map(({ label, icon: Icon }) => (
                   <div
-                    key={f}
-                    className="flex items-center gap-3 rounded-full px-4 py-2 bg-white/10 hover:bg-white/20 transition text-white/95"
+                    key={label}
+                    className="flex items-start gap-4 bg-white text-slate-900 rounded-2xl p-4 shadow"
                   >
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
-                      <Check className="h-4 w-4" />
-                    </span>
-                    <span className="text-sm font-medium">{f}</span>
+                    <div className="flex-shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-md bg-[hsl(var(--brand-start))] text-white">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="font-semibold">{label}</span>
+                    </div>
                   </div>
                 ))}
               </div>
