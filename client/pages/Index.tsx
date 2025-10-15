@@ -286,6 +286,8 @@ function FeaturedProducts() {
   const [products, setProducts] = useState<any[] | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [contactModalOpen, setContactModalOpen] = useState(false);
+  const [contactProduct, setContactProduct] = useState<any | null>(null);
 
   useEffect(() => {
     let mounted = true;
@@ -313,7 +315,7 @@ function FeaturedProducts() {
         if (!mounted) return;
         if (!data) throw new Error("Failed to load products");
         const featured = data.filter((p: any) => Array.isArray(p.tags) && p.tags.includes("Featured"));
-        setProducts(featured.slice(0, 6));
+        setProducts(featured.slice(0, 8));
       } catch (e: any) {
         if (!mounted) return;
         setError(e?.message ?? "Failed to load products");
@@ -333,31 +335,132 @@ function FeaturedProducts() {
   if (!products || products.length === 0) return <div className="mt-6 text-sm text-slate-600">No featured products available.</div>;
 
   return (
-    <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {products.map((p) => (
-        <HomeProductCard key={p.id} product={p} />
-      ))}
-    </div>
+    <>
+      <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {products.map((p) => (
+          <HomeProductCard
+            key={p.id}
+            product={p}
+            onRequest={() => {
+              setContactProduct(p);
+              setContactModalOpen(true);
+            }}
+          />
+        ))}
+      </div>
+
+      <ContactModal
+        open={contactModalOpen}
+        productName={contactProduct?.title ?? null}
+        onOpenChange={(v) => {
+          setContactModalOpen(v);
+          if (!v) setContactProduct(null);
+        }}
+      />
+    </>
   );
 }
 
-function HomeProductCard({ product }: { product: any }) {
-  const imgs: string[] = product.images && product.images.length ? product.images : [product.mainImage || "/placeholder.svg"];
+function HomeProductCard({ product, onRequest }: { product: any; onRequest?: () => void }) {
+  const imgs = (product.mainImage ? [product.mainImage] : []).concat(product.images ?? []);
+  const containerRef = React.useRef<HTMLDivElement | null>(null);
+  const [hoverIndex, setHoverIndex] = React.useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = React.useState(0);
+  const [isTouch, setIsTouch] = React.useState(false);
+
+  React.useEffect(() => {
+    const touch = typeof window !== "undefined" && ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+    setIsTouch(Boolean(touch));
+  }, []);
+
+  React.useEffect(() => {
+    setHoverIndex(null);
+    setActiveIndex(0);
+  }, [product.id]);
+
+  const displayed = isTouch ? activeIndex : (hoverIndex ?? activeIndex);
+
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (isTouch) return;
+    if (imgs.length <= 1) return;
+    const el = containerRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const ratio = Math.max(0, Math.min(1, rect.width > 0 ? x / rect.width : 0));
+    let idx = Math.floor(ratio * imgs.length);
+    if (idx >= imgs.length) idx = imgs.length - 1;
+    if (idx < 0) idx = 0;
+    setHoverIndex(idx);
+  };
+
+  const touchStartX = React.useRef<number | null>(null);
+  const touchLastX = React.useRef<number | null>(null);
+
+  const onTouchStartSimple = (e: React.TouchEvent) => {
+    if (!isTouch) return;
+    touchStartX.current = e.touches[0].clientX;
+    touchLastX.current = e.touches[0].clientX;
+  };
+  const onTouchMoveSimple = (e: React.TouchEvent) => {
+    if (!isTouch) return;
+    if (touchStartX.current === null) return;
+    touchLastX.current = e.touches[0].clientX;
+  };
+  const onTouchEndSimple = (e?: React.TouchEvent) => {
+    if (!isTouch) return;
+    const startX = touchStartX.current;
+    const lastX = touchLastX.current;
+    touchStartX.current = null;
+    touchLastX.current = null;
+    if (startX === null || lastX === null) return;
+    const dx = lastX - startX;
+    const threshold = 30;
+    if (dx < -threshold) {
+      setActiveIndex((s) => (s + 1) % imgs.length);
+    } else if (dx > threshold) {
+      setActiveIndex((s) => (s - 1 + imgs.length) % imgs.length);
+    }
+  };
 
   return (
     <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white">
       <div
+        ref={containerRef}
         className="relative w-full aspect-[1/1] overflow-hidden rounded-t-2xl bg-slate-50"
         role="img"
         aria-label={product.title}
+        style={{ touchAction: "pan-y" }}
+        onPointerMove={(e) => {
+          handlePointerMove(e);
+        }}
+        onPointerLeave={() => {
+          if (!isTouch) setHoverIndex(null);
+        }}
+        onPointerCancel={() => {
+          if (!isTouch) setHoverIndex(null);
+        }}
+        onTouchStart={onTouchStartSimple}
+        onTouchMove={onTouchMoveSimple}
+        onTouchEnd={onTouchEndSimple}
       >
-        <img
-          src={imgs[0]}
-          alt={product.title}
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ left: 0, top: 0 }}
-        />
+        <img src={imgs[displayed]} alt={product.title} className="absolute inset-0 h-full w-full object-cover" style={{ left: 0, top: 0 }} />
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_20%,white,transparent_35%),radial-gradient(circle_at_70%_80%,white,transparent_25%)]" />
+
+        {imgs.length > 1 && (
+          <div className="absolute left-1/2 -translate-x-1/2 bottom-2 flex items-center gap-2">
+            {imgs.map((_, idx) => (
+              <span
+                key={idx}
+                aria-hidden
+                className={cn(
+                  "w-2 h-2 rounded-full transition-opacity",
+                  idx === displayed ? "bg-[hsl(var(--brand-end))] opacity-100" : "bg-white/60 opacity-70",
+                )}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="p-5">
@@ -373,16 +476,14 @@ function HomeProductCard({ product }: { product: any }) {
           </Badge>
         </div>
         <div className="mt-4 flex gap-2">
-          <Link
-            to={`/products/${product.id}`}
+          <button
+            type="button"
+            onClick={() => (onRequest ? onRequest() : undefined)}
             className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-3.5 py-2.5 text-sm font-semibold shadow"
           >
             Request quote
-          </Link>
-          <Link
-            to={`/products/${product.id}`}
-            className="inline-flex items-center rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm font-semibold hover:bg-slate-50"
-          >
+          </button>
+          <Link to={`/products/${product.id}`} className="inline-flex items-center rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm font-semibold hover:bg-slate-50">
             Learn more
           </Link>
         </div>
