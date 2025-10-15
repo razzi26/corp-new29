@@ -5,19 +5,39 @@ export default function Resources() {
   return (
     <div className="bg-white text-slate-900">
       <PageBanner
-        title="Resources"
+        title="Knowledge Hub"
         description="A curated collection of learning materials, videos, and case studies to help you stay informed about biosafety best practices."
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Resources" }]}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Knowledge Hub" }]}
       />
 
       <section className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {[
-            { href: "/resources/videos", title: "Videos", descr: "Short introductions and recorded seminars." },
-            { href: "/resources/knowledge-hub", title: "Knowledge Hub", descr: "Guides, articles and whitepapers." },
-            { href: "/resources/podcasts", title: "Podcasts", descr: "Interviews and discussions." },
-            { href: "/resources/case-studies", title: "Case Studies", descr: "Real-world implementations and learnings." },
-            { href: "/resources/faq", title: "FAQ", descr: "Answers to common questions." },
+            {
+              href: "/resources/videos",
+              title: "Videos",
+              descr: "Short introductions and recorded seminars.",
+            },
+            {
+              href: "/resources/articles",
+              title: "Articles",
+              descr: "Guides, articles and whitepapers.",
+            },
+            {
+              href: "/resources/podcasts",
+              title: "Podcasts",
+              descr: "Interviews and discussions.",
+            },
+            {
+              href: "/resources/case-studies",
+              title: "Case Studies",
+              descr: "Real-world implementations and learnings.",
+            },
+            {
+              href: "/resources/faq",
+              title: "FAQ",
+              descr: "Answers to common questions.",
+            },
           ].map((item) => (
             <Link
               key={item.href}

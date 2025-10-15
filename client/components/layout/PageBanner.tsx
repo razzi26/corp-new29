@@ -60,6 +60,8 @@ export function PageBanner({
             <BreadcrumbList>
               {breadcrumbs.map((crumb, index) => {
                 const key = `${index}-${crumb.href ?? crumb.label}`;
+                const displayLabel =
+                  crumb.href === "/resources" ? "Knowledge Hub" : crumb.label;
                 return (
                   <Fragment key={key}>
                     <BreadcrumbItem>
@@ -68,10 +70,10 @@ export function PageBanner({
                           asChild
                           className="transition-colors hover:text-foreground"
                         >
-                          <Link to={crumb.href}>{crumb.label}</Link>
+                          <Link to={crumb.href}>{displayLabel}</Link>
                         </BreadcrumbLink>
                       ) : (
-                        <BreadcrumbPage>{crumb.label}</BreadcrumbPage>
+                        <BreadcrumbPage>{displayLabel}</BreadcrumbPage>
                       )}
                     </BreadcrumbItem>
                     {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}

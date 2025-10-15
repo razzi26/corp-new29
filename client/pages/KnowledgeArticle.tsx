@@ -75,7 +75,7 @@ export default function KnowledgeArticle() {
 
   const article = useMemo(() => {
     if (!articles || !slug) return null;
-    const path = "/resources/knowledge-hub/" + slug;
+    const path = "/resources/articles/" + slug;
     return articles.find((a) => a.slug === path) ?? null;
   }, [articles, slug]);
 
@@ -99,8 +99,8 @@ export default function KnowledgeArticle() {
         description={description}
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Resources", href: "/resources" },
-          { label: "Knowledge Hub", href: "/resources/knowledge-hub" },
+          { label: "Knowledge Hub", href: "/resources" },
+          { label: "Articles", href: "/resources/articles" },
           { label: title },
         ]}
         meta={
@@ -202,10 +202,10 @@ export default function KnowledgeArticle() {
 
             <div className="flex flex-wrap items-center justify-between gap-4">
               <Link
-                to="/resources/knowledge-hub"
+                to="/resources/articles"
                 className="text-[hsl(var(--brand-end))] hover:underline"
               >
-                ← Back to Knowledge Hub
+                ← Back to Articles
               </Link>
               <div className="text-sm text-slate-600">
                 Last updated: {new Date(date).toLocaleDateString()}

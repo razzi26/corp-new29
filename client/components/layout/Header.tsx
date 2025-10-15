@@ -13,21 +13,21 @@ const nav: Array<{
   { to: "/", label: "Home" },
   { to: "/about", label: "About Us" },
   {
-    label: "Services",
+    label: "Trainings",
     children: [
-      { to: "/services/trainings", label: "Trainings" },
-      { to: "/services/seminars", label: "Seminars" },
-      { to: "/services/services", label: "Services" },
-      { to: "/services/brochures", label: "Brochures" },
+      { to: "/trainings", label: "Trainings" },
+      { to: "/trainings/seminars", label: "Seminars" },
+      { to: "/trainings/services", label: "Services" },
+      { to: "/trainings/brochures", label: "Brochures" },
     ],
   },
   { to: "/products", label: "Products" },
   { to: "/news", label: "News" },
   {
-    label: "Resources",
+    label: "Knowledge Hub",
     children: [
       { to: "/resources/videos", label: "Videos" },
-      { to: "/resources/knowledge-hub", label: "Knowledge Hub" },
+      { to: "/resources/articles", label: "Articles" },
       { to: "/resources/podcasts", label: "Podcasts" },
       { to: "/resources/case-studies", label: "Case Studies" },
       { to: "/resources/faq", label: "FAQ" },
@@ -103,7 +103,7 @@ export default function Header() {
         )}
       >
         <div className="container mx-auto px-4 relative">
-          <div className="flex h-16 items-center justify-between">
+          <div className="flex h-16 items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]">
             <Link to="/" className="flex select-none items-center gap-2">
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))] font-bold text-white">
                 E
@@ -120,7 +120,7 @@ export default function Header() {
               </span>
             </Link>
 
-            <nav className="hidden items-center gap-6 text-base md:flex">
+            <nav className="hidden items-center gap-6 text-base md:flex md:justify-self-center">
               {nav.map((item) =>
                 item.children ? (
                   <div
@@ -180,10 +180,13 @@ export default function Header() {
                   </Link>
                 ),
               )}
+            </nav>
+
+            <div className="hidden md:flex justify-self-end">
               <Link
                 to="/contact"
                 className={cn(
-                  "ml-2 inline-flex items-center rounded-full px-5 py-2.5 text-base font-semibold shadow transition hover:shadow-md",
+                  "inline-flex items-center rounded-full px-5 py-2.5 text-base font-semibold shadow transition hover:shadow-md",
                   scrolled || open || isProductDetail
                     ? "bg-[hsl(var(--brand-end))] text-white"
                     : "bg-white text-slate-900",
@@ -191,7 +194,7 @@ export default function Header() {
               >
                 Contact Us
               </Link>
-            </nav>
+            </div>
 
             <button
               className={cn(

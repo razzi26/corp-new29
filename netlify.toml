@@ -13,3 +13,9 @@
   from = "/api/*"
   status = 200
   to = "/.netlify/functions/api/:splat"
+
+[[redirects]]
+  from = "/resources/knowledge-hub/*"
+  to = "/resources/articles/:splat"
+  status = 301
+  force = false

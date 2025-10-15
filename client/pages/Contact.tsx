@@ -1,5 +1,7 @@
 import { PageBanner } from "@/components/layout/PageBanner";
 
+import FAQWidget from "@/components/widgets/FAQWidget";
+
 export default function Contact() {
   return (
     <div className="bg-white text-slate-900">
@@ -11,11 +13,10 @@ export default function Contact() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-2">
           <div>
-            <ul className="space-y-2 text-slate-700 text-sm">
-              <li>Phone: +7 (495) 000-00-00</li>
-              <li>Email: contact@escobiosafety.org</li>
-              <li>Mon–Fri: 9:00–19:00</li>
-            </ul>
+            <h3 className="text-2xl md:text-3xl font-bold">FAQs</h3>
+            <div className="mt-6">
+              <FAQWidget />
+            </div>
           </div>
           <form
             onSubmit={(e) => {
@@ -27,6 +28,15 @@ export default function Contact() {
             className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8"
           >
             <div className="grid gap-4">
+              <div className="rounded-md bg-slate-50 p-3 text-slate-700 text-sm">
+                <div className="font-semibold">Contact details</div>
+                <ul className="mt-2 space-y-1">
+                  <li>Phone: +7 (495) 000-00-00</li>
+                  <li>Email: contact@escobiosafety.org</li>
+                  <li>Mon–Fri: 9:00–19:00</li>
+                </ul>
+              </div>
+
               <label className="grid gap-2 text-sm">
                 <span>Name</span>
                 <input
