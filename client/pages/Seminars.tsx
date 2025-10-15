@@ -9,7 +9,7 @@ export default function Seminars() {
         description="Non-commercial, safety-focused seminars delivered worldwide by Esco biosafety specialists."
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Services", href: "/services/services" },
+          { label: "Trainings", href: "/trainings" },
           { label: "Seminars" },
         ]}
       />
@@ -62,7 +62,7 @@ export default function Seminars() {
               </a>
 
               <a
-                href="/services/trainings"
+                href="/trainings"
                 className="inline-flex items-center justify-center rounded-md border border-slate-200 px-6 py-3 text-base font-medium text-slate-700 bg-white hover:bg-slate-50"
               >
                 See Trainings

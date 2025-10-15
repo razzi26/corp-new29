@@ -15,10 +15,10 @@ const nav: Array<{
   {
     label: "Trainings",
     children: [
-      { to: "/services/trainings", label: "Trainings" },
-      { to: "/services/seminars", label: "Seminars" },
-      { to: "/services/services", label: "Services" },
-      { to: "/services/brochures", label: "Brochures" },
+      { to: "/trainings", label: "Trainings" },
+      { to: "/trainings/seminars", label: "Seminars" },
+      { to: "/trainings/services", label: "Services" },
+      { to: "/trainings/brochures", label: "Brochures" },
     ],
   },
   { to: "/products", label: "Products" },

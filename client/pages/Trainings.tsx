@@ -9,7 +9,7 @@ export default function Trainings() {
         description="Expert-led programs delivered from our dedicated learning centers and through global offices."
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Services", href: "/services/seminars" },
+          { label: "Trainings", href: "/trainings" },
           { label: "Trainings" },
         ]}
       />
