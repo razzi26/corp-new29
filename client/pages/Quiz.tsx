@@ -131,9 +131,6 @@ export default function Quiz() {
     if (correct) {
       setScore((prev) => prev + 1);
     }
-    if (isLastQuestion) {
-      setIsFinished(true);
-    }
   };
 
   const handleNext = () => {
