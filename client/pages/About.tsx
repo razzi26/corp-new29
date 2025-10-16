@@ -20,7 +20,7 @@ export default function About() {
           className="pointer-events-none absolute right-[8%] top-32 hidden h-72 w-72 rounded-full bg-[#003a68]/12 blur-3xl lg:block"
           aria-hidden
         />
-        <div className="relative grid items-start gap-12 lg:grid-cols-2">
+        <div className="relative grid items-center gap-12 lg:grid-cols-2">
           <div className="relative space-y-5 lg:max-w-xl">
             <h1 className="text-3xl font-bold leading-tight text-slate-900 md:text-5xl">
               Esco Biosafety Institute
