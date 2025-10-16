@@ -1,12 +1,7 @@
 import { PageBanner } from "@/components/layout/PageBanner";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useEffect, useState } from "react";
-
-interface PodcastItem {
-  id: string;
-  title: string;
-  start?: number;
-}
+import type { PodcastItem } from "@/entities/podcast";
+import { PodcastCard } from "@/components/cards/PodcastCard";
 
 export default function Podcasts() {
   const [items, setItems] = useState<PodcastItem[] | null>(null);
@@ -65,32 +60,9 @@ export default function Podcasts() {
         )}
 
         <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {(items ?? []).map((p) => {
-            const params = p.start ? `?start=${p.start}` : "";
-            return (
-              <div
-                key={p.id}
-                className="overflow-hidden rounded-lg border bg-white shadow-sm"
-              >
-                <AspectRatio ratio={16 / 9}>
-                  <iframe
-                    className="h-full w-full"
-                    src={`https://www.youtube.com/embed/${p.id}${params}`}
-                    title={p.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  />
-                </AspectRatio>
-
-                <div className="p-4">
-                  <h3 className="text-sm font-semibold text-slate-900">
-                    {p.title}
-                  </h3>
-                </div>
-              </div>
-            );
-          })}
+          {(items ?? []).map((p) => (
+            <PodcastCard key={p.id} podcast={p} />
+          ))}
         </div>
       </section>
     </div>
