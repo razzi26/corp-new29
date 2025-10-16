@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -12,13 +13,15 @@ interface VideoItem {
 }
 
 export default function KnowledgeHubWidget() {
-  const [tab, setTab] = useState<"videos" | "articles" | "quizzes">("videos");
+  const [tab, setTab] = useState<"videos" | "podcasts" | "articles" | "quizzes">("videos");
   const [articles, setArticles] = useState<any[] | null>(null);
   const [quizzes, setQuizzes] = useState<any[] | null>(null);
   const [videos, setVideos] = useState<VideoItem[] | null>(null);
+  const [podcasts, setPodcasts] = useState<VideoItem[] | null>(null);
   const [artErr, setArtErr] = useState<string | null>(null);
   const [quizErr, setQuizErr] = useState<string | null>(null);
   const [vidErr, setVidErr] = useState<string | null>(null);
+  const [podErr, setPodErr] = useState<string | null>(null);
 
   useEffect(() => {
     let mounted = true;
@@ -98,9 +101,37 @@ export default function KnowledgeHubWidget() {
     };
   }, []);
 
+  useEffect(() => {
+    let mounted = true;
+    const controller = new AbortController();
+    (async () => {
+      try {
+        const r = await fetch("/data/podcasts.json", {
+          cache: "no-store",
+          credentials: "same-origin",
+          headers: { Accept: "application/json" },
+          signal: controller.signal,
+        });
+        if (!r.ok) throw new Error(`Failed to load podcasts (${r.status})`);
+        const data = await r.json();
+        if (!mounted) return;
+        setPodcasts(Array.isArray(data) ? data.slice(0, 3) : []);
+      } catch (e: any) {
+        if (e?.name === "AbortError") return;
+        if (mounted) setPodErr(String(e));
+      }
+    })();
+    return () => {
+      mounted = false;
+      controller.abort();
+    };
+  }, []);
+
   const viewAllHref =
     tab === "videos"
       ? "/resources/videos"
+      : tab === "podcasts"
+      ? "/resources/podcasts"
       : tab === "articles"
       ? "/resources/articles"
       : "/resources/quizzes";
@@ -117,6 +148,7 @@ export default function KnowledgeHubWidget() {
       <Tabs value={tab} onValueChange={(v) => setTab(v as any)} className="mt-4">
         <TabsList>
           <TabsTrigger value="videos">Videos</TabsTrigger>
+          <TabsTrigger value="podcasts">Podcasts</TabsTrigger>
           <TabsTrigger value="articles">Articles</TabsTrigger>
           <TabsTrigger value="quizzes">Quizzes</TabsTrigger>
         </TabsList>
@@ -144,6 +176,37 @@ export default function KnowledgeHubWidget() {
                     </AspectRatio>
                     <div className="p-4">
                       <h3 className="text-sm font-semibold text-slate-900">{v.title}</h3>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </TabsContent>
+
+        <TabsContent value="podcasts">
+          {(!podcasts && !podErr) ? (
+            <LoadingIndicator label="Loading podcasts" />
+          ) : podErr ? (
+            <div className="mt-6 text-sm text-red-600">Failed to load podcasts.</div>
+          ) : (
+            <div className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {podcasts!.map((p) => {
+                const params = p.start ? `?start=${p.start}` : "";
+                return (
+                  <div key={p.id} className="overflow-hidden rounded-lg border bg-white shadow-sm">
+                    <AspectRatio ratio={16 / 9}>
+                      <iframe
+                        className="h-full w-full"
+                        src={`https://www.youtube.com/embed/${p.id}${params}`}
+                        title={p.title}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      />
+                    </AspectRatio>
+                    <div className="p-4">
+                      <h3 className="text-sm font-semibold text-slate-900">{p.title}</h3>
                     </div>
                   </div>
                 );
