@@ -7,6 +7,10 @@
     "skillLevel": "Intermediate",
     "durationMinutes": 12,
     "questionCount": 12,
+    "image": {
+      "url": "https://images.pexels.com/photos/6129869/pexels-photo-6129869.jpeg",
+      "alt": "Clinician organizing sterile supplies in a laboratory environment"
+    },
     "questions": [
       {
         "id": "q1",

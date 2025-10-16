@@ -746,8 +746,8 @@ function FeaturedKnowledgeHub() {
                 >
                   <AspectRatio ratio={16 / 9}>
                     <img
-                      src="https://images.pexels.com/photos/6129869/pexels-photo-6129869.jpeg"
-                      alt={q.title}
+                      src={q.image?.url ?? "/placeholder.svg"}
+                      alt={q.image?.alt ?? q.title}
                       className="h-full w-full object-cover"
                       loading="lazy"
                       decoding="async"

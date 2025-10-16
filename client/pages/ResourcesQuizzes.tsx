@@ -22,6 +22,7 @@ interface QuizMeta {
   skillLevel: string;
   durationMinutes: number;
   questionCount: number;
+  image?: { url: string; alt?: string };
 }
 
 export default function ResourcesQuizzes() {
@@ -53,6 +54,7 @@ export default function ResourcesQuizzes() {
             skillLevel: item.skillLevel,
             durationMinutes: item.durationMinutes,
             questionCount: item.questionCount ?? item.questions?.length ?? 0,
+            image: item.image,
           }));
           setItems(metas);
         }
@@ -147,8 +149,8 @@ export default function ResourcesQuizzes() {
                 >
                   <AspectRatio ratio={16 / 9}>
                     <img
-                      src="https://images.pexels.com/photos/6129869/pexels-photo-6129869.jpeg"
-                      alt={quiz.title}
+                      src={quiz.image?.url ?? "/placeholder.svg"}
+                      alt={quiz.image?.alt ?? quiz.title}
                       className="h-full w-full object-cover"
                       loading="lazy"
                       decoding="async"
