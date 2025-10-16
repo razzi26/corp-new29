@@ -18,6 +18,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LoadingIndicator } from "@/components/ui/loading-indicator";
 import ContactModal from "@/components/ContactModal";
 import { cn } from "@/lib/utils";
+import FeaturedProductsWidget from "@/components/widgets/FeaturedProductsWidget";
 import KnowledgeHubWidget from "@/components/widgets/KnowledgeHubWidget";
 
 export default function Index() {
