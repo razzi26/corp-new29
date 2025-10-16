@@ -101,7 +101,7 @@ export default function About() {
                     >
                       <span className="h-2 w-2 rounded-full bg-[#003a68]" />
                     </span>
-                    <span className="font-semibold">Esco Biosafety Institute:</span> Established to advance education, standards, and certification.
+                    <span className="font-semibold">Esco Biosafety Institute:</span>{" "}Established to advance education, standards, and certification.
                   </li>
                 </ul>
               </div>
