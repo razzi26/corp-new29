@@ -30,7 +30,7 @@ export default function Index() {
             loading="eager"
             decoding="async"
           />
-          <div className="absolute inset-0 bg-[hsl(var(--brand-end))]/65" />
+          <div className="absolute inset-0 bg-[hsl(var(--brand-end))]/70" />
           <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--brand-start))]/40 to-[hsl(var(--brand-end))]/70 mix-blend-multiply" />
         </div>
         <div className="relative container mx-auto px-4 pt-24 pb-16 md:pt-32 md:pb-20">
@@ -43,7 +43,7 @@ export default function Index() {
               <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight">
                 Welcome to Esco Biosafety Institute!
               </h1>
-              <p className="mt-4 text-white/90 text-base md:text-lg max-w-xl">
+              <p className="mt-4 text-white text-base md:text-lg max-w-xl">
                 Biosafety in any laboratory is crucial. The Esco Biosafety
                 Institute was established to be your partner in achieving it.
                 Our institute provides:
@@ -58,13 +58,13 @@ export default function Index() {
                 ].map(({ label, icon: Icon }) => (
                   <div
                     key={label}
-                    className="flex items-center gap-3 bg-white/10 text-white/95 rounded-lg px-3 py-4"
+                    className="flex items-center gap-3 bg-white/10 text-white rounded-lg px-3 py-4"
                   >
                     <div className="flex-shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/12 text-white">
                       <Icon className="h-6 w-6" />
                     </div>
                     <div className="flex flex-col">
-                      <span className="font-medium text-sm text-white/95 leading-none">
+                      <span className="font-medium text-sm text-white leading-none">
                         {label}
                       </span>
                     </div>
@@ -72,7 +72,7 @@ export default function Index() {
                 ))}
               </div>
 
-              <p className="mt-3 text-white/85 text-base md:text-lg max-w-2xl">
+              <p className="mt-3 text-white text-base md:text-lg max-w-2xl">
                 Whether you're looking to get certified, get information on
                 biosafety products, need to be updated on industry trends, or
                 want to test your knowledge, our institute is your central hub
