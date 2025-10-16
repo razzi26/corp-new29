@@ -21,7 +21,7 @@ export default function About() {
             className="pointer-events-none absolute -bottom-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-[#003a68]/10 blur-3xl"
             aria-hidden
           />
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
             <div className="relative space-y-5">
               <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-xs text-slate-700 shadow-sm ring-1 ring-white/60 backdrop-blur">
                 About Us
