@@ -57,11 +57,6 @@ export default function Podcasts() {
       />
 
       <section className="container mx-auto px-4 py-12 md:py-16">
-        <h2 className="text-2xl md:text-3xl font-semibold">Podcast library</h2>
-        <p className="mt-3 text-slate-700">
-          Curated podcast episodes and interviews.
-        </p>
-
         {loading && (
           <div className="mt-6 text-slate-600">Loading podcasts...</div>
         )}
