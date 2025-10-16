@@ -65,7 +65,7 @@ export function PageBanner({
                 const displayLabel =
                   crumb.href === "/resources" ? "Knowledge Hub" : crumb.label;
                 return (
-                  <Fragment key={key}>
+                  <React.Fragment key={key}>
                     <BreadcrumbItem>
                       {crumb.href ? (
                         <BreadcrumbLink
@@ -79,7 +79,7 @@ export function PageBanner({
                       )}
                     </BreadcrumbItem>
                     {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
-                  </Fragment>
+                  </React.Fragment>
                 );
               })}
             </BreadcrumbList>
