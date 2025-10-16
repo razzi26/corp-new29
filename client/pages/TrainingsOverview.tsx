@@ -44,7 +44,7 @@ const TRAINING_CARDS: TrainingCard[] = [
     href: "/trainings/brochures",
     title: "Brochures",
     description: "Downloadable training materials and documentation.",
-    icon: FileDocument,
+    icon: FileStack,
     color: "bg-green-600",
   },
 ];
