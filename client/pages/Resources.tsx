@@ -60,21 +60,21 @@ export default function Resources() {
             <Link
               key={href}
               to={href}
-              className="group relative block overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              className={`group relative block overflow-hidden rounded-2xl p-6 text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-lg ${color}`}
             >
               <div className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden>
                 <div className="absolute inset-0 bg-brand-gradient opacity-[0.15]" />
               </div>
               <div className="flex items-start justify-between gap-4">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg text-white shadow-sm ring-1 ring-white/10" style={{}}>
-                  <span className={`inline-flex h-12 w-12 items-center justify-center rounded-lg ${color}`}>
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg text-white shadow-sm ring-1 ring-white/10">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/20">
                     <Icon className="h-6 w-6" />
                   </span>
                 </div>
-                <ArrowRight className="h-5 w-5 text-slate-400 transition-transform duration-300 group-hover:translate-x-1" />
+                <ArrowRight className="h-5 w-5 text-white/80 transition-transform duration-300 group-hover:translate-x-1" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-slate-900">{title}</h3>
-              <p className="mt-2 text-sm text-slate-600">{descr}</p>
+              <h3 className="mt-4 text-lg font-semibold text-white">{title}</h3>
+              <p className="mt-2 text-sm text-white/90">{descr}</p>
             </Link>
           ))}
         </div>
