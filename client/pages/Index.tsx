@@ -210,6 +210,7 @@ export default function Index() {
             className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm"
           >
             <div className="grid gap-4">
+              <h3 className="text-2xl md:text-3xl font-bold">Contact Us</h3>
               <div className="rounded-md bg-slate-50 p-3 text-slate-700 text-sm">
                 <div className="font-semibold">Contact details</div>
                 <ul className="mt-2 space-y-1">
