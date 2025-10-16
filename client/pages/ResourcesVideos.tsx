@@ -63,7 +63,7 @@ export default function Videos() {
           <div className="mt-6 text-sm text-red-600">Error: {error}</div>
         )}
 
-        <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-4 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {(videos ?? []).map((v) => {
             const params = v.start ? `?start=${v.start}` : "";
             return (
