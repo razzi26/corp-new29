@@ -1,35 +1,48 @@
 import { PageBanner } from "@/components/layout/PageBanner";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { useEffect, useState } from "react";
 
-const VIDEOS = [
-  {
-    id: "vss9HS5DQQ8",
-    title:
-      "Inside the Sciences Podcast Episode 1: Biosafety Cabinets | Protecting Science, Protecting You",
-    start: 570,
-  },
-  {
-    id: "uaydXcyUZhI",
-    title: "Biological Safety Cabinet | What You Need | Esco Scientific",
-  },
-  {
-    id: "ZnUW1N-JJz8",
-    title:
-      "Working Safely in your Biological Safety Cabinets: Dealing with Spills | Esco Scientific",
-  },
-  {
-    id: "IkO3ABNT_M8",
-    title:
-      "Biological Safety Cabinets | What to Keep in Mind for Stable Airflow",
-  },
-  {
-    id: "voU9E2_vxQ0",
-    title:
-      "Biosafety Cabinet | Tips to Maintain its Efficiency | Esco Scientific",
-  },
-];
+interface VideoItem {
+  id: string;
+  title: string;
+  start?: number;
+}
 
 export default function Videos() {
+  const [videos, setVideos] = useState<VideoItem[] | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let mounted = true;
+    setLoading(true);
+    setError(null);
+
+    fetch("/data/videos.json", { cache: "no-store" })
+      .then(async (res) => {
+        if (!res.ok) throw new Error(`Failed to load videos (${res.status})`);
+        return (await res.json()) as unknown;
+      })
+      .then((json) => {
+        if (!mounted) return;
+        if (!Array.isArray(json)) throw new Error("Invalid videos data format");
+        const valid = (json as any[]).filter((v) => v && typeof v.id === "string" && typeof v.title === "string");
+        setVideos(valid as VideoItem[]);
+      })
+      .catch((err) => {
+        if (!mounted) return;
+        setError(err?.message ?? "Failed to load videos");
+      })
+      .finally(() => {
+        if (!mounted) return;
+        setLoading(false);
+      });
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
   return (
     <div className="bg-white text-slate-900">
       <PageBanner
@@ -49,8 +62,15 @@ export default function Videos() {
           cabinets.
         </p>
 
+        {loading && (
+          <div className="mt-6 text-slate-600">Loading videos...</div>
+        )}
+        {error && (
+          <div className="mt-6 text-sm text-red-600">Error: {error}</div>
+        )}
+
         <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {VIDEOS.map((v) => {
+          {(videos ?? []).map((v) => {
             const params = v.start ? `?start=${v.start}` : "";
             return (
               <div
