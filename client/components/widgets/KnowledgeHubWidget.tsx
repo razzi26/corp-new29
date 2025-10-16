@@ -172,31 +172,9 @@ export default function KnowledgeHubWidget() {
             </div>
           ) : (
             <div className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {videos!.map((v) => {
-                const params = v.start ? `?start=${v.start}` : "";
-                return (
-                  <div
-                    key={v.id}
-                    className="overflow-hidden rounded-lg border bg-white shadow-sm"
-                  >
-                    <AspectRatio ratio={16 / 9}>
-                      <iframe
-                        className="h-full w-full"
-                        src={`https://www.youtube.com/embed/${v.id}${params}`}
-                        title={v.title}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                      />
-                    </AspectRatio>
-                    <div className="p-4">
-                      <h3 className="text-sm font-semibold text-slate-900">
-                        {v.title}
-                      </h3>
-                    </div>
-                  </div>
-                );
-              })}
+              {videos!.map((v) => (
+                <VideoCard key={v.id} video={v} />
+              ))}
             </div>
           )}
         </TabsContent>
