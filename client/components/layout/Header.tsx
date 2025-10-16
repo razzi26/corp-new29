@@ -291,7 +291,7 @@ export default function Header() {
                   <Link
                     to="/contact"
                     className={cn(
-                      "block w-full rounded-full px-5 py-2.5 text-center text-base font-semibold shadow transition hover:shadow-md",
+                      "block w-full rounded-full px-5 py-2.5 text-center text-[hsl(var(--brand-end))] font-semibold shadow transition hover:shadow-md",
                       scrolled || open || isProductDetail
                         ? "bg-[hsl(var(--brand-end))] text-white"
                         : "bg-white text-[hsl(var(--brand-end))]",
