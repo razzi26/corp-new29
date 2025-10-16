@@ -79,7 +79,7 @@ export default function Resources() {
             <Link
               key={href}
               to={href}
-              className={`group relative block overflow-hidden rounded-2xl p-6 text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-lg ${color}`}
+              className={`group relative block overflow-hidden rounded-xl p-6 text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-lg ${color}`}
             >
               <div
                 className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
