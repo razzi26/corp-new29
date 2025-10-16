@@ -1,5 +1,5 @@
 import { Fragment, type ReactNode } from "react";
-import React, { Fragment } from "react";
+import React from "react";
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 
