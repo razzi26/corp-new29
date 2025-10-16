@@ -30,7 +30,7 @@ export default function Index() {
             loading="eager"
             decoding="async"
           />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-[hsl(var(--brand-end))]/75" />
           <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--brand-start))]/40 to-[hsl(var(--brand-end))]/70 mix-blend-multiply" />
         </div>
         <div className="relative container mx-auto px-4 pt-24 pb-16 md:pt-32 md:pb-20">
