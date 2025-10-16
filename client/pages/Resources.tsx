@@ -75,7 +75,6 @@ export default function Resources() {
               </div>
               <h3 className="mt-4 text-lg font-semibold text-slate-900">{title}</h3>
               <p className="mt-2 text-sm text-slate-600">{descr}</p>
-              <span className="mt-4 inline-block text-sm font-medium text-[#003a68] group-hover:underline">Explore</span>
             </Link>
           ))}
         </div>
