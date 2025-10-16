@@ -1,4 +1,6 @@
 import { Fragment, type ReactNode } from "react";
+import React from "react";
+import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 
 import {
@@ -63,7 +65,7 @@ export function PageBanner({
                 const displayLabel =
                   crumb.href === "/resources" ? "Knowledge Hub" : crumb.label;
                 return (
-                  <Fragment key={key}>
+                  <React.Fragment key={key}>
                     <BreadcrumbItem>
                       {crumb.href ? (
                         <BreadcrumbLink
@@ -77,7 +79,7 @@ export function PageBanner({
                       )}
                     </BreadcrumbItem>
                     {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
-                  </Fragment>
+                  </React.Fragment>
                 );
               })}
             </BreadcrumbList>
