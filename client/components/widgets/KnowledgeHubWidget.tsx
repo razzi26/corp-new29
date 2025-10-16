@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LoadingIndicator } from "@/components/ui/loading-indicator";
-import { Button } from "@/components/ui/button";
+import { VideoCard } from "@/components/cards/VideoCard";
+import { PodcastCard } from "@/components/cards/PodcastCard";
+import { ArticleCard } from "@/components/cards/ArticleCard";
+import { QuizCard } from "@/components/cards/QuizCard";
 
 interface VideoItem {
   id: string;
