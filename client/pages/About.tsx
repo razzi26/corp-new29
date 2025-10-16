@@ -22,9 +22,6 @@ export default function About() {
         />
         <div className="relative grid items-start gap-12 lg:grid-cols-2">
           <div className="relative space-y-5 lg:max-w-xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-xs text-slate-700 shadow-sm ring-1 ring-white/60 backdrop-blur">
-              About Us
-            </span>
             <h1 className="text-3xl font-bold leading-tight text-slate-900 md:text-5xl">
               Esco Biosafety Institute
             </h1>
