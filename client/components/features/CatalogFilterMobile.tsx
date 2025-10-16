@@ -1,6 +1,10 @@
 import { CategoriesDrawer } from "./CategoriesDrawer";
 import { TagsDrawer } from "./TagsDrawer";
 
+interface URLSearchParams {
+  get: (key: string) => string | null;
+}
+
 interface CatalogFilterMobileProps {
   query: string;
   onQueryChange: (q: string) => void;
