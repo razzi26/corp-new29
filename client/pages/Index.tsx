@@ -173,7 +173,7 @@ export default function Index() {
           </Link>
         </div>
 
-        <FeaturedProducts />
+        <FeaturedProductsWidget />
 
         {/*<div className="mt-6">
           <Link
