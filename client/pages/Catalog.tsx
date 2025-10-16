@@ -140,15 +140,6 @@ export default function Catalog() {
     return Array.from(map.entries()).sort(([a], [b]) => a.localeCompare(b));
   }, [filtered]);
 
-  const toggleSet = (setter: (s: Set<string>) => void, value: string) => {
-    setter((prev) => {
-      const next = new Set(prev);
-      if (next.has(value)) next.delete(value);
-      else next.add(value);
-      return next;
-    });
-  };
-
   const [contactModalOpen, setContactModalOpen] = useState(false);
   const [contactProduct, setContactProduct] = useState<Product | null>(null);
 
