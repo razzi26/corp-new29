@@ -744,6 +744,15 @@ function FeaturedKnowledgeHub() {
                   key={q.slug}
                   className="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white"
                 >
+                  <AspectRatio ratio={16 / 9}>
+                    <img
+                      src="https://images.pexels.com/photos/6129869/pexels-photo-6129869.jpeg"
+                      alt={q.title}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </AspectRatio>
                   <div className="p-5 flex-1 flex flex-col">
                     <h3 className="font-semibold text-lg text-slate-900">
                       {q.title}
