@@ -53,10 +53,10 @@ export default function Index() {
 
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 {[
-                  { label: "Training & seminars", icon: GraduationCap, bg: "bg-sky-400/20" },
-                  { label: "Regulatory guidance", icon: ShieldCheck, bg: "bg-teal-400/20" },
-                  { label: "Practical resources", icon: Microscope, bg: "bg-indigo-400/20" },
-                  { label: "Certification support", icon: BadgeCheck, bg: "bg-emerald-400/20" },
+                  { label: "Training & seminars", icon: GraduationCap, bg: "bg-sky-600" },
+                  { label: "Regulatory guidance", icon: ShieldCheck, bg: "bg-teal-600" },
+                  { label: "Practical resources", icon: Microscope, bg: "bg-indigo-600" },
+                  { label: "Certification support", icon: BadgeCheck, bg: "bg-emerald-600" },
                 ].map(({ label, icon: Icon, bg }) => (
                   <div
                     key={label}
