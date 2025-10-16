@@ -1,6 +1,4 @@
 import { PageBanner } from "@/components/layout/PageBanner";
-
-import { PageBanner } from "@/components/layout/PageBanner";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useEffect, useState } from "react";
 
