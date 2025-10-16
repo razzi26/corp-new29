@@ -12,69 +12,99 @@ export default function About() {
       />
       {/* Hero */}
       <section className="container mx-auto px-4 py-16 md:py-24">
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs md:text-sm border border-slate-200 text-slate-700">
-              About Us
-            </span>
-            <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight">
-              Esco Biosafety Institute
-            </h1>
-            <p className="mt-4 text-slate-700 text-base md:text-lg max-w-prose">
-              Esco is a global life sciences company that started in 1978 as a
-              cleanroom technology specialist. It has since progressed into a
-              key player that leverages its Singapore headquarters as a
-              strategic hub to connect Eastern and Western markets. The company
-              is a market leader in biological safety cabinets and maintains a
-              significant worldwide presence.
-            </p>
-            <p className="mt-3 text-slate-700 text-base md:text-lg max-w-prose">
-              A key initiative in fulfilling its vision was the creation of the
-              Esco Biosafety Institute. The Institute was created to push
-              forward Esco’s core mission of building a global life sciences
-              ecosystem. Beyond being a manufacturing hardware, it purposes to
-              be a foundational pillar for education and standards.
-            </p>
-            <div className="mt-6 flex gap-3">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-5 py-3 font-semibold shadow hover:shadow-md transition"
-              >
-                Contact us
-              </Link>
-              <Link
-                to="/news"
-                className="inline-flex items-center justify-center rounded-lg border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-50 transition"
-              >
-                Explore resources
-              </Link>
+        <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-white px-6 py-12 shadow-xl md:px-12 md:py-16">
+          <div
+            className="pointer-events-none absolute -top-16 right-10 h-48 w-48 rounded-full bg-[#0096d6]/10 blur-3xl"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute -bottom-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-[#003a68]/10 blur-3xl"
+            aria-hidden
+          />
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="relative space-y-5">
+              <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-xs text-slate-700 shadow-sm ring-1 ring-white/60 backdrop-blur">
+                About Us
+              </span>
+              <h1 className="text-3xl font-bold leading-tight text-slate-900 md:text-5xl">
+                Esco Biosafety Institute
+              </h1>
+              <p className="max-w-prose text-base text-slate-700 md:text-lg">
+                Esco is a global life sciences company that started in 1978 as a
+                cleanroom technology specialist. It has since progressed into a
+                key player that leverages its Singapore headquarters as a
+                strategic hub to connect Eastern and Western markets. The company
+                is a market leader in biological safety cabinets and maintains a
+                significant worldwide presence.
+              </p>
+              <p className="max-w-prose text-base text-slate-700 md:text-lg">
+                A key initiative in fulfilling its vision was the creation of the
+                Esco Biosafety Institute. The Institute was created to push
+                forward Esco’s core mission of building a global life sciences
+                ecosystem. Beyond being a manufacturing hardware, it purposes to
+                be a foundational pillar for education and standards.
+              </p>
+              <div className="flex flex-wrap gap-3 pt-2">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] px-5 py-3 font-semibold text-white shadow transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  Contact us
+                </Link>
+                <Link
+                  to="/news"
+                  className="inline-flex items-center justify-center rounded-lg border border-slate-300 px-5 py-3 font-semibold transition hover:-translate-y-0.5 hover:bg-slate-50"
+                >
+                  Explore resources
+                </Link>
+              </div>
             </div>
-          </div>
-          <div className="relative">
-            <div className="relative rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-lg">
-              <h3 className="text-xl font-semibold">Our Journey</h3>
-              <ul className="mt-4 space-y-3 text-slate-700 text-sm leading-relaxed">
-                <li>
-                  <span className="font-semibold">1978:</span> Founded as a
-                  cleanroom technology specialist.
-                </li>
-                <li>
-                  <span className="font-semibold">1980s–2000s:</span> Expanded
-                  globally; became a market leader in biological safety
-                  cabinets.
-                </li>
-                <li>
-                  <span className="font-semibold">Today:</span> A global company
-                  connecting East and West from Singapore HQ.
-                </li>
-                <li>
-                  <span className="font-semibold">
-                    Esco Biosafety Institute:
-                  </span>{" "}
-                  Established to advance education, standards, and
-                  certification.
-                </li>
-              </ul>
+            <div className="relative lg:pl-8">
+              <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-lg backdrop-blur-sm md:p-8">
+                <div
+                  className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#003a68] via-[#0096d6] to-[#003a68]"
+                  aria-hidden
+                />
+                <h3 className="text-xl font-semibold text-slate-900">Our Journey</h3>
+                <ul className="mt-6 space-y-5">
+                  <li className="relative pl-10 text-sm leading-relaxed text-slate-700">
+                    <span
+                      className="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-[#003a68]/10 text-[#003a68] ring-2 ring-white shadow-sm"
+                      aria-hidden
+                    >
+                      <span className="h-2 w-2 rounded-full bg-[#003a68]" />
+                    </span>
+                    <span className="font-semibold">1978:</span> Founded as a cleanroom technology specialist.
+                  </li>
+                  <li className="relative pl-10 text-sm leading-relaxed text-slate-700">
+                    <span
+                      className="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-[#003a68]/10 text-[#003a68] ring-2 ring-white shadow-sm"
+                      aria-hidden
+                    >
+                      <span className="h-2 w-2 rounded-full bg-[#003a68]" />
+                    </span>
+                    <span className="font-semibold">1980s–2000s:</span> Expanded globally; became a market leader in biological safety cabinets.
+                  </li>
+                  <li className="relative pl-10 text-sm leading-relaxed text-slate-700">
+                    <span
+                      className="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-[#003a68]/10 text-[#003a68] ring-2 ring-white shadow-sm"
+                      aria-hidden
+                    >
+                      <span className="h-2 w-2 rounded-full bg-[#003a68]" />
+                    </span>
+                    <span className="font-semibold">Today:</span> A global company connecting East and West from Singapore HQ.
+                  </li>
+                  <li className="relative pl-10 text-sm leading-relaxed text-slate-700">
+                    <span
+                      className="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-[#003a68]/10 text-[#003a68] ring-2 ring-white shadow-sm"
+                      aria-hidden
+                    >
+                      <span className="h-2 w-2 rounded-full bg-[#003a68]" />
+                    </span>
+                    <span className="font-semibold">Esco Biosafety Institute:</span> Established to advance education, standards, and certification.
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
