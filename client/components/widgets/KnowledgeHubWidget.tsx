@@ -204,26 +204,9 @@ export default function KnowledgeHubWidget() {
             </div>
           ) : (
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {articles!.map((a) => {
-                const slugParam = String(a.slug || "").replace(
-                  "/resources/articles/",
-                  "",
-                );
-                return (
-                  <Link
-                    key={a.slug}
-                    to={`/resources/articles/${slugParam}`}
-                    className="rounded-2xl border border-slate-200 bg-white p-6 block hover:shadow-sm transition-shadow"
-                  >
-                    <h3 className="font-semibold text-lg text-slate-900">
-                      {a.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-slate-600">
-                      {a.description}
-                    </p>
-                  </Link>
-                );
-              })}
+              {articles!.map((a) => (
+                <ArticleCard key={a.slug} a={a} />
+              ))}
             </div>
           )}
         </TabsContent>
