@@ -146,13 +146,13 @@ export default function ResourcesQuizzes() {
               {filtered.map((quiz) => (
                 <Card
                   key={quiz.slug}
-                  className="group relative flex h-full flex-col overflow-hidden border border-slate-200/60 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#003a68]/40 hover:shadow-xl"
+                  className="group relative mx-auto flex h-full w-full max-w-sm flex-col overflow-hidden border border-slate-200/60 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#003a68]/40 hover:shadow-xl"
                 >
                   <div
                     className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#0096d6] via-[#003a68] to-[#0096d6] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                     aria-hidden
                   />
-                  <AspectRatio ratio={16 / 9}>
+                  <AspectRatio ratio={5 / 2}>
                     <div className="relative h-full w-full">
                       <img
                         src={quiz.image?.url ?? "/placeholder.svg"}
@@ -164,7 +164,7 @@ export default function ResourcesQuizzes() {
                       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                     </div>
                   </AspectRatio>
-                  <CardHeader className="space-y-2 pb-4">
+                  <CardHeader className="space-y-2 px-5 pb-3 pt-5">
                     <div className="flex items-start justify-between gap-3">
                       <CardTitle className="text-xl leading-snug text-slate-900">
                         {quiz.title}
@@ -175,7 +175,7 @@ export default function ResourcesQuizzes() {
                     </div>
                     <p className="text-sm text-slate-600">{quiz.subtitle}</p>
                   </CardHeader>
-                  <CardContent className="flex flex-1 flex-col gap-6 text-sm text-slate-600">
+                  <CardContent className="flex flex-1 flex-col gap-5 px-5 pb-5 text-sm text-slate-600">
                     <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[#003a68]">
                       <span className="rounded-full bg-[#003a68]/10 px-3 py-1 text-[#003a68]">
                         {quiz.category}
@@ -203,7 +203,7 @@ export default function ResourcesQuizzes() {
                       Real-world scenarios to sharpen your instincts
                     </div>
                   </CardContent>
-                  <CardFooter className="border-t border-slate-100 bg-slate-50/80">
+                  <CardFooter className="border-t border-slate-100 bg-slate-50/80 px-5 py-4">
                     <Button
                       asChild
                       className="w-full bg-gradient-to-r from-[#003a68] via-[#005a9f] to-[#0096d6] text-white shadow-sm transition-all duration-300 hover:from-[#002a4a] hover:via-[#004d84] hover:to-[#007bb5] focus-visible:ring-[#0096d6]/40"
