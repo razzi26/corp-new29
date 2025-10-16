@@ -10,8 +10,6 @@ import { ProductCard } from "@/components/cards/ProductCard";
 import { CategoriesDrawer } from "@/components/features/CategoriesDrawer";
 import { TagsDrawer } from "@/components/features/TagsDrawer";
 
-
-
 export default function Catalog() {
   const [query, setQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);

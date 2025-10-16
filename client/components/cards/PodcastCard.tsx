@@ -16,7 +16,9 @@ export function PodcastCard({ podcast }: { podcast: PodcastItem }) {
         />
       </AspectRatio>
       <div className="p-4">
-        <h3 className="text-sm font-semibold text-slate-900">{podcast.title}</h3>
+        <h3 className="text-sm font-semibold text-slate-900">
+          {podcast.title}
+        </h3>
       </div>
     </div>
   );

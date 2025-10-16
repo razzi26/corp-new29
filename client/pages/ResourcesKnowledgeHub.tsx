@@ -9,7 +9,6 @@ import { cn } from "@/lib/utils";
 import type { ArticleMeta } from "@/entities/article";
 import { ArticleCard } from "@/components/cards/ArticleCard";
 
-
 export default function KnowledgeHub() {
   const [q, setQ] = useState("");
   const [active, setActive] = useState<string | null>(null);
