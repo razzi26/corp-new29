@@ -111,8 +111,12 @@ export default function About() {
       </section>
 
       {/* Mission */}
-      <section className="container mx-auto px-4 mt-20">
-        <div className="grid md:grid-cols-3 gap-6">
+      <section className="relative container mx-auto mt-20 px-4">
+        <div
+          className="pointer-events-none absolute inset-x-6 -top-10 hidden h-32 rounded-full bg-[#0096d6]/10 blur-3xl md:block"
+          aria-hidden
+        />
+        <div className="relative grid gap-6 md:grid-cols-3">
           <MissionCard
             title="Cultivate a Global Culture of Biosafety"
             descr="Educate and certify professionals worldwide, ensuring the highest standards of safety, quality, and compliance in laboratories."
