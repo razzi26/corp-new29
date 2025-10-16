@@ -4,7 +4,7 @@ import {
   BookOpen,
   Users,
   Wrench,
-  FileDocument,
+  FileStack,
   ArrowRight,
   type LucideIcon,
 } from "lucide-react";
