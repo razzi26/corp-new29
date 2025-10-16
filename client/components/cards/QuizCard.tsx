@@ -38,9 +38,6 @@ export function QuizCard({ quiz }: { quiz: QuizMeta }) {
           <CardTitle className="text-xl leading-snug text-slate-900">
             {quiz.title}
           </CardTitle>
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#003a68]/10 text-[#003a68]">
-            <Sparkles className="h-4 w-4" />
-          </span>
         </div>
         <p className="text-sm text-slate-600">{quiz.subtitle}</p>
       </CardHeader>
@@ -67,10 +64,6 @@ export function QuizCard({ quiz }: { quiz: QuizMeta }) {
             </dd>
           </div>
         </dl>
-        <div className="flex items-center gap-2 text-xs font-medium text-[#003a68]">
-          <span className="inline-flex h-2 w-2 rounded-full bg-[#0096d6] animate-pulse" />
-          Real-world scenarios to sharpen your instincts
-        </div>
       </CardContent>
       <CardFooter className="border-t border-slate-100 bg-slate-50/80 px-5 py-4">
         <Button
