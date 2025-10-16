@@ -208,7 +208,7 @@ export default function Header() {
                     ? "text-slate-700"
                     : "text-white",
               )}
-              aria-label="О��крыт�� меню"
+              aria-label="Open menu"
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
             >
@@ -294,7 +294,7 @@ export default function Header() {
                       "block w-full rounded-full px-5 py-2.5 text-center text-base font-semibold shadow transition hover:shadow-md",
                       scrolled || open || isProductDetail
                         ? "bg-[hsl(var(--brand-end))] text-white"
-                        : "bg-white text-slate-900",
+                        : "bg-white text-[hsl(var(--brand-end))]",
                     )}
                     onClick={() => setOpen(false)}
                   >
