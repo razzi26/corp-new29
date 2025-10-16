@@ -175,7 +175,7 @@ export default function ResourcesQuizzes() {
                     </div>
                     <p className="text-sm text-slate-600">{quiz.subtitle}</p>
                   </CardHeader>
-                  <CardContent className="flex flex-1 flex-col gap-5 px-5 pb-5 text-sm text-slate-600">
+                  <CardContent className="flex flex-1 flex-col gap-5 px-5 pb-5 pt-0 text-sm text-slate-600">
                     <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[#003a68]">
                       <span className="rounded-full bg-[#003a68]/10 px-3 py-1 text-[#003a68]">
                         {quiz.category}
