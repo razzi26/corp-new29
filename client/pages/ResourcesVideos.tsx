@@ -47,7 +47,7 @@ export default function Videos() {
     <div className="bg-white text-slate-900">
       <PageBanner
         title="Videos"
-        description="Recorded seminars, introductions and short explainers."
+        description="Curated videos about biosafety and proper use of biological safety cabinets."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Resources", href: "/resources" },
@@ -56,12 +56,6 @@ export default function Videos() {
       />
 
       <section className="container mx-auto px-4 py-12 md:py-16">
-        <h2 className="text-2xl md:text-3xl font-semibold">Video library</h2>
-        <p className="mt-3 text-slate-700">
-          Curated videos about biosafety and proper use of biological safety
-          cabinets.
-        </p>
-
         {loading && (
           <div className="mt-6 text-slate-600">Loading videos...</div>
         )}
