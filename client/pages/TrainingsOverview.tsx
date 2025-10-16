@@ -24,28 +24,28 @@ const TRAINING_CARDS: TrainingCard[] = [
     description:
       "Expert-led programs delivered from our dedicated learning centers.",
     icon: BookOpen,
-    color: "bg-blue-600",
+    color: "bg-blue-500",
   },
   {
     href: "/trainings/seminars",
     title: "Seminars",
     description: "Specialized seminars on biosafety cabinet operations.",
     icon: Users,
-    color: "bg-purple-600",
+    color: "bg-purple-500",
   },
   {
     href: "/trainings/services",
     title: "Services",
     description: "Professional training and support services.",
     icon: Wrench,
-    color: "bg-orange-600",
+    color: "bg-orange-500",
   },
   {
     href: "/trainings/brochures",
     title: "Brochures",
     description: "Downloadable training materials and documentation.",
     icon: FileStack,
-    color: "bg-green-600",
+    color: "bg-green-500",
   },
 ];
 
