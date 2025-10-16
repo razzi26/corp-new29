@@ -17,6 +17,7 @@ import NewsArticle from "./pages/NewsArticle";
 import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import TrainingsOverview from "./pages/TrainingsOverview";
 import Trainings from "./pages/Trainings";
 import SeminarsPage from "./pages/Seminars";
 import Services from "./pages/Services";
