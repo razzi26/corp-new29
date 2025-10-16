@@ -1,14 +1,11 @@
 import { useMemo, useState, useRef, useEffect } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 import { PageBanner } from "@/components/layout/PageBanner";
-import { Badge } from "@/components/ui/badge";
 import ContactModal from "@/components/ContactModal";
-import { cn } from "@/lib/utils";
 import type { Product } from "@/entities/product";
 import { ProductCard } from "@/components/cards/ProductCard";
-import { CategoriesDrawer } from "@/components/features/CategoriesDrawer";
-import { TagsDrawer } from "@/components/features/TagsDrawer";
+import { CatalogFilterDesktop } from "@/components/features/CatalogFilterDesktop";
+import { CatalogFilterMobile } from "@/components/features/CatalogFilterMobile";
 
 export default function Catalog() {
   const [query, setQuery] = useState("");
