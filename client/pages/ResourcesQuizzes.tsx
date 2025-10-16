@@ -186,7 +186,9 @@ export default function ResourcesQuizzes() {
                     </div>
                     <dl className="grid grid-cols-2 gap-4 text-sm text-slate-700">
                       <div>
-                        <dt className="font-medium text-slate-600">Questions</dt>
+                        <dt className="font-medium text-slate-600">
+                          Questions
+                        </dt>
                         <dd className="mt-1 text-lg font-semibold text-slate-900">
                           {quiz.questionCount}
                         </dd>

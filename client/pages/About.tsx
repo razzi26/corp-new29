@@ -61,7 +61,9 @@ export default function About() {
                 className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#003a68] via-[#0096d6] to-[#003a68]"
                 aria-hidden
               />
-              <h3 className="text-xl font-semibold text-slate-900">Our Journey</h3>
+              <h3 className="text-xl font-semibold text-slate-900">
+                Our Journey
+              </h3>
               <ul className="mt-6 space-y-5">
                 <li className="relative pl-10 text-sm leading-relaxed text-slate-700">
                   <span
@@ -70,7 +72,8 @@ export default function About() {
                   >
                     <span className="h-2 w-2 rounded-full bg-[#003a68]" />
                   </span>
-                  <span className="font-semibold">1978:</span> Founded as a cleanroom technology specialist.
+                  <span className="font-semibold">1978:</span> Founded as a
+                  cleanroom technology specialist.
                 </li>
                 <li className="relative pl-10 text-sm leading-relaxed text-slate-700">
                   <span
@@ -79,7 +82,9 @@ export default function About() {
                   >
                     <span className="h-2 w-2 rounded-full bg-[#003a68]" />
                   </span>
-                  <span className="font-semibold">1980s–2000s:</span> Expanded globally; became a market leader in biological safety cabinets.
+                  <span className="font-semibold">1980s–2000s:</span> Expanded
+                  globally; became a market leader in biological safety
+                  cabinets.
                 </li>
                 <li className="relative pl-10 text-sm leading-relaxed text-slate-700">
                   <span
@@ -88,7 +93,8 @@ export default function About() {
                   >
                     <span className="h-2 w-2 rounded-full bg-[#003a68]" />
                   </span>
-                  <span className="font-semibold">Today:</span> A global company connecting East and West from Singapore HQ.
+                  <span className="font-semibold">Today:</span> A global company
+                  connecting East and West from Singapore HQ.
                 </li>
                 <li className="relative pl-10 text-sm leading-relaxed text-slate-700">
                   <span
@@ -97,7 +103,11 @@ export default function About() {
                   >
                     <span className="h-2 w-2 rounded-full bg-[#003a68]" />
                   </span>
-                  <span className="font-semibold">Esco Biosafety Institute:</span>{" "}Established to advance education, standards, and certification.
+                  <span className="font-semibold">
+                    Esco Biosafety Institute:
+                  </span>{" "}
+                  Established to advance education, standards, and
+                  certification.
                 </li>
               </ul>
             </div>
@@ -135,7 +145,9 @@ export default function About() {
             aria-hidden
           />
           <div className="relative z-10 max-w-2xl space-y-3">
-            <h3 className="text-2xl font-bold text-white md:text-3xl">Partner with us</h3>
+            <h3 className="text-2xl font-bold text-white md:text-3xl">
+              Partner with us
+            </h3>
             <p className="text-white/90">
               Looking to upskill your team, certify your lab, or align with
               global standards? Our experts can help tailor training and
