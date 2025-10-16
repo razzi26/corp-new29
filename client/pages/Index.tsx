@@ -5,6 +5,8 @@ import {
   Stethoscope,
   Scan,
   ShieldCheck,
+  GraduationCap,
+  BadgeCheck,
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -51,10 +53,10 @@ export default function Index() {
 
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 {[
-                  { label: "Training & seminars", icon: HeartPulse },
+                  { label: "Training & seminars", icon: GraduationCap },
                   { label: "Regulatory guidance", icon: ShieldCheck },
                   { label: "Practical resources", icon: Microscope },
-                  { label: "Certification support", icon: Check },
+                  { label: "Certification support", icon: BadgeCheck },
                 ].map(({ label, icon: Icon }) => (
                   <div
                     key={label}
