@@ -87,19 +87,19 @@ export default function Resources() {
               >
                 <div className="absolute inset-0 bg-brand-gradient opacity-[0.15]" />
               </div>
-              <div className="flex flex-col gap-6">
-                <div className="flex items-start gap-4">
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex flex-1 items-start gap-4">
                   <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg text-white shadow-sm ring-1 ring-white/10">
                     <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/20">
                       <Icon className="h-6 w-6" />
                     </span>
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h3 className="text-lg font-semibold text-white">{title}</h3>
                     <p className="mt-2 text-sm text-white/90">{description}</p>
                   </div>
                 </div>
-                <ArrowRight className="ml-auto h-5 w-5 text-white/80 transition-transform duration-300 group-hover:translate-x-1" />
+                <ArrowRight className="mt-2 h-5 w-5 flex-shrink-0 text-white/80 transition-transform duration-300 group-hover:translate-x-1" />
               </div>
             </Link>
           ))}
