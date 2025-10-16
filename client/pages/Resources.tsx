@@ -1,5 +1,7 @@
 import { PageBanner } from "@/components/layout/PageBanner";
 import { Link } from "react-router-dom";
+import { PageBanner } from "@/components/layout/PageBanner";
+import { Link } from "react-router-dom";
 import {
   PlayCircle,
   FileText,
@@ -8,7 +10,61 @@ import {
   FileStack,
   HelpCircle,
   ArrowRight,
+  type LucideIcon,
 } from "lucide-react";
+
+type ResourceCard = {
+  href: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  color: string;
+};
+
+const RESOURCE_CARDS: ResourceCard[] = [
+  {
+    href: "/resources/videos",
+    title: "Videos",
+    description: "Short introductions and recorded seminars.",
+    icon: PlayCircle,
+    color: "bg-sky-600",
+  },
+  {
+    href: "/resources/articles",
+    title: "Articles",
+    description: "Guides, articles and whitepapers.",
+    icon: FileText,
+    color: "bg-indigo-600",
+  },
+  {
+    href: "/resources/quizzes",
+    title: "Quizzes",
+    description: "Interactive assessments to test biosafety knowledge.",
+    icon: GraduationCap,
+    color: "bg-emerald-600",
+  },
+  {
+    href: "/resources/podcasts",
+    title: "Podcasts",
+    description: "Interviews and discussions.",
+    icon: Mic,
+    color: "bg-teal-600",
+  },
+  {
+    href: "/resources/case-studies",
+    title: "Case Studies",
+    description: "Real-world implementations and learnings.",
+    icon: FileStack,
+    color: "bg-violet-600",
+  },
+  {
+    href: "/resources/faq",
+    title: "FAQ",
+    description: "Answers to common questions.",
+    icon: HelpCircle,
+    color: "bg-amber-600",
+  },
+];
 
 export default function Resources() {
   return (
@@ -21,50 +77,7 @@ export default function Resources() {
 
       <section className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {[
-            {
-              href: "/resources/videos",
-              title: "Videos",
-              descr: "Short introductions and recorded seminars.",
-              icon: PlayCircle,
-              color: "bg-sky-600",
-            },
-            {
-              href: "/resources/articles",
-              title: "Articles",
-              descr: "Guides, articles and whitepapers.",
-              icon: FileText,
-              color: "bg-indigo-600",
-            },
-            {
-              href: "/resources/quizzes",
-              title: "Quizzes",
-              descr: "Interactive assessments to test biosafety knowledge.",
-              icon: GraduationCap,
-              color: "bg-emerald-600",
-            },
-            {
-              href: "/resources/podcasts",
-              title: "Podcasts",
-              descr: "Interviews and discussions.",
-              icon: Mic,
-              color: "bg-teal-600",
-            },
-            {
-              href: "/resources/case-studies",
-              title: "Case Studies",
-              descr: "Real-world implementations and learnings.",
-              icon: FileStack,
-              color: "bg-violet-600",
-            },
-            {
-              href: "/resources/faq",
-              title: "FAQ",
-              descr: "Answers to common questions.",
-              icon: HelpCircle,
-              color: "bg-amber-600",
-            },
-          ].map(({ href, title, descr, icon: Icon, color }) => (
+          {RESOURCE_CARDS.map(({ href, title, description, icon: Icon, color }) => (
             <Link
               key={href}
               to={href}
@@ -85,7 +98,7 @@ export default function Resources() {
                 <ArrowRight className="h-5 w-5 text-white/80 transition-transform duration-300 group-hover:translate-x-1" />
               </div>
               <h3 className="mt-4 text-lg font-semibold text-white">{title}</h3>
-              <p className="mt-2 text-sm text-white/90">{descr}</p>
+              <p className="mt-2 text-sm text-white/90">{description}</p>
             </Link>
           ))}
         </div>
