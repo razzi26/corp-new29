@@ -10,6 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LoadingIndicator } from "@/components/ui/loading-indicator";
 import { cn } from "@/lib/utils";
 
@@ -144,6 +145,15 @@ export default function ResourcesQuizzes() {
                   key={quiz.slug}
                   className="flex h-full flex-col overflow-hidden border border-slate-200/70 shadow-sm transition-shadow hover:shadow"
                 >
+                  <AspectRatio ratio={16 / 9}>
+                    <img
+                      src="https://images.pexels.com/photos/6129869/pexels-photo-6129869.jpeg"
+                      alt={quiz.title}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </AspectRatio>
                   <CardHeader>
                     <CardTitle className="text-xl leading-snug text-slate-900">
                       {quiz.title}
