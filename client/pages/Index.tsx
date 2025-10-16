@@ -207,7 +207,7 @@ export default function Index() {
               console.log(Object.fromEntries(form.entries()));
               alert("Thank you! We will contact you shortly.");
             }}
-            className="bg-white p-6 md:p-8 shadow-sm"
+            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
           >
             <div className="grid gap-4">
               <h3 className="text-2xl md:text-3xl font-bold">Contact Us</h3>
