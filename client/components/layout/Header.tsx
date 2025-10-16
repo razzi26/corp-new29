@@ -137,7 +137,7 @@ export default function Header() {
                         "inline-flex items-center gap-1 transition-colors",
                         scrolled || isProductDetail
                           ? "text-slate-700 hover:text-slate-900"
-                          : "text-white/85 hover:text-white",
+                          : "text-white hover:text-white",
                       )}
                       aria-expanded={desktopOpenKey === item.label}
                     >
@@ -176,7 +176,7 @@ export default function Header() {
                       "transition-colors",
                       scrolled || isProductDetail
                         ? "text-slate-700 hover:text-slate-900"
-                        : "text-white/85 hover:text-white",
+                        : "text-white hover:text-white",
                     )}
                   >
                     {item.label}
