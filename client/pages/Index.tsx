@@ -21,11 +21,17 @@ export default function Index() {
   return (
     <div id="top" className="text-slate-900 bg-white">
       {/* Hero with accent background */}
-      <section
-        className="bg-[hsl(var(--brand-end))] text-white -mt-16"
-        data-header-anchor
-      >
-        <div className="container mx-auto px-4 pt-24 pb-16 md:pt-32 md:pb-20">
+      <section className="relative -mt-16 text-white" data-header-anchor aria-label="Hero section">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.pexels.com/photos/8533032/pexels-photo-8533032.jpeg"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[hsl(var(--brand-end))]/70" />
+          <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_30%_20%,white,transparent_35%),radial-gradient(circle_at_70%_80%,white,transparent_25%)]" />
+        </div>
+        <div className="relative container mx-auto px-4 pt-24 pb-16 md:pt-32 md:pb-20">
           <div className="hero-grid grid lg:grid-cols-2 gap-10 items-center">
             <div className="lg:flex lg:flex-col lg:items-center lg:text-center">
               {/*<span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs md:text-sm border border-white/25 text-white">
