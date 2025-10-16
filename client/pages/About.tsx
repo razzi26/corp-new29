@@ -133,26 +133,30 @@ export default function About() {
       </section>
 
       {/* Call to action */}
-      <section className="container mx-auto px-4 mt-20 mb-24">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm">
-          <div>
-            <h3 className="text-2xl md:text-3xl font-bold">Partner with us</h3>
-            <p className="mt-2 text-slate-700 max-w-prose">
+      <section className="container mx-auto mt-20 mb-24 px-4">
+        <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-r from-white via-slate-50 to-white p-6 shadow-lg md:flex md:items-center md:justify-between md:gap-8 md:p-10">
+          <div
+            className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 bg-[radial-gradient(circle_at_top,_rgba(0,58,104,0.12),_transparent_60%)] md:block"
+            aria-hidden
+          />
+          <div className="relative z-10 max-w-2xl space-y-3">
+            <h3 className="text-2xl font-bold text-slate-900 md:text-3xl">Partner with us</h3>
+            <p className="text-slate-700">
               Looking to upskill your team, certify your lab, or align with
               global standards? Our experts can help tailor training and
               resources to your needs.
             </p>
           </div>
-          <div className="flex gap-3">
+          <div className="relative z-10 mt-6 flex flex-wrap gap-3 md:mt-0">
             <Link
               to="/contact"
-              className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-5 py-3 font-semibold shadow hover:shadow-md transition"
+              className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] px-5 py-3 font-semibold text-white shadow transition hover:-translate-y-0.5 hover:shadow-md"
             >
               Get in touch
             </Link>
             <Link
               to="/products"
-              className="inline-flex items-center rounded-lg border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-50 transition"
+              className="inline-flex items-center justify-center rounded-lg border border-slate-300 px-5 py-3 font-semibold transition hover:-translate-y-0.5 hover:bg-slate-50"
             >
               Browse products
             </Link>
