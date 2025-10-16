@@ -275,9 +275,6 @@ function BenefitCard({ title, descr }: { title: string; descr: string }) {
   );
 }
 
-
-
-
 function ResourceCard({ title }: { title: string }) {
   return (
     <Link

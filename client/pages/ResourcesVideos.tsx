@@ -26,7 +26,9 @@ export default function Videos() {
       .then((json) => {
         if (!mounted) return;
         if (!Array.isArray(json)) throw new Error("Invalid videos data format");
-        const valid = (json as any[]).filter((v) => v && typeof v.id === "string" && typeof v.title === "string");
+        const valid = (json as any[]).filter(
+          (v) => v && typeof v.id === "string" && typeof v.title === "string",
+        );
         setVideos(valid as VideoItem[]);
       })
       .catch((err) => {

@@ -24,7 +24,11 @@ export default function Podcasts() {
       .then((json) => {
         if (!mounted) return;
         if (!Array.isArray(json)) throw new Error("Invalid podcasts format");
-        setItems((json as any[]).filter((i) => i && typeof i.id === "string" && typeof i.title === "string"));
+        setItems(
+          (json as any[]).filter(
+            (i) => i && typeof i.id === "string" && typeof i.title === "string",
+          ),
+        );
       })
       .catch((err) => {
         if (!mounted) return;
@@ -45,21 +49,34 @@ export default function Podcasts() {
       <PageBanner
         title="Podcasts"
         description="Interviews and discussions with biosafety experts."
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Podcasts" }]}
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Resources", href: "/resources" },
+          { label: "Podcasts" },
+        ]}
       />
 
       <section className="container mx-auto px-4 py-12 md:py-16">
         <h2 className="text-2xl md:text-3xl font-semibold">Podcast library</h2>
-        <p className="mt-3 text-slate-700">Curated podcast episodes and interviews.</p>
+        <p className="mt-3 text-slate-700">
+          Curated podcast episodes and interviews.
+        </p>
 
-        {loading && <div className="mt-6 text-slate-600">Loading podcasts...</div>}
-        {error && <div className="mt-6 text-sm text-red-600">Error: {error}</div>}
+        {loading && (
+          <div className="mt-6 text-slate-600">Loading podcasts...</div>
+        )}
+        {error && (
+          <div className="mt-6 text-sm text-red-600">Error: {error}</div>
+        )}
 
         <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {(items ?? []).map((p) => {
             const params = p.start ? `?start=${p.start}` : "";
             return (
-              <div key={p.id} className="overflow-hidden rounded-lg border bg-white shadow-sm">
+              <div
+                key={p.id}
+                className="overflow-hidden rounded-lg border bg-white shadow-sm"
+              >
                 <AspectRatio ratio={16 / 9}>
                   <iframe
                     className="h-full w-full"
@@ -72,7 +89,9 @@ export default function Podcasts() {
                 </AspectRatio>
 
                 <div className="p-4">
-                  <h3 className="text-sm font-semibold text-slate-900">{p.title}</h3>
+                  <h3 className="text-sm font-semibold text-slate-900">
+                    {p.title}
+                  </h3>
                 </div>
               </div>
             );

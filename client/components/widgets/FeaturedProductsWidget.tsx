@@ -41,7 +41,9 @@ export default function FeaturedProductsWidget() {
         }
         if (!mounted) return;
         if (!data) throw new Error("Failed to load products");
-        const featured = data.filter((p: any) => Array.isArray(p.tags) && p.tags.includes("Featured"));
+        const featured = data.filter(
+          (p: any) => Array.isArray(p.tags) && p.tags.includes("Featured"),
+        );
         setProducts(featured.slice(0, 8));
       } catch (e: any) {
         if (!mounted) return;
@@ -60,11 +62,15 @@ export default function FeaturedProductsWidget() {
   if (loading) return <div className="mt-6">Loading products...</div>;
   if (error)
     return (
-      <div className="mt-6 text-sm text-red-600">Error loading products: {error}</div>
+      <div className="mt-6 text-sm text-red-600">
+        Error loading products: {error}
+      </div>
     );
   if (!products || products.length === 0)
     return (
-      <div className="mt-6 text-sm text-slate-600">No featured products available.</div>
+      <div className="mt-6 text-sm text-slate-600">
+        No featured products available.
+      </div>
     );
 
   return (
@@ -94,15 +100,25 @@ export default function FeaturedProductsWidget() {
   );
 }
 
-function HomeProductCard({ product, onRequest, }: { product: any; onRequest?: () => void; }) {
-  const imgs = (product.mainImage ? [product.mainImage] : []).concat(product.images ?? []);
+function HomeProductCard({
+  product,
+  onRequest,
+}: {
+  product: any;
+  onRequest?: () => void;
+}) {
+  const imgs = (product.mainImage ? [product.mainImage] : []).concat(
+    product.images ?? [],
+  );
   const containerRef = React.useRef<HTMLDivElement | null>(null);
   const [hoverIndex, setHoverIndex] = React.useState<number | null>(null);
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [isTouch, setIsTouch] = React.useState(false);
 
   React.useEffect(() => {
-    const touch = typeof window !== "undefined" && ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+    const touch =
+      typeof window !== "undefined" &&
+      ("ontouchstart" in window || navigator.maxTouchPoints > 0);
     setIsTouch(Boolean(touch));
   }, []);
 
@@ -177,7 +193,12 @@ function HomeProductCard({ product, onRequest, }: { product: any; onRequest?: ()
         onTouchMove={onTouchMoveSimple}
         onTouchEnd={onTouchEndSimple}
       >
-        <img src={imgs[displayed]} alt={product.title} className="absolute inset-0 h-full w-full object-contain" style={{ left: 0, top: 0 }} />
+        <img
+          src={imgs[displayed]}
+          alt={product.title}
+          className="absolute inset-0 h-full w-full object-contain"
+          style={{ left: 0, top: 0 }}
+        />
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_20%,white,transparent_35%),radial-gradient(circle_at_70%_80%,white,transparent_25%)]" />
 
         {imgs.length > 1 && (
@@ -188,7 +209,9 @@ function HomeProductCard({ product, onRequest, }: { product: any; onRequest?: ()
                 aria-hidden
                 className={cn(
                   "w-2 h-2 rounded-full transition-opacity",
-                  idx === displayed ? "bg-[hsl(var(--brand-end))] opacity-100" : "bg-white/60 opacity-70",
+                  idx === displayed
+                    ? "bg-[hsl(var(--brand-end))] opacity-100"
+                    : "bg-white/60 opacity-70",
                 )}
               />
             ))}
@@ -198,17 +221,33 @@ function HomeProductCard({ product, onRequest, }: { product: any; onRequest?: ()
 
       <div className="p-5">
         <h3 className="font-semibold text-lg">
-          <Link to={`/products/${product.id}`} className="text-[hsl(var(--brand-end))] hover:underline">
+          <Link
+            to={`/products/${product.id}`}
+            className="text-[hsl(var(--brand-end))] hover:underline"
+          >
             {product.title}
           </Link>
         </h3>
         <p className="mt-1 text-sm text-slate-600">{product.description}</p>
         <div className="mt-3 flex items-center gap-2 text-xs text-slate-500">
-          <Badge variant="secondary" className="text-xs">{product.category}</Badge>
+          <Badge variant="secondary" className="text-xs">
+            {product.category}
+          </Badge>
         </div>
         <div className="mt-4 flex gap-2">
-          <button type="button" onClick={() => (onRequest ? onRequest() : undefined)} className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-3.5 py-2.5 text-sm font-semibold shadow">Request quote</button>
-          <Link to={`/products/${product.id}`} className="inline-flex items-center rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm font-semibold hover:bg-slate-50">Learn more</Link>
+          <button
+            type="button"
+            onClick={() => (onRequest ? onRequest() : undefined)}
+            className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-3.5 py-2.5 text-sm font-semibold shadow"
+          >
+            Request quote
+          </button>
+          <Link
+            to={`/products/${product.id}`}
+            className="inline-flex items-center rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm font-semibold hover:bg-slate-50"
+          >
+            Learn more
+          </Link>
         </div>
       </div>
     </div>
@@ -220,14 +259,28 @@ function ProductCard({ title, tag }: { title: string; tag: string }) {
     <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white">
       <div className="relative h-40 bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]">
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_20%,white,transparent_35%),radial-gradient(circle_at_70%_80%,white,transparent_25%)]" />
-        <span className="absolute top-3 left-3 text-sm rounded-full bg-white text-[hsl(var(--brand-end))] px-3 py-1 font-semibold">{tag}</span>
+        <span className="absolute top-3 left-3 text-sm rounded-full bg-white text-[hsl(var(--brand-end))] px-3 py-1 font-semibold">
+          {tag}
+        </span>
       </div>
       <div className="p-5">
         <h4 className="font-semibold text-lg">{title}</h4>
-        <p className="mt-1 text-base text-slate-600">Check availability and pricing with our manager</p>
+        <p className="mt-1 text-base text-slate-600">
+          Check availability and pricing with our manager
+        </p>
         <div className="mt-4 flex gap-2">
-          <Link to="/contact" className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-3.5 py-2.5 text-base font-semibold shadow">Request quote</Link>
-          <Link to="/contact" className="inline-flex items-center rounded-lg border border-slate-300 px-3.5 py-2.5 text-base font-semibold hover:bg-slate-50">Consultation</Link>
+          <Link
+            to="/contact"
+            className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-3.5 py-2.5 text-base font-semibold shadow"
+          >
+            Request quote
+          </Link>
+          <Link
+            to="/contact"
+            className="inline-flex items-center rounded-lg border border-slate-300 px-3.5 py-2.5 text-base font-semibold hover:bg-slate-50"
+          >
+            Consultation
+          </Link>
         </div>
       </div>
     </div>
