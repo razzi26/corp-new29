@@ -23,7 +23,11 @@ export default function Index() {
   return (
     <div id="top" className="text-slate-900 bg-white">
       {/* Hero with accent background */}
-      <section className="relative -mt-16 text-white" data-header-anchor aria-label="Hero section">
+      <section
+        className="relative -mt-16 text-white"
+        data-header-anchor
+        aria-label="Hero section"
+      >
         <div className="absolute inset-0">
           <img
             src="https://images.pexels.com/photos/8533036/pexels-photo-8533036.jpeg"
@@ -53,14 +57,33 @@ export default function Index() {
 
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 {[
-                  { label: "Training & seminars", icon: GraduationCap, bg: "bg-sky-600" },
-                  { label: "Regulatory guidance", icon: ShieldCheck, bg: "bg-teal-600" },
-                  { label: "Practical resources", icon: Microscope, bg: "bg-indigo-600" },
-                  { label: "Certification support", icon: BadgeCheck, bg: "bg-emerald-600" },
+                  {
+                    label: "Training & seminars",
+                    icon: GraduationCap,
+                    bg: "bg-sky-600",
+                  },
+                  {
+                    label: "Regulatory guidance",
+                    icon: ShieldCheck,
+                    bg: "bg-teal-600",
+                  },
+                  {
+                    label: "Practical resources",
+                    icon: Microscope,
+                    bg: "bg-indigo-600",
+                  },
+                  {
+                    label: "Certification support",
+                    icon: BadgeCheck,
+                    bg: "bg-emerald-600",
+                  },
                 ].map(({ label, icon: Icon, bg }) => (
                   <div
                     key={label}
-                    className={cn("flex items-center gap-3 text-white rounded-lg px-2 py-4", bg)}
+                    className={cn(
+                      "flex items-center gap-3 text-white rounded-lg px-2 py-4",
+                      bg,
+                    )}
                   >
                     <div className="flex-shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/12 text-white">
                       <Icon className="h-6 w-6" />

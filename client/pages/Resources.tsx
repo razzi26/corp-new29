@@ -1,6 +1,14 @@
 import { PageBanner } from "@/components/layout/PageBanner";
 import { Link } from "react-router-dom";
-import { PlayCircle, FileText, GraduationCap, Mic, FileStack, HelpCircle, ArrowRight } from "lucide-react";
+import {
+  PlayCircle,
+  FileText,
+  GraduationCap,
+  Mic,
+  FileStack,
+  HelpCircle,
+  ArrowRight,
+} from "lucide-react";
 
 export default function Resources() {
   return (
@@ -62,7 +70,10 @@ export default function Resources() {
               to={href}
               className={`group relative block overflow-hidden rounded-2xl p-6 text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-lg ${color}`}
             >
-              <div className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden>
+              <div
+                className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                aria-hidden
+              >
                 <div className="absolute inset-0 bg-brand-gradient opacity-[0.15]" />
               </div>
               <div className="flex items-start justify-between gap-4">
