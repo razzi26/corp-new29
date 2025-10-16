@@ -5,6 +5,8 @@ import {
   Stethoscope,
   Scan,
   ShieldCheck,
+  GraduationCap,
+  BadgeCheck,
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -22,10 +24,22 @@ export default function Index() {
     <div id="top" className="text-slate-900 bg-white">
       {/* Hero with accent background */}
       <section
-        className="bg-[hsl(var(--brand-end))] text-white -mt-16"
+        className="relative -mt-16 text-white"
         data-header-anchor
+        aria-label="Hero section"
       >
-        <div className="container mx-auto px-4 pt-24 pb-16 md:pt-32 md:pb-20">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.pexels.com/photos/8533036/pexels-photo-8533036.jpeg"
+            alt="Scientist working in biosafety cabinet"
+            className="h-full w-full object-cover"
+            loading="eager"
+            decoding="async"
+          />
+          <div className="absolute inset-0 bg-[hsl(var(--brand-end))]/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--brand-start))]/40 to-[hsl(var(--brand-end))]/70 mix-blend-multiply" />
+        </div>
+        <div className="relative container mx-auto px-4 pt-24 pb-16 md:pt-32 md:pb-20">
           <div className="hero-grid grid lg:grid-cols-2 gap-10 items-center">
             <div className="lg:flex lg:flex-col lg:items-center lg:text-center">
               {/*<span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs md:text-sm border border-white/25 text-white">
@@ -35,7 +49,7 @@ export default function Index() {
               <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight">
                 Welcome to Esco Biosafety Institute!
               </h1>
-              <p className="mt-4 text-white/90 text-base md:text-lg max-w-xl">
+              <p className="mt-4 text-white text-base md:text-lg max-w-xl">
                 Biosafety in any laboratory is crucial. The Esco Biosafety
                 Institute was established to be your partner in achieving it.
                 Our institute provides:
@@ -43,20 +57,39 @@ export default function Index() {
 
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 {[
-                  { label: "Training & seminars", icon: HeartPulse },
-                  { label: "Regulatory guidance", icon: ShieldCheck },
-                  { label: "Practical resources", icon: Microscope },
-                  { label: "Certification support", icon: Check },
-                ].map(({ label, icon: Icon }) => (
+                  {
+                    label: "Training & seminars",
+                    icon: GraduationCap,
+                    bg: "bg-sky-600",
+                  },
+                  {
+                    label: "Regulatory guidance",
+                    icon: ShieldCheck,
+                    bg: "bg-teal-600",
+                  },
+                  {
+                    label: "Practical resources",
+                    icon: Microscope,
+                    bg: "bg-indigo-600",
+                  },
+                  {
+                    label: "Certification support",
+                    icon: BadgeCheck,
+                    bg: "bg-emerald-600",
+                  },
+                ].map(({ label, icon: Icon, bg }) => (
                   <div
                     key={label}
-                    className="flex items-center gap-3 bg-white/10 text-white/95 rounded-lg px-3 py-4"
+                    className={cn(
+                      "flex items-center gap-3 text-white rounded-lg px-2 py-4",
+                      bg,
+                    )}
                   >
                     <div className="flex-shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/12 text-white">
                       <Icon className="h-6 w-6" />
                     </div>
                     <div className="flex flex-col">
-                      <span className="font-medium text-sm text-white/95 leading-none">
+                      <span className="font-medium text-sm text-white leading-none">
                         {label}
                       </span>
                     </div>
@@ -64,7 +97,7 @@ export default function Index() {
                 ))}
               </div>
 
-              <p className="mt-3 text-white/85 text-base md:text-lg max-w-2xl">
+              <p className="mt-3 text-white text-base md:text-lg max-w-2xl">
                 Whether you're looking to get certified, get information on
                 biosafety products, need to be updated on industry trends, or
                 want to test your knowledge, our institute is your central hub
@@ -734,6 +767,15 @@ function FeaturedKnowledgeHub() {
                   key={q.slug}
                   className="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white"
                 >
+                  <AspectRatio ratio={16 / 9}>
+                    <img
+                      src={q.image?.url ?? "/placeholder.svg"}
+                      alt={q.image?.alt ?? q.title}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </AspectRatio>
                   <div className="p-5 flex-1 flex flex-col">
                     <h3 className="font-semibold text-lg text-slate-900">
                       {q.title}

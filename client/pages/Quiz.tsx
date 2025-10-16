@@ -17,7 +17,7 @@ interface QuizQuestion {
   prompt: string;
   options: QuizOption[];
   answerId: string;
-  explanation: string;
+  explanation?: string;
 }
 
 interface QuizData {
@@ -329,12 +329,14 @@ export default function Quiz() {
                 })}
               </fieldset>
 
-              {hasAnswered && !isCorrect && currentQuestion.explanation && (
-                <div className="rounded-lg border border-amber-400 bg-amber-50 p-4 text-sm text-amber-900">
-                  <span className="font-semibold">Explanation:</span>{" "}
-                  {currentQuestion.explanation}
-                </div>
-              )}
+              {hasAnswered &&
+                !isCorrect &&
+                (currentQuestion.explanation?.trim()?.length ?? 0) > 0 && (
+                  <div className="rounded-lg border border-amber-400 bg-amber-50 p-4 text-sm text-amber-900">
+                    <span className="font-semibold">Explanation:</span>{" "}
+                    {currentQuestion.explanation}
+                  </div>
+                )}
 
               <CardFooter className="flex flex-col gap-3 px-0">
                 {!hasAnswered && (

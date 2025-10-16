@@ -10,6 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LoadingIndicator } from "@/components/ui/loading-indicator";
 import { cn } from "@/lib/utils";
 
@@ -21,6 +22,7 @@ interface QuizMeta {
   skillLevel: string;
   durationMinutes: number;
   questionCount: number;
+  image?: { url: string; alt?: string };
 }
 
 export default function ResourcesQuizzes() {
@@ -52,6 +54,7 @@ export default function ResourcesQuizzes() {
             skillLevel: item.skillLevel,
             durationMinutes: item.durationMinutes,
             questionCount: item.questionCount ?? item.questions?.length ?? 0,
+            image: item.image,
           }));
           setItems(metas);
         }
@@ -144,6 +147,15 @@ export default function ResourcesQuizzes() {
                   key={quiz.slug}
                   className="flex h-full flex-col overflow-hidden border border-slate-200/70 shadow-sm transition-shadow hover:shadow"
                 >
+                  <AspectRatio ratio={16 / 9}>
+                    <img
+                      src={quiz.image?.url ?? "/placeholder.svg"}
+                      alt={quiz.image?.alt ?? quiz.title}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </AspectRatio>
                   <CardHeader>
                     <CardTitle className="text-xl leading-snug text-slate-900">
                       {quiz.title}
