@@ -221,46 +221,7 @@ export default function KnowledgeHubWidget() {
           ) : (
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {quizzes!.map((q) => (
-                <div
-                  key={q.slug}
-                  className="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white"
-                >
-                  <AspectRatio ratio={16 / 9}>
-                    <img
-                      src={q.image?.url ?? "/placeholder.svg"}
-                      alt={q.image?.alt ?? q.title}
-                      className="h-full w-full object-cover"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </AspectRatio>
-                  <div className="p-5 flex-1 flex flex-col">
-                    <h3 className="font-semibold text-lg text-slate-900">
-                      {q.title}
-                    </h3>
-                    <p className="mt-1 text-sm text-slate-600 flex-1">
-                      {q.subtitle}
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-2 text-xs font-medium uppercase tracking-wide text-slate-500">
-                      <span className="rounded-full bg-[#003a68]/10 px-3 py-1 text-[#003a68]">
-                        {q.category}
-                      </span>
-                      <span className="rounded-full bg-[#003a68]/10 px-3 py-1 text-[#003a68]">
-                        {q.skillLevel}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="border-t border-slate-100 bg-slate-50 p-5">
-                    <Button
-                      asChild
-                      className="w-full bg-[#003a68] hover:bg-[#003a68]/90 focus-visible:ring-[#003a68]/40"
-                    >
-                      <Link to={`/resources/quizzes/${q.slug}`}>
-                        Start quiz
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
+                <QuizCard key={q.slug} quiz={q} />
               ))}
             </div>
           )}
