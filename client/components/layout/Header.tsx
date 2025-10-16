@@ -14,8 +14,9 @@ const nav: Array<{
   { to: "/about", label: "About Us" },
   {
     label: "Trainings",
+    to: "/trainings",
     children: [
-      { to: "/trainings", label: "Trainings" },
+      { to: "/trainings/about", label: "About Trainings" },
       { to: "/trainings/seminars", label: "Seminars" },
       { to: "/trainings/services", label: "Services" },
       { to: "/trainings/brochures", label: "Brochures" },

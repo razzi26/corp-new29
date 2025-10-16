@@ -5,12 +5,12 @@ export default function Trainings() {
   return (
     <div className="bg-white text-slate-900">
       <PageBanner
-        title="Trainings"
+        title="About Trainings"
         description="Expert-led programs delivered from our dedicated learning centers and through global offices."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Trainings", href: "/trainings" },
-          { label: "Trainings" },
+          { label: "About Trainings" },
         ]}
       />
 
