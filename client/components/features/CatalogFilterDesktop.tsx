@@ -105,9 +105,7 @@ export function CatalogFilterDesktop({
         </div>
 
         <div className="mt-6">
-          <h3 className="text-sm font-semibold text-slate-800">
-            Categories
-          </h3>
+          <h3 className="text-sm font-semibold text-slate-800">Categories</h3>
           <ul className="mt-3 rounded-lg border border-slate-300 overflow-hidden divide-y divide-slate-200">
             <li>
               <button
@@ -129,7 +127,9 @@ export function CatalogFilterDesktop({
                 <li key={cat}>
                   <button
                     onClick={() => {
-                      handleCategoryChange(selectedCategory === cat ? null : cat);
+                      handleCategoryChange(
+                        selectedCategory === cat ? null : cat,
+                      );
                     }}
                     aria-pressed={active}
                     className={cn(

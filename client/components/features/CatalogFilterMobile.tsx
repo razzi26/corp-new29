@@ -21,7 +21,10 @@ interface CatalogFilterMobileProps {
   setDraftTags: (tags: Set<string>) => void;
   onTagsApply: () => void;
   searchParams: URLSearchParams;
-  setSearchParams: (params: URLSearchParams, options: { replace: boolean }) => void;
+  setSearchParams: (
+    params: URLSearchParams,
+    options: { replace: boolean },
+  ) => void;
 }
 
 export function CatalogFilterMobile({
