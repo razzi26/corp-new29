@@ -275,38 +275,6 @@ function BenefitCard({ title, descr }: { title: string; descr: string }) {
   );
 }
 
-function ProductCard({ title, tag }: { title: string; tag: string }) {
-  return (
-    <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white">
-      <div className="relative h-40 bg-gradient-to-r from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))]">
-        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_20%,white,transparent_35%),radial-gradient(circle_at_70%_80%,white,transparent_25%)]" />
-        <span className="absolute top-3 left-3 text-sm rounded-full bg-white text-[hsl(var(--brand-end))] px-3 py-1 font-semibold">
-          {tag}
-        </span>
-      </div>
-      <div className="p-5">
-        <h4 className="font-semibold text-lg">{title}</h4>
-        <p className="mt-1 text-base text-slate-600">
-          Check availability and pricing with our manager
-        </p>
-        <div className="mt-4 flex gap-2">
-          <Link
-            to="/contact"
-            className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-3.5 py-2.5 text-base font-semibold shadow"
-          >
-            Request quote
-          </Link>
-          <Link
-            to="/contact"
-            className="inline-flex items-center rounded-lg border border-slate-300 px-3.5 py-2.5 text-base font-semibold hover:bg-slate-50"
-          >
-            Consultation
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function FeaturedProducts() {
   const [products, setProducts] = useState<any[] | null>(null);
