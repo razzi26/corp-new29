@@ -60,7 +60,7 @@ export default function Index() {
                 ].map(({ label, icon: Icon, bg }) => (
                   <div
                     key={label}
-                    className={cn("flex items-center gap-3 text-white rounded-lg px-3 py-4", bg)}
+                    className={cn("flex items-center gap-3 text-white rounded-lg px-2 py-4", bg)}
                   >
                     <div className="flex-shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/12 text-white">
                       <Icon className="h-6 w-6" />
