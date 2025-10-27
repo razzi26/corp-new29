@@ -258,7 +258,7 @@ export default function Index() {
                     className="rounded-lg bg-white text-slate-900 border-2 border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
                   />
                 </label>
-                <button className="mt-4 inline-flex items-center justify-center rounded-lg bg-[hsl(var(--primary))] hover:bg-[hsl(208_35%_28%)] text-white px-8 py-3.5 font-bold shadow-lg hover:shadow-xl transition">
+                <button className="mt-4 inline-flex items-center justify-center rounded-lg bg-[hsl(var(--primary))] hover:bg-[hsl(205_100%_20%)] text-white px-8 py-3.5 font-bold shadow-lg hover:shadow-xl transition">
                   Send request
                 </button>
                 <p className="text-sm text-slate-500">
