@@ -291,7 +291,7 @@ export default function Header() {
                 <div className="px-6 py-6 border-t-2 border-slate-200">
                   <Link
                     to="/contact"
-                    className="block w-full rounded-lg px-6 py-3.5 text-center text-base font-bold shadow-lg transition hover:shadow-xl bg-[hsl(var(--accent))] text-white hover:bg-[hsl(21_69%_44%)]"
+                    className="block w-full rounded-lg px-6 py-3.5 text-center text-base font-bold shadow-lg transition hover:shadow-xl bg-[hsl(var(--primary))] text-white hover:bg-[hsl(205_100%_20%)]"
                     onClick={() => setOpen(false)}
                   >
                     Contact Us
