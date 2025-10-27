@@ -305,7 +305,7 @@ function ResourceCard({ title }: { title: string }) {
   return (
     <Link
       to="/news"
-      className="rounded-2xl border border-slate-200 bg-white p-6 block hover:shadow-sm transition-shadow"
+      className="rounded-2xl border border-slate-200 bg-white p-6 block"
     >
       <div className="text-sm text-slate-500">Featured</div>
       <h3 className="mt-2 font-semibold text-xl">{title}</h3>
