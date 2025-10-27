@@ -269,7 +269,7 @@ export default function Header() {
                           <Link
                             key={c.to}
                             to={c.to}
-                            className="block px-10 py-3 text-[hsl(var(--primary))] font-semibold hover:bg-slate-100 border-l-4 border-transparent hover:border-[hsl(var(--accent))]"
+                            className="block px-10 py-3 text-[hsl(var(--primary))] font-semibold hover:bg-slate-100 border-l-4 border-transparent hover:border-[hsl(var(--primary))]"
                             onClick={() => setOpen(false)}
                           >
                             {c.label}
