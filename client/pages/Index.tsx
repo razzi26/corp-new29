@@ -186,7 +186,7 @@ export default function Index() {
             <h2 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))]">Featured Products</h2>
             <Link
               to="/products"
-              className="hidden md:inline-flex text-base font-semibold text-[hsl(var(--accent))] hover:underline"
+              className="hidden md:inline-flex text-base font-semibold text-[hsl(var(--primary))] hover:underline"
             >
               Browse all products →
             </Link>
