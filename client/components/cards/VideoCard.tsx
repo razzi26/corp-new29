@@ -4,7 +4,7 @@ import type { VideoItem } from "@/entities/video";
 export function VideoCard({ video }: { video: VideoItem }) {
   const params = video.start ? `?start=${video.start}` : "";
   return (
-    <div className="overflow-hidden rounded-lg border bg-white shadow-sm">
+    <div className="overflow-hidden rounded-xl border-2 border-slate-200 bg-white shadow-lg hover:shadow-xl transition-shadow">
       <AspectRatio ratio={16 / 9}>
         <iframe
           className="h-full w-full"
@@ -16,8 +16,8 @@ export function VideoCard({ video }: { video: VideoItem }) {
         />
       </AspectRatio>
 
-      <div className="p-4">
-        <h3 className="text-sm font-semibold text-slate-900">{video.title}</h3>
+      <div className="p-6">
+        <h3 className="text-lg font-bold text-[hsl(var(--primary))]">{video.title}</h3>
       </div>
     </div>
   );
