@@ -26,7 +26,7 @@ export default function Index() {
     <div id="top" className="text-slate-900 bg-white">
       {/* Hero with accent background */}
       <section
-        className="relative -mt-16 text-white"
+        className="relative -mt-16 text-white overflow-hidden"
         data-header-anchor
         aria-label="Hero section"
       >
@@ -38,107 +38,83 @@ export default function Index() {
             loading="eager"
             decoding="async"
           />
-          <div className="absolute inset-0 bg-[hsl(var(--brand-end))]/70" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--brand-start))]/40 to-[hsl(var(--brand-end))]/70 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-[hsl(var(--brand-start))]/75" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--brand-start))]/60 to-[hsl(var(--brand-end))]/75 mix-blend-multiply" />
         </div>
-        <div className="relative container mx-auto px-4 pt-24 pb-16 md:pt-32 md:pb-20">
-          <div className="hero-grid grid lg:grid-cols-2 gap-10 items-center">
-            <div className="lg:flex lg:flex-col lg:items-center lg:text-center">
-              {/*<span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs md:text-sm border border-white/25 text-white">
-                <ShieldCheck className="h-4 w-4" /> Biosafety training •
-                Guidance • Resources
-              </span>*/}
-              <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight">
+        <div className="relative container mx-auto px-4 pt-32 pb-24 md:pt-40 md:pb-32 lg:pt-48 lg:pb-40">
+          <div className="hero-grid grid lg:grid-cols-2 gap-12 items-center">
+            <div className="lg:flex lg:flex-col lg:items-start lg:text-left max-w-2xl">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
                 Welcome to Esco Biosafety Institute!
               </h1>
-              <p className="mt-4 text-white text-base md:text-lg max-w-xl">
+              <p className="mt-6 text-white text-lg md:text-xl leading-relaxed max-w-2xl">
                 Biosafety in any laboratory is crucial. The Esco Biosafety
                 Institute was established to be your partner in achieving it.
                 Our institute provides:
               </p>
 
-              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
                 {[
                   {
                     label: "Training & seminars",
                     icon: GraduationCap,
-                    bg: "bg-sky-600",
+                    bg: "bg-[hsl(var(--brand-start))]",
                   },
                   {
                     label: "Regulatory guidance",
                     icon: ShieldCheck,
-                    bg: "bg-teal-600",
+                    bg: "bg-[hsl(var(--accent))]",
                   },
                   {
                     label: "Practical resources",
                     icon: Microscope,
-                    bg: "bg-indigo-600",
+                    bg: "bg-[hsl(var(--brand-start))]",
                   },
                   {
                     label: "Certification support",
                     icon: BadgeCheck,
-                    bg: "bg-emerald-600",
+                    bg: "bg-[hsl(var(--accent))]",
                   },
                 ].map(({ label, icon: Icon, bg }) => (
                   <div
                     key={label}
                     className={cn(
-                      "flex items-center gap-3 text-white rounded-lg px-2 py-4",
+                      "flex items-center gap-4 text-white rounded-lg px-4 py-4 backdrop-blur-sm bg-white/10 border border-white/20",
                       bg,
                     )}
                   >
-                    <div className="flex-shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/12 text-white">
+                    <div className="flex-shrink-0 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/20">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <div className="flex flex-col">
-                      <span className="font-medium text-sm text-white leading-none">
-                        {label}
-                      </span>
-                    </div>
+                    <span className="font-semibold text-base leading-tight">
+                      {label}
+                    </span>
                   </div>
                 ))}
               </div>
 
-              <p className="mt-3 text-white text-base md:text-lg max-w-2xl">
+              <p className="mt-8 text-white text-lg leading-relaxed max-w-2xl">
                 Whether you're looking to get certified, get information on
                 biosafety products, need to be updated on industry trends, or
                 want to test your knowledge, our institute is your central hub
                 for building expertise and confidence in biosafety protocols.
               </p>
 
-              <div className="mt-6 flex flex-col sm:flex-row gap-3">
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center rounded-lg bg-white text-[hsl(var(--brand-end))] px-5 py-3 font-semibold shadow hover:shadow-md transition"
+                  className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--accent))] hover:bg-[hsl(21_69%_44%)] text-white px-8 py-3.5 font-bold shadow-lg hover:shadow-xl transition"
                 >
                   Get certified
                 </Link>
                 <Link
                   to="/news"
-                  className="inline-flex items-center justify-center rounded-lg border border-white/60 text-white px-5 py-3 font-semibold hover:bg-white/10 transition"
+                  className="inline-flex items-center justify-center rounded-lg border-2 border-white text-white px-8 py-3.5 font-bold hover:bg-white/10 transition"
                 >
                   Explore resources
                 </Link>
               </div>
             </div>
-
-            {/*
-            <div className="relative">
-              <div className="relative rounded-3xl bg-white text-slate-900 p-6 md:p-8 shadow-lg">
-                <div className="grid grid-cols-3 gap-4">
-                  <FeatureCard icon={HeartPulse} title="Monitors" />
-                  <FeatureCard icon={Microscope} title="Laboratory" />
-                  <FeatureCard icon={Scan} title="Imaging" />
-                  <FeatureCard icon={Stethoscope} title="Diagnostics" />
-                  <FeatureCard icon={ShieldCheck} title="Sterilization" />
-                  <FeatureCard icon={HeartPulse} title="Cardiology" />
-                </div>
-                <p className="mt-4 text-sm text-slate-600">
-                  We tailor configurations to your needs and budget
-                </p>
-              </div>
-            </div>
-            */}
           </div>
         </div>
       </section>
