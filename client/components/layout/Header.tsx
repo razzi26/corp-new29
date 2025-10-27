@@ -192,7 +192,7 @@ export default function Header() {
                 className={cn(
                   "inline-flex items-center rounded-lg px-6 py-2.5 text-base font-bold shadow-lg transition hover:shadow-xl",
                   scrolled || open || isProductDetail
-                    ? "bg-[hsl(var(--accent))] text-white hover:bg-[hsl(21_69%_44%)]"
+                    ? "bg-[hsl(var(--primary))] text-white hover:bg-[hsl(205_100%_20%)]"
                     : "bg-white text-[hsl(var(--primary))] hover:bg-slate-100",
                 )}
               >
