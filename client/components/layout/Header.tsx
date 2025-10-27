@@ -135,11 +135,11 @@ export default function Header() {
                     <Link
                       to={item.to ?? "/resources"}
                       className={cn(
-                        "inline-flex items-center gap-2 transition-colors py-2 px-1",
-                        scrolled || isProductDetail
-                          ? "text-[hsl(var(--primary))] hover:text-[hsl(var(--accent))]"
-                          : "text-white hover:text-[hsl(var(--accent))]",
-                      )}
+                      "inline-flex items-center gap-2 transition-colors py-2 px-1",
+                      scrolled || isProductDetail
+                        ? "text-[hsl(var(--primary))] hover:text-[hsl(205_100%_35%)]"
+                        : "text-white hover:text-white/80",
+                    )}
                       aria-expanded={desktopOpenKey === item.label}
                     >
                       {item.label}
