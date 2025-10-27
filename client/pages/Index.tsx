@@ -66,7 +66,7 @@ export default function Index() {
                 {
                   label: "Regulatory guidance",
                   icon: ShieldCheck,
-                  bg: "bg-[hsl(var(--accent))]",
+                  bg: "bg-[hsl(205_100%_35%)]",
                 },
                 {
                   label: "Practical resources",
@@ -76,7 +76,7 @@ export default function Index() {
                 {
                   label: "Certification support",
                   icon: BadgeCheck,
-                  bg: "bg-[hsl(var(--accent))]",
+                  bg: "bg-[hsl(205_100%_35%)]",
                 },
               ].map(({ label, icon: Icon, bg }) => (
                 <div
@@ -106,7 +106,7 @@ export default function Index() {
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--accent))] hover:bg-[hsl(21_69%_44%)] text-white px-8 py-3.5 font-bold shadow-lg hover:shadow-xl transition"
+                className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--primary))] hover:bg-[hsl(205_100%_20%)] text-white px-8 py-3.5 font-bold shadow-lg hover:shadow-xl transition"
               >
                 Get certified
               </Link>
