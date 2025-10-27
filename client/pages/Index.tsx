@@ -284,7 +284,7 @@ function FeatureCard({ icon: Icon, title }: { icon: any; title: string }) {
 
 function BenefitCard({ title, descr }: { title: string; descr: string }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl border-2 border-slate-200 bg-white p-8 shadow-lg hover:shadow-xl transition">
+    <div className="relative overflow-hidden rounded-2xl border-2 border-slate-200 bg-white p-8">
       <div
         className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-br from-[hsl(205_100%_25%)]/5 via-transparent to-[hsl(var(--primary))]/5"
         aria-hidden
