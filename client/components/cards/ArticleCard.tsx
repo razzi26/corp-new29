@@ -13,17 +13,17 @@ import type { ArticleMeta } from "@/entities/article";
 export function ArticleCard({ a }: { a: ArticleMeta }) {
   const slugParam = a.slug.replace("/resources/articles/", "");
   return (
-    <Card className="h-full flex flex-col overflow-hidden rounded-lg border border-slate-200/70 bg-white shadow-sm transition-shadow hover:shadow">
-      <CardHeader>
+    <Card className="h-full flex flex-col overflow-hidden rounded-xl border-2 border-slate-200 bg-white shadow-lg transition-all hover:shadow-xl">
+      <CardHeader className="pb-3">
         <CardTitle className="text-xl leading-7">
           <Link
             to={`/resources/articles/${slugParam}`}
-            className="text-[#00467f] hover:underline"
+            className="text-[hsl(var(--primary))] hover:underline font-bold"
           >
             {a.title}
           </Link>
         </CardTitle>
-        <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-slate-600">
+        <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-slate-600">
           <span className="inline-flex items-center gap-1">
             <CalendarDays className="h-4 w-4" />
             {new Date(a.date).toLocaleDateString()}
@@ -35,20 +35,20 @@ export function ArticleCard({ a }: { a: ArticleMeta }) {
           </span>
         </div>
       </CardHeader>
-      <CardContent className="text-slate-700">
+      <CardContent className="text-slate-700 py-2">
         <p>{a.description}</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {a.tags.map((t) => (
-            <Badge key={t} variant="secondary">
+            <Badge key={t} variant="secondary" className="bg-[hsl(var(--primary))]/10 text-[hsl(var(--primary))]">
               {t}
             </Badge>
           ))}
         </div>
       </CardContent>
-      <CardFooter className="mt-auto">
+      <CardFooter className="mt-auto pt-4">
         <Link
           to={`/resources/articles/${slugParam}`}
-          className="inline-flex items-center gap-2 rounded-full border border-[#00467f] px-4 py-2 text-[#00467f] transition-colors hover:bg-[#00467f] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00467f]/40"
+          className="inline-flex items-center gap-2 rounded-lg border-2 border-[hsl(var(--primary))] px-5 py-2.5 text-[hsl(var(--primary))] font-bold transition-colors hover:bg-[hsl(var(--primary))] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--primary))]/40"
         >
           Read article
           <ArrowRight className="h-4 w-4" />
