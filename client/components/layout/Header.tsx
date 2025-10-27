@@ -101,29 +101,29 @@ export default function Header() {
         className={cn(
           "sticky top-0 z-[9999] transition-colors duration-300",
           scrolled || open || isProductDetail
-            ? "bg-white border-b border-white/60 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white"
-            : "bg-transparent border-b border-transparent text-white",
+            ? "bg-white border-b-2 border-slate-200 shadow-md backdrop-blur supports-[backdrop-filter]:bg-white"
+            : "bg-[hsl(var(--primary))]/95 border-b-2 border-[hsl(var(--primary))]/20 text-white",
         )}
       >
         <div className="container mx-auto px-4 relative">
-          <div className="flex h-16 items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]">
-            <Link to="/" className="flex select-none items-center gap-2">
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--brand-start))] to-[hsl(var(--brand-end))] font-bold text-white">
+          <div className="flex h-20 items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]">
+            <Link to="/" className="flex select-none items-center gap-3">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--accent))] font-bold text-white text-lg shadow-md">
                 E
               </span>
               <span
                 className={cn(
-                  "font-semibold tracking-wide transition-colors",
+                  "font-bold tracking-wide transition-colors text-lg",
                   scrolled || open || isProductDetail
-                    ? "text-slate-900"
+                    ? "text-[hsl(var(--primary))]"
                     : "text-white",
                 )}
               >
-                Esco Biosafety Institute
+                Esco Biosafety
               </span>
             </Link>
 
-            <nav className="hidden items-center gap-6 text-base md:flex md:justify-self-center">
+            <nav className="hidden items-center gap-8 text-base md:flex md:justify-self-center font-semibold">
               {nav.map((item) =>
                 item.children ? (
                   <div
@@ -135,24 +135,24 @@ export default function Header() {
                     <Link
                       to={item.to ?? "/resources"}
                       className={cn(
-                        "inline-flex items-center gap-1 transition-colors",
+                        "inline-flex items-center gap-2 transition-colors py-2 px-1",
                         scrolled || isProductDetail
-                          ? "text-slate-700 hover:text-slate-900"
-                          : "text-white hover:text-white",
+                          ? "text-[hsl(var(--primary))] hover:text-[hsl(var(--accent))]"
+                          : "text-white hover:text-[hsl(var(--accent))]",
                       )}
                       aria-expanded={desktopOpenKey === item.label}
                     >
                       {item.label}
                       <ChevronDown
                         className={cn(
-                          "h-4 w-4 transition-transform",
+                          "h-5 w-5 transition-transform",
                           desktopOpenKey === item.label && "rotate-180",
                         )}
                       />
                     </Link>
                     <div
                       className={cn(
-                        "absolute left-0 top-full min-w-[14rem] rounded-md border bg-white text-slate-900 shadow-md py-1 transition-opacity",
+                        "absolute left-0 top-full min-w-[16rem] rounded-lg border-2 border-slate-200 bg-white text-[hsl(var(--primary))] shadow-xl py-2 transition-opacity",
                         desktopOpenKey === item.label
                           ? "visible opacity-100"
                           : "invisible opacity-0",
@@ -162,7 +162,7 @@ export default function Header() {
                         <Link
                           key={c.to}
                           to={c.to}
-                          className="block px-3 py-2 hover:bg-slate-50"
+                          className="block px-4 py-3 hover:bg-[hsl(var(--primary))]/5 font-medium transition border-l-4 border-transparent hover:border-[hsl(var(--accent))]"
                         >
                           {c.label}
                         </Link>
@@ -174,10 +174,10 @@ export default function Header() {
                     key={item.to}
                     to={item.to!}
                     className={cn(
-                      "transition-colors",
+                      "transition-colors py-2 px-1",
                       scrolled || isProductDetail
-                        ? "text-slate-700 hover:text-slate-900"
-                        : "text-white hover:text-white",
+                        ? "text-[hsl(var(--primary))] hover:text-[hsl(var(--accent))]"
+                        : "text-white hover:text-[hsl(var(--accent))]",
                     )}
                   >
                     {item.label}
@@ -190,10 +190,10 @@ export default function Header() {
               <Link
                 to="/contact"
                 className={cn(
-                  "inline-flex items-center rounded-full px-5 py-2.5 text-base font-semibold shadow transition hover:shadow-md",
+                  "inline-flex items-center rounded-lg px-6 py-2.5 text-base font-bold shadow-lg transition hover:shadow-xl",
                   scrolled || open || isProductDetail
-                    ? "bg-[hsl(var(--brand-end))] text-white"
-                    : "bg-white  text-[hsl(var(--brand-end))]",
+                    ? "bg-[hsl(var(--accent))] text-white hover:bg-[hsl(21_69%_44%)]"
+                    : "bg-white text-[hsl(var(--primary))] hover:bg-slate-100",
                 )}
               >
                 Contact Us
