@@ -154,7 +154,7 @@ export default function KnowledgeHubWidget() {
       <Tabs
         value={tab}
         onValueChange={(v) => setTab(v as any)}
-        className="mt-4"
+        className="w-full"
       >
         <TabsList>
           <TabsTrigger value="videos">Videos</TabsTrigger>
