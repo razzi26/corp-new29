@@ -202,18 +202,18 @@ export default function Header() {
 
             <button
               className={cn(
-                "md:hidden transition-colors",
+                "md:hidden transition-colors p-2",
                 open
-                  ? "text-slate-900"
+                  ? "text-[hsl(var(--primary))]"
                   : scrolled || isProductDetail
-                    ? "text-slate-700"
+                    ? "text-[hsl(var(--primary))]"
                     : "text-white",
               )}
               aria-label="Open menu"
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
             >
-              {open ? <X /> : <Menu />}
+              {open ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
@@ -221,17 +221,17 @@ export default function Header() {
 
       {open &&
         createPortal(
-          <div className="fixed left-0 right-0 top-16 bottom-0 z-[60] md:hidden">
+          <div className="fixed left-0 right-0 top-20 bottom-0 z-[60] md:hidden">
             <div
-              className="absolute inset-0 bg-black/30"
+              className="absolute inset-0 bg-black/40"
               onClick={() => setOpen(false)}
             />
-            <div className="absolute inset-0 overflow-auto bg-white border-t shadow-lg mobile-menu-scroll">
-              <nav className="py-2">
+            <div className="absolute inset-0 overflow-auto bg-white border-t-2 border-slate-200 shadow-2xl mobile-menu-scroll">
+              <nav className="py-4">
                 {nav.map((item) =>
                   item.children ? (
                     <div key={item.label}>
-                      <div className="flex w-full items-center justify-between px-4 py-3 text-left text-slate-800">
+                      <div className="flex w-full items-center justify-between px-6 py-4 text-left text-[hsl(var(--primary))] font-bold border-b border-slate-100">
                         <Link
                           to={item.to ?? "/resources"}
                           className="flex-1"
@@ -247,11 +247,11 @@ export default function Header() {
                               openSubmenuKey === item.label ? null : item.label,
                             )
                           }
-                          className="px-2"
+                          className="px-2 ml-2"
                         >
                           <ChevronDown
                             className={cn(
-                              "h-4 w-4 transition-transform",
+                              "h-5 w-5 transition-transform",
                               openSubmenuKey === item.label && "rotate-180",
                             )}
                           />
@@ -259,7 +259,7 @@ export default function Header() {
                       </div>
                       <div
                         className={cn(
-                          "overflow-hidden transition-all",
+                          "overflow-hidden transition-all bg-slate-50",
                           openSubmenuKey === item.label
                             ? "max-h-96"
                             : "max-h-0",
@@ -269,7 +269,7 @@ export default function Header() {
                           <Link
                             key={c.to}
                             to={c.to}
-                            className="block px-8 py-2 text-slate-700 hover:bg-slate-50"
+                            className="block px-10 py-3 text-[hsl(var(--primary))] font-semibold hover:bg-slate-100 border-l-4 border-transparent hover:border-[hsl(var(--accent))]"
                             onClick={() => setOpen(false)}
                           >
                             {c.label}
@@ -281,22 +281,17 @@ export default function Header() {
                     <Link
                       key={item.to}
                       to={item.to!}
-                      className="block px-4 py-3 text-slate-800 hover:bg-slate-50"
+                      className="block px-6 py-4 text-[hsl(var(--primary))] font-bold hover:bg-slate-50 border-b border-slate-100"
                       onClick={() => setOpen(false)}
                     >
                       {item.label}
                     </Link>
                   ),
                 )}
-                <div className="px-4 py-3">
+                <div className="px-6 py-6 border-t-2 border-slate-200">
                   <Link
                     to="/contact"
-                    className={cn(
-                      "block w-full rounded-full px-5 py-2.5 text-center text-base font-semibold shadow transition hover:shadow-md",
-                      scrolled || open || isProductDetail
-                        ? "bg-[hsl(var(--brand-end))] text-white"
-                        : "bg-white  text-[hsl(var(--brand-end))]",
-                    )}
+                    className="block w-full rounded-lg px-6 py-3.5 text-center text-base font-bold shadow-lg transition hover:shadow-xl bg-[hsl(var(--accent))] text-white hover:bg-[hsl(21_69%_44%)]"
                     onClick={() => setOpen(false)}
                   >
                     Contact Us
