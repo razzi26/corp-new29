@@ -13,7 +13,7 @@ import type { ArticleMeta } from "@/entities/article";
 export function ArticleCard({ a }: { a: ArticleMeta }) {
   const slugParam = a.slug.replace("/resources/articles/", "");
   return (
-    <Card className="h-full flex flex-col overflow-hidden rounded-xl border-2 border-slate-200 bg-white shadow-lg transition-all hover:shadow-xl">
+    <Card className="h-full flex flex-col overflow-hidden rounded-xl border-2 border-slate-200 bg-white">
       <CardHeader className="pb-3">
         <CardTitle className="text-xl leading-7">
           <Link
