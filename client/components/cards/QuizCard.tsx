@@ -68,7 +68,7 @@ export function QuizCard({ quiz }: { quiz: QuizMeta }) {
       <CardFooter className="border-t border-slate-100 bg-slate-50/80 px-5 py-4">
         <Button
           asChild
-          className="w-full bg-[hsl(var(--primary))] text-white shadow-lg transition-all duration-300 hover:bg-[hsl(205_100%_20%)] focus-visible:ring-[hsl(var(--primary))]/40 font-bold"
+          className="w-full bg-[hsl(var(--primary))] text-white transition-all duration-300 hover:bg-[hsl(205_100%_20%)] focus-visible:ring-[hsl(var(--primary))]/40 font-bold"
         >
           <Link to={`/resources/quizzes/${quiz.slug}`}>Start quiz</Link>
         </Button>
