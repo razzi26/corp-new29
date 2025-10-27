@@ -190,7 +190,7 @@ export default function Header() {
               <Link
                 to="/contact"
                 className={cn(
-                  "inline-flex items-center rounded-lg px-6 py-2.5 text-base font-bold shadow-lg transition hover:shadow-xl",
+                  "inline-flex items-center rounded-lg px-6 py-2.5 text-base font-bold transition",
                   scrolled || open || isProductDetail
                     ? "bg-[hsl(var(--primary))] text-white hover:bg-[hsl(205_100%_20%)]"
                     : "bg-white text-[hsl(var(--primary))] hover:bg-slate-100",
