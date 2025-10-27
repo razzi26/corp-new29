@@ -150,7 +150,7 @@ export default function Index() {
               </Link>
             </div>
             <div className="relative">
-              <div className="bg-[hsl(var(--primary))] h-96 rounded-xl shadow-xl"></div>
+              <div className="bg-[hsl(var(--primary))] h-96 rounded-xl"></div>
             </div>
           </div>
         </div>
