@@ -43,78 +43,83 @@ export default function Index() {
         </div>
         <div className="relative container mx-auto px-4 pt-32 pb-24 md:pt-40 md:pb-32 lg:pt-48 lg:pb-40">
           <div className="hero-grid grid lg:grid-cols-2 gap-12 items-center">
-            <div className="lg:flex lg:flex-col lg:items-start lg:text-left max-w-2xl">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-                Welcome to Esco Biosafety Institute!
-              </h1>
-              <p className="mt-6 text-white text-lg md:text-xl leading-relaxed max-w-2xl">
-                Biosafety in any laboratory is crucial. The Esco Biosafety
-                Institute was established to be your partner in achieving it.
-                Our institute provides:
-              </p>
+            {/*<div className="lg:flex lg:flex-col lg:items-start lg:text-left max-w-2xl">
+              
+            </div>*/}
 
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
-                {[
-                  {
-                    label: "Training & seminars",
-                    icon: GraduationCap,
-                    bg: "bg-[hsl(var(--brand-start))]",
-                  },
-                  {
-                    label: "Regulatory guidance",
-                    icon: ShieldCheck,
-                    bg: "bg-[hsl(var(--accent))]",
-                  },
-                  {
-                    label: "Practical resources",
-                    icon: Microscope,
-                    bg: "bg-[hsl(var(--brand-start))]",
-                  },
-                  {
-                    label: "Certification support",
-                    icon: BadgeCheck,
-                    bg: "bg-[hsl(var(--accent))]",
-                  },
-                ].map(({ label, icon: Icon, bg }) => (
-                  <div
-                    key={label}
-                    className={cn(
-                      "flex items-center gap-4 text-white rounded-lg px-4 py-4 backdrop-blur-sm bg-white/10 border border-white/20",
-                      bg,
-                    )}
-                  >
-                    <div className="flex-shrink-0 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/20">
-                      <Icon className="h-6 w-6" />
-                    </div>
-                    <span className="font-semibold text-base leading-tight">
-                      {label}
-                    </span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+              Welcome to Esco Biosafety Institute!
+            </h1>
+            <p className="mt-6 text-white text-lg md:text-xl leading-relaxed max-w-2xl">
+              Biosafety in any laboratory is crucial. The Esco Biosafety
+              Institute was established to be your partner in achieving it.
+              Our institute provides:
+            </p>
+
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
+              {[
+                {
+                  label: "Training & seminars",
+                  icon: GraduationCap,
+                  bg: "bg-[hsl(var(--brand-start))]",
+                },
+                {
+                  label: "Regulatory guidance",
+                  icon: ShieldCheck,
+                  bg: "bg-[hsl(var(--accent))]",
+                },
+                {
+                  label: "Practical resources",
+                  icon: Microscope,
+                  bg: "bg-[hsl(var(--brand-start))]",
+                },
+                {
+                  label: "Certification support",
+                  icon: BadgeCheck,
+                  bg: "bg-[hsl(var(--accent))]",
+                },
+              ].map(({ label, icon: Icon, bg }) => (
+                <div
+                  key={label}
+                  className={cn(
+                    "flex items-center gap-4 text-white rounded-lg px-4 py-4 backdrop-blur-sm bg-white/10 border border-white/20",
+                    bg,
+                  )}
+                >
+                  <div className="flex-shrink-0 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/20">
+                    <Icon className="h-6 w-6" />
                   </div>
-                ))}
-              </div>
-
-              <p className="mt-8 text-white text-lg leading-relaxed max-w-2xl">
-                Whether you're looking to get certified, get information on
-                biosafety products, need to be updated on industry trends, or
-                want to test your knowledge, our institute is your central hub
-                for building expertise and confidence in biosafety protocols.
-              </p>
-
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--accent))] hover:bg-[hsl(21_69%_44%)] text-white px-8 py-3.5 font-bold shadow-lg hover:shadow-xl transition"
-                >
-                  Get certified
-                </Link>
-                <Link
-                  to="/news"
-                  className="inline-flex items-center justify-center rounded-lg border-2 border-white text-white px-8 py-3.5 font-bold hover:bg-white/10 transition"
-                >
-                  Explore resources
-                </Link>
-              </div>
+                  <span className="font-semibold text-base leading-tight">
+                    {label}
+                  </span>
+                </div>
+              ))}
             </div>
+
+            <p className="mt-8 text-white text-lg leading-relaxed max-w-2xl">
+              Whether you're looking to get certified, get information on
+              biosafety products, need to be updated on industry trends, or
+              want to test your knowledge, our institute is your central hub
+              for building expertise and confidence in biosafety protocols.
+            </p>
+
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--accent))] hover:bg-[hsl(21_69%_44%)] text-white px-8 py-3.5 font-bold shadow-lg hover:shadow-xl transition"
+              >
+                Get certified
+              </Link>
+              <Link
+                to="/news"
+                className="inline-flex items-center justify-center rounded-lg border-2 border-white text-white px-8 py-3.5 font-bold hover:bg-white/10 transition"
+              >
+                Explore resources
+              </Link>
+            </div>
+
+
+
           </div>
         </div>
       </section>
