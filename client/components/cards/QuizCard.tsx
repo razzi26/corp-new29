@@ -15,7 +15,7 @@ export function QuizCard({ quiz }: { quiz: QuizMeta }) {
   return (
     <Card
       key={quiz.slug}
-      className="group relative flex h-full w-full flex-col overflow-hidden border-2 border-slate-200 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[hsl(var(--primary))]/40 hover:shadow-xl"
+      className="group relative flex h-full w-full flex-col overflow-hidden border-2 border-slate-200 bg-white transition-all duration-300 hover:border-[hsl(var(--primary))]/40"
     >
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[hsl(var(--primary))] via-[hsl(205_100%_20%)] to-[hsl(var(--primary))] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
