@@ -126,7 +126,7 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))] mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)] mb-6 pb-4 border-b-4 border-[hsl(var(--primary))]">
                 About Esco Biosafety Institute
               </h2>
               <p className="text-lg text-slate-700 mb-4 leading-relaxed">
@@ -156,7 +156,7 @@ export default function Index() {
       {/* Benefits - Color Block Section */}
       <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))] mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)] mb-12 pb-4 border-b-4 border-[hsl(var(--primary))]">
             Why Choose Us
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -206,7 +206,7 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))] mb-8">
+              <h3 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)] mb-8 pb-4 border-b-4 border-[hsl(var(--primary))]">
                 FAQs
               </h3>
               <div className="mt-6">
@@ -224,7 +224,7 @@ export default function Index() {
               className="bg-white"
             >
               <div className="grid gap-8">
-                <h3 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))]">
+                <h3 className="text-3xl md:text-4xl font-bold text-[hsl(205_100%_12%)] pb-4 border-b-4 border-[hsl(var(--primary))]">
                   Contact Us
                 </h3>
 
