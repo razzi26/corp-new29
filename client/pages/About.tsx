@@ -22,9 +22,12 @@ export default function About() {
         />
         <div className="relative grid items-center gap-12 lg:grid-cols-2">
           <div className="relative space-y-5 lg:max-w-xl">
-            <h1 className="text-3xl font-bold leading-tight text-slate-900 md:text-5xl">
-              Esco Biosafety Institute
-            </h1>
+            <div>
+              <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+              <h1 className="text-3xl font-bold leading-tight text-[hsl(205_100%_12%)] md:text-5xl">
+                Esco Biosafety Institute
+              </h1>
+            </div>
             <p className="max-w-prose text-base text-slate-700 md:text-lg">
               Esco is a global life sciences company that started in 1978 as a
               cleanroom technology specialist. It has since progressed into a
@@ -43,13 +46,13 @@ export default function About() {
             <div className="flex flex-wrap gap-3 pt-2">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] px-5 py-3 font-semibold text-white shadow transition hover:-translate-y-0.5 hover:shadow-md"
+                className="inline-flex items-center justify-center bg-[hsl(var(--brand-end))] px-5 py-3 font-semibold text-white shadow transition hover:shadow-md"
               >
                 Contact us
               </Link>
               <Link
                 to="/news"
-                className="inline-flex items-center justify-center rounded-lg border border-slate-300 px-5 py-3 font-semibold transition hover:-translate-y-0.5 hover:bg-slate-50"
+                className="inline-flex items-center justify-center border border-slate-300 px-5 py-3 font-semibold transition hover:bg-slate-50"
               >
                 Explore resources
               </Link>
@@ -61,9 +64,12 @@ export default function About() {
                 className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#003a68] via-[#0096d6] to-[#003a68]"
                 aria-hidden
               />
-              <h3 className="text-xl font-semibold text-slate-900">
-                Our Journey
-              </h3>
+              <div className="mb-4">
+                <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-2"></div>
+                <h3 className="text-xl font-semibold text-[hsl(205_100%_12%)]">
+                  Our Journey
+                </h3>
+              </div>
               <ul className="mt-6 space-y-5">
                 <li className="relative pl-10 text-sm leading-relaxed text-slate-700">
                   <span
@@ -157,13 +163,13 @@ export default function About() {
           <div className="relative z-10 mt-6 flex flex-wrap gap-3 md:mt-0">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-3 font-semibold text-[#003a68] shadow transition hover:-translate-y-0.5 hover:shadow-md"
+              className="inline-flex items-center justify-center bg-white px-5 py-3 font-semibold text-[#003a68] shadow transition hover:shadow-md"
             >
               Get in touch
             </Link>
             <Link
               to="/products"
-              className="inline-flex items-center justify-center rounded-lg border border-white/60 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+              className="inline-flex items-center justify-center border border-white/60 px-5 py-3 font-semibold text-white transition hover:bg-white/10"
             >
               Browse products
             </Link>
@@ -176,18 +182,17 @@ export default function About() {
 
 function MissionCard({ title, descr }: { title: string; descr: string }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-lg">
-      <div
-        className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-br from-transparent via-transparent to-[#0096d6]/10"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-1 bg-gradient-to-r from-[#003a68] via-[#0096d6] to-[#003a68]"
-        aria-hidden
-      />
+    <div className="relative overflow-hidden bg-white p-6 border-b border-slate-300">
       <div className="relative z-10 space-y-3">
-        <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
-        <p className="text-sm leading-relaxed text-slate-600">{descr}</p>
+        <div className="flex items-start gap-3">
+          <div className="flex-shrink-0 mt-1">
+            <div className="w-2 h-2 rounded-full bg-[hsl(var(--primary))]"></div>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-[hsl(205_100%_12%)]">{title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-slate-700">{descr}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
