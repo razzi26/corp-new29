@@ -35,49 +35,49 @@ export default function ContactModal({
             alert("Thank you! We will contact you shortly.");
             onOpenChange(false);
           }}
-          className="grid gap-6"
+          className="grid gap-4"
         >
-          <label className="grid gap-3 text-sm font-medium border-b border-slate-300 pb-4">
-            <span className="text-slate-900">Name</span>
+          <label className="grid gap-2 text-sm">
+            <span>Name</span>
             <input
               name="name"
               required
-              className="h-10 border-0 bg-white px-0 text-slate-900 outline-none focus:ring-0 focus:border-b focus:border-[hsl(var(--brand-end))]"
+              className="h-11 border border-slate-300 bg-white px-3 text-slate-900 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
             />
           </label>
 
-          <label className="grid gap-3 text-sm font-medium border-b border-slate-300 pb-4">
-            <span className="text-slate-900">Phone or email</span>
+          <label className="grid gap-2 text-sm">
+            <span>Phone or email</span>
             <input
               name="contact"
               required
-              className="h-10 border-0 bg-white px-0 text-slate-900 outline-none focus:ring-0 focus:border-b focus:border-[hsl(var(--brand-end))]"
+              className="h-11 border border-slate-300 bg-white px-3 text-slate-900 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
             />
           </label>
 
-          <label className="grid gap-3 text-sm font-medium border-b border-slate-300 pb-4">
-            <span className="text-slate-900">Product of Interest</span>
+          <label className="grid gap-2 text-sm">
+            <span>Product of Interest</span>
             <input
               name="product"
               readOnly
               value={productName ?? ""}
-              className="h-10 border-0 bg-white px-0 text-slate-900 outline-none"
+              className="h-11 border border-slate-300 bg-slate-100 px-3 text-slate-900 outline-none"
             />
           </label>
 
-          <label className="grid gap-3 text-sm font-medium border-b border-slate-300 pb-4">
-            <span className="text-slate-900">Message</span>
+          <label className="grid gap-2 text-sm">
+            <span>Message</span>
             <textarea
               name="message"
               rows={4}
-              className="border-0 bg-white px-0 py-2 text-slate-900 outline-none focus:ring-0 resize-none"
+              className="border border-slate-300 bg-white px-3 py-2 text-slate-900 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
             />
           </label>
 
-          <button className="w-full inline-flex items-center justify-center bg-[hsl(var(--brand-end))] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[hsl(205_100%_20%)]">
+          <button className="w-full inline-flex items-center justify-center bg-[hsl(var(--brand-end))] px-4 py-2.5 text-sm font-semibold text-white shadow transition hover:shadow-md">
             Send request
           </button>
-          <p className="text-xs text-slate-500">
+          <p className="mt-2 text-xs text-slate-500">
             By submitting, you agree to the processing of personal data.
           </p>
         </form>
