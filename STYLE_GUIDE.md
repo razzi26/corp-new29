@@ -464,13 +464,25 @@ className="bg-[#005a9f]"
 
 ---
 
+## What NOT to Do
+
+Avoid these practices to maintain design consistency:
+
+1. ❌ **Rounded corners on cards** - Use sharp corners for all content blocks
+2. ❌ **Drop shadows** - No shadows except in very rare cases (modals, overlays)
+3. ❌ **Dot/circle accents** - Removed from cards and lists
+4. ❌ **Gradient overlays** - Keep backgrounds clean and simple
+5. ❌ **Complex layered effects** - Maintain simplicity and clarity
+6. ❌ **Rounded buttons** - Always use sharp corners for buttons
+7. ❌ **Multiple decorative elements** - Focus on typography and lines only
+
 ## When to Break the Rules
 
 While consistency is important, these situations may warrant exceptions:
 
-1. **Brand-specific colors** in hero sections (blues, gradients)
-2. **Rounded corners** on very specific components (e.g., avatars, badges)
-3. **Shadows** for elevation in modal or overlaid elements
+1. **Brand-specific colors** in hero sections (blues for background overlays only)
+2. **Subtle rounded corners** only on interactive elements like avatars (very rare)
+3. **Page banner gradients** - Brand gradient backgrounds are acceptable for hero/banner areas only
 4. **Extra spacing** for visual emphasis on key CTAs
 
 Always document such exceptions and maintain visual coherence across the interface.
