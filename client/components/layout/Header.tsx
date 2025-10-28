@@ -22,7 +22,7 @@ const nav: Array<{
       { to: "/trainings/brochures", label: "Brochures" },
     ],
   },
-  { to: "/products", label: "Products" },
+  // { to: "/products", label: "Products" },
   { to: "/news", label: "News" },
   {
     label: "Knowledge Hub",
