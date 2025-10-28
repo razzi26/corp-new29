@@ -284,19 +284,9 @@ function FeatureCard({ icon: Icon, title }: { icon: any; title: string }) {
 
 function BenefitCard({ title, descr }: { title: string; descr: string }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl border-2 border-slate-200 bg-white p-8">
-      <div
-        className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-br from-[hsl(205_100%_25%)]/5 via-transparent to-[hsl(var(--primary))]/5"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-1 bg-gradient-to-r from-[hsl(var(--primary))] via-[hsl(205_100%_35%)] to-[hsl(var(--primary))]"
-        aria-hidden
-      />
-      <div className="relative z-10 space-y-4">
-        <h3 className="text-2xl font-bold text-[hsl(var(--primary))]">{title}</h3>
-        <p className="text-lg leading-relaxed text-slate-700">{descr}</p>
-      </div>
+    <div className="border-b border-slate-200 pb-8 pt-6">
+      <h3 className="text-2xl font-bold text-[hsl(var(--primary))] mb-4">{title}</h3>
+      <p className="text-lg leading-relaxed text-slate-700">{descr}</p>
     </div>
   );
 }
