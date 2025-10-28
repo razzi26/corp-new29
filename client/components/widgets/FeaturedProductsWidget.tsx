@@ -173,7 +173,7 @@ function HomeProductCard({
   };
 
   return (
-    <div className="border-b border-slate-200 pb-8 pt-6">
+    <div className="border-b border-slate-200 pb-6 pt-0">
       <div
         ref={containerRef}
         className="relative w-full aspect-[3/4] bg-slate-50 mb-6"
