@@ -266,24 +266,26 @@ color: hsl(215.4 16.3% 46.9%);
 </div>
 ```
 
-### Mission/Feature Card (Simple)
-- **Layout**: Vertical stack
-- **Border**: Vertical dividers between columns (for multi-column layouts)
-- **Padding**: 32px (8) vertical, 24px (6) horizontal
+### Mission/Feature Card
+- **Layout**: Rectangular white box
+- **Background**: White (`bg-white`)
+- **Border**: 1px solid `hsl(214.3 31.8% 91.4%)`
+- **Padding**: 24px (6)
+- **Gap Between Cards**: 24px (6) in grid layout
 - **No accent dots or badges**
 - **No shadows**
 
 **Implementation**:
 ```jsx
-<div className="py-8 px-6">
-  <h3 className="text-lg font-semibold text-[hsl(205_100%_12%)] mb-3">{title}</h3>
+<div className="bg-white border border-slate-200 p-6">
+  <h3 className="text-lg font-semibold text-[hsl(205_100%_12%)] mb-4">{title}</h3>
   <p className="text-sm leading-relaxed text-slate-700">{description}</p>
 </div>
 ```
 
-**Multi-column layout with dividers**:
+**Multi-column layout**:
 ```jsx
-<div className="grid gap-0 md:grid-cols-3 divide-x divide-slate-300">
+<div className="grid gap-6 md:grid-cols-3">
   <MissionCard title="Title 1" descr="Description 1" />
   <MissionCard title="Title 2" descr="Description 2" />
   <MissionCard title="Title 3" descr="Description 3" />
