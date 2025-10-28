@@ -239,30 +239,28 @@ export default function Index() {
                   </ul>
                 </div>
 
-                <label className="grid gap-3 text-base font-semibold border-b border-slate-300 pb-6">
-                  <span className="text-slate-900">Name</span>
+                <label className="grid gap-2 text-base font-semibold">
+                  <span>Name</span>
                   <input
                     name="name"
                     required
-                    className="h-10 bg-white text-slate-900 border-b border-slate-300 px-0 outline-none focus:border-[hsl(var(--primary))] transition"
+                    className="h-12 bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
                   />
                 </label>
-
-                <label className="grid gap-3 text-base font-semibold border-b border-slate-300 pb-6">
-                  <span className="text-slate-900">Phone or email</span>
+                <label className="grid gap-2 text-base font-semibold">
+                  <span>Phone or email</span>
                   <input
                     name="contact"
                     required
-                    className="h-10 bg-white text-slate-900 border-b border-slate-300 px-0 outline-none focus:border-[hsl(var(--primary))] transition"
+                    className="h-12 bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
                   />
                 </label>
-
-                <label className="grid gap-3 text-base font-semibold border-b border-slate-300 pb-6">
-                  <span className="text-slate-900">Message</span>
+                <label className="grid gap-2 text-base font-semibold">
+                  <span>Message</span>
                   <textarea
                     name="message"
                     rows={4}
-                    className="bg-white text-slate-900 border-b border-slate-300 px-0 py-2 outline-none focus:border-[hsl(var(--primary))] transition resize-none"
+                    className="bg-white text-slate-900 border-2 border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
                   />
                 </label>
 
