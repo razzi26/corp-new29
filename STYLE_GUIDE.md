@@ -165,15 +165,15 @@ color: hsl(215.4 16.3% 46.9%);
 ### Primary Button
 - **Background**: `hsl(var(--primary))` (brand blue)
 - **Text Color**: White
-- **Padding**: 12px horizontal (px-8), 14px vertical (py-3.5)
-- **Font Weight**: 700 (bold)
+- **Padding**: 12px horizontal (px-5), 12px vertical (py-3)
+- **Font Weight**: 600 (semibold)
 - **Border Radius**: None (sharp corners)
-- **Shadow**: None by default
-- **Hover State**: Slightly darker background, subtle shadow
+- **Shadow**: None - no shadows
+- **Hover State**: Slightly darker background (`hsl(205_100%_20%)`)
 
 **Implementation**:
 ```jsx
-<button className="inline-flex items-center justify-center bg-[hsl(var(--primary))] hover:bg-[hsl(205_100%_20%)] text-white px-8 py-3.5 font-bold transition">
+<button className="inline-flex items-center justify-center bg-[hsl(var(--primary))] hover:bg-[hsl(205_100%_20%)] text-white px-5 py-3 font-semibold transition">
   Button Text
 </button>
 ```
@@ -182,8 +182,9 @@ color: hsl(215.4 16.3% 46.9%);
 - **Background**: Transparent
 - **Border**: 1px solid `hsl(214.3 31.8% 91.4%)`
 - **Text Color**: Text color matches page (slate-900 or slate-700)
-- **Padding**: 12px horizontal, 12px vertical
+- **Padding**: 12px horizontal (px-5), 12px vertical (py-3)
 - **Font Weight**: 600 (semibold)
+- **Shadow**: None
 - **Hover State**: Subtle background change (bg-slate-50)
 
 **Implementation**:
