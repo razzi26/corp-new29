@@ -20,7 +20,7 @@ export default function About() {
           className="pointer-events-none absolute right-[8%] top-32 hidden h-72 w-72 rounded-full bg-[#003a68]/12 blur-3xl lg:block"
           aria-hidden
         />
-        <div className="relative grid items-center gap-12 lg:grid-cols-2">
+        <div className="relative grid items-center gap-12 md:grid-cols-2">
           <div className="relative space-y-8">
             <div>
               <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
@@ -61,7 +61,7 @@ export default function About() {
 
           
           {/* Our Journey - Timeline */}
-          <div className="mt-12 pt-8 border-t border-slate-300">
+          <div className="mt-12 pt-8">
             <div className="mb-8">
               <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
               <h3 className="text-2xl font-bold text-[hsl(205_100%_12%)]">
@@ -159,7 +159,7 @@ export default function About() {
 
 function MissionCard({ title, descr }: { title: string; descr: string }) {
   return (
-    <div className="bg-white border border-slate-200 p-6">
+    <div className="bg-white p-6">
       <h3 className="text-lg font-semibold text-[hsl(205_100%_12%)] mb-4">{title}</h3>
       <p className="text-sm leading-relaxed text-slate-700">{descr}</p>
     </div>
