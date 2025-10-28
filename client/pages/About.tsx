@@ -99,7 +99,7 @@ export default function About() {
           className="pointer-events-none absolute inset-x-6 -top-10 hidden h-32 rounded-full bg-[#0096d6]/10 blur-3xl md:block"
           aria-hidden
         />
-        <div className="relative grid gap-0 md:grid-cols-3 divide-x divide-slate-300">
+        <div className="relative grid gap-6 md:grid-cols-3">
           <MissionCard
             title="Cultivate a Global Culture of Biosafety"
             descr="Educate and certify professionals worldwide, ensuring the highest standards of safety, quality, and compliance in laboratories."
@@ -120,8 +120,8 @@ export default function About() {
 
 function MissionCard({ title, descr }: { title: string; descr: string }) {
   return (
-    <div className="py-8 px-6">
-      <h3 className="text-lg font-semibold text-[hsl(205_100%_12%)] mb-3">{title}</h3>
+    <div className="bg-white border border-slate-200 p-6">
+      <h3 className="text-lg font-semibold text-[hsl(205_100%_12%)] mb-4">{title}</h3>
       <p className="text-sm leading-relaxed text-slate-700">{descr}</p>
     </div>
   );
