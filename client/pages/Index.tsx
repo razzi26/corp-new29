@@ -126,9 +126,12 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))] mb-6">
-                About Esco Biosafety Institute
-              </h2>
+              <div className="mb-6">
+                <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+                <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
+                  About Esco Biosafety Institute
+                </h2>
+              </div>
               <p className="text-lg text-slate-700 mb-4 leading-relaxed">
                 Our institute provides training, guidance, resources, and
                 certification support for biosafety professionals worldwide.
@@ -156,9 +159,12 @@ export default function Index() {
       {/* Benefits - Color Block Section */}
       <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))] mb-12">
-            Why Choose Us
-          </h2>
+          <div className="mb-12">
+            <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+            <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
+              Why Choose Us
+            </h2>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
             <BenefitCard
               title="Industry Expertise"
@@ -206,9 +212,12 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))] mb-8">
-                FAQs
-              </h3>
+              <div className="mb-8">
+                <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+                <h3 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
+                  FAQs
+                </h3>
+              </div>
               <div className="mt-6">
                 <FAQWidget />
               </div>
@@ -221,17 +230,21 @@ export default function Index() {
                 console.log(Object.fromEntries(form.entries()));
                 alert("Thank you! We will contact you shortly.");
               }}
-              className="rounded-2xl border-2 border-slate-200 bg-white p-8"
+              className="bg-white"
             >
-              <div className="grid gap-6">
-                <h3 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))]">
-                  Contact Us
-                </h3>
-                <div className="rounded-lg bg-[hsl(var(--primary))]/5 p-4 text-slate-700 text-base border border-[hsl(var(--primary))]/10">
-                  <div className="font-bold text-[hsl(var(--primary))]">
+              <div className="grid gap-8">
+                <div className="mb-8">
+                  <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-[hsl(205_100%_12%)]">
+                    Contact Us
+                  </h3>
+                </div>
+
+                <div className="border-b border-slate-300 pb-8">
+                  <div className="font-bold text-[hsl(var(--primary))] mb-4">
                     Contact details
                   </div>
-                  <ul className="mt-3 space-y-2">
+                  <ul className="space-y-3 text-slate-700 text-base leading-relaxed">
                     <li>Phone: +7 (495) 000-00-00</li>
                     <li>Email: contact@escobiosafety.org</li>
                     <li>Mon–Fri: 9:00–19:00</li>
@@ -243,7 +256,7 @@ export default function Index() {
                   <input
                     name="name"
                     required
-                    className="h-12 rounded-lg bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
+                    className="h-12 bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
                   />
                 </label>
                 <label className="grid gap-2 text-base font-semibold">
@@ -251,7 +264,7 @@ export default function Index() {
                   <input
                     name="contact"
                     required
-                    className="h-12 rounded-lg bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
+                    className="h-12 bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
                   />
                 </label>
                 <label className="grid gap-2 text-base font-semibold">
@@ -259,10 +272,11 @@ export default function Index() {
                   <textarea
                     name="message"
                     rows={4}
-                    className="rounded-lg bg-white text-slate-900 border-2 border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
+                    className="bg-white text-slate-900 border-2 border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
                   />
                 </label>
-                <button className="mt-4 inline-flex items-center justify-center rounded-lg bg-[hsl(var(--primary))] hover:bg-[hsl(205_100%_20%)] text-white px-8 py-3.5 font-bold shadow-lg hover:shadow-xl transition">
+
+                <button className="inline-flex items-center justify-center bg-[hsl(var(--primary))] hover:bg-[hsl(205_100%_20%)] text-white px-8 py-3.5 font-bold transition">
                   Send request
                 </button>
                 <p className="text-sm text-slate-500">

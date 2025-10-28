@@ -59,30 +59,30 @@ export default function FAQWidget({ items }: { items?: FAQItem[] }) {
   }
 
   return (
-    <Accordion type="multiple" className="mx-auto max-w-3xl space-y-4">
+    <div className="space-y-0 border-t border-slate-300">
       {list.map((it) => (
-        <AccordionItem
+        <Accordion
           key={it.q}
-          value={it.q}
-          className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md"
+          type="single"
+          collapsible
+          className="border-b border-slate-300"
         >
-          <AccordionTrigger className="group flex w-full items-start justify-between gap-6 px-6 py-6 text-left font-semibold text-slate-900 hover:no-underline [&>svg]:hidden">
-            <div>
+          <AccordionItem value={it.q} className="border-0">
+            <AccordionTrigger className="group flex w-full items-start justify-between gap-6 py-6 px-0 text-left font-semibold text-slate-900 hover:no-underline [&>svg]:hidden">
               <span className="text-lg font-semibold text-slate-900">
                 {it.q}
               </span>
-              {/* <span className="mt-1 block text-sm font-normal text-slate-600">Q&A • Esco Biosafety Institute</span>*/}
-            </div>
-            <span className="relative mt-1 flex h-6 w-6 items-center justify-center">
-              <span className="h-5 w-0.5 rounded-full bg-[hsl(var(--brand-end))] transition-opacity duration-200 group-data-[state=open]:opacity-0" />
-              <span className="absolute h-0.5 w-5 rounded-full bg-[hsl(var(--brand-end))]" />
-            </span>
-          </AccordionTrigger>
-          <AccordionContent className="px-6 pb-6 text-slate-700">
-            {it.a}
-          </AccordionContent>
-        </AccordionItem>
+              <span className="relative flex-shrink-0 flex h-6 w-6 items-center justify-center">
+                <span className="h-5 w-0.5 bg-[hsl(var(--brand-end))] transition-opacity duration-200 group-data-[state=open]:opacity-0" />
+                <span className="absolute h-0.5 w-5 bg-[hsl(var(--brand-end))]" />
+              </span>
+            </AccordionTrigger>
+            <AccordionContent className="pb-6 px-0 text-slate-700">
+              {it.a}
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       ))}
-    </Accordion>
+    </div>
   );
 }

@@ -20,12 +20,15 @@ export default function About() {
           className="pointer-events-none absolute right-[8%] top-32 hidden h-72 w-72 rounded-full bg-[#003a68]/12 blur-3xl lg:block"
           aria-hidden
         />
-        <div className="relative grid items-center gap-12 lg:grid-cols-2">
-          <div className="relative space-y-5 lg:max-w-xl">
-            <h1 className="text-3xl font-bold leading-tight text-slate-900 md:text-5xl">
-              Esco Biosafety Institute
-            </h1>
-            <p className="max-w-prose text-base text-slate-700 md:text-lg">
+        <div className="relative grid items-center gap-12 md:grid-cols-2">
+          <div className="relative space-y-8">
+            <div>
+              <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+              <h1 className="text-3xl font-bold leading-tight text-[hsl(205_100%_12%)] md:text-5xl">
+                Esco Biosafety Institute
+              </h1>
+            </div>
+            <p className="max-w-prose text-base text-slate-700 md:text-lg leading-relaxed">
               Esco is a global life sciences company that started in 1978 as a
               cleanroom technology specialist. It has since progressed into a
               key player that leverages its Singapore headquarters as a
@@ -33,90 +36,111 @@ export default function About() {
               is a market leader in biological safety cabinets and maintains a
               significant worldwide presence.
             </p>
-            <p className="max-w-prose text-base text-slate-700 md:text-lg">
+            <p className="max-w-prose text-base text-slate-700 md:text-lg leading-relaxed">
               A key initiative in fulfilling its vision was the creation of the
               Esco Biosafety Institute. The Institute was created to push
-              forward Esco’s core mission of building a global life sciences
+              forward Esco's core mission of building a global life sciences
               ecosystem. Beyond being a manufacturing hardware, it purposes to
               be a foundational pillar for education and standards.
             </p>
-            <div className="flex flex-wrap gap-3 pt-2">
+            <div className="flex flex-wrap gap-3 pt-4">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] px-5 py-3 font-semibold text-white shadow transition hover:-translate-y-0.5 hover:shadow-md"
+                className="inline-flex items-center justify-center bg-[hsl(var(--brand-end))] px-5 py-3 font-semibold text-white transition hover:bg-[hsl(205_100%_20%)]"
               >
                 Contact us
               </Link>
               <Link
                 to="/news"
-                className="inline-flex items-center justify-center rounded-lg border border-slate-300 px-5 py-3 font-semibold transition hover:-translate-y-0.5 hover:bg-slate-50"
+                className="inline-flex items-center justify-center border border-slate-300 px-5 py-3 font-semibold transition hover:bg-slate-50"
               >
                 Explore resources
               </Link>
             </div>
           </div>
-          <div className="relative lg:pl-8">
-            <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-lg backdrop-blur-sm md:p-8">
-              <div
-                className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#003a68] via-[#0096d6] to-[#003a68]"
-                aria-hidden
-              />
-              <h3 className="text-xl font-semibold text-slate-900">
+
+          {/* Our Journey - Timeline */}
+          <div className="mt-12 pt-8">
+            <div className="mb-8">
+              <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+              <h3 className="text-2xl font-bold text-[hsl(205_100%_12%)]">
                 Our Journey
               </h3>
-              <ul className="mt-6 space-y-5">
-                <li className="relative pl-10 text-sm leading-relaxed text-slate-700">
-                  <span
-                    className="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-[#003a68]/10 text-[#003a68] ring-2 ring-white shadow-sm"
-                    aria-hidden
-                  >
-                    <span className="h-2 w-2 rounded-full bg-[#003a68]" />
-                  </span>
-                  <span className="font-semibold">1978:</span> Founded as a
-                  cleanroom technology specialist.
-                </li>
-                <li className="relative pl-10 text-sm leading-relaxed text-slate-700">
-                  <span
-                    className="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-[#003a68]/10 text-[#003a68] ring-2 ring-white shadow-sm"
-                    aria-hidden
-                  >
-                    <span className="h-2 w-2 rounded-full bg-[#003a68]" />
-                  </span>
-                  <span className="font-semibold">1980s–2000s:</span> Expanded
-                  globally; became a market leader in biological safety
-                  cabinets.
-                </li>
-                <li className="relative pl-10 text-sm leading-relaxed text-slate-700">
-                  <span
-                    className="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-[#003a68]/10 text-[#003a68] ring-2 ring-white shadow-sm"
-                    aria-hidden
-                  >
-                    <span className="h-2 w-2 rounded-full bg-[#003a68]" />
-                  </span>
-                  <span className="font-semibold">Today:</span> A global company
-                  connecting East and West from Singapore HQ.
-                </li>
-                <li className="relative pl-10 text-sm leading-relaxed text-slate-700">
-                  <span
-                    className="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-[#003a68]/10 text-[#003a68] ring-2 ring-white shadow-sm"
-                    aria-hidden
-                  >
-                    <span className="h-2 w-2 rounded-full bg-[#003a68]" />
-                  </span>
-                  <span className="font-semibold">
-                    Esco Biosafety Institute:
-                  </span>{" "}
-                  Established to advance education, standards, and
-                  certification.
-                </li>
-              </ul>
+            </div>
+            <div className="space-y-6">
+              <div className="flex gap-6">
+                <div className="flex flex-col items-center">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm">
+                    1
+                  </div>
+                  <div className="mt-2 h-12 w-0.5 bg-slate-300"></div>
+                </div>
+                <div className="pb-6">
+                  <p className="font-semibold text-[hsl(205_100%_12%)]">1978</p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-700">
+                    Founded as a cleanroom technology specialist.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-6">
+                <div className="flex flex-col items-center">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm">
+                    2
+                  </div>
+                  <div className="mt-2 h-12 w-0.5 bg-slate-300"></div>
+                </div>
+                <div className="pb-6">
+                  <p className="font-semibold text-[hsl(205_100%_12%)]">
+                    1980s–2000s
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-700">
+                    Expanded globally; became a market leader in biological
+                    safety cabinets.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-6">
+                <div className="flex flex-col items-center">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm">
+                    3
+                  </div>
+                  <div className="mt-2 h-12 w-0.5 bg-slate-300"></div>
+                </div>
+                <div className="pb-6">
+                  <p className="font-semibold text-[hsl(205_100%_12%)]">
+                    Today
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-700">
+                    A global company connecting East and West from Singapore HQ.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-6">
+                <div className="flex flex-col items-center">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm">
+                    4
+                  </div>
+                </div>
+                <div>
+                  <p className="font-semibold text-[hsl(205_100%_12%)]">
+                    Esco Biosafety Institute
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-700">
+                    Established to advance education, standards, and
+                    certification.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Mission */}
-      <section className="relative container mx-auto mt-20 px-4">
+      <section className="relative container mx-auto mt-20 px-4 py-8">
         <div
           className="pointer-events-none absolute inset-x-6 -top-10 hidden h-32 rounded-full bg-[#0096d6]/10 blur-3xl md:block"
           aria-hidden
@@ -136,59 +160,17 @@ export default function About() {
           />
         </div>
       </section>
-
-      {/* Call to action */}
-      <section className="container mx-auto mt-20 mb-24 px-4">
-        <div className="relative overflow-hidden rounded-3xl border border-transparent bg-gradient-to-r from-[#003a68] via-[#005a9f] to-[#0096d6] p-6 text-white shadow-xl md:flex md:items-center md:justify-between md:gap-8 md:p-10">
-          <div
-            className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.18),_transparent_60%)] md:block"
-            aria-hidden
-          />
-          <div className="relative z-10 max-w-2xl space-y-3">
-            <h3 className="text-2xl font-bold text-white md:text-3xl">
-              Partner with us
-            </h3>
-            <p className="text-white/90">
-              Looking to upskill your team, certify your lab, or align with
-              global standards? Our experts can help tailor training and
-              resources to your needs.
-            </p>
-          </div>
-          <div className="relative z-10 mt-6 flex flex-wrap gap-3 md:mt-0">
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-3 font-semibold text-[#003a68] shadow transition hover:-translate-y-0.5 hover:shadow-md"
-            >
-              Get in touch
-            </Link>
-            <Link
-              to="/products"
-              className="inline-flex items-center justify-center rounded-lg border border-white/60 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
-            >
-              Browse products
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
 
 function MissionCard({ title, descr }: { title: string; descr: string }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-lg">
-      <div
-        className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-br from-transparent via-transparent to-[#0096d6]/10"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-1 bg-gradient-to-r from-[#003a68] via-[#0096d6] to-[#003a68]"
-        aria-hidden
-      />
-      <div className="relative z-10 space-y-3">
-        <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
-        <p className="text-sm leading-relaxed text-slate-600">{descr}</p>
-      </div>
+    <div className="bg-white p-6">
+      <h3 className="text-lg font-semibold text-[hsl(205_100%_12%)] mb-4">
+        {title}
+      </h3>
+      <p className="text-sm leading-relaxed text-slate-700">{descr}</p>
     </div>
   );
 }

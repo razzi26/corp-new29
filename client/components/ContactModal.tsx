@@ -42,7 +42,7 @@ export default function ContactModal({
             <input
               name="name"
               required
-              className="h-11 rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
+              className="h-11 border border-slate-300 bg-white px-3 text-slate-900 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
             />
           </label>
 
@@ -51,7 +51,7 @@ export default function ContactModal({
             <input
               name="contact"
               required
-              className="h-11 rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
+              className="h-11 border border-slate-300 bg-white px-3 text-slate-900 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
             />
           </label>
 
@@ -61,7 +61,7 @@ export default function ContactModal({
               name="product"
               readOnly
               value={productName ?? ""}
-              className="h-11 rounded-lg border border-slate-300 bg-slate-100 px-3 text-slate-900 outline-none"
+              className="h-11 border border-slate-300 bg-slate-100 px-3 text-slate-900 outline-none"
             />
           </label>
 
@@ -70,11 +70,11 @@ export default function ContactModal({
             <textarea
               name="message"
               rows={4}
-              className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-slate-900 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
+              className="border border-slate-300 bg-white px-3 py-2 text-slate-900 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
             />
           </label>
 
-          <button className="w-full inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] px-4 py-2.5 text-sm font-semibold text-white shadow transition hover:shadow-md">
+          <button className="w-full inline-flex items-center justify-center bg-[hsl(var(--brand-end))] px-4 py-2.5 text-sm font-semibold text-white shadow transition hover:shadow-md">
             Send request
           </button>
           <p className="mt-2 text-xs text-slate-500">
