@@ -5,7 +5,7 @@ import type { QuizMeta } from "@/entities/quiz";
 
 export function QuizCard({ quiz }: { quiz: QuizMeta }) {
   return (
-    <div className="border-b border-slate-200 pb-8 pt-6">
+    <div className="pb-8 pt-6">
       <AspectRatio ratio={5 / 2} className="mb-6">
         <img
           src={quiz.image?.url ?? "/placeholder.svg"}
