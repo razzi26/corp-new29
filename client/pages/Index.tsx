@@ -159,10 +159,10 @@ export default function Index() {
       {/* Benefits - Color Block Section */}
       <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))] mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))] mb-12 text-center">
           Why Choose Us
         </h2>
-          <div className="w-full">
+          <div className="grid md:grid-cols-3 gap-8">
             <BenefitCard
               title="Industry Expertise"
               descr="10+ years supplying public and private healthcare institutions with trusted biosafety solutions"
