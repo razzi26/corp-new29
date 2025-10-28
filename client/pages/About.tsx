@@ -57,73 +57,74 @@ export default function About() {
                 Explore resources
               </Link>
             </div>
+          </div>
 
-            {/* Our Journey - Timeline */}
-            <div className="mt-12 pt-8 border-t border-slate-300">
-              <div className="mb-8">
-                <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
-                <h3 className="text-2xl font-bold text-[hsl(205_100%_12%)]">
-                  Our Journey
-                </h3>
+          
+          {/* Our Journey - Timeline */}
+          <div className="mt-12 pt-8 border-t border-slate-300">
+            <div className="mb-8">
+              <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+              <h3 className="text-2xl font-bold text-[hsl(205_100%_12%)]">
+                Our Journey
+              </h3>
+            </div>
+            <div className="space-y-6">
+              <div className="flex gap-6">
+                <div className="flex flex-col items-center">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm">
+                    1
+                  </div>
+                  <div className="mt-2 h-12 w-0.5 bg-slate-300"></div>
+                </div>
+                <div className="pb-6">
+                  <p className="font-semibold text-[hsl(205_100%_12%)]">1978</p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-700">
+                    Founded as a cleanroom technology specialist.
+                  </p>
+                </div>
               </div>
-              <div className="space-y-6">
-                <div className="flex gap-6">
-                  <div className="flex flex-col items-center">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm">
-                      1
-                    </div>
-                    <div className="mt-2 h-12 w-0.5 bg-slate-300"></div>
+
+              <div className="flex gap-6">
+                <div className="flex flex-col items-center">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm">
+                    2
                   </div>
-                  <div className="pb-6">
-                    <p className="font-semibold text-[hsl(205_100%_12%)]">1978</p>
-                    <p className="mt-1 text-sm leading-relaxed text-slate-700">
-                      Founded as a cleanroom technology specialist.
-                    </p>
+                  <div className="mt-2 h-12 w-0.5 bg-slate-300"></div>
+                </div>
+                <div className="pb-6">
+                  <p className="font-semibold text-[hsl(205_100%_12%)]">1980s–2000s</p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-700">
+                    Expanded globally; became a market leader in biological safety cabinets.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-6">
+                <div className="flex flex-col items-center">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm">
+                    3
+                  </div>
+                  <div className="mt-2 h-12 w-0.5 bg-slate-300"></div>
+                </div>
+                <div className="pb-6">
+                  <p className="font-semibold text-[hsl(205_100%_12%)]">Today</p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-700">
+                    A global company connecting East and West from Singapore HQ.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-6">
+                <div className="flex flex-col items-center">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm">
+                    4
                   </div>
                 </div>
-
-                <div className="flex gap-6">
-                  <div className="flex flex-col items-center">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm">
-                      2
-                    </div>
-                    <div className="mt-2 h-12 w-0.5 bg-slate-300"></div>
-                  </div>
-                  <div className="pb-6">
-                    <p className="font-semibold text-[hsl(205_100%_12%)]">1980s–2000s</p>
-                    <p className="mt-1 text-sm leading-relaxed text-slate-700">
-                      Expanded globally; became a market leader in biological safety cabinets.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-6">
-                  <div className="flex flex-col items-center">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm">
-                      3
-                    </div>
-                    <div className="mt-2 h-12 w-0.5 bg-slate-300"></div>
-                  </div>
-                  <div className="pb-6">
-                    <p className="font-semibold text-[hsl(205_100%_12%)]">Today</p>
-                    <p className="mt-1 text-sm leading-relaxed text-slate-700">
-                      A global company connecting East and West from Singapore HQ.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-6">
-                  <div className="flex flex-col items-center">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm">
-                      4
-                    </div>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-[hsl(205_100%_12%)]">Esco Biosafety Institute</p>
-                    <p className="mt-1 text-sm leading-relaxed text-slate-700">
-                      Established to advance education, standards, and certification.
-                    </p>
-                  </div>
+                <div>
+                  <p className="font-semibold text-[hsl(205_100%_12%)]">Esco Biosafety Institute</p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-700">
+                    Established to advance education, standards, and certification.
+                  </p>
                 </div>
               </div>
             </div>
