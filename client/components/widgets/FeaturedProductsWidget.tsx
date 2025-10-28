@@ -75,7 +75,7 @@ export default function FeaturedProductsWidget() {
 
   return (
     <>
-      <div className="mt-6 w-full">
+      <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {products.map((p) => (
           <HomeProductCard
             key={p.id}
