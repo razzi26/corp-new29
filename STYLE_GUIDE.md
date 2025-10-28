@@ -383,18 +383,14 @@ color: hsl(215.4 16.3% 46.9%);
 </div>
 ```
 
-### Feature List with Dots
+### Simple Timeline or Journey List
 ```jsx
-<div className="space-y-6">
+<div className="space-y-4">
   {items.map((item) => (
-    <div key={item.id} className="flex items-start gap-3">
-      <div className="flex-shrink-0 mt-1">
-        <div className="w-2 h-2 rounded-full bg-[hsl(var(--primary))]"></div>
-      </div>
-      <div>
-        <h4 className="font-semibold text-slate-900">{item.title}</h4>
-        <p className="mt-1 text-slate-700">{item.description}</p>
-      </div>
+    <div key={item.id}>
+      <p className="text-sm leading-relaxed text-slate-700">
+        <span className="font-semibold">{item.label}:</span> {item.description}
+      </p>
     </div>
   ))}
 </div>
