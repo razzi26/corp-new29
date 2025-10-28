@@ -472,12 +472,12 @@ className="bg-[#005a9f]"
 Avoid these practices to maintain design consistency:
 
 1. ❌ **Rounded corners on cards** - Use sharp corners for all content blocks
-2. ❌ **Drop shadows** - No shadows except in very rare cases (modals, overlays)
+2. ❌ **Drop shadows** - No shadows on cards (shadows only on very rare elements like modals)
 3. ❌ **Dot/circle accents** - Removed from cards and lists
 4. ❌ **Gradient overlays** - Keep backgrounds clean and simple
-5. ❌ **Complex layered effects** - Maintain simplicity and clarity
+5. ❌ **Vertical divider lines between cards** - Use separate white card boxes instead
 6. ❌ **Rounded buttons** - Always use sharp corners for buttons
-7. ❌ **Multiple decorative elements** - Focus on typography and lines only
+7. ❌ **Multiple decorative elements** - Focus on typography and spacing only
 
 ## When to Break the Rules
 
