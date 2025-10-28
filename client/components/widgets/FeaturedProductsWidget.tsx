@@ -228,7 +228,9 @@ function HomeProductCard({
             {product.title}
           </Link>
         </h3>
-        <p className="mb-4 text-lg text-slate-700 leading-relaxed">{product.description}</p>
+        <p className="mb-4 text-lg text-slate-700 leading-relaxed">
+          {product.description}
+        </p>
         <div className="mb-6 inline-block text-sm font-semibold text-[hsl(var(--primary))] bg-[hsl(var(--primary))]/5 px-3 py-1">
           {product.category}
         </div>

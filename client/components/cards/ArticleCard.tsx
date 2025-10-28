@@ -23,10 +23,15 @@ export function ArticleCard({ a }: { a: ArticleMeta }) {
           {a.readMins} min read
         </span>
       </div>
-      <p className="text-lg leading-relaxed text-slate-700 mb-4">{a.description}</p>
+      <p className="text-lg leading-relaxed text-slate-700 mb-4">
+        {a.description}
+      </p>
       <div className="mb-6 flex flex-wrap gap-2">
         {a.tags.map((t) => (
-          <span key={t} className="text-sm font-semibold text-[hsl(var(--primary))] bg-[hsl(var(--primary))]/5 px-3 py-1">
+          <span
+            key={t}
+            className="text-sm font-semibold text-[hsl(var(--primary))] bg-[hsl(var(--primary))]/5 px-3 py-1"
+          >
             {t}
           </span>
         ))}

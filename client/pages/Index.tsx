@@ -52,8 +52,8 @@ export default function Index() {
             </h1>
             <p className="mt-6 text-white text-lg md:text-xl leading-relaxed max-w-2xl">
               Biosafety in any laboratory is crucial. The Esco Biosafety
-              Institute was established to be your partner in achieving it.
-              Our institute provides:
+              Institute was established to be your partner in achieving it. Our
+              institute provides:
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
@@ -98,9 +98,9 @@ export default function Index() {
 
             <p className="mt-8 text-white text-lg leading-relaxed max-w-2xl">
               Whether you're looking to get certified, get information on
-              biosafety products, need to be updated on industry trends, or
-              want to test your knowledge, our institute is your central hub
-              for building expertise and confidence in biosafety protocols.
+              biosafety products, need to be updated on industry trends, or want
+              to test your knowledge, our institute is your central hub for
+              building expertise and confidence in biosafety protocols.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -117,9 +117,6 @@ export default function Index() {
                 Explore resources
               </Link>
             </div>
-
-
-
           </div>
         </div>
       </section>
@@ -139,8 +136,8 @@ export default function Index() {
               <p className="text-lg text-slate-700 mb-6 leading-relaxed">
                 Whether you're looking to get certified, access information on
                 biosafety products, stay updated on industry trends, or test
-                your knowledge, we're your central hub for building expertise
-                in biosafety protocols.
+                your knowledge, we're your central hub for building expertise in
+                biosafety protocols.
               </p>
               <Link
                 to="/about"
@@ -160,8 +157,8 @@ export default function Index() {
       <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))] mb-12">
-          Why Choose Us
-        </h2>
+            Why Choose Us
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <BenefitCard
               title="Industry Expertise"
@@ -178,7 +175,6 @@ export default function Index() {
           </div>
         </div>
       </section>
-
 
       {/* Products preview */}
       {/*
@@ -210,7 +206,9 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))] mb-8">FAQs</h3>
+              <h3 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))] mb-8">
+                FAQs
+              </h3>
               <div className="mt-6">
                 <FAQWidget />
               </div>
@@ -226,9 +224,13 @@ export default function Index() {
               className="rounded-2xl border-2 border-slate-200 bg-white p-8"
             >
               <div className="grid gap-6">
-                <h3 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))]">Contact Us</h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))]">
+                  Contact Us
+                </h3>
                 <div className="rounded-lg bg-[hsl(var(--primary))]/5 p-4 text-slate-700 text-base border border-[hsl(var(--primary))]/10">
-                  <div className="font-bold text-[hsl(var(--primary))]">Contact details</div>
+                  <div className="font-bold text-[hsl(var(--primary))]">
+                    Contact details
+                  </div>
                   <ul className="mt-3 space-y-2">
                     <li>Phone: +7 (495) 000-00-00</li>
                     <li>Email: contact@escobiosafety.org</li>
@@ -287,7 +289,9 @@ function FeatureCard({ icon: Icon, title }: { icon: any; title: string }) {
 function BenefitCard({ title, descr }: { title: string; descr: string }) {
   return (
     <div className="border-b border-slate-200 pb-8 pt-6">
-      <h3 className="text-2xl font-bold text-[hsl(var(--primary))] mb-4">{title}</h3>
+      <h3 className="text-2xl font-bold text-[hsl(var(--primary))] mb-4">
+        {title}
+      </h3>
       <p className="text-lg leading-relaxed text-slate-700">{descr}</p>
     </div>
   );

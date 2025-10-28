@@ -16,7 +16,9 @@ export function VideoCard({ video }: { video: VideoItem }) {
         />
       </AspectRatio>
 
-      <h3 className="text-2xl font-bold leading-tight text-[hsl(var(--primary))]">{video.title}</h3>
+      <h3 className="text-2xl font-bold leading-tight text-[hsl(var(--primary))]">
+        {video.title}
+      </h3>
     </div>
   );
 }
