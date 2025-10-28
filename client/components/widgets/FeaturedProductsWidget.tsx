@@ -173,10 +173,10 @@ function HomeProductCard({
   };
 
   return (
-    <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white">
+    <div className="border-b border-slate-200 pb-8 pt-6">
       <div
         ref={containerRef}
-        className="relative w-full aspect-[3/4] overflow-hidden rounded-t-2xl bg-slate-50"
+        className="relative w-full aspect-[3/4] bg-slate-50 mb-6"
         role="img"
         aria-label={product.title}
         style={{ touchAction: "pan-y" }}
@@ -210,8 +210,8 @@ function HomeProductCard({
                 className={cn(
                   "w-2 h-2 rounded-full transition-opacity",
                   idx === displayed
-                    ? "bg-[hsl(var(--brand-end))] opacity-100"
-                    : "bg-white/60 opacity-70",
+                    ? "bg-[hsl(var(--primary))] opacity-100"
+                    : "bg-slate-400 opacity-50",
                 )}
               />
             ))}
@@ -219,32 +219,30 @@ function HomeProductCard({
         )}
       </div>
 
-      <div className="p-5">
-        <h3 className="font-semibold text-lg">
+      <div>
+        <h3 className="mb-3">
           <Link
             to={`/products/${product.id}`}
-            className="text-[hsl(var(--brand-end))] hover:underline"
+            className="text-2xl font-bold text-[hsl(var(--primary))] hover:underline block"
           >
             {product.title}
           </Link>
         </h3>
-        <p className="mt-1 text-sm text-slate-600">{product.description}</p>
-        <div className="mt-3 flex items-center gap-2 text-xs text-slate-500">
-          <Badge variant="secondary" className="text-xs">
-            {product.category}
-          </Badge>
+        <p className="mb-4 text-lg text-slate-700 leading-relaxed">{product.description}</p>
+        <div className="mb-6 inline-block text-sm font-semibold text-[hsl(var(--primary))] bg-[hsl(var(--primary))]/5 px-3 py-1">
+          {product.category}
         </div>
-        <div className="mt-4 flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-3">
           <button
             type="button"
             onClick={() => (onRequest ? onRequest() : undefined)}
-            className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-3.5 py-2.5 text-sm font-semibold shadow"
+            className="inline-flex items-center bg-[hsl(var(--primary))] text-white px-6 py-2.5 text-base font-bold hover:bg-[hsl(205_100%_20%)] transition"
           >
             Request quote
           </button>
           <Link
             to={`/products/${product.id}`}
-            className="inline-flex items-center rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm font-semibold hover:bg-slate-50"
+            className="inline-flex items-center border-2 border-[hsl(var(--primary))] text-[hsl(var(--primary))] px-6 py-2.5 text-base font-bold hover:bg-[hsl(var(--primary))] hover:text-white transition"
           >
             Learn more
           </Link>
