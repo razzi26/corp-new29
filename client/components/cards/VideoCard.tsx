@@ -4,8 +4,8 @@ import type { VideoItem } from "@/entities/video";
 export function VideoCard({ video }: { video: VideoItem }) {
   const params = video.start ? `?start=${video.start}` : "";
   return (
-    <div className="border-b border-slate-200 pb-8 pt-6">
-      <AspectRatio ratio={16 / 9} className="mb-6">
+    <div className="pb-0 pt-0">
+      <AspectRatio ratio={16 / 9} className="mb-4">
         <iframe
           className="h-full w-full"
           src={`https://www.youtube.com/embed/${video.id}${params}`}
