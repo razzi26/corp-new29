@@ -1,14 +1,6 @@
 import { Link } from "react-router-dom";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Sparkles } from "lucide-react";
 import type { QuizMeta } from "@/entities/quiz";
 
 export function QuizCard({ quiz }: { quiz: QuizMeta }) {
