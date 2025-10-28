@@ -4,6 +4,7 @@ import type { PodcastItem } from "@/entities/podcast";
 export function PodcastCard({ podcast }: { podcast: PodcastItem }) {
   const params = podcast.start ? `?start=${podcast.start}` : "";
   return (
+    {/*<div className="border-b border-slate-200 pb-8 pt-6">*/ }
     <div className="border-b border-slate-200 pb-8 pt-6">
       <AspectRatio ratio={16 / 9} className="mb-6">
         <iframe
