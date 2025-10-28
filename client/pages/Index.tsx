@@ -26,7 +26,7 @@ export default function Index() {
     <div id="top" className="text-slate-900 bg-white">
       {/* Hero with accent background */}
       <section
-        className="relative -mt-16 text-white"
+        className="relative -mt-16 text-white overflow-hidden"
         data-header-anchor
         aria-label="Hero section"
       >
@@ -38,220 +38,239 @@ export default function Index() {
             loading="eager"
             decoding="async"
           />
-          <div className="absolute inset-0 bg-[hsl(var(--brand-end))]/70" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--brand-start))]/40 to-[hsl(var(--brand-end))]/70 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-[hsl(var(--brand-start))]/75" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--brand-start))]/60 to-[hsl(var(--brand-end))]/75 mix-blend-multiply" />
         </div>
-        <div className="relative container mx-auto px-4 pt-24 pb-16 md:pt-32 md:pb-20">
-          <div className="hero-grid grid lg:grid-cols-2 gap-10 items-center">
-            <div className="lg:flex lg:flex-col lg:items-center lg:text-center">
-              {/*<span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs md:text-sm border border-white/25 text-white">
-                <ShieldCheck className="h-4 w-4" /> Biosafety training •
-                Guidance • Resources
-              </span>*/}
-              <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight">
-                Welcome to Esco Biosafety Institute!
-              </h1>
-              <p className="mt-4 text-white text-base md:text-lg max-w-xl">
-                Biosafety in any laboratory is crucial. The Esco Biosafety
-                Institute was established to be your partner in achieving it.
-                Our institute provides:
-              </p>
+        <div className="relative container mx-auto px-4 pt-32 pb-24 md:pt-40 md:pb-32 lg:pt-48 lg:pb-40">
+          <div className="hero-grid grid gap-6 items-center">
+            {/*<div className="lg:flex lg:flex-col lg:items-start lg:text-left max-w-2xl">
+              
+            </div>*/}
 
-              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-                {[
-                  {
-                    label: "Training & seminars",
-                    icon: GraduationCap,
-                    bg: "bg-sky-600",
-                  },
-                  {
-                    label: "Regulatory guidance",
-                    icon: ShieldCheck,
-                    bg: "bg-teal-600",
-                  },
-                  {
-                    label: "Practical resources",
-                    icon: Microscope,
-                    bg: "bg-indigo-600",
-                  },
-                  {
-                    label: "Certification support",
-                    icon: BadgeCheck,
-                    bg: "bg-emerald-600",
-                  },
-                ].map(({ label, icon: Icon, bg }) => (
-                  <div
-                    key={label}
-                    className={cn(
-                      "flex items-center gap-3 text-white rounded-lg px-2 py-4",
-                      bg,
-                    )}
-                  >
-                    <div className="flex-shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/12 text-white">
-                      <Icon className="h-6 w-6" />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="font-medium text-sm text-white leading-none">
-                        {label}
-                      </span>
-                    </div>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+              Welcome to Esco Biosafety Institute!
+            </h1>
+            <p className="mt-6 text-white text-lg md:text-xl leading-relaxed max-w-2xl">
+              Biosafety in any laboratory is crucial. The Esco Biosafety
+              Institute was established to be your partner in achieving it. Our
+              institute provides:
+            </p>
+
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
+              {[
+                {
+                  label: "Training & seminars",
+                  icon: GraduationCap,
+                  bg: "bg-[hsl(var(--brand-start))]",
+                },
+                {
+                  label: "Regulatory guidance",
+                  icon: ShieldCheck,
+                  bg: "bg-[hsl(205_100%_35%)]",
+                },
+                {
+                  label: "Practical resources",
+                  icon: Microscope,
+                  bg: "bg-[hsl(var(--brand-start))]",
+                },
+                {
+                  label: "Certification support",
+                  icon: BadgeCheck,
+                  bg: "bg-[hsl(205_100%_35%)]",
+                },
+              ].map(({ label, icon: Icon, bg }) => (
+                <div
+                  key={label}
+                  className={cn(
+                    "flex items-center gap-4 text-white rounded-lg px-4 py-4 backdrop-blur-sm bg-white/10 border border-white/20",
+                    bg,
+                  )}
+                >
+                  <div className="flex-shrink-0 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/20">
+                    <Icon className="h-6 w-6" />
                   </div>
-                ))}
-              </div>
-
-              <p className="mt-3 text-white text-base md:text-lg max-w-2xl">
-                Whether you're looking to get certified, get information on
-                biosafety products, need to be updated on industry trends, or
-                want to test your knowledge, our institute is your central hub
-                for building expertise and confidence in biosafety protocols.
-              </p>
-
-              <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center rounded-lg bg-white text-[hsl(var(--brand-end))] px-5 py-3 font-semibold shadow hover:shadow-md transition"
-                >
-                  Get certified
-                </Link>
-                <Link
-                  to="/news"
-                  className="inline-flex items-center justify-center rounded-lg border border-white/60 text-white px-5 py-3 font-semibold hover:bg-white/10 transition"
-                >
-                  Explore resources
-                </Link>
-              </div>
-            </div>
-
-            {/*
-            <div className="relative">
-              <div className="relative rounded-3xl bg-white text-slate-900 p-6 md:p-8 shadow-lg">
-                <div className="grid grid-cols-3 gap-4">
-                  <FeatureCard icon={HeartPulse} title="Monitors" />
-                  <FeatureCard icon={Microscope} title="Laboratory" />
-                  <FeatureCard icon={Scan} title="Imaging" />
-                  <FeatureCard icon={Stethoscope} title="Diagnostics" />
-                  <FeatureCard icon={ShieldCheck} title="Sterilization" />
-                  <FeatureCard icon={HeartPulse} title="Cardiology" />
+                  <span className="font-semibold text-base leading-tight">
+                    {label}
+                  </span>
                 </div>
-                <p className="mt-4 text-sm text-slate-600">
-                  We tailor configurations to your needs and budget
-                </p>
-              </div>
+              ))}
             </div>
-            */}
+
+            <p className="mt-8 text-white text-lg leading-relaxed max-w-2xl">
+              Whether you're looking to get certified, get information on
+              biosafety products, need to be updated on industry trends, or want
+              to test your knowledge, our institute is your central hub for
+              building expertise and confidence in biosafety protocols.
+            </p>
+
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--primary))] hover:bg-[hsl(205_100%_20%)] text-white px-8 py-3.5 font-bold shadow-lg hover:shadow-xl transition"
+              >
+                Get certified
+              </Link>
+              <Link
+                to="/news"
+                className="inline-flex items-center justify-center rounded-lg border-2 border-white text-white px-8 py-3.5 font-bold hover:bg-white/10 transition"
+              >
+                Explore resources
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="container mx-auto px-4 mt-20">
-        <div className="grid md:grid-cols-3 gap-6">
-          <BenefitCard
-            title="Industry expertise"
-            descr="10+ years supplying public and private healthcare"
-          />
-          <BenefitCard
-            title="Official supply"
-            descr="We work only with certified manufacturers"
-          />
-          <BenefitCard
-            title="Nationwide service"
-            descr="Own service team and responsive support"
-          />
+      {/* About & Mission Section */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))] mb-6">
+                About Esco Biosafety Institute
+              </h2>
+              <p className="text-lg text-slate-700 mb-4 leading-relaxed">
+                Our institute provides training, guidance, resources, and
+                certification support for biosafety professionals worldwide.
+              </p>
+              <p className="text-lg text-slate-700 mb-6 leading-relaxed">
+                Whether you're looking to get certified, access information on
+                biosafety products, stay updated on industry trends, or test
+                your knowledge, we're your central hub for building expertise in
+                biosafety protocols.
+              </p>
+              <Link
+                to="/about"
+                className="inline-flex items-center rounded-lg bg-[hsl(var(--primary))] text-white px-8 py-3 font-bold shadow-lg hover:shadow-xl transition hover:bg-[hsl(205_100%_20%)]"
+              >
+                Learn more
+              </Link>
+            </div>
+            <div className="relative">
+              <div className="bg-[hsl(var(--primary))] h-96 rounded-xl"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits - Color Block Section */}
+      <section className="py-20 md:py-28 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))] mb-12">
+            Why Choose Us
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <BenefitCard
+              title="Industry Expertise"
+              descr="10+ years supplying public and private healthcare institutions with trusted biosafety solutions"
+            />
+            <BenefitCard
+              title="Official Supply"
+              descr="We work only with certified manufacturers to ensure quality and compliance with standards"
+            />
+            <BenefitCard
+              title="Nationwide Service"
+              descr="Our own service team provides responsive support and maintenance across the nation"
+            />
+          </div>
         </div>
       </section>
 
       {/* Products preview */}
-      <section className="container mx-auto px-4 mt-20">
-        <div className="flex items-end justify-between gap-4">
-          <h2 className="text-2xl md:text-3xl font-bold">Featured Products</h2>
-          <Link
-            to="/products"
-            className="hidden md:inline-flex text-sm hover:underline"
-          >
-            Browse all products
-          </Link>
+      {/*
+      <section className="py-20 md:py-28 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="flex items-end justify-between gap-4 mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))]">Featured Products</h2>
+            <Link
+              to="/products"
+              className="hidden md:inline-flex text-base font-semibold text-[hsl(var(--primary))] hover:underline"
+            >
+              Browse all products →
+            </Link>
+          </div>
+
+          <FeaturedProductsWidget />
         </div>
-
-        <FeaturedProductsWidget />
-
-        {/*<div className="mt-6">
-          <Link
-            to="/products"
-            className="inline-flex items-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-5 py-3 font-semibold shadow hover:shadow-md transition"
-          >
-            Browse all products
-          </Link>
-        </div>*/}
-      </section>
+      </section>*/}
 
       {/* Knowledge Hub */}
-      <section className="container mx-auto px-4 mt-20">
-        <KnowledgeHubWidget />
+      <section className="py-20 md:py-28 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <KnowledgeHubWidget />
+        </div>
       </section>
 
       {/* Contact teaser */}
-      <section className="container mx-auto px-4 mt-20 mb-24">
-        <div className="grid lg:grid-cols-2 gap-8">
-          <div>
-            <h3 className="text-2xl md:text-3xl font-bold">FAQs</h3>
-            <div className="mt-6">
-              <FAQWidget />
-            </div>
-          </div>
-
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              const form = new FormData(e.currentTarget as HTMLFormElement);
-              console.log(Object.fromEntries(form.entries()));
-              alert("Thank you! We will contact you shortly.");
-            }}
-            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
-          >
-            <div className="grid gap-4">
-              <h3 className="text-2xl md:text-3xl font-bold">Contact Us</h3>
-              <div className="rounded-md bg-slate-50 p-3 text-slate-700 text-sm">
-                <div className="font-semibold">Contact details</div>
-                <ul className="mt-2 space-y-1">
-                  <li>Phone: +7 (495) 000-00-00</li>
-                  <li>Email: contact@escobiosafety.org</li>
-                  <li>Mon–Fri: 9:00–19:00</li>
-                </ul>
+      <section className="py-20 md:py-28 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))] mb-8">
+                FAQs
+              </h3>
+              <div className="mt-6">
+                <FAQWidget />
               </div>
-
-              <label className="grid gap-2 text-sm">
-                <span>Name</span>
-                <input
-                  name="name"
-                  required
-                  className="h-11 rounded-lg bg-white text-slate-900 border border-slate-300 px-3 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
-                />
-              </label>
-              <label className="grid gap-2 text-sm">
-                <span>Phone or email</span>
-                <input
-                  name="contact"
-                  required
-                  className="h-11 rounded-lg bg-white text-slate-900 border border-slate-300 px-3 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
-                />
-              </label>
-              <label className="grid gap-2 text-sm">
-                <span>Message</span>
-                <textarea
-                  name="message"
-                  rows={4}
-                  className="rounded-lg bg-white text-slate-900 border border-slate-300 px-3 py-2 outline-none focus:ring-2 focus:ring-[hsl(var(--brand-end))]"
-                />
-              </label>
-              <button className="mt-2 inline-flex items-center justify-center rounded-lg bg-[hsl(var(--brand-end))] text-white px-5 py-3 font-semibold shadow hover:shadow-md transition">
-                Send request
-              </button>
-              <p className="text-xs text-slate-500">
-                By submitting, you agree to the processing of personal data.
-              </p>
             </div>
-          </form>
+
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                const form = new FormData(e.currentTarget as HTMLFormElement);
+                console.log(Object.fromEntries(form.entries()));
+                alert("Thank you! We will contact you shortly.");
+              }}
+              className="rounded-2xl border-2 border-slate-200 bg-white p-8"
+            >
+              <div className="grid gap-6">
+                <h3 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))]">
+                  Contact Us
+                </h3>
+                <div className="rounded-lg bg-[hsl(var(--primary))]/5 p-4 text-slate-700 text-base border border-[hsl(var(--primary))]/10">
+                  <div className="font-bold text-[hsl(var(--primary))]">
+                    Contact details
+                  </div>
+                  <ul className="mt-3 space-y-2">
+                    <li>Phone: +7 (495) 000-00-00</li>
+                    <li>Email: contact@escobiosafety.org</li>
+                    <li>Mon–Fri: 9:00–19:00</li>
+                  </ul>
+                </div>
+
+                <label className="grid gap-2 text-base font-semibold">
+                  <span>Name</span>
+                  <input
+                    name="name"
+                    required
+                    className="h-12 rounded-lg bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
+                  />
+                </label>
+                <label className="grid gap-2 text-base font-semibold">
+                  <span>Phone or email</span>
+                  <input
+                    name="contact"
+                    required
+                    className="h-12 rounded-lg bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
+                  />
+                </label>
+                <label className="grid gap-2 text-base font-semibold">
+                  <span>Message</span>
+                  <textarea
+                    name="message"
+                    rows={4}
+                    className="rounded-lg bg-white text-slate-900 border-2 border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
+                  />
+                </label>
+                <button className="mt-4 inline-flex items-center justify-center rounded-lg bg-[hsl(var(--primary))] hover:bg-[hsl(205_100%_20%)] text-white px-8 py-3.5 font-bold shadow-lg hover:shadow-xl transition">
+                  Send request
+                </button>
+                <p className="text-sm text-slate-500">
+                  By submitting, you agree to the processing of personal data.
+                </p>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
     </div>
@@ -269,19 +288,11 @@ function FeatureCard({ icon: Icon, title }: { icon: any; title: string }) {
 
 function BenefitCard({ title, descr }: { title: string; descr: string }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-lg">
-      <div
-        className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-br from-transparent via-transparent to-[#0096d6]/10"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-1 bg-gradient-to-r from-[#003a68] via-[#0096d6] to-[#003a68]"
-        aria-hidden
-      />
-      <div className="relative z-10 space-y-3">
-        <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
-        <p className="text-base leading-relaxed text-slate-600">{descr}</p>
-      </div>
+    <div className="border-b border-slate-200 pb-8 pt-6">
+      <h3 className="text-2xl font-bold text-[hsl(var(--primary))] mb-4">
+        {title}
+      </h3>
+      <p className="text-lg leading-relaxed text-slate-700">{descr}</p>
     </div>
   );
 }
@@ -290,7 +301,7 @@ function ResourceCard({ title }: { title: string }) {
   return (
     <Link
       to="/news"
-      className="rounded-2xl border border-slate-200 bg-white p-6 block hover:shadow-sm transition-shadow"
+      className="rounded-2xl border border-slate-200 bg-white p-6 block"
     >
       <div className="text-sm text-slate-500">Featured</div>
       <h3 className="mt-2 font-semibold text-xl">{title}</h3>

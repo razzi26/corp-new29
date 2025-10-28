@@ -4,8 +4,8 @@ import type { PodcastItem } from "@/entities/podcast";
 export function PodcastCard({ podcast }: { podcast: PodcastItem }) {
   const params = podcast.start ? `?start=${podcast.start}` : "";
   return (
-    <div className="overflow-hidden rounded-lg border bg-white shadow-sm">
-      <AspectRatio ratio={16 / 9}>
+    <div className="pb-8 pt-6">
+      <AspectRatio ratio={16 / 9} className="mb-6">
         <iframe
           className="h-full w-full"
           src={`https://www.youtube.com/embed/${podcast.id}${params}`}
@@ -15,11 +15,9 @@ export function PodcastCard({ podcast }: { podcast: PodcastItem }) {
           allowFullScreen
         />
       </AspectRatio>
-      <div className="p-4">
-        <h3 className="text-sm font-semibold text-slate-900">
-          {podcast.title}
-        </h3>
-      </div>
+      <h3 className="text-2xl font-bold leading-tight text-[hsl(var(--primary))]">
+        {podcast.title}
+      </h3>
     </div>
   );
 }
