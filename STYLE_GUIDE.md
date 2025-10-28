@@ -265,24 +265,27 @@ color: hsl(215.4 16.3% 46.9%);
 </div>
 ```
 
-### Mission/Feature Card (with dot accent)
-- **Layout**: Flex with gap
-- **Accent**: Small circle dot in brand blue
-- **Border**: Bottom separator
-- **Padding**: 24px vertical, 0 horizontal
+### Mission/Feature Card (Simple)
+- **Layout**: Vertical stack
+- **Border**: Vertical dividers between columns (for multi-column layouts)
+- **Padding**: 32px (8) vertical, 24px (6) horizontal
+- **No accent dots or badges**
+- **No shadows**
 
 **Implementation**:
 ```jsx
-<div className="border-b border-slate-300 pb-6">
-  <div className="flex items-start gap-3">
-    <div className="flex-shrink-0 mt-1">
-      <div className="w-2 h-2 rounded-full bg-[hsl(var(--primary))]"></div>
-    </div>
-    <div>
-      <h3 className="text-lg font-semibold text-[hsl(205_100%_12%)]">{title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-slate-700">{description}</p>
-    </div>
-  </div>
+<div className="py-8 px-6">
+  <h3 className="text-lg font-semibold text-[hsl(205_100%_12%)] mb-3">{title}</h3>
+  <p className="text-sm leading-relaxed text-slate-700">{description}</p>
+</div>
+```
+
+**Multi-column layout with dividers**:
+```jsx
+<div className="grid gap-0 md:grid-cols-3 divide-x divide-slate-300">
+  <MissionCard title="Title 1" descr="Description 1" />
+  <MissionCard title="Title 2" descr="Description 2" />
+  <MissionCard title="Title 3" descr="Description 3" />
 </div>
 ```
 
