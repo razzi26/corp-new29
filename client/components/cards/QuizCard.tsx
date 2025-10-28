@@ -30,7 +30,7 @@ export function QuizCard({ quiz }: { quiz: QuizMeta }) {
           {quiz.skillLevel}
         </span>
       </div>
-      <div className="mb-6 grid grid-cols-2 gap-6 border-t border-slate-200 pt-6 text-sm">
+      <div className="mb-6 grid grid-cols-2 gap-6 pt-6 text-sm">
         <div>
           <dt className="font-medium text-slate-600 mb-1">Questions</dt>
           <dd className="text-xl font-bold text-[hsl(var(--primary))]">
