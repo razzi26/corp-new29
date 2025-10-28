@@ -126,9 +126,12 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)] mb-6 pb-4 border-b-4 border-[hsl(var(--primary))]">
-                About Esco Biosafety Institute
-              </h2>
+              <div className="mb-6">
+                <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+                <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
+                  About Esco Biosafety Institute
+                </h2>
+              </div>
               <p className="text-lg text-slate-700 mb-4 leading-relaxed">
                 Our institute provides training, guidance, resources, and
                 certification support for biosafety professionals worldwide.
@@ -156,9 +159,12 @@ export default function Index() {
       {/* Benefits - Color Block Section */}
       <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)] mb-12 pb-4 border-b-4 border-[hsl(var(--primary))]">
-            Why Choose Us
-          </h2>
+          <div className="mb-12">
+            <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+            <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
+              Why Choose Us
+            </h2>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
             <BenefitCard
               title="Industry Expertise"
@@ -206,9 +212,12 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)] mb-8 pb-4 border-b-4 border-[hsl(var(--primary))]">
-                FAQs
-              </h3>
+              <div className="mb-8">
+                <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+                <h3 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
+                  FAQs
+                </h3>
+              </div>
               <div className="mt-6">
                 <FAQWidget />
               </div>
@@ -224,9 +233,12 @@ export default function Index() {
               className="bg-white"
             >
               <div className="grid gap-8">
-                <h3 className="text-3xl md:text-4xl font-bold text-[hsl(205_100%_12%)] pb-4 border-b-4 border-[hsl(var(--primary))]">
-                  Contact Us
-                </h3>
+                <div className="mb-8">
+                  <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-[hsl(205_100%_12%)]">
+                    Contact Us
+                  </h3>
+                </div>
 
                 <div className="border-b border-slate-300 pb-8">
                   <div className="font-bold text-[hsl(var(--primary))] mb-4">

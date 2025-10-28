@@ -142,9 +142,12 @@ export default function KnowledgeHubWidget() {
   return (
     <div>
       <div className="flex items-end justify-between gap-4 mb-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)] pb-4 border-b-4 border-[hsl(var(--primary))]">
-          Knowledge Hub
-        </h2>
+        <div className="mb-8">
+          <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+          <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
+            Knowledge Hub
+          </h2>
+        </div>
         <Link
           to={viewAllHref}
           className="hidden md:inline-flex text-base font-semibold text-[hsl(var(--primary))] hover:underline"
