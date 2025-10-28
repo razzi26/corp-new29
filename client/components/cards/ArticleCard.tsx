@@ -1,12 +1,4 @@
 import { Link } from "react-router-dom";
-import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { CalendarDays, Clock, ArrowRight } from "lucide-react";
 import type { ArticleMeta } from "@/entities/article";
 
