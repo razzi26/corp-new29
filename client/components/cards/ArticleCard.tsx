@@ -5,14 +5,14 @@ import type { ArticleMeta } from "@/entities/article";
 export function ArticleCard({ a }: { a: ArticleMeta }) {
   const slugParam = a.slug.replace("/resources/articles/", "");
   return (
-    <div className="border-b border-slate-200 pb-8 pt-6">
+    <div className="pb-0 pt-0 flex flex-col h-full">
       <Link
         to={`/resources/articles/${slugParam}`}
-        className="text-2xl font-bold leading-tight text-[hsl(var(--primary))] hover:underline block mb-4"
+        className="text-xl font-bold leading-tight text-[hsl(var(--primary))] hover:underline block mb-3"
       >
         {a.title}
       </Link>
-      <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-slate-600 font-medium">
+      <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-slate-600 font-medium">
         <span className="inline-flex items-center gap-1.5">
           <CalendarDays className="h-4 w-4" />
           {new Date(a.date).toLocaleDateString()}
