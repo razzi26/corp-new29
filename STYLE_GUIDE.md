@@ -5,6 +5,7 @@
 The design system emphasizes **typography-focused, minimalist aesthetics** with clean lines and strategic use of negative space. The visual approach prioritizes **readability**, **hierarchy**, and **visual separation** through typography, borders, and spacing rather than decorative elements.
 
 ### Core Principles
+
 1. **Typography First**: Use font weight, size, and color hierarchy to establish structure
 2. **Minimalist Lines**: Strategic use of horizontal lines and borders for visual separation
 3. **Generous Spacing**: Use whitespace and padding to organize content
@@ -16,17 +17,20 @@ The design system emphasizes **typography-focused, minimalist aesthetics** with 
 ## Color Palette
 
 ### Primary Colors
+
 - **Dark Navy (Heading Text)**: `hsl(205 100% 12%)` - Very dark but not black, used for main headings
 - **Brand Blue (Primary)**: `hsl(205 100% 25%)` - Used for accent lines, buttons, and interactive elements
 - **Brand Blue Light**: `hsl(205 100% 30%)` - Lighter variant for secondary accents
 
 ### Secondary Colors
+
 - **Slate 50**: `hsl(210 40% 96.1%)` - Light background sections
 - **Slate 300**: `hsl(214.3 31.8% 91.4%)` - Borders and dividers
 - **Slate 700**: `hsl(215.4 16.3% 46.9%)` - Body text
 - **Slate 900**: `hsl(205 100% 15%)` - Dark text
 
 ### Usage
+
 ```css
 /* Headings */
 color: hsl(205 100% 12%);
@@ -46,12 +50,14 @@ color: hsl(215.4 16.3% 46.9%);
 ## Typography
 
 ### Font Family
+
 - **Primary**: Poppins (all weights)
 - **Fallback**: System fonts (ui-sans-serif, system-ui, Segoe UI, etc.)
 
 ### Heading Styles
 
 #### Section Headings (H2)
+
 - **Font Size**: 36px (desktop), 24px (mobile)
 - **Font Weight**: 700 (bold)
 - **Color**: `hsl(205 100% 12%)`
@@ -59,6 +65,7 @@ color: hsl(215.4 16.3% 46.9%);
 - **Accent Line**: 4px solid `hsl(var(--primary))` above heading
 
 **Implementation**:
+
 ```jsx
 <div className="mb-12">
   <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
@@ -69,22 +76,26 @@ color: hsl(215.4 16.3% 46.9%);
 ```
 
 #### Subsection Headings (H3)
+
 - **Font Size**: 32px (desktop), 20px (mobile)
 - **Font Weight**: 700 (bold)
 - **Color**: `hsl(205 100% 12%)`
 - **Line Height**: 1.2
 
 #### Card Titles
+
 - **Font Size**: 18-20px
 - **Font Weight**: 600 (semibold)
 - **Color**: `hsl(205 100% 12%)`
 
 #### Small Labels & Captions
+
 - **Font Size**: 12-14px
 - **Font Weight**: 400-500
 - **Color**: `hsl(215.4 16.3% 46.9%)`
 
 ### Body Text
+
 - **Font Size**: 16px (desktop), 14px (mobile)
 - **Font Weight**: 400 (regular)
 - **Color**: `hsl(215.4 16.3% 46.9%)`
@@ -95,6 +106,7 @@ color: hsl(215.4 16.3% 46.9%);
 ## Borders & Lines
 
 ### Accent Lines (Above Headings)
+
 - **Width**: 64px (`w-16`)
 - **Height**: 4px (`h-1`)
 - **Color**: `hsl(var(--primary))`
@@ -102,30 +114,33 @@ color: hsl(215.4 16.3% 46.9%);
 - **Margin**: 16px below the line to the heading
 
 **Implementation**:
+
 ```jsx
 <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
 ```
 
 ### Section Dividers
+
 - **Type**: Horizontal border line
 - **Height**: 1px
 - **Color**: `hsl(214.3 31.8% 91.4%)`
 - **Usage**: Between major content sections
 
 ### Card Borders
+
 - **Type**: Bottom border (for simple cards)
 - **Height**: 1px
 - **Color**: `hsl(214.3 31.8% 91.4%)`
 - **Padding Bottom**: 24px
 
 **Implementation**:
+
 ```jsx
-<div className="border-b border-slate-300 pb-6">
-  {/* Content */}
-</div>
+<div className="border-b border-slate-300 pb-6">{/* Content */}</div>
 ```
 
 ### FAQ/Accordion Separators
+
 - **Type**: Border-top and border-bottom
 - **Height**: 1px
 - **Color**: `hsl(214.3 31.8% 91.4%)`
@@ -136,6 +151,7 @@ color: hsl(215.4 16.3% 46.9%);
 ## Spacing System
 
 ### Margins & Padding
+
 - **Extra Small**: 4px (0.25rem)
 - **Small**: 8px (0.5rem)
 - **Standard**: 16px (1rem)
@@ -146,15 +162,15 @@ color: hsl(215.4 16.3% 46.9%);
 - **3XL**: 80px (5rem)
 
 ### Section Spacing
+
 - **Vertical Padding**: 80px (5rem) on desktop, 64px (4rem) on mobile
 - **Horizontal Padding**: 16px on mobile, 32px on tablet, 16px on desktop (container handles)
 
 **Container Example**:
+
 ```jsx
 <section className="py-20 md:py-28 bg-white">
-  <div className="container mx-auto px-4">
-    {/* Content */}
-  </div>
+  <div className="container mx-auto px-4">{/* Content */}</div>
 </section>
 ```
 
@@ -163,6 +179,7 @@ color: hsl(215.4 16.3% 46.9%);
 ## Buttons
 
 ### Primary Button
+
 - **Background**: `hsl(var(--primary))` (brand blue)
 - **Text Color**: White
 - **Padding**: 12px horizontal (px-5), 12px vertical (py-3)
@@ -172,6 +189,7 @@ color: hsl(215.4 16.3% 46.9%);
 - **Hover State**: Slightly darker background (`hsl(205_100%_20%)`)
 
 **Implementation**:
+
 ```jsx
 <button className="inline-flex items-center justify-center bg-[hsl(var(--primary))] hover:bg-[hsl(205_100%_20%)] text-white px-5 py-3 font-semibold transition">
   Button Text
@@ -179,6 +197,7 @@ color: hsl(215.4 16.3% 46.9%);
 ```
 
 ### Secondary Button
+
 - **Background**: Transparent
 - **Border**: 1px solid `hsl(214.3 31.8% 91.4%)`
 - **Text Color**: Text color matches page (slate-900 or slate-700)
@@ -188,6 +207,7 @@ color: hsl(215.4 16.3% 46.9%);
 - **Hover State**: Subtle background change (bg-slate-50)
 
 **Implementation**:
+
 ```jsx
 <button className="inline-flex items-center justify-center border border-slate-300 px-5 py-3 font-semibold transition hover:bg-slate-50">
   Button Text
@@ -195,6 +215,7 @@ color: hsl(215.4 16.3% 46.9%);
 ```
 
 ### Button Groups
+
 - **Gap**: 12-16px between buttons
 - **Responsive**: Stack vertically on mobile, horizontal on desktop
 
@@ -203,6 +224,7 @@ color: hsl(215.4 16.3% 46.9%);
 ## Form Elements
 
 ### Input Fields
+
 - **Height**: 48px (h-12)
 - **Border**: 2px solid `hsl(214.3 31.8% 91.4%)`
 - **Border Radius**: None (sharp corners)
@@ -212,19 +234,20 @@ color: hsl(215.4 16.3% 46.9%);
 - **Focus State**: 2px ring in brand blue (`focus:ring-2 focus:ring-[hsl(var(--primary))]`), transparent border
 
 **Implementation**:
+
 ```jsx
-<input
-  className="h-12 bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
-/>
+<input className="h-12 bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent" />
 ```
 
 ### Textarea
+
 - **Height**: Auto (min 4 rows)
 - **Border**: Same as input (2px solid slate-300)
 - **Padding**: 16px (px-4) horizontal, 12px (py-3) vertical
 - **No rounded corners**
 
 **Implementation**:
+
 ```jsx
 <textarea
   rows={4}
@@ -233,6 +256,7 @@ color: hsl(215.4 16.3% 46.9%);
 ```
 
 ### Form Labels
+
 - **Font Size**: 16px (base)
 - **Font Weight**: 600 (semibold)
 - **Color**: `hsl(205 100% 15%)` (slate-900)
@@ -240,6 +264,7 @@ color: hsl(215.4 16.3% 46.9%);
 - **Display**: Block element above input
 
 **Implementation**:
+
 ```jsx
 <label className="grid gap-2 text-base font-semibold">
   <span>Label Text</span>
@@ -252,6 +277,7 @@ color: hsl(215.4 16.3% 46.9%);
 ## Cards & Content Blocks
 
 ### Simple Card (with border-bottom)
+
 - **Background**: White
 - **Border**: 1px bottom in slate-300
 - **Padding**: 24px (6) vertical, 0 horizontal
@@ -259,6 +285,7 @@ color: hsl(215.4 16.3% 46.9%);
 - **No shadows**
 
 **Implementation**:
+
 ```jsx
 <div className="border-b border-slate-300 pb-6">
   <h3 className="text-lg font-bold text-[hsl(205_100%_12%)]">Title</h3>
@@ -267,6 +294,7 @@ color: hsl(215.4 16.3% 46.9%);
 ```
 
 ### Mission/Feature Card
+
 - **Layout**: Rectangular white box
 - **Background**: White (`bg-white`)
 - **Border**: 1px solid `hsl(214.3 31.8% 91.4%)`
@@ -276,14 +304,18 @@ color: hsl(215.4 16.3% 46.9%);
 - **No shadows**
 
 **Implementation**:
+
 ```jsx
 <div className="bg-white border border-slate-200 p-6">
-  <h3 className="text-lg font-semibold text-[hsl(205_100%_12%)] mb-4">{title}</h3>
+  <h3 className="text-lg font-semibold text-[hsl(205_100%_12%)] mb-4">
+    {title}
+  </h3>
   <p className="text-sm leading-relaxed text-slate-700">{description}</p>
 </div>
 ```
 
 **Multi-column layout**:
+
 ```jsx
 <div className="grid gap-6 md:grid-cols-3">
   <MissionCard title="Title 1" descr="Description 1" />
@@ -297,6 +329,7 @@ color: hsl(215.4 16.3% 46.9%);
 ## Accordion / FAQ
 
 ### Accordion Styles
+
 - **Border**: Top border on container, bottom border on each item
 - **Border Color**: `hsl(214.3 31.8% 91.4%)`
 - **No rounded corners**
@@ -304,10 +337,16 @@ color: hsl(215.4 16.3% 46.9%);
 - **Padding**: 24px (py-6) vertical, 0 horizontal between items
 
 **Implementation**:
+
 ```jsx
 <div className="space-y-0 border-t border-slate-300">
   {items.map((item) => (
-    <Accordion key={item.q} type="single" collapsible className="border-b border-slate-300">
+    <Accordion
+      key={item.q}
+      type="single"
+      collapsible
+      className="border-b border-slate-300"
+    >
       <AccordionItem value={item.q} className="border-0">
         <AccordionTrigger className="py-6 px-0 text-left font-semibold text-slate-900">
           {item.q}
@@ -322,6 +361,7 @@ color: hsl(215.4 16.3% 46.9%);
 ```
 
 ### Trigger Icon
+
 - **Icon**: Plus/Minus lines (custom SVG or CSS)
 - **Color**: Brand blue (`hsl(var(--primary))`)
 - **Size**: 16px x 20px
@@ -332,16 +372,19 @@ color: hsl(215.4 16.3% 46.9%);
 ## Responsive Design
 
 ### Breakpoints
+
 - **Mobile**: < 640px (no breakpoint prefix)
 - **Tablet**: 640px – 1024px (`sm:` and `md:` prefixes)
 - **Desktop**: > 1024px (`lg:` and `xl:` prefixes)
 
 ### Mobile-First Approach
+
 - Design starts with mobile layout
 - Use `md:` and `lg:` prefixes for larger screens
 - Increase font sizes and spacing as screen grows
 
 **Typography Scaling Example**:
+
 ```jsx
 <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold">
   Heading that scales with screen
@@ -349,11 +392,10 @@ color: hsl(215.4 16.3% 46.9%);
 ```
 
 ### Spacing Adjustments
+
 ```jsx
 <section className="py-12 md:py-16 lg:py-20">
-  <div className="container mx-auto px-4 md:px-6">
-    {/* Content */}
-  </div>
+  <div className="container mx-auto px-4 md:px-6">{/* Content */}</div>
 </section>
 ```
 
@@ -362,6 +404,7 @@ color: hsl(215.4 16.3% 46.9%);
 ## Common Patterns
 
 ### Hero Section with Accent Line
+
 ```jsx
 <div className="mb-8">
   <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
@@ -375,18 +418,16 @@ color: hsl(215.4 16.3% 46.9%);
 ```
 
 ### Two-Column Layout
+
 ```jsx
 <div className="grid lg:grid-cols-2 gap-12">
-  <div>
-    {/* Left column content */}
-  </div>
-  <div>
-    {/* Right column content */}
-  </div>
+  <div>{/* Left column content */}</div>
+  <div>{/* Right column content */}</div>
 </div>
 ```
 
 ### Simple Timeline or Journey List
+
 ```jsx
 <div className="space-y-4">
   {items.map((item) => (
@@ -400,6 +441,7 @@ color: hsl(215.4 16.3% 46.9%);
 ```
 
 ### Contact Form Section
+
 ```jsx
 <form className="max-w-2xl">
   <label className="grid gap-2 text-base font-semibold mb-6">
@@ -421,7 +463,9 @@ color: hsl(215.4 16.3% 46.9%);
 ## Code Standards
 
 ### CSS Class Organization
+
 Use Tailwind CSS utility classes in this order:
+
 1. **Layout**: `flex`, `grid`, `block`, etc.
 2. **Sizing**: `w-`, `h-`, `min-`, `max-`
 3. **Spacing**: `p-`, `m-`, `gap-`
@@ -431,6 +475,7 @@ Use Tailwind CSS utility classes in this order:
 7. **States**: `hover:`, `focus:`, `dark:`, `md:`, `lg:`
 
 ### Example
+
 ```jsx
 <button className="inline-flex items-center justify-center w-full h-12 px-4 py-3 bg-[hsl(var(--primary))] text-white font-bold border-0 hover:bg-[hsl(205_100%_20%)] focus:ring-2 focus:ring-offset-2 transition">
   Click me
@@ -438,13 +483,15 @@ Use Tailwind CSS utility classes in this order:
 ```
 
 ### Color Variables
+
 Always prefer CSS custom properties (variables) over hardcoded colors:
+
 ```jsx
 // ✓ Good
-className="bg-[hsl(var(--primary))]"
+className = "bg-[hsl(var(--primary))]";
 
 // ✗ Avoid
-className="bg-[#005a9f]"
+className = "bg-[#005a9f]";
 ```
 
 ---
@@ -459,10 +506,9 @@ className="bg-[#005a9f]"
 6. **Form Labels**: Always associate labels with inputs
 
 ### Focus State Example
+
 ```jsx
-<input
-  className="focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent outline-none"
-/>
+<input className="focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent outline-none" />
 ```
 
 ---

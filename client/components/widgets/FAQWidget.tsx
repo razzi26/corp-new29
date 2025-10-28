@@ -67,10 +67,7 @@ export default function FAQWidget({ items }: { items?: FAQItem[] }) {
           collapsible
           className="border-b border-slate-300"
         >
-          <AccordionItem
-            value={it.q}
-            className="border-0"
-          >
+          <AccordionItem value={it.q} className="border-0">
             <AccordionTrigger className="group flex w-full items-start justify-between gap-6 py-6 px-0 text-left font-semibold text-slate-900 hover:no-underline [&>svg]:hidden">
               <span className="text-lg font-semibold text-slate-900">
                 {it.q}

@@ -59,7 +59,6 @@ export default function About() {
             </div>
           </div>
 
-          
           {/* Our Journey - Timeline */}
           <div className="mt-12 pt-8">
             <div className="mb-8">
@@ -92,9 +91,12 @@ export default function About() {
                   <div className="mt-2 h-12 w-0.5 bg-slate-300"></div>
                 </div>
                 <div className="pb-6">
-                  <p className="font-semibold text-[hsl(205_100%_12%)]">1980s–2000s</p>
+                  <p className="font-semibold text-[hsl(205_100%_12%)]">
+                    1980s–2000s
+                  </p>
                   <p className="mt-1 text-sm leading-relaxed text-slate-700">
-                    Expanded globally; became a market leader in biological safety cabinets.
+                    Expanded globally; became a market leader in biological
+                    safety cabinets.
                   </p>
                 </div>
               </div>
@@ -107,7 +109,9 @@ export default function About() {
                   <div className="mt-2 h-12 w-0.5 bg-slate-300"></div>
                 </div>
                 <div className="pb-6">
-                  <p className="font-semibold text-[hsl(205_100%_12%)]">Today</p>
+                  <p className="font-semibold text-[hsl(205_100%_12%)]">
+                    Today
+                  </p>
                   <p className="mt-1 text-sm leading-relaxed text-slate-700">
                     A global company connecting East and West from Singapore HQ.
                   </p>
@@ -121,9 +125,12 @@ export default function About() {
                   </div>
                 </div>
                 <div>
-                  <p className="font-semibold text-[hsl(205_100%_12%)]">Esco Biosafety Institute</p>
+                  <p className="font-semibold text-[hsl(205_100%_12%)]">
+                    Esco Biosafety Institute
+                  </p>
                   <p className="mt-1 text-sm leading-relaxed text-slate-700">
-                    Established to advance education, standards, and certification.
+                    Established to advance education, standards, and
+                    certification.
                   </p>
                 </div>
               </div>
@@ -160,7 +167,9 @@ export default function About() {
 function MissionCard({ title, descr }: { title: string; descr: string }) {
   return (
     <div className="bg-white p-6">
-      <h3 className="text-lg font-semibold text-[hsl(205_100%_12%)] mb-4">{title}</h3>
+      <h3 className="text-lg font-semibold text-[hsl(205_100%_12%)] mb-4">
+        {title}
+      </h3>
       <p className="text-sm leading-relaxed text-slate-700">{descr}</p>
     </div>
   );
