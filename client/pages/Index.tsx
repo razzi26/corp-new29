@@ -179,7 +179,9 @@ export default function Index() {
         </div>
       </section>
 
+
       {/* Products preview */}
+      {/*
       <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex items-end justify-between gap-4 mb-12">
@@ -194,7 +196,7 @@ export default function Index() {
 
           <FeaturedProductsWidget />
         </div>
-      </section>
+      </section>*/}
 
       {/* Knowledge Hub */}
       <section className="py-20 md:py-28 bg-slate-50">
