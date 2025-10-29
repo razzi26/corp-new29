@@ -276,7 +276,7 @@ export default function Index() {
                   />
                 </label>
 
-                <button className="inline-flex items-center justify-center bg-[hsl(var(--primary))] hover:bg-[hsl(205_100%_20%)] text-white px-8 py-3.5 font-bold transition">
+                <button className="inline-flex items-center justify-center bg-brand-secondary hover:bg-brand-secondary/90 text-white px-8 py-3.5 font-bold transition">
                   Send request
                 </button>
                 <p className="text-sm text-slate-500">
