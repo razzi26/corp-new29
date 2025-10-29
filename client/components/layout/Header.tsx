@@ -176,8 +176,8 @@ export default function Header() {
                     className={cn(
                       "transition-colors py-2 px-1",
                       scrolled || isProductDetail
-                        ? "text-[hsl(var(--primary))] hover:text-[hsl(205_100%_35%)]"
-                        : "text-white hover:text-white/80",
+                        ? "text-[hsl(var(--primary))] hover:text-brand-secondary"
+                        : "text-white hover:text-brand-secondary",
                     )}
                   >
                     {item.label}
