@@ -223,67 +223,73 @@ export default function Index() {
               </div>
             </div>
 
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                const form = new FormData(e.currentTarget as HTMLFormElement);
-                console.log(Object.fromEntries(form.entries()));
-                alert("Thank you! We will contact you shortly.");
-              }}
-              className="bg-white"
-            >
-              <div className="grid gap-8">
-                <div className="mb-8">
-                  <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
-                  <h3 className="text-3xl md:text-4xl font-bold text-[hsl(205_100%_12%)]">
-                    Contact Us
-                  </h3>
-                </div>
 
-                <div className="border-b border-slate-300 pb-8">
-                  <div className="font-bold text-[hsl(var(--primary))] mb-4">
-                    Contact details
+
+            <div className="mb-8">
+              <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
+              <h3 className="text-3xl md:text-4xl font-bold text-[hsl(205_100%_12%)]">
+                Contact Us
+              </h3>
+              <div className="mt-6">
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    const form = new FormData(e.currentTarget as HTMLFormElement);
+                    console.log(Object.fromEntries(form.entries()));
+                    alert("Thank you! We will contact you shortly.");
+                  }}
+                  className="bg-white"
+                >
+                  <div className="grid gap-8">
+
+                    <div className="border-b border-slate-300 pb-8">
+                      <div className="font-bold text-[hsl(var(--primary))] mb-4">
+                        Contact details
+                      </div>
+                      <ul className="space-y-3 text-slate-700 text-base leading-relaxed">
+                        <li>Phone: +7 (495) 000-00-00</li>
+                        <li>Email: contact@escobiosafety.org</li>
+                        <li>Mon–Fri: 9:00–19:00</li>
+                      </ul>
+                    </div>
+
+                    <label className="grid gap-2 text-base font-semibold">
+                      <span>Name</span>
+                      <input
+                        name="name"
+                        required
+                        className="h-12 bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
+                      />
+                    </label>
+                    <label className="grid gap-2 text-base font-semibold">
+                      <span>Phone or email</span>
+                      <input
+                        name="contact"
+                        required
+                        className="h-12 bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
+                      />
+                    </label>
+                    <label className="grid gap-2 text-base font-semibold">
+                      <span>Message</span>
+                      <textarea
+                        name="message"
+                        rows={4}
+                        className="bg-white text-slate-900 border-2 border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
+                      />
+                    </label>
+
+                    <button className="inline-flex items-center justify-center bg-brand-secondary hover:bg-brand-secondary/90 text-white px-8 py-3.5 font-bold transition">
+                      Send request
+                    </button>
+                    <p className="text-sm text-slate-500">
+                      By submitting, you agree to the processing of personal data.
+                    </p>
                   </div>
-                  <ul className="space-y-3 text-slate-700 text-base leading-relaxed">
-                    <li>Phone: +7 (495) 000-00-00</li>
-                    <li>Email: contact@escobiosafety.org</li>
-                    <li>Mon–Fri: 9:00–19:00</li>
-                  </ul>
-                </div>
-
-                <label className="grid gap-2 text-base font-semibold">
-                  <span>Name</span>
-                  <input
-                    name="name"
-                    required
-                    className="h-12 bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
-                  />
-                </label>
-                <label className="grid gap-2 text-base font-semibold">
-                  <span>Phone or email</span>
-                  <input
-                    name="contact"
-                    required
-                    className="h-12 bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
-                  />
-                </label>
-                <label className="grid gap-2 text-base font-semibold">
-                  <span>Message</span>
-                  <textarea
-                    name="message"
-                    rows={4}
-                    className="bg-white text-slate-900 border-2 border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
-                  />
-                </label>
-
-                <button className="inline-flex items-center justify-center bg-brand-secondary hover:bg-brand-secondary/90 text-white px-8 py-3.5 font-bold transition">
-                  Send request
-                </button>
-                <p className="text-sm text-slate-500">
-                  By submitting, you agree to the processing of personal data.
-                </p>
+                </form>
               </div>
-            </form>
+            </div>
+
+            
           </div>
         </div>
       </section>
