@@ -153,7 +153,7 @@ export default function Index() {
       </section>
 
       {/* Benefits - Color Block Section */}
-      <section className="py-20 md:py-28 bg-slate-50">
+      <section className="py-20 md:py-28 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto px-4">
           <div className="mb-12">
             <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
