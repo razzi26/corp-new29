@@ -127,7 +127,7 @@ export default function Index() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <div className="mb-6">
-                <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+                <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
                 <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
                   About Esco Biosafety Institute
                 </h2>
