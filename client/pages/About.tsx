@@ -62,7 +62,6 @@ export default function About() {
           {/* Our Journey - Timeline */}
           <div className="mt-12 pt-8">
             <div className="mb-8">
-              <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
               <h3 className="text-2xl font-bold text-[hsl(205_100%_12%)]">
                 Our Journey
               </h3>
