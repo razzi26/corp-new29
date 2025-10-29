@@ -243,9 +243,7 @@ export default function Index() {
                   <div className="grid gap-8">
 
                     <div className="border-b border-slate-300 pb-8">
-                      <div className="font-bold text-[hsl(var(--primary))] mb-4">
-                        Contact details
-                      </div>
+                      
                       <ul className="space-y-3 text-slate-700 text-base leading-relaxed">
                         <li>Phone: +7 (495) 000-00-00</li>
                         <li>Email: contact@escobiosafety.org</li>
