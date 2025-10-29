@@ -33,7 +33,7 @@ export function PageBanner({
   return (
     <>
       <section
-        className="relative -mt-16 overflow-hidden bg-[hsl(var(--brand-end))] text-white"
+        className="relative overflow-hidden bg-[hsl(var(--brand-end))] text-white"
         data-header-anchor
       >
         <div

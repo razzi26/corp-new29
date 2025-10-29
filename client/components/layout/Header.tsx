@@ -135,11 +135,11 @@ export default function Header() {
                     <Link
                       to={item.to ?? "/resources"}
                       className={cn(
-                      "inline-flex items-center gap-2 transition-colors py-2 px-1",
-                      scrolled || isProductDetail
-                        ? "text-[hsl(var(--primary))] hover:text-[hsl(205_100%_35%)]"
-                        : "text-white hover:text-white/80",
-                    )}
+                        "inline-flex items-center gap-2 transition-colors py-2 px-1",
+                        scrolled || isProductDetail
+                          ? "text-[hsl(var(--primary))] hover:text-brand-secondary"
+                          : "text-white hover:text-brand-secondary",
+                      )}
                       aria-expanded={desktopOpenKey === item.label}
                     >
                       {item.label}
@@ -162,7 +162,7 @@ export default function Header() {
                         <Link
                           key={c.to}
                           to={c.to}
-                          className="block px-4 py-3 hover:bg-[hsl(var(--primary))]/5 font-medium transition border-l-4 border-transparent hover:border-[hsl(var(--primary))]"
+                          className="block px-4 py-3 hover:bg-brand-secondary/5 font-medium transition border-l-4 border-transparent hover:border-brand-secondary hover:text-brand-secondary"
                         >
                           {c.label}
                         </Link>
@@ -176,8 +176,8 @@ export default function Header() {
                     className={cn(
                       "transition-colors py-2 px-1",
                       scrolled || isProductDetail
-                        ? "text-[hsl(var(--primary))] hover:text-[hsl(205_100%_35%)]"
-                        : "text-white hover:text-white/80",
+                        ? "text-[hsl(var(--primary))] hover:text-brand-secondary"
+                        : "text-white hover:text-brand-secondary",
                     )}
                   >
                     {item.label}
@@ -190,10 +190,10 @@ export default function Header() {
               <Link
                 to="/contact"
                 className={cn(
-                  "inline-flex items-center rounded-lg px-6 py-2.5 text-base font-bold transition",
+                  "inline-flex items-center rounded-lg px-6 py-2.5 text-base font-bold transition text-[hsl(var(--primary))]",
                   scrolled || open || isProductDetail
-                    ? "bg-[hsl(var(--primary))] text-white hover:bg-[hsl(205_100%_20%)]"
-                    : "bg-white text-[hsl(var(--primary))] hover:bg-slate-100",
+                    ? "bg-[hsl(var(--primary))] text-white hover:bg-[hs1(205_100%_20%)] hover:text-white"
+                    : "bg-white text-[hsl(var(--primary))] hover:bg-slate-100 hover:text-[hsl(var(--primary))]",
                 )}
               >
                 Contact Us
@@ -269,7 +269,7 @@ export default function Header() {
                           <Link
                             key={c.to}
                             to={c.to}
-                            className="block px-10 py-3 text-[hsl(var(--primary))] font-semibold hover:bg-slate-100 border-l-4 border-transparent hover:border-[hsl(var(--primary))]"
+                            className="block px-10 py-3 text-[hsl(var(--primary))] font-semibold hover:bg-brand-secondary/5 border-l-4 border-transparent hover:border-brand-secondary hover:text-brand-secondary transition"
                             onClick={() => setOpen(false)}
                           >
                             {c.label}
@@ -291,7 +291,7 @@ export default function Header() {
                 <div className="px-6 py-6 border-t-2 border-slate-200">
                   <Link
                     to="/contact"
-                    className="block w-full rounded-lg px-6 py-3.5 text-center text-base font-bold shadow-lg transition hover:shadow-xl bg-[hsl(var(--primary))] text-white hover:bg-[hsl(205_100%_20%)]"
+                    className="block w-full rounded-lg px-6 py-3.5 text-center text-base font-bold shadow-lg transition hover:shadow-xl bg-[hsl(var(--primary))] text-white hover:bg-brand-secondary"
                     onClick={() => setOpen(false)}
                   >
                     Contact Us

@@ -60,6 +60,9 @@
     /* Brand gradient stops in HSL */
     --brand-start: 205 100% 30%; /* #004080 */
     --brand-end: 205 100% 25%; /* #00467f */
+
+    /* Secondary brand color */
+    --secondary-brand: 29 91% 54%; /* #f5841f */
   }
 
   .dark {
@@ -200,5 +203,14 @@
     .hero-grid > :only-child {
       justify-self: center;
     }
+  }
+
+  /* Link hover effect with secondary brand color */
+  a {
+    @apply transition-colors;
+  }
+
+  a:hover {
+    @apply text-brand-secondary;
   }
 }

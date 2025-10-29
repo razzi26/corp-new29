@@ -74,7 +74,7 @@ export default function ContactModal({
             />
           </label>
 
-          <button className="w-full inline-flex items-center justify-center bg-[hsl(var(--brand-end))] px-4 py-2.5 text-sm font-semibold text-white shadow transition hover:shadow-md">
+          <button className="w-full inline-flex items-center justify-center bg-brand-secondary hover:bg-brand-secondary/90 px-4 py-2.5 text-sm font-semibold text-white shadow transition hover:shadow-md">
             Send request
           </button>
           <p className="mt-2 text-xs text-slate-500">

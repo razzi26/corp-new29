@@ -23,7 +23,7 @@ export default function About() {
         <div className="relative grid items-center gap-12 md:grid-cols-2">
           <div className="relative space-y-8">
             <div>
-              <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+              <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
               <h1 className="text-3xl font-bold leading-tight text-[hsl(205_100%_12%)] md:text-5xl">
                 Esco Biosafety Institute
               </h1>
@@ -46,7 +46,7 @@ export default function About() {
             <div className="flex flex-wrap gap-3 pt-4">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center bg-[hsl(var(--brand-end))] px-5 py-3 font-semibold text-white transition hover:bg-[hsl(205_100%_20%)]"
+                className="inline-flex items-center justify-center bg-[hsl(var(--brand-end))] px-5 py-3 font-semibold text-white transition hover:bg-brand-secondary"
               >
                 Contact us
               </Link>
@@ -62,7 +62,6 @@ export default function About() {
           {/* Our Journey - Timeline */}
           <div className="mt-12 pt-8">
             <div className="mb-8">
-              <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
               <h3 className="text-2xl font-bold text-[hsl(205_100%_12%)]">
                 Our Journey
               </h3>

@@ -26,7 +26,7 @@ export default function Index() {
     <div id="top" className="text-slate-900 bg-white">
       {/* Hero with accent background */}
       <section
-        className="relative -mt-16 text-white overflow-hidden"
+        className="relative text-white overflow-hidden"
         data-header-anchor
         aria-label="Hero section"
       >
@@ -127,7 +127,7 @@ export default function Index() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <div className="mb-6">
-                <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+                <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
                 <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
                   About Esco Biosafety Institute
                 </h2>
@@ -144,7 +144,7 @@ export default function Index() {
               </p>
               <Link
                 to="/about"
-                className="inline-flex items-center rounded-lg bg-[hsl(var(--primary))] text-white px-8 py-3 font-bold shadow-lg hover:shadow-xl transition hover:bg-[hsl(205_100%_20%)]"
+                className="inline-flex items-center rounded-lg bg-[hsl(var(--primary))] text-white px-8 py-3 font-bold shadow-lg hover:shadow-xl transition hover:bg-brand-secondary"
               >
                 Learn more
               </Link>
@@ -160,7 +160,7 @@ export default function Index() {
       <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="mb-12">
-            <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+            <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
             <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
               Why Choose Us
             </h2>
@@ -213,7 +213,7 @@ export default function Index() {
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <div className="mb-8">
-                <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+                <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
                 <h3 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
                   FAQs
                 </h3>
@@ -234,7 +234,7 @@ export default function Index() {
             >
               <div className="grid gap-8">
                 <div className="mb-8">
-                  <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+                  <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
                   <h3 className="text-3xl md:text-4xl font-bold text-[hsl(205_100%_12%)]">
                     Contact Us
                   </h3>
@@ -276,7 +276,7 @@ export default function Index() {
                   />
                 </label>
 
-                <button className="inline-flex items-center justify-center bg-[hsl(var(--primary))] hover:bg-[hsl(205_100%_20%)] text-white px-8 py-3.5 font-bold transition">
+                <button className="inline-flex items-center justify-center bg-brand-secondary hover:bg-brand-secondary/90 text-white px-8 py-3.5 font-bold transition">
                   Send request
                 </button>
                 <p className="text-sm text-slate-500">

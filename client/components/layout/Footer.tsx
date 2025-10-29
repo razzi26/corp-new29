@@ -59,32 +59,47 @@ export default function Footer() {
             <h4 className="font-semibold mb-3">Navigation</h4>
             <ul className="space-y-2 text-sm text-white/90">
               <li>
-                <Link className="hover:text-white" to="/">
+                <Link className="hover:text-brand-secondary transition" to="/">
                   Home
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white" to="/about">
+                <Link
+                  className="hover:text-brand-secondary transition"
+                  to="/about"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white" to="/products">
+                <Link
+                  className="hover:text-brand-secondary transition"
+                  to="/products"
+                >
                   Products
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white" to="/news">
+                <Link
+                  className="hover:text-brand-secondary transition"
+                  to="/news"
+                >
                   News
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white" to="/resources/faq">
+                <Link
+                  className="hover:text-brand-secondary transition"
+                  to="/resources/faq"
+                >
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white" to="/contact">
+                <Link
+                  className="hover:text-brand-secondary transition"
+                  to="/contact"
+                >
                   Contact
                 </Link>
               </li>
@@ -118,7 +133,7 @@ export default function Footer() {
               placeholder="Your email"
               className="h-11 flex-1 rounded-lg bg-white text-slate-900 px-3 outline-none focus:ring-2 focus:ring-white"
             />
-            <button className="h-11 inline-flex items-center justify-center rounded-lg bg-white text-[hsl(var(--brand-end))] px-5 font-semibold shadow hover:shadow-md transition">
+            <button className="h-11 inline-flex items-center justify-center rounded-lg bg-white text-[hsl(var(--brand-end))] px-5 font-semibold shadow hover:shadow-md transition hover:bg-brand-secondary/10">
               Subscribe
             </button>
           </form>
