@@ -221,7 +221,7 @@ export default function Header() {
 
       {open &&
         createPortal(
-          <div className="fixed left-0 right-0 top-30 bottom-0 z-[60] md:hidden">
+          <div className="fixed left-0 right-0 top-20 bottom-0 z-[60] md:hidden">
             <div
               className="absolute inset-0 bg-black/40"
               onClick={() => setOpen(false)}
