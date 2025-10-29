@@ -106,7 +106,7 @@ export default function Header() {
         )}
       >
         <div className="container mx-auto px-4 relative">
-          <div className="flex py-8 items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]">
+          <div className="flex py-6 items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]">
             <Link to="/" className="flex select-none items-center gap-3">
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(205_100%_20%)] font-bold text-white text-lg shadow-md">
                 E
