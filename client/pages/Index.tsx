@@ -160,7 +160,7 @@ export default function Index() {
       <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="mb-12">
-            <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+            <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
             <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
               Why Choose Us
             </h2>
