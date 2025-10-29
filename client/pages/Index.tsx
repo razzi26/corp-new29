@@ -144,7 +144,7 @@ export default function Index() {
               </p>
               <Link
                 to="/about"
-                className="inline-flex items-center rounded-lg bg-[hsl(var(--primary))] text-white px-8 py-3 font-bold shadow-lg hover:shadow-xl transition hover:bg-[hsl(205_100%_20%)]"
+                className="inline-flex items-center rounded-lg bg-[hsl(var(--primary))] text-white px-8 py-3 font-bold shadow-lg hover:shadow-xl transition hover:bg-brand-secondary"
               >
                 Learn more
               </Link>
