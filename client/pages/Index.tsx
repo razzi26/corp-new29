@@ -41,7 +41,7 @@ export default function Index() {
           <div className="absolute inset-0 bg-[hsl(var(--brand-start))]/75" />
           <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--brand-start))]/60 to-[hsl(var(--brand-end))]/75 mix-blend-multiply" />
         </div>
-        <div className="relative container mx-auto px-4 pt-40 pb-24 md:pt-40 md:pb-32 lg:pt-48 lg:pb-40">
+        <div className="relative container mx-auto px-4 pt-32 pb-24 md:pt-40 md:pb-32 lg:pt-52 lg:pb-40">
           <div className="hero-grid grid gap-6 items-center">
             {/*<div className="lg:flex lg:flex-col lg:items-start lg:text-left max-w-2xl">
               
