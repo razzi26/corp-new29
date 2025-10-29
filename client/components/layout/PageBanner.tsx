@@ -32,6 +32,29 @@ export function PageBanner({
 }: PageBannerProps) {
   return (
     <>
+      <section
+        className="relative overflow-hidden bg-[hsl(var(--brand-end))] text-white"
+        data-header-anchor
+      >
+        <div
+          className="absolute inset-0 bg-brand-gradient opacity-95"
+          aria-hidden="true"
+        />
+        <div className="relative container mx-auto px-4 pt-24 pb-10 md:pt-32 md:pb-14">
+          <div className="w-full md:w-[70%]">
+            <h1 className="break-words text-3xl font-semibold md:text-4xl">
+              {title}
+            </h1>
+            {description && (
+              <p className="mt-3 break-words text-base text-white/85 md:text-lg">
+                {description}
+              </p>
+            )}
+            {meta && <div className="mt-3 text-sm text-white/85">{meta}</div>}
+          </div>
+        </div>
+      </section>
+
       {/* Breadcrumbs just below the banner */}
       <div className="bg-white">
         <div className="container mx-auto px-4 py-3 md:py-4">
@@ -63,31 +86,6 @@ export function PageBanner({
           </Breadcrumb>
         </div>
       </div>
-      
-      <section
-        className="relative overflow-hidden bg-[hsl(var(--brand-end))] text-white"
-        data-header-anchor
-      >
-        <div
-          className="absolute inset-0 bg-brand-gradient opacity-95"
-          aria-hidden="true"
-        />
-        <div className="relative container mx-auto px-4 pt-24 pb-10 md:pt-32 md:pb-14">
-          <div className="w-full md:w-[70%]">
-            <h1 className="break-words text-3xl font-semibold md:text-4xl">
-              {title}
-            </h1>
-            {description && (
-              <p className="mt-3 break-words text-base text-white/85 md:text-lg">
-                {description}
-              </p>
-            )}
-            {meta && <div className="mt-3 text-sm text-white/85">{meta}</div>}
-          </div>
-        </div>
-      </section>
-
-      
     </>
   );
 }
