@@ -9,6 +9,7 @@ export default function About() {
         title="About Us"
         description="Discover Esco Biosafety Institute and our mission to advance biosafety education and standards."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About Us" }]}
+        backgroundImage="https://images.pexels.com/photos/5726809/pexels-photo-5726809.jpeg"
       />
       {/* Hero */}
       <section className="relative container mx-auto px-4 py-16 md:py-24">

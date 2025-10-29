@@ -99,14 +99,14 @@ export default function Header() {
     <>
       <header
         className={cn(
-          "sticky top-0 z-[9999] transition-colors duration-300",
+          "fixed top-0 z-[9999] transition-colors duration-300 w-full",
           scrolled || open || isProductDetail
             ? "bg-white border-b-2 border-slate-200 shadow-md backdrop-blur supports-[backdrop-filter]:bg-white"
-            : "bg-[hsl(var(--primary))]/95 border-b-2 border-[hsl(var(--primary))]/20 text-white",
+            : "bg-transparent border-b-2 border-transparent text-white",
         )}
       >
         <div className="container mx-auto px-4 relative">
-          <div className="flex h-20 items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]">
+          <div className="flex py-4 xl:py-5 items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]">
             <Link to="/" className="flex select-none items-center gap-3">
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(205_100%_20%)] font-bold text-white text-lg shadow-md">
                 E
@@ -221,7 +221,7 @@ export default function Header() {
 
       {open &&
         createPortal(
-          <div className="fixed left-0 right-0 top-20 bottom-0 z-[60] md:hidden">
+          <div className="fixed left-0 right-0 top-16 bottom-0 z-[60] md:hidden">
             <div
               className="absolute inset-0 bg-black/40"
               onClick={() => setOpen(false)}

@@ -22,6 +22,7 @@ interface PageBannerProps {
   description?: string;
   breadcrumbs: BreadcrumbEntry[];
   meta?: ReactNode;
+  backgroundImage?: string;
 }
 
 export function PageBanner({
@@ -29,12 +30,18 @@ export function PageBanner({
   description,
   breadcrumbs,
   meta,
+  backgroundImage,
 }: PageBannerProps) {
   return (
     <>
       <section
-        className="relative overflow-hidden bg-[hsl(var(--brand-end))] text-white"
+        className="relative overflow-hidden text-white"
         data-header-anchor
+        style={{
+          backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
       >
         <div
           className="absolute inset-0 bg-brand-gradient opacity-95"

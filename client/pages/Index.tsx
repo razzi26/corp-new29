@@ -32,8 +32,8 @@ export default function Index() {
       >
         <div className="absolute inset-0">
           <img
-            src="https://images.pexels.com/photos/8533036/pexels-photo-8533036.jpeg"
-            alt="Scientist working in biosafety cabinet"
+            src="https://images.pexels.com/photos/9574399/pexels-photo-9574399.jpeg"
+            alt="Bright and sterile laboratory featuring high-tech research equipment and medical professionals at work"
             className="h-full w-full object-cover"
             loading="eager"
             decoding="async"
@@ -41,7 +41,7 @@ export default function Index() {
           <div className="absolute inset-0 bg-[hsl(var(--brand-start))]/75" />
           <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--brand-start))]/60 to-[hsl(var(--brand-end))]/75 mix-blend-multiply" />
         </div>
-        <div className="relative container mx-auto px-4 pt-32 pb-24 md:pt-40 md:pb-32 lg:pt-48 lg:pb-40">
+        <div className="relative container mx-auto px-4 pt-32 pb-24 md:pt-40 md:h-screen lg:pt-52 lg:pb-40">
           <div className="hero-grid grid gap-6 items-center">
             {/*<div className="lg:flex lg:flex-col lg:items-start lg:text-left max-w-2xl">
               
@@ -56,7 +56,7 @@ export default function Index() {
               institute provides:
             </p>
 
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
+            <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
               {[
                 {
                   label: "Training & seminars",
@@ -96,23 +96,19 @@ export default function Index() {
               ))}
             </div>
 
-            <p className="mt-8 text-white text-lg leading-relaxed max-w-2xl">
-              Whether you're looking to get certified, get information on
-              biosafety products, need to be updated on industry trends, or want
-              to test your knowledge, our institute is your central hub for
-              building expertise and confidence in biosafety protocols.
-            </p>
+
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--primary))] hover:bg-[hsl(205_100%_20%)] text-white px-8 py-3.5 font-bold shadow-lg hover:shadow-xl transition"
+                className="inline-flex items-center justify-center bg-white text-[hsl(var(--primary))] px-8 py-3.5 font-bold transition hover:bg-white/90"
               >
                 Get certified
               </Link>
               <Link
-                to="/news"
-                className="inline-flex items-center justify-center rounded-lg border-2 border-white text-white px-8 py-3.5 font-bold hover:bg-white/10 transition"
+                to="/resources"
+                className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3.5 font-bold transition hover:bg-white/15 backdrop-blur-sm"
               >
                 Explore resources
               </Link>
@@ -157,7 +153,7 @@ export default function Index() {
       </section>
 
       {/* Benefits - Color Block Section */}
-      <section className="py-20 md:py-28 bg-slate-50">
+      <section className="py-20 md:py-28 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto px-4">
           <div className="mb-12">
             <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
@@ -223,67 +219,71 @@ export default function Index() {
               </div>
             </div>
 
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                const form = new FormData(e.currentTarget as HTMLFormElement);
-                console.log(Object.fromEntries(form.entries()));
-                alert("Thank you! We will contact you shortly.");
-              }}
-              className="bg-white"
-            >
-              <div className="grid gap-8">
-                <div className="mb-8">
-                  <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
-                  <h3 className="text-3xl md:text-4xl font-bold text-[hsl(205_100%_12%)]">
-                    Contact Us
-                  </h3>
-                </div>
 
-                <div className="border-b border-slate-300 pb-8">
-                  <div className="font-bold text-[hsl(var(--primary))] mb-4">
-                    Contact details
+
+            <div className="mb-8">
+              <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
+              <h3 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
+                Contact Us
+              </h3>
+              <div className="mt-6">
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    const form = new FormData(e.currentTarget as HTMLFormElement);
+                    console.log(Object.fromEntries(form.entries()));
+                    alert("Thank you! We will contact you shortly.");
+                  }}
+                  className="bg-white"
+                >
+                  <div className="grid gap-8">
+
+                    <div className="border-b border-slate-300 pb-8">
+                      
+                      <ul className="space-y-3 text-slate-700 text-base leading-relaxed">
+                        <li>Phone: +7 (495) 000-00-00</li>
+                        <li>Email: contact@escobiosafety.org</li>
+                        <li>Mon–Fri: 9:00–19:00</li>
+                      </ul>
+                    </div>
+
+                    <label className="grid gap-2 text-base font-semibold">
+                      <span>Name</span>
+                      <input
+                        name="name"
+                        required
+                        className="h-12 bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
+                      />
+                    </label>
+                    <label className="grid gap-2 text-base font-semibold">
+                      <span>Phone or email</span>
+                      <input
+                        name="contact"
+                        required
+                        className="h-12 bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
+                      />
+                    </label>
+                    <label className="grid gap-2 text-base font-semibold">
+                      <span>Message</span>
+                      <textarea
+                        name="message"
+                        rows={4}
+                        className="bg-white text-slate-900 border-2 border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
+                      />
+                    </label>
+
+                    <button className="inline-flex items-center justify-center bg-brand-secondary hover:bg-brand-secondary/90 text-white px-8 py-3.5 font-bold transition">
+                      Send request
+                    </button>
+                    <p className="text-sm text-slate-500">
+                      By submitting, you agree to the processing of personal data.
+                    </p>
                   </div>
-                  <ul className="space-y-3 text-slate-700 text-base leading-relaxed">
-                    <li>Phone: +7 (495) 000-00-00</li>
-                    <li>Email: contact@escobiosafety.org</li>
-                    <li>Mon–Fri: 9:00–19:00</li>
-                  </ul>
-                </div>
-
-                <label className="grid gap-2 text-base font-semibold">
-                  <span>Name</span>
-                  <input
-                    name="name"
-                    required
-                    className="h-12 bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
-                  />
-                </label>
-                <label className="grid gap-2 text-base font-semibold">
-                  <span>Phone or email</span>
-                  <input
-                    name="contact"
-                    required
-                    className="h-12 bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
-                  />
-                </label>
-                <label className="grid gap-2 text-base font-semibold">
-                  <span>Message</span>
-                  <textarea
-                    name="message"
-                    rows={4}
-                    className="bg-white text-slate-900 border-2 border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
-                  />
-                </label>
-
-                <button className="inline-flex items-center justify-center bg-brand-secondary hover:bg-brand-secondary/90 text-white px-8 py-3.5 font-bold transition">
-                  Send request
-                </button>
-                <p className="text-sm text-slate-500">
-                  By submitting, you agree to the processing of personal data.
-                </p>
+                </form>
               </div>
-            </form>
+            </div>
+
+            
           </div>
         </div>
       </section>
