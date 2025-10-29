@@ -26,7 +26,7 @@ export default function Index() {
     <div id="top" className="text-slate-900 bg-white">
       {/* Hero with accent background */}
       <section
-        className="relative -mt-16 text-white overflow-hidden"
+        className="relative text-white overflow-hidden"
         data-header-anchor
         aria-label="Hero section"
       >
