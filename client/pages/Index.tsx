@@ -50,9 +50,6 @@ export default function Index() {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
               Welcome to Esco Biosafety Institute!
             </h1>
-            <p className="mt-6 text-white text-lg md:text-xl leading-relaxed max-w-2xl">
-              Whether you're looking to get certified, get information on biosafety products, need to be updated on industry trends, or want to test your knowledge, our institute is your central hub for building expertise and confidence in biosafety protocols.
-            </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
@@ -93,6 +90,9 @@ export default function Index() {
                 </div>
               ))}
             </div>
+            <p className="mt-6 text-white text-lg md:text-xl leading-relaxed max-w-2xl">
+              Whether you're looking to get certified, get information on biosafety products, need to be updated on industry trends, or want to test your knowledge, our institute is your central hub for building expertise and confidence in biosafety protocols.
+            </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link
