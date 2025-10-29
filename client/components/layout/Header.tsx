@@ -193,7 +193,7 @@ export default function Header() {
                   "inline-flex items-center rounded-lg px-6 py-2.5 text-base font-bold transition",
                   scrolled || open || isProductDetail
                     ? "bg-[hsl(var(--primary))] text-white hover:bg-[hs1(205_100%_20%)]"
-                    : "bg-white text-[hsl(var(--primary))] hover: bg-slate-100",
+                    : "bg-white text-[hsl(var(--primary))] hover:bg-slate-100",
                 )}
               >
                 Contact Us
