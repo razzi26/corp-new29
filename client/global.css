@@ -204,4 +204,13 @@
       justify-self: center;
     }
   }
+
+  /* Link hover effect with secondary brand color */
+  a {
+    @apply transition-colors;
+  }
+
+  a:hover {
+    @apply text-brand-secondary;
+  }
 }
