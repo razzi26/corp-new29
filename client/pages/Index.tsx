@@ -56,7 +56,7 @@ export default function Index() {
               institute provides:
             </p>
 
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
+            <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
               {[
                 {
                   label: "Training & seminars",
