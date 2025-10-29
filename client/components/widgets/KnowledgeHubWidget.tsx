@@ -143,7 +143,7 @@ export default function KnowledgeHubWidget() {
     <div>
       <div className="flex items-end justify-between gap-4 mb-8">
         <div className="mb-8">
-          <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+          <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
           <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
             Knowledge Hub
           </h2>
