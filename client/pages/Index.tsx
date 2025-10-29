@@ -234,7 +234,7 @@ export default function Index() {
             >
               <div className="grid gap-8">
                 <div className="mb-8">
-                  <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+                  <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
                   <h3 className="text-3xl md:text-4xl font-bold text-[hsl(205_100%_12%)]">
                     Contact Us
                   </h3>
