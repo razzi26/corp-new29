@@ -60,6 +60,7 @@ export default {
         brand: {
           start: "hsl(var(--brand-start))",
           end: "hsl(var(--brand-end))",
+          secondary: "hsl(var(--secondary-brand))",
         },
       },
       borderRadius: {
