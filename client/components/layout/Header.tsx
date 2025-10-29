@@ -162,7 +162,7 @@ export default function Header() {
                         <Link
                           key={c.to}
                           to={c.to}
-                          className="block px-4 py-3 hover:bg-[hsl(var(--primary))]/5 font-medium transition border-l-4 border-transparent hover:border-[hsl(var(--primary))]"
+                          className="block px-4 py-3 hover:bg-brand-secondary/5 font-medium transition border-l-4 border-transparent hover:border-brand-secondary hover:text-brand-secondary"
                         >
                           {c.label}
                         </Link>
