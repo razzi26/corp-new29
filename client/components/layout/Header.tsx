@@ -102,7 +102,7 @@ export default function Header() {
           "fixed top-0 z-[9999] transition-colors duration-300 w-full",
           scrolled || open || isProductDetail
             ? "bg-white border-b-2 border-slate-200 shadow-md backdrop-blur supports-[backdrop-filter]:bg-white"
-            : "bg-transparent border-b-2 border-[hsl(var(--primary))]/20 text-white",
+            : "bg-transparent border-b-2 text-white",
         )}
       >
         <div className="container mx-auto px-4 relative">
