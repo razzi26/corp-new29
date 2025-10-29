@@ -32,8 +32,8 @@ export default function Index() {
       >
         <div className="absolute inset-0">
           <img
-            src="https://images.pexels.com/photos/4226219/pexels-photo-4226219.jpeg"
-            alt="A medical professional reviewing MRI brain scans in a clinical setting, highlighting healthcare technology"
+            src="https://images.pexels.com/photos/7648306/pexels-photo-7648306.jpeg"
+            alt="A business seminar showcasing a female presenter awarding certificates to attendees"
             className="h-full w-full object-cover"
             loading="eager"
             decoding="async"
