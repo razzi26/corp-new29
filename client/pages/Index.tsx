@@ -94,13 +94,6 @@ export default function Index() {
               ))}
             </div>
 
-            <p className="mt-8 text-white text-lg leading-relaxed max-w-2xl">
-              Whether you're looking to get certified, get information on
-              biosafety products, need to be updated on industry trends, or want
-              to test your knowledge, our institute is your central hub for
-              building expertise and confidence in biosafety protocols.
-            </p>
-
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link
                 to="/contact"
