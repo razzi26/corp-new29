@@ -23,7 +23,7 @@ export default function About() {
         <div className="relative grid items-center gap-12 md:grid-cols-2">
           <div className="relative space-y-8">
             <div>
-              <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
+              <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
               <h1 className="text-3xl font-bold leading-tight text-[hsl(205_100%_12%)] md:text-5xl">
                 Esco Biosafety Institute
               </h1>
