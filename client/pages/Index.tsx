@@ -96,23 +96,19 @@ export default function Index() {
               ))}
             </div>
 
-            <p className="mt-8 text-white text-lg leading-relaxed max-w-2xl">
-              Whether you're looking to get certified, get information on
-              biosafety products, need to be updated on industry trends, or want
-              to test your knowledge, our institute is your central hub for
-              building expertise and confidence in biosafety protocols.
-            </p>
+
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-[hsl(var(--primary))] hover:bg-[hsl(205_100%_20%)] text-white px-8 py-3.5 font-bold shadow-lg hover:shadow-xl transition"
+                className="inline-flex items-center justify-center bg-white text-[hsl(var(--primary))] px-8 py-3.5 font-bold transition hover:bg-white/90"
               >
                 Get certified
               </Link>
               <Link
-                to="/news"
-                className="inline-flex items-center justify-center rounded-lg border-2 border-white text-white px-8 py-3.5 font-bold hover:bg-white/10 transition"
+                to="/resources"
+                className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3.5 font-bold transition hover:bg-white/15 backdrop-blur-sm"
               >
                 Explore resources
               </Link>
