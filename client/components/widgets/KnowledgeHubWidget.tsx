@@ -150,7 +150,7 @@ export default function KnowledgeHubWidget() {
         </div>
         <Link
           to={viewAllHref}
-          className="hidden md:inline-flex text-base font-semibold text-[hsl(var(--primary))] hover:underline"
+          className="hidden md:inline-flex text-base font-semibold bg-brand-secondary hover:underline"
         >
           View all →
         </Link>
