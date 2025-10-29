@@ -64,27 +64,42 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-brand-secondary transition" to="/about">
+                <Link
+                  className="hover:text-brand-secondary transition"
+                  to="/about"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-brand-secondary transition" to="/products">
+                <Link
+                  className="hover:text-brand-secondary transition"
+                  to="/products"
+                >
                   Products
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-brand-secondary transition" to="/news">
+                <Link
+                  className="hover:text-brand-secondary transition"
+                  to="/news"
+                >
                   News
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-brand-secondary transition" to="/resources/faq">
+                <Link
+                  className="hover:text-brand-secondary transition"
+                  to="/resources/faq"
+                >
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-brand-secondary transition" to="/contact">
+                <Link
+                  className="hover:text-brand-secondary transition"
+                  to="/contact"
+                >
                   Contact
                 </Link>
               </li>
