@@ -46,7 +46,7 @@ export default function About() {
             <div className="flex flex-wrap gap-3 pt-4">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center bg-[hsl(var(--brand-end))] px-5 py-3 font-semibold text-white transition hover:bg-[hsl(205_100%_20%)]"
+                className="inline-flex items-center justify-center bg-[hsl(var(--brand-end))] px-5 py-3 font-semibold text-white transition hover:bg-brand-secondary"
               >
                 Contact us
               </Link>
