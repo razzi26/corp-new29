@@ -192,8 +192,8 @@ export default function Header() {
                 className={cn(
                   "inline-flex items-center rounded-lg px-6 py-2.5 text-base font-bold transition text-[hsl(var(--primary))]",
                   scrolled || open || isProductDetail
-                    ? "bg-[hsl(var(--primary))] text-white hover:bg-[hs1(205_100%_20%)] hover:text-[hsl(var(--primary))]"
-                    : "bg-white text-[hsl(var(--primary))] hover:bg-slate-100 hover:text-white/80",
+                    ? "bg-[hsl(var(--primary))] text-white hover:bg-[hs1(205_100%_20%)] hover:text-white/80"
+                    : "bg-white text-[hsl(var(--primary))] hover:bg-slate-100 hover:text-[hsl(var(--primary))]",
                 )}
               >
                 Contact Us
