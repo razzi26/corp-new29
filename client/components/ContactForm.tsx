@@ -6,9 +6,7 @@ interface ContactFormProps {
   onSubmit?: (data: Record<string, any>) => void;
 }
 
-export default function ContactForm({
-  onSubmit,
-}: ContactFormProps) {
+export default function ContactForm({ onSubmit }: ContactFormProps) {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget as HTMLFormElement);
@@ -23,7 +21,6 @@ export default function ContactForm({
 
     (e.currentTarget as HTMLFormElement).reset();
   };
-
 
   return (
     <form onSubmit={handleSubmit} className="bg-white">

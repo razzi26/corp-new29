@@ -42,7 +42,9 @@ const SitemapItem: React.FC<SitemapItemProps> = ({ route, level }) => {
             {route.title}
           </Link>
           {route.description && (
-            <p className="text-xs text-slate-600 mt-1 line-clamp-2">{route.description}</p>
+            <p className="text-xs text-slate-600 mt-1 line-clamp-2">
+              {route.description}
+            </p>
           )}
           <div className="text-xs text-slate-500 mt-1 flex gap-4">
             <span>Priority: {route.priority}</span>
@@ -54,7 +56,11 @@ const SitemapItem: React.FC<SitemapItemProps> = ({ route, level }) => {
       {hasChildren && isExpanded && (
         <div>
           {route.children!.map((child, idx) => (
-            <SitemapItem key={`${child.path}-${idx}`} route={child} level={level + 1} />
+            <SitemapItem
+              key={`${child.path}-${idx}`}
+              route={child}
+              level={level + 1}
+            />
           ))}
         </div>
       )}
@@ -87,10 +93,7 @@ export default function Sitemap() {
         <PageBanner
           title="Sitemap"
           description="Browse the complete structure of our website"
-          breadcrumbs={[
-            { label: "Home", href: "/" },
-            { label: "Sitemap" },
-          ]}
+          breadcrumbs={[{ label: "Home", href: "/" }, { label: "Sitemap" }]}
         />
         <div className="bg-gradient-to-b from-slate-50 to-white min-h-screen">
           <div className="container mx-auto px-4 py-16">
@@ -104,7 +107,9 @@ export default function Sitemap() {
   const totalRoutes = routes.reduce((count, route) => {
     const countChildren = (r: SitemapRoute): number => {
       if (!r.children) return 1;
-      return 1 + r.children.reduce((sum, child) => sum + countChildren(child), 0);
+      return (
+        1 + r.children.reduce((sum, child) => sum + countChildren(child), 0)
+      );
     };
     return count + countChildren(route);
   }, 0);
@@ -114,10 +119,7 @@ export default function Sitemap() {
       <PageBanner
         title="Sitemap"
         description="Browse the complete structure of our website"
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Sitemap" },
-        ]}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Sitemap" }]}
       />
       <div className="bg-gradient-to-b from-slate-50 to-white">
         <div className="container mx-auto px-4 py-16">
@@ -127,7 +129,8 @@ export default function Sitemap() {
               Total pages: <strong>{totalRoutes}</strong>
             </p>
             <p className="text-slate-500">
-              Click on any page to visit it, or expand the categories to see subpages
+              Click on any page to visit it, or expand the categories to see
+              subpages
             </p>
           </div>
 
@@ -135,15 +138,22 @@ export default function Sitemap() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             <div className="bg-white rounded-lg border border-slate-200 p-4">
               <div className="text-sm text-slate-600 mb-1">Total Pages</div>
-              <div className="text-3xl font-bold text-slate-900">{totalRoutes}</div>
+              <div className="text-3xl font-bold text-slate-900">
+                {totalRoutes}
+              </div>
             </div>
             <div className="bg-white rounded-lg border border-slate-200 p-4">
               <div className="text-sm text-slate-600 mb-1">Categories</div>
-              <div className="text-3xl font-bold text-slate-900">{routes.length}</div>
+              <div className="text-3xl font-bold text-slate-900">
+                {routes.length}
+              </div>
             </div>
             <div className="bg-white rounded-lg border border-slate-200 p-4">
               <div className="text-sm text-slate-600 mb-1">XML Sitemap</div>
-              <a href="/sitemap.xml" className="text-blue-600 hover:underline font-medium">
+              <a
+                href="/sitemap.xml"
+                className="text-blue-600 hover:underline font-medium"
+              >
                 View XML
               </a>
             </div>
@@ -154,7 +164,11 @@ export default function Sitemap() {
             <div className="p-6">
               <div className="space-y-0">
                 {routes.map((route, idx) => (
-                  <SitemapItem key={`${route.path}-${idx}`} route={route} level={0} />
+                  <SitemapItem
+                    key={`${route.path}-${idx}`}
+                    route={route}
+                    level={0}
+                  />
                 ))}
               </div>
             </div>
@@ -162,7 +176,10 @@ export default function Sitemap() {
 
           {/* Footer Info */}
           <div className="mt-12 text-center text-slate-600 text-sm">
-            <p>This sitemap is automatically generated from the website structure.</p>
+            <p>
+              This sitemap is automatically generated from the website
+              structure.
+            </p>
             <p className="mt-2">
               For search engines, use the{" "}
               <a href="/sitemap.xml" className="text-blue-600 hover:underline">

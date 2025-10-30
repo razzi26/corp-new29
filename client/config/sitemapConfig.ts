@@ -5,7 +5,14 @@ export interface SitemapRoute {
   title: string;
   description?: string;
   priority: number;
-  changeFrequency: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
+  changeFrequency:
+    | "always"
+    | "hourly"
+    | "daily"
+    | "weekly"
+    | "monthly"
+    | "yearly"
+    | "never";
   lastModified?: string;
   children?: SitemapRoute[];
 }
@@ -13,7 +20,14 @@ export interface SitemapRoute {
 export interface DynamicRouteData {
   path: string;
   title: string;
-  changeFrequency: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
+  changeFrequency:
+    | "always"
+    | "hourly"
+    | "daily"
+    | "weekly"
+    | "monthly"
+    | "yearly"
+    | "never";
   priority: number;
 }
 
@@ -240,7 +254,10 @@ export async function buildCompleteSitemap(): Promise<SitemapRoute[]> {
   ]);
 
   // Populate dynamic routes into the sitemap tree
-  const findRoute = (routes: SitemapRoute[], path: string): SitemapRoute | undefined => {
+  const findRoute = (
+    routes: SitemapRoute[],
+    path: string,
+  ): SitemapRoute | undefined => {
     for (const route of routes) {
       if (route.path === path) return route;
       if (route.children) {

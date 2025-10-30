@@ -19,7 +19,12 @@ interface RouteData {
 // Static routes definition
 const staticRoutes: RouteData[] = [
   { path: "/", title: "Home", priority: 1.0, changeFrequency: "weekly" },
-  { path: "/about", title: "About Us", priority: 0.8, changeFrequency: "monthly" },
+  {
+    path: "/about",
+    title: "About Us",
+    priority: 0.8,
+    changeFrequency: "monthly",
+  },
   // { path: "/products", title: "Products", priority: 0.9, changeFrequency: "weekly" },
   {
     path: "/services",
@@ -27,12 +32,42 @@ const staticRoutes: RouteData[] = [
     priority: 0.9,
     changeFrequency: "monthly",
     children: [
-      { path: "/services/trainings-and-seminars", title: "Trainings & Seminars", priority: 0.8, changeFrequency: "monthly" },
-      { path: "/services/validation-service", title: "Validation Service", priority: 0.8, changeFrequency: "monthly" },
-      { path: "/services/commissioning-and-qualification", title: "Commissioning & Qualification", priority: 0.8, changeFrequency: "monthly" },
-      { path: "/services/about", title: "Services About", priority: 0.7, changeFrequency: "monthly" },
-      { path: "/services/seminars", title: "Seminars", priority: 0.7, changeFrequency: "monthly" },
-      { path: "/services/brochures", title: "Brochures", priority: 0.7, changeFrequency: "monthly" },
+      {
+        path: "/services/trainings-and-seminars",
+        title: "Trainings & Seminars",
+        priority: 0.8,
+        changeFrequency: "monthly",
+      },
+      {
+        path: "/services/validation-service",
+        title: "Validation Service",
+        priority: 0.8,
+        changeFrequency: "monthly",
+      },
+      {
+        path: "/services/commissioning-and-qualification",
+        title: "Commissioning & Qualification",
+        priority: 0.8,
+        changeFrequency: "monthly",
+      },
+      {
+        path: "/services/about",
+        title: "Services About",
+        priority: 0.7,
+        changeFrequency: "monthly",
+      },
+      {
+        path: "/services/seminars",
+        title: "Seminars",
+        priority: 0.7,
+        changeFrequency: "monthly",
+      },
+      {
+        path: "/services/brochures",
+        title: "Brochures",
+        priority: 0.7,
+        changeFrequency: "monthly",
+      },
     ],
   },
   {
@@ -41,17 +76,57 @@ const staticRoutes: RouteData[] = [
     priority: 0.9,
     changeFrequency: "weekly",
     children: [
-      { path: "/resources/articles", title: "Knowledge Hub", priority: 0.8, changeFrequency: "weekly" },
-      { path: "/resources/videos", title: "Videos", priority: 0.8, changeFrequency: "weekly" },
-      { path: "/resources/quizzes", title: "Quizzes", priority: 0.8, changeFrequency: "weekly" },
-      { path: "/resources/podcasts", title: "Podcasts", priority: 0.7, changeFrequency: "monthly" },
-      { path: "/resources/case-studies", title: "Case Studies", priority: 0.7, changeFrequency: "monthly" },
-      { path: "/resources/faq", title: "FAQ", priority: 0.7, changeFrequency: "monthly" },
+      {
+        path: "/resources/articles",
+        title: "Knowledge Hub",
+        priority: 0.8,
+        changeFrequency: "weekly",
+      },
+      {
+        path: "/resources/videos",
+        title: "Videos",
+        priority: 0.8,
+        changeFrequency: "weekly",
+      },
+      {
+        path: "/resources/quizzes",
+        title: "Quizzes",
+        priority: 0.8,
+        changeFrequency: "weekly",
+      },
+      {
+        path: "/resources/podcasts",
+        title: "Podcasts",
+        priority: 0.7,
+        changeFrequency: "monthly",
+      },
+      {
+        path: "/resources/case-studies",
+        title: "Case Studies",
+        priority: 0.7,
+        changeFrequency: "monthly",
+      },
+      {
+        path: "/resources/faq",
+        title: "FAQ",
+        priority: 0.7,
+        changeFrequency: "monthly",
+      },
     ],
   },
   { path: "/news", title: "News", priority: 0.8, changeFrequency: "daily" },
-  { path: "/contact", title: "Contact Us", priority: 0.7, changeFrequency: "monthly" },
-  { path: "/sitemap", title: "Sitemap", priority: 0.5, changeFrequency: "weekly" },
+  {
+    path: "/contact",
+    title: "Contact Us",
+    priority: 0.7,
+    changeFrequency: "monthly",
+  },
+  {
+    path: "/sitemap",
+    title: "Sitemap",
+    priority: 0.5,
+    changeFrequency: "weekly",
+  },
 ];
 
 // Flatten routes for XML output
