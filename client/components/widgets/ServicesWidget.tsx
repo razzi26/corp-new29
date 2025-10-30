@@ -37,7 +37,7 @@ const SERVICES: Service[] = [
 
 export default function ServicesWidget() {
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-20 md:py-28 bg-gradient-to-br from-slate-50 to-blue-50">
       <div className="container mx-auto px-4">
         <div className="mb-16">
           <div className="w-16 h-1 bg-[hsl(var(--primary))] mb-4"></div>
