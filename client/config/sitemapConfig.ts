@@ -231,8 +231,9 @@ export async function buildCompleteSitemap(): Promise<SitemapRoute[]> {
   const routes = JSON.parse(JSON.stringify(staticRoutes)) as SitemapRoute[];
 
   // Fetch all dynamic data in parallel
-  const [products, news, articles, quizzes] = await Promise.all([
-    fetchDynamicProducts(),
+  const [, news, articles, quizzes] = await Promise.all([
+    // fetchDynamicProducts(),
+    Promise.resolve([]),
     fetchDynamicNews(),
     fetchDynamicArticles(),
     fetchDynamicQuizzes(),
