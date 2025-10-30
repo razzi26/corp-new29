@@ -74,7 +74,7 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
         // lerp towards desired for smoothing (higher = faster)
         const current = el.scrollLeft;
         const target = desiredScroll.current;
-        const next = current + (target - current) * 1000; // smoothing factor (faster)
+        const next = current + (target - current) * 100; // smoothing factor (faster)
         el.scrollLeft = next;
         if (Math.abs(next - target) < 3) {
           el.scrollLeft = target;
