@@ -170,6 +170,46 @@ export default function KnowledgeHubWidget() {
           ? "/resources/articles"
           : "/resources/quizzes";
 
+  // Header arrow controls state
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  const updateButtons = React.useCallback(() => {
+    const el = carouselMap.get(tab);
+    if (!el) {
+      setCanScrollLeft(false);
+      setCanScrollRight(false);
+      return;
+    }
+    setCanScrollLeft(el.scrollLeft > 0);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
+  }, [tab]);
+
+  React.useEffect(() => {
+    updateButtons();
+    const el = carouselMap.get(tab);
+    if (el) {
+      const onScroll = () => updateButtons();
+      el.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", updateButtons);
+      return () => {
+        el.removeEventListener("scroll", onScroll);
+        window.removeEventListener("resize", updateButtons);
+      };
+    }
+    window.addEventListener("resize", updateButtons);
+    return () => window.removeEventListener("resize", updateButtons);
+  }, [tab, updateButtons, articles, quizzes, videos, podcasts]);
+
+  const scrollActiveBy = (amount: number) => {
+    const el = carouselMap.get(tab);
+    if (!el) return;
+    el.scrollBy({ left: amount, behavior: "smooth" });
+  };
+
+  const scrollPrev = () => scrollActiveBy(- (carouselMap.get(tab)?.clientWidth ?? 400) * 0.8);
+  const scrollNext = () => scrollActiveBy((carouselMap.get(tab)?.clientWidth ?? 400) * 0.8);
+
   return (
     <div>
       <Tabs
