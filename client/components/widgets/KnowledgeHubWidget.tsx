@@ -201,8 +201,23 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
     }
     // allow inertia to continue if velocity present
     desiredScroll.current = null;
-    if (inertiaEnabled && Math.abs(dragVelocity.current) > VELOCITY_THRESHOLD) {
-      runRaf();
+    if (inertiaEnabled) {
+      // compute final fling velocity from recent samples if available
+      const prevX = prevMoveX.current;
+      const prevT = prevMoveTime.current;
+      const lastX = lastMoveX.current;
+      const lastT = lastMoveTime.current;
+      if (prevX !== null && prevT !== null && lastX !== null && lastT !== null && lastT > prevT) {
+        const measured = (lastX - prevX) / (lastT - prevT); // px/ms
+        dragVelocity.current = Math.max(-MAX_VELOCITY, Math.min(MAX_VELOCITY, -measured * VELOCITY_MULTIPLIER));
+      }
+      // start RAF if velocity significant
+      if (Math.abs(dragVelocity.current) > VELOCITY_THRESHOLD) {
+        lastFrameTime.current = performance.now();
+        runRaf();
+      } else {
+        stopRaf();
+      }
     } else {
       stopRaf();
     }
