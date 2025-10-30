@@ -77,23 +77,20 @@ export default function TrainingsOverview() {
               key={href}
               to={href}
               className={`
-        relative group overflow-hidden bg-white p-6
-        transition-all duration-300 hover:shadow-lg cursor-pointer block
-        border-slate-200 hover:border-slate-300
+        relative group overflow-hidden bg-white p-6 transition-all duration-300 hover:shadow-lg cursor-pointer block
 
-        /* всегда есть нижняя и правая линия */
-        border-b border-r
+        /* mobile: только нижний бордер, без правого (1 колонка) */
+        border-b border-slate-200 border-r-0 hover:border-slate-300
 
-        /* md: каждая 2-я — крайняя -> убрать правую */
-        md:[&:nth-child(2n)]:border-r-0
+        /* md: добавить правый бордер всем, кроме каждого 2-го */
+        md:[&:not(:nth-child(2n))]:border-r md:border-slate-200
+        /* lg: добавить правый бордер всем, кроме каждого 3-го */
+        lg:[&:not(:nth-child(3n))]:border-r lg:border-slate-200
 
-        /* lg: каждая 3-я — крайняя -> убрать правую */
-        lg:[&:nth-child(3n)]:border-r-0
-
-        /* убрать нижнюю на последней строке */
-        [&:nth-last-child(-n+1)]:border-b-0      /* 1 col */
-        md:[&:nth-last-child(-n+2)]:border-b-0   /* 2 cols */
-        lg:[&:nth-last-child(-n+3)]:border-b-0   /* 3 cols */
+        /* убрать нижний бордер у элементов последней строки (для каждого брейкпоинта) */
+        [&:nth-last-child(-n+1)]:border-b-0  /* 1 колонка (sm) */
+        md:[&:nth-last-child(-n+2)]:border-b-0 /* 2 колонки (md) */
+        lg:[&:nth-last-child(-n+3)]:border-b-0 /* 3 колонки (lg) */
       `}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--primary))]/5 to-[hsl(var(--primary))]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
