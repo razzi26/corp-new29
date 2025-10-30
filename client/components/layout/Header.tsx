@@ -120,7 +120,7 @@ export default function Header() {
                     : "text-white",
                 )}
               >
-                Esco Biosafety
+                Esco Biosafety Institute
               </span>
             </Link>
 
