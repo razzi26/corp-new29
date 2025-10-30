@@ -15,7 +15,7 @@ const notifyCarouselUpdate = () => {
   for (const cb of carouselUpdateListeners) cb();
 };
 
-const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; enableInertia?: boolean }> = ({ children, carouselId, enableInertia = true }) => {
+const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; enableDrag?: boolean; enableInertia?: boolean }> = ({ children, carouselId, enableDrag = true, enableInertia = true }) => {
   const ref = React.useRef<HTMLDivElement | null>(null);
 
   const [hover, setHover] = React.useState(false);
@@ -33,7 +33,8 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
   const MAX_VELOCITY = 120; // clamp maximum per-frame velocity (px)
   const DRAG_THRESHOLD = 6; // px before we consider it a drag
 
-  const inertiaEnabled = INERTIA_ENABLED && !!enableInertia;
+  const dragEnabled = !!enableDrag;
+    const inertiaEnabled = dragEnabled && INERTIA_ENABLED && !!enableInertia;
 
   const isInteractiveTarget = (target: EventTarget | null) => {
     const el = target as HTMLElement | null;
@@ -116,7 +117,7 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
 
   // handlers
   const onMouseEnter = (e: React.MouseEvent) => {
-    if (isTouch) return;
+    if (!dragEnabled || isTouch) return;
     setHover(true);
     setIsOverInteractive(isInteractiveTarget(e.target));
     const el = ref.current;
@@ -125,7 +126,7 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
     setCursorPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
   const onMouseMove = (e: React.MouseEvent) => {
-    if (isTouch) return;
+    if (!dragEnabled || isTouch) return;
     const el = ref.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
@@ -184,7 +185,7 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
   };
   const onMouseDown = (e: React.MouseEvent) => {
     // only consider drag with left mouse button and when not over interactive element
-    if (isTouch) return;
+    if (!dragEnabled || isTouch) return;
     if (e.button !== 0) return;
     if (isInteractiveTarget(e.target)) return;
     const el = ref.current;
@@ -203,7 +204,7 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
   };
 
   // hide cursor on touch devices
-  const cursorVisible = hover && !isTouch && !isOverInteractive;
+  const cursorVisible = dragEnabled && hover && !isTouch && !isOverInteractive;
 
   // global click suppression during drags
   React.useEffect(() => {
@@ -258,7 +259,7 @@ interface VideoItem {
   start?: number;
 }
 
-export default function KnowledgeHubWidget() {
+export default function KnowledgeHubWidget({ enableCustomScroll = true }: { enableCustomScroll?: boolean }) {
   const [tab, setTab] = useState<
     "videos" | "podcasts" | "articles" | "quizzes"
   >("videos");
@@ -529,7 +530,7 @@ export default function KnowledgeHubWidget() {
             </div>
           ) : (
             <div className="mt-6">
-              <ScrollCarousel carouselId="videos">
+              <ScrollCarousel carouselId="videos" enableDrag={enableCustomScroll}>
                 {videos!.map((v) => (
                   <div key={v.id} className="w-[320px] max-w-[360px] flex-shrink-0">
                     <VideoCard video={v} />
@@ -549,7 +550,7 @@ export default function KnowledgeHubWidget() {
             </div>
           ) : (
             <div className="mt-6">
-              <ScrollCarousel carouselId="podcasts">
+              <ScrollCarousel carouselId="podcasts" enableDrag={enableCustomScroll}>
                 {podcasts!.map((p) => (
                   <div key={p.id} className="w-[320px] max-w-[360px] flex-shrink-0">
                     <PodcastCard podcast={p} />
@@ -569,7 +570,7 @@ export default function KnowledgeHubWidget() {
             </div>
           ) : (
             <div className="mt-6">
-              <ScrollCarousel carouselId="articles">
+              <ScrollCarousel carouselId="articles" enableDrag={enableCustomScroll}>
                 {articles!.map((a) => (
                   <div key={a.slug} className="w-[320px] max-w-[360px] flex-shrink-0">
                     <ArticleCard a={a} />
@@ -589,7 +590,7 @@ export default function KnowledgeHubWidget() {
             </div>
           ) : (
             <div className="mt-6">
-              <ScrollCarousel carouselId="quizzes">
+              <ScrollCarousel carouselId="quizzes" enableDrag={enableCustomScroll}>
                 {quizzes!.map((q) => (
                   <div key={q.slug} className="w-[320px] max-w-[360px] flex-shrink-0">
                     <QuizCard quiz={q} />
