@@ -53,7 +53,7 @@ export default function TrainingsOverview() {
   return (
     <div className="bg-white text-slate-900">
       <PageBanner
-        title="Trainings"
+        title="Services"
         description="Comprehensive training programs and resources to enhance your biosafety expertise."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
