@@ -59,7 +59,7 @@ export function PageBanner({
         />
         <div className="relative container mx-auto px-4 pt-12 pb-10 md:pt-16 md:pb-14">
           {/* Breadcrumbs at the top */}
-          <div className="mb-6 md:mb-8">
+          <div className="mb-8 md:mb-12">
             <nav aria-label="breadcrumb">
               <BreadcrumbList>
                 {breadcrumbs.map((crumb, index) => {
