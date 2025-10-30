@@ -42,7 +42,10 @@ export default function ValidationService() {
                 Our Validation Services
               </h2>
               <p className="text-lg text-slate-700 leading-relaxed">
-                We provide comprehensive validation services to ensure the integrity and performance of your systems, facilities, and equipment. Our expert team develops tailored validation programs that meet regulatory requirements and industry standards.
+                We provide comprehensive validation services to ensure the
+                integrity and performance of your systems, facilities, and
+                equipment. Our expert team develops tailored validation programs
+                that meet regulatory requirements and industry standards.
               </p>
             </div>
 
@@ -55,7 +58,9 @@ export default function ValidationService() {
                 {services.map((service) => (
                   <div key={service} className="flex gap-3 items-start">
                     <CheckCircle2 className="h-6 w-6 text-[hsl(var(--primary))] flex-shrink-0 mt-0.5" />
-                    <span className="text-slate-700 font-medium">{service}</span>
+                    <span className="text-slate-700 font-medium">
+                      {service}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -68,16 +73,26 @@ export default function ValidationService() {
               </h3>
               <div className="space-y-4">
                 <p className="text-slate-700 text-lg">
-                  <span className="font-semibold">Regulatory Compliance:</span> Our validation programs ensure full compliance with FDA, EMA, and other regulatory requirements.
+                  <span className="font-semibold">Regulatory Compliance:</span>{" "}
+                  Our validation programs ensure full compliance with FDA, EMA,
+                  and other regulatory requirements.
                 </p>
                 <p className="text-slate-700 text-lg">
-                  <span className="font-semibold">Expert Team:</span> Our experienced validators bring extensive knowledge of pharmaceutical, biotech, and healthcare industries.
+                  <span className="font-semibold">Expert Team:</span> Our
+                  experienced validators bring extensive knowledge of
+                  pharmaceutical, biotech, and healthcare industries.
                 </p>
                 <p className="text-slate-700 text-lg">
-                  <span className="font-semibold">Risk-Based Approach:</span> We develop customized validation strategies based on your specific operational requirements.
+                  <span className="font-semibold">Risk-Based Approach:</span> We
+                  develop customized validation strategies based on your
+                  specific operational requirements.
                 </p>
                 <p className="text-slate-700 text-lg">
-                  <span className="font-semibold">Documentation Excellence:</span> Comprehensive documentation and reporting to support your compliance audits.
+                  <span className="font-semibold">
+                    Documentation Excellence:
+                  </span>{" "}
+                  Comprehensive documentation and reporting to support your
+                  compliance audits.
                 </p>
               </div>
             </div>

@@ -26,7 +26,6 @@ export default function SiteLayout() {
     });
   }, [location.pathname]);
 
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />

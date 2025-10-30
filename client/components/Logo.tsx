@@ -6,7 +6,10 @@ interface LogoProps {
   hideName?: boolean;
 }
 
-export default function Logo({ variant = "header", hideName = false }: LogoProps) {
+export default function Logo({
+  variant = "header",
+  hideName = false,
+}: LogoProps) {
   const isHeader = variant === "header";
 
   const logoContent = (

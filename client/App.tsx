@@ -52,9 +52,18 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/services" element={<TrainingsOverview />} />
-            <Route path="/services/trainings-and-seminars" element={<TrainingsAndSeminars />} />
-            <Route path="/services/validation-service" element={<ValidationService />} />
-            <Route path="/services/commissioning-and-qualification" element={<CommissioningAndQualification />} />
+            <Route
+              path="/services/trainings-and-seminars"
+              element={<TrainingsAndSeminars />}
+            />
+            <Route
+              path="/services/validation-service"
+              element={<ValidationService />}
+            />
+            <Route
+              path="/services/commissioning-and-qualification"
+              element={<CommissioningAndQualification />}
+            />
             <Route path="/services/about" element={<Trainings />} />
             <Route path="/services/seminars" element={<SeminarsPage />} />
             <Route path="/services/services" element={<Services />} />

@@ -11,7 +11,8 @@ export default function EmailSubscriptionWidget() {
               Stay Updated
             </h2>
             <p className="text-lg text-slate-700 leading-relaxed">
-              Subscribe to our email newsletter for the latest biosafety news, updates, and insights delivered straight to your inbox.
+              Subscribe to our email newsletter for the latest biosafety news,
+              updates, and insights delivered straight to your inbox.
             </p>
           </div>
 

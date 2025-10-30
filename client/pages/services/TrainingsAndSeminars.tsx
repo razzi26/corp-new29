@@ -26,7 +26,11 @@ export default function TrainingsAndSeminars() {
                 Comprehensive Training Programs
               </h2>
               <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                Our training and seminar programs are designed to equip biosafety professionals with the knowledge and skills needed to maintain the highest standards of safety and compliance. We deliver non-commercial, safety-focused educational content worldwide.
+                Our training and seminar programs are designed to equip
+                biosafety professionals with the knowledge and skills needed to
+                maintain the highest standards of safety and compliance. We
+                deliver non-commercial, safety-focused educational content
+                worldwide.
               </p>
             </div>
 
@@ -39,9 +43,12 @@ export default function TrainingsAndSeminars() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">Expert-Led Training</h3>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                    Expert-Led Training
+                  </h3>
                   <p className="text-slate-700">
-                    Learn from industry experts with years of experience in biosafety protocols and regulatory compliance.
+                    Learn from industry experts with years of experience in
+                    biosafety protocols and regulatory compliance.
                   </p>
                 </div>
               </div>
@@ -53,9 +60,12 @@ export default function TrainingsAndSeminars() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">Interactive Workshops</h3>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                    Interactive Workshops
+                  </h3>
                   <p className="text-slate-700">
-                    Participate in hands-on seminars that provide practical insights and real-world applications.
+                    Participate in hands-on seminars that provide practical
+                    insights and real-world applications.
                   </p>
                 </div>
               </div>
@@ -67,9 +77,12 @@ export default function TrainingsAndSeminars() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">Certification Support</h3>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                    Certification Support
+                  </h3>
                   <p className="text-slate-700">
-                    Prepare for professional certifications with our comprehensive training materials and guidance.
+                    Prepare for professional certifications with our
+                    comprehensive training materials and guidance.
                   </p>
                 </div>
               </div>
@@ -81,9 +94,12 @@ export default function TrainingsAndSeminars() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">Quality Assurance</h3>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                    Quality Assurance
+                  </h3>
                   <p className="text-slate-700">
-                    Ensure your facility meets the highest standards through regulatory compliance training.
+                    Ensure your facility meets the highest standards through
+                    regulatory compliance training.
                   </p>
                 </div>
               </div>

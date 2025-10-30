@@ -31,7 +31,11 @@ export default function CommissioningAndQualification() {
                 Expert Commissioning & Qualification Services
               </h2>
               <p className="text-lg text-slate-700 leading-relaxed">
-                From initial planning through final qualification, we manage every aspect of your equipment installation and facility commissioning. Our comprehensive approach ensures that your equipment and facilities meet all performance specifications and regulatory requirements from day one.
+                From initial planning through final qualification, we manage
+                every aspect of your equipment installation and facility
+                commissioning. Our comprehensive approach ensures that your
+                equipment and facilities meet all performance specifications and
+                regulatory requirements from day one.
               </p>
             </div>
 
@@ -44,7 +48,9 @@ export default function CommissioningAndQualification() {
                 {services.map((service) => (
                   <div key={service} className="flex gap-3 items-start">
                     <CheckCircle2 className="h-6 w-6 text-[hsl(var(--primary))] flex-shrink-0 mt-0.5" />
-                    <span className="text-slate-700 font-medium text-lg">{service}</span>
+                    <span className="text-slate-700 font-medium text-lg">
+                      {service}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -60,7 +66,9 @@ export default function CommissioningAndQualification() {
                   </h3>
                 </div>
                 <p className="text-slate-700">
-                  Expert installation of biosafety cabinets and other critical equipment with strict adherence to manufacturer specifications and operational requirements.
+                  Expert installation of biosafety cabinets and other critical
+                  equipment with strict adherence to manufacturer specifications
+                  and operational requirements.
                 </p>
               </div>
 
@@ -72,7 +80,9 @@ export default function CommissioningAndQualification() {
                   </h3>
                 </div>
                 <p className="text-slate-700">
-                  Comprehensive facility design and construction ensuring compliance with biosafety standards and creating optimal working environments.
+                  Comprehensive facility design and construction ensuring
+                  compliance with biosafety standards and creating optimal
+                  working environments.
                 </p>
               </div>
             </div>
@@ -90,9 +100,12 @@ export default function CommissioningAndQualification() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 mb-2">Planning & Design</h4>
+                    <h4 className="font-semibold text-slate-900 mb-2">
+                      Planning & Design
+                    </h4>
                     <p className="text-slate-700">
-                      Detailed planning and facility design based on your specific requirements and regulatory needs.
+                      Detailed planning and facility design based on your
+                      specific requirements and regulatory needs.
                     </p>
                   </div>
                 </div>
@@ -104,9 +117,12 @@ export default function CommissioningAndQualification() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 mb-2">Installation & Construction</h4>
+                    <h4 className="font-semibold text-slate-900 mb-2">
+                      Installation & Construction
+                    </h4>
                     <p className="text-slate-700">
-                      Professional installation of equipment and facility construction with continuous quality oversight.
+                      Professional installation of equipment and facility
+                      construction with continuous quality oversight.
                     </p>
                   </div>
                 </div>
@@ -118,9 +134,12 @@ export default function CommissioningAndQualification() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 mb-2">Qualification & Testing</h4>
+                    <h4 className="font-semibold text-slate-900 mb-2">
+                      Qualification & Testing
+                    </h4>
                     <p className="text-slate-700">
-                      Comprehensive qualification protocols ensuring all systems perform to specifications.
+                      Comprehensive qualification protocols ensuring all systems
+                      perform to specifications.
                     </p>
                   </div>
                 </div>
@@ -132,9 +151,12 @@ export default function CommissioningAndQualification() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 mb-2">Documentation & Handover</h4>
+                    <h4 className="font-semibold text-slate-900 mb-2">
+                      Documentation & Handover
+                    </h4>
                     <p className="text-slate-700">
-                      Complete documentation package for regulatory compliance and operational readiness.
+                      Complete documentation package for regulatory compliance
+                      and operational readiness.
                     </p>
                   </div>
                 </div>

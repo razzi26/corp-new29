@@ -49,7 +49,9 @@ function configInjectionPlugin(): Plugin {
 
       // Extract siteName value using regex
       const siteNameMatch = configContent.match(/siteName:\s*["']([^"']+)["']/);
-      const siteName = siteNameMatch ? siteNameMatch[1] : "Esco Biosafety Institute";
+      const siteName = siteNameMatch
+        ? siteNameMatch[1]
+        : "Esco Biosafety Institute";
 
       // Replace placeholder in HTML
       return html.replace(/__SITE_NAME__/g, siteName);

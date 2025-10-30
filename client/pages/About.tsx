@@ -41,10 +41,10 @@ export default function About() {
             </p>
             <p className="max-w-prose text-base text-slate-700 md:text-lg leading-relaxed">
               A key initiative in fulfilling its vision was the creation of the
-              {siteConfig.siteName}. The Institute was created to push
-              forward Esco's core mission of building a global life sciences
-              ecosystem. Beyond being a manufacturing hardware, it purposes to
-              be a foundational pillar for education and standards.
+              {siteConfig.siteName}. The Institute was created to push forward
+              Esco's core mission of building a global life sciences ecosystem.
+              Beyond being a manufacturing hardware, it purposes to be a
+              foundational pillar for education and standards.
             </p>
             <div className="flex flex-wrap gap-3 pt-4">
               <Button
