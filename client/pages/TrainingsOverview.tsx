@@ -7,7 +7,8 @@ import {
   FileStack,
   ArrowRight,
   type LucideIcon,
-} from "lucide-react";
+  GraduationCap, CheckCircle, Wrench,
+} from "lucide-react"; 
 
 type TrainingCard = {
   href: string;
