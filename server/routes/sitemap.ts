@@ -90,7 +90,7 @@ function loadJsonFile(filename: string): any[] {
 // Generate XML sitemap
 function generateSitemapXml(baseUrl: string): string {
   const entries: SitemapEntry[] = flattenRoutes(staticRoutes);
-  const products = loadJsonFile("products.json");
+  // const products = loadJsonFile("products.json");
   const news = loadJsonFile("news-articles.json");
   const articles = loadJsonFile("knowledge-articles.json");
   const quizzes = loadJsonFile("quizzes.json");
