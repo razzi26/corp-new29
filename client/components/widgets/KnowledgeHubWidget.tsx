@@ -75,7 +75,9 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
   const dragVelocity = React.useRef<number>(0);
     const isDraggingRef = React.useRef<boolean>(false);
     const lastMoveX = React.useRef<number | null>(null);
+    const prevMoveX = React.useRef<number | null>(null);
     const lastMoveTime = React.useRef<number | null>(null);
+    const prevMoveTime = React.useRef<number | null>(null);
     const lastFrameTime = React.useRef<number | null>(null);
   const runRaf = () => {
     if (rafId.current) return;
