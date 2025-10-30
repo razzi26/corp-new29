@@ -305,7 +305,7 @@ export default function KnowledgeHubWidget() {
             </div>
           ) : (
             <div className="mt-6">
-              <ScrollCarousel>
+              <ScrollCarousel carouselId="videos">
                 {videos!.map((v) => (
                   <div key={v.id} className="min-w-[280px] flex-shrink-0">
                     <VideoCard video={v} />
