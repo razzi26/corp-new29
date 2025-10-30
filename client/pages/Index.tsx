@@ -1,21 +1,8 @@
-import {
-  Check,
-  HeartPulse,
-  Stethoscope,
-  Scan,
-} from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import FAQWidget from "@/components/widgets/FAQWidget";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/Button";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { LoadingIndicator } from "@/components/ui/loading-indicator";
-import ContactModal from "@/components/ContactModal";
-import { cn } from "@/lib/utils";
 import HeroSectionWidget from "@/components/HeroSectionWidget";
-import FeaturedProductsWidget from "@/components/widgets/FeaturedProductsWidget";
 import ServicesWidget from "@/components/widgets/ServicesWidget";
 import KnowledgeHubWidget from "@/components/widgets/KnowledgeHubWidget";
 
