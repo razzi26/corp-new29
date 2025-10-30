@@ -338,7 +338,7 @@ export default function KnowledgeHubWidget() {
             <div className="mt-6">
               <ScrollCarousel carouselId="articles">
                 {articles!.map((a) => (
-                  <div key={a.slug} className="min-w-[320px] flex-shrink-0">
+                  <div key={a.slug} className="w-[320px] max-w-[360px] flex-shrink-0">
                     <ArticleCard a={a} />
                   </div>
                 ))}
