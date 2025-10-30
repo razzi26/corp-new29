@@ -615,9 +615,7 @@ export default function KnowledgeHubWidget({ enableCustomScroll = false }: { ena
             <div className="mt-6">
               <ScrollCarousel carouselId="articles" enableDrag={enableCustomScroll}>
                 {articles!.map((a) => (
-                  <div key={a.slug} className="w-[320px] max-w-[360px] flex-shrink-0">
                     <ArticleCard a={a} />
-                  </div>
                 ))}
               </ScrollCarousel>
             </div>
