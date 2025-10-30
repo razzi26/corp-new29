@@ -19,12 +19,24 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
   const ref = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
-    if (ref.current) carouselMap.set(carouselId, ref.current);
-    notifyCarouselUpdate();
-    return () => {
-      carouselMap.delete(carouselId);
+    const el = ref.current;
+    if (el) {
+      carouselMap.set(carouselId, el);
+      // notify header controls that a carousel mounted
       notifyCarouselUpdate();
-    };
+      const onScroll = () => notifyCarouselUpdate();
+      el.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", notifyCarouselUpdate);
+      return () => {
+        el.removeEventListener("scroll", onScroll);
+        window.removeEventListener("resize", notifyCarouselUpdate);
+        carouselMap.delete(carouselId);
+        notifyCarouselUpdate();
+      };
+    }
+    // In case ref not set yet, still notify so header can re-evaluate
+    notifyCarouselUpdate();
+    return () => notifyCarouselUpdate();
   }, [carouselId]);
 
   return (
