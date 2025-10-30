@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, ChevronRight, FileText } from "lucide-react";
 import { buildCompleteSitemap, SitemapRoute } from "@/config/sitemapConfig";
+import { PageBanner } from "@/components/layout/PageBanner";
 
 interface SitemapItemProps {
   route: SitemapRoute;
