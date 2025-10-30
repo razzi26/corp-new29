@@ -106,8 +106,8 @@ export default function HeroSectionWidget(
             mix-blend-multiply
           "
           style={{
-            "--from": `${config.backgroundGradFrom}99`, // 60% opacity
-            "--to": `${config.backgroundGradTo}BF`,     // 75% opacity
+            "--from": `${config.backgroundGradFrom}`, // 60% opacity
+            "--to": `${config.backgroundGradTo}`,     // 75% opacity
           }}
         />
       </div>
