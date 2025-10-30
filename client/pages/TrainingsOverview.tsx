@@ -71,12 +71,12 @@ export default function TrainingsOverview() {
       />
 
       <section className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 p-[1px] bg-slate-200 rounded-lg">
           {TRAINING_CARDS.map(({ href, title, description, icon: Icon }) => (
             <Link
               key={href}
               to={href}
-              className="relative group overflow-hidden divide-slate-200 divide-x divide-y bg-white p-6 transition-all duration-300 hover:shadow-lg cursor-pointer block"
+              className="relative group overflow-hidden border border-slate-200 bg-white p-6 transition-all duration-300 hover:shadow-lg hover:border-slate-300 cursor-pointer block"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--primary))]/5 to-[hsl(var(--primary))]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
