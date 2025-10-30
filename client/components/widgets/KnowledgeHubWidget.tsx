@@ -23,6 +23,13 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
   const dragState = React.useRef({ startX: 0, startScroll: 0 });
   const [cursorPos, setCursorPos] = React.useState({ x: 0, y: 0 });
   const [isTouch, setIsTouch] = React.useState(false);
+  const [isOverInteractive, setIsOverInteractive] = React.useState(false);
+
+  const isInteractiveTarget = (target: EventTarget | null) => {
+    const el = target as HTMLElement | null;
+    if (!el) return false;
+    return !!el.closest("a, button, input, textarea, select, [role=button], [data-no-drag]");
+  };
 
   React.useEffect(() => {
     setIsTouch(typeof window !== "undefined" && ("ontouchstart" in window || navigator.maxTouchPoints > 0));
