@@ -6,6 +6,7 @@ import HeroSectionWidget from "@/components/HeroSectionWidget";
 import ServicesWidget from "@/components/widgets/ServicesWidget";
 import KnowledgeHubWidget from "@/components/widgets/KnowledgeHubWidget";
 import ContactsDetailsWidget from "@/components/widgets/ContactsDetailsWidget";
+import EmailSubscriptionWidget from "@/components/widgets/EmailSubscriptionWidget";
 
 export default function Index() {
   return (
@@ -102,6 +103,9 @@ export default function Index() {
           <KnowledgeHubWidget />
         </div>
       </section>
+
+      {/* Email Subscription */}
+      <EmailSubscriptionWidget />
 
       {/* Contact teaser */}
       <section className="py-20 md:py-28 bg-white">
