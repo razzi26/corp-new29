@@ -14,15 +14,11 @@ export default function Logo({
 
   const logoContent = (
     <div className="flex select-none items-center gap-3">
-      {isHeader ? (
-        <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(205_100%_20%)] font-bold text-white text-lg shadow-md">
-          E
-        </span>
-      ) : (
-        <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/20 text-white font-bold">
-          E
-        </span>
-      )}
+      <img
+        src="/logo_egi.png"
+        alt={siteConfig.siteName}
+        className={isHeader ? "h-11 w-11 object-contain" : "h-8 w-8 object-contain"}
+      />
       {!hideName && (
         <span
           className={
