@@ -144,7 +144,7 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
     setTimeout(() => {
       desiredScroll.current = null;
       stopRaf();
-    }, 80);
+    }, 40);
   };
   const onMouseDown = (e: React.MouseEvent) => {
     // only consider drag with left mouse button and when not over interactive element
