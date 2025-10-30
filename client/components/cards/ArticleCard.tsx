@@ -5,7 +5,7 @@ import type { ArticleMeta } from "@/entities/article";
 export function ArticleCard({ a }: { a: ArticleMeta }) {
   const slugParam = a.slug.replace("/resources/articles/", "");
   return (
-    <div className="pb-0 pt-0 flex flex-col h-full bg-[hsl(var(--primary))] rounded-lg overflow-hidden">
+    <div className="pb-0 pt-0 flex flex-col h-full bg-[hsl(var(--primary))] rounded-lg overflow-hidden max-w-[90%] mx-auto sm:max-w-full">
       {a.image && (
         <img
           src={a.image}
@@ -13,6 +13,7 @@ export function ArticleCard({ a }: { a: ArticleMeta }) {
           className="w-full h-32 object-cover sm:h-48"
         />
       )}
+
       <div className="flex flex-col flex-1 p-4 sm:p-6 text-white">
         <Link
           to={`/resources/articles/${slugParam}`}
