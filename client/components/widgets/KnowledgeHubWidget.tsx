@@ -158,7 +158,7 @@ export default function KnowledgeHubWidget() {
                 Knowledge Hub
                 <Link
                   to={'/resources'}
-                  className="hidden md:inline-flex text-base font-semibold text-brand-secondary hover:underline"
+                  className="ml-4 hidden md:inline-flex text-base font-semibold text-brand-secondary hover:underline"
                 >
                   View all →
                 </Link>
