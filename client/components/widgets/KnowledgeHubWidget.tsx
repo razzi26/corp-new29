@@ -156,6 +156,12 @@ export default function KnowledgeHubWidget() {
               <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
               <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
                 Knowledge Hub
+                <Link
+                  to={'/resources'}
+                  className="hidden md:inline-flex text-base font-semibold text-brand-secondary hover:underline"
+                >
+                  View all →
+                </Link>
               </h2>
             </div>
 
