@@ -7,6 +7,7 @@ import ServicesWidget from "@/components/widgets/ServicesWidget";
 import KnowledgeHubWidget from "@/components/widgets/KnowledgeHubWidget";
 import ContactsDetailsWidget from "@/components/widgets/ContactsDetailsWidget";
 import EmailSubscriptionWidget from "@/components/widgets/EmailSubscriptionWidget";
+import { siteConfig } from "@/config/config";
 
 export default function Index() {
   return (
@@ -22,7 +23,7 @@ export default function Index() {
               <div className="mb-6">
                 <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
                 <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
-                  About Esco Biosafety Institute
+                  About {siteConfig.siteName}
                 </h2>
               </div>
               <p className="text-lg text-slate-700 mb-4 leading-relaxed">
