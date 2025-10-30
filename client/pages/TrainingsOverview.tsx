@@ -70,42 +70,41 @@ export default function TrainingsOverview() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
 
-      <section className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {TRAINING_CARDS.map(({ href, title, description, icon: Icon }) => (
-            <Link
-              key={href}
-              to={href}
-              className="relative group overflow-hidden rounded-lg border border-slate-200 bg-white p-6 transition-all duration-300 hover:shadow-lg hover:border-slate-300 cursor-pointer block"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--primary))]/5 to-[hsl(var(--primary))]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <section className="container mx-auto px-0 lg:px-4 py-12 md:py-16">
+        <div className="bg-slate-200"> {/* фон для промежутков */}
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px">
+    {TRAINING_CARDS.map(({ href, title, description, icon: Icon }) => (
+      <Link
+        key={href}
+        to={href}
+        className="relative group overflow-hidden bg-white p-6 transition-all duration-300 hover:shadow-lg cursor-pointer block"
+      >
+        {/* контент карточки */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--primary))]/5 to-[hsl(var(--primary))]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-              <div className="relative flex flex-col gap-4">
-                <div className="flex-shrink-0">
-                  <div className="inline-flex h-14 w-14 items-center justify-center rounded-lg bg-[hsl(var(--primary))]/10 text-[hsl(var(--primary))]">
-                    <Icon className="h-7 w-7" />
-                  </div>
-                </div>
+        <div className="relative flex flex-col gap-4">
+          <div className="flex-shrink-0">
+            <div className="inline-flex h-14 w-14 items-center justify-center rounded-lg bg-[hsl(var(--primary))]/10 text-[hsl(var(--primary))]">
+              <Icon className="h-7 w-7" />
+            </div>
+          </div>
 
-                <div className="flex-1">
-                  <h3 className="mb-3 text-xl font-bold text-[hsl(205_100%_12%)]">
-                    {title}
-                  </h3>
-
-                  <p className="text-base leading-relaxed text-slate-700">
-                    {description}
-                  </p>
-                </div>
-              </div>
-
-              <div className="absolute top-6 right-4 text-[hsl(var(--primary))]">
-                <ArrowRight className="h-6 w-6 transition-transform duration-300 group-hover:-rotate-45" />
-              </div>
-
-              <div className="absolute bottom-0 left-0 h-1 w-0 bg-[hsl(var(--primary))] transition-all duration-300 group-hover:w-full" />
-            </Link>
-          ))}
+          <div className="flex-1">
+            <h3 className="mb-3 text-xl font-bold text-[hsl(205_100%_12%)]">{title}</h3>
+            <p className="text-base leading-relaxed text-slate-700">{description}</p>
+          </div>
         </div>
+
+        <div className="absolute top-6 right-4 text-[hsl(var(--primary))]">
+          <ArrowRight className="h-6 w-6 transition-transform duration-300 group-hover:-rotate-45" />
+        </div>
+
+        <div className="absolute bottom-0 left-0 h-1 w-0 bg-[hsl(var(--primary))] transition-all duration-300 group-hover:w-full" />
+      </Link>
+    ))}
+  </div>
+</div>
+
       </section>
     </div>
   );

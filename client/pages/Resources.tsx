@@ -75,14 +75,14 @@ export default function Resources() {
         gradient="linear-gradient(135deg, #020113 0%, #003BA3)"
       />
 
-      <section className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {RESOURCE_CARDS.map(
-            ({ href, title, description, icon: Icon, color }) => (
+      <section className="container mx-auto px-0 lg:px-4 py-12 md:py-16">
+        <div className="rounded-lg overflow-hidden bg-slate-200">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px">
+            {RESOURCE_CARDS.map(({ href, title, description, icon: Icon, color }) => (
               <Link
                 key={href}
                 to={href}
-                className="relative group overflow-hidden rounded-lg border border-slate-200 bg-white p-6 transition-all duration-300 hover:shadow-lg hover:border-slate-300 cursor-pointer block"
+                className="relative group overflow-hidden bg-white p-6 transition-all duration-300 hover:shadow-lg cursor-pointer block rounded-none"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--primary))]/5 to-[hsl(var(--primary))]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
@@ -97,7 +97,6 @@ export default function Resources() {
                     <h3 className="mb-3 text-xl font-bold text-[hsl(205_100%_12%)]">
                       {title}
                     </h3>
-
                     <p className="text-base leading-relaxed text-slate-700">
                       {description}
                     </p>
@@ -110,9 +109,10 @@ export default function Resources() {
 
                 <div className="absolute bottom-0 left-0 h-1 w-0 bg-[hsl(var(--primary))] transition-all duration-300 group-hover:w-full" />
               </Link>
-            ),
-          )}
+            ))}
+          </div>
         </div>
+
       </section>
     </div>
   );

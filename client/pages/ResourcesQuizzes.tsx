@@ -16,7 +16,11 @@ export default function ResourcesQuizzes() {
     const controller = new AbortController();
     (async () => {
       try {
-        const response = await fetch("/data/quizzes.json", {
+        const url = new URL(
+          "/data/quizzes.json",
+          typeof window !== "undefined" ? window.location.origin : "/",
+        );
+        const response = await fetch(url.toString(), {
           cache: "no-store",
           credentials: "same-origin",
           headers: { Accept: "application/json" },

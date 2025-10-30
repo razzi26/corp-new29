@@ -20,7 +20,11 @@ export default function KnowledgeHub() {
     const controller = new AbortController();
     (async () => {
       try {
-        const r = await fetch("/data/knowledge-articles.json", {
+        const url = new URL(
+          "/data/knowledge-articles.json",
+          typeof window !== "undefined" ? window.location.origin : "/",
+        );
+        const r = await fetch(url.toString(), {
           cache: "no-store",
           credentials: "same-origin",
           headers: { Accept: "application/json" },
@@ -38,7 +42,14 @@ export default function KnowledgeHub() {
           tags: d.tags,
           image: d.image,
         }));
-        setItems(metas);
+        // Deduplicate articles by slug to avoid rendering warnings about duplicate React keys
+        const seen = new Set<string>();
+        const uniqueMetas = metas.filter((m) => {
+          if (seen.has(m.slug)) return false;
+          seen.add(m.slug);
+          return true;
+        });
+        setItems(uniqueMetas);
       } catch (e: any) {
         if (e?.name === "AbortError") return;
         if (mounted) setError(String(e));

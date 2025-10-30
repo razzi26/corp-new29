@@ -15,6 +15,13 @@ export default function Index() {
       {/* Hero Section */}
       <HeroSectionWidget />
 
+      {/* Knowledge Hub */}
+      <section className="py-20 md:py-28 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <KnowledgeHubWidget />
+        </div>
+      </section>
+
       {/* About & Mission Section */}
       <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-4">
@@ -95,13 +102,6 @@ export default function Index() {
               descr="Our own service team provides responsive support and maintenance across the nation"
             />
           </div>
-        </div>
-      </section>
-
-      {/* Knowledge Hub */}
-      <section className="py-20 md:py-28 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <KnowledgeHubWidget />
         </div>
       </section>
 
