@@ -1,12 +1,8 @@
 import {
   Check,
   HeartPulse,
-  Microscope,
   Stethoscope,
   Scan,
-  ShieldCheck,
-  GraduationCap,
-  BadgeCheck,
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
