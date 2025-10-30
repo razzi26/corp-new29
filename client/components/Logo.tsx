@@ -20,15 +20,16 @@ export default function Logo({
         className={isHeader ? "h-14 w-14 object-contain" : "h-10 w-10 object-contain"}
       />
       {!hideName && (
-        <span
+        <div
           className={
             isHeader
-              ? "font-bold tracking-wide transition-colors text-lg"
-              : "font-semibold"
+              ? "font-semibold tracking-wide transition-colors text-lg leading-tight"
+              : "font-semibold text-sm leading-tight"
           }
         >
-          {siteConfig.siteName}
-        </span>
+          <div>Esco Biosafety</div>
+          <div>Institute</div>
+        </div>
       )}
     </div>
   );
