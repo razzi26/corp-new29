@@ -162,7 +162,7 @@ export default function KnowledgeHubWidget() {
                   to={'/resources'}
                   className="ml-4 hidden md:inline-flex text-base font-semibold text-brand-secondary hover:underline"
                 >
-                  View all →
+                  Explore
                 </Link>
               </div>
             </div>
