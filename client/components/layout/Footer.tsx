@@ -4,6 +4,20 @@ import SocialMediaWidget from "@/components/widgets/SocialMediaWidget";
 import Logo from "@/components/Logo";
 import { siteConfig } from "@/config/config";
 
+interface NavigationLink {
+  label: string;
+  href: string;
+}
+
+const footerNavigation: NavigationLink[] = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  // { label: "Products", href: "/products" },
+  { label: "News", href: "/news" },
+  { label: "FAQ", href: "/resources/faq" },
+  { label: "Contact", href: "/contact" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-[hsl(var(--brand-end))] text-white">
@@ -21,51 +35,16 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-3">Navigation</h4>
             <ul className="space-y-2 text-sm text-white/90">
-              <li>
-                <Link className="hover:text-brand-secondary transition" to="/">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-brand-secondary transition"
-                  to="/about"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-brand-secondary transition"
-                  to="/products"
-                >
-                  Products
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-brand-secondary transition"
-                  to="/news"
-                >
-                  News
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-brand-secondary transition"
-                  to="/resources/faq"
-                >
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-brand-secondary transition"
-                  to="/contact"
-                >
-                  Contact
-                </Link>
-              </li>
+              {footerNavigation.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    className="hover:text-brand-secondary transition"
+                    to={link.href}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
