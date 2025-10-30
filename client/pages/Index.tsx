@@ -104,9 +104,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Email Subscription */}
-      <EmailSubscriptionWidget />
-
       {/* Contact teaser */}
       <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-4">
@@ -190,6 +187,9 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Email Subscription */}
+      <EmailSubscriptionWidget />
     </div>
   );
 }
