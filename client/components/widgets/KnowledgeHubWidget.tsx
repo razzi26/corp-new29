@@ -73,8 +73,10 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
   const rafId = React.useRef<number | null>(null);
   // inertia / momentum support
   const dragVelocity = React.useRef<number>(0);
-  const isDraggingRef = React.useRef<boolean>(false);
-  const lastMoveX = React.useRef<number | null>(null);
+    const isDraggingRef = React.useRef<boolean>(false);
+    const lastMoveX = React.useRef<number | null>(null);
+    const lastMoveTime = React.useRef<number | null>(null);
+    const lastFrameTime = React.useRef<number | null>(null);
   const runRaf = () => {
     if (rafId.current) return;
     const step = () => {
