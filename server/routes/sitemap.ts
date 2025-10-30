@@ -96,15 +96,15 @@ function generateSitemapXml(baseUrl: string): string {
   const quizzes = loadJsonFile("quizzes.json");
 
   // Add dynamic routes
-  if (Array.isArray(products)) {
-    products.forEach((product: any) => {
-      entries.push({
-        path: `/products/${product.id}`,
-        priority: 0.7,
-        changeFrequency: "monthly",
-      });
-    });
-  }
+  // if (Array.isArray(products)) {
+  //   products.forEach((product: any) => {
+  //     entries.push({
+  //       path: `/products/${product.id}`,
+  //       priority: 0.7,
+  //       changeFrequency: "monthly",
+  //     });
+  //   });
+  // }
 
   if (Array.isArray(news)) {
     news.forEach((article: any) => {
