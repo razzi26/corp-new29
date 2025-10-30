@@ -31,7 +31,7 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
     const INERTIA_DECAY_RATE = 0.0025; // per ms decay rate (higher = faster slow down)
   const VELOCITY_MULTIPLIER = 0.8; // multiplier applied to measured velocity
   const VELOCITY_THRESHOLD = 0.002; // px/ms minimal velocity to continue inertia (~2 px/s)
-  const MAX_VELOCITY = 120; // clamp maximum per-frame velocity (px)
+  const MAX_VELOCITY = 3; // px/ms (3 px/ms = 3000 px/s)
   const DRAG_THRESHOLD = 6; // px before we consider it a drag
 
   const dragEnabled = !!enableDrag;
