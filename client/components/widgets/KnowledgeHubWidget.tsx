@@ -145,52 +145,55 @@ export default function KnowledgeHubWidget() {
 
   return (
     <div>
-      <div className="flex items-end justify-between gap-4 mb-8">
-        <div className="mb-8">
-          <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
-          <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
-            Knowledge Hub
-          </h2>
-        </div>
-        <Link
-          to={viewAllHref}
-          className="hidden md:inline-flex text-base font-semibold text-brand-secondary hover:underline"
-        >
-          View all →
-        </Link>
-      </div>
-
       <Tabs
         value={tab}
         onValueChange={(v) => setTab(v as any)}
         className="w-full"
       >
-        <TabsList className="flex gap-6 border-b border-slate-200">
-          <TabsTrigger
-            value="videos"
-            className="bg-transparent rounded-none px-0 pb-2 text-base md:text-lg font-medium tracking-tight text-[hsl(var(--brand-end))] hover:text-[hsl(var(--brand-end))]/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand-end))]/30 data-[state=active]:border-b-2 data-[state=active]:border-[hsl(var(--brand-end))] data-[state=active]:pb-2"
+        <div className="flex items-end justify-between gap-4 mb-8">
+          <div className="flex items-end gap-6">
+            <div className="mb-0">
+              <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
+              <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
+                Knowledge Hub
+              </h2>
+            </div>
+
+            <TabsList className="bg-transparent p-0 h-auto inline-flex items-end gap-6 rounded-none">
+              <TabsTrigger
+                value="videos"
+                className="bg-transparent rounded-none px-0 pb-1 text-lg md:text-xl font-medium tracking-tight text-[hsl(var(--brand-end))] hover:text-[hsl(var(--brand-end))]/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand-end))]/30 data-[state=active]:border-b-2 data-[state=active]:border-[hsl(var(--brand-end))] data-[state=active]:pb-1"
+              >
+                Videos
+              </TabsTrigger>
+              <TabsTrigger
+                value="podcasts"
+                className="bg-transparent rounded-none px-0 pb-1 text-lg md:text-xl font-medium tracking-tight text-[hsl(var(--brand-end))] hover:text-[hsl(var(--brand-end))]/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand-end))]/30 data-[state=active]:border-b-2 data-[state=active]:border-[hsl(var(--brand-end))] data-[state=active]:pb-1"
+              >
+                Podcasts
+              </TabsTrigger>
+              <TabsTrigger
+                value="articles"
+                className="bg-transparent rounded-none px-0 pb-1 text-lg md:text-xl font-medium tracking-tight text-[hsl(var(--brand-end))] hover:text-[hsl(var(--brand-end))]/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand-end))]/30 data-[state=active]:border-b-2 data-[state=active]:border-[hsl(var(--brand-end))] data-[state=active]:pb-1"
+              >
+                Articles
+              </TabsTrigger>
+              <TabsTrigger
+                value="quizzes"
+                className="bg-transparent rounded-none px-0 pb-1 text-lg md:text-xl font-medium tracking-tight text-[hsl(var(--brand-end))] hover:text-[hsl(var(--brand-end))]/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand-end))]/30 data-[state=active]:border-b-2 data-[state=active]:border-[hsl(var(--brand-end))] data-[state=active]:pb-1"
+              >
+                Quizzes
+              </TabsTrigger>
+            </TabsList>
+          </div>
+
+          <Link
+            to={viewAllHref}
+            className="hidden md:inline-flex text-base font-semibold text-brand-secondary hover:underline"
           >
-            Videos
-          </TabsTrigger>
-          <TabsTrigger
-            value="podcasts"
-            className="bg-transparent rounded-none px-0 pb-2 text-base md:text-lg font-medium tracking-tight text-[hsl(var(--brand-end))] hover:text-[hsl(var(--brand-end))]/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand-end))]/30 data-[state=active]:border-b-2 data-[state=active]:border-[hsl(var(--brand-end))] data-[state=active]:pb-2"
-          >
-            Podcasts
-          </TabsTrigger>
-          <TabsTrigger
-            value="articles"
-            className="bg-transparent rounded-none px-0 pb-2 text-base md:text-lg font-medium tracking-tight text-[hsl(var(--brand-end))] hover:text-[hsl(var(--brand-end))]/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand-end))]/30 data-[state=active]:border-b-2 data-[state=active]:border-[hsl(var(--brand-end))] data-[state=active]:pb-2"
-          >
-            Articles
-          </TabsTrigger>
-          <TabsTrigger
-            value="quizzes"
-            className="bg-transparent rounded-none px-0 pb-2 text-base md:text-lg font-medium tracking-tight text-[hsl(var(--brand-end))] hover:text-[hsl(var(--brand-end))]/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand-end))]/30 data-[state=active]:border-b-2 data-[state=active]:border-[hsl(var(--brand-end))] data-[state=active]:pb-2"
-          >
-            Quizzes
-          </TabsTrigger>
-        </TabsList>
+            View all →
+          </Link>
+        </div>
 
         <TabsContent value="videos">
           {!videos && !vidErr ? (
