@@ -4,6 +4,20 @@ import SocialMediaWidget from "@/components/widgets/SocialMediaWidget";
 import Logo from "@/components/Logo";
 import { siteConfig } from "@/config/config";
 
+interface NavigationLink {
+  label: string;
+  href: string;
+}
+
+const footerNavigation: NavigationLink[] = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Products", href: "/products" },
+  { label: "News", href: "/news" },
+  { label: "FAQ", href: "/resources/faq" },
+  { label: "Contact", href: "/contact" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-[hsl(var(--brand-end))] text-white">
