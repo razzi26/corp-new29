@@ -33,14 +33,14 @@ export const staticRoutes: SitemapRoute[] = [
     priority: 0.8,
     changeFrequency: "monthly",
   },
-  {
-    path: "/products",
-    title: "Products",
-    description: "Browse our comprehensive catalog of biosafety products",
-    priority: 0.9,
-    changeFrequency: "weekly",
-    children: [], // Will be populated with dynamic product routes
-  },
+  // {
+  //   path: "/products",
+  //   title: "Products",
+  //   description: "Browse our comprehensive catalog of biosafety products",
+  //   priority: 0.9,
+  //   changeFrequency: "weekly",
+  //   children: [], // Will be populated with dynamic product routes
+  // },
   {
     path: "/services",
     title: "Services",
