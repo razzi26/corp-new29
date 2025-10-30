@@ -200,8 +200,9 @@ export default function KnowledgeHubWidget() {
       setCanScrollRight(false);
       return;
     }
-    setCanScrollLeft(el.scrollLeft > 0);
-    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
+    const eps = 2; // tolerance for rounding
+    setCanScrollLeft(el.scrollLeft > eps);
+    setCanScrollRight(el.scrollLeft + el.clientWidth + eps < el.scrollWidth);
   }, [tab]);
 
   React.useEffect(() => {
@@ -232,7 +233,12 @@ export default function KnowledgeHubWidget() {
   const scrollActiveBy = (amount: number) => {
     const el = carouselMap.get(tab);
     if (!el) return;
+    // Trigger scroll then schedule state update after the smooth scroll completes
     el.scrollBy({ left: amount, behavior: "smooth" });
+    // immediate optimistic update
+    updateButtons();
+    // re-evaluate after animation (timing depends on browser; 400ms is reasonable)
+    setTimeout(() => updateButtons(), 420);
   };
 
   const scrollPrev = () => scrollActiveBy(- (carouselMap.get(tab)?.clientWidth ?? 400) * 0.8);
