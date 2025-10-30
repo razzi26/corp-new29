@@ -11,7 +11,8 @@ export default function Podcasts() {
   useEffect(() => {
     let mounted = true;
     setLoading(true);
-    fetch("/data/podcasts.json", { cache: "no-store" })
+    const url = new URL("/data/podcasts.json", typeof window !== 'undefined' ? window.location.origin : '/');
+    fetch(url.toString(), { cache: "no-store" })
       .then(async (res) => {
         if (!res.ok) throw new Error(`Failed to load podcasts (${res.status})`);
         return (await res.json()) as unknown;

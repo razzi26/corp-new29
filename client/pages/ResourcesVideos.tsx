@@ -13,7 +13,8 @@ export default function Videos() {
     setLoading(true);
     setError(null);
 
-    fetch("/data/videos.json", { cache: "no-store" })
+    const url = new URL("/data/videos.json", typeof window !== 'undefined' ? window.location.origin : '/');
+    fetch(url.toString(), { cache: "no-store" })
       .then(async (res) => {
         if (!res.ok) throw new Error(`Failed to load videos (${res.status})`);
         return (await res.json()) as unknown;

@@ -31,7 +31,8 @@ export default function KnowledgeHubWidget() {
     const controller = new AbortController();
     (async () => {
       try {
-        const r = await fetch("/data/knowledge-articles.json", {
+        const url = new URL("/data/knowledge-articles.json", typeof window !== 'undefined' ? window.location.origin : '/');
+        const r = await fetch(url.toString(), {
           cache: "no-store",
           credentials: "same-origin",
           headers: { Accept: "application/json" },
@@ -57,7 +58,8 @@ export default function KnowledgeHubWidget() {
     const controller = new AbortController();
     (async () => {
       try {
-        const r = await fetch("/data/quizzes.json", {
+        const url = new URL("/data/quizzes.json", typeof window !== 'undefined' ? window.location.origin : '/');
+        const r = await fetch(url.toString(), {
           cache: "no-store",
           credentials: "same-origin",
           headers: { Accept: "application/json" },
@@ -83,7 +85,8 @@ export default function KnowledgeHubWidget() {
     const controller = new AbortController();
     (async () => {
       try {
-        const r = await fetch("/data/videos.json", {
+        const url = new URL("/data/videos.json", typeof window !== 'undefined' ? window.location.origin : '/');
+        const r = await fetch(url.toString(), {
           cache: "no-store",
           credentials: "same-origin",
           headers: { Accept: "application/json" },
@@ -109,7 +112,8 @@ export default function KnowledgeHubWidget() {
     const controller = new AbortController();
     (async () => {
       try {
-        const r = await fetch("/data/podcasts.json", {
+        const url = new URL("/data/podcasts.json", typeof window !== 'undefined' ? window.location.origin : '/');
+        const r = await fetch(url.toString(), {
           cache: "no-store",
           credentials: "same-origin",
           headers: { Accept: "application/json" },
