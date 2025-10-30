@@ -15,9 +15,9 @@ export default function Logo({
   const logoContent = (
     <div className="flex select-none items-center gap-3">
       <img
-        src="/logo_ebi.png"
+        src={siteConfig.logoPath}
         alt={siteConfig.siteName}
-        className={isHeader ? "h-11 w-11 object-contain" : "h-8 w-8 object-contain"}
+        className={isHeader ? "h-14 w-14 object-contain" : "h-10 w-10 object-contain"}
       />
       {!hideName && (
         <span
