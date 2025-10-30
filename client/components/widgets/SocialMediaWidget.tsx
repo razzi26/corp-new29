@@ -4,7 +4,6 @@ import { siteConfig } from "@/config/config";
 
 export default function SocialMediaWidget() {
   return (<>
-      <div className="text-sm font-semibold mb-2">Follow us</div>
       <div className="flex gap-3">
         <a
           href={siteConfig.socialMedia.facebook}
