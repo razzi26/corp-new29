@@ -20,7 +20,7 @@ const footerNavigation: NavigationLink[] = [
 
 export default function Footer() {
   return (
-    <footer className="text-white" style={{ background: "radial-gradient(circle at center, #003BA3 0%, #020113 100%)" }}>
+    <footer className="bg-[#003BA3] text-white">
       <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3">
         <div>
           <div className="mb-4 text-white">
