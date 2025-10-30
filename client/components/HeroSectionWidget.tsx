@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/Button";
+import { siteConfig } from "@/config/config";
 
 interface HeroFeature {
   label: string;
@@ -30,9 +31,9 @@ interface HeroSectionWidgetProps {
 }
 
 const defaultConfig: Required<HeroSectionWidgetProps> = {
-  title: "Welcome to Esco Biosafety Institute!",
+  title: `Welcome to ${siteConfig.siteName}!`,
   description:
-    "Biosafety in any laboratory is crucial. The Esco Biosafety Institute was established to be your partner in achieving it. Our institute provides:",
+    `Biosafety in any laboratory is crucial. The ${siteConfig.siteName} was established to be your partner in achieving it. Our institute provides:`,
   backgroundImage:
     "https://images.pexels.com/photos/9574399/pexels-photo-9574399.jpeg",
   backgroundImageAlt:
