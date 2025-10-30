@@ -4,17 +4,17 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[hsl(var(--primary))] disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0 [&>a]:!text-inherit [&>a:hover]:!text-inherit",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[hsl(var(--primary))] disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         primary:
-          "bg-[hsl(var(--primary))] text-white hover:bg-[hsl(205_100%_20%)]",
+          "bg-[hsl(var(--primary))] text-white hover:bg-[hsl(205_100%_20%)] [&>a]:!text-white [&>a:hover]:!text-white",
         secondary:
-          "bg-transparent border border-slate-300 text-slate-900 hover:bg-slate-50",
-        ghost: "bg-transparent text-slate-900 hover:bg-slate-100",
+          "bg-transparent border border-slate-300 text-slate-900 hover:bg-slate-50 [&>a]:!text-slate-900 [&>a:hover]:!text-slate-900",
+        ghost: "bg-transparent text-slate-900 hover:bg-slate-100 [&>a]:!text-slate-900 [&>a:hover]:!text-slate-900",
         outline:
-          "border-2 border-white text-white hover:bg-white/15",
+          "border-2 border-white text-white hover:bg-white/15 [&>a]:!text-white [&>a:hover]:!text-white",
       },
       size: {
         sm: "px-3 py-2 text-sm",
