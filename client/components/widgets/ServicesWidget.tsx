@@ -1,9 +1,11 @@
 import { GraduationCap, CheckCircle, Wrench } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Service {
   title: string;
   description: string;
   icon: React.ComponentType<{ className?: string }>;
+  href: string;
 }
 
 const SERVICES: Service[] = [
@@ -12,18 +14,21 @@ const SERVICES: Service[] = [
     description:
       "Securing adherence to quality system standards by comprehensive auditing and compliance to regulations by training & education.",
     icon: GraduationCap,
+    href: "#trainings-seminars",
   },
   {
     title: "Validation Service",
     description:
       "Ensuring integrity and performance of systems, facilities & equipment through validation.",
     icon: CheckCircle,
+    href: "#validation-service",
   },
   {
     title: "Commissioning and Qualification",
     description:
       "Providing quality installation of equipment and construction of facility from start to finish.",
     icon: Wrench,
+    href: "#commissioning-qualification",
   },
 ];
 
