@@ -76,9 +76,16 @@ export default function TrainingsOverview() {
             <Link
               key={href}
               to={href}
-              className="relative group overflow-hidden border border-slate-200 bg-white p-6 transition-all duration-300 hover:shadow-lg hover:border-slate-300 cursor-pointer block 
+              className={`
+        relative group overflow-hidden bg-white p-6
+        transition-all duration-300 hover:shadow-lg cursor-pointer block
+        
+        border-r border-b border-slate-200
+        hover:border-slate-300
+
         md:[&:nth-child(2n)]:border-r-0
-        lg:[&:nth-child(3n)]:border-r-0"
+        lg:[&:nth-child(3n)]:border-r-0
+      `}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--primary))]/5 to-[hsl(var(--primary))]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
