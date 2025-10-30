@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { PageBanner } from "@/components/layout/PageBanner";
+import { Button } from "@/components/Button";
 
 export default function About() {
   return (
@@ -45,18 +46,12 @@ export default function About() {
               be a foundational pillar for education and standards.
             </p>
             <div className="flex flex-wrap gap-3 pt-4">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center bg-[hsl(var(--brand-end))] px-5 py-3 font-semibold text-white transition hover:bg-brand-secondary"
-              >
-                Contact us
-              </Link>
-              <Link
-                to="/news"
-                className="inline-flex items-center justify-center border border-slate-300 px-5 py-3 font-semibold transition hover:bg-slate-50"
-              >
-                Explore resources
-              </Link>
+              <Button asChild size="md" className="bg-[hsl(var(--brand-end))] hover:bg-brand-secondary">
+                <Link to="/contact">Contact us</Link>
+              </Button>
+              <Button asChild variant="secondary" size="md">
+                <Link to="/news">Explore resources</Link>
+              </Button>
             </div>
           </div>
 
