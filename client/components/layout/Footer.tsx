@@ -1,4 +1,4 @@
-6import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ContactsDetailsWidget from "@/components/widgets/ContactsDetailsWidget";
 import SocialMediaWidget from "@/components/widgets/SocialMediaWidget";
 import Logo from "@/components/Logo";
@@ -20,7 +20,7 @@ const footerNavigation: NavigationLink[] = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0d1f4a] text-white pb-12">
+    <footer className="bg-[#0d1f4a] text-white pb-16">
       <div className="container mx-auto px-4 py-16 grid gap-8 md:grid-cols-3">
         <div>
           <div className="mb-4 text-white">
