@@ -95,7 +95,7 @@ export default function ServicesWidget() {
                   </div>
                 </div>
 
-                <div className="absolute bottom-0 left-0 h-1 w-0 bg-secondary transition-all duration-300 group-hover:w-full" />
+                <div className="absolute bottom-0 left-0 h-1 w-0 bg-[hsl(var(--secondary-brand))] transition-all duration-300 group-hover:w-full" />
               </Link>
             );
           })}
