@@ -3,8 +3,7 @@ import { XLogo } from "@/components/icons/XLogo";
 import { siteConfig } from "@/config/config";
 
 export default function SocialMediaWidget() {
-  return (
-    <div className="mt-4">
+  return (<>
       <div className="text-sm font-semibold mb-2">Follow us</div>
       <div className="flex gap-3">
         <a
@@ -53,6 +52,5 @@ export default function SocialMediaWidget() {
           <Youtube className="h-5 w-5" />
         </a>
       </div>
-    </div>
-  );
+  </>);
 }
