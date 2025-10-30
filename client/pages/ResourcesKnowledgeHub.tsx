@@ -38,7 +38,14 @@ export default function KnowledgeHub() {
           tags: d.tags,
           image: d.image,
         }));
-        setItems(metas);
+        // Deduplicate articles by slug to avoid rendering warnings about duplicate React keys
+        const seen = new Set<string>();
+        const uniqueMetas = metas.filter((m) => {
+          if (seen.has(m.slug)) return false;
+          seen.add(m.slug);
+          return true;
+        });
+        setItems(uniqueMetas);
       } catch (e: any) {
         if (e?.name === "AbortError") return;
         if (mounted) setError(String(e));
