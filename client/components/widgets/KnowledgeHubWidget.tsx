@@ -7,40 +7,21 @@ import { PodcastCard } from "@/components/cards/PodcastCard";
 import { ArticleCard } from "@/components/cards/ArticleCard";
 import { QuizCard } from "@/components/cards/QuizCard";
 
-const ScrollCarousel: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const ref = React.useRef<HTMLDivElement | null>(null);
-  const [canLeft, setCanLeft] = React.useState(false);
-  const [canRight, setCanRight] = React.useState(false);
+// Map of carousel containers so external header-level controls can operate them
+const carouselMap = new Map<string, HTMLDivElement>();
 
-  const update = () => {
-    const el = ref.current;
-    if (!el) return;
-    setCanLeft(el.scrollLeft > 0);
-    setCanRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
-  };
+const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }> = ({ children, carouselId }) => {
+  const ref = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
-    update();
-    const el = ref.current;
-    if (!el) return;
-    const onScroll = () => update();
-    const onResize = () => update();
-    el.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onResize);
+    if (ref.current) carouselMap.set(carouselId, ref.current);
     return () => {
-      el.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onResize);
+      carouselMap.delete(carouselId);
     };
-  }, []);
-
-  const scrollBy = (amount: number) => {
-    const el = ref.current;
-    if (!el) return;
-    el.scrollBy({ left: amount, behavior: "smooth" });
-  };
+  }, [carouselId]);
 
   return (
-    <div className="relative">
+    <div>
       <div
         ref={ref}
         className="flex gap-6 overflow-x-auto py-2 px-1 scrollbar-none"
@@ -48,30 +29,6 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode }> = ({ children }) =
         aria-live="polite"
       >
         {children}
-      </div>
-
-      {/* Controls */}
-      <div className="absolute right-2 top-1/2 transform -translate-y-1/2 flex items-center gap-2">
-        <button
-          type="button"
-          onClick={() => scrollBy(- (ref.current?.clientWidth ?? 400) * 0.8)}
-          disabled={!canLeft}
-          aria-disabled={!canLeft}
-          className={`p-2 rounded-full border bg-white shadow-md transition-opacity ${!canLeft ? "opacity-40 cursor-not-allowed" : "hover:scale-105"}`}
-          aria-label="Scroll left"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
-        </button>
-        <button
-          type="button"
-          onClick={() => scrollBy((ref.current?.clientWidth ?? 400) * 0.8)}
-          disabled={!canRight}
-          aria-disabled={!canRight}
-          className={`p-2 rounded-full border bg-white shadow-md transition-opacity ${!canRight ? "opacity-40 cursor-not-allowed" : "hover:scale-105"}`}
-          aria-label="Scroll right"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
-        </button>
       </div>
     </div>
   );
