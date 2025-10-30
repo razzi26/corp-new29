@@ -13,7 +13,6 @@ import { Link } from "react-router-dom";
 import FAQWidget from "@/components/widgets/FAQWidget";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/Button";
-import { heroConfig } from "@/config/heroConfig";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LoadingIndicator } from "@/components/ui/loading-indicator";
@@ -23,17 +22,6 @@ import HeroSectionWidget from "@/components/HeroSectionWidget";
 import FeaturedProductsWidget from "@/components/widgets/FeaturedProductsWidget";
 import ServicesWidget from "@/components/widgets/ServicesWidget";
 import KnowledgeHubWidget from "@/components/widgets/KnowledgeHubWidget";
-
-const iconMap = {
-  GraduationCap,
-  ShieldCheck,
-  Microscope,
-  BadgeCheck,
-  Check,
-  HeartPulse,
-  Stethoscope,
-  Scan,
-};
 
 export default function Index() {
   return (
