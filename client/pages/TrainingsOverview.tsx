@@ -83,7 +83,6 @@ export default function TrainingsOverview() {
         border-r border-b border-slate-200
         hover:border-slate-300
 
-        md:[&:nth-child(2n)]:border-r-0
         lg:[&:nth-child(3n)]:border-r-0
       `}
             >
