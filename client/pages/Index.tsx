@@ -12,7 +12,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import FAQWidget from "@/components/widgets/FAQWidget";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/Button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LoadingIndicator } from "@/components/ui/loading-indicator";
@@ -99,19 +99,12 @@ export default function Index() {
 
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center bg-white text-[hsl(var(--primary))] px-8 py-3.5 font-bold transition hover:bg-white/90"
-              >
-                Get certified
-              </Link>
-              <Link
-                to="/resources"
-                className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3.5 font-bold transition hover:bg-white/15 backdrop-blur-sm"
-              >
-                Explore resources
-              </Link>
+              <Button asChild size="lg" className="bg-white text-[hsl(var(--primary))] hover:bg-white/90">
+                <Link to="/contact">Get certified</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="backdrop-blur-sm">
+                <Link to="/resources">Explore resources</Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -138,12 +131,9 @@ export default function Index() {
                 your knowledge, we're your central hub for building expertise in
                 biosafety protocols.
               </p>
-              <Link
-                to="/about"
-                className="inline-flex items-center rounded-lg bg-[hsl(var(--primary))] text-white px-8 py-3 font-bold shadow-lg hover:shadow-xl transition hover:bg-brand-secondary"
-              >
-                Learn more
-              </Link>
+              <Button asChild size="lg" className="shadow-lg hover:shadow-xl bg-[hsl(var(--primary))] hover:bg-brand-secondary">
+                <Link to="/about">Learn more</Link>
+              </Button>
             </div>
             <div className="relative">
               <div className="bg-[hsl(var(--primary))] h-96 rounded-xl"></div>
@@ -272,9 +262,9 @@ export default function Index() {
                       />
                     </label>
 
-                    <button className="inline-flex items-center justify-center bg-brand-secondary hover:bg-brand-secondary/90 text-white px-8 py-3.5 font-bold transition">
+                    <Button variant="primary" size="lg" className="bg-brand-secondary hover:bg-brand-secondary/90">
                       Send request
-                    </button>
+                    </Button>
                     <p className="text-sm text-slate-500">
                       By submitting, you agree to the processing of personal data.
                     </p>
