@@ -6,7 +6,7 @@ import { siteConfig } from "@/config/config";
 
 export default function Footer() {
   return (
-    <footer className="mt-20 bg-[hsl(var(--brand-end))] text-white">
+    <footer className="bg-[hsl(var(--brand-end))] text-white">
       <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3">
         <div>
           <div className="mb-4 text-white">
