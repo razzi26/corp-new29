@@ -21,9 +21,12 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
   const [hover, setHover] = React.useState(false);
   const [isDragging, setIsDragging] = React.useState(false);
   const dragState = React.useRef({ startX: 0, startScroll: 0 });
+  const isPotentialDrag = React.useRef(false);
+  const suppressedClick = React.useRef(false);
   const [cursorPos, setCursorPos] = React.useState({ x: 0, y: 0 });
   const [isTouch, setIsTouch] = React.useState(false);
   const [isOverInteractive, setIsOverInteractive] = React.useState(false);
+  const DRAG_THRESHOLD = 6; // px before we consider it a drag
 
   const isInteractiveTarget = (target: EventTarget | null) => {
     const el = target as HTMLElement | null;
