@@ -6,6 +6,7 @@ interface Service {
   description: string;
   icon: React.ComponentType<{ className?: string }>;
   href: string;
+  backgroundImage?: string;
 }
 
 const SERVICES: Service[] = [
@@ -15,6 +16,7 @@ const SERVICES: Service[] = [
       "Securing adherence to quality system standards by comprehensive auditing and compliance to regulations by training & education.",
     icon: GraduationCap,
     href: "/services/trainings-and-seminars",
+    backgroundImage: "https://pharmavalidationtraininginstitute.com/images/section/Audit-and-Training-Service.jpg",
   },
   {
     title: "Validation Service",
@@ -22,6 +24,7 @@ const SERVICES: Service[] = [
       "Ensuring integrity and performance of systems, facilities & equipment through validation.",
     icon: CheckCircle,
     href: "/services/validation-service",
+    backgroundImage: "https://pharmavalidationtraininginstitute.com/images/section/Validation-Service.jpg",
   },
   {
     title: "Commissioning and Qualification",
@@ -29,6 +32,7 @@ const SERVICES: Service[] = [
       "Providing quality installation of equipment and construction of facility from start to finish.",
     icon: Wrench,
     href: "/services/commissioning-and-qualification",
+    backgroundImage: "https://pharmavalidationtraininginstitute.com/images/section/Commissioning-and-Qualification.jpg",
   },
 ];
 
@@ -55,8 +59,16 @@ export default function ServicesWidget() {
                 key={index}
                 to={service.href}
                 className="relative group overflow-hidden rounded-lg border border-slate-200 bg-white p-8 transition-all duration-300 hover:shadow-lg hover:border-slate-300 cursor-pointer block"
+                style={{
+                  backgroundImage: service.backgroundImage ? `url(${service.backgroundImage})` : undefined,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--primary))]/5 to-[hsl(var(--primary))]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                {service.backgroundImage && (
+                  <div className="absolute inset-0 bg-black/40" />
+                )}
 
                 <div className="relative">
                   <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-[hsl(var(--primary))]/10 text-[hsl(var(--primary))]">
