@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/Button";
+import Logo from "@/components/Logo";
 
 const nav: Array<{
   label: string;
@@ -108,21 +109,16 @@ export default function Header() {
       >
         <div className="container mx-auto px-4 relative">
           <div className="flex py-4 xl:py-5 items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]">
-            <Link to="/" className="flex select-none items-center gap-3">
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(205_100%_20%)] font-bold text-white text-lg shadow-md">
-                E
-              </span>
-              <span
-                className={cn(
-                  "font-bold tracking-wide transition-colors text-lg",
-                  scrolled || open || isProductDetail
-                    ? "text-[hsl(var(--primary))]"
-                    : "text-white",
-                )}
-              >
-                Esco Biosafety Institute
-              </span>
-            </Link>
+            <div
+              className={cn(
+                "transition-colors",
+                scrolled || open || isProductDetail
+                  ? "text-[hsl(var(--primary))]"
+                  : "text-white",
+              )}
+            >
+              <Logo variant="header" />
+            </div>
 
             <nav className="hidden items-center gap-8 text-base md:flex md:justify-self-center font-semibold">
               {nav.map((item) =>
