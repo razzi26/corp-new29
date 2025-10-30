@@ -126,6 +126,18 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
   // hide cursor on touch devices
   const cursorVisible = hover && !isTouch && !isOverInteractive;
 
+  // global click suppression during drags
+  React.useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (suppressedClick.current) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+    };
+    window.addEventListener("click", onClick, true);
+    return () => window.removeEventListener("click", onClick, true);
+  }, []);
+
   return (
     <div className="relative">
       <div
