@@ -38,12 +38,6 @@ const TRAINING_CARDS: TrainingCard[] = [
     icon: Wrench,
   },
   {
-    href: "/services/brochures",
-    title: "Brochures",
-    description: "Downloadable training materials and documentation.",
-    icon: FileStack,
-  },
-  {
     href: "/services/trainings-and-seminars",
     title: "Trainings and Seminars",
     description:
