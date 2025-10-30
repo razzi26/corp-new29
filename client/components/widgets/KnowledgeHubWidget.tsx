@@ -15,7 +15,7 @@ const notifyCarouselUpdate = () => {
   for (const cb of carouselUpdateListeners) cb();
 };
 
-const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; enableDrag?: boolean; enableInertia?: boolean }> = ({ children, carouselId, enableDrag = true, enableInertia = true }) => {
+const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; enableDrag?: boolean; enableInertia?: boolean }> = ({ children, carouselId, enableDrag = false, enableInertia = true }) => {
   const ref = React.useRef<HTMLDivElement | null>(null);
 
   const [hover, setHover] = React.useState(false);
