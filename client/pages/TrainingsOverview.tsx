@@ -71,7 +71,7 @@ export default function TrainingsOverview() {
       />
 
       <section className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {TRAINING_CARDS.map(
             ({ href, title, description, icon: Icon }) => (
               <Link
