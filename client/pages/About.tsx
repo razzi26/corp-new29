@@ -46,7 +46,11 @@ export default function About() {
               be a foundational pillar for education and standards.
             </p>
             <div className="flex flex-wrap gap-3 pt-4">
-              <Button asChild size="md" className="bg-[hsl(var(--brand-end))] hover:bg-[hsl(205_100%_20%)]">
+              <Button
+                asChild
+                size="md"
+                className="bg-[hsl(var(--brand-end))] hover:bg-[hsl(205_100%_20%)]"
+              >
                 <Link to="/contact">Contact us</Link>
               </Button>
               <Button asChild variant="secondary" size="md">

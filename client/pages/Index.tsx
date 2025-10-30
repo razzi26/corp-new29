@@ -33,7 +33,11 @@ export default function Index() {
                 your knowledge, we're your central hub for building expertise in
                 biosafety protocols.
               </p>
-              <Button asChild size="lg" className="shadow-lg hover:shadow-xl bg-[hsl(var(--primary))] hover:bg-[hsl(205_100%_20%)]">
+              <Button
+                asChild
+                size="lg"
+                className="shadow-lg hover:shadow-xl bg-[hsl(var(--primary))] hover:bg-[hsl(205_100%_20%)]"
+              >
                 <Link to="/about">Learn more</Link>
               </Button>
             </div>
@@ -114,8 +118,6 @@ export default function Index() {
               </div>
             </div>
 
-
-
             <div className="mb-8">
               <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
               <h3 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
@@ -125,16 +127,16 @@ export default function Index() {
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
-                    const form = new FormData(e.currentTarget as HTMLFormElement);
+                    const form = new FormData(
+                      e.currentTarget as HTMLFormElement,
+                    );
                     console.log(Object.fromEntries(form.entries()));
                     alert("Thank you! We will contact you shortly.");
                   }}
                   className="bg-white"
                 >
                   <div className="grid gap-8">
-
                     <div className="border-b border-slate-300 pb-8">
-                      
                       <ul className="space-y-3 text-slate-700 text-base leading-relaxed">
                         <li>Phone: +7 (495) 000-00-00</li>
                         <li>Email: contact@escobiosafety.org</li>
@@ -167,18 +169,21 @@ export default function Index() {
                       />
                     </label>
 
-                    <Button variant="primary" size="lg" className="bg-brand-secondary hover:bg-brand-secondary/90">
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      className="bg-brand-secondary hover:bg-brand-secondary/90"
+                    >
                       Send request
                     </Button>
                     <p className="text-sm text-slate-500">
-                      By submitting, you agree to the processing of personal data.
+                      By submitting, you agree to the processing of personal
+                      data.
                     </p>
                   </div>
                 </form>
               </div>
             </div>
-
-            
           </div>
         </div>
       </section>

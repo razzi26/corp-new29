@@ -45,7 +45,8 @@ export default function ServicesWidget() {
             Our Services
           </h2>
           <p className="mt-4 text-lg text-slate-700 max-w-2xl">
-            Comprehensive solutions for biosafety compliance and quality assurance
+            Comprehensive solutions for biosafety compliance and quality
+            assurance
           </p>
         </div>
 
@@ -59,7 +60,7 @@ export default function ServicesWidget() {
                 className="relative group overflow-hidden rounded-lg border border-slate-200 bg-white p-8 transition-all duration-300 hover:shadow-lg hover:border-slate-300 cursor-pointer block"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--primary))]/5 to-[hsl(var(--primary))]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                
+
                 <div className="relative">
                   <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-[hsl(var(--primary))]/10 text-[hsl(var(--primary))]">
                     <Icon className="h-7 w-7" />

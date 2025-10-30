@@ -134,7 +134,11 @@ export default function Footer() {
               placeholder="Your email"
               className="h-14 flex-1 bg-white text-slate-900 px-3 outline-none focus:ring-2 focus:ring-white"
             />
-            <Button variant="primary" size="md" className="bg-white text-[hsl(var(--brand-end))] hover:bg-white/90 shadow hover:shadow-md">
+            <Button
+              variant="primary"
+              size="md"
+              className="bg-white text-[hsl(var(--brand-end))] hover:bg-white/90 shadow hover:shadow-md"
+            >
               Subscribe
             </Button>
           </form>

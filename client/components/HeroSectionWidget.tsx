@@ -37,10 +37,8 @@ const defaultConfig: Required<HeroSectionWidgetProps> = {
     "https://images.pexels.com/photos/9574399/pexels-photo-9574399.jpeg",
   backgroundImageAlt:
     "Bright and sterile laboratory featuring high-tech research equipment and medical professionals at work",
-  backgroundGradFrom:
-    "#020113",
-  backgroundGradTo:
-    "#003BA3",
+  backgroundGradFrom: "#020113",
+  backgroundGradTo: "#003BA3",
   features: [
     {
       label: "Training & seminars",
@@ -77,9 +75,7 @@ const defaultConfig: Required<HeroSectionWidgetProps> = {
   ],
 };
 
-export default function HeroSectionWidget(
-  props: HeroSectionWidgetProps = {},
-) {
+export default function HeroSectionWidget(props: HeroSectionWidgetProps = {}) {
   const config = {
     ...defaultConfig,
     ...props,
@@ -107,7 +103,7 @@ export default function HeroSectionWidget(
           "
           style={{
             "--from": `${config.backgroundGradFrom}`, // 60% opacity
-            "--to": `${config.backgroundGradTo}`,     // 75% opacity
+            "--to": `${config.backgroundGradTo}`, // 75% opacity
           }}
         />
       </div>

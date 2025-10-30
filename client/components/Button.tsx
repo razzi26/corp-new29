@@ -12,7 +12,8 @@ const buttonVariants = cva(
           "bg-[hsl(var(--primary))] text-white hover:bg-[hsl(205_100%_20%)] [&>a]:!text-white [&>a:hover]:!text-white",
         secondary:
           "bg-transparent border border-slate-300 text-slate-900 hover:bg-slate-50 [&>a]:!text-slate-900 [&>a:hover]:!text-slate-900",
-        ghost: "bg-transparent text-slate-900 hover:bg-slate-100 [&>a]:!text-slate-900 [&>a:hover]:!text-slate-900",
+        ghost:
+          "bg-transparent text-slate-900 hover:bg-slate-100 [&>a]:!text-slate-900 [&>a:hover]:!text-slate-900",
         outline:
           "border-2 border-white text-white hover:bg-white/15 [&>a]:!text-white [&>a:hover]:!text-white",
       },
@@ -37,10 +38,7 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    { className, variant, size, asChild = false, ...props },
-    ref,
-  ) => {
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
     return (
       <Comp

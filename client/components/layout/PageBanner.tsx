@@ -40,15 +40,19 @@ export function PageBanner({
         className="relative overflow-hidden text-white"
         data-header-anchor
         style={{
-          backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundImage: backgroundImage
+            ? `url(${backgroundImage})`
+            : undefined,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         <div
           className="absolute inset-0"
           style={{
-            background: gradient || 'linear-gradient(90deg, hsl(var(--brand-start)), hsl(var(--brand-end)))',
+            background:
+              gradient ||
+              "linear-gradient(90deg, hsl(var(--brand-start)), hsl(var(--brand-end)))",
             opacity: 0.95,
           }}
           aria-hidden="true"

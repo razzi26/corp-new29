@@ -44,12 +44,7 @@ export function QuizCard({ quiz }: { quiz: QuizMeta }) {
           </dd>
         </div>
       </div>
-      <Button
-        asChild
-        variant="primary"
-        size="lg"
-        className="w-full"
-      >
+      <Button asChild variant="primary" size="lg" className="w-full">
         <Link to={`/resources/quizzes/${quiz.slug}`}>Start quiz</Link>
       </Button>
     </div>
