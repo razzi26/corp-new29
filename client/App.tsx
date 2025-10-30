@@ -31,6 +31,9 @@ import ResourcesQuizzes from "./pages/ResourcesQuizzes";
 import Quiz from "./pages/Quiz";
 import KnowledgeArticle from "./pages/KnowledgeArticle";
 import ProductPage from "./pages/Product";
+import TrainingsAndSeminars from "./pages/services/TrainingsAndSeminars";
+import ValidationService from "./pages/services/ValidationService";
+import CommissioningAndQualification from "./pages/services/CommissioningAndQualification";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +52,9 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/services" element={<TrainingsOverview />} />
+            <Route path="/services/trainings-and-seminars" element={<TrainingsAndSeminars />} />
+            <Route path="/services/validation-service" element={<ValidationService />} />
+            <Route path="/services/commissioning-and-qualification" element={<CommissioningAndQualification />} />
             <Route path="/services/about" element={<Trainings />} />
             <Route path="/services/seminars" element={<SeminarsPage />} />
             <Route path="/services/services" element={<Services />} />
