@@ -188,7 +188,7 @@ export default function KnowledgeHubWidget() {
 
           </div>
 
-          {*/<Link
+          {/*<Link
             to={viewAllHref}
             className="hidden md:inline-flex text-base font-semibold text-brand-secondary hover:underline"
           >
