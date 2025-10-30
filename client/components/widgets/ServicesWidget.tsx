@@ -50,9 +50,10 @@ export default function ServicesWidget() {
           {SERVICES.map((service, index) => {
             const Icon = service.icon;
             return (
-              <div
+              <Link
                 key={index}
-                className="relative group overflow-hidden rounded-lg border border-slate-200 bg-white p-8 transition-all duration-300 hover:shadow-lg hover:border-slate-300"
+                to={service.href}
+                className="relative group overflow-hidden rounded-lg border border-slate-200 bg-white p-8 transition-all duration-300 hover:shadow-lg hover:border-slate-300 cursor-pointer block"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--primary))]/5 to-[hsl(var(--primary))]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 
@@ -71,7 +72,7 @@ export default function ServicesWidget() {
                 </div>
 
                 <div className="absolute bottom-0 left-0 h-1 w-0 bg-[hsl(var(--primary))] transition-all duration-300 group-hover:w-full" />
-              </div>
+              </Link>
             );
           })}
         </div>
