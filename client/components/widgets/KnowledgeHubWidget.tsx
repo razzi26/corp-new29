@@ -106,7 +106,7 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
   };
 
   // hide cursor on touch devices
-  const cursorVisible = hover && !isTouch;
+  const cursorVisible = hover && !isTouch && !isOverInteractive;
 
   return (
     <div className="relative">
