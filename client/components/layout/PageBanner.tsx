@@ -32,12 +32,12 @@ export function PageBanner({
   breadcrumbs,
   meta,
   backgroundImage,
-  gradient,
+  gradient ='linear-gradient(135deg, #020113 0%, #003BA3)',
 }: PageBannerProps) {
   return (
     <>
       <section
-        className="relative overflow-hidden text-white"
+        className="pt-24 pb-12 relative overflow-hidden text-white"
         data-header-anchor
         style={{
           backgroundImage: backgroundImage

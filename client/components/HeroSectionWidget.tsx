@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/Button";
+import { siteConfig } from "@/config/config";
 
 interface HeroFeature {
   label: string;
@@ -30,9 +31,8 @@ interface HeroSectionWidgetProps {
 }
 
 const defaultConfig: Required<HeroSectionWidgetProps> = {
-  title: "Welcome to Esco Biosafety Institute!",
-  description:
-    "Biosafety in any laboratory is crucial. The Esco Biosafety Institute was established to be your partner in achieving it. Our institute provides:",
+  title: `Welcome to ${siteConfig.siteName}!`,
+  description: `Biosafety in any laboratory is crucial. The ${siteConfig.siteName} was established to be your partner in achieving it. Our institute provides:`,
   backgroundImage:
     "https://images.pexels.com/photos/9574399/pexels-photo-9574399.jpeg",
   backgroundImageAlt:
@@ -83,15 +83,15 @@ export default function HeroSectionWidget(props: HeroSectionWidgetProps = {}) {
 
   return (
     <section
-      className="relative text-white overflow-hidden"
+      className="relative text-white overflow-hidden min-h-screen md:h-screen lg:h-screen"
       data-header-anchor
       aria-label="Hero section"
     >
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(2_1%_7%)] to-[hsl(205_100%_38%)]">
         <img
           src={config.backgroundImage}
           alt={config.backgroundImageAlt}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover opacity-50"
           loading="eager"
           decoding="async"
         />
@@ -102,12 +102,12 @@ export default function HeroSectionWidget(props: HeroSectionWidgetProps = {}) {
             mix-blend-multiply
           "
           style={{
-            "--from": `${config.backgroundGradFrom}`, // 60% opacity
-            "--to": `${config.backgroundGradTo}`, // 75% opacity
+            "--from": `${config.backgroundGradFrom}`,
+            "--to": `${config.backgroundGradTo}`,
           }}
         />
       </div>
-      <div className="relative container mx-auto px-4 pt-32 pb-24 md:pt-40 md:h-screen lg:pt-52 lg:pb-40">
+      <div className="relative container mx-auto px-4 pt-32 pb-24 md:pt-40 md:h-screen lg:pt-52 lg:pb-40 flex items-center">
         <div className="hero-grid grid gap-6 items-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
             {config.title}

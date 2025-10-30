@@ -14,24 +14,21 @@ const SERVICES: Service[] = [
     description:
       "Securing adherence to quality system standards by comprehensive auditing and compliance to regulations by training & education.",
     icon: GraduationCap,
-    // href: "#trainings-seminars",
-    href: "#",
+    href: "/services/trainings-and-seminars",
   },
   {
     title: "Validation Service",
     description:
       "Ensuring integrity and performance of systems, facilities & equipment through validation.",
     icon: CheckCircle,
-    // href: "#validation-service",
-    href: "#",
+    href: "/services/validation-service",
   },
   {
     title: "Commissioning and Qualification",
     description:
       "Providing quality installation of equipment and construction of facility from start to finish.",
     icon: Wrench,
-    // href: "#commissioning-qualification",
-    href: "#",
+    href: "/services/commissioning-and-qualification",
   },
 ];
 

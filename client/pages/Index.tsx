@@ -5,6 +5,9 @@ import { Button } from "@/components/Button";
 import HeroSectionWidget from "@/components/HeroSectionWidget";
 import ServicesWidget from "@/components/widgets/ServicesWidget";
 import KnowledgeHubWidget from "@/components/widgets/KnowledgeHubWidget";
+import ContactsDetailsWidget from "@/components/widgets/ContactsDetailsWidget";
+import EmailSubscriptionWidget from "@/components/widgets/EmailSubscriptionWidget";
+import { siteConfig } from "@/config/config";
 
 export default function Index() {
   return (
@@ -20,7 +23,7 @@ export default function Index() {
               <div className="mb-6">
                 <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
                 <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
-                  About Esco Biosafety Institute
+                  About {siteConfig.siteName}
                 </h2>
               </div>
               <p className="text-lg text-slate-700 mb-4 leading-relaxed">
@@ -137,11 +140,9 @@ export default function Index() {
                 >
                   <div className="grid gap-8">
                     <div className="border-b border-slate-300 pb-8">
-                      <ul className="space-y-3 text-slate-700 text-base leading-relaxed">
-                        <li>Phone: +7 (495) 000-00-00</li>
-                        <li>Email: contact@escobiosafety.org</li>
-                        <li>Mon–Fri: 9:00–19:00</li>
-                      </ul>
+                      <div className="text-slate-700 text-base leading-relaxed">
+                        <ContactsDetailsWidget />
+                      </div>
                     </div>
 
                     <label className="grid gap-2 text-base font-semibold">
@@ -187,6 +188,9 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Email Subscription */}
+      <EmailSubscriptionWidget />
     </div>
   );
 }

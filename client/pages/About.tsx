@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 import { PageBanner } from "@/components/layout/PageBanner";
 import { Button } from "@/components/Button";
+import { siteConfig } from "@/config/config";
 
 export default function About() {
   return (
@@ -27,7 +28,7 @@ export default function About() {
             <div>
               <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
               <h1 className="text-3xl font-bold leading-tight text-[hsl(205_100%_12%)] md:text-5xl">
-                Esco Biosafety Institute
+                {siteConfig.siteName}
               </h1>
             </div>
             <p className="max-w-prose text-base text-slate-700 md:text-lg leading-relaxed">
@@ -40,10 +41,10 @@ export default function About() {
             </p>
             <p className="max-w-prose text-base text-slate-700 md:text-lg leading-relaxed">
               A key initiative in fulfilling its vision was the creation of the
-              Esco Biosafety Institute. The Institute was created to push
-              forward Esco's core mission of building a global life sciences
-              ecosystem. Beyond being a manufacturing hardware, it purposes to
-              be a foundational pillar for education and standards.
+              {siteConfig.siteName}. The Institute was created to push forward
+              Esco's core mission of building a global life sciences ecosystem.
+              Beyond being a manufacturing hardware, it purposes to be a
+              foundational pillar for education and standards.
             </p>
             <div className="flex flex-wrap gap-3 pt-4">
               <Button
