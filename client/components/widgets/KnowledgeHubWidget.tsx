@@ -92,17 +92,25 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
           // keep desired until drag ends
         }
       } else {
-        // apply inertia if present
-        if (Math.abs(dragVelocity.current) > VELOCITY_THRESHOLD) {
-          el.scrollLeft = Math.max(0, Math.min(el.scrollWidth - el.clientWidth, el.scrollLeft + dragVelocity.current));
-          // decay velocity
-          dragVelocity.current *= INERTIA_DECAY;
+        // apply inertia if present (time-based)
+        const last = lastFrameTime.current ?? now;
+        const dt = Math.max(0, now - last);
+        lastFrameTime.current = now;
+        if (Math.abs(dragVelocity.current) > VELOCITY_THRESHOLD && dt > 0) {
+          // movement based on velocity (px/ms * ms)
+          const movement = dragVelocity.current * dt;
+          el.scrollLeft = Math.max(0, Math.min(el.scrollWidth - el.clientWidth, el.scrollLeft + movement));
+          // exponential decay based on time
+          const decay = Math.exp(-INERTIA_DECAY_RATE * dt);
+          dragVelocity.current *= decay;
         } else if (desiredScroll.current !== null) {
           // fallback snap
           el.scrollLeft = desiredScroll.current;
           desiredScroll.current = null;
+          lastFrameTime.current = null;
         } else {
           // nothing to do -> stop RAF
+          lastFrameTime.current = null;
           stopRaf();
           return;
         }
