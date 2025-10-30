@@ -231,7 +231,11 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
     if (!el) return;
     isPotentialDrag.current = true;
     dragState.current = { startX: e.clientX, startScroll: el.scrollLeft };
+    // reset previous samples
+    prevMoveX.current = null;
+    prevMoveTime.current = null;
     lastMoveX.current = e.clientX;
+    lastMoveTime.current = performance.now();
     dragVelocity.current = 0;
     // add mouseup on window to capture when released outside
     window.addEventListener("mouseup", endDrag, { once: true });
