@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Button } from "@/components/Button";
 import ContactsDetailsWidget from "@/components/widgets/ContactsDetailsWidget";
 import SocialMediaWidget from "@/components/widgets/SocialMediaWidget";
 import { siteConfig } from "@/config/config";
@@ -77,37 +76,6 @@ export default function Footer() {
               <ContactsDetailsWidget />
             </div>
           </div>
-        </div>
-        <div>
-          <h4 className="font-semibold mb-3">Subscribe</h4>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              const fd = new FormData(e.currentTarget as HTMLFormElement);
-              const email = fd.get("email");
-              console.log({ email });
-              alert("Thanks for subscribing!");
-            }}
-            className="flex flex-col sm:flex-row gap-3"
-          >
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder="Your email"
-              className="h-14 flex-1 bg-white text-slate-900 px-3 outline-none focus:ring-2 focus:ring-white"
-            />
-            <Button
-              variant="primary"
-              size="md"
-              className="bg-white text-[hsl(var(--brand-end))] hover:bg-white/90 shadow hover:shadow-md"
-            >
-              Subscribe
-            </Button>
-          </form>
-          <p className="mt-2 text-xs text-white/80">
-            No spam. Unsubscribe anytime.
-          </p>
         </div>
       </div>
       <div className="border-t border-white/20">
