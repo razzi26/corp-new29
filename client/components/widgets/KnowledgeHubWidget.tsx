@@ -59,9 +59,13 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
     return () => notifyCarouselUpdate();
   }, [carouselId]);
 
-  // rAF-based smooth drag
+  // rAF-based drag + inertia
   const desiredScroll = React.useRef<number | null>(null);
   const rafId = React.useRef<number | null>(null);
+  // inertia / momentum support
+  const dragVelocity = React.useRef<number>(0);
+  const isDraggingRef = React.useRef<boolean>(false);
+  const lastMoveX = React.useRef<number | null>(null);
   const runRaf = () => {
     if (rafId.current) return;
     const step = () => {
@@ -70,11 +74,27 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
         rafId.current = null;
         return;
       }
-      if (desiredScroll.current !== null) {
-        const target = desiredScroll.current;
-        el.scrollLeft = target;
-        // once applied, clear desired so loop can stop
-        desiredScroll.current = null;
+      // If actively dragging, follow cursor exactly
+      if (isDraggingRef.current) {
+        if (desiredScroll.current !== null) {
+          el.scrollLeft = desiredScroll.current;
+          // keep desired until drag ends
+        }
+      } else {
+        // apply inertia if present
+        if (Math.abs(dragVelocity.current) > 0.05) {
+          el.scrollLeft = Math.max(0, Math.min(el.scrollWidth - el.clientWidth, el.scrollLeft + dragVelocity.current));
+          // decay velocity
+          dragVelocity.current *= 0.92;
+        } else if (desiredScroll.current !== null) {
+          // fallback snap
+          el.scrollLeft = desiredScroll.current;
+          desiredScroll.current = null;
+        } else {
+          // nothing to do -> stop RAF
+          stopRaf();
+          return;
+        }
       }
       rafId.current = requestAnimationFrame(step);
     };
@@ -112,8 +132,9 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
       if (moveDelta >= DRAG_THRESHOLD) {
         // start actual drag
         setIsDragging(true);
+        isDraggingRef.current = true;
         document.body.style.userSelect = "none";
-        // start smooth rAF loop
+        // start rAF loop
         desiredScroll.current = dragState.current.startScroll;
         runRaf();
       }
@@ -121,7 +142,13 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
 
     if (isDragging) {
       const delta = e.clientX - dragState.current.startX;
-      desiredScroll.current = dragState.current.startScroll - delta;
+      const desired = dragState.current.startScroll - delta;
+      desiredScroll.current = desired;
+      // compute frame velocity (pixels per frame), invert because moving cursor right scrolls left
+      const lastX = lastMoveX.current ?? e.clientX;
+      const frameDelta = e.clientX - lastX;
+      dragVelocity.current = -frameDelta * 0.9;
+      lastMoveX.current = e.clientX;
     }
   };
   const endDrag = () => {
@@ -135,10 +162,13 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
       // clear after next tick to allow internal click handlers to check
       setTimeout(() => (suppressedClick.current = false), 50);
     }
-    // stop RAF after short delay to allow easing to finish
-    // stop RAF immediately when drag ends for direct response
+    // allow inertia to continue if velocity present
     desiredScroll.current = null;
-    stopRaf();
+    if (Math.abs(dragVelocity.current) > 0.05) {
+      runRaf();
+    } else {
+      stopRaf();
+    }
   };
   const onMouseDown = (e: React.MouseEvent) => {
     // only consider drag with left mouse button and when not over interactive element
@@ -149,6 +179,8 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
     if (!el) return;
     isPotentialDrag.current = true;
     dragState.current = { startX: e.clientX, startScroll: el.scrollLeft };
+    lastMoveX.current = e.clientX;
+    dragVelocity.current = 0;
     // add mouseup on window to capture when released outside
     window.addEventListener("mouseup", endDrag, { once: true });
   };
