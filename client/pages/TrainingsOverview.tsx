@@ -84,7 +84,6 @@ export default function TrainingsOverview() {
 
         /* убрать правую границу у крайних колонок */
         sm:[&:nth-child(1n)]:border-r-0
-        md:[&:nth-child(2n)]:border-r-0
         lg:[&:nth-child(3n)]:border-r-0
 
         /* убрать нижнюю границу у элементов последней строки (чтобы нет внешней нижней рамки) */
