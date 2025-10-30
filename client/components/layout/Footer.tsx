@@ -12,7 +12,7 @@ interface NavigationLink {
 const footerNavigation: NavigationLink[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Products", href: "/products" },
+  // { label: "Products", href: "/products" },
   { label: "News", href: "/news" },
   { label: "FAQ", href: "/resources/faq" },
   { label: "Contact", href: "/contact" },
