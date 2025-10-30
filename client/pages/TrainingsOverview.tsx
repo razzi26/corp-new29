@@ -5,9 +5,9 @@ import {
   Users,
   Wrench,
   FileStack,
-  ArrowRight,
   type LucideIcon,
-  GraduationCap, CheckCircle,
+  GraduationCap,
+  CheckCircle,
 } from "lucide-react"; 
 
 type TrainingCard = {
