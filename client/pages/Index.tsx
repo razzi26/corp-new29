@@ -40,6 +40,7 @@ export default function Index() {
             decoding="async"
           />
           <div className="absolute inset-0 bg-[hsl(var(--brand-start))]/75" />
+          
         </div>
         <div className="relative container mx-auto px-4 pt-32 pb-24 md:pt-40 md:h-screen lg:pt-52 lg:pb-40">
           <div className="hero-grid grid gap-6 items-center">
