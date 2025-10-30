@@ -71,15 +71,10 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
         return;
       }
       if (desiredScroll.current !== null) {
-        // lerp towards desired for smoothing (higher = faster)
-        const current = el.scrollLeft;
         const target = desiredScroll.current;
-        const next = current + (target - current) * 10; // smoothing factor (faster)
-        el.scrollLeft = next;
-        if (Math.abs(next - target) < 3) {
-          el.scrollLeft = target;
-          desiredScroll.current = null;
-        }
+        el.scrollLeft = target;
+        // once applied, clear desired so loop can stop
+        desiredScroll.current = null;
       }
       rafId.current = requestAnimationFrame(step);
     };
@@ -141,10 +136,9 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
       setTimeout(() => (suppressedClick.current = false), 50);
     }
     // stop RAF after short delay to allow easing to finish
-    setTimeout(() => {
-      desiredScroll.current = null;
-      stopRaf();
-    }, 40);
+    // stop RAF immediately when drag ends for direct response
+    desiredScroll.current = null;
+    stopRaf();
   };
   const onMouseDown = (e: React.MouseEvent) => {
     // only consider drag with left mouse button and when not over interactive element
@@ -184,7 +178,7 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
       <div
         ref={ref}
         className={`flex gap-6 overflow-x-auto py-2 px-1 scrollbar-none ${cursorVisible ? "cursor-none" : ""}`}
-        style={{ scrollBehavior: "smooth" }}
+        style={{ scrollBehavior: "auto" }}
         aria-live="polite"
         onMouseEnter={onMouseEnter}
         onMouseMove={onMouseMove}
