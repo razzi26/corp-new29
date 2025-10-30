@@ -32,7 +32,7 @@ export function PageBanner({
   breadcrumbs,
   meta,
   backgroundImage,
-  gradient,
+  gradient ='linear-gradient(135deg, #020113 0%, #003BA3)',
 }: PageBannerProps) {
   return (
     <>
