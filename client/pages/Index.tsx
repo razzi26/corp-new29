@@ -23,6 +23,17 @@ import FeaturedProductsWidget from "@/components/widgets/FeaturedProductsWidget"
 import ServicesWidget from "@/components/widgets/ServicesWidget";
 import KnowledgeHubWidget from "@/components/widgets/KnowledgeHubWidget";
 
+const iconMap = {
+  GraduationCap,
+  ShieldCheck,
+  Microscope,
+  BadgeCheck,
+  Check,
+  HeartPulse,
+  Stethoscope,
+  Scan,
+};
+
 export default function Index() {
   return (
     <div id="top" className="text-slate-900 bg-white">
