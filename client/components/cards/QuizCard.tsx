@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/Button";
 import type { QuizMeta } from "@/entities/quiz";
 
 export function QuizCard({ quiz }: { quiz: QuizMeta }) {
@@ -46,7 +46,9 @@ export function QuizCard({ quiz }: { quiz: QuizMeta }) {
       </div>
       <Button
         asChild
-        className="w-full bg-[hsl(var(--primary))] text-white transition-all duration-300 hover:bg-[hsl(205_100%_20%)] focus-visible:ring-[hsl(var(--primary))]/40 font-bold text-base py-3"
+        variant="primary"
+        size="lg"
+        className="w-full"
       >
         <Link to={`/resources/quizzes/${quiz.slug}`}>Start quiz</Link>
       </Button>
