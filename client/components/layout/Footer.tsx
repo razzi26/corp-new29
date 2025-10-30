@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+6import { Link } from "react-router-dom";
 import ContactsDetailsWidget from "@/components/widgets/ContactsDetailsWidget";
 import SocialMediaWidget from "@/components/widgets/SocialMediaWidget";
 import Logo from "@/components/Logo";
