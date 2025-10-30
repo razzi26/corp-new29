@@ -36,6 +36,7 @@ export default function KnowledgeHub() {
           date: d.date,
           readMins: d.readMins,
           tags: d.tags,
+          image: d.image,
         }));
         setItems(metas);
       } catch (e: any) {
