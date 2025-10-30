@@ -79,22 +79,18 @@ export default function TrainingsOverview() {
               className={`
         relative group overflow-hidden bg-white p-6 transition-all duration-300 hover:shadow-lg cursor-pointer block
 
-        /* mobile: не рисуем правый бордер (1 колонка) — оставляем только нижний, чтобы разделять строки */
-        border-b border-slate-200 hover:border-slate-300
-        border-r-0
+        /* mobile: только нижний бордер, без правого (1 колонка) */
+        border-b border-slate-200 border-r-0 hover:border-slate-300
 
-        /* на md/lg включаем правый бордер по умолчанию */
-        md:border-r md:border-slate-200
-        lg:border-r lg:border-slate-200
+        /* md: добавить правый бордер всем, кроме каждого 2-го */
+        md:[&:not(:nth-child(2n))]:border-r md:border-slate-200
+        /* lg: добавить правый бордер всем, кроме каждого 3-го */
+        lg:[&:not(:nth-child(3n))]:border-r lg:border-slate-200
 
-        /* но убираем правый бордер у крайних колонок (в зависимости от брейкпоинта) */
-        md:[&:nth-child(2n)]:border-r-0      /* в 2 колонки — каждый 2-й элемент (правый) не должен иметь правый бордер */
-        lg:[&:nth-child(3n)]:border-r-0      /* в 3 колонки — каждый 3-й элемент */
-
-        /* убрать нижний бордер у элементов последней строки (чтоб не было нижней внешней рамки) */
-        [&:nth-last-child(-n+1)]:border-b-0  /* 1 колонка — последний элемент */
-        md:[&:nth-last-child(-n+2)]:border-b-0 /* md: если в строке 2, то последние 2 убираем низ */
-        lg:[&:nth-last-child(-n+3)]:border-b-0 /* lg: последние 3 убираем низ */
+        /* убрать нижний бордер у элементов последней строки (для каждого брейкпоинта) */
+        [&:nth-last-child(-n+1)]:border-b-0  /* 1 колонка (sm) */
+        md:[&:nth-last-child(-n+2)]:border-b-0 /* 2 колонки (md) */
+        lg:[&:nth-last-child(-n+3)]:border-b-0 /* 3 колонки (lg) */
       `}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--primary))]/5 to-[hsl(var(--primary))]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
