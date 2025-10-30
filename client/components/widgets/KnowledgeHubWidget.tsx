@@ -122,7 +122,7 @@ export default function KnowledgeHubWidget() {
         if (!r.ok) throw new Error(`Failed to load podcasts (${r.status})`);
         const data = await r.json();
         if (!mounted) return;
-        setPodcasts(Array.isArray(data) ? data.slice(0, 10) : []);
+        setPodcasts(Array.isArray(data) ? data.slice(0, 3) : []);
       } catch (e: any) {
         if (e?.name === "AbortError") return;
         if (mounted) setPodErr(String(e));
