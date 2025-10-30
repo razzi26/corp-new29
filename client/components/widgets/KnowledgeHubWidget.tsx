@@ -358,7 +358,7 @@ export default function KnowledgeHubWidget() {
             <div className="mt-6">
               <ScrollCarousel carouselId="quizzes">
                 {quizzes!.map((q) => (
-                  <div key={q.slug} className="min-w-[320px] flex-shrink-0">
+                  <div key={q.slug} className="w-[320px] max-w-[360px] flex-shrink-0">
                     <QuizCard quiz={q} />
                   </div>
                 ))}
