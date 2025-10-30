@@ -83,7 +83,7 @@ export default function TrainingsOverview() {
         border-r border-b border-slate-200 hover:border-slate-300
 
         /* убрать правую границу у крайних колонок */
-        sm:[&:nth-child(2n)]:border-r-0
+        sm:[&:nth-child(1n)]:border-r-0
         md:[&:nth-child(2n)]:border-r-0
         lg:[&:nth-child(3n)]:border-r-0
 
