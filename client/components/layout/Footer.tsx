@@ -35,51 +35,16 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-3">Navigation</h4>
             <ul className="space-y-2 text-sm text-white/90">
-              <li>
-                <Link className="hover:text-brand-secondary transition" to="/">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-brand-secondary transition"
-                  to="/about"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-brand-secondary transition"
-                  to="/products"
-                >
-                  Products
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-brand-secondary transition"
-                  to="/news"
-                >
-                  News
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-brand-secondary transition"
-                  to="/resources/faq"
-                >
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-brand-secondary transition"
-                  to="/contact"
-                >
-                  Contact
-                </Link>
-              </li>
+              {footerNavigation.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    className="hover:text-brand-secondary transition"
+                    to={link.href}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
