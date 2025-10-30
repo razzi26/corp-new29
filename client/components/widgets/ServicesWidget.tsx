@@ -73,7 +73,7 @@ export default function ServicesWidget() {
                   <div className="absolute inset-0 bg-black/40" />
                 )}
 
-                <div className="relative z-10 p-8 h-full flex flex-col min-h-96">
+                <div className="relative z-10 p-8 h-full flex flex-col justify-end min-h-96">
                   <h3 className={`mb-3 text-xl font-bold ${
                     service.backgroundImage
                       ? "text-white"
@@ -82,7 +82,7 @@ export default function ServicesWidget() {
                     {service.title}
                   </h3>
 
-                  <p className={`text-base leading-relaxed flex-1 ${
+                  <p className={`text-base leading-relaxed ${
                     service.backgroundImage
                       ? "text-white/90"
                       : "text-slate-700"
