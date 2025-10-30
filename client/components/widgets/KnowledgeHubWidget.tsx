@@ -41,7 +41,7 @@ export default function KnowledgeHubWidget() {
         if (!r.ok) throw new Error(`Failed to load articles (${r.status})`);
         const data = await r.json();
         if (!mounted) return;
-        setArticles(Array.isArray(data) ? data.slice(0, 3) : []);
+        setArticles(Array.isArray(data) ? data.slice(0, 10) : []);
       } catch (e: any) {
         if (e?.name === "AbortError") return;
         if (mounted) setArtErr(String(e));
