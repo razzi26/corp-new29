@@ -18,9 +18,11 @@ const nav: Array<{
     label: "Services",
     to: "/services",
     children: [
+      { to: "/services/trainings-and-seminars", label: "Trainings and Seminars" },
+      { to: "/services/validation-service", label: "Validation Service" },
+      { to: "/services/commissioning-and-qualification", label: "Commissioning and Qualification" },
       { to: "/services/about", label: "About Trainings" },
       { to: "/services/seminars", label: "Seminars" },
-      { to: "/services/services", label: "Services" },
       { to: "/services/brochures", label: "Brochures" },
     ],
   },
