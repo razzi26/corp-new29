@@ -14,25 +14,24 @@ export default function Logo({
 
   const logoContent = (
     <div className="flex select-none items-center gap-3">
-      {isHeader ? (
-        <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(205_100%_20%)] font-bold text-white text-lg shadow-md">
-          E
-        </span>
-      ) : (
-        <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/20 text-white font-bold">
-          E
-        </span>
-      )}
+      <img
+        src={siteConfig.logoPath}
+        alt={siteConfig.siteName}
+        className={
+          isHeader ? "h-14 w-14 object-contain" : "h-20 w-20 object-contain"
+        }
+      />
       {!hideName && (
-        <span
+        <div
           className={
             isHeader
-              ? "font-bold tracking-wide transition-colors text-lg"
-              : "font-semibold"
+              ? "font-semibold tracking-wide transition-colors text-lg leading-tight"
+              : "font-semibold text-lg leading-tight"
           }
         >
-          {siteConfig.siteName}
-        </span>
+          <div>Esco Biosafety</div>
+          <div>Institute</div>
+        </div>
       )}
     </div>
   );

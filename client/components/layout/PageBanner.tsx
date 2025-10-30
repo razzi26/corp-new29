@@ -32,12 +32,12 @@ export function PageBanner({
   breadcrumbs,
   meta,
   backgroundImage,
-  gradient ='linear-gradient(135deg, #020113 0%, #003BA3)',
+  gradient = "linear-gradient(135deg, #020113 0%, #003BA3)",
 }: PageBannerProps) {
   return (
     <>
       <section
-        className="pt-24 pb-12 relative overflow-hidden text-white"
+        className="pt-24 pb-8 relative overflow-hidden text-white"
         data-header-anchor
         style={{
           backgroundImage: backgroundImage
@@ -57,7 +57,42 @@ export function PageBanner({
           }}
           aria-hidden="true"
         />
-        <div className="relative container mx-auto px-4 pt-24 pb-10 md:pt-32 md:pb-14">
+        <div className="relative container mx-auto px-4 pt-12 pb-10 md:pt-16 md:pb-14">
+          {/* Breadcrumbs at the top */}
+          <div className="mb-8 md:mb-16">
+            <nav aria-label="breadcrumb">
+              <BreadcrumbList>
+                {breadcrumbs.map((crumb, index) => {
+                  const key = `${index}-${crumb.href ?? crumb.label}`;
+                  const displayLabel =
+                    crumb.href === "/resources" ? "Knowledge Hub" : crumb.label;
+                  return (
+                    <React.Fragment key={key}>
+                      <BreadcrumbItem>
+                        {crumb.href ? (
+                          <BreadcrumbLink
+                            asChild
+                            className="transition-colors hover:text-brand-secondary text-white/80"
+                          >
+                            <Link to={crumb.href}>{displayLabel}</Link>
+                          </BreadcrumbLink>
+                        ) : (
+                          <BreadcrumbPage className="text-white/80">
+                            {displayLabel}
+                          </BreadcrumbPage>
+                        )}
+                      </BreadcrumbItem>
+                      {index < breadcrumbs.length - 1 && (
+                        <BreadcrumbSeparator className="text-white/60" />
+                      )}
+                    </React.Fragment>
+                  );
+                })}
+              </BreadcrumbList>
+            </nav>
+          </div>
+
+          {/* Title and description */}
           <div className="w-full md:w-[70%]">
             <h1 className="break-words text-3xl font-semibold md:text-4xl">
               {title}
@@ -71,38 +106,6 @@ export function PageBanner({
           </div>
         </div>
       </section>
-
-      {/* Breadcrumbs just below the banner */}
-      <div className="bg-white">
-        <div className="container mx-auto px-4 py-3 md:py-4">
-          <Breadcrumb>
-            <BreadcrumbList>
-              {breadcrumbs.map((crumb, index) => {
-                const key = `${index}-${crumb.href ?? crumb.label}`;
-                const displayLabel =
-                  crumb.href === "/resources" ? "Knowledge Hub" : crumb.label;
-                return (
-                  <React.Fragment key={key}>
-                    <BreadcrumbItem>
-                      {crumb.href ? (
-                        <BreadcrumbLink
-                          asChild
-                          className="transition-colors hover:text-foreground"
-                        >
-                          <Link to={crumb.href}>{displayLabel}</Link>
-                        </BreadcrumbLink>
-                      ) : (
-                        <BreadcrumbPage>{displayLabel}</BreadcrumbPage>
-                      )}
-                    </BreadcrumbItem>
-                    {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
-                  </React.Fragment>
-                );
-              })}
-            </BreadcrumbList>
-          </Breadcrumb>
-        </div>
-      </div>
     </>
   );
 }

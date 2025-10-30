@@ -20,8 +20,8 @@ const footerNavigation: NavigationLink[] = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[hsl(var(--brand-end))] text-white">
-      <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3">
+    <footer className="bg-[#0d1f4a] text-white">
+      <div className="container mx-auto px-4 py-16 grid gap-8 md:grid-cols-3">
         <div>
           <div className="mb-4 text-white">
             <Logo variant="footer" />
@@ -29,7 +29,10 @@ export default function Footer() {
           <p className="text-sm leading-relaxed text-white/90">
             {siteConfig.description}
           </p>
-          <SocialMediaWidget />
+          <div className="mt-8">
+            <div className="text-sm font-semibold mb-2">Follow us</div>
+            <SocialMediaWidget />
+          </div>
         </div>
         <div className="grid grid-cols-2 gap-6 md:gap-10">
           <div>

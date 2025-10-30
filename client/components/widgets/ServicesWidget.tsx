@@ -1,4 +1,4 @@
-import { GraduationCap, CheckCircle, Wrench } from "lucide-react";
+import { GraduationCap, CheckCircle, Wrench, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface Service {
@@ -6,6 +6,7 @@ interface Service {
   description: string;
   icon: React.ComponentType<{ className?: string }>;
   href: string;
+  backgroundImage?: string;
 }
 
 const SERVICES: Service[] = [
@@ -15,6 +16,8 @@ const SERVICES: Service[] = [
       "Securing adherence to quality system standards by comprehensive auditing and compliance to regulations by training & education.",
     icon: GraduationCap,
     href: "/services/trainings-and-seminars",
+    backgroundImage:
+      "https://pharmavalidationtraininginstitute.com/images/section/Audit-and-Training-Service.jpg",
   },
   {
     title: "Validation Service",
@@ -22,6 +25,8 @@ const SERVICES: Service[] = [
       "Ensuring integrity and performance of systems, facilities & equipment through validation.",
     icon: CheckCircle,
     href: "/services/validation-service",
+    backgroundImage:
+      "https://pharmavalidationtraininginstitute.com/images/section/Validation-Service.jpg",
   },
   {
     title: "Commissioning and Qualification",
@@ -29,6 +34,8 @@ const SERVICES: Service[] = [
       "Providing quality installation of equipment and construction of facility from start to finish.",
     icon: Wrench,
     href: "/services/commissioning-and-qualification",
+    backgroundImage:
+      "https://pharmavalidationtraininginstitute.com/images/section/Commissioning-and-Qualification.jpg",
   },
 ];
 
@@ -54,25 +61,50 @@ export default function ServicesWidget() {
               <Link
                 key={index}
                 to={service.href}
-                className="relative group overflow-hidden rounded-lg border border-slate-200 bg-white p-8 transition-all duration-300 hover:shadow-lg hover:border-slate-300 cursor-pointer block"
+                className="relative group overflow-hidden rounded-lg border border-slate-200 bg-white transition-all duration-300 hover:shadow-lg hover:border-slate-300 cursor-pointer block"
               >
+                <div
+                  className="absolute inset-0 transition-transform duration-300 group-hover:scale-105"
+                  style={{
+                    backgroundImage: service.backgroundImage
+                      ? `url(${service.backgroundImage})`
+                      : undefined,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                />
                 <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--primary))]/5 to-[hsl(var(--primary))]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                {service.backgroundImage && (
+                  <div className="absolute inset-0 bg-black/40" />
+                )}
 
-                <div className="relative">
-                  <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-[hsl(var(--primary))]/10 text-[hsl(var(--primary))]">
-                    <Icon className="h-7 w-7" />
-                  </div>
-
-                  <h3 className="mb-3 text-xl font-bold text-[hsl(205_100%_12%)]">
+                <div className="relative z-10 p-8 h-full flex flex-col justify-end min-h-96">
+                  <h3
+                    className={`mb-3 text-xl font-bold ${
+                      service.backgroundImage
+                        ? "text-white"
+                        : "text-[hsl(205_100%_12%)]"
+                    }`}
+                  >
                     {service.title}
                   </h3>
 
-                  <p className="text-base leading-relaxed text-slate-700">
+                  <p
+                    className={`text-base leading-relaxed ${
+                      service.backgroundImage
+                        ? "text-white/90"
+                        : "text-slate-700"
+                    }`}
+                  >
                     {service.description}
                   </p>
+
+                  <div className="absolute top-6 right-6 text-white">
+                    <ArrowRight className="h-6 w-6 transition-transform duration-300 group-hover:-rotate-45" />
+                  </div>
                 </div>
 
-                <div className="absolute bottom-0 left-0 h-1 w-0 bg-[hsl(var(--primary))] transition-all duration-300 group-hover:w-full" />
+                <div className="absolute bottom-0 left-0 h-1 w-0 bg-[hsl(var(--secondary-brand))] transition-all duration-300 group-hover:w-full" />
               </Link>
             );
           })}

@@ -1,5 +1,6 @@
 export const siteConfig = {
   siteName: "Esco Biosafety Institute",
+  logoPath: "/logo_ebi.png",
   description:
     "Your trusted hub for biosafety training, regulatory guidance and practical resources. Build expertise and confidence in laboratory safety.",
   contacts: {

@@ -34,7 +34,7 @@ const defaultConfig: Required<HeroSectionWidgetProps> = {
   title: `Welcome to ${siteConfig.siteName}!`,
   description: `Biosafety in any laboratory is crucial. The ${siteConfig.siteName} was established to be your partner in achieving it. Our institute provides:`,
   backgroundImage:
-    "https://images.pexels.com/photos/9574399/pexels-photo-9574399.jpeg",
+    "/ebi_hero.jpg",
   backgroundImageAlt:
     "Bright and sterile laboratory featuring high-tech research equipment and medical professionals at work",
   backgroundGradFrom: "#020113",
