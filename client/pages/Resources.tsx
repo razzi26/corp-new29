@@ -82,7 +82,7 @@ export default function Resources() {
               <Link
                 key={href}
                 to={href}
-                className="relative group overflow-hidden bg-white md:p-2 lg:p-6 transition-all duration-300 hover:shadow-lg cursor-pointer block rounded-none"
+                className="relative group overflow-hidden bg-white p-2 lg:p-6 transition-all duration-300 hover:shadow-lg cursor-pointer block rounded-none"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--primary))]/5 to-[hsl(var(--primary))]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
