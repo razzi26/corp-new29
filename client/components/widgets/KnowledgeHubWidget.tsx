@@ -18,6 +18,16 @@ const notifyCarouselUpdate = () => {
 const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }> = ({ children, carouselId }) => {
   const ref = React.useRef<HTMLDivElement | null>(null);
 
+  const [hover, setHover] = React.useState(false);
+  const [isDragging, setIsDragging] = React.useState(false);
+  const dragState = React.useRef({ startX: 0, startScroll: 0 });
+  const [cursorPos, setCursorPos] = React.useState({ x: 0, y: 0 });
+  const [isTouch, setIsTouch] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsTouch(typeof window !== "undefined" && ("ontouchstart" in window || navigator.maxTouchPoints > 0));
+  }, []);
+
   React.useEffect(() => {
     const el = ref.current;
     if (el) {
@@ -39,15 +49,82 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
     return () => notifyCarouselUpdate();
   }, [carouselId]);
 
+  // handlers
+  const onMouseEnter = (e: React.MouseEvent) => {
+    if (isTouch) return;
+    setHover(true);
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    setCursorPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (isTouch) return;
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    setCursorPos({ x, y });
+
+    if (isDragging) {
+      const delta = e.clientX - dragState.current.startX;
+      el.scrollLeft = dragState.current.startScroll - delta;
+    }
+  };
+  const endDrag = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+    document.body.style.userSelect = "";
+  };
+  const onMouseDown = (e: React.MouseEvent) => {
+    if (isTouch) return;
+    const el = ref.current;
+    if (!el) return;
+    setIsDragging(true);
+    dragState.current = { startX: e.clientX, startScroll: el.scrollLeft };
+    document.body.style.userSelect = "none";
+    // add mouseup on window to capture when released outside
+    window.addEventListener("mouseup", endDrag, { once: true });
+  };
+  const onMouseLeave = () => {
+    setHover(false);
+    endDrag();
+  };
+
+  // hide cursor on touch devices
+  const cursorVisible = hover && !isTouch;
+
   return (
-    <div>
+    <div className="relative">
       <div
         ref={ref}
-        className="flex gap-6 overflow-x-auto py-2 px-1 scrollbar-none"
+        className={`flex gap-6 overflow-x-auto py-2 px-1 scrollbar-none ${cursorVisible ? "cursor-none" : ""}`}
         style={{ scrollBehavior: "smooth" }}
         aria-live="polite"
+        onMouseEnter={onMouseEnter}
+        onMouseMove={onMouseMove}
+        onMouseLeave={onMouseLeave}
+        onMouseDown={onMouseDown}
       >
         {children}
+      </div>
+
+      {/* Custom drag cursor (only desktop) */}
+      <div
+        aria-hidden
+        className={`pointer-events-none hidden md:flex items-center justify-center rounded-full text-white text-sm font-semibold ${cursorVisible ? "opacity-100" : "opacity-0"} transition-opacity duration-150`}
+        style={{
+          position: "absolute",
+          left: cursorPos.x - 28,
+          top: cursorPos.y - 28,
+          width: 56,
+          height: 56,
+          background: "var(--brand-secondary, #0b9b5b)",
+          transform: "translateZ(0)",
+        }}
+      >
+        &lt;-&gt;
       </div>
     </div>
   );
