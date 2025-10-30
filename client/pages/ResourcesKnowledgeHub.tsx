@@ -20,7 +20,10 @@ export default function KnowledgeHub() {
     const controller = new AbortController();
     (async () => {
       try {
-        const url = new URL("/data/knowledge-articles.json", typeof window !== 'undefined' ? window.location.origin : '/');
+        const url = new URL(
+          "/data/knowledge-articles.json",
+          typeof window !== "undefined" ? window.location.origin : "/",
+        );
         const r = await fetch(url.toString(), {
           cache: "no-store",
           credentials: "same-origin",

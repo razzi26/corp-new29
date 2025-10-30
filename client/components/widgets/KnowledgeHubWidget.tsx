@@ -15,7 +15,12 @@ const notifyCarouselUpdate = () => {
   for (const cb of carouselUpdateListeners) cb();
 };
 
-const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; enableDrag?: boolean; enableInertia?: boolean }> = ({ children, carouselId, enableDrag = true, enableInertia = true }) => {
+const ScrollCarousel: React.FC<{
+  children: React.ReactNode;
+  carouselId: string;
+  enableDrag?: boolean;
+  enableInertia?: boolean;
+}> = ({ children, carouselId, enableDrag = true, enableInertia = true }) => {
   const ref = React.useRef<HTMLDivElement | null>(null);
 
   const [hover, setHover] = React.useState(false);
@@ -27,24 +32,29 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
   const [isTouch, setIsTouch] = React.useState(false);
   const [isOverInteractive, setIsOverInteractive] = React.useState(false);
   const INERTIA_ENABLED = true; // master default (can be overridden via prop)
-    // time-based inertia settings tuned for mobile-like feel (stronger)
-    const INERTIA_DECAY_RATE = 0.0009; // per ms decay rate (smaller = longer glide)
+  // time-based inertia settings tuned for mobile-like feel (stronger)
+  const INERTIA_DECAY_RATE = 0.0009; // per ms decay rate (smaller = longer glide)
   const VELOCITY_MULTIPLIER = 2.0; // multiplier applied to measured velocity (flick multiplier)
   const VELOCITY_THRESHOLD = 0.0005; // px/ms minimal velocity to continue inertia
   const MAX_VELOCITY = 6; // px/ms (6 px/ms = 6000 px/s)
   const DRAG_THRESHOLD = 6; // px before we consider it a drag
 
   const dragEnabled = !!enableDrag;
-    const inertiaEnabled = dragEnabled && INERTIA_ENABLED && !!enableInertia;
+  const inertiaEnabled = dragEnabled && INERTIA_ENABLED && !!enableInertia;
 
   const isInteractiveTarget = (target: EventTarget | null) => {
     const el = target as HTMLElement | null;
     if (!el) return false;
-    return !!el.closest("a, button, input, textarea, select, [role=button], [data-no-drag]");
+    return !!el.closest(
+      "a, button, input, textarea, select, [role=button], [data-no-drag]",
+    );
   };
 
   React.useEffect(() => {
-    setIsTouch(typeof window !== "undefined" && ("ontouchstart" in window || navigator.maxTouchPoints > 0));
+    setIsTouch(
+      typeof window !== "undefined" &&
+        ("ontouchstart" in window || navigator.maxTouchPoints > 0),
+    );
   }, []);
 
   React.useEffect(() => {
@@ -73,12 +83,12 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
   const rafId = React.useRef<number | null>(null);
   // inertia / momentum support
   const dragVelocity = React.useRef<number>(0);
-    const isDraggingRef = React.useRef<boolean>(false);
-    const lastMoveX = React.useRef<number | null>(null);
-    const prevMoveX = React.useRef<number | null>(null);
-    const lastMoveTime = React.useRef<number | null>(null);
-    const prevMoveTime = React.useRef<number | null>(null);
-    const lastFrameTime = React.useRef<number | null>(null);
+  const isDraggingRef = React.useRef<boolean>(false);
+  const lastMoveX = React.useRef<number | null>(null);
+  const prevMoveX = React.useRef<number | null>(null);
+  const lastMoveTime = React.useRef<number | null>(null);
+  const prevMoveTime = React.useRef<number | null>(null);
+  const lastFrameTime = React.useRef<number | null>(null);
   const runRaf = () => {
     if (rafId.current) return;
     const step = () => {
@@ -102,7 +112,10 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
         if (Math.abs(dragVelocity.current) > VELOCITY_THRESHOLD && dt > 0) {
           // movement based on velocity (px/ms * ms)
           const movement = dragVelocity.current * dt;
-          el.scrollLeft = Math.max(0, Math.min(el.scrollWidth - el.clientWidth, el.scrollLeft + movement));
+          el.scrollLeft = Math.max(
+            0,
+            Math.min(el.scrollWidth - el.clientWidth, el.scrollLeft + movement),
+          );
           // exponential decay based on time
           const decay = Math.exp(-INERTIA_DECAY_RATE * dt);
           dragVelocity.current *= decay;
@@ -178,7 +191,10 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
         const frameDelta = e.clientX - lastX;
         // velocity in px/ms measured over last interval
         const measured = frameDelta / dt;
-        dragVelocity.current = Math.max(-MAX_VELOCITY, Math.min(MAX_VELOCITY, -measured * VELOCITY_MULTIPLIER));
+        dragVelocity.current = Math.max(
+          -MAX_VELOCITY,
+          Math.min(MAX_VELOCITY, -measured * VELOCITY_MULTIPLIER),
+        );
         lastMoveX.current = e.clientX;
         lastMoveTime.current = now;
       } else {
@@ -207,9 +223,18 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
       const prevT = prevMoveTime.current;
       const lastX = lastMoveX.current;
       const lastT = lastMoveTime.current;
-      if (prevX !== null && prevT !== null && lastX !== null && lastT !== null && lastT > prevT) {
+      if (
+        prevX !== null &&
+        prevT !== null &&
+        lastX !== null &&
+        lastT !== null &&
+        lastT > prevT
+      ) {
         const measured = (lastX - prevX) / (lastT - prevT); // px/ms
-        dragVelocity.current = Math.max(-MAX_VELOCITY, Math.min(MAX_VELOCITY, -measured * VELOCITY_MULTIPLIER));
+        dragVelocity.current = Math.max(
+          -MAX_VELOCITY,
+          Math.min(MAX_VELOCITY, -measured * VELOCITY_MULTIPLIER),
+        );
       }
       // start RAF if velocity significant
       if (Math.abs(dragVelocity.current) > VELOCITY_THRESHOLD) {
@@ -302,10 +327,14 @@ interface VideoItem {
   start?: number;
 }
 
-export default function KnowledgeHubWidget({ enableCustomScroll = false }: { enableCustomScroll?: boolean }) {
+export default function KnowledgeHubWidget({
+  enableCustomScroll = false,
+}: {
+  enableCustomScroll?: boolean;
+}) {
   const [tab, setTab] = useState<
     "videos" | "podcasts" | "articles" | "quizzes"
-    >("articles");
+  >("articles");
   const [articles, setArticles] = useState<any[] | null>(null);
   const [quizzes, setQuizzes] = useState<any[] | null>(null);
   const [videos, setVideos] = useState<VideoItem[] | null>(null);
@@ -320,7 +349,10 @@ export default function KnowledgeHubWidget({ enableCustomScroll = false }: { ena
     const controller = new AbortController();
     (async () => {
       try {
-        const url = new URL("/data/knowledge-articles.json", typeof window !== 'undefined' ? window.location.origin : '/');
+        const url = new URL(
+          "/data/knowledge-articles.json",
+          typeof window !== "undefined" ? window.location.origin : "/",
+        );
         const r = await fetch(url.toString(), {
           cache: "no-store",
           credentials: "same-origin",
@@ -347,7 +379,10 @@ export default function KnowledgeHubWidget({ enableCustomScroll = false }: { ena
     const controller = new AbortController();
     (async () => {
       try {
-        const url = new URL("/data/quizzes.json", typeof window !== 'undefined' ? window.location.origin : '/');
+        const url = new URL(
+          "/data/quizzes.json",
+          typeof window !== "undefined" ? window.location.origin : "/",
+        );
         const r = await fetch(url.toString(), {
           cache: "no-store",
           credentials: "same-origin",
@@ -374,7 +409,10 @@ export default function KnowledgeHubWidget({ enableCustomScroll = false }: { ena
     const controller = new AbortController();
     (async () => {
       try {
-        const url = new URL("/data/videos.json", typeof window !== 'undefined' ? window.location.origin : '/');
+        const url = new URL(
+          "/data/videos.json",
+          typeof window !== "undefined" ? window.location.origin : "/",
+        );
         const r = await fetch(url.toString(), {
           cache: "no-store",
           credentials: "same-origin",
@@ -401,7 +439,10 @@ export default function KnowledgeHubWidget({ enableCustomScroll = false }: { ena
     const controller = new AbortController();
     (async () => {
       try {
-        const url = new URL("/data/podcasts.json", typeof window !== 'undefined' ? window.location.origin : '/');
+        const url = new URL(
+          "/data/podcasts.json",
+          typeof window !== "undefined" ? window.location.origin : "/",
+        );
         const r = await fetch(url.toString(), {
           cache: "no-store",
           credentials: "same-origin",
@@ -484,8 +525,10 @@ export default function KnowledgeHubWidget({ enableCustomScroll = false }: { ena
     setTimeout(() => updateButtons(), 420);
   };
 
-  const scrollPrev = () => scrollActiveBy(- (carouselMap.get(tab)?.clientWidth ?? 400) * 0.8);
-  const scrollNext = () => scrollActiveBy((carouselMap.get(tab)?.clientWidth ?? 400) * 0.8);
+  const scrollPrev = () =>
+    scrollActiveBy(-(carouselMap.get(tab)?.clientWidth ?? 400) * 0.8);
+  const scrollNext = () =>
+    scrollActiveBy((carouselMap.get(tab)?.clientWidth ?? 400) * 0.8);
 
   return (
     <div>
@@ -498,12 +541,12 @@ export default function KnowledgeHubWidget({ enableCustomScroll = false }: { ena
           <div className="flex flex-col items-start gap-6">
             <div className="mb-0">
               <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
-              <div className='flex items-center'>
+              <div className="flex items-center">
                 <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
                   Knowledge Hub
                 </h2>
                 <Link
-                  to={'/resources'}
+                  to={"/resources"}
                   className="ml-4 hidden md:inline-flex text-lg font-semibold text-brand-secondary hover:underline"
                 >
                   Explore →
@@ -537,7 +580,6 @@ export default function KnowledgeHubWidget({ enableCustomScroll = false }: { ena
                 Podcasts
               </TabsTrigger>
             </TabsList>
-
           </div>
 
           <div className="hidden md:flex items-center gap-2">
@@ -549,7 +591,18 @@ export default function KnowledgeHubWidget({ enableCustomScroll = false }: { ena
               className={`p-2 rounded-md border bg-white shadow-sm transition-opacity ${!canScrollLeft ? "opacity-40 cursor-not-allowed" : "hover:scale-105"}`}
               aria-label="Scroll left"
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
             </button>
             <button
               type="button"
@@ -559,7 +612,18 @@ export default function KnowledgeHubWidget({ enableCustomScroll = false }: { ena
               className={`p-2 rounded-md border bg-white shadow-sm transition-opacity ${!canScrollRight ? "opacity-40 cursor-not-allowed" : "hover:scale-105"}`}
               aria-label="Scroll right"
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
             </button>
           </div>
         </div>
@@ -573,9 +637,15 @@ export default function KnowledgeHubWidget({ enableCustomScroll = false }: { ena
             </div>
           ) : (
             <div className="mt-6">
-              <ScrollCarousel carouselId="videos" enableDrag={enableCustomScroll}>
+              <ScrollCarousel
+                carouselId="videos"
+                enableDrag={enableCustomScroll}
+              >
                 {videos!.map((v) => (
-                  <div key={v.id} className="w-[320px] max-w-[360px] flex-shrink-0">
+                  <div
+                    key={v.id}
+                    className="w-[320px] max-w-[360px] flex-shrink-0"
+                  >
                     <VideoCard video={v} />
                   </div>
                 ))}
@@ -593,9 +663,15 @@ export default function KnowledgeHubWidget({ enableCustomScroll = false }: { ena
             </div>
           ) : (
             <div className="mt-6">
-              <ScrollCarousel carouselId="podcasts" enableDrag={enableCustomScroll}>
+              <ScrollCarousel
+                carouselId="podcasts"
+                enableDrag={enableCustomScroll}
+              >
                 {podcasts!.map((p) => (
-                  <div key={p.id} className="w-[320px] max-w-[360px] flex-shrink-0">
+                  <div
+                    key={p.id}
+                    className="w-[320px] max-w-[360px] flex-shrink-0"
+                  >
                     <PodcastCard podcast={p} />
                   </div>
                 ))}
@@ -613,14 +689,20 @@ export default function KnowledgeHubWidget({ enableCustomScroll = false }: { ena
             </div>
           ) : (
             <div className="mt-6">
-              <ScrollCarousel carouselId="articles" enableDrag={enableCustomScroll}>
+              <ScrollCarousel
+                carouselId="articles"
+                enableDrag={enableCustomScroll}
+              >
                 {articles!.map((a) => (
-                  <div key={a.slug} className="
+                  <div
+                    key={a.slug}
+                    className="
                     w-[250px]     // мобилки
                     sm:w-[300px]  // планшеты
                     md:w-[360px]  // десктоп
                     flex-shrink-0
-                  ">
+                  "
+                  >
                     <ArticleCard a={a} />
                   </div>
                 ))}
@@ -638,9 +720,15 @@ export default function KnowledgeHubWidget({ enableCustomScroll = false }: { ena
             </div>
           ) : (
             <div className="mt-6">
-              <ScrollCarousel carouselId="quizzes" enableDrag={enableCustomScroll}>
+              <ScrollCarousel
+                carouselId="quizzes"
+                enableDrag={enableCustomScroll}
+              >
                 {quizzes!.map((q) => (
-                  <div key={q.slug} className="w-[320px] max-w-[360px] flex-shrink-0">
+                  <div
+                    key={q.slug}
+                    className="w-[320px] max-w-[360px] flex-shrink-0"
+                  >
                     <QuizCard quiz={q} />
                   </div>
                 ))}

@@ -191,7 +191,10 @@ export const staticRoutes: SitemapRoute[] = [
 
 export async function fetchDynamicNews(): Promise<DynamicRouteData[]> {
   try {
-    const url = new URL("/data/news-articles.json", typeof window !== 'undefined' ? window.location.origin : '/');
+    const url = new URL(
+      "/data/news-articles.json",
+      typeof window !== "undefined" ? window.location.origin : "/",
+    );
     const response = await fetch(url.toString());
     if (!response.ok) throw new Error("Failed to fetch news");
     const articles = await response.json();
@@ -209,7 +212,10 @@ export async function fetchDynamicNews(): Promise<DynamicRouteData[]> {
 
 export async function fetchDynamicArticles(): Promise<DynamicRouteData[]> {
   try {
-    const url = new URL("/data/knowledge-articles.json", typeof window !== 'undefined' ? window.location.origin : '/');
+    const url = new URL(
+      "/data/knowledge-articles.json",
+      typeof window !== "undefined" ? window.location.origin : "/",
+    );
     const response = await fetch(url.toString());
     if (!response.ok) throw new Error("Failed to fetch articles");
     const articles = await response.json();
@@ -227,7 +233,10 @@ export async function fetchDynamicArticles(): Promise<DynamicRouteData[]> {
 
 export async function fetchDynamicQuizzes(): Promise<DynamicRouteData[]> {
   try {
-    const url = new URL("/data/quizzes.json", typeof window !== 'undefined' ? window.location.origin : '/');
+    const url = new URL(
+      "/data/quizzes.json",
+      typeof window !== "undefined" ? window.location.origin : "/",
+    );
     const response = await fetch(url.toString());
     if (!response.ok) throw new Error("Failed to fetch quizzes");
     const quizzes = await response.json();

@@ -21,7 +21,10 @@ export default function News() {
     const controller = new AbortController();
     (async () => {
       try {
-        const url = new URL("/data/news-articles.json", typeof window !== 'undefined' ? window.location.origin : '/');
+        const url = new URL(
+          "/data/news-articles.json",
+          typeof window !== "undefined" ? window.location.origin : "/",
+        );
         const r = await fetch(url.toString(), {
           cache: "no-store",
           credentials: "same-origin",
