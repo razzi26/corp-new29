@@ -9,14 +9,21 @@ import { QuizCard } from "@/components/cards/QuizCard";
 
 // Map of carousel containers so external header-level controls can operate them
 const carouselMap = new Map<string, HTMLDivElement>();
+// listeners that notify header controls to re-evaluate enabled state when carousels mount/unmount
+const carouselUpdateListeners = new Set<() => void>();
+const notifyCarouselUpdate = () => {
+  for (const cb of carouselUpdateListeners) cb();
+};
 
 const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }> = ({ children, carouselId }) => {
   const ref = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
     if (ref.current) carouselMap.set(carouselId, ref.current);
+    notifyCarouselUpdate();
     return () => {
       carouselMap.delete(carouselId);
+      notifyCarouselUpdate();
     };
   }, [carouselId]);
 
