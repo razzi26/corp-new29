@@ -154,15 +154,17 @@ export default function KnowledgeHubWidget() {
           <div className="flex flex-col items-start gap-6">
             <div className="mb-0">
               <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
-                Knowledge Hub
-              </h2>
-              <Link
-                to={'/resources'}
-                className="ml-4 hidden md:inline-flex text-base font-semibold text-brand-secondary hover:underline"
-              >
-                View all →
-              </Link>
+              <div className='flex items-center'>
+                <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
+                  Knowledge Hub
+                </h2>
+                <Link
+                  to={'/resources'}
+                  className="ml-4 hidden md:inline-flex text-base font-semibold text-brand-secondary hover:underline"
+                >
+                  View all →
+                </Link>
+              </div>
             </div>
 
             <TabsList className="bg-transparent h-auto inline-flex items-start gap-6 rounded-none">
