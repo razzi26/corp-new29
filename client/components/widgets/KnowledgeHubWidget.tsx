@@ -259,7 +259,7 @@ interface VideoItem {
   start?: number;
 }
 
-export default function KnowledgeHubWidget({ enableCustomScroll = true }: { enableCustomScroll?: boolean }) {
+export default function KnowledgeHubWidget({ enableCustomScroll = false }: { enableCustomScroll?: boolean }) {
   const [tab, setTab] = useState<
     "videos" | "podcasts" | "articles" | "quizzes"
   >("videos");
