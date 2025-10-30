@@ -193,7 +193,11 @@ export default function KnowledgeHubWidget() {
   }, [tab]);
 
   React.useEffect(() => {
+    // Ensure buttons reflect current carousel state
     updateButtons();
+    // Register to be notified when carousels mount/unmount
+    carouselUpdateListeners.add(updateButtons);
+
     const el = carouselMap.get(tab);
     if (el) {
       const onScroll = () => updateButtons();
@@ -202,10 +206,15 @@ export default function KnowledgeHubWidget() {
       return () => {
         el.removeEventListener("scroll", onScroll);
         window.removeEventListener("resize", updateButtons);
+        carouselUpdateListeners.delete(updateButtons);
       };
     }
+
     window.addEventListener("resize", updateButtons);
-    return () => window.removeEventListener("resize", updateButtons);
+    return () => {
+      window.removeEventListener("resize", updateButtons);
+      carouselUpdateListeners.delete(updateButtons);
+    };
   }, [tab, updateButtons, articles, quizzes, videos, podcasts]);
 
   const scrollActiveBy = (amount: number) => {
