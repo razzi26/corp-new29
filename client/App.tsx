@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import SiteLayout from "./components/layout/SiteLayout";
+import Sitemap from "./pages/Sitemap";
 import Catalog from "./pages/Catalog";
 import Blog from "./pages/Blog";
 import News from "./pages/News";
