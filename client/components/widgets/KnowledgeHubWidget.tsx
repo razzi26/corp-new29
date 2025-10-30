@@ -168,12 +168,15 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
       desiredScroll.current = desired;
       // compute frame velocity (pixels per ms), invert because moving cursor right scrolls left
       if (inertiaEnabled) {
+        // shift previous sample
+        prevMoveX.current = lastMoveX.current;
+        prevMoveTime.current = lastMoveTime.current;
         const now = performance.now();
         const lastX = lastMoveX.current ?? e.clientX;
         const lastT = lastMoveTime.current ?? now;
         const dt = Math.max(1, now - lastT); // ms
         const frameDelta = e.clientX - lastX;
-        // velocity in px/ms
+        // velocity in px/ms measured over last interval
         const measured = frameDelta / dt;
         dragVelocity.current = Math.max(-MAX_VELOCITY, Math.min(MAX_VELOCITY, -measured * VELOCITY_MULTIPLIER));
         lastMoveX.current = e.clientX;
