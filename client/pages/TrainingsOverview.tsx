@@ -93,12 +93,14 @@ export default function TrainingsOverview() {
                       {title}
                     </h3>
 
-                    <p className="text-base leading-relaxed text-slate-700 mb-4">
+                    <p className="text-base leading-relaxed text-slate-700">
                       {description}
                     </p>
-
-                    <ArrowRight className="h-6 w-6 text-[hsl(var(--primary))] transition-transform duration-300 group-hover:rotate-45" />
                   </div>
+                </div>
+
+                <div className="absolute bottom-4 right-4 text-[hsl(var(--primary))]">
+                  <ArrowRight className="h-6 w-6 transition-transform duration-300 group-hover:-rotate-45" />
                 </div>
 
                 <div className="absolute bottom-0 left-0 h-1 w-0 bg-[hsl(var(--primary))] transition-all duration-300 group-hover:w-full" />
