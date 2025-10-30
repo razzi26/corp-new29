@@ -7,6 +7,76 @@ import { PodcastCard } from "@/components/cards/PodcastCard";
 import { ArticleCard } from "@/components/cards/ArticleCard";
 import { QuizCard } from "@/components/cards/QuizCard";
 
+const ScrollCarousel: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const ref = React.useRef<HTMLDivElement | null>(null);
+  const [canLeft, setCanLeft] = React.useState(false);
+  const [canRight, setCanRight] = React.useState(false);
+
+  const update = () => {
+    const el = ref.current;
+    if (!el) return;
+    setCanLeft(el.scrollLeft > 0);
+    setCanRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
+  };
+
+  React.useEffect(() => {
+    update();
+    const el = ref.current;
+    if (!el) return;
+    const onScroll = () => update();
+    const onResize = () => update();
+    el.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize);
+    return () => {
+      el.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
+
+  const scrollBy = (amount: number) => {
+    const el = ref.current;
+    if (!el) return;
+    el.scrollBy({ left: amount, behavior: "smooth" });
+  };
+
+  return (
+    <div className="relative">
+      <div
+        ref={ref}
+        className="flex gap-6 overflow-x-auto py-2 px-1 scrollbar-none"
+        style={{ scrollBehavior: "smooth" }}
+        aria-live="polite"
+      >
+        {children}
+      </div>
+
+      {/* Controls */}
+      <div className="absolute right-2 top-1/2 transform -translate-y-1/2 flex items-center gap-2">
+        <button
+          type="button"
+          onClick={() => scrollBy(- (ref.current?.clientWidth ?? 400) * 0.8)}
+          disabled={!canLeft}
+          aria-disabled={!canLeft}
+          className={`p-2 rounded-full border bg-white shadow-md transition-opacity ${!canLeft ? "opacity-40 cursor-not-allowed" : "hover:scale-105"}`}
+          aria-label="Scroll left"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+        </button>
+        <button
+          type="button"
+          onClick={() => scrollBy((ref.current?.clientWidth ?? 400) * 0.8)}
+          disabled={!canRight}
+          aria-disabled={!canRight}
+          className={`p-2 rounded-full border bg-white shadow-md transition-opacity ${!canRight ? "opacity-40 cursor-not-allowed" : "hover:scale-105"}`}
+          aria-label="Scroll right"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
+        </button>
+      </div>
+    </div>
+  );
+};
+
 interface VideoItem {
   id: string;
   title: string;
@@ -212,10 +282,14 @@ export default function KnowledgeHubWidget() {
               Failed to load videos.
             </div>
           ) : (
-            <div className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {videos!.map((v) => (
-                <VideoCard key={v.id} video={v} />
-              ))}
+            <div className="mt-6">
+              <ScrollCarousel>
+                {videos!.map((v) => (
+                  <div key={v.id} className="min-w-[280px] flex-shrink-0">
+                    <VideoCard video={v} />
+                  </div>
+                ))}
+              </ScrollCarousel>
             </div>
           )}
         </TabsContent>
@@ -228,10 +302,14 @@ export default function KnowledgeHubWidget() {
               Failed to load podcasts.
             </div>
           ) : (
-            <div className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {podcasts!.map((p) => (
-                <PodcastCard key={p.id} podcast={p} />
-              ))}
+            <div className="mt-6">
+              <ScrollCarousel>
+                {podcasts!.map((p) => (
+                  <div key={p.id} className="min-w-[280px] flex-shrink-0">
+                    <PodcastCard podcast={p} />
+                  </div>
+                ))}
+              </ScrollCarousel>
             </div>
           )}
         </TabsContent>
@@ -244,10 +322,14 @@ export default function KnowledgeHubWidget() {
               Failed to load articles.
             </div>
           ) : (
-            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {articles!.map((a) => (
-                <ArticleCard key={a.slug} a={a} />
-              ))}
+            <div className="mt-6">
+              <ScrollCarousel>
+                {articles!.map((a) => (
+                  <div key={a.slug} className="min-w-[320px] flex-shrink-0">
+                    <ArticleCard a={a} />
+                  </div>
+                ))}
+              </ScrollCarousel>
             </div>
           )}
         </TabsContent>
@@ -260,10 +342,14 @@ export default function KnowledgeHubWidget() {
               Failed to load quizzes.
             </div>
           ) : (
-            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {quizzes!.map((q) => (
-                <QuizCard key={q.slug} quiz={q} />
-              ))}
+            <div className="mt-6">
+              <ScrollCarousel>
+                {quizzes!.map((q) => (
+                  <div key={q.slug} className="min-w-[320px] flex-shrink-0">
+                    <QuizCard quiz={q} />
+                  </div>
+                ))}
+              </ScrollCarousel>
             </div>
           )}
         </TabsContent>
