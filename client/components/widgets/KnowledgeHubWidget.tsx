@@ -165,11 +165,31 @@ export default function KnowledgeHubWidget() {
         onValueChange={(v) => setTab(v as any)}
         className="w-full"
       >
-        <TabsList>
-          <TabsTrigger value="videos">Videos</TabsTrigger>
-          <TabsTrigger value="podcasts">Podcasts</TabsTrigger>
-          <TabsTrigger value="articles">Articles</TabsTrigger>
-          <TabsTrigger value="quizzes">Quizzes</TabsTrigger>
+        <TabsList className="flex gap-6 border-b border-slate-200">
+          <TabsTrigger
+            value="videos"
+            className="bg-transparent rounded-none px-0 pb-2 text-base md:text-lg font-medium tracking-tight text-[hsl(var(--brand-end))] hover:text-[hsl(var(--brand-end))]/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand-end))]/30 data-[state=active]:border-b-2 data-[state=active]:border-[hsl(var(--brand-end))] data-[state=active]:pb-2"
+          >
+            Videos
+          </TabsTrigger>
+          <TabsTrigger
+            value="podcasts"
+            className="bg-transparent rounded-none px-0 pb-2 text-base md:text-lg font-medium tracking-tight text-[hsl(var(--brand-end))] hover:text-[hsl(var(--brand-end))]/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand-end))]/30 data-[state=active]:border-b-2 data-[state=active]:border-[hsl(var(--brand-end))] data-[state=active]:pb-2"
+          >
+            Podcasts
+          </TabsTrigger>
+          <TabsTrigger
+            value="articles"
+            className="bg-transparent rounded-none px-0 pb-2 text-base md:text-lg font-medium tracking-tight text-[hsl(var(--brand-end))] hover:text-[hsl(var(--brand-end))]/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand-end))]/30 data-[state=active]:border-b-2 data-[state=active]:border-[hsl(var(--brand-end))] data-[state=active]:pb-2"
+          >
+            Articles
+          </TabsTrigger>
+          <TabsTrigger
+            value="quizzes"
+            className="bg-transparent rounded-none px-0 pb-2 text-base md:text-lg font-medium tracking-tight text-[hsl(var(--brand-end))] hover:text-[hsl(var(--brand-end))]/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand-end))]/30 data-[state=active]:border-b-2 data-[state=active]:border-[hsl(var(--brand-end))] data-[state=active]:pb-2"
+          >
+            Quizzes
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="videos">
