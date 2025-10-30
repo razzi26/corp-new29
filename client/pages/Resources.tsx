@@ -76,13 +76,13 @@ export default function Resources() {
       />
 
       <section className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {RESOURCE_CARDS.map(
             ({ href, title, description, icon: Icon, color }) => (
               <Link
                 key={href}
                 to={href}
-                className="relative group overflow-hidden rounded-lg border border-slate-200 bg-white p-4 transition-all duration-300 hover:shadow-lg hover:border-slate-300 cursor-pointer block"
+                className="relative group overflow-hidden rounded-lg border border-slate-200 bg-white p-6 transition-all duration-300 hover:shadow-lg hover:border-slate-300 cursor-pointer block"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--primary))]/5 to-[hsl(var(--primary))]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
