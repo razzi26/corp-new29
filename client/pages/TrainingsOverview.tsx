@@ -47,6 +47,27 @@ const TRAINING_CARDS: TrainingCard[] = [
     icon: FileStack,
     color: "bg-teal-600",
   },
+  {
+    href: "/services/trainings-and-seminars",
+    title: "Trainings and Seminars",
+    description:
+      "Securing adherence to quality system standards by comprehensive auditing and compliance to regulations by training & education.",
+    icon: GraduationCap,
+  },
+  {
+    title: "Validation Service",
+    description:
+      "Ensuring integrity and performance of systems, facilities & equipment through validation.",
+    icon: CheckCircle,
+    href: "/services/validation-service",
+  },
+  {
+    title: "Commissioning and Qualification",
+    description:
+      "Providing quality installation of equipment and construction of facility from start to finish.",
+    icon: Wrench,
+    href: "/services/commissioning-and-qualification",
+  }, 
 ];
 
 export default function TrainingsOverview() {
