@@ -1,18 +1,16 @@
 import { Link } from "react-router-dom";
 import ContactsDetailsWidget from "@/components/widgets/ContactsDetailsWidget";
 import SocialMediaWidget from "@/components/widgets/SocialMediaWidget";
+import Logo from "@/components/Logo";
 import { siteConfig } from "@/config/config";
 
 export default function Footer() {
   return (
-    <footer className="bg-[hsl(var(--brand-end))] text-white">
+    <footer className="mt-20 bg-[hsl(var(--brand-end))] text-white">
       <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3">
         <div>
-          <div className="flex items-center gap-2 mb-4">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/20 text-white font-bold">
-              E
-            </span>
-            <span className="font-semibold">{siteConfig.siteName}</span>
+          <div className="mb-4 text-white">
+            <Logo variant="footer" />
           </div>
           <p className="text-sm leading-relaxed text-white/90">
             {siteConfig.description}
