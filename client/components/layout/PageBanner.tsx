@@ -23,6 +23,7 @@ interface PageBannerProps {
   breadcrumbs: BreadcrumbEntry[];
   meta?: ReactNode;
   backgroundImage?: string;
+  gradient?: string;
 }
 
 export function PageBanner({
@@ -31,6 +32,7 @@ export function PageBanner({
   breadcrumbs,
   meta,
   backgroundImage,
+  gradient,
 }: PageBannerProps) {
   return (
     <>
@@ -44,7 +46,11 @@ export function PageBanner({
         }}
       >
         <div
-          className="absolute inset-0 bg-brand-gradient opacity-95"
+          className="absolute inset-0"
+          style={{
+            background: gradient || 'linear-gradient(90deg, hsl(var(--brand-start)), hsl(var(--brand-end)))',
+            opacity: 0.95,
+          }}
           aria-hidden="true"
         />
         <div className="relative container mx-auto px-4 pt-24 pb-10 md:pt-32 md:pb-14">
