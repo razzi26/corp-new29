@@ -5,4 +5,5 @@ export interface ArticleMeta {
   date: string;
   readMins: number;
   tags: string[];
+  image?: string;
 }
