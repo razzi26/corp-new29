@@ -76,7 +76,7 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
         const target = desiredScroll.current;
         const next = current + (target - current) * 100; // smoothing factor (faster)
         el.scrollLeft = next;
-        if (Math.abs(next - target) < 0.5) {
+        if (Math.abs(next - target) < 3) {
           el.scrollLeft = target;
           desiredScroll.current = null;
         }
