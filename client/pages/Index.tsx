@@ -5,8 +5,8 @@ import { Button } from "@/components/Button";
 import HeroSectionWidget from "@/components/HeroSectionWidget";
 import ServicesWidget from "@/components/widgets/ServicesWidget";
 import KnowledgeHubWidget from "@/components/widgets/KnowledgeHubWidget";
-import ContactsDetailsWidget from "@/components/widgets/ContactsDetailsWidget";
 import EmailSubscriptionWidget from "@/components/widgets/EmailSubscriptionWidget";
+import ContactForm from "@/components/ContactForm";
 import { siteConfig } from "@/config/config";
 
 export default function Index() {
