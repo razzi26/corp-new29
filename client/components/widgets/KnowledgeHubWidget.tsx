@@ -60,6 +60,7 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
   const onMouseEnter = (e: React.MouseEvent) => {
     if (isTouch) return;
     setHover(true);
+    setIsOverInteractive(isInteractiveTarget(e.target));
     const el = ref.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
@@ -73,6 +74,7 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
     setCursorPos({ x, y });
+    setIsOverInteractive(isInteractiveTarget(e.target));
 
     if (isDragging) {
       const delta = e.clientX - dragState.current.startX;
@@ -85,7 +87,10 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
     document.body.style.userSelect = "";
   };
   const onMouseDown = (e: React.MouseEvent) => {
+    // only start drag with left mouse button and when not over interactive element
     if (isTouch) return;
+    if (e.button !== 0) return;
+    if (isInteractiveTarget(e.target)) return;
     const el = ref.current;
     if (!el) return;
     setIsDragging(true);
@@ -96,6 +101,7 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
   };
   const onMouseLeave = () => {
     setHover(false);
+    setIsOverInteractive(false);
     endDrag();
   };
 
