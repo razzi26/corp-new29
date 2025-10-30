@@ -158,22 +158,22 @@ export const staticRoutes: SitemapRoute[] = [
 ];
 
 // Functions to fetch and populate dynamic routes
-export async function fetchDynamicProducts(): Promise<DynamicRouteData[]> {
-  try {
-    const response = await fetch("/data/products.json");
-    if (!response.ok) throw new Error("Failed to fetch products");
-    const products = await response.json();
-    return products.map((product: any) => ({
-      path: `/products/${product.id}`,
-      title: product.title,
-      priority: 0.7,
-      changeFrequency: "monthly" as const,
-    }));
-  } catch (error) {
-    console.error("Error fetching products for sitemap:", error);
-    return [];
-  }
-}
+// export async function fetchDynamicProducts(): Promise<DynamicRouteData[]> {
+//   try {
+//     const response = await fetch("/data/products.json");
+//     if (!response.ok) throw new Error("Failed to fetch products");
+//     const products = await response.json();
+//     return products.map((product: any) => ({
+//       path: `/products/${product.id}`,
+//       title: product.title,
+//       priority: 0.7,
+//       changeFrequency: "monthly" as const,
+//     }));
+//   } catch (error) {
+//     console.error("Error fetching products for sitemap:", error);
+//     return [];
+//   }
+// }
 
 export async function fetchDynamicNews(): Promise<DynamicRouteData[]> {
   try {
