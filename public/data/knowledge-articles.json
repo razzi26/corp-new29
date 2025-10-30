@@ -217,5 +217,825 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "/resources/articles/lab-emergency-preparedness",
+    "title": "Laboratory Emergency Preparedness: Building a Culture of Response",
+    "description": "How labs prepare for biological incidents, spills, power outages, and natural disasters.",
+    "date": "2025-04-02",
+    "readMins": 8,
+    "image": "https://images.unsplash.com/photo-1581094464361-2e3276f48df6?w=500&h=300&fit=crop",
+    "tags": ["Biosafety", "Emergency Response"],
+    "sections": [
+      {
+        "id": "overview",
+        "title": "Why Emergency Preparedness Matters",
+        "content": [
+          {
+            "type": "p",
+            "text": "Emergencies in biological facilities can arise abruptly — from spills to utility failures. Preparedness ensures rapid, safe responses and protects personnel and research."
+          }
+        ]
+      },
+      {
+        "id": "framework",
+        "title": "Key Elements of Preparedness",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Incident communication plans",
+              "Training and drills",
+              "Clear emergency roles",
+              "Coordination with local authorities"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "culture",
+        "title": "Cultivating a Preparedness Culture",
+        "content": [
+          {
+            "type": "p",
+            "text": "Preparedness is not only documentation — it is a continuous culture of awareness, scenario planning, and routine practice."
+          }
+        ]
+      }
+    ],
+    "resources": { "whitepapers": [], "videos": [] }
+  },
+  {
+    "slug": "/resources/articles/bioethics-and-dual-use",
+    "title": "Bioethics and Dual-Use Research: Responsible Innovation",
+    "description": "The ethical foundations guiding research with potential beneficial and harmful outcomes.",
+    "date": "2025-04-05",
+    "readMins": 7,
+    "image": "https://images.unsplash.com/photo-1581090164104-2eac3800f9cc?w=500&h=300&fit=crop",
+    "tags": ["Bioethics", "Policy"],
+    "sections": [
+      {
+        "id": "intro",
+        "title": "What is Dual-Use Research?",
+        "content": [
+          {
+            "type": "p",
+            "text": "Dual-use research produces knowledge with both beneficial applications and potential misuse. Bioethics ensures responsible development and oversight."
+          }
+        ]
+      },
+      {
+        "id": "principles",
+        "title": "Ethical Principles",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Beneficence and harm reduction",
+              "Transparency and accountability",
+              "Proportional oversight",
+              "Societal responsibility"
+            ]
+          }
+        ]
+      }
+    ],
+    "resources": { "whitepapers": [], "videos": [] }
+  },
+  {
+    "slug": "/resources/articles/airflow-containment-fundamentals",
+    "title": "Airflow and Containment Fundamentals in Biological Labs",
+    "description": "How airflow patterns and controlled environments protect people, samples, and the ecosystem.",
+    "date": "2025-04-11",
+    "readMins": 8,
+    "image": "https://images.unsplash.com/photo-1530023367847-a683933f4172?w=500&h=300&fit=crop",
+    "tags": ["Containment", "Lab Facilities"],
+    "sections": [
+      {
+        "id": "concepts",
+        "title": "Containment and Airflow Concepts",
+        "content": [
+          {
+            "type": "p",
+            "text": "Biocontainment relies on controlled airflow direction and high-efficiency filtration to prevent escape of biohazards."
+          }
+        ]
+      },
+      {
+        "id": "systems",
+        "title": "Key Systems",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Directional airflow",
+              "Negative-pressure rooms",
+              "HEPA filtration",
+              "Air exchange rate regulation"
+            ]
+          }
+        ]
+      }
+    ],
+    "resources": { "whitepapers": [], "videos": [] }
+  },
+  {
+    "slug": "/resources/articles/lab-training-competency",
+    "title": "Competency-Based Training in Biosafety Programs",
+    "description": "Why competency-based training is essential for safe scientific practice.",
+    "date": "2025-04-15",
+    "readMins": 6,
+    "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3f5e?w=500&h=300&fit=crop",
+    "tags": ["Training", "Lab Culture"],
+    "sections": [
+      {
+        "id": "importance",
+        "title": "Why Competency Matters",
+        "content": [
+          {
+            "type": "p",
+            "text": "Competency ensures that personnel understand risks, equipment, and procedures, building a safety-first mindset."
+          }
+        ]
+      },
+      {
+        "id": "elements",
+        "title": "Core Elements",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Instruction and mentoring",
+              "Simulation and observation",
+              "Knowledge validation",
+              "Continuous refreshers"
+            ]
+          }
+        ]
+      }
+    ],
+    "resources": { "whitepapers": [], "videos": [] }
+  },
+  {
+    "slug": "/resources/articles/lab-accreditation-standards",
+    "title": "Lab Accreditation and Quality Systems in Biosafety",
+    "description": "Standards that support consistent, safe, and high-quality laboratory operations.",
+    "date": "2025-04-19",
+    "readMins": 7,
+    "image": "https://images.unsplash.com/photo-1631724188550-d1fde5a3536a?w=500&h=300&fit=crop",
+    "tags": ["Quality Systems", "Standards"],
+    "sections": [
+      {
+        "id": "intro",
+        "title": "The Role of Accreditation",
+        "content": [
+          {
+            "type": "p",
+            "text": "Accreditation frameworks validate that labs meet safety and quality benchmarks through systematic evaluation."
+          }
+        ]
+      },
+      {
+        "id": "systems",
+        "title": "Quality System Components",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Documentation control",
+              "Audit and improvement cycles",
+              "Training systems",
+              "Incident reporting structure"
+            ]
+          }
+        ]
+      }
+    ],
+    "resources": { "whitepapers": [], "videos": [] }
+  },
+  {
+    "slug": "/resources/articles/transport-of-biological-materials",
+    "title": "Safe Transport of Biological Materials: Regulatory Essentials",
+    "description": "Principles for transporting biological specimens and materials responsibly.",
+    "date": "2025-04-23",
+    "readMins": 6,
+    "image": "https://images.unsplash.com/photo-1581090700227-1e37b190418e?w=500&h=300&fit=crop",
+    "tags": ["Transport", "Compliance"],
+    "sections": [
+      {
+        "id": "why",
+        "title": "Why Transport Controls Matter",
+        "content": [
+          {
+            "type": "p",
+            "text": "Transport systems prevent exposure, contamination, and environmental release while upholding international safety standards."
+          }
+        ]
+      },
+      {
+        "id": "principles",
+        "title": "Core Principles",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Categorization and documentation",
+              "Secure packaging",
+              "Clear labeling",
+              "Chain-of-custody practices"
+            ]
+          }
+        ]
+      }
+    ],
+    "resources": { "whitepapers": [], "videos": [] }
+  },
+  {
+    "slug": "/resources/articles/inactivation-validation",
+    "title": "Biological Inactivation and Validation Frameworks",
+    "description": "How labs ensure biological materials are rendered safe and verify tools used.",
+    "date": "2025-04-26",
+    "readMins": 8,
+    "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=500&h=300&fit=crop",
+    "tags": ["Inactivation", "Validation"],
+    "sections": [
+      {
+        "id": "concepts",
+        "title": "Inactivation Concepts",
+        "content": [
+          {
+            "type": "p",
+            "text": "Inactivation neutralizes biological agents to prevent harm, requiring scientific assurance and controlled practices."
+          }
+        ]
+      },
+      {
+        "id": "verification",
+        "title": "Verification and Record-Keeping",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Scientific rationale",
+              "Monitoring and verification",
+              "Documentation and traceability"
+            ]
+          }
+        ]
+      }
+    ],
+    "resources": { "whitepapers": [], "videos": [] }
+  },
+  {
+    "slug": "/resources/articles/lab-waste-sustainability",
+    "title": "Sustainable Waste Management in Modern Labs",
+    "description": "Balancing biosafety and sustainability in laboratory waste systems.",
+    "date": "2025-04-29",
+    "readMins": 7,
+    "image": "https://images.unsplash.com/photo-1581090124980-5c6a7cce4d13?w=500&h=300&fit=crop",
+    "tags": ["Sustainability", "Waste"],
+    "sections": [
+      {
+        "id": "challenge",
+        "title": "The Sustainability Challenge",
+        "content": [
+          {
+            "type": "p",
+            "text": "Labs generate substantial waste due to safety demands. Responsible waste systems reduce impact while maintaining protection."
+          }
+        ]
+      },
+      {
+        "id": "approaches",
+        "title": "Strategic Approaches",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Source reduction",
+              "Waste segregation",
+              "Safe recycling pathways",
+              "Lifecycle material choices"
+            ]
+          }
+        ]
+      }
+    ],
+    "resources": { "whitepapers": [], "videos": [] }
+  },
+  {
+    "slug": "/resources/articles/behavioral-safety-labs",
+    "title": "Behavioral Safety in Bioscience Workplaces",
+    "description": "Why human factors and positive behavior systems matter for biosafety success.",
+    "date": "2025-05-02",
+    "readMins": 6,
+    "image": "https://images.unsplash.com/photo-1581091215367-59ab6b33b59b?w=500&h=300&fit=crop",
+    "tags": ["Lab Culture", "Human Factors"],
+    "sections": [
+      {
+        "id": "focus",
+        "title": "The Human Factor",
+        "content": [
+          {
+            "type": "p",
+            "text": "Human behavior shapes laboratory safety far more than equipment alone. Encouraging safe decisions is core to biosafety."
+          }
+        ]
+      },
+      {
+        "id": "strategies",
+        "title": "Behavior-Driven Strategies",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Positive reinforcement systems",
+              "Peer-to-peer safety leadership",
+              "Open reporting culture",
+              "Psychological safety"
+            ]
+          }
+        ]
+      }
+    ],
+    "resources": { "whitepapers": [], "videos": [] }
+  },
+  {
+    "slug": "/resources/articles/biological-security-basics",
+    "title": "Biosafety vs Biosecurity: Understanding the Distinction",
+    "description": "A framework for differentiating biosafety and biosecurity roles in life science institutions.",
+    "date": "2025-05-06",
+    "readMins": 8,
+    "image": "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=500&h=300&fit=crop",
+    "tags": ["Biosecurity", "Policy"],
+    "sections": [
+      {
+        "id": "definitions",
+        "title": "What Sets Them Apart?",
+        "content": [
+          {
+            "type": "p",
+            "text": "Biosafety protects people and the environment from biological hazards; biosecurity protects biological materials from intentional misuse."
+          }
+        ]
+      },
+      {
+        "id": "complement",
+        "title": "How They Complement Each Other",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Access control and accountability",
+              "Inventory oversight",
+              "Personnel reliability programs",
+              "Incident response coordination"
+            ]
+          }
+        ]
+      }
+    ],
+    "resources": { "whitepapers": [], "videos": [] }
+  },
+  {
+    "slug": "/resources/articles/lab-emergency-preparedness",
+    "title": "Laboratory Emergency Preparedness: Building a Culture of Response",
+    "description": "How labs prepare for biological incidents, spills, power outages, and natural disasters.",
+    "date": "2025-04-02",
+    "readMins": 8,
+    "image": "https://images.unsplash.com/photo-1581094464361-2e3276f48df6?w=500&h=300&fit=crop",
+    "tags": [
+      "Biosafety",
+      "Emergency Response"
+    ],
+    "sections": [
+      {
+        "id": "overview",
+        "title": "Why Emergency Preparedness Matters",
+        "content": [
+          {
+            "type": "p",
+            "text": "Emergencies in biological facilities can arise abruptly — from spills to utility failures. Preparedness ensures rapid, safe responses and protects personnel and research."
+          }
+        ]
+      },
+      {
+        "id": "framework",
+        "title": "Key Elements of Preparedness",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Incident communication plans",
+              "Training and drills",
+              "Clear emergency roles",
+              "Coordination with local authorities"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "culture",
+        "title": "Cultivating a Preparedness Culture",
+        "content": [
+          {
+            "type": "p",
+            "text": "Preparedness is not only documentation — it is a continuous culture of awareness, scenario planning, and routine practice."
+          }
+        ]
+      }
+    ],
+    "resources": {
+      "whitepapers": [],
+      "videos": []
+    }
+  },
+  {
+    "slug": "/resources/articles/bioethics-and-dual-use",
+    "title": "Bioethics and Dual-Use Research: Responsible Innovation",
+    "description": "The ethical foundations guiding research with potential beneficial and harmful outcomes.",
+    "date": "2025-04-05",
+    "readMins": 7,
+    "image": "https://images.unsplash.com/photo-1581090164104-2eac3800f9cc?w=500&h=300&fit=crop",
+    "tags": [
+      "Bioethics",
+      "Policy"
+    ],
+    "sections": [
+      {
+        "id": "intro",
+        "title": "What is Dual-Use Research?",
+        "content": [
+          {
+            "type": "p",
+            "text": "Dual-use research produces knowledge with both beneficial applications and potential misuse. Bioethics ensures responsible development and oversight."
+          }
+        ]
+      },
+      {
+        "id": "principles",
+        "title": "Ethical Principles",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Beneficence and harm reduction",
+              "Transparency and accountability",
+              "Proportional oversight",
+              "Societal responsibility"
+            ]
+          }
+        ]
+      }
+    ],
+    "resources": {
+      "whitepapers": [],
+      "videos": []
+    }
+  },
+  {
+    "slug": "/resources/articles/airflow-containment-fundamentals",
+    "title": "Airflow and Containment Fundamentals in Biological Labs",
+    "description": "How airflow patterns and controlled environments protect people, samples, and the ecosystem.",
+    "date": "2025-04-11",
+    "readMins": 8,
+    "image": "https://images.unsplash.com/photo-1530023367847-a683933f4172?w=500&h=300&fit=crop",
+    "tags": [
+      "Containment",
+      "Lab Facilities"
+    ],
+    "sections": [
+      {
+        "id": "concepts",
+        "title": "Containment and Airflow Concepts",
+        "content": [
+          {
+            "type": "p",
+            "text": "Biocontainment relies on controlled airflow direction and high-efficiency filtration to prevent escape of biohazards."
+          }
+        ]
+      },
+      {
+        "id": "systems",
+        "title": "Key Systems",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Directional airflow",
+              "Negative-pressure rooms",
+              "HEPA filtration",
+              "Air exchange rate regulation"
+            ]
+          }
+        ]
+      }
+    ],
+    "resources": {
+      "whitepapers": [],
+      "videos": []
+    }
+  },
+  {
+    "slug": "/resources/articles/lab-training-competency",
+    "title": "Competency-Based Training in Biosafety Programs",
+    "description": "Why competency-based training is essential for safe scientific practice.",
+    "date": "2025-04-15",
+    "readMins": 6,
+    "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3f5e?w=500&h=300&fit=crop",
+    "tags": [
+      "Training",
+      "Lab Culture"
+    ],
+    "sections": [
+      {
+        "id": "importance",
+        "title": "Why Competency Matters",
+        "content": [
+          {
+            "type": "p",
+            "text": "Competency ensures that personnel understand risks, equipment, and procedures, building a safety-first mindset."
+          }
+        ]
+      },
+      {
+        "id": "elements",
+        "title": "Core Elements",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Instruction and mentoring",
+              "Simulation and observation",
+              "Knowledge validation",
+              "Continuous refreshers"
+            ]
+          }
+        ]
+      }
+    ],
+    "resources": {
+      "whitepapers": [],
+      "videos": []
+    }
+  },
+  {
+    "slug": "/resources/articles/lab-accreditation-standards",
+    "title": "Lab Accreditation and Quality Systems in Biosafety",
+    "description": "Standards that support consistent, safe, and high-quality laboratory operations.",
+    "date": "2025-04-19",
+    "readMins": 7,
+    "image": "https://images.unsplash.com/photo-1631724188550-d1fde5a3536a?w=500&h=300&fit=crop",
+    "tags": [
+      "Quality Systems",
+      "Standards"
+    ],
+    "sections": [
+      {
+        "id": "intro",
+        "title": "The Role of Accreditation",
+        "content": [
+          {
+            "type": "p",
+            "text": "Accreditation frameworks validate that labs meet safety and quality benchmarks through systematic evaluation."
+          }
+        ]
+      },
+      {
+        "id": "systems",
+        "title": "Quality System Components",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Documentation control",
+              "Audit and improvement cycles",
+              "Training systems",
+              "Incident reporting structure"
+            ]
+          }
+        ]
+      }
+    ],
+    "resources": {
+      "whitepapers": [],
+      "videos": []
+    }
+  },
+  {
+    "slug": "/resources/articles/transport-of-biological-materials",
+    "title": "Safe Transport of Biological Materials: Regulatory Essentials",
+    "description": "Principles for transporting biological specimens and materials responsibly.",
+    "date": "2025-04-23",
+    "readMins": 6,
+    "image": "https://images.unsplash.com/photo-1581090700227-1e37b190418e?w=500&h=300&fit=crop",
+    "tags": [
+      "Transport",
+      "Compliance"
+    ],
+    "sections": [
+      {
+        "id": "why",
+        "title": "Why Transport Controls Matter",
+        "content": [
+          {
+            "type": "p",
+            "text": "Transport systems prevent exposure, contamination, and environmental release while upholding international safety standards."
+          }
+        ]
+      },
+      {
+        "id": "principles",
+        "title": "Core Principles",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Categorization and documentation",
+              "Secure packaging",
+              "Clear labeling",
+              "Chain-of-custody practices"
+            ]
+          }
+        ]
+      }
+    ],
+    "resources": {
+      "whitepapers": [],
+      "videos": []
+    }
+  },
+  {
+    "slug": "/resources/articles/inactivation-validation",
+    "title": "Biological Inactivation and Validation Frameworks",
+    "description": "How labs ensure biological materials are rendered safe and verify tools used.",
+    "date": "2025-04-26",
+    "readMins": 8,
+    "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=500&h=300&fit=crop",
+    "tags": [
+      "Inactivation",
+      "Validation"
+    ],
+    "sections": [
+      {
+        "id": "concepts",
+        "title": "Inactivation Concepts",
+        "content": [
+          {
+            "type": "p",
+            "text": "Inactivation neutralizes biological agents to prevent harm, requiring scientific assurance and controlled practices."
+          }
+        ]
+      },
+      {
+        "id": "verification",
+        "title": "Verification and Record-Keeping",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Scientific rationale",
+              "Monitoring and verification",
+              "Documentation and traceability"
+            ]
+          }
+        ]
+      }
+    ],
+    "resources": {
+      "whitepapers": [],
+      "videos": []
+    }
+  },
+  {
+    "slug": "/resources/articles/lab-waste-sustainability",
+    "title": "Sustainable Waste Management in Modern Labs",
+    "description": "Balancing biosafety and sustainability in laboratory waste systems.",
+    "date": "2025-04-29",
+    "readMins": 7,
+    "image": "https://images.unsplash.com/photo-1581090124980-5c6a7cce4d13?w=500&h=300&fit=crop",
+    "tags": [
+      "Sustainability",
+      "Waste"
+    ],
+    "sections": [
+      {
+        "id": "challenge",
+        "title": "The Sustainability Challenge",
+        "content": [
+          {
+            "type": "p",
+            "text": "Labs generate substantial waste due to safety demands. Responsible waste systems reduce impact while maintaining protection."
+          }
+        ]
+      },
+      {
+        "id": "approaches",
+        "title": "Strategic Approaches",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Source reduction",
+              "Waste segregation",
+              "Safe recycling pathways",
+              "Lifecycle material choices"
+            ]
+          }
+        ]
+      }
+    ],
+    "resources": {
+      "whitepapers": [],
+      "videos": []
+    }
+  },
+  {
+    "slug": "/resources/articles/behavioral-safety-labs",
+    "title": "Behavioral Safety in Bioscience Workplaces",
+    "description": "Why human factors and positive behavior systems matter for biosafety success.",
+    "date": "2025-05-02",
+    "readMins": 6,
+    "image": "https://images.unsplash.com/photo-1581091215367-59ab6b33b59b?w=500&h=300&fit=crop",
+    "tags": [
+      "Lab Culture",
+      "Human Factors"
+    ],
+    "sections": [
+      {
+        "id": "focus",
+        "title": "The Human Factor",
+        "content": [
+          {
+            "type": "p",
+            "text": "Human behavior shapes laboratory safety far more than equipment alone. Encouraging safe decisions is core to biosafety."
+          }
+        ]
+      },
+      {
+        "id": "strategies",
+        "title": "Behavior-Driven Strategies",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Positive reinforcement systems",
+              "Peer-to-peer safety leadership",
+              "Open reporting culture",
+              "Psychological safety"
+            ]
+          }
+        ]
+      }
+    ],
+    "resources": {
+      "whitepapers": [],
+      "videos": []
+    }
+  },
+  {
+    "slug": "/resources/articles/biological-security-basics",
+    "title": "Biosafety vs Biosecurity: Understanding the Distinction",
+    "description": "A framework for differentiating biosafety and biosecurity roles in life science institutions.",
+    "date": "2025-05-06",
+    "readMins": 8,
+    "image": "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=500&h=300&fit=crop",
+    "tags": [
+      "Biosecurity",
+      "Policy"
+    ],
+    "sections": [
+      {
+        "id": "definitions",
+        "title": "What Sets Them Apart?",
+        "content": [
+          {
+            "type": "p",
+            "text": "Biosafety protects people and the environment from biological hazards; biosecurity protects biological materials from intentional misuse."
+          }
+        ]
+      },
+      {
+        "id": "complement",
+        "title": "How They Complement Each Other",
+        "content": [
+          {
+            "type": "ul",
+            "items": [
+              "Access control and accountability",
+              "Inventory oversight",
+              "Personnel reliability programs",
+              "Incident response coordination"
+            ]
+          }
+        ]
+      }
+    ],
+    "resources": {
+      "whitepapers": [],
+      "videos": []
+    }
   }
+
+
 ]
