@@ -131,7 +131,7 @@ export default function Index() {
                 your knowledge, we're your central hub for building expertise in
                 biosafety protocols.
               </p>
-              <Button asChild size="lg" className="shadow-lg hover:shadow-xl bg-[hsl(var(--primary))] hover:bg-brand-secondary">
+              <Button asChild size="lg" className="shadow-lg hover:shadow-xl bg-[hsl(var(--primary))] hover:bg-[hsl(205_100%_20%)]">
                 <Link to="/about">Learn more</Link>
               </Button>
             </div>
