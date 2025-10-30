@@ -1,6 +1,7 @@
 import { PageBanner } from "@/components/layout/PageBanner";
 
 import FAQWidget from "@/components/widgets/FAQWidget";
+import ContactsDetailsWidget from "@/components/widgets/ContactsDetailsWidget";
 
 export default function Contact() {
   return (
@@ -29,12 +30,8 @@ export default function Contact() {
           >
             <div className="grid gap-4">
               <div className="rounded-md bg-slate-50 p-3 text-slate-700 text-sm">
-                <div className="font-semibold">Contact details</div>
-                <ul className="mt-2 space-y-1">
-                  <li>Phone: +7 (495) 000-00-00</li>
-                  <li>Email: contact@escobiosafety.org</li>
-                  <li>Mon–Fri: 9:00–19:00</li>
-                </ul>
+                <div className="font-semibold mb-3">Contact details</div>
+                <ContactsDetailsWidget />
               </div>
 
               <label className="grid gap-2 text-sm">
