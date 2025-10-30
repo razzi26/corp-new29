@@ -19,7 +19,7 @@ export default function Contact() {
               <FAQWidget />
             </div>
           </div>
-          <ContactForm variant="card" />
+          <ContactForm />
         </div>
       </div>
     </div>
