@@ -27,7 +27,7 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
   const [isTouch, setIsTouch] = React.useState(false);
   const [isOverInteractive, setIsOverInteractive] = React.useState(false);
   const INERTIA_ENABLED = true; // master default (can be overridden via prop)
-  const INERTIA_DECAY = 3; // multiplicative decay per frame (0-1)
+  const INERTIA_DECAY = 0.3; // multiplicative decay per frame (0-1)
   const VELOCITY_MULTIPLIER = 0.9; // multiplier applied to frame delta to compute initial velocity
   const VELOCITY_THRESHOLD = 0.05; // minimal velocity to continue inertia
   const MAX_VELOCITY = 120; // clamp maximum per-frame velocity (px)
