@@ -1,4 +1,4 @@
-import { Fragment, type ReactNode } from "react";
+4import { Fragment, type ReactNode } from "react";
 import React from "react";
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
@@ -37,7 +37,7 @@ export function PageBanner({
   return (
     <>
       <section
-        className="pt-28 pb-12 relative overflow-hidden text-white"
+        className="pt-24 pb-12 relative overflow-hidden text-white"
         data-header-anchor
         style={{
           backgroundImage: backgroundImage
