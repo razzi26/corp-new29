@@ -21,7 +21,7 @@ const footerNavigation: NavigationLink[] = [
 export default function Footer() {
   return (
     <footer className="bg-[#0d1f4a] text-white">
-      <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3">
+      <div className="container mx-auto px-4 py-16 grid gap-8 md:grid-cols-3">
         <div>
           <div className="mb-4 text-white">
             <Logo variant="footer" />
