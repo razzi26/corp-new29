@@ -15,7 +15,7 @@ const notifyCarouselUpdate = () => {
   for (const cb of carouselUpdateListeners) cb();
 };
 
-const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }> = ({ children, carouselId }) => {
+const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; enableInertia?: boolean }> = ({ children, carouselId, enableInertia = true }) => {
   const ref = React.useRef<HTMLDivElement | null>(null);
 
   const [hover, setHover] = React.useState(false);
@@ -26,7 +26,14 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
   const [cursorPos, setCursorPos] = React.useState({ x: 0, y: 0 });
   const [isTouch, setIsTouch] = React.useState(false);
   const [isOverInteractive, setIsOverInteractive] = React.useState(false);
+  const INERTIA_ENABLED = true; // master default (can be overridden via prop)
+  const INERTIA_DECAY = 0.92; // multiplicative decay per frame (0-1)
+  const VELOCITY_MULTIPLIER = 0.9; // multiplier applied to frame delta to compute initial velocity
+  const VELOCITY_THRESHOLD = 0.05; // minimal velocity to continue inertia
+  const MAX_VELOCITY = 120; // clamp maximum per-frame velocity (px)
   const DRAG_THRESHOLD = 6; // px before we consider it a drag
+
+  const inertiaEnabled = INERTIA_ENABLED && !!enableInertia;
 
   const isInteractiveTarget = (target: EventTarget | null) => {
     const el = target as HTMLElement | null;
@@ -82,10 +89,10 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
         }
       } else {
         // apply inertia if present
-        if (Math.abs(dragVelocity.current) > 0.05) {
+        if (Math.abs(dragVelocity.current) > VELOCITY_THRESHOLD) {
           el.scrollLeft = Math.max(0, Math.min(el.scrollWidth - el.clientWidth, el.scrollLeft + dragVelocity.current));
           // decay velocity
-          dragVelocity.current *= 0.92;
+          dragVelocity.current *= INERTIA_DECAY;
         } else if (desiredScroll.current !== null) {
           // fallback snap
           el.scrollLeft = desiredScroll.current;
@@ -145,10 +152,15 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
       const desired = dragState.current.startScroll - delta;
       desiredScroll.current = desired;
       // compute frame velocity (pixels per frame), invert because moving cursor right scrolls left
+      if (inertiaEnabled) {
       const lastX = lastMoveX.current ?? e.clientX;
       const frameDelta = e.clientX - lastX;
-      dragVelocity.current = -frameDelta * 0.9;
+      dragVelocity.current = Math.max(-MAX_VELOCITY, Math.min(MAX_VELOCITY, -frameDelta * VELOCITY_MULTIPLIER));
       lastMoveX.current = e.clientX;
+    } else {
+      dragVelocity.current = 0;
+      lastMoveX.current = e.clientX;
+    }
     }
   };
   const endDrag = () => {
@@ -164,7 +176,7 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
     }
     // allow inertia to continue if velocity present
     desiredScroll.current = null;
-    if (Math.abs(dragVelocity.current) > 0.05) {
+    if (inertiaEnabled && Math.abs(dragVelocity.current) > VELOCITY_THRESHOLD) {
       runRaf();
     } else {
       stopRaf();
