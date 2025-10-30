@@ -70,7 +70,7 @@ export default function TrainingsOverview() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
 
-      <section className="container mx-auto px-4 py-12 md:py-16">
+      <section className="container mx-auto px-0 lg:px-4 py-12 md:py-16">
         <div className="bg-slate-200"> {/* фон для промежутков */}
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px">
     {TRAINING_CARDS.map(({ href, title, description, icon: Icon }) => (
