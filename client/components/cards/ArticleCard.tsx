@@ -27,9 +27,9 @@ export function ArticleCard({ a }: { a: ArticleMeta }) {
             {a.readMins} min read
           </span>
         </div>
-        <p className="text-base leading-relaxed text-white/90 mb-4">
+        {/*<p className="text-base leading-relaxed text-white/90 mb-4">
           {a.description}
-        </p>
+        </p>*/}
         <div className="mt-auto flex flex-wrap gap-2 mb-4">
           {a.tags.map((t) => (
             <span
