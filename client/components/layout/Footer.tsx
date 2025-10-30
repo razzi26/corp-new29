@@ -16,11 +16,8 @@ export default function Footer() {
             </span>
             <span className="font-semibold">{siteConfig.siteName}</span>
           </div>
-          <p className="text-sm leading-relaxed text-white/90">
-            Your trusted hub for biosafety training, regulatory guidance and
-            practical resources. Build expertise and confidence in laboratory
-            safety.
-          </p>
+
+          <ContactsDetailsWidget />
           <div className="mt-4">
             <div className="text-sm font-semibold mb-2">Follow us</div>
             <div className="flex gap-3">
@@ -126,7 +123,6 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-3">Contacts</h4>
             <div className="text-white/90">
-              <ContactsDetailsWidget />
             </div>
           </div>
         </div>
