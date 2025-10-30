@@ -2,6 +2,7 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import { handleDemo } from "./routes/demo";
+import { handleSitemap, handleRobots } from "./routes/sitemap";
 
 export function createServer() {
   const app = express();
@@ -18,6 +19,10 @@ export function createServer() {
   });
 
   app.get("/api/demo", handleDemo);
+
+  // Sitemap routes
+  app.get("/sitemap.xml", handleSitemap);
+  app.get("/robots.txt", handleRobots);
 
   return app;
 }
