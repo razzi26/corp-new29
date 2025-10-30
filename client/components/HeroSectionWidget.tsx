@@ -99,10 +99,15 @@ export default function HeroSectionWidget(
           loading="eager"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[var(--grad-from)]/60 to-[var(--grad-to)]/75 mix-blend-multiply"
+        <div
+          className="
+            absolute inset-0 bg-gradient-to-r
+            from-[var(--from)] to-[var(--to)]
+            mix-blend-multiply
+          "
           style={{
-            "--grad-from": config.backgroundGradFrom,
-            "--grad-to": config.backgroundGradTo
+            "--from": `${config.backgroundGradFrom}99`, // 60% opacity
+            "--to": `${config.backgroundGradTo}BF`,     // 75% opacity
           }}
         />
       </div>
