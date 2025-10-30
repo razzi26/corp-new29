@@ -53,6 +53,7 @@ const TRAINING_CARDS: TrainingCard[] = [
     description:
       "Securing adherence to quality system standards by comprehensive auditing and compliance to regulations by training & education.",
     icon: GraduationCap,
+    color: "bg-teal-600",
   },
   {
     title: "Validation Service",
@@ -60,6 +61,7 @@ const TRAINING_CARDS: TrainingCard[] = [
       "Ensuring integrity and performance of systems, facilities & equipment through validation.",
     icon: CheckCircle,
     href: "/services/validation-service",
+    color: "bg-teal-600",
   },
   {
     title: "Commissioning and Qualification",
@@ -67,6 +69,7 @@ const TRAINING_CARDS: TrainingCard[] = [
       "Providing quality installation of equipment and construction of facility from start to finish.",
     icon: Wrench,
     href: "/services/commissioning-and-qualification",
+    color: "bg-teal-600",
   }, 
 ];
 
