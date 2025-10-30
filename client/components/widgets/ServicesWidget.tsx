@@ -73,7 +73,7 @@ export default function ServicesWidget() {
                   <div className="absolute inset-0 bg-black/40" />
                 )}
 
-                <div className="relative z-10 p-8 h-full flex flex-col">
+                <div className="relative z-10 p-8 h-full flex flex-col min-h-96">
                   <h3 className={`mb-3 text-xl font-bold ${
                     service.backgroundImage
                       ? "text-white"
