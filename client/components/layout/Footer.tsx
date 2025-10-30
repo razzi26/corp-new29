@@ -71,9 +71,9 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-3">Contacts</h4>
             <div className="text-white/90">
-              <ContactsDetailsWidget />
             </div>
           </div>
+          <ContactsDetailsWidget />
         </div>
       </div>
       <div className="border-t border-white/20">
