@@ -37,6 +37,10 @@ const defaultConfig: Required<HeroSectionWidgetProps> = {
     "https://images.pexels.com/photos/9574399/pexels-photo-9574399.jpeg",
   backgroundImageAlt:
     "Bright and sterile laboratory featuring high-tech research equipment and medical professionals at work",
+  backgroundGradFrom:
+    "#020113",
+  backgroundGradTo:
+    "#003BA3",
   features: [
     {
       label: "Training & seminars",
@@ -95,8 +99,7 @@ export default function HeroSectionWidget(
           loading="eager"
           decoding="async"
         />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--brand-start))]/60 to-[hsl(var(--brand-end))]/75 mix-blend-multiply" />
+        <div className={`absolute inset-0 bg-gradient-to-r from-[${config.backgroundGradFrom}]/60 to-[${config.backgroundGradTo}]/75 mix-blend-multiply`} />
       </div>
       <div className="relative container mx-auto px-4 pt-32 pb-24 md:pt-40 md:h-screen lg:pt-52 lg:pb-40">
         <div className="hero-grid grid gap-6 items-center">
