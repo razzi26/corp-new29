@@ -99,7 +99,12 @@ export default function HeroSectionWidget(
           loading="eager"
           decoding="async"
         />
-        <div className={`absolute inset-0 bg-gradient-to-r from-[${config.backgroundGradFrom}]/60 to-[${config.backgroundGradTo}]/75 mix-blend-multiply`} />
+        <div className="absolute inset-0 bg-gradient-to-r from-[var(--grad-from)]/60 to-[var(--grad-to)]/75 mix-blend-multiply"
+          style={{
+            "--grad-from": config.backgroundGradFrom,
+            "--grad-to": config.backgroundGradTo
+          }}
+        />
       </div>
       <div className="relative container mx-auto px-4 pt-32 pb-24 md:pt-40 md:h-screen lg:pt-52 lg:pb-40">
         <div className="hero-grid grid gap-6 items-center">
