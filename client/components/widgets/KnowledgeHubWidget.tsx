@@ -234,7 +234,31 @@ export default function KnowledgeHubWidget() {
               </div>
             </div>
 
-            <TabsList className="bg-transparent h-auto inline-flex items-start gap-4 lg:gap-6 rounded-none">
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 mr-2">
+                <button
+                  type="button"
+                  onClick={scrollPrev}
+                  disabled={!canScrollLeft}
+                  aria-disabled={!canScrollLeft}
+                  className={`p-2 rounded-md border bg-white shadow-sm transition-opacity ${!canScrollLeft ? "opacity-40 cursor-not-allowed" : "hover:scale-105"}`}
+                  aria-label="Scroll left"
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+                </button>
+                <button
+                  type="button"
+                  onClick={scrollNext}
+                  disabled={!canScrollRight}
+                  aria-disabled={!canScrollRight}
+                  className={`p-2 rounded-md border bg-white shadow-sm transition-opacity ${!canScrollRight ? "opacity-40 cursor-not-allowed" : "hover:scale-105"}`}
+                  aria-label="Scroll right"
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
+                </button>
+              </div>
+
+              <TabsList className="bg-transparent h-auto inline-flex items-start gap-4 lg:gap-6 rounded-none">
               <TabsTrigger
                 value="videos"
                 className="bg-transparent data-[state=active]:bg-transparent rounded-none px-0 pb-1 text-lg md:text-xl font-medium tracking-tight text-[hsl(var(--brand-end))] hover:text-[hsl(var(--brand-end))]/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--brand-end))]/30 data-[state=active]:border-b-2 data-[state=active]:border-[hsl(var(--brand-end))] data-[state=active]:pb-1"
@@ -259,7 +283,8 @@ export default function KnowledgeHubWidget() {
               >
                 Quizzes
               </TabsTrigger>
-            </TabsList>
+              </TabsList>
+            </div>
 
           </div>
 
