@@ -187,6 +187,9 @@ export default function Index() {
         </div>
       </section>*/}
 
+      {/* Services */}
+      <ServicesWidget />
+
       {/* Knowledge Hub */}
       <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
