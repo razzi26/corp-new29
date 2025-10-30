@@ -66,7 +66,7 @@ const RESOURCE_CARDS: ResourceCard[] = [
 
 export default function Resources() {
   return (
-    <div className="bg-white text-slate-900 h-screen">
+    <div className="bg-white text-slate-900">
       <PageBanner
         title="Knowledge Hub"
         description="A curated collection of learning materials, videos, and case studies to help you stay informed about biosafety best practices."
