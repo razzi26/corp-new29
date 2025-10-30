@@ -305,7 +305,7 @@ interface VideoItem {
 export default function KnowledgeHubWidget({ enableCustomScroll = false }: { enableCustomScroll?: boolean }) {
   const [tab, setTab] = useState<
     "videos" | "podcasts" | "articles" | "quizzes"
-  >("videos");
+    >("articles");
   const [articles, setArticles] = useState<any[] | null>(null);
   const [quizzes, setQuizzes] = useState<any[] | null>(null);
   const [videos, setVideos] = useState<VideoItem[] | null>(null);
