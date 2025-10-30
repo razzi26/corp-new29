@@ -252,15 +252,15 @@ export async function buildCompleteSitemap(): Promise<SitemapRoute[]> {
   };
 
   // Add products
-  const productsRoute = findRoute(routes, "/products");
-  if (productsRoute && products.length > 0) {
-    productsRoute.children = products.map((p) => ({
-      path: p.path,
-      title: p.title,
-      priority: p.priority,
-      changeFrequency: p.changeFrequency,
-    }));
-  }
+  // const productsRoute = findRoute(routes, "/products");
+  // if (productsRoute && products.length > 0) {
+  //   productsRoute.children = products.map((p) => ({
+  //     path: p.path,
+  //     title: p.title,
+  //     priority: p.priority,
+  //     changeFrequency: p.changeFrequency,
+  //   }));
+  // }
 
   // Add news articles
   const newsRoute = findRoute(routes, "/news");
