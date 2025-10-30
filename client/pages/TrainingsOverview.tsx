@@ -8,6 +8,7 @@ import {
   type LucideIcon,
   GraduationCap,
   CheckCircle,
+  ArrowRight,
 } from "lucide-react"; 
 
 type TrainingCard = {
@@ -96,9 +97,7 @@ export default function TrainingsOverview() {
                       {description}
                     </p>
 
-                    <span className="inline-block text-[hsl(var(--primary))] font-semibold hover:text-brand-secondary transition-colors">
-                      Learn more →
-                    </span>
+                    <ArrowRight className="h-6 w-6 text-[hsl(var(--primary))] transition-transform duration-300 group-hover:rotate-45" />
                   </div>
                 </div>
 
