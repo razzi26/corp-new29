@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import FAQWidget from "@/components/widgets/FAQWidget";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/Button";
+import { heroConfig } from "@/config/heroConfig";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LoadingIndicator } from "@/components/ui/loading-indicator";
@@ -33,79 +34,58 @@ export default function Index() {
       >
         <div className="absolute inset-0">
           <img
-            src="https://images.pexels.com/photos/9574399/pexels-photo-9574399.jpeg"
-            alt="Bright and sterile laboratory featuring high-tech research equipment and medical professionals at work"
+            src={heroConfig.backgroundImage}
+            alt={heroConfig.backgroundImageAlt}
             className="h-full w-full object-cover"
             loading="eager"
             decoding="async"
           />
-          
+
           <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--brand-start))]/60 to-[hsl(var(--brand-end))]/75 mix-blend-multiply" />
         </div>
         <div className="relative container mx-auto px-4 pt-32 pb-24 md:pt-40 md:h-screen lg:pt-52 lg:pb-40">
           <div className="hero-grid grid gap-6 items-center">
-            {/*<div className="lg:flex lg:flex-col lg:items-start lg:text-left max-w-2xl">
-              
-            </div>*/}
-
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-              Welcome to Esco Biosafety Institute!
+              {heroConfig.title}
             </h1>
             <p className="mt-6 text-white text-lg md:text-xl leading-relaxed max-w-2xl">
-              Biosafety in any laboratory is crucial. The Esco Biosafety
-              Institute was established to be your partner in achieving it. Our
-              institute provides:
+              {heroConfig.description}
             </p>
 
             <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
-              {[
-                {
-                  label: "Training & seminars",
-                  icon: GraduationCap,
-                  bg: "bg-[hsl(var(--brand-start))]",
-                },
-                {
-                  label: "Regulatory guidance",
-                  icon: ShieldCheck,
-                  bg: "bg-[hsl(205_100%_35%)]",
-                },
-                {
-                  label: "Practical resources",
-                  icon: Microscope,
-                  bg: "bg-[hsl(var(--brand-start))]",
-                },
-                {
-                  label: "Certification support",
-                  icon: BadgeCheck,
-                  bg: "bg-[hsl(205_100%_35%)]",
-                },
-              ].map(({ label, icon: Icon, bg }) => (
-                <div
-                  key={label}
-                  className={cn(
-                    "flex items-center gap-4 text-white rounded-lg px-4 py-4 backdrop-blur-sm bg-white/10 border border-white/20",
-                    bg,
-                  )}
-                >
-                  <div className="flex-shrink-0 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/20">
-                    <Icon className="h-6 w-6" />
+              {heroConfig.features.map(({ label, icon, bg }) => {
+                const Icon = iconMap[icon as keyof typeof iconMap];
+                return (
+                  <div
+                    key={label}
+                    className={cn(
+                      "flex items-center gap-4 text-white rounded-lg px-4 py-4 backdrop-blur-sm bg-white/10 border border-white/20",
+                      bg,
+                    )}
+                  >
+                    <div className="flex-shrink-0 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/20">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <span className="font-semibold text-base leading-tight">
+                      {label}
+                    </span>
                   </div>
-                  <span className="font-semibold text-base leading-tight">
-                    {label}
-                  </span>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
-
-
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="bg-white text-[hsl(var(--primary))] hover:bg-white/90">
-                <Link to="/contact">Get certified</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="backdrop-blur-sm">
-                <Link to="/resources">Explore resources</Link>
-              </Button>
+              {heroConfig.cta.map((button) => (
+                <Button
+                  key={button.text}
+                  asChild
+                  size="lg"
+                  variant={button.variant as any}
+                  className={button.variant === "primary" ? "bg-white text-[hsl(var(--primary))] hover:bg-white/90" : "backdrop-blur-sm"}
+                >
+                  <Link to={button.href}>{button.text}</Link>
+                </Button>
+              ))}
             </div>
           </div>
         </div>
