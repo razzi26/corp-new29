@@ -5,6 +5,7 @@ import { Button } from "@/components/Button";
 import HeroSectionWidget from "@/components/HeroSectionWidget";
 import ServicesWidget from "@/components/widgets/ServicesWidget";
 import KnowledgeHubWidget from "@/components/widgets/KnowledgeHubWidget";
+import ContactsDetailsWidget from "@/components/widgets/ContactsDetailsWidget";
 
 export default function Index() {
   return (
@@ -137,11 +138,9 @@ export default function Index() {
                 >
                   <div className="grid gap-8">
                     <div className="border-b border-slate-300 pb-8">
-                      <ul className="space-y-3 text-slate-700 text-base leading-relaxed">
-                        <li>Phone: +7 (495) 000-00-00</li>
-                        <li>Email: contact@escobiosafety.org</li>
-                        <li>Mon–Fri: 9:00–19:00</li>
-                      </ul>
+                      <div className="text-slate-700 text-base leading-relaxed">
+                        <ContactsDetailsWidget />
+                      </div>
                     </div>
 
                     <label className="grid gap-2 text-base font-semibold">
