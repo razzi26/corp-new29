@@ -19,6 +19,7 @@ import { LoadingIndicator } from "@/components/ui/loading-indicator";
 import ContactModal from "@/components/ContactModal";
 import { cn } from "@/lib/utils";
 import FeaturedProductsWidget from "@/components/widgets/FeaturedProductsWidget";
+import ServicesWidget from "@/components/widgets/ServicesWidget";
 import KnowledgeHubWidget from "@/components/widgets/KnowledgeHubWidget";
 
 export default function Index() {
