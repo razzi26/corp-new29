@@ -20,7 +20,7 @@ const footerNavigation: NavigationLink[] = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[hsl(var(--brand-end))] text-white">
+    <footer className="text-white" style={{ background: "linear-gradient(135deg, #020113 0%, #003BA3)" }}>
       <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3">
         <div>
           <div className="mb-4 text-white">
