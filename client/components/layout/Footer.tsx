@@ -16,9 +16,7 @@ export default function Footer() {
             <span className="font-semibold">{siteConfig.siteName}</span>
           </div>
           <p className="text-sm leading-relaxed text-white/90">
-            Your trusted hub for biosafety training, regulatory guidance and
-            practical resources. Build expertise and confidence in laboratory
-            safety.
+            {siteConfig.description}
           </p>
           <SocialMediaWidget />
         </div>
