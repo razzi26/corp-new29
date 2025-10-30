@@ -48,32 +48,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Benefits - Color Block Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="container mx-auto px-4">
-          <div className="mb-12">
-            <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
-            <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
-              Why Choose Us
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <BenefitCard
-              title="Industry Expertise"
-              descr="10+ years supplying public and private healthcare institutions with trusted biosafety solutions"
-            />
-            <BenefitCard
-              title="Official Supply"
-              descr="We work only with certified manufacturers to ensure quality and compliance with standards"
-            />
-            <BenefitCard
-              title="Nationwide Service"
-              descr="Our own service team provides responsive support and maintenance across the nation"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Products preview */}
       {/*
       <section className="py-20 md:py-28 bg-white">
@@ -99,6 +73,32 @@ export default function Index() {
       <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
           <KnowledgeHubWidget />
+        </div>
+      </section>
+
+      {/* Benefits - Color Block Section */}
+      <section className="py-20 md:py-28">
+        <div className="container mx-auto px-4">
+          <div className="mb-12">
+            <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
+            <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
+              Why Choose Us
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <BenefitCard
+              title="Industry Expertise"
+              descr="10+ years supplying public and private healthcare institutions with trusted biosafety solutions"
+            />
+            <BenefitCard
+              title="Official Supply"
+              descr="We work only with certified manufacturers to ensure quality and compliance with standards"
+            />
+            <BenefitCard
+              title="Nationwide Service"
+              descr="Our own service team provides responsive support and maintenance across the nation"
+            />
+          </div>
         </div>
       </section>
 
