@@ -48,11 +48,11 @@ const App = () => (
             <Route path="/news" element={<News />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/trainings" element={<TrainingsOverview />} />
-            <Route path="/trainings/about" element={<Trainings />} />
-            <Route path="/trainings/seminars" element={<SeminarsPage />} />
-            <Route path="/trainings/services" element={<Services />} />
-            <Route path="/trainings/brochures" element={<Brochures />} />
+            <Route path="/services" element={<TrainingsOverview />} />
+            <Route path="/services/about" element={<Trainings />} />
+            <Route path="/services/seminars" element={<SeminarsPage />} />
+            <Route path="/services/services" element={<Services />} />
+            <Route path="/services/brochures" element={<Brochures />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/resources/videos" element={<Videos />} />
             <Route path="/resources/articles" element={<KnowledgeHub />} />
