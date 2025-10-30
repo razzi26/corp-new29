@@ -24,7 +24,7 @@ export default function Logo({
           className={
             isHeader
               ? "font-semibold tracking-wide transition-colors text-lg leading-tight"
-              : "font-semibold text-sm leading-tight"
+              : "font-semibold text-lg leading-tight"
           }
         >
           <div>Esco Biosafety</div>
