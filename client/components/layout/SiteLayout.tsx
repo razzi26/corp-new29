@@ -20,7 +20,10 @@ export default function SiteLayout() {
   }, []);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    // Scroll to top after content has been rendered
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    });
   }, [location.pathname]);
 
 
