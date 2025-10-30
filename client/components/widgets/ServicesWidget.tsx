@@ -16,7 +16,8 @@ const SERVICES: Service[] = [
       "Securing adherence to quality system standards by comprehensive auditing and compliance to regulations by training & education.",
     icon: GraduationCap,
     href: "/services/trainings-and-seminars",
-    backgroundImage: "https://pharmavalidationtraininginstitute.com/images/section/Audit-and-Training-Service.jpg",
+    backgroundImage:
+      "https://pharmavalidationtraininginstitute.com/images/section/Audit-and-Training-Service.jpg",
   },
   {
     title: "Validation Service",
@@ -24,7 +25,8 @@ const SERVICES: Service[] = [
       "Ensuring integrity and performance of systems, facilities & equipment through validation.",
     icon: CheckCircle,
     href: "/services/validation-service",
-    backgroundImage: "https://pharmavalidationtraininginstitute.com/images/section/Validation-Service.jpg",
+    backgroundImage:
+      "https://pharmavalidationtraininginstitute.com/images/section/Validation-Service.jpg",
   },
   {
     title: "Commissioning and Qualification",
@@ -32,7 +34,8 @@ const SERVICES: Service[] = [
       "Providing quality installation of equipment and construction of facility from start to finish.",
     icon: Wrench,
     href: "/services/commissioning-and-qualification",
-    backgroundImage: "https://pharmavalidationtraininginstitute.com/images/section/Commissioning-and-Qualification.jpg",
+    backgroundImage:
+      "https://pharmavalidationtraininginstitute.com/images/section/Commissioning-and-Qualification.jpg",
   },
 ];
 
@@ -63,7 +66,9 @@ export default function ServicesWidget() {
                 <div
                   className="absolute inset-0 transition-transform duration-300 group-hover:scale-105"
                   style={{
-                    backgroundImage: service.backgroundImage ? `url(${service.backgroundImage})` : undefined,
+                    backgroundImage: service.backgroundImage
+                      ? `url(${service.backgroundImage})`
+                      : undefined,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
@@ -74,19 +79,23 @@ export default function ServicesWidget() {
                 )}
 
                 <div className="relative z-10 p-8 h-full flex flex-col justify-end min-h-96">
-                  <h3 className={`mb-3 text-xl font-bold ${
-                    service.backgroundImage
-                      ? "text-white"
-                      : "text-[hsl(205_100%_12%)]"
-                  }`}>
+                  <h3
+                    className={`mb-3 text-xl font-bold ${
+                      service.backgroundImage
+                        ? "text-white"
+                        : "text-[hsl(205_100%_12%)]"
+                    }`}
+                  >
                     {service.title}
                   </h3>
 
-                  <p className={`text-base leading-relaxed ${
-                    service.backgroundImage
-                      ? "text-white/90"
-                      : "text-slate-700"
-                  }`}>
+                  <p
+                    className={`text-base leading-relaxed ${
+                      service.backgroundImage
+                        ? "text-white/90"
+                        : "text-slate-700"
+                    }`}
+                  >
                     {service.description}
                   </p>
 

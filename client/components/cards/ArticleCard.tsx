@@ -7,11 +7,7 @@ export function ArticleCard({ a }: { a: ArticleMeta }) {
   return (
     <div className="pb-0 pt-0 flex flex-col h-full bg-[hsl(var(--primary))] rounded-lg overflow-hidden">
       {a.image && (
-        <img
-          src={a.image}
-          alt={a.title}
-          className="w-full h-48 object-cover"
-        />
+        <img src={a.image} alt={a.title} className="w-full h-48 object-cover" />
       )}
       <div className="flex flex-col flex-1 p-6 text-white">
         <Link
@@ -21,19 +17,19 @@ export function ArticleCard({ a }: { a: ArticleMeta }) {
           {a.title}
         </Link>
         <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-white/80 font-medium">
-        <span className="inline-flex items-center gap-1.5">
-          <CalendarDays className="h-4 w-4" />
-          {new Date(a.date).toLocaleDateString()}
-        </span>
-        <span className="text-slate-300">—</span>
-        <span className="inline-flex items-center gap-1.5">
-          <Clock className="h-4 w-4" />
-          {a.readMins} min read
-        </span>
-      </div>
+          <span className="inline-flex items-center gap-1.5">
+            <CalendarDays className="h-4 w-4" />
+            {new Date(a.date).toLocaleDateString()}
+          </span>
+          <span className="text-slate-300">—</span>
+          <span className="inline-flex items-center gap-1.5">
+            <Clock className="h-4 w-4" />
+            {a.readMins} min read
+          </span>
+        </div>
         <p className="text-base leading-relaxed text-white/90 mb-4">
-        {a.description}
-      </p>
+          {a.description}
+        </p>
         <div className="mt-auto flex flex-wrap gap-2 mb-4">
           {a.tags.map((t) => (
             <span

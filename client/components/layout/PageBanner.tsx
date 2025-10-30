@@ -32,7 +32,7 @@ export function PageBanner({
   breadcrumbs,
   meta,
   backgroundImage,
-  gradient ='linear-gradient(135deg, #020113 0%, #003BA3)',
+  gradient = "linear-gradient(135deg, #020113 0%, #003BA3)",
 }: PageBannerProps) {
   return (
     <>
@@ -77,7 +77,9 @@ export function PageBanner({
                             <Link to={crumb.href}>{displayLabel}</Link>
                           </BreadcrumbLink>
                         ) : (
-                          <BreadcrumbPage className="text-white/80">{displayLabel}</BreadcrumbPage>
+                          <BreadcrumbPage className="text-white/80">
+                            {displayLabel}
+                          </BreadcrumbPage>
                         )}
                       </BreadcrumbItem>
                       {index < breadcrumbs.length - 1 && (

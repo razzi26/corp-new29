@@ -17,7 +17,9 @@ export default function Logo({
       <img
         src={siteConfig.logoPath}
         alt={siteConfig.siteName}
-        className={isHeader ? "h-14 w-14 object-contain" : "h-20 w-20 object-contain"}
+        className={
+          isHeader ? "h-14 w-14 object-contain" : "h-20 w-20 object-contain"
+        }
       />
       {!hideName && (
         <div
