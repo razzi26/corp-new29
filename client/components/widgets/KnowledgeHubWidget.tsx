@@ -160,7 +160,7 @@ export default function KnowledgeHubWidget() {
                 </h2>
                 <Link
                   to={'/resources'}
-                  className="ml-4 hidden md:inline-flex text-base font-semibold text-brand-secondary hover:underline"
+                  className="ml-4 hidden md:inline-flex text-lg font-semibold text-brand-secondary hover:underline"
                 >
                   Explore →
                 </Link>
