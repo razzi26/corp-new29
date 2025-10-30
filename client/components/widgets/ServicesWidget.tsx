@@ -71,15 +71,27 @@ export default function ServicesWidget() {
                 )}
 
                 <div className="relative">
-                  <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-[hsl(var(--primary))]/10 text-[hsl(var(--primary))]">
+                  <div className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg ${
+                    service.backgroundImage
+                      ? "bg-white/20 text-white"
+                      : "bg-[hsl(var(--primary))]/10 text-[hsl(var(--primary))]"
+                  }`}>
                     <Icon className="h-7 w-7" />
                   </div>
 
-                  <h3 className="mb-3 text-xl font-bold text-[hsl(205_100%_12%)]">
+                  <h3 className={`mb-3 text-xl font-bold ${
+                    service.backgroundImage
+                      ? "text-white"
+                      : "text-[hsl(205_100%_12%)]"
+                  }`}>
                     {service.title}
                   </h3>
 
-                  <p className="text-base leading-relaxed text-slate-700">
+                  <p className={`text-base leading-relaxed ${
+                    service.backgroundImage
+                      ? "text-white/90"
+                      : "text-slate-700"
+                  }`}>
                     {service.description}
                   </p>
                 </div>
