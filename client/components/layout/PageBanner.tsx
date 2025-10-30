@@ -37,7 +37,7 @@ export function PageBanner({
   return (
     <>
       <section
-        className="relative overflow-hidden text-white"
+        className="pt-40 relative overflow-hidden text-white"
         data-header-anchor
         style={{
           backgroundImage: backgroundImage
