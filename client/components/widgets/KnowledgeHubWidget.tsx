@@ -93,6 +93,7 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
         }
       } else {
         // apply inertia if present (time-based)
+        const now = performance.now();
         const last = lastFrameTime.current ?? now;
         const dt = Math.max(0, now - last);
         lastFrameTime.current = now;
