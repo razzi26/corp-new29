@@ -81,7 +81,7 @@ export default function TrainingsOverview() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--primary))]/5 to-[hsl(var(--primary))]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                <div className="relative flex gap-4">
+                <div className="relative flex flex-col gap-4">
                   <div className="flex-shrink-0">
                     <div className="inline-flex h-14 w-14 items-center justify-center rounded-lg bg-[hsl(var(--primary))]/10 text-[hsl(var(--primary))]">
                       <Icon className="h-7 w-7" />
