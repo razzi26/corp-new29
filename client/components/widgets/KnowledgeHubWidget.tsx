@@ -79,26 +79,41 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
     setCursorPos({ x, y });
     setIsOverInteractive(isInteractiveTarget(e.target));
 
+    if (isPotentialDrag.current && !isDragging) {
+      const moveDelta = Math.abs(e.clientX - dragState.current.startX);
+      if (moveDelta >= DRAG_THRESHOLD) {
+        // start actual drag
+        setIsDragging(true);
+        document.body.style.userSelect = "none";
+      }
+    }
+
     if (isDragging) {
       const delta = e.clientX - dragState.current.startX;
       el.scrollLeft = dragState.current.startScroll - delta;
     }
   };
   const endDrag = () => {
-    if (!isDragging) return;
+    if (!isDragging && !isPotentialDrag.current) return;
+    const wasDragging = isDragging;
     setIsDragging(false);
+    isPotentialDrag.current = false;
     document.body.style.userSelect = "";
+    if (wasDragging) {
+      suppressedClick.current = true;
+      // clear after next tick to allow internal click handlers to check
+      setTimeout(() => (suppressedClick.current = false), 50);
+    }
   };
   const onMouseDown = (e: React.MouseEvent) => {
-    // only start drag with left mouse button and when not over interactive element
+    // only consider drag with left mouse button and when not over interactive element
     if (isTouch) return;
     if (e.button !== 0) return;
     if (isInteractiveTarget(e.target)) return;
     const el = ref.current;
     if (!el) return;
-    setIsDragging(true);
+    isPotentialDrag.current = true;
     dragState.current = { startX: e.clientX, startScroll: el.scrollLeft };
-    document.body.style.userSelect = "none";
     // add mouseup on window to capture when released outside
     window.addEventListener("mouseup", endDrag, { once: true });
   };
