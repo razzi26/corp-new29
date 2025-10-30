@@ -1,121 +1,16 @@
-import {
-  Check,
-  HeartPulse,
-  Microscope,
-  Stethoscope,
-  Scan,
-  ShieldCheck,
-  GraduationCap,
-  BadgeCheck,
-} from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import FAQWidget from "@/components/widgets/FAQWidget";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { LoadingIndicator } from "@/components/ui/loading-indicator";
-import ContactModal from "@/components/ContactModal";
-import { cn } from "@/lib/utils";
-import FeaturedProductsWidget from "@/components/widgets/FeaturedProductsWidget";
+import { Button } from "@/components/Button";
+import HeroSectionWidget from "@/components/HeroSectionWidget";
+import ServicesWidget from "@/components/widgets/ServicesWidget";
 import KnowledgeHubWidget from "@/components/widgets/KnowledgeHubWidget";
 
 export default function Index() {
   return (
     <div id="top" className="text-slate-900 bg-white">
-      {/* Hero with accent background */}
-      <section
-        className="relative text-white overflow-hidden"
-        data-header-anchor
-        aria-label="Hero section"
-      >
-        <div className="absolute inset-0">
-          <img
-            src="https://images.pexels.com/photos/9574399/pexels-photo-9574399.jpeg"
-            alt="Bright and sterile laboratory featuring high-tech research equipment and medical professionals at work"
-            className="h-full w-full object-cover"
-            loading="eager"
-            decoding="async"
-          />
-          <div className="absolute inset-0 bg-[hsl(var(--brand-start))]/75" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--brand-start))]/60 to-[hsl(var(--brand-end))]/75 mix-blend-multiply" />
-        </div>
-        <div className="relative container mx-auto px-4 pt-32 pb-24 md:pt-40 md:h-screen lg:pt-52 lg:pb-40">
-          <div className="hero-grid grid gap-6 items-center">
-            {/*<div className="lg:flex lg:flex-col lg:items-start lg:text-left max-w-2xl">
-              
-            </div>*/}
-
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-              Welcome to Esco Biosafety Institute!
-            </h1>
-            <p className="mt-6 text-white text-lg md:text-xl leading-relaxed max-w-2xl">
-              Biosafety in any laboratory is crucial. The Esco Biosafety
-              Institute was established to be your partner in achieving it. Our
-              institute provides:
-            </p>
-
-            <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
-              {[
-                {
-                  label: "Training & seminars",
-                  icon: GraduationCap,
-                  bg: "bg-[hsl(var(--brand-start))]",
-                },
-                {
-                  label: "Regulatory guidance",
-                  icon: ShieldCheck,
-                  bg: "bg-[hsl(205_100%_35%)]",
-                },
-                {
-                  label: "Practical resources",
-                  icon: Microscope,
-                  bg: "bg-[hsl(var(--brand-start))]",
-                },
-                {
-                  label: "Certification support",
-                  icon: BadgeCheck,
-                  bg: "bg-[hsl(205_100%_35%)]",
-                },
-              ].map(({ label, icon: Icon, bg }) => (
-                <div
-                  key={label}
-                  className={cn(
-                    "flex items-center gap-4 text-white rounded-lg px-4 py-4 backdrop-blur-sm bg-white/10 border border-white/20",
-                    bg,
-                  )}
-                >
-                  <div className="flex-shrink-0 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/20">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <span className="font-semibold text-base leading-tight">
-                    {label}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-
-
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center bg-white text-[hsl(var(--primary))] px-8 py-3.5 font-bold transition hover:bg-white/90"
-              >
-                Get certified
-              </Link>
-              <Link
-                to="/resources"
-                className="inline-flex items-center justify-center border-2 border-white text-white px-8 py-3.5 font-bold transition hover:bg-white/15 backdrop-blur-sm"
-              >
-                Explore resources
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <HeroSectionWidget />
 
       {/* About & Mission Section */}
       <section className="py-20 md:py-28 bg-white">
@@ -138,12 +33,13 @@ export default function Index() {
                 your knowledge, we're your central hub for building expertise in
                 biosafety protocols.
               </p>
-              <Link
-                to="/about"
-                className="inline-flex items-center rounded-lg bg-[hsl(var(--primary))] text-white px-8 py-3 font-bold shadow-lg hover:shadow-xl transition hover:bg-brand-secondary"
+              <Button
+                asChild
+                size="lg"
+                className="shadow-lg hover:shadow-xl bg-[hsl(var(--primary))] hover:bg-[hsl(205_100%_20%)]"
               >
-                Learn more
-              </Link>
+                <Link to="/about">Learn more</Link>
+              </Button>
             </div>
             <div className="relative">
               <div className="bg-[hsl(var(--primary))] h-96 rounded-xl"></div>
@@ -152,8 +48,29 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Products preview */}
+      {/*
+      <section className="py-20 md:py-28 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="flex items-end justify-between gap-4 mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))]">Featured Products</h2>
+            <Link
+              to="/products"
+              className="hidden md:inline-flex text-base font-semibold text-[hsl(var(--primary))] hover:underline"
+            >
+              Browse all products →
+            </Link>
+          </div>
+
+          <FeaturedProductsWidget />
+        </div>
+      </section>*/}
+
+      {/* Services */}
+      <ServicesWidget />
+
       {/* Benefits - Color Block Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-slate-50 to-blue-50">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <div className="mb-12">
             <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
@@ -178,24 +95,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Products preview */}
-      {/*
-      <section className="py-20 md:py-28 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="flex items-end justify-between gap-4 mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))]">Featured Products</h2>
-            <Link
-              to="/products"
-              className="hidden md:inline-flex text-base font-semibold text-[hsl(var(--primary))] hover:underline"
-            >
-              Browse all products →
-            </Link>
-          </div>
-
-          <FeaturedProductsWidget />
-        </div>
-      </section>*/}
-
       {/* Knowledge Hub */}
       <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
@@ -219,8 +118,6 @@ export default function Index() {
               </div>
             </div>
 
-
-
             <div className="mb-8">
               <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
               <h3 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)]">
@@ -230,16 +127,16 @@ export default function Index() {
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
-                    const form = new FormData(e.currentTarget as HTMLFormElement);
+                    const form = new FormData(
+                      e.currentTarget as HTMLFormElement,
+                    );
                     console.log(Object.fromEntries(form.entries()));
                     alert("Thank you! We will contact you shortly.");
                   }}
                   className="bg-white"
                 >
                   <div className="grid gap-8">
-
                     <div className="border-b border-slate-300 pb-8">
-                      
                       <ul className="space-y-3 text-slate-700 text-base leading-relaxed">
                         <li>Phone: +7 (495) 000-00-00</li>
                         <li>Email: contact@escobiosafety.org</li>
@@ -272,18 +169,21 @@ export default function Index() {
                       />
                     </label>
 
-                    <button className="inline-flex items-center justify-center bg-brand-secondary hover:bg-brand-secondary/90 text-white px-8 py-3.5 font-bold transition">
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      className="bg-brand-secondary hover:bg-brand-secondary/90"
+                    >
                       Send request
-                    </button>
+                    </Button>
                     <p className="text-sm text-slate-500">
-                      By submitting, you agree to the processing of personal data.
+                      By submitting, you agree to the processing of personal
+                      data.
                     </p>
                   </div>
                 </form>
               </div>
             </div>
-
-            
           </div>
         </div>
       </section>

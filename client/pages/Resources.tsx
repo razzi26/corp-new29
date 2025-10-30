@@ -71,6 +71,8 @@ export default function Resources() {
         title="Knowledge Hub"
         description="A curated collection of learning materials, videos, and case studies to help you stay informed about biosafety best practices."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Knowledge Hub" }]}
+        backgroundImage="https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg"
+        gradient="linear-gradient(135deg, #020113 0%, #003BA3)"
       />
 
       <section className="container mx-auto px-4 py-12 md:py-16">

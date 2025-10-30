@@ -19,7 +19,7 @@ type TrainingCard = {
 
 const TRAINING_CARDS: TrainingCard[] = [
   {
-    href: "/trainings/about",
+    href: "/services/about",
     title: "About Trainings",
     description:
       "Expert-led programs delivered from our dedicated learning centers.",
@@ -27,21 +27,21 @@ const TRAINING_CARDS: TrainingCard[] = [
     color: "bg-blue-700",
   },
   {
-    href: "/trainings/seminars",
+    href: "/services/seminars",
     title: "Seminars",
     description: "Specialized seminars on biosafety cabinet operations.",
     icon: Users,
     color: "bg-indigo-600",
   },
   {
-    href: "/trainings/services",
+    href: "/services/services",
     title: "Services",
     description: "Professional training and support services.",
     icon: Wrench,
     color: "bg-cyan-600",
   },
   {
-    href: "/trainings/brochures",
+    href: "/services/brochures",
     title: "Brochures",
     description: "Downloadable training materials and documentation.",
     icon: FileStack,
@@ -53,9 +53,9 @@ export default function TrainingsOverview() {
   return (
     <div className="bg-white text-slate-900">
       <PageBanner
-        title="Trainings"
+        title="Services"
         description="Comprehensive training programs and resources to enhance your biosafety expertise."
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Trainings" }]}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
 
       <section className="container mx-auto px-4 py-12 md:py-16">

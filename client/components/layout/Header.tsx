@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { createPortal } from "react-dom";
 
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/Button";
 
 const nav: Array<{
   label: string;
@@ -13,13 +14,13 @@ const nav: Array<{
   { to: "/", label: "Home" },
   { to: "/about", label: "About Us" },
   {
-    label: "Trainings",
-    to: "/trainings",
+    label: "Services",
+    to: "/services",
     children: [
-      { to: "/trainings/about", label: "About Trainings" },
-      { to: "/trainings/seminars", label: "Seminars" },
-      { to: "/trainings/services", label: "Services" },
-      { to: "/trainings/brochures", label: "Brochures" },
+      { to: "/services/about", label: "About Trainings" },
+      { to: "/services/seminars", label: "Seminars" },
+      { to: "/services/services", label: "Services" },
+      { to: "/services/brochures", label: "Brochures" },
     ],
   },
   // { to: "/products", label: "Products" },
@@ -187,17 +188,18 @@ export default function Header() {
             </nav>
 
             <div className="hidden md:flex justify-self-end">
-              <Link
-                to="/contact"
+              <Button
+                asChild
+                variant="primary"
+                size="md"
                 className={cn(
-                  "inline-flex items-center rounded-lg px-6 py-2.5 text-base font-bold transition text-[hsl(var(--primary))]",
                   scrolled || open || isProductDetail
-                    ? "bg-[hsl(var(--primary))] text-white hover:bg-[hs1(205_100%_20%)] hover:text-white"
-                    : "bg-white text-[hsl(var(--primary))] hover:bg-slate-100 hover:text-[hsl(var(--primary))]",
+                    ? "bg-[hsl(var(--primary))] text-white hover:bg-[hsl(205_100%_20%)]"
+                    : "bg-white text-[hsl(var(--primary))] hover:bg-slate-100",
                 )}
               >
-                Contact Us
-              </Link>
+                <Link to="/contact">Contact Us</Link>
+              </Button>
             </div>
 
             <button
@@ -289,13 +291,16 @@ export default function Header() {
                   ),
                 )}
                 <div className="px-6 py-6 border-t-2 border-slate-200">
-                  <Link
-                    to="/contact"
-                    className="block w-full rounded-lg px-6 py-3.5 text-center text-base font-bold shadow-lg transition hover:shadow-xl bg-[hsl(var(--primary))] text-white hover:bg-brand-secondary"
-                    onClick={() => setOpen(false)}
+                  <Button
+                    asChild
+                    variant="primary"
+                    size="lg"
+                    className="w-full shadow-lg hover:shadow-xl"
                   >
-                    Contact Us
-                  </Link>
+                    <Link to="/contact" onClick={() => setOpen(false)}>
+                      Contact Us
+                    </Link>
+                  </Button>
                 </div>
               </nav>
             </div>
