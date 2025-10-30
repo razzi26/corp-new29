@@ -29,7 +29,8 @@ export default function Footer() {
           <p className="text-sm leading-relaxed text-white/90">
             {siteConfig.description}
           </p>
-          <div className="mt-4">
+          <div className="mt-8">
+            <div className="text-sm font-semibold mb-2">Follow us</div>
             <SocialMediaWidget />
           </div>
         </div>
