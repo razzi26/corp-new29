@@ -20,7 +20,7 @@ interface RouteData {
 const staticRoutes: RouteData[] = [
   { path: "/", title: "Home", priority: 1.0, changeFrequency: "weekly" },
   { path: "/about", title: "About Us", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/products", title: "Products", priority: 0.9, changeFrequency: "weekly" },
+  // { path: "/products", title: "Products", priority: 0.9, changeFrequency: "weekly" },
   {
     path: "/services",
     title: "Services",
