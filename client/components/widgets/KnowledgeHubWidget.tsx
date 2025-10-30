@@ -59,6 +59,39 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
     return () => notifyCarouselUpdate();
   }, [carouselId]);
 
+  // rAF-based smooth drag
+  const desiredScroll = React.useRef<number | null>(null);
+  const rafId = React.useRef<number | null>(null);
+  const runRaf = () => {
+    if (rafId.current) return;
+    const step = () => {
+      const el = ref.current;
+      if (!el) {
+        rafId.current = null;
+        return;
+      }
+      if (desiredScroll.current !== null) {
+        // lerp towards desired for smoothing
+        const current = el.scrollLeft;
+        const target = desiredScroll.current;
+        const next = current + (target - current) * 0.25; // smoothing factor
+        el.scrollLeft = next;
+        if (Math.abs(next - target) < 0.5) {
+          el.scrollLeft = target;
+          desiredScroll.current = null;
+        }
+      }
+      rafId.current = requestAnimationFrame(step);
+    };
+    rafId.current = requestAnimationFrame(step);
+  };
+  const stopRaf = () => {
+    if (rafId.current) {
+      cancelAnimationFrame(rafId.current);
+      rafId.current = null;
+    }
+  };
+
   // handlers
   const onMouseEnter = (e: React.MouseEvent) => {
     if (isTouch) return;
@@ -85,12 +118,15 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
         // start actual drag
         setIsDragging(true);
         document.body.style.userSelect = "none";
+        // start smooth rAF loop
+        desiredScroll.current = dragState.current.startScroll;
+        runRaf();
       }
     }
 
     if (isDragging) {
       const delta = e.clientX - dragState.current.startX;
-      el.scrollLeft = dragState.current.startScroll - delta;
+      desiredScroll.current = dragState.current.startScroll - delta;
     }
   };
   const endDrag = () => {
@@ -104,6 +140,11 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string }
       // clear after next tick to allow internal click handlers to check
       setTimeout(() => (suppressedClick.current = false), 50);
     }
+    // stop RAF after short delay to allow easing to finish
+    setTimeout(() => {
+      desiredScroll.current = null;
+      stopRaf();
+    }, 80);
   };
   const onMouseDown = (e: React.MouseEvent) => {
     // only consider drag with left mouse button and when not over interactive element
