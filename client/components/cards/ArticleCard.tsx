@@ -42,21 +42,10 @@ export function ArticleCard({ a }: { a: ArticleMeta }) {
         </div>
         <Link
           to={`/resources/articles/${slugParam}`}
-          className="group inline-flex items-center justify-between w-full max-w-[220px] border border-white/30 rounded-md px-3 py-2 text-sm font-semibold text-white/90 hover:text-brand-secondary transition-colors"
+          className="group inline-flex items-center justify-between w-full rounded-lg border border-white/30 px-4 py-3 text-sm font-semibold text-white/90 transition-colors"
         >
           <span className="transition-colors group-hover:text-brand-secondary">Read article</span>
-          <svg
-            className="ml-3 h-4 w-4 shrink-0 transform transition-transform group-hover:rotate-45 group-hover:-translate-y-1"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden
-          >
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
+          <ArrowRight className="ml-3 h-5 w-5 shrink-0 transform transition-all group-hover:rotate-45 group-hover:-translate-y-1 group-hover:text-brand-secondary" />
         </Link>
       </div>
     </div>
