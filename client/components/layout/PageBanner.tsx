@@ -37,7 +37,7 @@ export function PageBanner({
   return (
     <>
       <section
-        className="pt-24 pb-12 relative overflow-hidden text-white"
+        className="pt-24 pb-8 relative overflow-hidden text-white"
         data-header-anchor
         style={{
           backgroundImage: backgroundImage
@@ -59,7 +59,7 @@ export function PageBanner({
         />
         <div className="relative container mx-auto px-4 pt-12 pb-10 md:pt-16 md:pb-14">
           {/* Breadcrumbs at the top */}
-          <div className="mb-8 md:mb-12">
+          <div className="mb-8 md:mb-16">
             <nav aria-label="breadcrumb">
               <BreadcrumbList>
                 {breadcrumbs.map((crumb, index) => {
