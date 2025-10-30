@@ -99,7 +99,7 @@ export default function TrainingsOverview() {
                   </div>
                 </div>
 
-                <div className="absolute top-4 right-4 text-[hsl(var(--primary))]">
+                <div className="absolute top-6 right-4 text-[hsl(var(--primary))]">
                   <ArrowRight className="h-6 w-6 transition-transform duration-300 group-hover:-rotate-45" />
                 </div>
 
