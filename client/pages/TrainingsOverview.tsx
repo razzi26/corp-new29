@@ -92,9 +92,13 @@ export default function TrainingsOverview() {
                       {title}
                     </h3>
 
-                    <p className="text-base leading-relaxed text-slate-700">
+                    <p className="text-base leading-relaxed text-slate-700 mb-4">
                       {description}
                     </p>
+
+                    <span className="inline-block text-[hsl(var(--primary))] font-semibold hover:text-brand-secondary transition-colors">
+                      Learn more →
+                    </span>
                   </div>
                 </div>
 
