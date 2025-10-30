@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import { XLogo } from "@/components/icons/XLogo";
+import { Button } from "@/components/Button";
 
 export default function Footer() {
   return (
@@ -133,9 +134,9 @@ export default function Footer() {
               placeholder="Your email"
               className="h-11 flex-1 rounded-lg bg-white text-slate-900 px-3 outline-none focus:ring-2 focus:ring-white"
             />
-            <button className="h-11 inline-flex items-center justify-center rounded-lg bg-white text-[hsl(var(--brand-end))] px-5 font-semibold shadow hover:shadow-md transition hover:bg-brand-secondary/10">
+            <Button variant="primary" size="md" className="bg-white text-[hsl(var(--brand-end))] hover:bg-white/90 shadow hover:shadow-md">
               Subscribe
-            </button>
+            </Button>
           </form>
           <p className="mt-2 text-xs text-white/80">
             No spam. Unsubscribe anytime.
