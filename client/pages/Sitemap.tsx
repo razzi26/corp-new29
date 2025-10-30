@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown, ChevronRight, FileText } from "lucide-react";
+import { ChevronDown, ChevronRight } from "lucide-react";
 import { buildCompleteSitemap, SitemapRoute } from "@/config/sitemapConfig";
 import { PageBanner } from "@/components/layout/PageBanner";
 
@@ -83,12 +83,21 @@ export default function Sitemap() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-        <div className="container mx-auto px-4 py-16">
-          <h1 className="text-4xl font-bold text-slate-900 mb-2">Sitemap</h1>
-          <p className="text-slate-600 mb-8">Loading sitemap...</p>
+      <>
+        <PageBanner
+          title="Sitemap"
+          description="Browse the complete structure of our website"
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: "Sitemap" },
+          ]}
+        />
+        <div className="bg-gradient-to-b from-slate-50 to-white min-h-screen">
+          <div className="container mx-auto px-4 py-16">
+            <p className="text-slate-600">Loading sitemap...</p>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
@@ -101,63 +110,69 @@ export default function Sitemap() {
   }, 0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      <div className="container mx-auto px-4 py-16">
-        {/* Header */}
-        <div className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <FileText className="w-8 h-8 text-blue-600" />
-            <h1 className="text-4xl font-bold text-slate-900">Sitemap</h1>
+    <>
+      <PageBanner
+        title="Sitemap"
+        description="Browse the complete structure of our website"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Sitemap" },
+        ]}
+      />
+      <div className="bg-gradient-to-b from-slate-50 to-white">
+        <div className="container mx-auto px-4 py-16">
+          {/* Header Info */}
+          <div className="mb-12">
+            <p className="text-lg text-slate-600 mb-2">
+              Total pages: <strong>{totalRoutes}</strong>
+            </p>
+            <p className="text-slate-500">
+              Click on any page to visit it, or expand the categories to see subpages
+            </p>
           </div>
-          <p className="text-lg text-slate-600 mb-4">
-            Browse the complete structure of our website with {totalRoutes} pages
-          </p>
-          <p className="text-slate-500">
-            Click on any page to visit it, or expand the categories to see subpages
-          </p>
-        </div>
 
-        {/* Statistics */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-          <div className="bg-white rounded-lg border border-slate-200 p-4">
-            <div className="text-sm text-slate-600 mb-1">Total Pages</div>
-            <div className="text-3xl font-bold text-slate-900">{totalRoutes}</div>
-          </div>
-          <div className="bg-white rounded-lg border border-slate-200 p-4">
-            <div className="text-sm text-slate-600 mb-1">Categories</div>
-            <div className="text-3xl font-bold text-slate-900">{routes.length}</div>
-          </div>
-          <div className="bg-white rounded-lg border border-slate-200 p-4">
-            <div className="text-sm text-slate-600 mb-1">XML Sitemap</div>
-            <a href="/sitemap.xml" className="text-blue-600 hover:underline font-medium">
-              View XML
-            </a>
-          </div>
-        </div>
-
-        {/* Sitemap Tree */}
-        <div className="bg-white rounded-lg border border-slate-200 overflow-hidden">
-          <div className="p-6">
-            <div className="space-y-0">
-              {routes.map((route, idx) => (
-                <SitemapItem key={`${route.path}-${idx}`} route={route} level={0} />
-              ))}
+          {/* Statistics */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+            <div className="bg-white rounded-lg border border-slate-200 p-4">
+              <div className="text-sm text-slate-600 mb-1">Total Pages</div>
+              <div className="text-3xl font-bold text-slate-900">{totalRoutes}</div>
+            </div>
+            <div className="bg-white rounded-lg border border-slate-200 p-4">
+              <div className="text-sm text-slate-600 mb-1">Categories</div>
+              <div className="text-3xl font-bold text-slate-900">{routes.length}</div>
+            </div>
+            <div className="bg-white rounded-lg border border-slate-200 p-4">
+              <div className="text-sm text-slate-600 mb-1">XML Sitemap</div>
+              <a href="/sitemap.xml" className="text-blue-600 hover:underline font-medium">
+                View XML
+              </a>
             </div>
           </div>
-        </div>
 
-        {/* Footer Info */}
-        <div className="mt-12 text-center text-slate-600 text-sm">
-          <p>This sitemap is automatically generated from the website structure.</p>
-          <p className="mt-2">
-            For search engines, use the{" "}
-            <a href="/sitemap.xml" className="text-blue-600 hover:underline">
-              XML sitemap
-            </a>
-            .
-          </p>
+          {/* Sitemap Tree */}
+          <div className="bg-white rounded-lg border border-slate-200 overflow-hidden">
+            <div className="p-6">
+              <div className="space-y-0">
+                {routes.map((route, idx) => (
+                  <SitemapItem key={`${route.path}-${idx}`} route={route} level={0} />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Footer Info */}
+          <div className="mt-12 text-center text-slate-600 text-sm">
+            <p>This sitemap is automatically generated from the website structure.</p>
+            <p className="mt-2">
+              For search engines, use the{" "}
+              <a href="/sitemap.xml" className="text-blue-600 hover:underline">
+                XML sitemap
+              </a>
+              .
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
