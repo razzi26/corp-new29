@@ -27,11 +27,11 @@ const ScrollCarousel: React.FC<{ children: React.ReactNode; carouselId: string; 
   const [isTouch, setIsTouch] = React.useState(false);
   const [isOverInteractive, setIsOverInteractive] = React.useState(false);
   const INERTIA_ENABLED = true; // master default (can be overridden via prop)
-  // time-based inertia settings
-    const INERTIA_DECAY_RATE = 0.0025; // per ms decay rate (higher = faster slow down)
-  const VELOCITY_MULTIPLIER = 0.8; // multiplier applied to measured velocity
-  const VELOCITY_THRESHOLD = 0.002; // px/ms minimal velocity to continue inertia (~2 px/s)
-  const MAX_VELOCITY = 3; // px/ms (3 px/ms = 3000 px/s)
+    // time-based inertia settings tuned for mobile-like feel
+    const INERTIA_DECAY_RATE = 0.002; // per ms decay rate (lower -> longer glide)
+  const VELOCITY_MULTIPLIER = 1.2; // multiplier applied to measured velocity (flick multiplier)
+  const VELOCITY_THRESHOLD = 0.001; // px/ms minimal velocity to continue inertia (~1 px/s)
+  const MAX_VELOCITY = 4; // px/ms (4 px/ms = 4000 px/s)
   const DRAG_THRESHOLD = 6; // px before we consider it a drag
 
   const dragEnabled = !!enableDrag;
