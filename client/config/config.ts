@@ -2,7 +2,7 @@ export const siteConfig = {
   siteName: "Esco Cell Culture Institute",
   logoPath: "/logo_ebi.png",
   description:
-    "Your trusted hub for biosafety training, regulatory guidance and practical resources. Build expertise and confidence in laboratory safety.",
+    "Your trusted hub for cell culture training, regulatory guidance and practical resources. Build expertise and confidence in laboratory cell culture practices.",
   contacts: {
     address: "19 Changi South Street 1, Singapore 486779",
     phone: "+65 65420833",
