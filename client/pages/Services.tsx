@@ -11,13 +11,16 @@ import {
   Check,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import servicesData from "@/config/data/services.json";
+
+const ICONS: Record<string, any> = { Headset, Wrench, Boxes, LifeBuoy, Award, Truck, Clock };
 
 export default function Services() {
   return (
     <div className="bg-white text-slate-900">
       <PageBanner
-        title="Services"
-        description="Global, certified field service and support for biosafety equipment."
+        title={servicesData.title}
+        description={servicesData.description}
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Services", href: "/services" },
