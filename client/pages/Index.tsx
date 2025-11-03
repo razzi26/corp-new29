@@ -50,19 +50,14 @@ export default function Index() {
                 <Link to="/about">Learn more</Link>
               </Button>
             </div>
-            <div className="relative">
-              <div className="grid gap-4">
-                {homeAboutData.missions.map((m) => (
-                  <div
-                    key={m.title}
-                    className="bg-white border border-slate-200 p-6 rounded-lg"
-                  >
-                    <h3 className="text-lg font-semibold text-[hsl(205_100%_12%)]">
-                      {m.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-slate-700">{m.descr}</p>
-                  </div>
-                ))}
+            <div className="relative flex items-center justify-center">
+              <div className="w-full h-56 sm:h-72 md:h-80 bg-slate-100 border border-slate-200 rounded-lg overflow-hidden flex items-center justify-center">
+                <img
+                  src="/public/data/placeholder.jpg"
+                  alt="About photo"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
