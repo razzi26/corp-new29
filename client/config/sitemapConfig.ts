@@ -150,7 +150,7 @@ export const staticRoutes: SitemapRoute[] = [
   {
     path: "/news",
     title: "News",
-    description: "Latest news and updates from Esco Cell Culture Institute",
+    description: `Latest news and updates from ${siteConfig.siteName}`,
     priority: 0.8,
     changeFrequency: "daily",
     children: [], // Will be populated with dynamic news routes
