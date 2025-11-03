@@ -29,8 +29,14 @@ export default function Logo({
               : "font-semibold text-lg leading-tight"
           }
         >
-          <div>Esco Cell Culture</div>
-          <div>Institute</div>
+          {siteConfig.nameLines && siteConfig.nameLines.length > 0 ? (
+            <>
+              <div>{siteConfig.nameLines[0]}</div>
+              <div>{siteConfig.nameLines[1] ?? ""}</div>
+            </>
+          ) : (
+            <div>{siteConfig.siteName}</div>
+          )}
         </div>
       )}
     </div>
