@@ -92,6 +92,12 @@ export default function Services() {
 
       {/* Trainings Section (embedded) */}
       <TrainingsSection />
+
+      {/* Commissioning Section (embedded) */}
+      <CommissioningSection />
+
+      {/* Validation Section (embedded) */}
+      <ValidationSection />
     </div>
   );
 }
