@@ -11,7 +11,9 @@ export default function EmailSubscriptionWidget() {
             <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)] mb-4">
               {emailSub.title}
             </h2>
-            <p className="text-lg text-slate-700 leading-relaxed">{emailSub.description}</p>
+            <p className="text-lg text-slate-700 leading-relaxed">
+              {emailSub.description}
+            </p>
           </div>
 
           <form
@@ -41,7 +43,9 @@ export default function EmailSubscriptionWidget() {
             </Button>
           </form>
 
-          <p className="mt-4 text-center text-sm text-slate-600">{emailSub.disclaimer}</p>
+          <p className="mt-4 text-center text-sm text-slate-600">
+            {emailSub.disclaimer}
+          </p>
         </div>
       </div>
     </section>
