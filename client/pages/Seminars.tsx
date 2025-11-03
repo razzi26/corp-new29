@@ -1,5 +1,6 @@
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { PageBanner } from "@/components/layout/PageBanner";
+import seminarsData from "@/config/data/seminars.json";
 
 export default function Seminars() {
   return (
