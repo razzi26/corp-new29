@@ -8,7 +8,7 @@ import KnowledgeHubWidget from "@/components/widgets/KnowledgeHubWidget";
 import EmailSubscriptionWidget from "@/components/widgets/EmailSubscriptionWidget";
 import ContactForm from "@/components/ContactForm";
 import { siteConfig } from "@/config/config";
-import aboutData from "@/config/data/about.json";
+import homeAboutData from "@/config/data/homeAbout.json";
 
 export default function Index() {
   return (
@@ -34,7 +34,7 @@ export default function Index() {
                   About {siteConfig.siteName}
                 </h2>
               </div>
-              {aboutData.paragraphs.slice(0, 2).map((p, i) => (
+              {homeAboutData.paragraphs.slice(0, 2).map((p, i) => (
                 <p
                   key={i}
                   className="text-lg text-slate-700 mb-4 leading-relaxed"
@@ -50,19 +50,14 @@ export default function Index() {
                 <Link to="/about">Learn more</Link>
               </Button>
             </div>
-            <div className="relative">
-              <div className="grid gap-4">
-                {aboutData.missions.map((m) => (
-                  <div
-                    key={m.title}
-                    className="bg-white border border-slate-200 p-6 rounded-lg"
-                  >
-                    <h3 className="text-lg font-semibold text-[hsl(205_100%_12%)]">
-                      {m.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-slate-700">{m.descr}</p>
-                  </div>
-                ))}
+            <div className="relative flex items-center justify-center">
+              <div className="w-full h-56 sm:h-72 md:h-80 bg-slate-100 border border-slate-200 rounded-lg overflow-hidden flex items-center justify-center">
+                <img
+                  src="/placeholder.svg"
+                  alt="About photo"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
