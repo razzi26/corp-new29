@@ -1,0 +1,8 @@
+{
+  "title": "Stay Updated",
+  "description": "Subscribe to our email newsletter for the latest laboratory safety news, updates, and insights delivered straight to your inbox.",
+  "inputPlaceholder": "Enter your email",
+  "buttonText": "Subscribe",
+  "successMessage": "Thanks for subscribing!",
+  "disclaimer": "No spam. Unsubscribe anytime."
+}
