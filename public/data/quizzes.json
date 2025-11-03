@@ -16,9 +16,18 @@
         "id": "q1",
         "prompt": "What is the primary purpose of using a biosafety cabinet (BSC)?",
         "options": [
-          { "id": "A", "label": "To maintain a sterile workspace for protecting the culture only." },
-          { "id": "B", "label": "To provide a controlled temperature for cell growth." },
-          { "id": "C", "label": "To create an aseptic environment that protects both the user and the cell culture from contamination." },
+          {
+            "id": "A",
+            "label": "To maintain a sterile workspace for protecting the culture only."
+          },
+          {
+            "id": "B",
+            "label": "To provide a controlled temperature for cell growth."
+          },
+          {
+            "id": "C",
+            "label": "To create an aseptic environment that protects both the user and the cell culture from contamination."
+          },
           { "id": "D", "label": "To mix cell culture media efficiently." }
         ],
         "answerId": "C",
@@ -41,7 +50,10 @@
         "prompt": "When passaging adherent cells, the enzyme trypsin is commonly used. What is its specific function?",
         "options": [
           { "id": "A", "label": "To provide nutrients to the cells." },
-          { "id": "B", "label": "To digest proteins that attach cells to the culture vessel surface." },
+          {
+            "id": "B",
+            "label": "To digest proteins that attach cells to the culture vessel surface."
+          },
           { "id": "C", "label": "To neutralize the cell culture media." },
           { "id": "D", "label": "To sterilize the culture." }
         ],
@@ -53,9 +65,15 @@
         "prompt": "What is the key advantage of using a defined, serum-free cell culture media over media containing fetal bovine serum (FBS)?",
         "options": [
           { "id": "A", "label": "It is always less expensive." },
-          { "id": "B", "label": "It eliminates batch-to-batch variability and reduces risk of contamination from animal products." },
+          {
+            "id": "B",
+            "label": "It eliminates batch-to-batch variability and reduces risk of contamination from animal products."
+          },
           { "id": "C", "label": "It requires less frequent media changes." },
-          { "id": "D", "label": "It is only suitable for bacterial cell culture." }
+          {
+            "id": "D",
+            "label": "It is only suitable for bacterial cell culture."
+          }
         ],
         "answerId": "B",
         "explanation": "FBS is a complex, undefined mixture. Defined, serum-free media offer greater consistency, improved reproducibility, and reduced contamination risk for therapeutic applications."
@@ -65,8 +83,14 @@
         "prompt": "Cryopreservation of cells typically involves suspending them in a medium containing a cryoprotectant like DMSO. What is the critical step immediately following the freezing process to ensure high cell viability upon thawing?",
         "options": [
           { "id": "A", "label": "Storing the vials at -20°C." },
-          { "id": "B", "label": "Rapidly thawing the cells in a 37°C water bath." },
-          { "id": "C", "label": "Slowly cooling the cells at a controlled rate (e.g., -1°C/minute) before long-term storage in liquid nitrogen." },
+          {
+            "id": "B",
+            "label": "Rapidly thawing the cells in a 37°C water bath."
+          },
+          {
+            "id": "C",
+            "label": "Slowly cooling the cells at a controlled rate (e.g., -1°C/minute) before long-term storage in liquid nitrogen."
+          },
           { "id": "D", "label": "Exposing the cells to UV light." }
         ],
         "answerId": "C",
@@ -77,7 +101,10 @@
         "prompt": "In a bioreactor for large-scale cell culture, what is the primary function of controlling dissolved oxygen (DO)?",
         "options": [
           { "id": "A", "label": "To control the pH of the culture." },
-          { "id": "B", "label": "To ensure adequate oxygen supply for cellular respiration, critical for cell growth and productivity." },
+          {
+            "id": "B",
+            "label": "To ensure adequate oxygen supply for cellular respiration, critical for cell growth and productivity."
+          },
           { "id": "C", "label": "To prevent the media from evaporating." },
           { "id": "D", "label": "To sterilize the inlet gases." }
         ],
@@ -91,7 +118,10 @@
           { "id": "A", "label": "Bacterial contamination" },
           { "id": "B", "label": "Fungal contamination" },
           { "id": "C", "label": "Mycoplasma contamination" },
-          { "id": "D", "label": "The cells have consumed most of the nutrients and produced acidic metabolites." }
+          {
+            "id": "D",
+            "label": "The cells have consumed most of the nutrients and produced acidic metabolites."
+          }
         ],
         "answerId": "D",
         "explanation": "A sudden drop is most commonly due to overgrowth and high metabolic activity of the cells themselves, producing lactic acid and CO2, indicating it's time to passage the cells."
