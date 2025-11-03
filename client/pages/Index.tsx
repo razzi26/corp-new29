@@ -8,7 +8,7 @@ import KnowledgeHubWidget from "@/components/widgets/KnowledgeHubWidget";
 import EmailSubscriptionWidget from "@/components/widgets/EmailSubscriptionWidget";
 import ContactForm from "@/components/ContactForm";
 import { siteConfig } from "@/config/config";
-import aboutData from "@/config/data/about.json";
+import homeAboutData from "@/config/data/homeAbout.json";
 
 export default function Index() {
   return (
@@ -34,7 +34,7 @@ export default function Index() {
                   About {siteConfig.siteName}
                 </h2>
               </div>
-              {aboutData.paragraphs.slice(0, 2).map((p, i) => (
+              {homeAboutData.paragraphs.slice(0, 2).map((p, i) => (
                 <p
                   key={i}
                   className="text-lg text-slate-700 mb-4 leading-relaxed"
@@ -52,7 +52,7 @@ export default function Index() {
             </div>
             <div className="relative">
               <div className="grid gap-4">
-                {aboutData.missions.map((m) => (
+                {homeAboutData.missions.map((m) => (
                   <div
                     key={m.title}
                     className="bg-white border border-slate-200 p-6 rounded-lg"
