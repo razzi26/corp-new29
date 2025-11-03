@@ -1,4 +1,5 @@
 import { Button } from "@/components/Button";
+import emailSub from "@/config/data/emailSubscription.json";
 
 export default function EmailSubscriptionWidget() {
   return (
@@ -8,11 +9,10 @@ export default function EmailSubscriptionWidget() {
           <div className="mb-8 text-center">
             <div className="w-16 h-1 bg-brand-secondary mx-auto mb-4"></div>
             <h2 className="text-4xl md:text-5xl font-bold text-[hsl(205_100%_12%)] mb-4">
-              Stay Updated
+              {emailSub.title}
             </h2>
             <p className="text-lg text-slate-700 leading-relaxed">
-              Subscribe to our email newsletter for the latest biosafety news,
-              updates, and insights delivered straight to your inbox.
+              {emailSub.description}
             </p>
           </div>
 
@@ -22,7 +22,7 @@ export default function EmailSubscriptionWidget() {
               const fd = new FormData(e.currentTarget as HTMLFormElement);
               const email = fd.get("email");
               console.log({ email });
-              alert("Thanks for subscribing!");
+              alert(emailSub.successMessage);
               (e.currentTarget as HTMLFormElement).reset();
             }}
             className="flex flex-col sm:flex-row gap-3"
@@ -31,7 +31,7 @@ export default function EmailSubscriptionWidget() {
               type="email"
               name="email"
               required
-              placeholder="Enter your email"
+              placeholder={emailSub.inputPlaceholder}
               className="h-14 flex-1 bg-white text-slate-900 border-2 border-slate-300 px-4 outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent"
             />
             <Button
@@ -39,12 +39,12 @@ export default function EmailSubscriptionWidget() {
               size="lg"
               className="bg-[hsl(var(--primary))] hover:bg-[hsl(205_100%_20%)] shadow hover:shadow-md"
             >
-              Subscribe
+              {emailSub.buttonText}
             </Button>
           </form>
 
           <p className="mt-4 text-center text-sm text-slate-600">
-            No spam. Unsubscribe anytime.
+            {emailSub.disclaimer}
           </p>
         </div>
       </div>
