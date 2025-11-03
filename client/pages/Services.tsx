@@ -89,6 +89,9 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      {/* Trainings Section (embedded) */}
+      <TrainingsSection />
     </div>
   );
 }
