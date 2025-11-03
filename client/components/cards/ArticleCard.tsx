@@ -65,10 +65,10 @@ export function ArticleCard({ a }: { a: ArticleMeta }) {
       <CardFooter className="mt-auto">
         <Link
           to={`/resources/articles/${slugParam}`}
-          className="ml-auto inline-flex items-center gap-2 rounded-full border border-[#00467f] px-4 py-2 text-[#00467f] transition-colors hover:bg-[#00467f] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00467f]/40"
+          className="group inline-flex items-center justify-between w-full rounded-lg border border-slate-200 px-3 py-2 sm:px-4 sm:py-3 text-sm font-semibold text-slate-900/90 transition-colors hover:bg-slate-50"
         >
-          Read article
-          <ArrowRight className="h-4 w-4" />
+          <span className="transition-colors group-hover:text-[#00467f]">Read article</span>
+          <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 shrink-0 transform transition-all group-hover:-rotate-45 group-hover:text-[#00467f]" />
         </Link>
       </CardFooter>
     </Card>
