@@ -50,8 +50,8 @@ export function ArticleCard({ a }: { a: ArticleMeta }) {
         </div>
       </CardHeader>
 
-      <CardContent className="text-slate-700 p-4 sm:p-6 pt-0">
-        {/*<p className="line-clamp-2 sm:line-clamp-3 text-xs sm:text-sm">{a.description}</p>*/}
+      {/*<CardContent className="text-slate-700 p-4 sm:p-6 pt-0">
+        <p className="line-clamp-2 sm:line-clamp-3 text-xs sm:text-sm">{a.description}</p>
 
         <div className="mt-4 flex flex-wrap gap-2">
           {a.tags.map((t) => (
@@ -60,7 +60,7 @@ export function ArticleCard({ a }: { a: ArticleMeta }) {
             </Badge>
           ))}
         </div>
-      </CardContent>
+      </CardContent>*/}
 
       <CardFooter className="mt-auto">
         <Link
