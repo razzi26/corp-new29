@@ -10,7 +10,7 @@ export default function About() {
     <div className="bg-white text-slate-900">
       <PageBanner
         title="About Us"
-        description="Discover Esco Cell Culture Institute and our mission to advance biosafety education and standards."
+        description={aboutData.bannerDescription}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About Us" }]}
         backgroundImage="https://images.pexels.com/photos/5726809/pexels-photo-5726809.jpeg"
       />
