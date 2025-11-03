@@ -37,15 +37,15 @@ export function ArticleCard({ a }: { a: ArticleMeta }) {
           </Link>
         </CardTitle>
 
-        <div className="mt-1 flex flex-wrap items-center gap-3 text-sm text-slate-500">
+        <div className="mt-1 flex flex-wrap items-center gap-2 text-xs sm:text-sm text-slate-500">
           <span className="inline-flex items-center gap-1">
-            <CalendarDays className="h-4 w-4 text-slate-400" />
-            <time dateTime={a.date}>{new Date(a.date).toLocaleDateString()}</time>
+            <CalendarDays className="h-3 w-3 sm:h-4 sm:w-4 text-slate-400" />
+            <time dateTime={a.date} className="text-xs sm:text-sm">{new Date(a.date).toLocaleDateString()}</time>
           </span>
-          <span className="text-slate-300">•</span>
+          <span className="text-slate-300 text-xs sm:text-sm">•</span>
           <span className="inline-flex items-center gap-1">
-            <Clock className="h-4 w-4 text-slate-400" />
-            <span>{a.readMins} min read</span>
+            <Clock className="h-3 w-3 sm:h-4 sm:w-4 text-slate-400" />
+            <span className="text-xs sm:text-sm">{a.readMins} min read</span>
           </span>
         </div>
       </CardHeader>
