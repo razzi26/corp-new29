@@ -8,6 +8,7 @@ import KnowledgeHubWidget from "@/components/widgets/KnowledgeHubWidget";
 import EmailSubscriptionWidget from "@/components/widgets/EmailSubscriptionWidget";
 import ContactForm from "@/components/ContactForm";
 import { siteConfig } from "@/config/config";
+import aboutData from "@/config/data/about.json";
 
 export default function Index() {
   return (
