@@ -1,8 +1,8 @@
 [
   {
-    "slug": "biosafety-fundamentals",
-    "title": "Cell Culture Essentials Quiz",
-    "subtitle": "Fundamental questions on biosafety, incubation, passaging and culture handling.",
+    "slug": "cell-culture-fundamentals",
+    "title": "Test Your Cell Culture Knowledge",
+    "subtitle": "Think you’re a cell culture expert? Take this quick quiz to challenge your understanding of fundamental and advanced cell culture techniques. Good luck!",
     "category": "Cell Culture",
     "skillLevel": "Beginner",
     "durationMinutes": 10,
