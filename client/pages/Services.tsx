@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import servicesData from "@/config/data/services.json";
+import TrainingsSection from "@/components/services/TrainingsSection";
 
 const ICONS: Record<string, any> = { Headset, Wrench, Boxes, LifeBuoy, Award, Truck, Clock };
 
