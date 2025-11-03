@@ -55,10 +55,12 @@ Content items are stored in `public/data/` as JSON files (static site data). Key
 - `public/data/products.json` — product previews (if present)
 
 To edit content or rename items:
+
 - Update the corresponding JSON file in `public/data/`.
 - For new images referenced by content, add image files to `public/` and point `image`/`logoPath` to that path.
 
 Where these are consumed (examples):
+
 - Knowledge Hub widget: `client/components/widgets/KnowledgeHubWidget.tsx` reads the article list and renders `ArticleCard`.
 - Individual article pages and resource pages import and parse `public/data/*` files.
 
@@ -84,6 +86,6 @@ Where these are consumed (examples):
 ---
 
 If you want, I can also:
+
 - Replace `index.html` title with `siteConfig.siteName` at runtime (small code change), or
 - Add a short developer script that prints all places referencing `siteConfig.siteName` to help ensure nothing is missed.
-
