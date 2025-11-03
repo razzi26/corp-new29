@@ -43,12 +43,13 @@ export default function TrainingsSection() {
               })}
             </div>
           </div>
-
-          <div className="text-center mt-6">
-            <Button asChild size="md">
-              <Link to={trainingsData.cta.href}>{trainingsData.cta.text}</Link>
-            </Button>
-          </div>
+        </div>
+      </div>
+      <div className="container mx-auto px-4 pt-6">
+        <div className="text-center">
+          <Button asChild size="md">
+            <Link to={trainingsData.cta.href}>{trainingsData.cta.text}</Link>
+          </Button>
         </div>
       </div>
     </section>
