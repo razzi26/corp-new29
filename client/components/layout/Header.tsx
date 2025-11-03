@@ -29,7 +29,7 @@ const nav: Array<{
       },
       { to: "/services/about", label: "About Trainings" },
       { to: "/services/seminars", label: "Seminars" },
-      { to: "/services/brochures", label: "Brochures" },
+      // { to: "/services/brochures", label: "Brochures" },
     ],
   },
   // { to: "/products", label: "Products" },
