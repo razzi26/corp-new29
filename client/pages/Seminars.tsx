@@ -7,7 +7,7 @@ export default function Seminars() {
     <div className="bg-white text-slate-900">
       <PageBanner
         title="Seminars"
-        description="Non-commercial, safety-focused seminars delivered worldwide by Esco biosafety specialists."
+        description={seminarsData.description}
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Services", href: "/services" },
