@@ -51,7 +51,7 @@ export function ArticleCard({ a }: { a: ArticleMeta }) {
       </CardHeader>
 
       <CardContent className="text-slate-700 p-4 sm:p-6 pt-0">
-        <p className="line-clamp-2 sm:line-clamp-3 text-xs sm:text-sm">{a.description}</p>
+        {/*<p className="line-clamp-2 sm:line-clamp-3 text-xs sm:text-sm">{a.description}</p>*/}
 
         <div className="mt-4 flex flex-wrap gap-2">
           {a.tags.map((t) => (
