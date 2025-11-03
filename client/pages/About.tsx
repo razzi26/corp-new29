@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 import { PageBanner } from "@/components/layout/PageBanner";
 import { Button } from "@/components/Button";
 import { siteConfig } from "@/config/config";
+import aboutData from "@/config/data/about.json";
 
 export default function About() {
   return (
     <div className="bg-white text-slate-900">
       <PageBanner
         title="About Us"
-        description="Discover Esco Biosafety Institute and our mission to advance biosafety education and standards."
+        description={aboutData.bannerDescription}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About Us" }]}
         backgroundImage="https://images.pexels.com/photos/5726809/pexels-photo-5726809.jpeg"
       />
@@ -31,21 +32,14 @@ export default function About() {
                 {siteConfig.siteName}
               </h1>
             </div>
-            <p className="max-w-prose text-base text-slate-700 md:text-lg leading-relaxed">
-              Esco is a global life sciences company that started in 1978 as a
-              cleanroom technology specialist. It has since progressed into a
-              key player that leverages its Singapore headquarters as a
-              strategic hub to connect Eastern and Western markets. The company
-              is a market leader in biological safety cabinets and maintains a
-              significant worldwide presence.
-            </p>
-            <p className="max-w-prose text-base text-slate-700 md:text-lg leading-relaxed">
-              A key initiative in fulfilling its vision was the creation of the
-              {siteConfig.siteName}. The Institute was created to push forward
-              Esco's core mission of building a global life sciences ecosystem.
-              Beyond being a manufacturing hardware, it purposes to be a
-              foundational pillar for education and standards.
-            </p>
+            {aboutData.paragraphs.map((p, i) => (
+              <p
+                key={i}
+                className="max-w-prose text-base text-slate-700 md:text-lg leading-relaxed"
+              >
+                {p}
+              </p>
+            ))}
             <div className="flex flex-wrap gap-3 pt-4">
               <Button
                 asChild
@@ -126,7 +120,7 @@ export default function About() {
                 </div>
                 <div>
                   <p className="font-semibold text-[hsl(205_100%_12%)]">
-                    Esco Biosafety Institute
+                    {aboutData.journeyLastLabel}
                   </p>
                   <p className="mt-1 text-sm leading-relaxed text-slate-700">
                     Established to advance education, standards, and
@@ -146,18 +140,9 @@ export default function About() {
           aria-hidden
         />
         <div className="relative grid gap-6 md:grid-cols-3">
-          <MissionCard
-            title="Cultivate a Global Culture of Biosafety"
-            descr="Educate and certify professionals worldwide, ensuring the highest standards of safety, quality, and compliance in laboratories."
-          />
-          <MissionCard
-            title="Bridge the Knowledge Gap"
-            descr="Serve as a central hub for best practices, regulatory updates, and practical skills, leveraging 40+ years of industry experience."
-          />
-          <MissionCard
-            title="Empower the Scientific Community"
-            descr="Protect researchers, patients, and the environment by enabling effective use of safety equipment and responsible handling of biological materials."
-          />
+          {aboutData.missions.map((m) => (
+            <MissionCard key={m.title} title={m.title} descr={m.descr} />
+          ))}
         </div>
       </section>
     </div>

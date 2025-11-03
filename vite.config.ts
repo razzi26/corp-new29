@@ -43,15 +43,18 @@ function configInjectionPlugin(): Plugin {
   return {
     name: "config-injection",
     transformIndexHtml(html) {
-      // Read the config file
-      const configPath = path.resolve(__dirname, "./client/config/config.ts");
-      const configContent = fs.readFileSync(configPath, "utf-8");
-
-      // Extract siteName value using regex
-      const siteNameMatch = configContent.match(/siteName:\s*["']([^"']+)["']/);
-      const siteName = siteNameMatch
-        ? siteNameMatch[1]
-        : "Esco Biosafety Institute";
+      // Read the site JSON file
+      const siteJsonPath = path.resolve(
+        __dirname,
+        "./client/config/data/site.json",
+      );
+      let siteName = "Esco Cell Culture Institute";
+      try {
+        const siteJson = JSON.parse(fs.readFileSync(siteJsonPath, "utf-8"));
+        if (siteJson && siteJson.siteName) siteName = siteJson.siteName;
+      } catch (e) {
+        // fallback to default
+      }
 
       // Replace placeholder in HTML
       return html.replace(/__SITE_NAME__/g, siteName);

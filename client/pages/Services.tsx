@@ -11,13 +11,27 @@ import {
   Check,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import servicesData from "@/config/data/services.json";
+import TrainingsSection from "@/components/services/TrainingsSection";
+import CommissioningSection from "@/components/services/CommissioningSection";
+import ValidationSection from "@/components/services/ValidationSection";
+
+const ICONS: Record<string, any> = {
+  Headset,
+  Wrench,
+  Boxes,
+  LifeBuoy,
+  Award,
+  Truck,
+  Clock,
+};
 
 export default function Services() {
   return (
     <div className="bg-white text-slate-900">
       <PageBanner
-        title="Services"
-        description="Global, certified field service and support for biosafety equipment."
+        title={servicesData.title}
+        description={servicesData.description}
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Services", href: "/services" },
@@ -31,16 +45,14 @@ export default function Services() {
             <h2 className="text-2xl md:text-3xl font-semibold">
               Expert Field Service, Worldwide
             </h2>
-            <p className="mt-4 text-base md:text-lg text-slate-700 leading-relaxed">
-              Esco Lifesciences Group leverages its global team of highly
-              trained field service engineers to provide clients with
-              comprehensive support. This includes reliable technical
-              assistance, on-site engineering, a guaranteed inventory of ready
-              parts, and dedicated after-sales service. Our global team holds
-              prestigious certifications from NSF, TÜV-NORD, NEBB, IFBA, and
-              CETA-CNBT, ensuring expert servicing for a wide range of
-              equipment.
-            </p>
+            {servicesData.intro.map((p, i) => (
+              <p
+                key={i}
+                className="mt-4 text-base md:text-lg text-slate-700 leading-relaxed"
+              >
+                {p}
+              </p>
+            ))}
             <ul className="mt-6 grid gap-3 text-slate-700">
               {[
                 "Reliable technical assistance",
@@ -65,26 +77,17 @@ export default function Services() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <FeatureCard
-              icon={Headset}
-              title="Technical Support"
-              descr="Fast, expert assistance from certified engineers."
-            />
-            <FeatureCard
-              icon={Wrench}
-              title="On‑site Engineering"
-              descr="Installation, commissioning, calibration, certification."
-            />
-            <FeatureCard
-              icon={Boxes}
-              title="Spare Parts"
-              descr="Guaranteed inventory with quick dispatch globally."
-            />
-            <FeatureCard
-              icon={LifeBuoy}
-              title="After‑sales Care"
-              descr="Preventive maintenance and responsive repairs."
-            />
+            {servicesData.features.map((f) => {
+              const Icon = ICONS[f.icon] ?? Headset;
+              return (
+                <FeatureCard
+                  key={f.title}
+                  icon={Icon}
+                  title={f.title}
+                  descr={f.descr}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
@@ -92,24 +95,29 @@ export default function Services() {
       <section className="container mx-auto px-4 pb-16">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
           <div className="grid gap-6 md:grid-cols-3">
-            <BadgeItem
-              icon={Award}
-              label="Certified Team"
-              descr="NSF, TÜV‑NORD, NEBB, IFBA, CETA‑CNBT"
-            />
-            <BadgeItem
-              icon={Truck}
-              label="Global Coverage"
-              descr="Service from regional hubs worldwide"
-            />
-            <BadgeItem
-              icon={Clock}
-              label="Rapid Response"
-              descr="Priority dispatch and SLAs available"
-            />
+            {servicesData.badges.map((b) => {
+              const Icon = ICONS[b.icon] ?? Award;
+              return (
+                <BadgeItem
+                  key={b.label}
+                  icon={Icon}
+                  label={b.label}
+                  descr={b.descr}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
+
+      {/* Trainings Section (embedded) */}
+      <TrainingsSection />
+
+      {/* Commissioning Section (embedded) */}
+      <CommissioningSection />
+
+      {/* Validation Section (embedded) */}
+      <ValidationSection />
     </div>
   );
 }

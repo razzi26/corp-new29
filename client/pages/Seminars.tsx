@@ -1,12 +1,13 @@
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { PageBanner } from "@/components/layout/PageBanner";
+import seminarsData from "@/config/data/seminars.json";
 
 export default function Seminars() {
   return (
     <div className="bg-white text-slate-900">
       <PageBanner
         title="Seminars"
-        description="Non-commercial, safety-focused seminars delivered worldwide by Esco biosafety specialists."
+        description={seminarsData.description}
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Services", href: "/services" },
@@ -20,23 +21,14 @@ export default function Seminars() {
             <h2 className="text-2xl md:text-3xl font-semibold">
               About our Seminars
             </h2>
-            <p className="mt-4 text-base md:text-lg text-slate-700 leading-relaxed">
-              Esco champions biosafety in laboratory environments. We understand
-              that constant exposure to biological hazards poses a serious
-              threat to personnel, potentially leading to illness. Additionally,
-              biosafety protocols are most often neglected, and a lack of
-              correct knowledge, even in a controlled laboratory, cannot ensure
-              that it is safe for people and the environment.
-            </p>
-
-            <p className="mt-4 text-base md:text-lg text-slate-700 leading-relaxed">
-              To answer this crucial need, Esco Biosafety Institute delivers
-              non-commercial, safety-focused seminars worldwide. These sessions
-              can be conveniently hosted on-site at your facility, based on
-              scheduling availability. With our massive distribution network
-              spanning over 100 countries, an Esco biosafety specialist is
-              always within reach to provide expert guidance.
-            </p>
+            {seminarsData.paragraphs.map((p, i) => (
+              <p
+                key={i}
+                className="mt-4 text-base md:text-lg text-slate-700 leading-relaxed"
+              >
+                {p}
+              </p>
+            ))}
 
             <h3 className="mt-6 text-lg font-semibold">
               Laboratory / Life Science Topics
@@ -62,9 +54,7 @@ export default function Seminars() {
             </ul>
 
             <h3 className="mt-6 text-lg font-semibold">Who can attend?</h3>
-            <p className="mt-3 text-slate-700">
-              Lab Personnel • Researchers • Teachers and Students
-            </p>
+            <p className="mt-3 text-slate-700">{seminarsData.whoCanAttend}</p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a

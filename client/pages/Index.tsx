@@ -8,6 +8,7 @@ import KnowledgeHubWidget from "@/components/widgets/KnowledgeHubWidget";
 import EmailSubscriptionWidget from "@/components/widgets/EmailSubscriptionWidget";
 import ContactForm from "@/components/ContactForm";
 import { siteConfig } from "@/config/config";
+import aboutData from "@/config/data/about.json";
 
 export default function Index() {
   return (
@@ -33,16 +34,14 @@ export default function Index() {
                   About {siteConfig.siteName}
                 </h2>
               </div>
-              <p className="text-lg text-slate-700 mb-4 leading-relaxed">
-                Our institute provides training, guidance, resources, and
-                certification support for biosafety professionals worldwide.
-              </p>
-              <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-                Whether you're looking to get certified, access information on
-                biosafety products, stay updated on industry trends, or test
-                your knowledge, we're your central hub for building expertise in
-                biosafety protocols.
-              </p>
+              {aboutData.paragraphs.slice(0, 2).map((p, i) => (
+                <p
+                  key={i}
+                  className="text-lg text-slate-700 mb-4 leading-relaxed"
+                >
+                  {p}
+                </p>
+              ))}
               <Button
                 asChild
                 size="lg"
@@ -52,7 +51,19 @@ export default function Index() {
               </Button>
             </div>
             <div className="relative">
-              <div className="bg-[hsl(var(--primary))] h-96 rounded-xl"></div>
+              <div className="grid gap-4">
+                {aboutData.missions.map((m) => (
+                  <div
+                    key={m.title}
+                    className="bg-white border border-slate-200 p-6 rounded-lg"
+                  >
+                    <h3 className="text-lg font-semibold text-[hsl(205_100%_12%)]">
+                      {m.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-slate-700">{m.descr}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

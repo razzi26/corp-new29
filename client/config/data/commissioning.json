@@ -1,0 +1,27 @@
+{
+  "title": "Commissioning & Qualification",
+  "description": "Installation, commissioning and qualification services for cell culture laboratories and critical equipment.",
+  "intro": [
+    "From initial planning through final qualification, we manage every aspect of your equipment installation and facility commissioning.",
+    "Our comprehensive approach ensures your equipment and facilities meet performance specifications and regulatory requirements, optimized for cell culture operations."
+  ],
+  "services": [
+    "Qualification Protocol Execution",
+    "Facility Construction",
+    "Equipment Installation",
+    "Commissioning and IQ/OQ/PQ"
+  ],
+  "features": [
+    {
+      "icon": "Wrench",
+      "title": "Equipment Installation",
+      "descr": "Expert installation of laboratory equipment with adherence to operational and cell culture requirements."
+    },
+    {
+      "icon": "Building2",
+      "title": "Facility Construction",
+      "descr": "Comprehensive facility design and construction to support aseptic cell culture workflows."
+    }
+  ],
+  "cta": { "text": "Start Your Project", "href": "/contact" }
+}

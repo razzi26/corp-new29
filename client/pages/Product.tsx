@@ -1,4 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import productData from "@/config/data/product.json";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -560,7 +561,7 @@ export default function ProductPage() {
             sku: product.id,
             category: product.category,
             image: gallery,
-            brand: { "@type": "Brand", name: "Esco Biosafety Institute" },
+            brand: { "@type": "Brand", name: productData.brandName },
           }),
         }}
       />

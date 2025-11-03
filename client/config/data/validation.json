@@ -1,0 +1,20 @@
+{
+  "title": "Validation Service",
+  "description": "Ensuring integrity and performance of systems, facilities & equipment used in cell culture through comprehensive validation.",
+  "intro": [
+    "We provide comprehensive validation services to ensure the integrity and performance of your systems, facilities, and equipment for cell culture operations.",
+    "Our expert team develops tailored validation programs that meet regulatory requirements and industry standards for laboratory environments."
+  ],
+  "services": [
+    "Validation Program Development",
+    "Validation Planning & Reporting",
+    "SOP Development & Review",
+    "Qualification Protocol Development (IQ/OQ)",
+    "Equipment & Facilities Validation",
+    "HVAC System Validation",
+    "Cleaning Validation",
+    "Process Validation",
+    "Cold Chain Validation"
+  ],
+  "cta": { "text": "Request Validation Services", "href": "/contact" }
+}
