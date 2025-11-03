@@ -1,0 +1,19 @@
+{
+  "title": "Services",
+  "description": "Global, certified field service and support for cell culture laboratories.",
+  "intro": [
+    "Esco Lifesciences Group leverages its global team of highly trained field service engineers to provide clients with comprehensive support. This includes reliable technical assistance, on-site engineering, a guaranteed inventory of ready parts, and dedicated after-sales service.",
+    "Our global team holds prestigious certifications from NSF, TÜV-NORD, NEBB, IFBA, and CETA-CNBT, ensuring expert servicing for a wide range of equipment used in cell culture laboratories."
+  ],
+  "features": [
+    { "icon": "Headset", "title": "Technical Support", "descr": "Fast, expert assistance from certified engineers." },
+    { "icon": "Wrench", "title": "On‑site Engineering", "descr": "Installation, commissioning, calibration, certification." },
+    { "icon": "Boxes", "title": "Spare Parts", "descr": "Guaranteed inventory with quick dispatch globally." },
+    { "icon": "LifeBuoy", "title": "After‑sales Care", "descr": "Preventive maintenance and responsive repairs." }
+  ],
+  "badges": [
+    { "icon": "Award", "label": "Certified Team", "descr": "NSF, TÜV‑NORD, NEBB, IFBA, CETA‑CNBT" },
+    { "icon": "Truck", "label": "Global Coverage", "descr": "Service from regional hubs worldwide" },
+    { "icon": "Clock", "label": "Rapid Response", "descr": "Priority dispatch and SLAs available" }
+  ]
+}
