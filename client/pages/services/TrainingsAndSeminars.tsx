@@ -3,6 +3,7 @@ import { PageBanner } from "@/components/layout/PageBanner";
 import { Button } from "@/components/Button";
 import { GraduationCap, CheckCircle, Users, Trophy } from "lucide-react";
 import trainingsData from "@/config/data/trainings.json";
+import TrainingsSection from "@/components/services/TrainingsSection";
 
 const ICONS: Record<string, any> = { GraduationCap, CheckCircle, Users, Trophy };
 
@@ -18,6 +19,7 @@ export default function TrainingsAndSeminars() {
           { label: trainingsData.title },
         ]}
       />
+      <TrainingsSection />
 
       {/* Main Content */}
       <section className="py-20 md:py-28">
