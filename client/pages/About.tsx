@@ -40,8 +40,8 @@ export default function About() {
               significant worldwide presence.
             </p>
             <p className="max-w-prose text-base text-slate-700 md:text-lg leading-relaxed">
-              A key initiative in fulfilling its vision was the creation of the 
-              {siteConfig.siteName}. The Institute was created to push forward
+              A key initiative in fulfilling its vision was the creation of the {siteConfig.siteName}.
+              The Institute was created to push forward
               Esco's core mission of building a global life sciences ecosystem.
               Beyond manufacturing, it serves as a foundational pillar for cell culture education and standards.
             </p>
