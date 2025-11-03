@@ -43,7 +43,7 @@ export const staticRoutes: SitemapRoute[] = [
   {
     path: "/about",
     title: "About Us",
-    description: "Learn about Esco Biosafety Institute and our mission",
+    description: "Learn about Esco Cell Culture Institute and our mission",
     priority: 0.8,
     changeFrequency: "monthly",
   },
@@ -150,7 +150,7 @@ export const staticRoutes: SitemapRoute[] = [
   {
     path: "/news",
     title: "News",
-    description: "Latest news and updates from Esco Biosafety Institute",
+    description: "Latest news and updates from Esco Cell Culture Institute",
     priority: 0.8,
     changeFrequency: "daily",
     children: [], // Will be populated with dynamic news routes

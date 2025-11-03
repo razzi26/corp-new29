@@ -560,7 +560,7 @@ export default function ProductPage() {
             sku: product.id,
             category: product.category,
             image: gallery,
-            brand: { "@type": "Brand", name: "Esco Biosafety Institute" },
+            brand: { "@type": "Brand", name: "Esco Cell Culture Institute" },
           }),
         }}
       />

@@ -9,7 +9,7 @@ export default function About() {
     <div className="bg-white text-slate-900">
       <PageBanner
         title="About Us"
-        description="Discover Esco Biosafety Institute and our mission to advance biosafety education and standards."
+        description="Discover Esco Cell Culture Institute and our mission to advance biosafety education and standards."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About Us" }]}
         backgroundImage="https://images.pexels.com/photos/5726809/pexels-photo-5726809.jpeg"
       />
@@ -126,7 +126,7 @@ export default function About() {
                 </div>
                 <div>
                   <p className="font-semibold text-[hsl(205_100%_12%)]">
-                    Esco Biosafety Institute
+                    Esco Cell Culture Institute
                   </p>
                   <p className="mt-1 text-sm leading-relaxed text-slate-700">
                     Established to advance education, standards, and

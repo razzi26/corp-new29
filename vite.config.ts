@@ -51,7 +51,7 @@ function configInjectionPlugin(): Plugin {
       const siteNameMatch = configContent.match(/siteName:\s*["']([^"']+)["']/);
       const siteName = siteNameMatch
         ? siteNameMatch[1]
-        : "Esco Biosafety Institute";
+        : "Esco Cell Culture Institute";
 
       // Replace placeholder in HTML
       return html.replace(/__SITE_NAME__/g, siteName);

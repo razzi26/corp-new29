@@ -30,7 +30,7 @@ export default function Seminars() {
             </p>
 
             <p className="mt-4 text-base md:text-lg text-slate-700 leading-relaxed">
-              To answer this crucial need, Esco Biosafety Institute delivers
+              To answer this crucial need, Esco Cell Culture Institute delivers
               non-commercial, safety-focused seminars worldwide. These sessions
               can be conveniently hosted on-site at your facility, based on
               scheduling availability. With our massive distribution network

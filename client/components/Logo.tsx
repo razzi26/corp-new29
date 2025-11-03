@@ -29,7 +29,7 @@ export default function Logo({
               : "font-semibold text-lg leading-tight"
           }
         >
-          <div>Esco Biosafety</div>
+          <div>Esco Cell Culture</div>
           <div>Institute</div>
         </div>
       )}

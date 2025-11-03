@@ -1,4 +1,4 @@
-# Esco Biosafety Institute - Style Guide
+# Esco Cell Culture Institute - Style Guide
 
 ## Design Philosophy
 
