@@ -21,11 +21,14 @@ export default function Seminars() {
             <h2 className="text-2xl md:text-3xl font-semibold">
               About our Seminars
             </h2>
-{seminarsData.paragraphs.map((p, i) => (
-            <p key={i} className="mt-4 text-base md:text-lg text-slate-700 leading-relaxed">
-              {p}
-            </p>
-          ))}
+            {seminarsData.paragraphs.map((p, i) => (
+              <p
+                key={i}
+                className="mt-4 text-base md:text-lg text-slate-700 leading-relaxed"
+              >
+                {p}
+              </p>
+            ))}
 
             <h3 className="mt-6 text-lg font-semibold">
               Laboratory / Life Science Topics

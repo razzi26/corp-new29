@@ -12,8 +12,16 @@
     "Commissioning and IQ/OQ/PQ"
   ],
   "features": [
-    { "icon": "Wrench", "title": "Equipment Installation", "descr": "Expert installation of laboratory equipment with adherence to operational and cell culture requirements." },
-    { "icon": "Building2", "title": "Facility Construction", "descr": "Comprehensive facility design and construction to support aseptic cell culture workflows." }
+    {
+      "icon": "Wrench",
+      "title": "Equipment Installation",
+      "descr": "Expert installation of laboratory equipment with adherence to operational and cell culture requirements."
+    },
+    {
+      "icon": "Building2",
+      "title": "Facility Construction",
+      "descr": "Comprehensive facility design and construction to support aseptic cell culture workflows."
+    }
   ],
   "cta": { "text": "Start Your Project", "href": "/contact" }
 }

@@ -14,9 +14,16 @@ export default function CommissioningSection() {
           <div className="grid md:grid-cols-2 gap-8 items-start">
             <div>
               <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
-              <h2 className="text-2xl md:text-3xl font-bold text-[hsl(205_100%_12%)] mb-4">{commissioningData.title}</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-[hsl(205_100%_12%)] mb-4">
+                {commissioningData.title}
+              </h2>
               {commissioningData.intro.map((p, i) => (
-                <p key={i} className="text-base md:text-lg text-slate-700 leading-relaxed mb-4">{p}</p>
+                <p
+                  key={i}
+                  className="text-base md:text-lg text-slate-700 leading-relaxed mb-4"
+                >
+                  {p}
+                </p>
               ))}
             </div>
 
@@ -58,7 +65,9 @@ export default function CommissioningSection() {
       <div className="container mx-auto px-4 pt-6">
         <div className="text-center">
           <Button asChild size="md">
-            <Link to={commissioningData.cta.href}>{commissioningData.cta.text}</Link>
+            <Link to={commissioningData.cta.href}>
+              {commissioningData.cta.text}
+            </Link>
           </Button>
         </div>
       </div>

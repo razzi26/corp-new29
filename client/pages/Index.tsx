@@ -34,8 +34,11 @@ export default function Index() {
                   About {siteConfig.siteName}
                 </h2>
               </div>
-              {aboutData.paragraphs.slice(0,2).map((p, i) => (
-                <p key={i} className="text-lg text-slate-700 mb-4 leading-relaxed">
+              {aboutData.paragraphs.slice(0, 2).map((p, i) => (
+                <p
+                  key={i}
+                  className="text-lg text-slate-700 mb-4 leading-relaxed"
+                >
                   {p}
                 </p>
               ))}
@@ -50,8 +53,13 @@ export default function Index() {
             <div className="relative">
               <div className="grid gap-4">
                 {aboutData.missions.map((m) => (
-                  <div key={m.title} className="bg-white border border-slate-200 p-6 rounded-lg">
-                    <h3 className="text-lg font-semibold text-[hsl(205_100%_12%)]">{m.title}</h3>
+                  <div
+                    key={m.title}
+                    className="bg-white border border-slate-200 p-6 rounded-lg"
+                  >
+                    <h3 className="text-lg font-semibold text-[hsl(205_100%_12%)]">
+                      {m.title}
+                    </h3>
                     <p className="mt-2 text-sm text-slate-700">{m.descr}</p>
                   </div>
                 ))}

@@ -11,9 +11,16 @@ export default function ValidationSection() {
         <div className="grid md:grid-cols-2 gap-8 items-start mb-8">
           <div>
             <div className="w-16 h-1 bg-brand-secondary mb-4"></div>
-            <h2 className="text-2xl md:text-3xl font-bold text-[hsl(205_100%_12%)] mb-4">{validationData.title}</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[hsl(205_100%_12%)] mb-4">
+              {validationData.title}
+            </h2>
             {validationData.intro.map((p, i) => (
-              <p key={i} className="text-base md:text-lg text-slate-700 leading-relaxed mb-4">{p}</p>
+              <p
+                key={i}
+                className="text-base md:text-lg text-slate-700 leading-relaxed mb-4"
+              >
+                {p}
+              </p>
             ))}
           </div>
 

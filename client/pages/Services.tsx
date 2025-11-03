@@ -16,7 +16,15 @@ import TrainingsSection from "@/components/services/TrainingsSection";
 import CommissioningSection from "@/components/services/CommissioningSection";
 import ValidationSection from "@/components/services/ValidationSection";
 
-const ICONS: Record<string, any> = { Headset, Wrench, Boxes, LifeBuoy, Award, Truck, Clock };
+const ICONS: Record<string, any> = {
+  Headset,
+  Wrench,
+  Boxes,
+  LifeBuoy,
+  Award,
+  Truck,
+  Clock,
+};
 
 export default function Services() {
   return (
@@ -38,7 +46,10 @@ export default function Services() {
               Expert Field Service, Worldwide
             </h2>
             {servicesData.intro.map((p, i) => (
-              <p key={i} className="mt-4 text-base md:text-lg text-slate-700 leading-relaxed">
+              <p
+                key={i}
+                className="mt-4 text-base md:text-lg text-slate-700 leading-relaxed"
+              >
                 {p}
               </p>
             ))}
@@ -86,7 +97,14 @@ export default function Services() {
           <div className="grid gap-6 md:grid-cols-3">
             {servicesData.badges.map((b) => {
               const Icon = ICONS[b.icon] ?? Award;
-              return <BadgeItem key={b.label} icon={Icon} label={b.label} descr={b.descr} />;
+              return (
+                <BadgeItem
+                  key={b.label}
+                  icon={Icon}
+                  label={b.label}
+                  descr={b.descr}
+                />
+              );
             })}
           </div>
         </div>

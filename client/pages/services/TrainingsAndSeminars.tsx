@@ -5,7 +5,12 @@ import { GraduationCap, CheckCircle, Users, Trophy } from "lucide-react";
 import trainingsData from "@/config/data/trainings.json";
 import TrainingsSection from "@/components/services/TrainingsSection";
 
-const ICONS: Record<string, any> = { GraduationCap, CheckCircle, Users, Trophy };
+const ICONS: Record<string, any> = {
+  GraduationCap,
+  CheckCircle,
+  Users,
+  Trophy,
+};
 
 export default function TrainingsAndSeminars() {
   return (
@@ -20,7 +25,6 @@ export default function TrainingsAndSeminars() {
         ]}
       />
       <TrainingsSection />
-
     </div>
   );
 }

@@ -6,10 +6,26 @@
     "We deliver non-commercial, safety-focused educational content worldwide, tailored for academic, clinical and industrial cell culture environments."
   ],
   "features": [
-    { "icon": "GraduationCap", "title": "Expert-Led Training", "descr": "Learn from industry experts with years of experience in cell culture protocols and regulatory compliance." },
-    { "icon": "Users", "title": "Interactive Workshops", "descr": "Participate in hands-on seminars that provide practical insights and real-world applications for culture technique and contamination control." },
-    { "icon": "Trophy", "title": "Certification Support", "descr": "Prepare for professional certifications with our comprehensive training materials and guidance." },
-    { "icon": "CheckCircle", "title": "Quality Assurance", "descr": "Ensure your facility meets the highest standards through regulatory compliance training and audits." }
+    {
+      "icon": "GraduationCap",
+      "title": "Expert-Led Training",
+      "descr": "Learn from industry experts with years of experience in cell culture protocols and regulatory compliance."
+    },
+    {
+      "icon": "Users",
+      "title": "Interactive Workshops",
+      "descr": "Participate in hands-on seminars that provide practical insights and real-world applications for culture technique and contamination control."
+    },
+    {
+      "icon": "Trophy",
+      "title": "Certification Support",
+      "descr": "Prepare for professional certifications with our comprehensive training materials and guidance."
+    },
+    {
+      "icon": "CheckCircle",
+      "title": "Quality Assurance",
+      "descr": "Ensure your facility meets the highest standards through regulatory compliance training and audits."
+    }
   ],
   "cta": {
     "text": "Schedule a Training Session",

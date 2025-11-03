@@ -4,7 +4,12 @@ import { GraduationCap, CheckCircle, Users, Trophy } from "lucide-react";
 import { Button } from "@/components/Button";
 import { Link } from "react-router-dom";
 
-const ICONS: Record<string, any> = { GraduationCap, CheckCircle, Users, Trophy };
+const ICONS: Record<string, any> = {
+  GraduationCap,
+  CheckCircle,
+  Users,
+  Trophy,
+};
 
 export default function TrainingsSection() {
   return (
@@ -18,7 +23,10 @@ export default function TrainingsSection() {
                 {trainingsData.title}
               </h2>
               {trainingsData.intro.map((p, i) => (
-                <p key={i} className="text-base md:text-lg text-slate-700 leading-relaxed mb-4">
+                <p
+                  key={i}
+                  className="text-base md:text-lg text-slate-700 leading-relaxed mb-4"
+                >
                   {p}
                 </p>
               ))}
@@ -35,7 +43,9 @@ export default function TrainingsSection() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-slate-900 mb-1">{f.title}</h3>
+                      <h3 className="text-lg font-semibold text-slate-900 mb-1">
+                        {f.title}
+                      </h3>
                       <p className="text-sm text-slate-700">{f.descr}</p>
                     </div>
                   </div>

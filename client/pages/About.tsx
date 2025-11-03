@@ -32,8 +32,11 @@ export default function About() {
                 {siteConfig.siteName}
               </h1>
             </div>
-{aboutData.paragraphs.map((p, i) => (
-              <p key={i} className="max-w-prose text-base text-slate-700 md:text-lg leading-relaxed">
+            {aboutData.paragraphs.map((p, i) => (
+              <p
+                key={i}
+                className="max-w-prose text-base text-slate-700 md:text-lg leading-relaxed"
+              >
                 {p}
               </p>
             ))}
@@ -137,7 +140,7 @@ export default function About() {
           aria-hidden
         />
         <div className="relative grid gap-6 md:grid-cols-3">
-{aboutData.missions.map((m) => (
+          {aboutData.missions.map((m) => (
             <MissionCard key={m.title} title={m.title} descr={m.descr} />
           ))}
         </div>

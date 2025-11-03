@@ -40,7 +40,9 @@ export function ArticleCard({ a }: { a: ArticleMeta }) {
         <div className="mt-1 flex flex-wrap items-center gap-2 text-xs sm:text-sm text-slate-500">
           <span className="inline-flex items-center gap-1">
             <CalendarDays className="h-3 w-3 sm:h-4 sm:w-4 text-slate-400" />
-            <time dateTime={a.date} className="text-xs sm:text-sm">{new Date(a.date).toLocaleDateString()}</time>
+            <time dateTime={a.date} className="text-xs sm:text-sm">
+              {new Date(a.date).toLocaleDateString()}
+            </time>
           </span>
           <span className="text-slate-300 text-xs sm:text-sm">•</span>
           <span className="inline-flex items-center gap-1">
@@ -67,7 +69,9 @@ export function ArticleCard({ a }: { a: ArticleMeta }) {
           to={`/resources/articles/${slugParam}`}
           className="group inline-flex items-center justify-between w-full rounded-lg border border-slate-200 px-3 py-2 sm:px-4 sm:py-3 text-sm font-semibold text-slate-900/90 transition-colors hover:bg-slate-50"
         >
-          <span className="transition-colors group-hover:text-[#00467f]">Read article</span>
+          <span className="transition-colors group-hover:text-[#00467f]">
+            Read article
+          </span>
           <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 shrink-0 transform transition-all group-hover:-rotate-45 group-hover:text-[#00467f]" />
         </Link>
       </CardFooter>

@@ -44,7 +44,10 @@ function configInjectionPlugin(): Plugin {
     name: "config-injection",
     transformIndexHtml(html) {
       // Read the site JSON file
-      const siteJsonPath = path.resolve(__dirname, "./client/config/data/site.json");
+      const siteJsonPath = path.resolve(
+        __dirname,
+        "./client/config/data/site.json",
+      );
       let siteName = "Esco Cell Culture Institute";
       try {
         const siteJson = JSON.parse(fs.readFileSync(siteJsonPath, "utf-8"));
