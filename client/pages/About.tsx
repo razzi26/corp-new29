@@ -32,20 +32,11 @@ export default function About() {
                 {siteConfig.siteName}
               </h1>
             </div>
-            <p className="max-w-prose text-base text-slate-700 md:text-lg leading-relaxed">
-              Esco is a global life sciences company that started in 1978 as a
-              cleanroom technology specialist. It has since progressed into a
-              key player that leverages its Singapore headquarters as a
-              strategic hub to connect Eastern and Western markets. The company
-              is a market leader in biological safety cabinets and maintains a
-              significant worldwide presence.
-            </p>
-            <p className="max-w-prose text-base text-slate-700 md:text-lg leading-relaxed">
-              A key initiative in fulfilling its vision was the creation of the {siteConfig.siteName}.
-              The Institute was created to push forward
-              Esco's core mission of building a global life sciences ecosystem.
-              Beyond manufacturing, it serves as a foundational pillar for cell culture education and standards.
-            </p>
+{aboutData.paragraphs.map((p, i) => (
+              <p key={i} className="max-w-prose text-base text-slate-700 md:text-lg leading-relaxed">
+                {p}
+              </p>
+            ))}
             <div className="flex flex-wrap gap-3 pt-4">
               <Button
                 asChild
@@ -126,7 +117,7 @@ export default function About() {
                 </div>
                 <div>
                   <p className="font-semibold text-[hsl(205_100%_12%)]">
-                    Esco Cell Culture Institute
+                    {aboutData.journeyLastLabel}
                   </p>
                   <p className="mt-1 text-sm leading-relaxed text-slate-700">
                     Established to advance education, standards, and
@@ -146,18 +137,9 @@ export default function About() {
           aria-hidden
         />
         <div className="relative grid gap-6 md:grid-cols-3">
-          <MissionCard
-            title="Cultivate a Global Culture of Cell Culture Excellence"
-            descr="Educate and certify professionals worldwide, ensuring the highest standards of aseptic technique, quality, and regulatory compliance in cell culture laboratories."
-          />
-          <MissionCard
-            title="Bridge the Knowledge Gap"
-            descr="Serve as a central hub for cell culture best practices, protocol development, and practical skills, leveraging 40+ years of industry experience."
-          />
-          <MissionCard
-            title="Empower the Scientific Community"
-            descr="Advance research and patient outcomes by improving cell culture technique, contamination control, and responsible handling of biological materials."
-          />
+{aboutData.missions.map((m) => (
+            <MissionCard key={m.title} title={m.title} descr={m.descr} />
+          ))}
         </div>
       </section>
     </div>
