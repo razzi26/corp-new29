@@ -43,12 +43,9 @@ export default function TrainingsSection() {
           </div>
 
           <div className="text-center mt-6">
-            <a
-              href={trainingsData.cta.href}
-              className="inline-flex items-center rounded-lg bg-[hsl(var(--primary))] px-4 py-2 text-sm font-semibold text-white shadow hover:shadow-md"
-            >
-              {trainingsData.cta.text}
-            </a>
+            <Button asChild size="md">
+              <a href={trainingsData.cta.href}>{trainingsData.cta.text}</a>
+            </Button>
           </div>
         </div>
       </div>
