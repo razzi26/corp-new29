@@ -46,7 +46,7 @@ export default function TrainingsSection() {
 
           <div className="text-center mt-6">
             <Button asChild size="md">
-              <a href={trainingsData.cta.href}>{trainingsData.cta.text}</a>
+              <Link to={trainingsData.cta.href}>{trainingsData.cta.text}</Link>
             </Button>
           </div>
         </div>
