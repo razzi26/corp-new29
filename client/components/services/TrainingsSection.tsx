@@ -1,6 +1,8 @@
 import React from "react";
 import trainingsData from "@/config/data/trainings.json";
 import { GraduationCap, CheckCircle, Users, Trophy } from "lucide-react";
+import { Button } from "@/components/Button";
+import { Link } from "react-router-dom";
 
 const ICONS: Record<string, any> = { GraduationCap, CheckCircle, Users, Trophy };
 
