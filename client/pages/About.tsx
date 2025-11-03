@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { PageBanner } from "@/components/layout/PageBanner";
 import { Button } from "@/components/Button";
 import { siteConfig } from "@/config/config";
+import aboutData from "@/config/data/about.json";
 
 export default function About() {
   return (
