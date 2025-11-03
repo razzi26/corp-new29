@@ -43,7 +43,7 @@ export const staticRoutes: SitemapRoute[] = [
   {
     path: "/about",
     title: "About Us",
-    description: "Learn about Esco Cell Culture Institute and our mission",
+    description: `Learn about ${siteConfig.siteName} and our mission`,
     priority: 0.8,
     changeFrequency: "monthly",
   },
