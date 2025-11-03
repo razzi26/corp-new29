@@ -27,8 +27,8 @@ export function ArticleCard({ a }: { a: ArticleMeta }) {
         </AspectRatio>
       </div>
 
-      <CardHeader>
-        <CardTitle className="text-lg sm:text-xl leading-6">
+      <CardHeader className="p-4 sm:p-6">
+        <CardTitle className="text-base sm:text-lg leading-6">
           <Link
             to={`/resources/articles/${slugParam}`}
             className="text-slate-900 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 rounded"
@@ -50,8 +50,8 @@ export function ArticleCard({ a }: { a: ArticleMeta }) {
         </div>
       </CardHeader>
 
-      <CardContent className="text-slate-700">
-        <p className="line-clamp-3 text-sm">{a.description}</p>
+      <CardContent className="text-slate-700 p-4 sm:p-6 pt-0">
+        <p className="line-clamp-2 sm:line-clamp-3 text-xs sm:text-sm">{a.description}</p>
 
         <div className="mt-4 flex flex-wrap gap-2">
           {a.tags.map((t) => (
